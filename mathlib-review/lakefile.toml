@@ -1,10 +1,11 @@
 name = "criticalDepth"
-version = "0.2.0"
+version = "0.3.0"
 defaultTargets = ["CriticalDepthMathlib"]
 moreLeanArgs = ["-j1", "-M6144", "-DmaxHeartbeats=3000000"]
 
 [[lean_lib]]
 name = "CriticalDepthMathlib"
+allowNonModules = true
 
 [[require]]
 name = "mathlib"

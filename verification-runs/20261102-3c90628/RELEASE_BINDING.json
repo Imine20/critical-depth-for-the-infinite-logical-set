@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "mathematical_validation_status": "PASS",
+  "selected_dependency_policy": "TRUSTED_PINNED_MATHLIB_CACHE",
+  "actual_verification": {
+    "file": "VERIFICATION.json",
+    "sha256": "4d30510ea1f9379120a9187423d43b5bc7e94b1e296076b7ee531bec667da4fa",
+    "kernel_audit_file": "KERNEL_AUDIT.txt",
+    "kernel_audit_sha256": "aea2c0407ed7909ba8565f187e711777b2921760bf7ef76222b66d3087ab910a",
+    "main_source_sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2",
+    "statements_sha256": "47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892",
+    "reference_manuscript_sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227",
+    "build_input_manifest": "BUILD_INPUTS/PAYLOAD_SHA256.txt",
+    "build_input_manifest_sha256": "671b36d2cbfe5764e4609c6de5eeb714e5c16215be26f8042a6200d20af2b5b5"
+  },
+  "latest_article": {
+    "tex": "../../manuscript/shallow_logical_operators_depth_threshold.tex",
+    "tex_bytes": 35519,
+    "tex_sha256": "1c17ca04507174ce6b070af71a898626e279668d598d04b8b052787481d9ba0d",
+    "pdf": "../../manuscript/shallow_logical_operators_depth_threshold.pdf",
+    "pdf_bytes": 414237,
+    "pdf_sha256": "582ca90c612a57e2e9fdfa67081ab661c7b547178ed66e7be02d75c7cca347e1",
+    "origin": "User-supplied exact files, copied without edits after the actual Lean replay",
+    "pdf_validation": "Raw byte identity only; no new PDF rebuild or visual/content QA is claimed",
+    "correspondence": "../../docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md",
+    "correspondence_sha256": "7813f210affa0e9f9caf74cbe0c9395fb557eb969baa0218797dcfeb434aed95",
+    "correspondence_status": "STATIC_MATCH_TWO_MAIN_RESULTS_UNDER_STANDARD_SUBSPACE_READING",
+    "notation": "paper rho = Lean q",
+    "theorem_two_scope": "Ordinary [[n,k,d]] Pauli stabilizer subspace codes, gauge dimension one; no nontrivial-gauge extension claimed",
+    "new_discussion_claims": "Not formally verified by this release"
+  },
+  "publication_input_metadata": {
+    "current_manifest": "../../mathlib-review/PAYLOAD_SHA256.txt",
+    "current_manifest_sha256": "0a07cedfbfd6d1a992b0360eff771a263bbb01c64d5ab27bfeeb1160c6257d48",
+    "changes_after_replay": "New user-provided article files, current explanatory documentation/version binding and author-status records; mathematical Lean source and aligned-statement bytes unchanged",
+    "original_build_inputs_preserved": true,
+    "old_receipt_rewritten_to_latest_article": false,
+    "new_kernel_run_for_latest_article_claimed": false
+  },
+  "author_semantic_approval": "PENDING",
+  "CAD_formalization": "DEFERRED by user",
+  "resource_qualification": "See VERIFICATION.json resource_qualification; do not infer every instantaneous charge was at most 8 GB",
+  "created_at_utc": "2026-11-01T17:12:48.4885546Z"
+}

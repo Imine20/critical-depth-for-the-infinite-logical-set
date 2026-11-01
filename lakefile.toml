@@ -1,10 +1,14 @@
 name = "criticalDepth"
-version = "0.1.0"
-defaultTargets = ["CriticalDepth"]
+version = "0.3.0"
+defaultTargets = ["CriticalDepthMathlib"]
 moreLeanArgs = ["-j1", "-M6144", "-DmaxHeartbeats=3000000"]
 
 [[lean_lib]]
-name = "CriticalDepth"
+name = "CriticalDepthMathlib"
+srcDir = "mathlib-review"
+roots = ["CriticalDepthMathlib"]
+globs = ["CriticalDepthMathlib"]
+allowNonModules = true
 
 [[require]]
 name = "mathlib"

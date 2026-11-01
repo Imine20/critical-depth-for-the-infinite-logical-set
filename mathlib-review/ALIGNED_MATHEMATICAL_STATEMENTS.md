@@ -1,6 +1,6 @@
 # Aligned mathematical statements
 
-These statements expose the definitions used by the v2 public targets. The reference manuscript is the derived v2 TeX, SHA-256 `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227`, based on the selected desktop revision `118b256bde608d7f52fd11c783ba464a3eba65da2e46a2a333d4fffbbc380a1c`. The earlier audited release `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85` is preserved separately. **Final v2 integrated acceptance: PASS. Author semantic approval: PENDING.**
+These statements expose the definitions used by the v2 public targets. The reference manuscript is the derived v2 TeX, SHA-256 `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227`, based on the selected desktop revision `118b256bde608d7f52fd11c783ba464a3eba65da2e46a2a333d4fffbbc380a1c`. The earlier audited release `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85` is preserved separately. Build, recursive-axiom and author-approval records are separate version-bound evidence; these readable statements do not themselves certify any of those statuses.
 
 ## 1. Finite systems, support and encoding
 
@@ -136,4 +136,25 @@ One joint theorem, `CriticalDepth.ReviewV2.critical_circle_joint_witness`, binds
 
 An explicit five-qubit encoding has arbitrary-operator detection below three and an undetectable operator of support three. With `q = 2`, its positive budgets `h = 1` and `h = 2` both satisfy Theorem 1. The closed native calls are `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthOne` and `fiveQubit_native_depthTwo`. The previous five-site parametric call is not being used as an existence proof. The four-qubit stabilizer example separately realizes Theorem 2 at critical depth one.
 
-All foundational spaces, operators, tensors, unitary groups, quotients, subgroups and topological group equivalences in the v2 public interfaces are Mathlib objects. Support, detection, encoding relations, circuit budgets and stabilizer conditions are article-specific definitions. The complete assembled file passed the bound v2-033 build and recursive axiom audit recorded in `VERIFICATION.json`; author semantic review of the readable correspondence remains pending. The formal finiteness proof follows an alternative algebraic route and does not certify every step of the manuscript's CAD proof.
+All foundational spaces, operators, tensors, unitary groups, quotients, subgroups and topological group equivalences in the v2 public interfaces are Mathlib objects. Support, detection, encoding relations, circuit budgets and stabilizer conditions are article-specific definitions. The historical baseline assembled file, SHA-256 85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8, passed the bound v2-033 audit and the later fresh replay at source revision 3361e6c. Those records are not acceptance of the newly supplemented source. The enlarged source has separate version-bound build and author-review records; the old acceptance is not transferred to it. The formal finiteness proof follows an alternative algebraic route and does not certify every step of the manuscript's CAD proof.
+## Standard stabilizer convention: explicit equivalence supplement
+
+For n qubits, let P_n consist of the matrices z times a tensor product of I, X, Y and Z, with z in {1, -1, i, -i}. The four single-qubit matrices are the usual concrete complex 2-by-2 matrices. The underlying group carrier below is Mathlib's matrix unitary group, and subgroup means Mathlib `Subgroup`.
+
+A standard Pauli stabilizer subgroup S has all its members in P_n, its members commute pairwise, and it excludes minus the identity. A standard stabilizer encoding V has image equal to the ENTIRE common +1 eigenspace of S:
+
+    range(V) = {v | for every U in S, U v = v}.
+
+This is the predicate `CriticalDepth.ReviewV2.StandardStabilizerCode`. Its Pauli condition is explicitly presented using the four phases; `isPauli_iff_standardPauliOperator` connects this presentation with the original finite Pauli parameterization.
+
+The original `NativeStabilizer` asks for a Pauli subgroup with this entire-fixed-space equality. Under the already required isometry equation V* V = I (where V* denotes conjugate transpose), its logical domain has dimension 2^k and is nonzero, even for k=0. The supplement proves
+
+    NativeStabilizer V <-> StandardStabilizerCode V.
+
+The forward implication does not assume the missing subgroup conditions. Pauli operators commute or anticommute; anticommutation of two operators that both fix the nonzero encoded space would force V=-V, contradicting the isometry. Minus identity in the subgroup gives the same contradiction. More generally, a scalar subgroup member must be the identity. The reverse implication retains the Pauli and entire-fixed-space clauses and forgets the derived conditions.
+
+The subgroup's finiteness is also derived from the finite four-phase/Pauli-word parameterization, rather than supplied as a new hypothesis. The separate formula for its order, 2^(n-k), is not asserted as a new formal theorem here.
+
+`standardTheoremTwo_proved` takes this explicit standard-code predicate, the same isometry and actual-distance hypotheses, and the same n,k,d,q parameter restrictions as `nativeTheoremTwo_proved`. It concludes exactly the same positive critical-depth equality and the same nontrivial closed Circle-isomorphic subgroup inside the allowed-budget logical image. The equivalence supplies the native stabilizer premise; no Pauli witness, finiteness conclusion or critical-depth equality is added as an assumption.
+
+The source supplement and actual four-qubit applications were checked in a separate development build. Consult the source-hash-bound verification and author-approval records for the final integrated version; the readable statements are not those records. The manuscript CAD proof remains unchanged and its formalization is deferred by the user; see the separate CAD comparison for the exact route difference.

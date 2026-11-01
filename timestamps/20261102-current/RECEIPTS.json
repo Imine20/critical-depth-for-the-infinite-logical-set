@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "manifest": {
+    "path": "release-manifest.txt",
+    "bytes": 6735,
+    "sha256": "dee22d1fb2fbc9f25583321df7185bbe07521417dbea03d9f9b52f90cd5240cf",
+    "covered_files": 57,
+    "scope": "The 57 named current proof/article/evidence files. This timestamp directory and later Git metadata are outside the frozen collection."
+  },
+  "rfc3161": {
+    "status": "VERIFIED_SIGNATURE_NONCE_IMPRINT_AND_CERTIFICATE_CHAIN",
+    "endpoint": "http://timestamp.digicert.com",
+    "signed_tsa_time_utc": "2026-11-01T17:17:40Z",
+    "serial": "EC5002D8BC64DD59F80252B145DB602C",
+    "nonce_hex": "FC30673C0702864E",
+    "policy_oid": "2.16.840.1.114412.7.1",
+    "root_der_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+    "trust_source": "Preexisting distribution-installed DigiCert Trusted Root G4, independently checked against the OS CA store and its expected DER fingerprint",
+    "critical_exclusive_timestamping_eku": true,
+    "revocation_status": "UNCHECKED",
+    "controller_request_start_utc": "2026-11-01T17:22:19Z",
+    "controller_response_end_utc": "2026-11-01T17:22:20Z",
+    "clock_note": "The signed TSA clock is 279–280 seconds earlier than the recorded controller clock. No clock synchronization audit or cause attribution is claimed."
+  },
+  "opentimestamps": {
+    "status": "CALENDAR_PENDING",
+    "client_version": "0.4.9",
+    "client_commit": "36e27fca500273a63e013fff62d963357e882a27",
+    "minimum_parsed_calendar_responses": 2,
+    "actual_parsed_calendar_responses": 3,
+    "distinct_returned_pending_calendar_uris": [
+      "https://bob.btc.calendar.opentimestamps.org",
+      "https://btc.calendar.catallaxy.com",
+      "https://finney.calendar.eternitywall.com"
+    ],
+    "selected_calendars": [
+      "https://alice.btc.calendar.opentimestamps.org",
+      "https://b.pool.opentimestamps.org",
+      "https://finney.calendar.eternitywall.com",
+      "https://ots.btc.catallaxy.com"
+    ],
+    "calendar_replies": [
+      {
+        "url": "https://alice.btc.calendar.opentimestamps.org",
+        "round": 1,
+        "successful_parsed_reply": false,
+        "elapsed_ms": 409,
+        "pending_calendar_uris": [
+          null
+        ],
+        "error": "AggregateError"
+      },
+      {
+        "url": "https://b.pool.opentimestamps.org",
+        "round": 1,
+        "successful_parsed_reply": true,
+        "elapsed_ms": 2115,
+        "pending_calendar_uris": [
+          "https://bob.btc.calendar.opentimestamps.org"
+        ],
+        "error": null
+      },
+      {
+        "url": "https://finney.calendar.eternitywall.com",
+        "round": 1,
+        "successful_parsed_reply": true,
+        "elapsed_ms": 2182,
+        "pending_calendar_uris": [
+          "https://finney.calendar.eternitywall.com"
+        ],
+        "error": null
+      },
+      {
+        "url": "https://ots.btc.catallaxy.com",
+        "round": 1,
+        "successful_parsed_reply": true,
+        "elapsed_ms": 1720,
+        "pending_calendar_uris": [
+          "https://btc.calendar.catallaxy.com"
+        ],
+        "error": null
+      }
+    ],
+    "initial_receipt_sha256": "f803ed4d9c12bbb9671a6dcc8969128faf45600ad545172917ea3c3da826779a",
+    "original_initial_receipt_preserved": true,
+    "upgrade_copy_sha256": "f803ed4d9c12bbb9671a6dcc8969128faf45600ad545172917ea3c3da826779a",
+    "upgrade_attempts": 1,
+    "bitcoin_confirmed": false,
+    "bitcoin_attestation_heights": [],
+    "first_attempt_status": "INSUFFICIENT_CALENDAR_RESPONSES_ONE_VALID_REPLY_PRESERVED",
+    "first_attempt_receipt_sha256": "c7a62ceeae7a4eeb235fb5e835f94304feb5a7de4f06d2b135fae5f162c85305",
+    "note": "Three different returned calendar URIs are present. This is not a claim of independent operators or Bitcoin confirmation."
+  },
+  "limitations": [
+    "Timestamp receipts bind exact bytes, not mathematical correctness, authorship or author semantic approval.",
+    "The author semantic approval remains PENDING; CAD proof formalization remains deferred.",
+    "No OCSP or CRL evidence is included."
+  ],
+  "operational_note": "An initial malformed local wrapper argv was rejected before submission; corrected jobs ran within the same capped isolated tool scope."
+}

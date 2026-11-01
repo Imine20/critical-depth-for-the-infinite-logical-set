@@ -1,0 +1,359 @@
+{
+  "schema": 2,
+  "status": "PASS",
+  "validation": "ACTUAL_FRESH_RUN",
+  "snapshot_revision": "3361e6cbed703b1a8bebe2b1784e875311361076",
+  "snapshot_tree": "e13005a2fa0349d9fe85a9954798ebcde87a4d2a",
+  "source": {
+    "file": "CriticalDepthMathlib.lean",
+    "bytes": 527431,
+    "sha256": "85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8",
+    "git_blob": "3003cf201fecf03ba520f0c7b15497273f0a56c9"
+  },
+  "toolchain": {
+    "lean_version": "4.35.0",
+    "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "dependency_lock_sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+  },
+  "execution": {
+    "started_utc": "2026-11-01T13:03:38.838282113Z",
+    "ended_utc": "2026-11-01T13:18:13.510679905Z",
+    "exit_code": 0,
+    "signal": 0,
+    "output_artifact_file": "CriticalDepthMathlib.olean",
+    "output_artifact_bytes": 40982264,
+    "output_artifact_sha256": "30ef4721abc52b7bad8b076d85cb1e17e04e4edfdc38166fcf729cc73ce2664b"
+  },
+  "acquisition_checks": {
+    "captured_public_tree_records": 20,
+    "local_snapshot_files_hash_and_git_blob_checked": 16,
+    "network_acquisition": "Supplied by coordinator; this parser rechecks the captured public tree and local snapshot bindings without network access."
+  },
+  "audit": {
+    "theorem_count": 1251,
+    "constant_count": 1727,
+    "target_count": 29,
+    "exact_three_count": 17,
+    "proposition_check_count": 12,
+    "foundation_count": 12,
+    "own_axiom_count": 0,
+    "imported_project_module_count": 0,
+    "unapproved_import_count": 0
+  },
+  "recursive_allowlist": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "recursive_constant_records_verified": 1727,
+  "target_axioms": {
+    "CriticalDepth.Manuscript.theoremOne_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.theoremOne_nondense": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.theoremTwo_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.theoremOneAtMost_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.theoremTwoAtMost_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.theoremOnePositive_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.theoremTwoPositive_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewIntegration.theoremOne_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewIntegration.theoremTwo_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.nativeTheoremOne_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.nativeTheoremTwo_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.HandoutBinding.original_theoremOne_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.HandoutBinding.original_theoremTwo_proved": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.HilbertCircuitTransport.logicalImage_eq_native": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.HilbertCircuitTransport.theoremOne_arbitrary_carriers": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.HilbertPhase.logicalClass_eq_iff": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.logical_factor_projective_unique": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.critical_circle_joint_witness": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.exp_involution_eq_rotation": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.rotation_projective_period_iff": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.exists_closed_circle_rotation_subgroup": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.stabilizer_critical_closed_circle": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.FiveQubit.encoding_isometry": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.FiveQubit.detectsBelow_three": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.FiveQubit.hasActualDistance_three": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.FiveQubit.depthOne_finite_nondense": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.Manuscript.FiveQubit.depthTwo_finite_nondense": {
+      "mode": "subset",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthOne": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthTwo": {
+      "mode": "exact3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "native_main_actual_axioms": {
+    "CriticalDepth.ReviewV2.nativeTheoremOne_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "CriticalDepth.ReviewV2.nativeTheoremTwo_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "named_propositions": {
+    "CriticalDepth.Manuscript.theoremOne_proved": "CriticalDepth.Manuscript.theoremOne",
+    "CriticalDepth.Manuscript.theoremTwo_proved": "CriticalDepth.Manuscript.theoremTwo",
+    "CriticalDepth.Manuscript.theoremOneAtMost_proved": "CriticalDepth.Manuscript.theoremOneAtMost",
+    "CriticalDepth.Manuscript.theoremTwoAtMost_proved": "CriticalDepth.Manuscript.theoremTwoAtMost",
+    "CriticalDepth.Manuscript.theoremOnePositive_proved": "CriticalDepth.Manuscript.theoremOnePositive",
+    "CriticalDepth.Manuscript.theoremTwoPositive_proved": "CriticalDepth.Manuscript.theoremTwoPositive",
+    "CriticalDepth.ReviewIntegration.theoremOne_proved": "CriticalDepth.ReviewIntegration.TheoremOne",
+    "CriticalDepth.ReviewIntegration.theoremTwo_proved": "CriticalDepth.ReviewIntegration.TheoremTwo",
+    "CriticalDepth.ReviewV2.nativeTheoremOne_proved": "CriticalDepth.ReviewV2.NativeTheoremOne",
+    "CriticalDepth.ReviewV2.nativeTheoremTwo_proved": "CriticalDepth.ReviewV2.NativeTheoremTwo",
+    "CriticalDepth.ReviewV2.HandoutBinding.original_theoremOne_proved": "CriticalDepth.Manuscript.PureStatements.theoremOne",
+    "CriticalDepth.ReviewV2.HandoutBinding.original_theoremTwo_proved": "CriticalDepth.Manuscript.PureStatements.theoremTwo"
+  },
+  "foundation_origins": {
+    "Matrix": "Mathlib.LinearAlgebra.Matrix.Defs",
+    "Matrix.unitaryGroup": "Mathlib.LinearAlgebra.UnitaryGroup",
+    "unitary": "Mathlib.Algebra.Star.Unitary",
+    "Subgroup": "Mathlib.Algebra.Group.Subgroup.Defs",
+    "QuotientGroup.mk'": "Mathlib.GroupTheory.QuotientGroup.Defs",
+    "Circle": "Mathlib.Analysis.Complex.Circle",
+    "ContinuousMulEquiv": "Mathlib.Topology.Algebra.ContinuousMonoidHom",
+    "LinearIsometry": "Mathlib.Analysis.Normed.Operator.LinearIsometry",
+    "TensorProduct": "Mathlib.LinearAlgebra.TensorProduct.Defs",
+    "EuclideanSpace": "Mathlib.Analysis.InnerProductSpace.PiL2",
+    "OrthonormalBasis": "Mathlib.Analysis.InnerProductSpace.PiL2",
+    "NormedSpace.exp": "Mathlib.Analysis.Normed.Algebra.Exponential"
+  },
+  "direct_import_count": 60,
+  "direct_mathlib_import_count": 58,
+  "direct_lean_import_count": 2,
+  "public_dependency_only_search_path_checked": true,
+  "resource_policy": {
+    "aggregate_limit_bytes": 8000000000,
+    "swap_limit_bytes": 0,
+    "limit_readbacks_checked": true,
+    "scope": "Isolated tool processes and descendants",
+    "measurements": "Actual run measurements and raw system receipts remain private"
+  },
+  "semantic_scope": {
+    "author_semantic_approval": "PENDING",
+    "manuscript_route": "The formal finiteness proof is algebraic; the written CAD argument is not checked line by line.",
+    "native_scope": "Selected interfaces use actual Mathlib foundations; public legacy compatibility declarations remain.",
+    "named_guards": "Named definitional checks are not independent semantic specifications.",
+    "type_printing": "Complete declared and transparent weak-head types; not normalization beneath every binder."
+  },
+  "external_consumer": {
+    "file": "CONSUMER_VERIFICATION.json",
+    "scope": "Separate external-call verification record"
+  },
+  "trusted_boundary": "Pinned compiler and public dependency artifacts are trusted inputs. This fresh own-source build is not a fresh rebuild of all Mathlib or an independent public fresh-clone replay.",
+  "kernel_audit": {
+    "file": "KERNEL_AUDIT.txt",
+    "sha256": "8b291fbbbc1ee74e7f69087fd9add1f1cf2f923b831469c687aa189b41856f1e",
+    "recursive_records": 1727,
+    "complete_target_type_blocks": 29
+  },
+  "target_type_export": {
+    "file": "KERNEL_AUDIT.txt",
+    "sha256": "8b291fbbbc1ee74e7f69087fd9add1f1cf2f923b831469c687aa189b41856f1e",
+    "target_count": 29,
+    "scope": "Complete declared types and transparent weak-head reductions, emitted and validated in this fresh run"
+  }
+}

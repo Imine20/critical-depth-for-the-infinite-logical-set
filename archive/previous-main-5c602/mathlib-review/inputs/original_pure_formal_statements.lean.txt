@@ -1,0 +1,22 @@
+import CriticalDepth.PositiveDepth
+
+noncomputable section
+
+namespace CriticalDepth.Manuscript.PureStatements
+
+def theoremOne : Prop :=
+  ∀ (n ℓ g d : ℕ) (dim : Fin n → ℕ), 1 ≤ n → 2 ≤ ℓ → 1 ≤ g → 2 ≤ d →
+    ∀ C : Code n dim ℓ g, DetectsBelow C d → ∀ q h : ℕ,
+      2 ≤ q → 1 ≤ h → h < Arithmetic.criticalDepth q d →
+      (arbitraryLogicalImageAtMost C q h).Finite ∧
+        ¬ Dense (projectiveUnitaryToOperator (Fin ℓ) ⁻¹'
+          arbitraryLogicalImageAtMost C q h)
+
+def theoremTwo : Prop :=
+  ∀ (n k d q : ℕ), 1 ≤ k → 2 ≤ d → 2 ≤ q →
+    ∀ C : Code n (fun _ => 2) (2 ^ k) 1,
+      IsStabilizer C → HasActualDistance C d →
+        hInfinityPositiveAtMost C q = (Arithmetic.criticalDepth q d : ℕ∞) ∧
+          HasContinuousLogicalSubgroupAtMost C q (Arithmetic.criticalDepth q d)
+
+end CriticalDepth.Manuscript.PureStatements

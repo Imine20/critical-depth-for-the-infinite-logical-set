@@ -1,0 +1,2 @@
+X509v3 Extended Key Usage: critical
+    Time Stamping

@@ -1,0 +1,2 @@
+source_sha256=3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2
+audit_marker=STANDALONE_CRITICAL_DEPTH_V2_AUDIT_PASSED theorem_count=1268 constant_count=1749 target_count=41 exact_three_count=29 proposition_check_count=13 foundation_count=12 own_axiom_count=0 imported_project_module_count=0 unapproved_import_count=0

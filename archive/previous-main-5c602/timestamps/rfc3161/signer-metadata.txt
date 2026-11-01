@@ -1,0 +1,6 @@
+subject=C = US, O = "DigiCert, Inc.", CN = DigiCert SHA256 RSA4096 Timestamp Responder 2026 1
+issuer=C = US, O = "DigiCert, Inc.", CN = DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1
+serial=084FDC334F7E454EDBC30F8FF9921835
+notBefore=Aug  5 00:00:00 2026 GMT
+notAfter=Nov  4 23:59:59 2037 GMT
+sha256 Fingerprint=2D:A0:9D:A7:F4:13:1F:9F:E7:2D:B6:C5:E6:E9:C9:65:67:55:AF:04:3F:1E:A7:42:CC:0D:21:20:E1:41:EB:FC

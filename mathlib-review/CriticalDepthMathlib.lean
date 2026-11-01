@@ -11717,7 +11717,328 @@ end CriticalDepth.ReviewV2
 end -- explicit closure of the original file-level noncomputable section
 end Merged_LogicalUniqueness
 
-/- ===== Source block: AuditV2; SHA-256 561565862e5bacca9a3f0b850bf0b0f46d34202695f22668d9e9400854249e45 ===== -/
+/- ===== Source block: StandardStabilizerBridge; original input SHA-256 2612ceba3f8c59d81118357c4b4c4607583cc8c244f4fe9745d52fae164df348; imports hoisted into the existing closure ===== -/
+section Merged_StandardStabilizerBridge
+/-!
+# The standard abelian Pauli stabilizer convention
+
+The Pauli condition below is stated directly as a fourth-root-of-unity phase
+times a tensor product of the four concrete single-qubit Pauli matrices.
+The stabilizer subgroup is a Mathlib subgroup of Mathlib's matrix unitary group.
+Its commutativity and exclusion of minus identity are proved from the existing
+whole-fixed-space convention and the isometry equation; neither is a premise
+of the forward bridge.
+-/
+
+noncomputable section
+
+namespace CriticalDepth.ReviewV2
+
+open Matrix Manuscript
+
+/-- The conventional finite Pauli matrix set, with the four phases listed
+explicitly. The product is the tensor-product matrix in the full qubit basis. -/
+def StandardPauliOperator {n : ℕ}
+    (A : Matrix (QubitBasis n) (QubitBasis n) ℂ) : Prop :=
+  ∃ z : ℂ, (z = 1 ∨ z = -1 ∨ z = Complex.I ∨ z = -Complex.I) ∧
+    ∃ p : Fin n → SinglePauli,
+      ∀ x y, A x y = z * ∏ i, (p i).matrix (x i) (y i)
+
+/-- The original finite phase parameter enumerates exactly the usual four
+Pauli phases. This bridge does not mention stabilizer codes. -/
+theorem isPauli_iff_standardPauliOperator {n : ℕ}
+    (A : Matrix (QubitBasis n) (QubitBasis n) ℂ) :
+    IsPauli A ↔ StandardPauliOperator A := by
+  constructor
+  · rintro ⟨a, p, rfl⟩
+    refine ⟨Complex.I ^ a.val, ?_, p, fun _ _ => rfl⟩
+    fin_cases a <;> norm_num [pow_succ, Complex.I_mul_I]
+  · rintro ⟨z, hz, p, hentry⟩
+    rcases hz with hz | hz | hz | hz
+    · refine ⟨0, p, ?_⟩
+      ext x y
+      rw [hentry x y, hz]
+      norm_num [pauliMatrix]
+    · refine ⟨2, p, ?_⟩
+      ext x y
+      rw [hentry x y, hz]
+      norm_num [pauliMatrix, pow_succ, Complex.I_mul_I]
+    · refine ⟨1, p, ?_⟩
+      ext x y
+      rw [hentry x y, hz]
+      norm_num [pauliMatrix]
+    · refine ⟨3, p, ?_⟩
+      ext x y
+      rw [hentry x y, hz]
+      norm_num [pauliMatrix, pow_succ, Complex.I_mul_I]
+
+/-- Minus the identity as an element of the existing Mathlib unitary group. -/
+def minusIdentityUnitary (n : ℕ) : Matrix.unitaryGroup (QubitBasis n) ℂ :=
+  ⟨-1, by constructor <;> simp⟩
+
+@[simp]
+theorem minusIdentityUnitary_val (n : ℕ) :
+    (minusIdentityUnitary n).val = -(1 : Matrix (QubitBasis n) (QubitBasis n) ℂ) := rfl
+
+/-- An abelian Pauli subgroup that excludes minus identity. All underlying
+group and matrix carriers are Mathlib objects. -/
+def StandardPauliSubgroup {n : ℕ}
+    (S : Subgroup (Matrix.unitaryGroup (QubitBasis n) ℂ)) : Prop :=
+  (∀ U ∈ S, StandardPauliOperator U.val) ∧
+    (∀ U ∈ S, ∀ W ∈ S, Commute U W) ∧
+      minusIdentityUnitary n ∉ S
+
+/-- The encoded space is the entire simultaneous +1 eigenspace of a standard
+abelian Pauli subgroup. This equality is stronger than containment. -/
+def StandardStabilizerCode {n k : ℕ}
+    (V : Matrix (QubitBasis n) (Fin (2 ^ k) × Fin 1) ℂ) : Prop :=
+  ∃ S : Subgroup (Matrix.unitaryGroup (QubitBasis n) ℂ),
+    StandardPauliSubgroup S ∧
+      Set.range (fun v => V.mulVec v) =
+        {v | ∀ U ∈ S, U.val.mulVec v = v}
+
+/-- An isometry with a specified domain coordinate cannot equal its negative.
+The coordinate records precisely the required nonzero-domain condition. -/
+theorem isometric_matrix_ne_neg {α β : Type*} [Fintype α] [DecidableEq β]
+    (V : Matrix α β ℂ) (hV : V.conjTranspose * V = 1) (j : β) : V ≠ -V := by
+  intro hneg
+  have hidentity : (1 : Matrix β β ℂ) = -(1 : Matrix β β ℂ) := by
+    calc
+      (1 : Matrix β β ℂ) = V.conjTranspose * V := hV.symm
+      _ = V.conjTranspose * (-V) := congrArg (fun A => V.conjTranspose * A) hneg
+      _ = -(V.conjTranspose * V) := Matrix.mul_neg _ _
+      _ = -(1 : Matrix β β ℂ) := by rw [hV]
+  have hentry := congrArg (fun A : Matrix β β ℂ => A j j) hidentity
+  norm_num at hentry
+
+/-- A scalar operator fixing the range of a nonzero-domain isometry has
+scalar one. This also excludes both imaginary scalar Pauli phases. -/
+theorem scalar_fixed_isometry_eq_one {α β : Type*}
+    [Fintype α] [DecidableEq α] [DecidableEq β]
+    (V : Matrix α β ℂ) (hV : V.conjTranspose * V = 1) (j : β)
+    (z : ℂ) (hfix : (z • (1 : Matrix α α ℂ)) * V = V) : z = 1 := by
+  have hcompressed := congrArg (fun A => V.conjTranspose * A) hfix
+  have hscalar : z • (1 : Matrix β β ℂ) = 1 := by
+    simpa only [Matrix.smul_mul, Matrix.one_mul, Matrix.mul_smul, hV] using hcompressed
+  simpa using congrArg (fun A : Matrix β β ℂ => A j j) hscalar
+
+/-- Two Pauli operators fixing the same nonzero-domain isometric encoding
+must commute. The Pauli-specific commute-or-anticommute dichotomy is essential. -/
+theorem pauli_fixed_isometry_commute {n : ℕ} {β : Type*} [DecidableEq β]
+    (V : Matrix (QubitBasis n) β ℂ) (hV : V.conjTranspose * V = 1) (j : β)
+    (U W : Matrix.unitaryGroup (QubitBasis n) ℂ)
+    (hU : IsPauli U.val) (hW : IsPauli W.val)
+    (hfixU : U.val * V = V) (hfixW : W.val * V = V) : Commute U W := by
+  rcases hU with ⟨a, p, hUa⟩
+  rcases hW with ⟨b, q, hWb⟩
+  rcases pauliMatrix_commute_or_anticommute a b p q with hcomm | hanti
+  · change U * W = W * U
+    apply Subtype.ext
+    change U.val * W.val = W.val * U.val
+    simpa only [hUa, hWb] using hcomm
+  · have hanti' : U.val * W.val = -(W.val * U.val) := by
+      rw [hUa, hWb]
+      exact hanti
+    exfalso
+    apply isometric_matrix_ne_neg V hV j
+    calc
+      V = (U.val * W.val) * V := by rw [Matrix.mul_assoc, hfixW, hfixU]
+      _ = (-(W.val * U.val)) * V := congrArg (fun A => A * V) hanti'
+      _ = -V := by rw [Matrix.neg_mul, Matrix.mul_assoc, hfixU, hfixW]
+
+/-- The subgroup in the original whole-fixed-space definition is already a
+standard abelian Pauli subgroup. No commutativity or phase exclusion is assumed. -/
+theorem pauli_subgroup_with_encoding_is_standard {n k : ℕ}
+    (V : Matrix (QubitBasis n) (Fin (2 ^ k) × Fin 1) ℂ)
+    (hV : V.conjTranspose * V = 1)
+    (S : Subgroup (Matrix.unitaryGroup (QubitBasis n) ℂ))
+    (hpauli : ∀ U ∈ S, IsPauli U.val)
+    (hspace : Set.range (fun v => V.mulVec v) =
+      {v | ∀ U ∈ S, U.val.mulVec v = v}) : StandardPauliSubgroup S := by
+  let j : Fin (2 ^ k) × Fin 1 := (⟨0, by positivity⟩, 0)
+  have hfix (U : Matrix.unitaryGroup (QubitBasis n) ℂ) (hUS : U ∈ S) :
+      U.val * V = V :=
+    encoding_fixed_of_fixedSpace
+      (⟨V, hV⟩ : Code n (fun _ => 2) (2 ^ k) 1) S hspace U hUS
+  refine ⟨?_, ?_, ?_⟩
+  · intro U hUS
+    exact (isPauli_iff_standardPauliOperator U.val).mp (hpauli U hUS)
+  · intro U hUS W hWS
+    exact pauli_fixed_isometry_commute V hV j U W
+      (hpauli U hUS) (hpauli W hWS) (hfix U hUS) (hfix W hWS)
+  · intro hminus
+    have hnegative : -V = V := by
+      simpa only [minusIdentityUnitary_val, Matrix.neg_mul, Matrix.one_mul] using
+        hfix (minusIdentityUnitary n) hminus
+    exact isometric_matrix_ne_neg V hV j hnegative.symm
+
+/-- Every scalar subgroup member is the identity scalar, derived from the
+encoding isometry and the whole-fixed-space equality. -/
+theorem scalar_member_of_stabilizer_eq_one {n k : ℕ}
+    (V : Matrix (QubitBasis n) (Fin (2 ^ k) × Fin 1) ℂ)
+    (hV : V.conjTranspose * V = 1)
+    (S : Subgroup (Matrix.unitaryGroup (QubitBasis n) ℂ))
+    (hspace : Set.range (fun v => V.mulVec v) =
+      {v | ∀ U ∈ S, U.val.mulVec v = v})
+    (U : Matrix.unitaryGroup (QubitBasis n) ℂ) (hUS : U ∈ S)
+    (z : ℂ) (hscalar : U.val = z • (1 : Matrix (QubitBasis n) (QubitBasis n) ℂ)) :
+    z = 1 := by
+  let j : Fin (2 ^ k) × Fin 1 := (⟨0, by positivity⟩, 0)
+  apply scalar_fixed_isometry_eq_one V hV j z
+  rw [← hscalar]
+  exact encoding_fixed_of_fixedSpace
+    (⟨V, hV⟩ : Code n (fun _ => 2) (2 ^ k) 1) S hspace U hUS
+
+/-- Genuine two-way correspondence with the conventional abelian, minus-I-free
+Pauli subgroup definition. The only additional input is the original isometry
+equation, which is already a premise of the native main theorem. -/
+theorem nativeStabilizer_iff_standard {n k : ℕ}
+    (V : Matrix (QubitBasis n) (Fin (2 ^ k) × Fin 1) ℂ)
+    (hV : V.conjTranspose * V = 1) :
+    NativeStabilizer V ↔ StandardStabilizerCode V := by
+  constructor
+  · rintro ⟨S, hpauli, hspace⟩
+    exact ⟨S, pauli_subgroup_with_encoding_is_standard V hV S hpauli hspace, hspace⟩
+  · rintro ⟨S, hS, hspace⟩
+    refine ⟨S, ?_, hspace⟩
+    intro U hUS
+    exact (isPauli_iff_standardPauliOperator U.val).mpr (hS.1 U hUS)
+
+theorem standardStabilizer_iff_legacy {n k : ℕ}
+    (V : Matrix (QubitBasis n) (Fin (2 ^ k) × Fin 1) ℂ)
+    (hV : V.conjTranspose * V = 1) :
+    StandardStabilizerCode V ↔
+      IsStabilizer (⟨V, hV⟩ : Code n (fun _ => 2) (2 ^ k) 1) :=
+  (nativeStabilizer_iff_standard V hV).symm.trans
+    (nativeStabilizer_iff_legacy V hV)
+
+/-- The full critical-depth and closed-circle conclusion with the conventional
+standard stabilizer-code premise. All parameter bounds and other hypotheses
+are exactly those of `NativeTheoremTwo`. -/
+def StandardTheoremTwo : Prop :=
+  ∀ (n k d q : ℕ), 1 ≤ k → 2 ≤ d → 2 ≤ q →
+    ∀ V : Matrix (QubitBasis n) (Fin (2 ^ k) × Fin 1) ℂ,
+      V.conjTranspose * V = 1 → StandardStabilizerCode V → NativeActualDistance V d →
+        nativeCriticalDepth V q = (Arithmetic.criticalDepth q d : ℕ∞) ∧
+          ∃ S : Subgroup (PU (Fin (2 ^ k))),
+            IsClosed (S : Set (PU (Fin (2 ^ k)))) ∧ S ≠ ⊥ ∧
+              Nonempty (Circle ≃ₜ* S) ∧
+                (S : Set (PU (Fin (2 ^ k)))) ⊆
+                  nativeLogicalImage V q (Arithmetic.criticalDepth q d)
+
+theorem standardTheoremTwo_proved : StandardTheoremTwo := by
+  intro n k d q hk hd hq V hV hstandard hdist
+  exact nativeTheoremTwo_proved n k d q hk hd hq V hV
+    ((nativeStabilizer_iff_standard V hV).mpr hstandard) hdist
+
+namespace StandardExamples
+
+/-- A closed call of the two-way bridge using the explicit [[4,2,2]] code. -/
+theorem fourQubit_standardStabilizer : StandardStabilizerCode FourQubit.code.encoding := by
+  apply (standardStabilizer_iff_legacy FourQubit.code.encoding FourQubit.code.isometry).mpr
+  exact FourQubit.isStabilizer
+
+/-- The converse direction is also called on the same actual encoding. -/
+theorem fourQubit_native_from_standard : NativeStabilizer FourQubit.code.encoding :=
+  (nativeStabilizer_iff_standard FourQubit.code.encoding FourQubit.code.isometry).mpr
+    fourQubit_standardStabilizer
+
+/-- An actual-code call of the standard-version main theorem, including its
+closed subgroup and circle-isomorphism conclusions. -/
+theorem fourQubit_standard_critical_circle :
+    nativeCriticalDepth FourQubit.code.encoding 2 =
+      (Arithmetic.criticalDepth 2 2 : ℕ∞) ∧
+        ∃ S : Subgroup (PU (Fin (2 ^ 2))),
+          IsClosed (S : Set (PU (Fin (2 ^ 2)))) ∧ S ≠ ⊥ ∧
+            Nonempty (Circle ≃ₜ* S) ∧
+              (S : Set (PU (Fin (2 ^ 2)))) ⊆
+                nativeLogicalImage FourQubit.code.encoding 2
+                  (Arithmetic.criticalDepth 2 2) := by
+  exact standardTheoremTwo_proved 4 2 2 2 (by decide) (by decide) (by decide)
+    FourQubit.code.encoding FourQubit.code.isometry fourQubit_standardStabilizer
+    ((nativeActualDistance_iff_legacy FourQubit.code.encoding
+      FourQubit.code.isometry 2).mpr FourQubit.hasActualDistance_two)
+
+end StandardExamples
+
+#print axioms isPauli_iff_standardPauliOperator
+#print axioms pauli_subgroup_with_encoding_is_standard
+#print axioms scalar_member_of_stabilizer_eq_one
+#print axioms nativeStabilizer_iff_standard
+#print axioms standardStabilizer_iff_legacy
+#print axioms standardTheoremTwo_proved
+#print axioms StandardExamples.fourQubit_standardStabilizer
+#print axioms StandardExamples.fourQubit_native_from_standard
+#print axioms StandardExamples.fourQubit_standard_critical_circle
+
+end CriticalDepth.ReviewV2
+
+end
+end Merged_StandardStabilizerBridge
+
+/- ===== Source block: SemanticFinite; original input SHA-256 6916613ecb4e7322f8e35d38d38b3720c2c098852d03891a7caeb90ca297a2aa; imports hoisted into the existing closure ===== -/
+section Merged_SemanticFinite
+/-!
+The explicit finite phase/Pauli-word parameterization implies that every
+standard stabilizer subgroup is finite. This supplement does not assert the
+separate cardinality formula `2 ^ (n - k)`.
+-/
+
+noncomputable section
+
+namespace CriticalDepth.ReviewV2
+
+open Manuscript
+
+/-- All Pauli matrices on a fixed finite qubit register form a finite set. -/
+theorem pauliOperator_set_finite (n : ℕ) :
+    {A : Matrix (QubitBasis n) (QubitBasis n) ℂ | IsPauli A}.Finite := by
+  classical
+  let f : (Fin 4 × (Fin n → SinglePauli)) →
+      Matrix (QubitBasis n) (QubitBasis n) ℂ :=
+    fun ap => pauliMatrix ap.1 ap.2
+  have hrange : (Set.range f).Finite := Set.finite_range f
+  have heq : {A : Matrix (QubitBasis n) (QubitBasis n) ℂ | IsPauli A} =
+      Set.range f := by
+    ext A
+    constructor
+    · rintro ⟨a, p, hA⟩
+      exact ⟨(a, p), hA.symm⟩
+    · rintro ⟨⟨a, p⟩, hA⟩
+      exact ⟨a, p, hA.symm⟩
+  rw [heq]
+  exact hrange
+
+/-- Finiteness of a standard Pauli subgroup follows from its actual matrices,
+not from a separately assumed finite-group instance. -/
+theorem standardPauliSubgroup_finite {n : ℕ}
+    (S : Subgroup (Matrix.unitaryGroup (QubitBasis n) ℂ))
+    (hS : StandardPauliSubgroup S) :
+    (S : Set (Matrix.unitaryGroup (QubitBasis n) ℂ)).Finite := by
+  have hfinite :
+      {U : Matrix.unitaryGroup (QubitBasis n) ℂ | IsPauli U.val}.Finite :=
+    Set.Finite.preimage (f := fun U : Matrix.unitaryGroup (QubitBasis n) ℂ => U.val)
+      Subtype.val_injective.injOn (pauliOperator_set_finite n)
+  apply hfinite.subset
+  intro U hUS
+  exact (isPauli_iff_standardPauliOperator U.val).mpr (hS.1 U hUS)
+
+/-- The carrier of the actual Mathlib subgroup is therefore a finite type. -/
+theorem standardPauliSubgroup_finite_type {n : ℕ}
+    (S : Subgroup (Matrix.unitaryGroup (QubitBasis n) ℂ))
+    (hS : StandardPauliSubgroup S) : Finite S :=
+  Set.finite_coe_iff.mpr (standardPauliSubgroup_finite S hS)
+
+#print axioms pauliOperator_set_finite
+#print axioms standardPauliSubgroup_finite
+#print axioms standardPauliSubgroup_finite_type
+
+end CriticalDepth.ReviewV2
+
+end
+end Merged_SemanticFinite
+
+/- ===== AuditV2 driver adapted from input SHA-256 561565862e5bacca9a3f0b850bf0b0f46d34202695f22668d9e9400854249e45; supplement registry and constant-time origin lookup ===== -/
 section Merged_AuditV2
 /-!
 Append this driver last in the flattened file, after all mathematics and real
@@ -11753,7 +12074,9 @@ private def ownModuleRoots : Array Name :=
     `HilbertMatrixTransport, `HilbertCircuitTransport, `HilbertPhase,
     `RotationPeriods, `CircleRotations, `StabilizerCircle,
     `CriticalCircleWitness, `PauliRowAction, `FiveQubitExample,
-    `LogicalUniqueness, `NativeExamples, `AuditV2]
+    `LogicalUniqueness, `NativeExamples, `AuditV2,
+    `StandardStabilizerBridge,
+    `SemanticFinite]
 
 private def targets : Array Name :=
   #[`CriticalDepth.Manuscript.theoremOne_proved,
@@ -11784,7 +12107,19 @@ private def targets : Array Name :=
     `CriticalDepth.Manuscript.FiveQubit.depthOne_finite_nondense,
     `CriticalDepth.Manuscript.FiveQubit.depthTwo_finite_nondense,
     `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthOne,
-    `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthTwo]
+    `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthTwo,
+    `CriticalDepth.ReviewV2.isPauli_iff_standardPauliOperator,
+    `CriticalDepth.ReviewV2.pauli_subgroup_with_encoding_is_standard,
+    `CriticalDepth.ReviewV2.scalar_member_of_stabilizer_eq_one,
+    `CriticalDepth.ReviewV2.nativeStabilizer_iff_standard,
+    `CriticalDepth.ReviewV2.standardStabilizer_iff_legacy,
+    `CriticalDepth.ReviewV2.standardTheoremTwo_proved,
+    `CriticalDepth.ReviewV2.StandardExamples.fourQubit_standardStabilizer,
+    `CriticalDepth.ReviewV2.StandardExamples.fourQubit_native_from_standard,
+    `CriticalDepth.ReviewV2.StandardExamples.fourQubit_standard_critical_circle,
+    `CriticalDepth.ReviewV2.pauliOperator_set_finite,
+    `CriticalDepth.ReviewV2.standardPauliSubgroup_finite,
+    `CriticalDepth.ReviewV2.standardPauliSubgroup_finite_type]
 
 private def exactThreeTargets : Array Name :=
   #[`CriticalDepth.Manuscript.theoremOne_proved,
@@ -11803,7 +12138,19 @@ private def exactThreeTargets : Array Name :=
     `CriticalDepth.ReviewV2.HilbertCircuitTransport.theoremOne_arbitrary_carriers,
     `CriticalDepth.ReviewV2.critical_circle_joint_witness,
     `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthOne,
-    `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthTwo]
+    `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthTwo,
+    `CriticalDepth.ReviewV2.isPauli_iff_standardPauliOperator,
+    `CriticalDepth.ReviewV2.pauli_subgroup_with_encoding_is_standard,
+    `CriticalDepth.ReviewV2.scalar_member_of_stabilizer_eq_one,
+    `CriticalDepth.ReviewV2.nativeStabilizer_iff_standard,
+    `CriticalDepth.ReviewV2.standardStabilizer_iff_legacy,
+    `CriticalDepth.ReviewV2.standardTheoremTwo_proved,
+    `CriticalDepth.ReviewV2.StandardExamples.fourQubit_standardStabilizer,
+    `CriticalDepth.ReviewV2.StandardExamples.fourQubit_native_from_standard,
+    `CriticalDepth.ReviewV2.StandardExamples.fourQubit_standard_critical_circle,
+    `CriticalDepth.ReviewV2.pauliOperator_set_finite,
+    `CriticalDepth.ReviewV2.standardPauliSubgroup_finite,
+    `CriticalDepth.ReviewV2.standardPauliSubgroup_finite_type]
 
 private def foundationRegistry : Array Name :=
   #[`Matrix, `Matrix.unitaryGroup, `unitary, `Subgroup, `QuotientGroup.mk',
@@ -11835,11 +12182,13 @@ private def expectedProposition? (name : Name) : Option Name :=
     some `CriticalDepth.Manuscript.PureStatements.theoremOne
   else if name == `CriticalDepth.ReviewV2.HandoutBinding.original_theoremTwo_proved then
     some `CriticalDepth.Manuscript.PureStatements.theoremTwo
+  else if name == `CriticalDepth.ReviewV2.standardTheoremTwo_proved then
+    some `CriticalDepth.ReviewV2.StandardTheoremTwo
   else none
 
 private def declarationModule? (env : Environment) (name : Name) : Option Name :=
   match env.getModuleIdxFor? name with
-  | some idx => env.header.moduleNames[idx.toNat]?
+  | some idx => (env.header.modules[idx.toNat]?).map (·.module)
   | none => some env.mainModule
 
 private def fromCurrentModule (env : Environment) (name : Name) : Bool :=
@@ -11891,8 +12240,8 @@ run_cmd do
     throwError "V2 flattened verification imports own modules: {namesText forbiddenProjectImports}"
   unless unapprovedImports.isEmpty do
     throwError "V2 imports have unapproved public roots: {namesText unapprovedImports}"
-  unless targets.size == 29 && exactThreeTargets.size == 17 && foundationRegistry.size == 12 do
-    throwError "V2 registry sizes must be targets=29, exact-three=17, foundations=12"
+  unless targets.size == 41 && exactThreeTargets.size == 29 && foundationRegistry.size == 12 do
+    throwError "V2 registry sizes must be targets=41, exact-three=29, foundations=12"
   for name in targets do
     unless (targets.filter (fun other => other == name)).size == 1 do
       throwError "Duplicate V2 target {name}"
@@ -11970,7 +12319,7 @@ run_cmd do
       logInfo m!"V2_TARGET_AXIOMS {name} mode=exact3 {namesText axioms}"
     else
       logInfo m!"V2_TARGET_AXIOMS {name} mode=subset {namesText axioms}"
-  unless propositionChecks == 12 && exactThreeChecks == 17 && foundationChecks == 12 do
+  unless propositionChecks == 13 && exactThreeChecks == 29 && foundationChecks == 12 do
     throwError "V2 check counts differ: propositions={propositionChecks}, exact-three={exactThreeChecks}, foundations={foundationChecks}"
 
   for name in mathematicalConstants do

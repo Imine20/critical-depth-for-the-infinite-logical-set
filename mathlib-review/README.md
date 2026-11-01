@@ -1,63 +1,22 @@
-# Portable Mathlib verification package
+# Portable current Lean source
 
-The exact Lean source passed the recorded Lean 4.35.0 kernel build and recursive
-axiom audit in run v2-033. Author semantic approval remains **PENDING**.
+`CriticalDepthMathlib.lean` is the complete integrated mathematical development. It imports 58 Mathlib modules and two Lean modules; it imports no other project module. Its public mathematical objects use Mathlib spaces, matrices, tensors, unitary groups, quotients, subgroups and topology. Article-specific predicates describe support, circuits, detection and stabilizer conditions. Legacy representation declarations are retained with proved native bridges.
 
-`CriticalDepthMathlib.lean` is the complete proof entry: 527,431 bytes, SHA-256
-`85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8`.
-It imports 58 pinned Mathlib modules and two Lean modules, with all project
-proofs included in this file. No project `.olean` is required.
+Use Lean 4.35.0, compiler commit `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`, and the checked-in lock. Mathlib is pinned to `56a005855ea17e0b0958f73ec801ae140b0a1679`.
 
-The accepted audit covers 1,251 theorem declarations and 1,727 mathematical
-constants, 29 registered targets, 17 exact-three-axiom targets, 12 named guards
-and 12 Mathlib foundation origins. Own axioms, project imports and unapproved
-imports are zero. The permitted recursive axioms are exactly `propext`,
-`Classical.choice` and `Quot.sound`.
+The ordinary cache-based check in this directory is:
 
-`KERNEL_AUDIT.txt` preserves all 1,727 recursive records and all 29 complete
-target-type blocks from that actual run, together with the mathematical checks
-and final marker. `VERIFICATION.json` contains selected mathematical results,
-version pins and source bindings. Execution diagnostics are not part of this
-portable release. The mathematical extraction does not constitute an
-independent fresh-clone replay.
-
-## Reproduce
-
-Install the toolchain named in `lean-toolchain`, keep the dependency lock and
-LF source bytes, then run from this directory:
-
-```sh
+~~~sh
 lake exe cache get
 sh verify.sh
-```
+~~~
 
-The script checks every payload file, verifies the pinned compiler commit,
-compiles the single proof source, rejects compiler failure, checks source
-stability, and requires the exact final audit marker. Its generated results
-stay in the relative `.verification` directory. It does not install an
-aggregate memory boundary; the recorded run used an aggregate 8,000,000,000-byte
-limit, no swap, and a sampled peak of 6,619,074,560 bytes. Lean `-M6144` alone
-is a per-process setting. Pinned compiler and dependency artifacts remain a
-trust boundary; a full rebuild of Mathlib is not claimed.
+The repository root registers this same source as its sole current Lake library. Its `scripts/verify.sh` also supports a source-built dependency mode, with an explicit pinned Lean executable, nine newly compiled public output roots, and a source-build receipt. See the root source-rebuild instructions and portable helpers. This is a rebuild of the proof's imported public modules, not of unrelated Mathlib modules. Bundled Lean/Std/Init/Lake and retained nonproof UI data are declared separately as inputs.
 
-## Meaning and limits
+The two current theorem interfaces are `CriticalDepth.ReviewV2.nativeTheoremOne_proved` and `CriticalDepth.ReviewV2.standardTheoremTwo_proved`. The original `nativeTheoremTwo_proved` interface is retained. `nativeStabilizer_iff_standard` proves the standard abelian-Pauli/no-minus-identity convention equivalent to the native entire-fixed-space convention under the already required isometry. The standard subgroup's finiteness and scalar-member identity are proved, not added as hypotheses. See [the definition correspondence](STABILIZER_DEFINITION_CORRESPONDENCE.md) and [the readable statements](ALIGNED_MATHEMATICAL_STATEMENTS.md).
 
-`ALIGNED_MATHEMATICAL_STATEMENTS.md`, `THREE_LAYER_CORRESPONDENCE.md` and
-`AUDIT_RESPONSE.md` explain the statements, quantifiers, definitions, closed
-five-qubit examples and actual Mathlib interfaces. The two earlier handouts
-are retained under `inputs` because their proposition bodies have explicit
-closing proofs in the single source. The derived manuscript is under
-`manuscript`; its TeX and PDF bytes are unchanged in this packaging revision.
+The embedded audit covers 1268 theorem declarations,1749 mathematical constants,41 registered targets,29 exact-three targets,13 named proposition guards and 12 Mathlib foundation origins. All own mathematical declarations must use no axioms outside `propext`, `Classical.choice`, `Quot.sound`; the registered exact-three targets must use all three. The own-axiom scan includes the audit namespace. Declared and fully transparent weak-head target types are exported without ellipses; predicates beneath binders still need their definitions. Named guards are definitional checks, not independent semantic specifications.
 
-The principal native targets are `CriticalDepth.ReviewV2.nativeTheoremOne_proved`
-and `CriticalDepth.ReviewV2.nativeTheoremTwo_proved`. The arbitrary finite-Hilbert
-carrier version of Theorem 1 is
-`CriticalDepth.ReviewV2.HilbertCircuitTransport.theoremOne_arbitrary_carriers`.
-The joint circle/exponential/period witness is
-`CriticalDepth.ReviewV2.critical_circle_joint_witness`.
+`AUDIT_EXPECTED.txt` binds the expected complete audit marker to the exact source hash. `PAYLOAD_SHA256.txt` covers immutable source/configuration/document inputs. Generated run reports and their output hashes are kept separately to avoid a circular input manifest. Consult `VERIFICATION.json`, `KERNEL_AUDIT.txt` and the repository's version index for the actual executed run and approval state; the presence of this README is not a build receipt or an author approval.
 
-The accepted finiteness proof follows an algebraic route. It does not check
-the manuscript CAD argument line by line or certify the entire paper.
-Prose-to-formula correspondence still requires author review. This portable
-revision changes packaging and documentation, with no new proof execution.
-Timestamp evidence applies only to the exact files in its own release manifest.
+The manuscript CAD proof is preserved and its formalization is deferred by the user. The formal finiteness proof uses an alternative algebraic route. [The exact CAD comparison](CAD_VS_ALGEBRAIC_PROOF.md) lists the unformalized smooth-cell, root-branch and path steps. These readable files are not a second independent mathematical proof. The historical 47-module root project and older timestamp collections retain their immutable historical scope.

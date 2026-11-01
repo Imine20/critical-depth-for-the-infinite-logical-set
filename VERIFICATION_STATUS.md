@@ -1,108 +1,65 @@
 # Verification versions and evidence scope
 
-The current proof entry is the [portable Mathlib package](mathlib-review/README.md).
+## Current release
 
-A fresh Lean 4.35.0 build and recursive axiom audit of formal inputs at
-`3361e6cbed703b1a8bebe2b1784e875311361076` is recorded in the
-[latest execution report](verification-runs/20261101-3361e6c/FINAL_VERIFICATION_REPORT.md).
-Both native main theorems use exactly `propext`, `Classical.choice` and `Quot.sound`.
-The new report also records external calls using the newly compiled artifact.
-Its evidence is separate from the historical v2-033 record.
-The older records under docs/ and verification/ describe a different manuscript
-snapshot. Their applicability to the present manuscript is **VERSION_MISMATCH**.
-This classification preserves the historical successful run; it does not report
-a new Lean failure.
+**Mathematical Lean verification: PASS. Author semantic approval: PENDING.**
+The user explicitly retained PENDING. CAD formalization is deferred. The selected dependency policy trusts pinned Mathlib/public dependency caches; no Mathlib source tree is vendored.
 
-The historical classification below was introduced for the repository state at commit
-[d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/commit/d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e).
-That correction changed documentation and classification metadata only. The later
-fresh execution report above supplies new build and axiom-audit evidence; its
-publication leaves the manuscript, formal source and dependency lock unchanged.
+The current root has one default proof target, CriticalDepthMathlib, from [the integrated source](mathlib-review/CriticalDepthMathlib.lean). The [verification guide](docs/VERIFICATION.md) gives independent build and caller commands.
 
-## Current entry and historical entry
+| Current object | SHA-256 |
+| --- | --- |
+| Lean source F | 3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2 |
+| Readable statements S | 47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892 |
+| Latest user-provided TeX M1 | 1c17ca04507174ce6b070af71a898626e279668d598d04b8b052787481d9ba0d |
+| Latest user-provided PDF | 582ca90c612a57e2e9fdfa67081ab661c7b547178ed66e7be02d75c7cca347e1 |
+| Actual replay-reference TeX M0 | 98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227 |
+| External caller | 14556a208ecf58045e5124c836e2e1bf662a46292d8856674b728a26f7cc25d5 |
 
-| Record | Bound manuscript | Scope and applicability |
-| --- | --- | --- |
-| [Fresh execution](verification-runs/20261101-3361e6c/FINAL_VERIFICATION_REPORT.md) | 98e19ea5…41919227 | New build at source revision 3361e6c; 1,251 theorem declarations, 1,727 mathematical constants, 29 targets; both native main targets exactly standard-three axioms |
-| [mathlib-review](mathlib-review/README.md) | 98e19ea5…41919227 | Current portable single file; original saved v2-033 audit remains historical |
-| [Legacy root verification](verification/README.md) | 18efaf29…634bf85 | Historical 47-module run, 972 theorem declarations, 1,296 mathematical constants and seven targets; VERSION_MISMATCH against the present manuscript |
-| [Selected editorial baseline](mathlib-review/THREE_LAYER_CORRESPONDENCE.md) | 118b256b…bc380a1c | Provenance for the derived current manuscript, not a byte-identical copy or an independent proof |
+Versions: Lean 4.35.0, compiler eb6cafb7290e8bd5f2937522d8d804f58f02bafc; Mathlib 56a005855ea17e0b0958f73ec801ae140b0a1679. All transitive public revisions are in the root [lock file](lake-manifest.json).
 
-Current TeX SHA-256:
+## Actual accepted execution
 
-~~~text
-98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227
-~~~
+The accepted main compilation ran from 2026-11-01 16:47:05 UTC to 16:53:12 UTC. The separate caller ran from 16:55:54 UTC to 16:56:04 UTC. Their complete input/output bindings were accepted by the evidence validator at 17:01:55 UTC.
 
-Current PDF SHA-256:
+| Check | Actual result |
+| --- | --- |
+| Integrated Main compilation and export | PASS, exit 0 |
+| Recursive mathematical inventory | PASS, 1,268 theorem declarations / 1,749 mathematical constants |
+| Target registry | PASS, 41 targets / 29 exact-three / 13 named guards / 12 foundation origins |
+| Own axioms/project imports/unapproved imports | 0 / 0 / 0 |
+| External actual caller | PASS, exit 0, 3 closed calls and 2 imported mains, 5 exact-three checks |
+| Two main recursive axiom sets | Exactly propext, Classical.choice, Quot.sound |
+| Resource configuration/accounting | Qualified result, described below |
+| Author semantic approval | PENDING by explicit user response |
+| Original CAD proof line-by-line formalization | DEFERRED by user |
 
-~~~text
-e5e5157b590a93c26fe5d5b99ac5fdacc3e34a2229493ea88ce9eaff2fcfcbde
-~~~
+Read the [final report](verification-runs/20261102-3c90628/FINAL_VERIFICATION_REPORT.md), [compact actual execution record](verification-runs/20261102-3c90628/VERIFICATION.json), and [complete types/axiom inventory](verification-runs/20261102-3c90628/KERNEL_AUDIT.txt). The native theorem-two interface is also checked for exactly the same three axioms.
 
-Current Lean source SHA-256:
+The first integrated attempt compiled successfully but its outer verifier rejected a predicted counter that was one generated helper too high. The merged file shares NativeTheoremTwo._proof_1 instead of emitting a second StandardTheoremTwo._proof_1. The corrected whole verifier then passed. A first external caller attempt failed parameter inference and was rejected for recovery sorryAx; explicit n = 4, k = 2 corrected the caller, and only that caller was rerun. Those rejected attempts are not current acceptance.
 
-~~~text
-85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8
-~~~
+## Latest manuscript versus replay-reference manuscript
 
-The current manuscript adds the explicit empty-support scalar-phase convention
-to its selected editorial baseline. It is a derived version, not a verbatim
-copy of that baseline. Its original stored mathematical audit remains the record of
-the accepted v2-033 build. Hash checks made during the historical classification
-correction were static binding checks. The separately linked fresh execution
-records a new source build and dynamic recursive axiom audit.
+The actual execution record remains bound to M0 and S/F. The subsequently supplied [latest TeX](manuscript/shallow_logical_operators_depth_threshold.tex) and [latest PDF](manuscript/shallow_logical_operators_depth_threshold.pdf) are copied without edits. Their hash is not substituted into the older execution receipt.
 
-## Why the old inventory does not verify the present manuscript
+The [latest-manuscript correspondence](docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md) has status STATIC_MATCH_TWO_MAIN_RESULTS_UNDER_STANDARD_SUBSPACE_READING. Paper rho corresponds to Lean q. Theorem 1 matches. Theorem 2 matches for the ordinary [[n,k,d]] stabilizer subspace code, gauge dimension one. The latest text removes the earlier explicit subspace/g=1 wording; this precision issue is listed. No nontrivial-gauge extension or new universality/threshold/37-qubit discussion claim is certified.
 
-The unchanged [53-row historical manifest](verification/source-manifest.sha256)
-has SHA-256 cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8.
-At the classified repository state, 52 input hashes match and the sole mismatch
-is the manuscript TeX: the manifest expects 18efaf…bf85, while the present file
-is 98e19…19227. [Machine-readable classification](verification/source-manifest.status.json)
-records the full hashes and scope. The old expected hash has not been replaced.
+The [release binding](verification-runs/20261102-3c90628/RELEASE_BINDING.json) connects these versions. [REFERENCE_MANUSCRIPT.tex](verification-runs/20261102-3c90628/REFERENCE_MANUSCRIPT.tex) and the exact [BUILD_INPUTS](verification-runs/20261102-3c90628/BUILD_INPUTS/) preserve the original run inputs. Later explanatory documentation changes are separated from unchanged mathematical source. The readable statements and named proposition guards are not additional independent proofs or author attestations.
 
-[Legacy results](verification/results.json),
-[legacy manuscript binding](verification/manuscript-binding.json), and
-[legacy PDF QA](verification/pdf-qa.json) preserve their original data inside
-explicit historical records. Their top-level VERSION_MISMATCH status refers
-to applicability to today's manuscript. A PASS inside a nested historical
-record retains its original, historical meaning.
+The [approval record](AUTHOR_SEMANTIC_APPROVAL.json) and [review packet](AUTHOR_REVIEW_PACKET.md) remain PENDING. No author role, identity or approval is inferred from a GitHub account.
 
-All legacy material in docs/ and verification/, including the two theorem
-proof narratives and saved audit/type outputs, is scoped to that historical
-release unless explicitly identified as a classification notice.
-The unmodified originals are available at the immutable
-[legacy release c7e9b4591c43c266947152b454f2008b12dc9f4c](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/c7e9b4591c43c266947152b454f2008b12dc9f4c).
-Its primary code commit is
-[e882b1bd36838b3f825d35f07d9d4b46a5d3357b](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/e882b1bd36838b3f825d35f07d9d4b46a5d3357b).
+## Resource qualification
 
-## Reproduce the current check
+The isolated tool-group memory.max was set to 8,000,000,000 bytes, swap 0, with zero OOM/OOM-kill events. The shared lifetime memory.peak was 8,000,004,096 bytes, already present before both accepted jobs and unchanged afterward: a recorded historical excess of 4,096 bytes. Accepted-job sampling peaks were 7,536,156,672 and 5,684,019,200 bytes at 0.2-second intervals.
 
-~~~sh
-cd mathlib-review
-lake exe cache get
-sh verify.sh
-~~~
+[Linux documents](https://docs.kernel.org/admin-guide/cgroup-v2.html#memory-interface-files) temporary usage above memory.max. An unchanged historical peak can be revisited and samples can miss spikes. This is an enforced-configuration/accounting result, not a claim every instantaneous charge throughout the task stayed at most 8 GB. The exact excess cause/duration is not established by these counters. Cloud model services and the desktop controller are outside the user-approved isolated-tool scope.
 
-The root Lake project and scripts/verify.sh remain the legacy 47-module
-development. Their results must be read with their own fresh input inventory.
-They do not replace the current package's embedded 29-target audit.
+## History and timestamps
 
-## Timestamp and interpretation boundaries
+The [archive](archive/README.md) preserves the complete preceding main 5c602e32c66547a183f555e8c963e4621709fc90 as an unchanged child tree. Its source, receipts, manifests and timestamp collections keep their original byte identities and relative paths.
 
-The old [76-file timestamp collection](timestamps/README.md) belongs to its
-immutable legacy release. Verify those bytes in that historical checkout;
-do not apply its PASS to paths revised in later commits.
+The 47-module development is historical and tied to manuscript 18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85. Its 52-match/one-manuscript-mismatch comparison remains an as-of result, not a new comparison against this current root. The preceding integrated source 85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8 and its prior successful runs remain historical evidence.
 
-The current [20-file timestamp collection](mathlib-review-timestamps/README.md)
-binds the portable proof package and current manuscript. All 20 primary files,
-all 23 current timestamp evidence files, the portable ZIP, and all old timestamp
-files are unchanged by this correction. The classification notices and fresh-run records are
-outside both stamped collections; no new timestamp is claimed for those records.
+The optional dependency-source rebuild stopped at the user's request after 3,343/3,699 planned modules. Its temporary source/output copies were deleted, retaining records and the trusted dependency cache. No full dependency-source rebuild is claimed or required.
 
-The readable mathematical statements expose the formal definitions; they are
-not an additional independent proof. The closed Circle subgroup is an explicit
-strengthening of the manuscript's continuous-subgroup conclusion. The formal
-finiteness proof follows an alternative algebraic route and does not verify
-the written CAD argument step by step. Author semantic approval remains PENDING.
+The [new timestamp record](timestamps/20261102-current/README.md) identifies the exact current collection and separate RFC 3161/OTS results. Old signatures apply only to their named historical bytes.

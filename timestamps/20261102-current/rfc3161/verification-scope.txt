@@ -1,0 +1,9 @@
+The query nonce and SHA-256 imprint, timestamp signature, critical exclusive
+Time Stamping EKU, and certificate path to the copied OS-distribution G4 root
+have passed the recorded checks. A separate check verifies the same token
+against the unchanged frozen public manifest bytes.
+
+Revocation status: UNCHECKED. No OCSP or CRL status evidence was obtained by
+this helper. These results are not indefinite historical-validity evidence,
+an authorship claim, or a verification of the manuscript's mathematical claims.
+The CMS -noverify extraction step alone was not used as trust acceptance.

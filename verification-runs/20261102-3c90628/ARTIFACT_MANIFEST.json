@@ -1,0 +1,338 @@
+{
+  "schema": 1,
+  "scope": "Current proof sources, latest article, actual execution evidence and explanatory metadata; excludes archive tree, prior versioned run, and timestamp receipts created afterward",
+  "base_commit": "5c602e32c66547a183f555e8c963e4621709fc90",
+  "current_lean_source_sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 59,
+      "sha256": "c838c7005bcd7262b83b94cf9f5ca85cbc6ed4e49ecf283f3a7961a3448cb9a1",
+      "git_blob": "11db48072a10e58a8b8bd190564e25586c4cfc2e"
+    },
+    {
+      "path": "AUTHOR_REVIEW_PACKET.md",
+      "bytes": 5854,
+      "sha256": "830f8acfd73b2bdf1822565d8bb4aadc112f44f0f8c7d66f14a4051948e0bac8",
+      "git_blob": "7f9d06b57a3e1bf53f7db497f6f8deefe1704365"
+    },
+    {
+      "path": "AUTHOR_SEMANTIC_APPROVAL.json",
+      "bytes": 1784,
+      "sha256": "698e2cafd60960130f130adc9da5219ecb9ec7ac15d4e42d54ae323f2b56b564",
+      "git_blob": "7df7ccd6b119d47ea6ed5c635bdb03f0d5f36782"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1065,
+      "sha256": "080f184389ac12e7970303ee0cb4592b3ffa3d98cbde35f50fbd3d24fca7a786",
+      "git_blob": "2f3980a0a2fc22fb96a012df3e052d77826b638f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5716,
+      "sha256": "b210514677f249ff5d6bb85d3a2520aeb9b9a83816233f8422b85346e533370e",
+      "git_blob": "905b0ecc5e5794e49093ffc5fc6a7f73c2cef1bc"
+    },
+    {
+      "path": "VERIFICATION_STATUS.md",
+      "bytes": 6893,
+      "sha256": "ab25737593091f2a85be4c9ac9d18a3861a246a8759105fda57d30b276c8b48f",
+      "git_blob": "ec0543c7130aad6b3bd05e705039bfae2df53689"
+    },
+    {
+      "path": "archive/README.md",
+      "bytes": 2008,
+      "sha256": "6360a3cfd1a8f221f09d4fcb986cadb6dce90ec689003efa7132dc51dd1f0cb5",
+      "git_blob": "465c624e8c15710af0d3213ce2591e8e38e9339c"
+    },
+    {
+      "path": "archive/legacy-47/README.md",
+      "bytes": 1438,
+      "sha256": "414d140fe2db3efdd0c96a706b197e09ee6ff0fb8139ad7cfcc4c5a6b3897da3",
+      "git_blob": "2ad9d399af8a96f2077b40f229e6301bdf4e9096"
+    },
+    {
+      "path": "docs/DEPENDENCY_SOURCE_REPLAY.md",
+      "bytes": 1480,
+      "sha256": "fb336040beb5190e17cff402984307a012e4f71d8a1ece03be59c0ba37c65624",
+      "git_blob": "b22ae80f71710f5d6479c208bf68ed1f0aeff6a0"
+    },
+    {
+      "path": "docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md",
+      "bytes": 10440,
+      "sha256": "7813f210affa0e9f9caf74cbe0c9395fb557eb969baa0218797dcfeb434aed95",
+      "git_blob": "ca4dd991c9c865e5fdb428f5cd19d69541555df1"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 5881,
+      "sha256": "0db0b9d9ac85a4792b6ab4cacf790b5efd02c21a01da992204b24b89a3d83040",
+      "git_blob": "c524653ff862e55ca82dfaa8f7944b7ffea14ed1"
+    },
+    {
+      "path": "lake-manifest.json",
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2",
+      "git_blob": "4c37ced1e66fa1e9a4d9af13d9faab88d0df2220"
+    },
+    {
+      "path": "lakefile.toml",
+      "bytes": 442,
+      "sha256": "82fa22259fb9a1cc329f3c89febd3afbf841ac7d859e11a926193cdc204bb1a0",
+      "git_blob": "826e2ae26eee21c29c6186bcff4b70fa70279335"
+    },
+    {
+      "path": "lean-toolchain",
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "git_blob": "a6aff065db2882c535684f8c5bcd4f16e9a23915"
+    },
+    {
+      "path": "manuscript/shallow_logical_operators_depth_threshold.pdf",
+      "bytes": 414237,
+      "sha256": "582ca90c612a57e2e9fdfa67081ab661c7b547178ed66e7be02d75c7cca347e1",
+      "git_blob": "44d96e45b8eeb742ebd407c5887dfb44ef2755a8"
+    },
+    {
+      "path": "manuscript/shallow_logical_operators_depth_threshold.tex",
+      "bytes": 35519,
+      "sha256": "1c17ca04507174ce6b070af71a898626e279668d598d04b8b052787481d9ba0d",
+      "git_blob": "3a003ce001a2fa27e39b59d7e49fe93bd73a8678"
+    },
+    {
+      "path": "mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+      "bytes": 11529,
+      "sha256": "47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892",
+      "git_blob": "71e080fa304b3f4dabe07015b6ca5ac7a254c9b6"
+    },
+    {
+      "path": "mathlib-review/AUDIT_EXPECTED.txt",
+      "bytes": 333,
+      "sha256": "63794e2a409f3a7cc09626642ff2c89ded8505587bc0d4e43a54e15f2c70be93",
+      "git_blob": "cc248ec5e456f538c66ea0924a3f2acd6c8ed259"
+    },
+    {
+      "path": "mathlib-review/AUDIT_RESPONSE.md",
+      "bytes": 5413,
+      "sha256": "6f5ff8c29fbc3761a6cec58908e0639e54d23e1c74775ce2ba7f11072cda385e",
+      "git_blob": "0ca546ba56c9d0c47b7589356fe5734dd43c91fc"
+    },
+    {
+      "path": "mathlib-review/CAD_VS_ALGEBRAIC_PROOF.md",
+      "bytes": 6108,
+      "sha256": "e86aca9e8b534dd9731bfbb2fb2de4e901bd7fac745804f973ef5a22513366cb",
+      "git_blob": "da0b25adb0f46af0b4a3c49d9f3c924b86859623"
+    },
+    {
+      "path": "mathlib-review/CriticalDepthMathlib.lean",
+      "bytes": 543694,
+      "sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2",
+      "git_blob": "a532ac4e2af8a6e53d531c7fbbf68e16edc3cef0"
+    },
+    {
+      "path": "mathlib-review/KERNEL_AUDIT.txt",
+      "bytes": 10166994,
+      "sha256": "aea2c0407ed7909ba8565f187e711777b2921760bf7ef76222b66d3087ab910a",
+      "git_blob": "ee0c6de9da3059d06440110565ffa42951ef7b40"
+    },
+    {
+      "path": "mathlib-review/PAYLOAD_SHA256.txt",
+      "bytes": 874,
+      "sha256": "0a07cedfbfd6d1a992b0360eff771a263bbb01c64d5ab27bfeeb1160c6257d48",
+      "git_blob": "93406a9c00f5cd33c2bd422525c4b73091addd33"
+    },
+    {
+      "path": "mathlib-review/README.md",
+      "bytes": 3445,
+      "sha256": "6c04e618e87935ff9bcff6bf48d847b7dc7bd5615154fc2dc8d8d7fae3a815ec",
+      "git_blob": "1f4f92be97a81d678c768f8c19c98433729f1ee6"
+    },
+    {
+      "path": "mathlib-review/STABILIZER_DEFINITION_CORRESPONDENCE.md",
+      "bytes": 8193,
+      "sha256": "326ec4aa53d2278ac5e2f28b59d292797e6163f86d789a39531f2e0a01be5874",
+      "git_blob": "a83785831f37e10cdaae6ef7bab77e792d78f7d7"
+    },
+    {
+      "path": "mathlib-review/SourceConsumer.lean",
+      "bytes": 5765,
+      "sha256": "14556a208ecf58045e5124c836e2e1bf662a46292d8856674b728a26f7cc25d5",
+      "git_blob": "a65f3d03cc6cee57230cf2afcbc66195f5da6611"
+    },
+    {
+      "path": "mathlib-review/THREE_LAYER_CORRESPONDENCE.md",
+      "bytes": 12443,
+      "sha256": "4e2ac7d4db059c089b7bee7317cca39681bc58dc40c18c862c27a383c3c016e8",
+      "git_blob": "52b556615ec59d159fdd69360f1023bc3a5d9625"
+    },
+    {
+      "path": "mathlib-review/VERIFICATION.json",
+      "bytes": 20083,
+      "sha256": "4d30510ea1f9379120a9187423d43b5bc7e94b1e296076b7ee531bec667da4fa",
+      "git_blob": "502b805dede0e23147a255d1738493ba80f9446e"
+    },
+    {
+      "path": "mathlib-review/inputs/original_pure_formal_statements.lean.txt",
+      "bytes": 912,
+      "sha256": "964755075bb1a9f233e1c179b62732e080a2fbe08b7253163a9e7f0c679186b4",
+      "git_blob": "9ff7705a4898b75720561425c6be02fb29f317a2"
+    },
+    {
+      "path": "mathlib-review/inputs/original_pure_mathematical_statements.md",
+      "bytes": 2926,
+      "sha256": "30a2707370aa7a79065d77e902b7630ddc303960d327d30448134b91fc83b305",
+      "git_blob": "52e2992f9fa10668e9b2f0650c264a041b2ef3ea"
+    },
+    {
+      "path": "mathlib-review/lake-manifest.json",
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2",
+      "git_blob": "4c37ced1e66fa1e9a4d9af13d9faab88d0df2220"
+    },
+    {
+      "path": "mathlib-review/lakefile.toml",
+      "bytes": 350,
+      "sha256": "d7452e002165998601d40ed58273fd25afb3f563b0c0f3bbdfb4ba164c15d35a",
+      "git_blob": "22cf42ba8e1bee6bc2dc6052635f68c2bc4d903a"
+    },
+    {
+      "path": "mathlib-review/lean-toolchain",
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "git_blob": "a6aff065db2882c535684f8c5bcd4f16e9a23915"
+    },
+    {
+      "path": "mathlib-review/manuscript/shallow_logical_operators_depth_threshold.pdf",
+      "bytes": 414237,
+      "sha256": "582ca90c612a57e2e9fdfa67081ab661c7b547178ed66e7be02d75c7cca347e1",
+      "git_blob": "44d96e45b8eeb742ebd407c5887dfb44ef2755a8"
+    },
+    {
+      "path": "mathlib-review/manuscript/shallow_logical_operators_depth_threshold.tex",
+      "bytes": 35519,
+      "sha256": "1c17ca04507174ce6b070af71a898626e279668d598d04b8b052787481d9ba0d",
+      "git_blob": "3a003ce001a2fa27e39b59d7e49fe93bd73a8678"
+    },
+    {
+      "path": "mathlib-review/verify.sh",
+      "bytes": 1893,
+      "sha256": "a439a112c6cc773b63cd6041b028999c0c9dd6b74df9326355f1c8a7a18d71ea",
+      "git_blob": "701294b605eb6eedc5dd816095da63aceafbcac1"
+    },
+    {
+      "path": "scripts/verify.sh",
+      "bytes": 7780,
+      "sha256": "3cc5dfa33b42ff38665cd4858fc6b23cfdb381543f94c0ff462d5b47add7462c",
+      "git_blob": "5b20080c6a8ac1fd9020c85e20e1622ac21c9efe"
+    },
+    {
+      "path": "scripts/verify_public_dependencies.pl",
+      "bytes": 7109,
+      "sha256": "b93c58ef23ff9a8d438304b32645f1e19209335675dae8b34eda084c2bc0f05c",
+      "git_blob": "a996f94ac614671df8ad91240721cef0746d28f4"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+      "bytes": 11529,
+      "sha256": "47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892",
+      "git_blob": "71e080fa304b3f4dabe07015b6ca5ac7a254c9b6"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/AUDIT_EXPECTED.txt",
+      "bytes": 333,
+      "sha256": "63794e2a409f3a7cc09626642ff2c89ded8505587bc0d4e43a54e15f2c70be93",
+      "git_blob": "cc248ec5e456f538c66ea0924a3f2acd6c8ed259"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/CAD_VS_ALGEBRAIC_PROOF.md",
+      "bytes": 6108,
+      "sha256": "e86aca9e8b534dd9731bfbb2fb2de4e901bd7fac745804f973ef5a22513366cb",
+      "git_blob": "da0b25adb0f46af0b4a3c49d9f3c924b86859623"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/CriticalDepthMathlib.lean",
+      "bytes": 543694,
+      "sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2",
+      "git_blob": "a532ac4e2af8a6e53d531c7fbbf68e16edc3cef0"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/PAYLOAD_SHA256.txt",
+      "bytes": 874,
+      "sha256": "671b36d2cbfe5764e4609c6de5eeb714e5c16215be26f8042a6200d20af2b5b5",
+      "git_blob": "3b5859b0a8620e89add0fe3741dfb1f31bba8589"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/README.md",
+      "bytes": 3445,
+      "sha256": "6c04e618e87935ff9bcff6bf48d847b7dc7bd5615154fc2dc8d8d7fae3a815ec",
+      "git_blob": "1f4f92be97a81d678c768f8c19c98433729f1ee6"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/STABILIZER_DEFINITION_CORRESPONDENCE.md",
+      "bytes": 7622,
+      "sha256": "e37bb0c6f0b2bcb080cc3f3725538e5de237fc1410cafd6291d48cce6da8c43b",
+      "git_blob": "c039b2d780427ced1eebab67562b308d83002901"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/lake-manifest.json",
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2",
+      "git_blob": "4c37ced1e66fa1e9a4d9af13d9faab88d0df2220"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/lakefile.toml",
+      "bytes": 350,
+      "sha256": "d7452e002165998601d40ed58273fd25afb3f563b0c0f3bbdfb4ba164c15d35a",
+      "git_blob": "22cf42ba8e1bee6bc2dc6052635f68c2bc4d903a"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/lean-toolchain",
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "git_blob": "a6aff065db2882c535684f8c5bcd4f16e9a23915"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/BUILD_INPUTS/verify.sh",
+      "bytes": 1893,
+      "sha256": "a439a112c6cc773b63cd6041b028999c0c9dd6b74df9326355f1c8a7a18d71ea",
+      "git_blob": "701294b605eb6eedc5dd816095da63aceafbcac1"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/FINAL_VERIFICATION_REPORT.md",
+      "bytes": 9999,
+      "sha256": "23a79f1f1d67bf498a787abfeb8c8bd912644724edcd90f556e0edbd6337c273",
+      "git_blob": "2f685087bd2195bcfc98061986c4c7925ef6a755"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/KERNEL_AUDIT.txt",
+      "bytes": 10166994,
+      "sha256": "aea2c0407ed7909ba8565f187e711777b2921760bf7ef76222b66d3087ab910a",
+      "git_blob": "ee0c6de9da3059d06440110565ffa42951ef7b40"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/REFERENCE_MANUSCRIPT.tex",
+      "bytes": 36687,
+      "sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227",
+      "git_blob": "124b05b25ab3d44dc5a9ce9256c6b4176116a81d"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/RELEASE_BINDING.json",
+      "bytes": 2849,
+      "sha256": "9868019e0554d88e9e45df0f5fbdad6e178ab0a225e917b21fddfeb5fb870851",
+      "git_blob": "dc200dafcfb300e3e8a3b794b41c58c484748a11"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/SourceConsumer.lean",
+      "bytes": 5765,
+      "sha256": "14556a208ecf58045e5124c836e2e1bf662a46292d8856674b728a26f7cc25d5",
+      "git_blob": "a65f3d03cc6cee57230cf2afcbc66195f5da6611"
+    },
+    {
+      "path": "verification-runs/20261102-3c90628/VERIFICATION.json",
+      "bytes": 20083,
+      "sha256": "4d30510ea1f9379120a9187423d43b5bc7e94b1e296076b7ee531bec667da4fa",
+      "git_blob": "502b805dede0e23147a255d1738493ba80f9446e"
+    }
+  ]
+}

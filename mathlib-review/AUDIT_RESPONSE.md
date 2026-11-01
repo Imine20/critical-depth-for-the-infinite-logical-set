@@ -1,52 +1,77 @@
-# Response to the manuscript–statement–Lean audit
+# Response to the remaining review issues
 
-This response addresses the supplied 2026-11-01 audit and the subsequent request for direct Mathlib foundations. **Final integrated acceptance: PASS (v2-033, Lean 4.35.0).** The final audit checked 1,251 mathematical theorem declarations and 1,727 mathematical constants, with 29 targets, 17 exact-three-axiom targets, 12 named proposition checks and 12 imported Mathlib foundation checks. Own axioms, imported project modules and unapproved imports all number zero. Author semantic approval is also pending.
+This response uses the actual replay-reference manuscript M98e19 below. The latest user-provided manuscript M1c17 and PDF are separately bound in [the revision comparison](../docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md) and [release binding](../verification-runs/20261102-3c90628/RELEASE_BINDING.json). The accepted Lean source is unchanged; theorem two is certified for ordinary stabilizer subspace codes (g=1). Author approval remains PENDING.
+This response concerns the following version-bound manuscript, statements and
+integrated source. The [previous response](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/blob/5c602e32c66547a183f555e8c963e4621709fc90/mathlib-review/AUDIT_RESPONSE.md)
+remains available at its immutable commit and in the complete
+[previous-main snapshot](../archive/previous-main-5c602/).
 
-## Version and evidence boundaries
+| Item | SHA-256 |
+| --- | --- |
+| Manuscript M | `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227` |
+| Aligned statements S | `47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892` |
+| Lean source F | `3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2` |
 
-The audit originally referred to the frozen published TeX, SHA-256 `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85` (37,090 bytes). That release and its proof inputs remain preserved.
+1. **Standard stabilizer definition and finiteness.** The revised source
+   spells out an abelian subgroup of the concrete Pauli unitary matrices,
+   excludes minus identity, and equates the encoding range with the entire
+   fixed space. `nativeStabilizer_iff_standard` derives equivalence with the
+   native predicate under the existing isometry hypothesis; commutativity and
+   phase exclusion are proved in the native-to-standard direction.
+   `pauliOperator_set_finite`, `standardPauliSubgroup_finite` and
+   `standardPauliSubgroup_finite_type` derive finiteness from the four phases
+   and finite Pauli words, without adding a finiteness premise.
+   `standardTheoremTwo_proved` retains the critical-depth and closed-circle
+   conclusion with the original quantitative hypotheses. See the
+   [definition correspondence](STABILIZER_DEFINITION_CORRESPONDENCE.md).
+   A separate formula for the stabilizer cardinality is not claimed.
 
-The desktop source subsequently advanced externally. Its selected v2 baseline is SHA-256 `118b256bde608d7f52fd11c783ba464a3eba65da2e46a2a333d4fffbbc380a1c` (36,501 bytes). The source comparison found hyperlink-color changes and deletion of an introductory paragraph about resources beyond the unitary model; the theorem statements and proofs were unchanged. The task reads the desktop source and works on separate copies. Preservation of the frozen release does not assert that the live desktop file still has its earlier bytes.
+2. **Mathlib by pinned reference.** The user explicitly
+   trusts Mathlib and requested no redundant compilation. The selected current
+   run is **TRUSTED_PINNED_MATHLIB_CACHE**: reuse the pinned public dependency
+   artifacts, freshly compile the current main source and external consumer,
+   and run the recursive standard-three-axiom audit. Their actual outcome is
+   recorded in the [verification guide](../docs/VERIFICATION.md) and
+   [versioned run records](../VERIFICATION_STATUS.md);
+   no provisional PASS is asserted here. The earlier source-closure attempt
+   was stopped safely at the user's request after 3,343 of 3,699 modules. The
+   initial failure, resume and user stop remain historical evidence. Mathlib
+   is now referenced only through the fixed requirement, lock and imports;
+   no Mathlib source tree or source-build helper is published with the current
+   entry. There is no completed full-source claim or required source rebuild;
+   see the [archival note](../docs/DEPENDENCY_SOURCE_REPLAY.md).
 
-The derived v2 manuscript is `manuscript/shallow_logical_operators_depth_threshold.tex`, SHA-256 `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227` (36,687 bytes). It adds the explicit empty-support convention described below. Locations in these documents refer to this derived copy. The previous publication, source manifest and timestamp receipts do not automatically cover the new v2 files.
+3. **Current root entry and the 47-module history.** The root configuration
+   now registers `mathlib-review/CriticalDepthMathlib.lean` as the sole default
+   library, `CriticalDepthMathlib`. The trusted-cache branch of
+   `scripts/verify.sh` invokes the explicitly selected Lean executable and
+   pinned public cache directly. This entry change, or a configuration
+   diagnostic, is not a claim that a full `lake build` was executed. The old
+   root `CriticalDepth/` tree and shim are removed from the current layout.
+   The complete preceding main tree, including the 47-module project,
+   earlier reports and timestamp collections, is preserved byte-for-byte
+   under [the archive](../archive/README.md). Historical verification paths
+   are not alternative current entries and have not been newly revalidated
+   or relabeled as current acceptance.
 
-The earlier Mathlib-only integrated baseline passed with 991 theorem declarations and 1,335 mathematical constants. Those are historical baseline counts, not final v2 counts. The completed v2-033 check accepted `CriticalDepthMathlib.lean` (527,431 bytes, SHA-256 `85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8`). The public `VERIFICATION.json` selects mathematical results and source/version bindings; `KERNEL_AUDIT.txt` preserves the complete target types and recursive axiom records extracted from that run. Raw execution diagnostics are excluded from this portable release.
+4. **Remaining software trust.** Pinned Mathlib and its locked public
+   dependency artifacts are trusted inputs under the user's selected scope.
+   The Lean compiler, bundled Init/Lean/Std/Lake distribution, execution and
+   evidence-checking software also remain trusted. Retained JavaScript UI data
+   are separately hash-bound nonproof inputs and are not claimed to have been
+   rebuilt. Hash binding and recursive axiom checks cannot eliminate all
+   software trust. Fresh checking of the project and consumer does not claim
+   that these trusted dependencies were recompiled or independently rechecked.
 
-## Responses to the objections
+5. **Author semantic approval.** The [M/S/F review packet](../AUTHOR_REVIEW_PACKET.md)
+   and [approval record](../AUTHOR_SEMANTIC_APPROVAL.json) bind the exact three
+   hashes above. Approval remains **PENDING**. A compiler run, a named
+   definitional guard, or an assistant's review cannot supply the author's
+   attestation that the formal statements capture the intended manuscript.
 
-| Issue | Supplement and precise scope | Component evidence |
-|---|---|---|
-| Basic objects should be Mathlib objects | `Matrix.unitaryGroup`, `unitary`, `Subgroup`, `QuotientGroup`, `Circle`, `LinearIsometry`, `TensorProduct` and orthonormal bases are used directly. `CriticalDepth.ReviewV2.PU` abbreviates the Mathlib quotient of the matrix unitary group by the scalar-phase subgroup. Public circuit data use lists, pairs and finite functions. | `MathlibProjectiveUnitary`, `NativeCircuitModel` and `NativeFiniteMain` passed their central checks. |
-| The public theorem should not require the legacy `Code` wrapper | `NativeTheoremOne` and `NativeTheoremTwo` quantify a raw complex matrix `V` and the explicit equation `V.conjTranspose * V = 1`. Detection, actual distance and stabilizer status are article predicates. Compatibility with the legacy backend is proved inside the development. | `nativeTheoremOne_proved` and `nativeTheoremTwo_proved` compiled in their respective modules. |
-| Old handouts lacked a bound closing proof | `HandoutBinding` repeats the two earlier pure Lean proposition bodies and proves them as `HandoutBinding.original_theoremOne_proved` and `HandoutBinding.original_theoremTwo_proved`. The earlier handout hashes are given below. | `HandoutBinding` passed v2-021. This supplies closing proof terms; the package preserves the corresponding source bytes and their checked hashes. |
-| A continuous real homomorphism need not have a closed circle image or exact period | `critical_circle_joint_witness` obtains one nonscalar Hermitian involution and uses that same matrix for the actual exponential identity, exact projective kernel `πℤ`, all-angle critical-budget membership, and the exact range of a closed nontrivial subgroup topologically isomorphic to Mathlib `Circle`. | `CriticalCircleWitness` passed v2-020; `RotationPeriods`, `CircleRotations` and `StabilizerCircle` also passed. |
-| Arbitrary finite Hilbert carriers lacked a proved transport | Automatic local orthonormal bases are assembled into product bases of actual iterated Mathlib tensor products. Support, adjoints, encoding, detection, all circuits and the logical image are transported by proved equalities. `HilbertCircuitTransport.theoremOne_arbitrary_carriers` has no caller-supplied coordinate or locality-preservation premise. | `HilbertCoordinates` v2-008, `HilbertRegister`/`HilbertLocality` v2-016, `HilbertMatrixTransport` v2-027, and `HilbertCircuitTransport`/`HilbertPhase` v2-030 passed. |
-| The five-site positive-depth example was only parametric | `Manuscript.FiveQubit` supplies an explicit encoding, its isometry, arbitrary-operator detection below three, and a supported nongauge weight-three witness. `Examples.fiveQubit_native_depthOne` and `Examples.fiveQubit_native_depthTwo` are closed calls for this encoding in the native API. | `FiveQubitExample` and `NativeExamples` passed v2-028. Both positive-budget calls printed exactly the standard three axioms. |
-| Empty supports were ambiguous | The derived manuscript explicitly treats empty-support gates as scalar phases, removable by absorption into the gauge factor without changing the projective logical image. The existing normalization proofs cover arbitrary finite gate lists. | The preserved backend contains `CircuitNormalization` and `BudgetSemantics`; native circuit/image compatibility is proved rather than postulated. |
-| The stated uniqueness of the logical factor needed a named supplement | `logical_factor_projective_unique` proves that two unitary tensor factorizations of the same encoded action have equal classes in the actual Mathlib-based `PU`. Its assumptions are the positive-dimension guards `K ≥ 1`, `g ≥ 1`, the isometry and the two factorization equations; it adds no detection or physical-unitarity premise. | `LogicalUniqueness` passed v2-031. It is included in the completed final recursive audit. |
-
-The prior pure mathematical handout remains SHA-256 `30a2707370aa7a79065d77e902b7630ddc303960d327d30448134b91fc83b305`; the prior pure Lean handout remains SHA-256 `964755075bb1a9f233e1c179b62732e080a2fbe08b7253163a9e7f0c679186b4`. Proving their formal proposition bodies does not make prose-to-formula correspondence an automatic kernel judgment. The new readable statements and correspondence table still require semantic review.
-
-The closing targets retain the original hypotheses. These supplements add proved representation bridges, a concrete application and stronger witness properties; they do not require weakening either manuscript theorem. The explicit empty-support sentence clarifies the model in the derived copy. The stronger circle supplement also makes clear which analytic and topological assertions were absent from the earlier continuous-homomorphism predicate.
-
-## Mathematical meaning of the supplements
-
-Article-specific predicates remain definitions: support, detection, exact implementation, circuit budgets, logical images, stabilizer status and actual distance. Their bodies expose the relevant quantifiers. Foundational group, Hilbert-space, operator, tensor and topology objects come from Mathlib. Internal records used to organize a finite register carry existing Mathlib structures and proved coordinate maps; they introduce no new Hilbert-space axioms. Legacy representations remain public declarations for compatibility; the native public interfaces use the specified Mathlib foundations directly.
-
-The arbitrary-carrier result is a transport of Theorem 1. It uses each physical site's own finite complex Hilbert space, an arbitrary finite logical carrier and an arbitrary finite gauge carrier. Its logical target is `PU(K)` with `K = finrank ℂ L`. An automatically constructed logical orthonormal basis supplies coordinates. `HilbertPhase.logicalClass_eq_iff` proves that equality of these classes means one global unit-modulus scalar. A locality-preserving global change of basis is not an input assumption.
-
-The strengthened qubit Theorem 2 is stated through the native matrix API. It includes an actual closed Circle subgroup. The joint witness also proves the stronger analytic assertions from the manuscript's proof. The general warning about irrational flows remains valid: closedness and the exact kernel here follow from the particular nonscalar involution, not from continuity alone.
-
-The five-qubit result establishes positive-depth non-vacuity of Theorem 1 at both `h = 1` and `h = 2`, since the binary threshold for `d = 3` is three. It proves detection for all supported complex operators, not only a finite list of Paulis. Its actual-distance witness is the Pauli word `YIIYZ`. This supplement is not a claim that every separate stabilizer-classification property of the five-qubit encoding has been formalized. The existing closed four-qubit stabilizer example continues to support Theorem 2 at critical depth one.
-
-## Scope of the finiteness proof and remaining review
-
-The formal finiteness proof uses an algebraic route. After exact circuit normalization, each support pattern has a GL coordinate presentation with inverse and encoding relations. Light-cone bounds and detection show that projective-coordinate derivatives vanish in the relevant field solutions. Differential-constant and finite-component arguments then give integral coordinates and finite evaluation images; projective faithfulness yields finiteness. The derivative and integrality facts are proved within this route. They are not additional hypotheses of either public main theorem.
-
-This is an alternative proof of the stated finiteness conclusion. The manuscript's CAD/smooth-stratification argument and End Matter lemma `lem:finite-smooth-decomposition` have not been checked line by line. Inherited historical comments using words such as “OPEN” must be read alongside the later closing theorems; they are editorial maintenance issues where those propositions are now proved.
-
-The recorded proof/tool check used an enforced aggregate memory ceiling of 8,000,000,000 bytes with swap disabled. The public verification summary gives aggregate numerical measurements. Symbolic Lean checking used the CPU; no GPU performance claim is made. Raw system and process diagnostics are excluded from this portable release.
-
-The permitted recursive axiom set remains `propext`, `Classical.choice`, and `Quot.sound`. Failed compiler recovery artifacts are rejected. The completed v2 audit verified every own mathematical constant and all registered target types. Trusted pinned external artifacts remain a separate dependency boundary; neither a rebuild of all Mathlib, a full `lake build`, nor a fresh-clone replay is asserted here.
-
-Author semantic approval remains pending. Final v2 integrated acceptance passed; publication and timestamp evidence are recorded separately for the exact listed bytes. This response does not certify the whole paper, the literature, novelty, or every assertion in its written proof.
+CAD formalization is **DEFERRED by the user's explicit instruction**. The
+manuscript's CAD argument is preserved. The formal finiteness argument uses
+the separate algebraic derivation/finite-evaluation route; the
+[CAD-versus-algebraic ledger](CAD_VS_ALGEBRAIC_PROOF.md) identifies the
+unformalized cell, root-branch and path steps in its explicitly pinned
+comparison. The stabilizer supplements do not certify those steps.
