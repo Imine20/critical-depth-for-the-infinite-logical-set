@@ -1,0 +1,296 @@
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOne_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremOne
+WHNF_ALL_TYPE
+∀ (n K g d : Nat) (dim : Fin n → Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) K →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g →
+        @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+          ∀ (C : CriticalDepth.Manuscript.Code n dim K g),
+            @CriticalDepth.Manuscript.DetectsBelow n K g dim C d →
+              ∀ (q h : Nat),
+                Or
+                    (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+                      (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+                    (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+                  @Set.Finite.{0} (@CriticalDepth.ProjectiveOperator.{0} (Fin K) (Fin.fintype K) (instDecidableEqFin K))
+                    (@CriticalDepth.Manuscript.logicalImage n K g dim C q h)
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOne_proved
+
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOne_nondense
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat)
+  (hn : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n)
+  (hℓ : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ)
+  (hg : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g)
+  (hd : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d)
+  (C : CriticalDepth.Manuscript.Code n dim ℓ g) (hDetect : @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d)
+  (q h : Nat)
+  (hdepth :
+    Or
+      (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+        (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+      (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))),
+  Not
+    (@Dense.{0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+      (@instTopologicalSpaceQuotient.{0}
+        (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+          (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+            @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+          (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+            (@UniformSpace.toTopologicalSpace.{0} Complex
+              (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                  (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                    (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                      (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+      (@Set.preimage.{0, 0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.Manuscript.logicalImage n ℓ g dim C q h)))
+WHNF_ALL_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat)
+  (hn : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n)
+  (hℓ : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ)
+  (hg : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g)
+  (hd : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d)
+  (C : CriticalDepth.Manuscript.Code n dim ℓ g) (hDetect : @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d)
+  (q h : Nat)
+  (hdepth :
+    Or
+      (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+        (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+      (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))),
+  Not
+    (@Dense.{0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+      (@instTopologicalSpaceQuotient.{0}
+        (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+          (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+            @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+          (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+            (@UniformSpace.toTopologicalSpace.{0} Complex
+              (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                  (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                    (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                      (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+      (@Set.preimage.{0, 0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.Manuscript.logicalImage n ℓ g dim C q h)))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOne_nondense
+
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremTwo_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremTwo
+WHNF_ALL_TYPE
+∀ (n k d q : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) k →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+        ∀
+          (C :
+            CriticalDepth.Manuscript.Code n
+              (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+          @CriticalDepth.Manuscript.IsStabilizer n k C →
+            @CriticalDepth.Manuscript.HasActualDistance n
+                (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                  (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C d →
+              And
+                (@Eq.{1} ENat
+                  (@CriticalDepth.Manuscript.hInfinity n
+                    (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                      (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                    (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C q)
+                  (@Nat.cast.{0} ENat ENat.instNatCast (CriticalDepth.Arithmetic.criticalDepth q d)))
+                (@CriticalDepth.Manuscript.HasContinuousLogicalSubgroup n
+                  (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                    (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                  C q (CriticalDepth.Arithmetic.criticalDepth q d))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremTwo_proved
+
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOneAtMost_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremOneAtMost
+WHNF_ALL_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g →
+        @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+          ∀ (C : CriticalDepth.Manuscript.Code n dim ℓ g),
+            @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d →
+              ∀ (q h : Nat),
+                Or
+                    (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+                      (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+                    (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+                  And
+                    (@Set.Finite.{0}
+                      (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                      (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))
+                    (Not
+                      (@Dense.{0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                        (@instTopologicalSpaceQuotient.{0}
+                          (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+                            (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+                              @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+                            (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+                              (@UniformSpace.toTopologicalSpace.{0} Complex
+                                (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                                  (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                                    (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                                      (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                                        (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+                        (@Set.preimage.{0, 0}
+                          (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ)
+                            (instDecidableEqFin ℓ))
+                          (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOneAtMost_proved
+
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremTwoAtMost_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremTwoAtMost
+WHNF_ALL_TYPE
+∀ (n k d q : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) k →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+        ∀
+          (C :
+            CriticalDepth.Manuscript.Code n
+              (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+          @CriticalDepth.Manuscript.IsStabilizer n k C →
+            @CriticalDepth.Manuscript.HasActualDistance n
+                (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                  (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C d →
+              And
+                (@Eq.{1} ENat
+                  (@CriticalDepth.Manuscript.hInfinityAtMost n
+                    (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                      (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                    (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C q)
+                  (@Nat.cast.{0} ENat ENat.instNatCast (CriticalDepth.Arithmetic.criticalDepth q d)))
+                (@CriticalDepth.Manuscript.HasContinuousLogicalSubgroupAtMost n
+                  (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                    (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                  C q (CriticalDepth.Arithmetic.criticalDepth q d))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremTwoAtMost_proved
+
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOnePositive_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremOnePositive
+WHNF_ALL_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g →
+        @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+          ∀ (C : CriticalDepth.Manuscript.Code n dim ℓ g),
+            @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d →
+              ∀ (q h : Nat),
+                @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) h →
+                    @LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d) →
+                      And
+                        (@Set.Finite.{0}
+                          (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))
+                        (Not
+                          (@Dense.{0}
+                            (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                            (@instTopologicalSpaceQuotient.{0}
+                              (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+                                (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+                                  @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+                                (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+                                  (@UniformSpace.toTopologicalSpace.{0} Complex
+                                    (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                                      (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                                        (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                                          (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                                            (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+                            (@Set.preimage.{0, 0}
+                              (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ)
+                                (instDecidableEqFin ℓ))
+                              (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOnePositive_proved
+
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremTwoPositive_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremTwoPositive
+WHNF_ALL_TYPE
+∀ (n k d q : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) k →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+        ∀
+          (C :
+            CriticalDepth.Manuscript.Code n
+              (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+          @CriticalDepth.Manuscript.IsStabilizer n k C →
+            @CriticalDepth.Manuscript.HasActualDistance n
+                (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                  (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C d →
+              And
+                (@Eq.{1} ENat
+                  (@CriticalDepth.Manuscript.hInfinityPositiveAtMost n
+                    (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                      (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                    (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C q)
+                  (@Nat.cast.{0} ENat ENat.instNatCast (CriticalDepth.Arithmetic.criticalDepth q d)))
+                (@CriticalDepth.Manuscript.HasContinuousLogicalSubgroupAtMost n
+                  (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                    (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                  C q (CriticalDepth.Arithmetic.criticalDepth q d))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremTwoPositive_proved

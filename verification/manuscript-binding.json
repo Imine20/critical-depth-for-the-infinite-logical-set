@@ -1,0 +1,22 @@
+{
+  "schema": 2,
+  "publication_bytes": 37090,
+  "publication_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+  "selected_source": "Current C-path revision frozen at user version-selection reply",
+  "selected_source_copied_verbatim": true,
+  "all_current_author_modifications_retained": true,
+  "figure_one_left_short_arrow_absent": true,
+  "acknowledgement_placeholder_retained_per_user_choice": true,
+  "prior_original_snapshot_bytes": 36983,
+  "prior_original_snapshot_sha256": "ec18f629bd6bfc770f470d71ed995de2743d1bf1368dfee7a4366edb43ac3138",
+  "prior_arrow_only_working_copy_bytes": 36886,
+  "prior_arrow_only_working_copy_sha256": "da9f2afe35304e35c5e716285fdcc8583cf57be049c133432eb256113a929f95",
+  "version_change_reason": "External author-source revision detected by prepublication hash check; user explicitly selected current revision and all modifications",
+  "mathematical_changes": [
+    "Theorem1 restricted to h>=1 and q>=2; accepted base Lean theorem is stronger.",
+    "Critical depth is now minimized over positive h>=1; PositiveDepth.lean proves equality with the nonnegative definition using actual finite budget0."
+  ],
+  "current_theorem1_line": 304,
+  "current_theorem2_line": 450,
+  "author_semantic_review": "pending"
+}

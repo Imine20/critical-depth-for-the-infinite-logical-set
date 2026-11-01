@@ -1,0 +1,1635 @@
+AUDIT_IMPORTED_PROJECT_MODULES [CriticalDepth.MatrixCore, CriticalDepth.Arithmetic, CriticalDepth.ManuscriptStatements, CriticalDepth.Support, CriticalDepth.MatrixDerivation, CriticalDepth.ScalarExtension, CriticalDepth.AlgebraicFrame, CriticalDepth.FieldLightCone, CriticalDepth.FieldLayerDerivative, CriticalDepth.InsertionDetection, CriticalDepth.AlgebraicRigidity, CriticalDepth.DerivationExtension, CriticalDepth.FieldConstants, CriticalDepth.ScalarConstants, CriticalDepth.ComponentConstants, CriticalDepth.IntegralImage, CriticalDepth.AlgebraicFiniteImage, CriticalDepth.CircuitParameters, CriticalDepth.LocalScalarCoordinates, CriticalDepth.CircuitSolutions, CriticalDepth.CircuitPoints, CriticalDepth.ProjectiveFaithfulness, CriticalDepth.Rotations, CriticalDepth.ProjectiveTopology, CriticalDepth.TheoremOne, CriticalDepth.PauliTensor, CriticalDepth.PauliSpan, CriticalDepth.PauliConjugation, CriticalDepth.StabilizerWitness, CriticalDepth.PauliCompression, CriticalDepth.LayerOperations, CriticalDepth.PauliSynthesis, CriticalDepth.TheoremTwoReduction, CriticalDepth.Compression, CriticalDepth.DepthZero, CriticalDepth.CircuitNormalization, CriticalDepth.BudgetSemantics, CriticalDepth.MainResults, CriticalDepth.ArithmeticExamples, CriticalDepth.RotationExamples, CriticalDepth.FourQubitExample, CriticalDepth.FourQubitStabilizer, CriticalDepth.MainExamples, CriticalDepth.PhysicalCompressionExample, CriticalDepth.PositiveDepth, CriticalDepth.PositiveDepthExamples]
+AUDIT_MODULE CriticalDepth.MatrixCore
+AUDIT_MODULE CriticalDepth.Arithmetic
+AUDIT_MODULE CriticalDepth.ManuscriptStatements
+AUDIT_MODULE CriticalDepth.Support
+AUDIT_MODULE CriticalDepth.MatrixDerivation
+AUDIT_MODULE CriticalDepth.ScalarExtension
+AUDIT_MODULE CriticalDepth.AlgebraicFrame
+AUDIT_MODULE CriticalDepth.FieldLightCone
+AUDIT_MODULE CriticalDepth.FieldLayerDerivative
+AUDIT_MODULE CriticalDepth.InsertionDetection
+AUDIT_MODULE CriticalDepth.AlgebraicRigidity
+AUDIT_MODULE CriticalDepth.DerivationExtension
+AUDIT_MODULE CriticalDepth.FieldConstants
+AUDIT_MODULE CriticalDepth.ScalarConstants
+AUDIT_MODULE CriticalDepth.ComponentConstants
+AUDIT_MODULE CriticalDepth.IntegralImage
+AUDIT_MODULE CriticalDepth.AlgebraicFiniteImage
+AUDIT_MODULE CriticalDepth.CircuitParameters
+AUDIT_MODULE CriticalDepth.LocalScalarCoordinates
+AUDIT_MODULE CriticalDepth.CircuitSolutions
+AUDIT_MODULE CriticalDepth.CircuitPoints
+AUDIT_MODULE CriticalDepth.ProjectiveFaithfulness
+AUDIT_MODULE CriticalDepth.Rotations
+AUDIT_MODULE CriticalDepth.ProjectiveTopology
+AUDIT_MODULE CriticalDepth.TheoremOne
+AUDIT_MODULE CriticalDepth.PauliTensor
+AUDIT_MODULE CriticalDepth.PauliSpan
+AUDIT_MODULE CriticalDepth.PauliConjugation
+AUDIT_MODULE CriticalDepth.StabilizerWitness
+AUDIT_MODULE CriticalDepth.PauliCompression
+AUDIT_MODULE CriticalDepth.LayerOperations
+AUDIT_MODULE CriticalDepth.PauliSynthesis
+AUDIT_MODULE CriticalDepth.TheoremTwoReduction
+AUDIT_MODULE CriticalDepth.Compression
+AUDIT_MODULE CriticalDepth.DepthZero
+AUDIT_MODULE CriticalDepth.CircuitNormalization
+AUDIT_MODULE CriticalDepth.BudgetSemantics
+AUDIT_MODULE CriticalDepth.MainResults
+AUDIT_MODULE CriticalDepth.ArithmeticExamples
+AUDIT_MODULE CriticalDepth.RotationExamples
+AUDIT_MODULE CriticalDepth.FourQubitExample
+AUDIT_MODULE CriticalDepth.FourQubitStabilizer
+AUDIT_MODULE CriticalDepth.MainExamples
+AUDIT_MODULE CriticalDepth.PhysicalCompressionExample
+AUDIT_MODULE CriticalDepth.PositiveDepth
+AUDIT_MODULE CriticalDepth.PositiveDepthExamples
+AUDIT_RECURSIVE_ALLOWLIST [propext, Classical.choice, Quot.sound]
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOne_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremOne
+WHNF_ALL_TYPE
+∀ (n K g d : Nat) (dim : Fin n → Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) K →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g →
+        @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+          ∀ (C : CriticalDepth.Manuscript.Code n dim K g),
+            @CriticalDepth.Manuscript.DetectsBelow n K g dim C d →
+              ∀ (q h : Nat),
+                Or
+                    (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+                      (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+                    (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+                  @Set.Finite.{0} (@CriticalDepth.ProjectiveOperator.{0} (Fin K) (Fin.fintype K) (instDecidableEqFin K))
+                    (@CriticalDepth.Manuscript.logicalImage n K g dim C q h)
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOne_proved
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOne_nondense
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat)
+  (hn : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n)
+  (hℓ : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ)
+  (hg : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g)
+  (hd : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d)
+  (C : CriticalDepth.Manuscript.Code n dim ℓ g) (hDetect : @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d)
+  (q h : Nat)
+  (hdepth :
+    Or
+      (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+        (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+      (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))),
+  Not
+    (@Dense.{0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+      (@instTopologicalSpaceQuotient.{0}
+        (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+          (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+            @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+          (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+            (@UniformSpace.toTopologicalSpace.{0} Complex
+              (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                  (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                    (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                      (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+      (@Set.preimage.{0, 0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.Manuscript.logicalImage n ℓ g dim C q h)))
+WHNF_ALL_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat)
+  (hn : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n)
+  (hℓ : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ)
+  (hg : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g)
+  (hd : @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d)
+  (C : CriticalDepth.Manuscript.Code n dim ℓ g) (hDetect : @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d)
+  (q h : Nat)
+  (hdepth :
+    Or
+      (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+        (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+      (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))),
+  Not
+    (@Dense.{0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+      (@instTopologicalSpaceQuotient.{0}
+        (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+          (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+            @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+          (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+            (@UniformSpace.toTopologicalSpace.{0} Complex
+              (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                  (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                    (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                      (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+      (@Set.preimage.{0, 0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+        (@CriticalDepth.Manuscript.logicalImage n ℓ g dim C q h)))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOne_nondense
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremTwo_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremTwo
+WHNF_ALL_TYPE
+∀ (n k d q : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) k →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+        ∀
+          (C :
+            CriticalDepth.Manuscript.Code n
+              (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+          @CriticalDepth.Manuscript.IsStabilizer n k C →
+            @CriticalDepth.Manuscript.HasActualDistance n
+                (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                  (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C d →
+              And
+                (@Eq.{1} ENat
+                  (@CriticalDepth.Manuscript.hInfinity n
+                    (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                      (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                    (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C q)
+                  (@Nat.cast.{0} ENat ENat.instNatCast (CriticalDepth.Arithmetic.criticalDepth q d)))
+                (@CriticalDepth.Manuscript.HasContinuousLogicalSubgroup n
+                  (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                    (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                  C q (CriticalDepth.Arithmetic.criticalDepth q d))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremTwo_proved
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOneAtMost_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremOneAtMost
+WHNF_ALL_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g →
+        @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+          ∀ (C : CriticalDepth.Manuscript.Code n dim ℓ g),
+            @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d →
+              ∀ (q h : Nat),
+                Or
+                    (And (@LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q)
+                      (@LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d)))
+                    (@Eq.{1} Nat q (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))) →
+                  And
+                    (@Set.Finite.{0}
+                      (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                      (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))
+                    (Not
+                      (@Dense.{0} (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                        (@instTopologicalSpaceQuotient.{0}
+                          (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+                            (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+                              @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+                            (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+                              (@UniformSpace.toTopologicalSpace.{0} Complex
+                                (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                                  (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                                    (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                                      (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                                        (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+                        (@Set.preimage.{0, 0}
+                          (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ)
+                            (instDecidableEqFin ℓ))
+                          (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOneAtMost_proved
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremTwoAtMost_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremTwoAtMost
+WHNF_ALL_TYPE
+∀ (n k d q : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) k →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+        ∀
+          (C :
+            CriticalDepth.Manuscript.Code n
+              (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+          @CriticalDepth.Manuscript.IsStabilizer n k C →
+            @CriticalDepth.Manuscript.HasActualDistance n
+                (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                  (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C d →
+              And
+                (@Eq.{1} ENat
+                  (@CriticalDepth.Manuscript.hInfinityAtMost n
+                    (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                      (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                    (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C q)
+                  (@Nat.cast.{0} ENat ENat.instNatCast (CriticalDepth.Arithmetic.criticalDepth q d)))
+                (@CriticalDepth.Manuscript.HasContinuousLogicalSubgroupAtMost n
+                  (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                    (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                  C q (CriticalDepth.Arithmetic.criticalDepth q d))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremTwoAtMost_proved
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremOnePositive_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremOnePositive
+WHNF_ALL_TYPE
+∀ (n ℓ g d : Nat) (dim : Fin n → Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) n →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) ℓ →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) g →
+        @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+          ∀ (C : CriticalDepth.Manuscript.Code n dim ℓ g),
+            @CriticalDepth.Manuscript.DetectsBelow n ℓ g dim C d →
+              ∀ (q h : Nat),
+                @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+                  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) h →
+                    @LT.lt.{0} Nat instLTNat h (CriticalDepth.Arithmetic.criticalDepth q d) →
+                      And
+                        (@Set.Finite.{0}
+                          (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                          (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))
+                        (Not
+                          (@Dense.{0}
+                            (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                            (@instTopologicalSpaceQuotient.{0}
+                              (@CriticalDepth.UnitaryOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@CriticalDepth.unitaryPhaseSetoid.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@instTopologicalSpaceSubtype.{0} (CriticalDepth.Operator.{0} (Fin ℓ))
+                                (fun (U : CriticalDepth.Operator.{0} (Fin ℓ)) =>
+                                  @CriticalDepth.IsUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ) U)
+                                (@instTopologicalSpaceMatrix.{0, 0, 0} (Fin ℓ) (Fin ℓ) Complex
+                                  (@UniformSpace.toTopologicalSpace.{0} Complex
+                                    (@PseudoMetricSpace.toUniformSpace.{0} Complex
+                                      (@SeminormedRing.toPseudoMetricSpace.{0} Complex
+                                        (@SeminormedCommRing.toSeminormedRing.{0} Complex
+                                          (@NormedCommRing.toSeminormedCommRing.{0} Complex
+                                            (@NormedField.toNormedCommRing.{0} Complex Complex.instNormedField)))))))))
+                            (@Set.preimage.{0, 0}
+                              (@CriticalDepth.ProjectiveUnitary.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@CriticalDepth.ProjectiveOperator.{0} (Fin ℓ) (Fin.fintype ℓ) (instDecidableEqFin ℓ))
+                              (@CriticalDepth.projectiveUnitaryToOperator.{0} (Fin ℓ) (Fin.fintype ℓ)
+                                (instDecidableEqFin ℓ))
+                              (@CriticalDepth.Manuscript.arbitraryLogicalImageAtMost n ℓ g dim C q h))))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremOnePositive_proved
+MAIN_TYPE_BEGIN CriticalDepth.Manuscript.theoremTwoPositive_proved
+UNIVERSE_PARAMETERS []
+DECLARED_TYPE
+CriticalDepth.Manuscript.theoremTwoPositive
+WHNF_ALL_TYPE
+∀ (n k d q : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) k →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) d →
+      @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) q →
+        ∀
+          (C :
+            CriticalDepth.Manuscript.Code n
+              (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+              (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))),
+          @CriticalDepth.Manuscript.IsStabilizer n k C →
+            @CriticalDepth.Manuscript.HasActualDistance n
+                (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                  (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                  (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C d →
+              And
+                (@Eq.{1} ENat
+                  (@CriticalDepth.Manuscript.hInfinityPositiveAtMost n
+                    (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                      (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                    (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+                    (fun (x : Fin n) => @OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) C q)
+                  (@Nat.cast.{0} ENat ENat.instNatCast (CriticalDepth.Arithmetic.criticalDepth q d)))
+                (@CriticalDepth.Manuscript.HasContinuousLogicalSubgroupAtMost n
+                  (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+                    (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+                    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) k)
+                  C q (CriticalDepth.Arithmetic.criticalDepth q d))
+MAIN_TYPE_END CriticalDepth.Manuscript.theoremTwoPositive_proved
+RECURSIVE_AXIOMS CriticalDepth.CompatibleWithZero [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.GateWithInverse []
+RECURSIVE_AXIOMS CriticalDepth.IsDifferentialConstant [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.IsScalar [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.IsUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Operator [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ProjectiveOperator [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ProjectiveUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ProjectivelyEquivalent [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.UnitaryOperator [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine_coefficients_unique [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine_eq_zero_coefficients [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.algebraic_forward_of_backward_frame [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.algebraic_gauge_frame_transfer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.algebraic_gauge_kronecker_conjugation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.compressed_backward_frame [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.compressed_forward_of_backward [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.conjTranspose_kronecker_operators [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.conjugation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.conjugationCoordinates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.conjugationCoordinates_eq_iff [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.continuous_conjugationCoordinates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.continuous_rotation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.continuous_unitaryConjugationCoordinates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.encoded_adjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.encoded_logarithmic_generator [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.encoded_logarithmic_rigidity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.encoded_projective_coordinates_derivation_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.evaluation_image_finite_of_all_field_derivations [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.exists_algebraMap_eq_of_forall_derivation_eq_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.exists_algebraMap_eq_of_isAlgebraic [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.exists_compatible_differential [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.exists_scalar_mod_kernel_of_forall_derivation_eq_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale_algebraMap [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.finite_projectiveImage_not_dense_in_projectiveUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.finite_projectiveImage_of_finite_conjugationCoordinates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.finite_projectiveUnitary_preimage [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.formallyEtale_adjoin_of_transcendenceBasis [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertion_sum_cons [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairInverseProduct [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairInverseProduct_cons [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairInverseProduct_nil [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairProduct [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairProduct_cons [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairProduct_mutual_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairProduct_nil [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gauge_frame_transfer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gauge_kronecker_conjugation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.i_pow_unit_modulus [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.imag_mul_imag [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.integral_coordinate_evaluation_image_finite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.integral_evaluation_range_finite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.involutionBisector [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.involutionBisector_conjugates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.involutionBisector_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.involutionBisector_selfAdjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.involutionBisector_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isAlgebraic_of_forall_derivation_eq_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isClosed_unitary_phase_fiber [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isDifferentialConstant_algebraMap [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isDifferentialConstant_of_finiteDimensional [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isIntegral_of_minimalPrime_derivations [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isIntegral_of_scalar_mod_minimalPrimes [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isScalar_of_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isUnitary_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isUnitary_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.isUnitary_star [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.kronecker_right_unitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.logarithmic_gateProduct_insertion_sum [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.logarithmic_product_rule [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_add [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_constant [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_inverse_of_scalar_derivative [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_kronecker [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_of_scalar_logarithmic_derivative [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_one [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_zero [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixList_prod_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixUnit [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrix_eq_sum_matrixUnits [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.not_all_derivations_vanish_on_polynomial_coordinate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivationOnAlgebra [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivationOnAlgebra_X [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivationViaEquiv [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivationViaEquiv_X [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation_X [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.prod_signs_eq_one_or_neg_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveClass [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveSetoid [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveUnitaryT1Space [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveUnitaryToOperator [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveUnitaryToOperator_injective [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveUnitaryToOperator_mk [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveUnitary_infinite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projective_coordinates_derivation_zero_of_scalar_derivatives [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectivelyEquivalent_conjugation_eq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectivelyEquivalent_one_isScalar [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectivelyEquivalent_one_of_unitary_scalar [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectivelyEquivalent_refl [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectivelyEquivalent_symm [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectivelyEquivalent_trans [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.quotientFractionMap [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.quotientFractionMap_ker [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotationUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotation_classes_infinite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotation_classes_injective [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotation_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotation_projectiveUnitary_injective [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotation_projectivelyEquivalent_injective [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalScale [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalScale_ne_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalScale_sq_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation_add [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation_one_parameter_family [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation_pi_div_two [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation_pi_div_two_not_isScalar [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation_pi_div_two_not_projectivelyEquivalent_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.scalar_of_commutes_all [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.scalar_of_commutes_matrixUnits [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.scalarity_of_tensor_generator [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.scalarity_of_tensor_generator_overField [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.signInvolution [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.signInvolution_not_isScalar [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.signInvolution_selfAdjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.signInvolution_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.star_affine [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.star_matrixList_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.star_rationalScale [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.star_rotation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.tensorEntries [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.tensorEntries_conjTranspose [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.tensorEntries_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.tensorEntries_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.tensorEntries_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.tensorEntries_sum [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitaryPhaseSetoid [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitaryProjectiveClass [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitaryProjectiveClass_singleton_preimage [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitary_conjugationCoordinates_eq_iff_projectivelyEquivalent [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitary_conjugation_eq_iff_projectivelyEquivalent [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitary_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitary_smul_of_phase [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitary_smul_phase [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.zeroDifferential [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.zeroDifferential_compatible [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.LayerOperations.0.CriticalDepth.reverse_ofFn_slots [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.below_threshold_iff [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.below_threshold_log_iff [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_comp [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_le_iff [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_of_pos [propext]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_pos [propext]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_zero [propext]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilHalf []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_eq_natCeil_log [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_eq_one_of_distance_le_arity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_pos_of_two_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_at_clog_pred_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_eq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_eq_ceilDiv_pow [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_le_iff [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_pos [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.criticalDepth []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.criticalDepth_eq_log [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.layer_min_le_ceilHalf [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.synthesis_depth_at_clog [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.synthesis_depth_count [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.unary_cone_bound [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.arity_at_least_distance_call [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.binary_distance_eight_compression_bound [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.binary_distance_eight_depth_five [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.binary_distance_eight_depth_four [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.logarithm_bridge_call [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.middle_layer_call [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.synthesis_call [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.ternary_distance_eight_compression []
+RECURSIVE_AXIOMS CriticalDepth.ArithmeticExamples.unary_at_depth_one_thousand [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Examples.pauliZ [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Examples.pauliZ_not_isScalar [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Examples.pauliZ_selfAdjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Examples.pauliZ_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.IsUnitary.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryCircuit [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Circuit [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.CircuitCoordinateRing [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.CircuitPolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.CircuitVariable [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.DetectsBelow [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.GateIndex []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.GaugeOnly [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.HasActualDistance [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.HasContinuousLogicalSubgroup [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.HasContinuousLogicalSubgroupAtMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Implements [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.IsPauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.IsStabilizer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.LocalBasis [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.LogicalCoordinateIndex []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalBasis []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.QubitBasis []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitPoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitPoint_gauge [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitPoint_logical [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitPoint_quotient [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitPoint_total [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualDistance_exists_nongauge_unphasedPauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualPolynomialPoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualPolynomialPoint_ideal [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualPolynomialPoint_relations [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.affine_encoding_subspace [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.affine_synthesis_from_compression [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.affine_uncompress [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.anticommuting_fixed_operator_gaugeOnly [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryCircuitEval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryCircuit_normalization_phase [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImage [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImageAtMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImageAtMost_eq_iUnion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImageAtMost_finite_of_exact [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImageAtMost_finite_of_theoremOne [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImageAtMost_mono [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImageAtMost_not_dense [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImage_eq_logicalImage [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImage_finite_of_logicalImage_finite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImage_subset_atMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryLogicalImage_subset_logicalImage [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.basisSplit [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.blockInsertion_mem_gaugeOnly [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivot [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivotSet [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivot_injective [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivot_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketTarget [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketTarget_support [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketTarget_support_card [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketTarget_support_subset [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucket_first_lt [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ceilDiv_support_le_sites [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitConjugationCoordinates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitConjugationCoordinates_actualCircuitPoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitConjugationCoordinates_apply [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitConjugationCoordinates_range_finite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitCoordinateRing_isNoetherianRing [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitEval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitEval_cast [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitEval_depth_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitIdeal [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitLogicalCoordinate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitOfLayers [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitOfLayers_eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitOfLayers_list [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPointMap [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPointMap_actualCircuitPoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPointMap_constant [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPointMap_inverseRelations [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPointMap_matrixRelation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPointMap_relation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPoint_projective_derivation_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitRelations [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.codeCompression_selfAdjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.codeCompression_sq_of_preserving [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.code_physicalBasis_nonempty [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.code_preservation_of_stabilizer_commutation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.coefficientEmbed [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.coefficientEmbed_complex [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.coefficientEmbed_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.coefficientEmbed_naturality [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.compressedWeight_shift [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constantMatrixHom [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constantMatrixHom_apply [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constantMatrix_add [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constantMatrix_kronecker [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constantMatrix_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constantMatrix_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constantMatrix_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constant_gaugeOnly [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.constant_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.depth_zero_logicalImage_finite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.detectsBelow_scalarExtension [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.encoding_adjoint_fixed_of_fixed [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.encoding_column_mem_range [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.encoding_fixed_of_fixedSpace [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.executionGateIndices []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.extendLocalPauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval_append [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv_append [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequence_conjugate_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequence_derivative_mem_gaugeOnly [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequence_inverse_conjugate_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequence_logarithmic_derivative_eq_sum [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequence_mutual_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates_length_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates_pairwise [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlyComplexSubmodule [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlySubmodule [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnly_of_compression_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugePolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinityAtMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinityAtMost_eq_of_finite_below_and_infinite_at [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinityPositiveAtMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinityPositiveAtMost_eq_hInfinityAtMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinity_eq_of_finite_below_and_infinite_at [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identityListGate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identity_implements_projective_identity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.implements_of_projectivelyEquivalent_physical [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.implements_rationalRotation_subspace [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.implements_rotation_subspace [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.instDecidableEqSinglePauli []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.instFintypeSinglePauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.inverseRelationEntries [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.inverseTotalPolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt_exists_split [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertion_sum_cons [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList_eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval_append [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval_eq_reverse_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval_reverse_adjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequence_conjugate_supportedOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layoutSupport [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateEval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateEval_cons [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateEval_filter_phase [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateEval_nil [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateSupportUnion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbedLinearMap [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_add [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_commute_compl [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_conjTranspose [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_localInflate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_neg [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_sub [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localGatePolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localInflate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.local_pauliTensor_span_eq_top [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalImage [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalImage_finite_of_cone [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalImage_not_dense_in_projectiveUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalImage_subset_arbitraryLogicalImage [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalImage_subset_atMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalImage_subset_projectiveUnitary_range [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalPolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.maskPauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.maskPauli_empty [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.maskPauli_supportedOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mask_bucketTarget_eq_single [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.matrixDerivation_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.matrixDerivation_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.matrixRelationEntries [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.matrixUnit_eq_tensorEntries [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.matrixUnit_mem_pauliTensorSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.matrix_eq_sum_smul_single [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.matrix_map_self [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mem_filterNonemptyGates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mem_listGateSupportUnion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mul_div_self_of_pos [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.nonemptyGateList_length_le_union_card [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.one_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.paddedBucket [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.paddedBucket_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.paddedBucket_cover [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.paddedBucket_disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_commutation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_commute_or_anticommute [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_eq_localEmbed_of_outside_identity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_eq_masked_product [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_eq_phase_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_extendLocalPauli_eq_localEmbed [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_extendLocalPauli_supportedOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_supportedOn_of_outside_identity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_supportedOn_pauliSupport [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix_zero_eq_tensorEntries [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliSupport [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliSupport_subset_of_outside_identity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliTensorSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_affine_synthesis_data [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_commutes_stabilizer_of_nongauge [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_compression_layer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_compression_sequence [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_compression_to_arity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_group_to_single_site [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_rationalRotation_synthesis [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_rotation_synthesis [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.physicalGatePolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.physicalGatePolynomial_map_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pointLocalGate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pointLocalGate_embed [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_circuitEval_execution [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_circuitEval_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_encoded_dual [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_gaugePolynomial_forward [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_gaugePolynomial_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_inverseTotalPolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_kronecker_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_localPolynomial_forward [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_localPolynomial_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_logicalPolynomial_forward [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_logicalPolynomial_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_physicalPolynomial_forward [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_physicalPolynomial_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.point_totalPolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.rankBucket [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.rankBucket_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.rankBucket_cover [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.rankBucket_disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.rankBucket_nonempty [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.rankBucket_subset [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.reindex_localEmbed [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.reindex_localEmbed_compl [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.scalar_of_supportedOn_empty [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer_eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauli_commutation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauli_commutationSign_eq_one_or_neg_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauli_expansion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauli_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauli_selfAdjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauli_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleSitePauli []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleSitePauli_supportedOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionFieldLayer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionFieldLayer_eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionFieldLayer_evalInv [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGateList [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGate_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGate_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGauge [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGauge_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionInverseTotal [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionInverseTotal_eq_fieldLayerSequence [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionInverseTotal_eq_gatePairInverseProduct [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionLogical [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionLogical_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionMap_kronecker [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionMap_list_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionMap_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionMap_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionTotal [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionTotal_eq_fieldLayerSequence [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionTotal_eq_gatePairProduct [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionTotal_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solution_encoding [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solution_encoding_dual [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solution_encoding_isometry [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.stabilizer_actualDistance_logicalPauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.stabilizer_critical_logical_image [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.stabilizer_exact_logicalPauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceCompression_eq_kronecker [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceLogicalMatrix [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceLogicalMatrix_implements_of_preserving [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceLogicalMatrix_nonscalar_of_nongauge [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceLogicalMatrix_selfAdjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceLogicalMatrix_sq_of_preserving [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportLogicalMatrices [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportLogicalMatrices_projective_finite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedOn_list_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedOn_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedOn_univ [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedOn_zero [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedSpan_commute [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedSpan_le_gaugeOnlySubmodule [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedSpan_mono [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedSpan_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedSpan_mul_same [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportedSpan_pair_conjugate_disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.tensorEntriesMonoidHom [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.tensorPauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.tensorPauli_span_eq_top [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOne [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOneAtMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOneAtMost_of_theoremOne [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOneAtMost_proved [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOnePositive [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOnePositive_proved [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOne_nondense [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOne_proved [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwo [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwoAtMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwoAtMost_of_theoremOne [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwoAtMost_proved [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwoPositive [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwoPositive_proved [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwo_of_theoremOne [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremTwo_proved [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.totalPolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unitaryConjugationHom [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unphased_pauliMatrix_anticommute_single [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unphased_pauliMatrix_commutation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unphased_pauliMatrix_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unphased_pauliMatrix_selfAdjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unphased_pauliMatrix_span_eq_top [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unphased_pauliMatrix_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine_coefficients_unique._abel_1_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.affine_mul._abel_1_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.conjugation.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.conjugationCoordinates.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.encoded_logarithmic_generator._simp_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_10 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_5 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_6 []
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_7 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_8 []
+RECURSIVE_AXIOMS CriticalDepth.extendDerivationFormallyEtale._proof_9 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.finite_projectiveImage_not_dense_in_projectiveUnitary._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gateInsertionAt.match_1 []
+RECURSIVE_AXIOMS CriticalDepth.gatePairInverseProduct.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairInverseProduct.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairProduct.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.gatePairProduct.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.involutionBisector.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.involutionBisector_sq._abel_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation.eq_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_inverse._simp_1_1 []
+RECURSIVE_AXIOMS CriticalDepth.matrixDerivation_inverse_of_scalar_derivative._simp_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixUnit.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.matrixUnit.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation._proof_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation._proof_5 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivation.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivationOnAlgebra._proof_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivationOnAlgebra._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.polynomialCoordinateDerivationViaEquiv.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveSetoid._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.projectiveUnitaryToOperator._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.quotientFractionMap._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.quotientFractionMap._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.quotientFractionMap._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalRotation.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rationalScale.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.rotation.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.signInvolution.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.signInvolution_not_isScalar._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.signInvolution_not_isScalar._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.tensorEntries.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitaryPhaseSetoid._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.unitary_conjugation_eq_iff_projectivelyEquivalent._simp_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.BudgetSemantics.0.CriticalDepth.Manuscript.budget_sites_positive [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.BudgetSemantics.0.CriticalDepth.Manuscript.budget_two_le_two_pow [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.gateList_get_disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.normalization_phase_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.normalization_projective_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.normalization_projective_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.normalization_rect_mul_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.normalization_rect_smul_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.normalization_unitary_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.pairwise_append_identityGates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_conjTranspose_list_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_constantPolynomial [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_inverseRelation_vanish [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_isUnitary_list_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_isUnitary_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_map_executionGateIndices [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_matrixRelation_vanish [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_reverse_prod_flatten [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.point_star_kronecker [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.gaugeInverseRelations_subset [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.list_prod_flatten [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.list_reverse_prod_flatten [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.logicalInverseRelations_subset [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.map_executionGateIndices [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.physicalInverseRelations_subset [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.solution_fieldSequenceEval_eq_reverse_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.solution_fieldSequenceInv_eq_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLayerDerivative.0.CriticalDepth.Manuscript.conjugate_list_sum [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLayerDerivative.0.CriticalDepth.Manuscript.indexed_layer_logarithmic_derivative [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLayerDerivative.0.CriticalDepth.Manuscript.sum_ofFn_eq_fintype_sum [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.supportedSpan_conjugate_pairProduct [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.supportedSpan_inverse_conjugate_pairProduct [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.LayerOperations.0.CriticalDepth.reverse_ofFn_slots._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.LocalScalarCoordinates.0.CriticalDepth.Manuscript.localEmbedLinearMap_apply [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.allSlots []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.allSlots_nodup [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.indexed_layer_conjugation [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.list_prod_eq_one_of_forall [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.list_prod_eq_selected [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.mem_allSlots [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.monoidHom_list_prod [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.pi_list_prod_apply [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.unitary_list_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSynthesis.0.CriticalDepth.Manuscript.positive_sites_of_pauli_distance [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PositiveDepth.0.CriticalDepth.Manuscript.positiveDepth_criticalDepth_positive [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PositiveDepth.0.CriticalDepth.Manuscript.positiveDepth_sites_positive [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PositiveDepth.0.CriticalDepth.Manuscript.positiveDepth_two_le_two_pow [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.ScalarExtension.0.CriticalDepth.Manuscript.sandwich_add [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.ScalarExtension.0.CriticalDepth.Manuscript.sandwich_smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.Support.0.CriticalDepth.Manuscript.supportedOn_conjugate_prod [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremOne.0.CriticalDepth.Manuscript.theoremOne_pow_mono [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremOne.0.CriticalDepth.Manuscript.theoremOne_split_short [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremTwoReduction.0.CriticalDepth.Manuscript.sites_positive_of_actualDistance [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremTwoReduction.0.CriticalDepth.Manuscript.two_le_two_pow [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.below_threshold_iff._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.below_threshold_iff._proof_1_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv.eq_1 []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_comp._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_le_iff._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_le_iff._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_le_iff._proof_1_3 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_le_iff._proof_1_4 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.ceilDiv_le_iff._proof_1_5 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_eq_one_of_distance_le_arity._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_eq_one_of_distance_le_arity._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_pos_of_two_le._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_pos_of_two_le._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.clog_pos_of_two_le._proof_1_3 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight._f []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight._sunfold []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight._unsafe_rec []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight.eq_1 []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight.eq_2 []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight.eq_def []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight.match_1 []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_at_clog_pred_le._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_at_clog_pred_le._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.compressedWeight_at_clog_pred_le._proof_1_3 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.criticalDepth.eq_1 []
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.layer_min_le_ceilHalf._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.synthesis_depth_count._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Arithmetic.unary_cone_bound._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Examples.pauliZ.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryCircuit.normalized [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer._sizeOf_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer._sizeOf_inst [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.casesOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.ctorIdx [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.gates [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.mk [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.noConfusionType [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.normalization_phase [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.normalized [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.normalized_eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.recOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code._sizeOf_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code._sizeOf_inst [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.casesOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.ctorIdx []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.encoding [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.isometry [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.mk [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.noConfusionType [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.recOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer._sizeOf_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer._sizeOf_inst [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.backward_conjugated_logarithmic_gate_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.backward_logarithmic_gate_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.casesOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.conjugate_gateSupport_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.conjugate_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.ctorIdx [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.evalInv [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.gate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.gate_locality [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.inverse_conjugate_gateSupport_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.inverse_conjugate_mem_supportedSpan [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.inverse_identities [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.inverse_locality [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.layout [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.lightCone [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.lightCone_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.logarithmic_derivative_eq_sum [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.logarithmic_gate_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mk [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mutual_inverse [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.noConfusionType [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.recOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allIdentity_pauliMatrix [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allX [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allX_allZ [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allX_encoding [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allX_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allY [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allZ [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allZ_allX [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allZ_encoding [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allZ_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.code [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.complement [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.complement_word_eq_complement_word [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.complement_word_ne_word [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.detectsBelow_two [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.dirac [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding_adjoint_mul_entry [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding_compression_entry [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding_isometry [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding_rangeProjector [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding_rangeProjector_entry [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.explicit_distance_witness [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.hasActualDistance_two [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.isStabilizer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.logicalZ [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.mem_stabilizer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.original_stabilizer_distance_hypotheses [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.scale [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.scale_norm [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.sitePauli []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.sitePauli_compression [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.sitePauli_gaugeOnly [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.stabilizer [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.stabilizer_encoding [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.stabilizer_fixedSpace [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.stabilizer_pauli [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.star_dirac [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.sum_dirac_mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.sum_mul_dirac [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli_compression [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli_nongauge [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli_supported [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.word [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.word_eq_word [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.word_ne_complement_word [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.xUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.xUnitary_commutes_zUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.xUnitary_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.zUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.zUnitary_sq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.HasContinuousLogicalSubgroup.atMost [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer._sizeOf_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer._sizeOf_inst [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.activeIndices [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.adjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.arity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.blockAt [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.blockAt_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.blockAt_eq_of_mem [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.casesOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.conjugate_pauli_of_masked_blocks [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.conjugate_supportedOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.ctorIdx [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.evalIsUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_adjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_conjugate_of_gate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_supportedOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.gate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.lightCone [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.lightCone_card_le [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.lightCone_subset_blocks [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.lightCone_support [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.locality [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mem_blockAt [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mk [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.noConfusionType [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.recOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.support [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.supportUnion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.support_subset_lightCone_or_disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.toArbitrary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.toArbitrary_eval [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.unitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate._sizeOf_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate._sizeOf_inst [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.arity [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.casesOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.ctorIdx [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.gate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.locality [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.mk [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.noConfusionType [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.recOn [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.support [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.unitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.MainExamples.fourQubit_binary_budgetOne_infinite [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.MainExamples.fourQubit_binary_criticalDepth [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.MainExamples.fourQubit_binary_critical_subgroup [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.MainExamples.fourQubit_binary_depthZero_finite_nondense [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.MainExamples.fourQubit_binary_exactDepth_critical_subgroup [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.MainExamples.fourQubit_unary_budget_finite_nondense [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.P [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.activeSites [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.critical_depth_three [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.one_round_compression [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.p [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.pauli_nonscalar [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.pauli_support [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.pauli_supported [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.rational_rotation_two_depth_three [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.rational_rotation_two_formula [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.rational_rotation_two_isUnitary [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.rational_rotation_two_supported [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.register_dimension [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.rotation_depth_three [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.rotation_supported [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.supported_rational_circuit [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.weight_three [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PositiveDepthExamples.fiveSite_distanceThree_positiveBudget_schema [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PositiveDepthExamples.fourQubit_positive_continuous_subgroup [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PositiveDepthExamples.fourQubit_positive_critical_subgroup [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PositiveDepthExamples.fourQubit_positive_eq_nonnegative [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PositiveDepthExamples.fourQubit_positive_minimum_one [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.I []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.X []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.Y []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.Z []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli._sizeOf_1 []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli._sizeOf_inst []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.casesOn []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.commutationSign [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.ctorElim []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.ctorElimType []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.ctorIdx []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.matrix [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.noConfusion []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.noConfusionType []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.ofNat []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.ofNat_ctorIdx []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.rec []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.recOn []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.add [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.affine [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.commute [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.conjTranspose [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.conjugate [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.conjugate_disjoint [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.involutionBisector [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.mono [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.mul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.mul_same [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.neg [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.smul [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SupportedOn.sub [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment.eq_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment.eq_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment.eq_5 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment.eq_6 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitAssignment.match_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualCircuitPoint._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualDistance_exists_nongauge_unphasedPauli._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualPolynomialPoint.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualPolynomialPoint_relations._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.actualPolynomialPoint_relations._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.affine_synthesis_from_compression._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryCircuitEval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryCircuit_normalization_phase._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.arbitraryCircuit_normalization_phase._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.basisSplit._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.basisSplit._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.basisSplit._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.basisSplit._proof_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.basisSplit._proof_5 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.basisSplit.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivot._proof_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivot.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivotSet.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketPivotSet.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucketTarget.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.bucket_first_lt._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ceilDiv_support_le_sites._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitEval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitLogicalCoordinate._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitOfLayers._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitOfLayers._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPointMap._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPoint_projective_derivation_zero._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitPoint_projective_derivation_zero._proof_1_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.circuitRelations.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.code_physicalBasis_nonempty._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.code_physicalBasis_nonempty._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.coefficientEmbed.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.executionGateIndices.eq_1 []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.extendLocalPauli.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceBackwardCone.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceCone.match_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceEval.match_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.fieldLayerSequenceInv.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.filterNonemptyGates.match_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlyComplexSubmodule._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlyComplexSubmodule._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlyComplexSubmodule._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlySubmodule._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlySubmodule._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugeOnlySubmodule._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.gaugePolynomial.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinityAtMost_eq_of_finite_below_and_infinite_at._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinityPositiveAtMost_eq_hInfinityAtMost._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.hInfinity_eq_of_finite_below_and_infinite_at._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identityListGate._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identityListGate._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identityListGate._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identityListGate.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identity_implements_projective_identity._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.identity_implements_projective_identity._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.instDecidableEqSinglePauli._proof_1 []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.instDecidableEqSinglePauli._proof_2 []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.instFintypeSinglePauli._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.inverseRelationEntries.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerGateInsertionAt.match_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList._proof_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList._proof_5 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerOfGateList.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceCone.match_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.layerSequenceEval.match_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateEval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateSupportUnion._f [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateSupportUnion._sunfold [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateSupportUnion._unsafe_rec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateSupportUnion.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateSupportUnion.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.listGateSupportUnion.eq_def [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localEmbed.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localGatePolynomial.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.localInflate._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.logicalPolynomial.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.maskPauli.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mask_bucketTarget_eq_single._simp_1_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mem_filterNonemptyGates._simp_1_4 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mem_listGateSupportUnion._simp_1_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mem_listGateSupportUnion._simp_1_5 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mul_div_self_of_pos._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mul_div_self_of_pos._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.mul_div_self_of_pos._proof_1_3 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.nonemptyGateList_length_le_union_card._proof_1_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.paddedBucket.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.paddedBucket_cover._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliMatrix.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauliSupport.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_affine_synthesis_data._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_compression_layer._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pauli_compression_to_arity._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.physicalGatePolynomial.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.pointLocalGate._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.rankBucket_card_le._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer._proof_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer._proof_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleGateLayer_eval._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient._proof_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient.eq_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient.eq_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singlePauliCoefficient.match_1 []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.singleSitePauli.eq_1 []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionFieldLayer._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionFieldLayer._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionFieldLayer._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionFieldLayer.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGate.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionGauge.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionLogical.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solutionTotal.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solution_encoding._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.solution_encoding_dual._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.stabilizer_critical_logical_image._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceLogicalMatrix._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.subspaceLogicalMatrix.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.supportLogicalMatrices_projective_finite._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.tensorEntriesMonoidHom._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.tensorEntriesMonoidHom._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.tensorEntriesMonoidHom.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.theoremOne_proved._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unitaryConjugationHom._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.unitaryConjugationHom._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.AlgebraicFrame.0.CriticalDepth.gateInsertionAt.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.AlgebraicFrame.0.CriticalDepth.gateInsertionAt.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.AlgebraicFrame.0.CriticalDepth.gateInsertionAt.match_1.splitter []
+RECURSIVE_AXIOMS _private.CriticalDepth.BudgetSemantics.0.CriticalDepth.Manuscript.budget_sites_positive._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.BudgetSemantics.0.CriticalDepth.Manuscript.budget_two_le_two_pow._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.BudgetSemantics.0.CriticalDepth.Manuscript.budget_two_le_two_pow._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.gateList_get_disjoint._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.pairwise_append_identityGates._simp_1_1 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.pairwise_append_identityGates._simp_1_4 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.gaugeInverseRelations_subset._simp_1_2 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.logicalInverseRelations_subset._simp_1_2 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitSolutions.0.CriticalDepth.Manuscript.physicalInverseRelations_subset._simp_1_2 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.complement_vector4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.inv_of_involution [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.mem_kleinFourSubgroup [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.vector4_eq_iff [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.allSlots.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSynthesis.0.CriticalDepth.Manuscript.positive_sites_of_pauli_distance._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PositiveDepth.0.CriticalDepth.Manuscript.positiveDepth_criticalDepth_positive._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PositiveDepth.0.CriticalDepth.Manuscript.positiveDepth_sites_positive._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PositiveDepth.0.CriticalDepth.Manuscript.positiveDepth_two_le_two_pow._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.PositiveDepth.0.CriticalDepth.Manuscript.positiveDepth_two_le_two_pow._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremOne.0.CriticalDepth.Manuscript.theoremOne_pow_mono._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremOne.0.CriticalDepth.Manuscript.theoremOne_pow_mono._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremOne.0.CriticalDepth.Manuscript.theoremOne_split_short._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremTwoReduction.0.CriticalDepth.Manuscript.sites_positive_of_actualDistance._proof_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremTwoReduction.0.CriticalDepth.Manuscript.two_le_two_pow._proof_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.TheoremTwoReduction.0.CriticalDepth.Manuscript.two_le_two_pow._proof_1_2 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryCircuit.normalized.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.eval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.mk._flat_ctor [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.mk.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.mk.inj [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.mk.injEq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.mk.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.mk.sizeOf_spec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.normalized._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.normalized._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.normalized._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ArbitraryLayer.normalized.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.mk._flat_ctor [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.mk.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.mk.inj [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.mk.injEq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.mk.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Code.mk.sizeOf_spec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.conjugate_mem_supportedSpan._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.conjugate_mem_supportedSpan._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.eval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.evalInv.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.inverse_conjugate_mem_supportedSpan._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.inverse_conjugate_mem_supportedSpan._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.lightCone.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.logarithmic_derivative_eq_sum._simp_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mk._flat_ctor [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mk.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mk.inj [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mk.injEq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mk.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mk.sizeOf_spec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mutual_inverse._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FieldLayer.mutual_inverse._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allX._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allX.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allX_encoding._abel_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allY.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allZ.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.allZ_encoding._abel_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.code.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.complement.eq_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.complement_word_eq_complement_word._simp_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.complement_word_ne_word._simp_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.detectsBelow_two._proof_1_3 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.dirac.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.dirac.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding_compression_entry._simp_1_3 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.encoding_rangeProjector._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.logicalZ.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.scale._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.sitePauli.eq_1 []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli.eq_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli_supported._simp_1_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli_supported._simp_1_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.weightTwoPauli_supported._simp_1_3 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.word._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.word.eq_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.word_eq_word._simp_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.word_ne_complement_word._simp_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.xUnitary._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.FourQubit.zUnitary._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.activeIndices.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.adjoint._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.adjoint._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.adjoint._proof_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.adjoint._proof_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.adjoint.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.conjugate_supportedOn._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.conjugate_supportedOn._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.evalIsUnitary._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.evalIsUnitary._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_conjugate_of_gate._simp_1_1 [propext, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_isUnitary._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_isUnitary._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_supportedOn._simp_1_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.eval_supportedOn._simp_1_2 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mk._flat_ctor [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mk.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mk.inj [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mk.injEq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mk.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.mk.sizeOf_spec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.toArbitrary._proof_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.toArbitrary._proof_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.Layer.toArbitrary.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.mk._flat_ctor [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.mk.congr_simp [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.mk.inj [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.mk.injEq [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.mk.noConfusion [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.ListGate.mk.sizeOf_spec [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.P._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.P.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.activeSites._proof_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.PhysicalCompressionExample.p.eq_1 [propext]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.I.elim []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.I.sizeOf_spec []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.X.elim []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.X.sizeOf_spec []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.Y.elim []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.Y.sizeOf_spec []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.Z.elim []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.Z.sizeOf_spec []
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.commutationSign.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.matrix.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.matrix.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.matrix.eq_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.matrix.eq_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript.SinglePauli.matrix.match_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.Arithmetic.0.CriticalDepth.Arithmetic.compressedWeight.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.Arithmetic.0.CriticalDepth.Arithmetic.compressedWeight.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.Arithmetic.0.CriticalDepth.Arithmetic.compressedWeight.match_1.splitter []
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.filterNonemptyGates.match_1.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.filterNonemptyGates.match_1.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitNormalization.0.CriticalDepth.Manuscript.filterNonemptyGates.match_1.splitter [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.actualCircuitAssignment.match_1.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.actualCircuitAssignment.match_1.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.actualCircuitAssignment.match_1.eq_3 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.actualCircuitAssignment.match_1.eq_4 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.actualCircuitAssignment.match_1.eq_5 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.actualCircuitAssignment.match_1.eq_6 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.CircuitPoints.0.CriticalDepth.Manuscript.actualCircuitAssignment.match_1.splitter [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLayerDerivative.0.CriticalDepth.Manuscript.layerGateInsertionAt.match_1.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLayerDerivative.0.CriticalDepth.Manuscript.layerGateInsertionAt.match_1.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLayerDerivative.0.CriticalDepth.Manuscript.layerGateInsertionAt.match_1.splitter [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.fieldLayerSequenceCone.match_1.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.fieldLayerSequenceCone.match_1.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.fieldLayerSequenceCone.match_1.splitter [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.fieldLayerSequenceEval.match_1.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.fieldLayerSequenceEval.match_1.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FieldLightCone.0.CriticalDepth.Manuscript.fieldLayerSequenceEval.match_1.splitter [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.inv_of_involution._simp_1_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_1 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_2 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_3 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_4 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_5 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_6 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_7 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitStabilizer.0.CriticalDepth.Manuscript.FourQubit.kleinFourSubgroup._proof_8 [propext]
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.singlePauliCoefficient.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.singlePauliCoefficient.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.singlePauliCoefficient.match_1.eq_3 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.singlePauliCoefficient.match_1.eq_4 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.singlePauliCoefficient.match_1.splitter []
+RECURSIVE_AXIOMS _private.CriticalDepth.Support.0.CriticalDepth.Manuscript.layerSequenceCone.match_1.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.Support.0.CriticalDepth.Manuscript.layerSequenceCone.match_1.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.Support.0.CriticalDepth.Manuscript.layerSequenceCone.match_1.splitter [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.Support.0.CriticalDepth.Manuscript.layerSequenceEval.match_1.eq_1 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.Support.0.CriticalDepth.Manuscript.layerSequenceEval.match_1.eq_2 [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.Support.0.CriticalDepth.Manuscript.layerSequenceEval.match_1.splitter [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_3 []
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_4 []
+RECURSIVE_AXIOMS _private.CriticalDepth.FourQubitExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.splitter []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_3 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_4 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliCompression.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.splitter []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_3 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_4 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliSpan.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.splitter []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliTensor.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliTensor.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliTensor.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_3 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliTensor.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_4 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PauliTensor.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.splitter []
+RECURSIVE_AXIOMS _private.CriticalDepth.PhysicalCompressionExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_1 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PhysicalCompressionExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_2 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PhysicalCompressionExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_3 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PhysicalCompressionExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.eq_4 []
+RECURSIVE_AXIOMS _private.CriticalDepth.PhysicalCompressionExample.0.CriticalDepth.Manuscript.SinglePauli.matrix.match_1.splitter []
+CRITICAL_DEPTH_AUDIT_PASSED theorem_count=972 constant_count=1296 main_count=7

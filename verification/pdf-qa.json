@@ -1,0 +1,21 @@
+{
+  "schema": 2,
+  "publication_tex_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+  "pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
+  "pdf_bytes": 128094,
+  "pages": 6,
+  "typesetter": "Tectonic0.17.0 nativeLinux",
+  "typesetting": "passed",
+  "renderer": "MuPDF mutool1.21.1 nativeLinux",
+  "rendering": "passed",
+  "visual_inspection": "passed: all six CURRENT manuscript pages reviewed",
+  "figure_one": "Left short arrow absent; selected revised labels and brace layout preserved",
+  "text_math_refs": "No visible missing glyphs, clipping, overlap or unresolved citations observed",
+  "author_modifications": "All retained verbatim, including coloured links, email, affiliation, acknowledgement placeholder, introduction, bibliography and notation changes",
+  "acknowledgement_placeholder": "Retained per explicit user version-selection instruction; not treated as an unresolved rendering defect",
+  "retained_runtime_warnings": [
+    "Fontconfig default-configuration warning; bundled Latin Modern and AMS fonts rendered correctly",
+    "MuPDF ICC support unavailable; RGB page renders visually inspected"
+  ],
+  "memory_scope": "Same enforced8GB aggregate isolatedLinux tools"
+}

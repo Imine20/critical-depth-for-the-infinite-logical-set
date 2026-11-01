@@ -1,0 +1,33 @@
+{
+   "cgroup" : "/sys/fs/cgroup/codex-depth-productionb-20261101",
+   "command_modules" : [
+      "ShellPublicVerify"
+   ],
+   "exit_code" : 0,
+   "final" : {
+      "cgroup.procs" : "0\n1\n15\n",
+      "cpu.stat" : "usage_usec 3740379340\nuser_usec 2816779583\nsystem_usec 923599756\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n",
+      "memory.current" : "4377858048\n",
+      "memory.events" : "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "memory.max" : "8000000000\n",
+      "memory.peak" : "5972230144\n",
+      "memory.swap.max" : "0\n"
+   },
+   "finished_unix" : 1793523328.52325,
+   "initial" : {
+      "cgroup.procs" : "0\n1\n15\n",
+      "cpu.stat" : "usage_usec 3072147514\nuser_usec 2294341303\nsystem_usec 777806211\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n",
+      "memory.current" : "4158697472\n",
+      "memory.events" : "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "memory.max" : "8000000000\n",
+      "memory.peak" : "5972230144\n",
+      "memory.swap.max" : "0\n"
+   },
+   "metric" : "memory.peak is cumulative for the common cgroup; the job peak is sampled.",
+   "sample_interval_seconds" : 0.2,
+   "sampled_memory_peak_bytes" : 5555855360,
+   "schema" : 2,
+   "signal" : 0,
+   "started_unix" : 1793522159.18948,
+   "wait_status" : 0
+}
