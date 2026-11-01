@@ -10,11 +10,12 @@
 \definecolor{FOneTeal}{HTML}{226E78}
 \definecolor{FOneAmber}{HTML}{9D6826}
 \definecolor{FOneNavy}{HTML}{3C496B}
+\definecolor{LinkDarkRed}{HTML}{8B0000}
 \usepackage{hyperref}
 \hypersetup{
   colorlinks=true,
-  linkcolor=green,
-  citecolor=red,
+  allcolors=LinkDarkRed,
+  citecolor=blue,
   urlcolor=blue,
   pdftitle={Finiteness of Shallow Logical Operators and a Sharp Depth Threshold},
   pdfsubject={All bounded-arity logical circuits under a common total-depth bound}
@@ -103,17 +104,6 @@ for stabilizer subspace codes as a direct application. The depth-one
 case with gate arity at least \(d\) is also noted explicitly by
 Dua et al.~\cite[Sec.~I]{Dua}, using a minimum-weight logical Pauli as
 a rotation generator.
-
-Syndrome-resolved protocols realize continuous logical rotations through
-measurement and outcome-dependent recovery~\cite{Yoshioka}. Constant
-quantum-depth injection also allows measurements and classical
-processing~\cite{GolowichGuruswami}. Such protocols lie outside the exact
-unitary circuit model considered here. Bounds on fault-tolerance
-overhead concern a different resource. Physical-width and cumulative
-spacetime bounds depend on storage duration, noise, and target
-error~\cite{FMS,Bharti}; nearly logarithmic- and logarithmic-time
-compilers concern noisy simulation of a finite source
-alphabet~\cite{NguyenPattison,HanLiu}.
 
 Theorem~\ref{thm:depth} gives a distance criterion for finiteness under
 one common total-depth bound, without assigning a Clifford-hierarchy
@@ -297,7 +287,9 @@ factor \(W\), which is determined up to phase by \(U\).
 A circuit has depth at most \(h\) when it consists of at most \(h\) layers,
 each a product of gates on disjoint supports. Each elementary gate may act
 on any subset of at most \(q\) physical subsystems, with an arbitrary
-unitary matrix. Two circuits implementing Eq.~\eqref{eq:encoded} are
+unitary matrix. Gates with empty support are scalar phases. They can be
+removed and their phases absorbed into the gauge factor in
+Eq.~\eqref{eq:encoded}, without changing the projective logical image. Two circuits implementing Eq.~\eqref{eq:encoded} are
 logically equivalent when their factors \(W\) differ only by an overall
 phase.
 
