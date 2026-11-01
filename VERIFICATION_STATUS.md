@@ -1,20 +1,30 @@
 # Verification versions and evidence scope
 
 The current proof entry is the [portable Mathlib package](mathlib-review/README.md).
+
+A fresh Lean 4.35.0 build and recursive axiom audit of formal inputs at
+`3361e6cbed703b1a8bebe2b1784e875311361076` is recorded in the
+[latest execution report](verification-runs/20261101-3361e6c/FINAL_VERIFICATION_REPORT.md).
+Both native main theorems use exactly `propext`, `Classical.choice` and `Quot.sound`.
+The new report also records external calls using the newly compiled artifact.
+Its evidence is separate from the historical v2-033 record.
 The older records under docs/ and verification/ describe a different manuscript
 snapshot. Their applicability to the present manuscript is **VERSION_MISMATCH**.
 This classification preserves the historical successful run; it does not report
 a new Lean failure.
 
-This index classifies the repository state at commit
+The historical classification below was introduced for the repository state at commit
 [d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/commit/d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e).
-The correction changes documentation and classification metadata only.
+That correction changed documentation and classification metadata only. The later
+fresh execution report above supplies new build and axiom-audit evidence; its
+publication leaves the manuscript, formal source and dependency lock unchanged.
 
 ## Current entry and historical entry
 
 | Record | Bound manuscript | Scope and applicability |
 | --- | --- | --- |
-| [mathlib-review](mathlib-review/README.md) | 98e19ea5…41919227 | Current portable single file; recorded v2-033 audit: 1,251 theorem declarations, 1,727 mathematical constants, 29 targets |
+| [Fresh execution](verification-runs/20261101-3361e6c/FINAL_VERIFICATION_REPORT.md) | 98e19ea5…41919227 | New build at source revision 3361e6c; 1,251 theorem declarations, 1,727 mathematical constants, 29 targets; both native main targets exactly standard-three axioms |
+| [mathlib-review](mathlib-review/README.md) | 98e19ea5…41919227 | Current portable single file; original saved v2-033 audit remains historical |
 | [Legacy root verification](verification/README.md) | 18efaf29…634bf85 | Historical 47-module run, 972 theorem declarations, 1,296 mathematical constants and seven targets; VERSION_MISMATCH against the present manuscript |
 | [Selected editorial baseline](mathlib-review/THREE_LAYER_CORRESPONDENCE.md) | 118b256b…bc380a1c | Provenance for the derived current manuscript, not a byte-identical copy or an independent proof |
 
@@ -38,9 +48,10 @@ Current Lean source SHA-256:
 
 The current manuscript adds the explicit empty-support scalar-phase convention
 to its selected editorial baseline. It is a derived version, not a verbatim
-copy of that baseline. Its stored mathematical audit remains the record of
-the accepted v2-033 build. Hash checks made during this correction are static
-binding checks; they are not a new build or dynamic axiom audit.
+copy of that baseline. Its original stored mathematical audit remains the record of
+the accepted v2-033 build. Hash checks made during the historical classification
+correction were static binding checks. The separately linked fresh execution
+records a new source build and dynamic recursive axiom audit.
 
 ## Why the old inventory does not verify the present manuscript
 
@@ -87,8 +98,8 @@ do not apply its PASS to paths revised in later commits.
 The current [20-file timestamp collection](mathlib-review-timestamps/README.md)
 binds the portable proof package and current manuscript. All 20 primary files,
 all 23 current timestamp evidence files, the portable ZIP, and all old timestamp
-files are unchanged by this correction. These new classification notices are
-outside both stamped collections; no new timestamp is claimed for them.
+files are unchanged by this correction. The classification notices and fresh-run records are
+outside both stamped collections; no new timestamp is claimed for those records.
 
 The readable mathematical statements expose the formal definitions; they are
 not an additional independent proof. The closed Circle subgroup is an explicit

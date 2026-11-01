@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "status": "PASS",
+  "snapshot_revision": "3361e6cbed703b1a8bebe2b1784e875311361076",
+  "source_sha256": "85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8",
+  "consumer_source_sha256": "725b6432a412ab4154a42336ed915783eec3c32169d521dd02550df97af0de94",
+  "compiler_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "artifacts": [
+    {
+      "module": "CriticalDepthMathlib",
+      "file": "CriticalDepthMathlib.olean",
+      "bytes": 40982264,
+      "sha256": "30ef4721abc52b7bad8b076d85cb1e17e04e4edfdc38166fcf729cc73ce2664b"
+    },
+    {
+      "module": "FreshConsumer",
+      "file": "FreshConsumer.olean",
+      "bytes": 46496,
+      "sha256": "34c35022cc4e06380e63c9a3f54f2c649a68aa37dc82d411683722763fe1566b"
+    }
+  ],
+  "scope": "Hash identities of newly generated compiler products. Compiler binaries and cached public dependencies remain trusted inputs."
+}
