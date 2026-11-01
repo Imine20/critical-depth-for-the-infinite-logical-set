@@ -154,7 +154,7 @@ Locked replay does not require `lake update`. Resolve any lock-file change
 before claiming a replay of these inputs. To claim the same memory boundary,
 enforce it around Lake and all descendants, including dependency preparation.
 
-The concrete fresh-checkout bootstrap is in [README.md](../README.md). It uses the [documented Elan toolchain command](https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Managing-Toolchains-with-Elan/) and [pinned Mathlib cache command](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/README.md#L76-L83). The committed manifest is retained; no dependency-update command is needed.
+The concrete fresh-checkout bootstrap is in [README.md](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/blob/c7e9b4591c43c266947152b454f2008b12dc9f4c/README.md). It uses the [documented Elan toolchain command](https://lean-lang.org/doc/reference/latest/Build-Tools-and-Distribution/Managing-Toolchains-with-Elan/) and [pinned Mathlib cache command](https://github.com/leanprover-community/mathlib4/blob/56a005855ea17e0b0958f73ec801ae140b0a1679/README.md#L76-L83). The committed manifest is retained; no dependency-update command is needed.
 
 Machine-specific compiled-output inventories and raw run records containing local absolute paths are omitted from publication. Portable commands and actual check outcomes remain in this guide, the verifier source and results.json. The verifier regenerates those inventories and checks their hashes during every replay; the actual accepted outcome is recorded in results.json.
 
