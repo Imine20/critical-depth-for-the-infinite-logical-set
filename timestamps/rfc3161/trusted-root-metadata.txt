@@ -1,0 +1,6 @@
+subject=C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert Trusted Root G4
+issuer=C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert Trusted Root G4
+serial=059B1B579E8E2132E23907BDA777755C
+notBefore=Aug  1 12:00:00 2013 GMT
+notAfter=Jan 15 12:00:00 2038 GMT
+sha256 Fingerprint=55:2F:7B:DC:F1:A7:AF:9E:6C:E6:72:01:7F:4F:12:AB:F7:72:40:C7:8E:76:1A:C2:03:D1:D9:D2:0A:C8:99:88

@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "status": "RFC3161 verified; OpenTimestamps calendar-pending",
+  "primary_commit": "e882b1bd36838b3f825d35f07d9d4b46a5d3357b",
+  "primary_tree": "de2c48569f722af69ee92b2031a1aeba26d9cd3f",
+  "primary_files": 76,
+  "manifest": {
+    "path": "timestamps/release-manifest.txt",
+    "bytes": 8278,
+    "sha256": "a3e283cc6e07c705e8d181a54cdbda4e01f3e2ecb873d15b63ad9cba60f8a2a8",
+    "scope": "Selected TeX/PDF, all Lean project sources, configuration, documentation and portable verification evidence; excludes later timestamp receipts"
+  },
+  "publication_check": {
+    "method": "Git blob hashes computed from raw local bytes without filters, and byte lengths compared against the remote recursive Git tree",
+    "files_matched": 76,
+    "original_MIT_license_preserved": true
+  },
+  "rfc3161": {
+    "status": "verified",
+    "endpoint": "http://timestamp.digicert.com",
+    "payload": "SHA256 imprint and fresh random nonce; no file bytes",
+    "request_count": 1,
+    "granted": true,
+    "sha256_imprint_matched": true,
+    "nonce_matched": true,
+    "nonce": "6F33B9AA23F1EEAE",
+    "signature_verified": true,
+    "critical_exclusive_timeStamping_EKU_verified": true,
+    "trusted_chain_verified": true,
+    "query_verification": "Verification: OK",
+    "file_verification": "Verification: OK",
+    "genTime_utc": "2026-11-01T09:05:03Z",
+    "policy": "2.16.840.1.114412.7.1",
+    "serial": "FF0441FAADC17AC48716290B57C17DA9",
+    "root": "DigiCert Trusted Root G4",
+    "root_DER_SHA256": "552F7BDCF1A7AF9E6CE672017F4F12ABF77240C78E761AC203D1D9D20AC89988",
+    "root_provenance": "Preexisting Ubuntu distribution ca-certificates 20260601~24.04.1 Mozilla root set, package ownership and authenticated provider fingerprint checked independently of the response",
+    "leaf_DER_SHA256": "2DA09DA7F4131F9FE72DB6C5E6E9C9656755AF043F1EA742CC0D2120E141EBFC",
+    "revocation_checked": false,
+    "request_observed_controller_utc": "2026-11-01T09:09:43Z",
+    "verification_observed_controller_utc": "2026-11-01T09:10:59Z",
+    "clocks_synchronized": false,
+    "clock_limit": "TSA signed time and controller observations are distinct unsynchronized readings; trust in the TSA and its clock remains necessary"
+  },
+  "opentimestamps": {
+    "status": "calendar-pending",
+    "selected_calendars": [
+      "https://a.pool.opentimestamps.org",
+      "https://b.pool.opentimestamps.org",
+      "https://a.pool.eternitywall.com"
+    ],
+    "successful_selected_calendar_replies": 3,
+    "actual_distinct_pending_calendar_URIs": [
+      "https://alice.btc.calendar.opentimestamps.org",
+      "https://bob.btc.calendar.opentimestamps.org",
+      "https://finney.calendar.eternitywall.com"
+    ],
+    "initial_receipt": "timestamps/ots/release-manifest.txt.ots",
+    "initial_bytes": 794,
+    "initial_sha256": "28ae737b9fbffbbd3518f9677e96220b97eb2e9c7e5ff59e884bf5717bc50824",
+    "initial_digest_and_all_proof_edges_checked": true,
+    "initial_receipt_preserved": true,
+    "initial_observed_controller_utc": "2026-11-01T09:09:52Z",
+    "upgrade_copy": "timestamps/ots/release-manifest.txt.upgrade.ots",
+    "upgrade_observed_controller_utc": "2026-11-01T09:12:39.219Z",
+    "upgrade_changed": false,
+    "upgrade_calendar_observations": [
+      {
+        "calendar": "https://alice.btc.calendar.opentimestamps.org",
+        "returned_block_proof": false,
+        "observation": "AggregateError"
+      },
+      {
+        "calendar": "https://bob.btc.calendar.opentimestamps.org",
+        "returned_block_proof": false,
+        "observation": "Pending confirmation in Bitcoin blockchain"
+      },
+      {
+        "calendar": "https://finney.calendar.eternitywall.com",
+        "returned_block_proof": false,
+        "observation": "Pending confirmation in Bitcoin blockchain"
+      }
+    ],
+    "bitcoin_attestation_heights": [],
+    "bitcoin_confirmed": false,
+    "public_explorer_contacted": false,
+    "payload": "Official client SHA256(file SHA256 digest concatenated with fresh 16-byte nonce); upgrade queries receipt commitments"
+  },
+  "client": {
+    "name": "opentimestamps",
+    "version": "0.4.9",
+    "npm_dist_integrity": "sha512-EWA6nFSeNsD6aSX/Ek0WrWeTT+PKoP7455zWPkyvqf7/h7QsmDDbfFEY8S3Sd9/VxeQcyVu7yW0SqkvP+Zu/fg==",
+    "release_source_commit": "36e27fca500273a63e013fff62d963357e882a27",
+    "source_commit_is_release_metadata_not_an_installed_Git_checkout": true,
+    "node": "24.22.2",
+    "npm": "11.19.1",
+    "node_official_gzip_archive_sha256": "361718c444e49af2ca5a110c83ba6a8901143f23ab285ebbef0341f391f482a9",
+    "openssl": "3.0.13",
+    "client_lock": "timestamps/client-lock.json"
+  },
+  "execution": {
+    "aggregate_isolated_tool_memory_limit_bytes": 8000000000,
+    "swap_limit_bytes": 0,
+    "oom_events": 0,
+    "scope": "User-approved isolated Linux tools and descendants; cloud models and Windows controller excluded"
+  },
+  "limits": [
+    "Revocation unchecked; no indefinite historical or qualified legal timestamp claim",
+    "OTS is pending, not a verified Bitcoin anchor",
+    "Timestamps bind exact bytes; they do not establish authorship, novelty, mathematical correctness or author semantic approval",
+    "Raw machine-specific execution records remain local; portable verification commands and cryptographic evidence are published"
+  ]
+}

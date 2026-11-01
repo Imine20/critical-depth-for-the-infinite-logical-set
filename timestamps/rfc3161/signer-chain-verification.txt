@@ -1,0 +1,5 @@
+actual-signer.pem: OK
+Chain:
+depth=0: C = US, O = "DigiCert, Inc.", CN = DigiCert SHA256 RSA4096 Timestamp Responder 2026 1 (untrusted)
+depth=1: C = US, O = "DigiCert, Inc.", CN = DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1 (untrusted)
+depth=2: C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert Trusted Root G4
