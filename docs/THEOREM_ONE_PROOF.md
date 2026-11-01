@@ -1,6 +1,26 @@
-# Theorem 1: proof route and manuscript correspondence
+# Historical Theorem 1 proof route
 
-**Current manuscript:** the user selected the complete current revision, preserved verbatim as `manuscript/shallow_logical_operators_depth_threshold.tex` (37,090 bytes; SHA-256 `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`). Its Theorem 1 begins at line 304 and assumes both \(h\ge1\) and \(q\ge2\).
+**Historical scope — VERSION_MISMATCH against the present manuscript.**
+
+This proof map describes the legacy release
+[c7e9b4591c43c266947152b454f2008b12dc9f4c](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/c7e9b4591c43c266947152b454f2008b12dc9f4c)
+and manuscript SHA-256
+`18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`.
+The present manuscript is `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227`.
+All run outcomes, source locations, API-coverage limits and uses of “current”
+below refer to that historical release, not the present Mathlib package.
+
+The [current proof package](../mathlib-review/README.md) contains the later
+arbitrary-Hilbert transport, closed five-qubit examples and strengthened Circle witnesses.
+Consult its [current correspondence](../mathlib-review/THREE_LAYER_CORRESPONDENCE.md)
+and the [version index](../VERIFICATION_STATUS.md).
+This page is not a current API inventory. No new build or axiom audit is claimed.
+Author semantic approval remains pending.
+
+## Historical proof map
+
+
+**Historical manuscript:** the user selected the complete current revision, preserved verbatim as `manuscript/shallow_logical_operators_depth_threshold.tex` (37,090 bytes; SHA-256 `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`). Its Theorem 1 begins at line 304 and assumes both \(h\ge1\) and \(q\ge2\).
 
 **Verification status:** current Theorem 1, the positive-depth bridge, and the examples passed the fresh 47-module replay `20261101T083613Z`, together with the root entry point. The recursive audit covered 972 theorems, 1,296 mathematical constants, and seven main targets; source/artifact binding, module inventory, and all 46 mathematical module origins passed. The current closing declaration is `Manuscript.theoremOnePositive_proved`. [VERIFICATION.md](VERIFICATION.md) records the evidence and trust boundary. **Author semantic review remains pending.**
 

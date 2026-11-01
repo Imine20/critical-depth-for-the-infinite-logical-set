@@ -1,0 +1,54 @@
+{
+  "schema": 3,
+  "status": "VERSION_MISMATCH",
+  "record_scope": "STATUS_OF_UNCHANGED_HISTORICAL_SOURCE_MANIFEST",
+  "manifest": {
+    "relative_path": "source-manifest.sha256",
+    "sha256": "cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8",
+    "rows": 53,
+    "file_bytes_unchanged": true,
+    "applies_to_historical_release_commit": "c7e9b4591c43c266947152b454f2008b12dc9f4c",
+    "historical_primary_code_commit": "e882b1bd36838b3f825d35f07d9d4b46a5d3357b"
+  },
+  "static_comparison": {
+    "as_of_commit": "d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e",
+    "method": "Recorded static SHA-256 comparison after local raw Git blob identifiers and byte lengths were matched to the captured public tree",
+    "total_rows": 53,
+    "matching_rows": 52,
+    "mismatching_rows": 1,
+    "missing_rows": 0,
+    "manifest_entry_paths_relative_to": "repository root",
+    "mismatches": [
+      {
+        "manifest_entry_path": "manuscript/shallow_logical_operators_depth_threshold.tex",
+        "expected_historical_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+        "observed_current_sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227",
+        "observed_bytes": 36687,
+        "observed_public_git_blob": "124b05b25ab3d44dc5a9ce9256c6b4176116a81d"
+      }
+    ]
+  },
+  "interpretation": "The 52 unchanged inputs match. The sole mismatch is the manuscript version: historical 18ef versus current 98e. This is not a new failed proof; the historical kernel checks remain recorded passes for their exact historical inputs.",
+  "historical_kernel_status": "RECORDED_PASS_FOR_THE_HISTORICAL_RELEASE",
+  "current_manuscript_sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227",
+  "current_pdf_sha256": "e5e5157b590a93c26fe5d5b99ac5fdacc3e34a2229493ea88ce9eaff2fcfcbde",
+  "current_entry": {
+    "paths_relative_to": "verification/",
+    "current_verification": "../mathlib-review/VERIFICATION.json",
+    "current_readme": "../mathlib-review/README.md",
+    "current_correspondence": "../mathlib-review/THREE_LAYER_CORRESPONDENCE.md",
+    "current_statements": "../mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+    "current_proof_entry": "../mathlib-review/CriticalDepthMathlib.lean",
+    "repository_status": "../VERIFICATION_STATUS.md",
+    "legacy_record_index": "README.md"
+  },
+  "replay_scope": "Use the unchanged historical manifest only in its matching historical checkout. A mismatch against the current manuscript is expected. Do not replace the historical hashes merely to make a current-root check pass.",
+  "author_semantic_review": "PENDING",
+  "work_performed_by_this_update": {
+    "kind": "Static version-binding metadata only",
+    "new_lean_build": false,
+    "new_dynamic_axiom_audit": false,
+    "new_dynamic_replay": false,
+    "new_pdf_check": false
+  }
+}

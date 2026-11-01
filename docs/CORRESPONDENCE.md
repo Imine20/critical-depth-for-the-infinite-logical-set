@@ -1,6 +1,24 @@
-# Manuscript-to-Lean correspondence
+# Historical manuscript-to-Lean correspondence
 
-Publication manuscript: `manuscript/shallow_logical_operators_depth_threshold.tex`,
+**Historical record — VERSION_MISMATCH against the present manuscript.**
+
+This page records the legacy release at
+[c7e9b45](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/c7e9b4591c43c266947152b454f2008b12dc9f4c),
+whose manuscript SHA-256 is
+`18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`.
+The present manuscript SHA-256 is
+`98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227`.
+Recorded PASS results and source locations below apply to that historical input set.
+They do not certify the manuscript now at the same repository path.
+
+Use the [current Mathlib package](../mathlib-review/README.md),
+[current correspondence](../mathlib-review/THREE_LAYER_CORRESPONDENCE.md), and
+[version index](../VERIFICATION_STATUS.md) for the present release.
+Within the historical account, words such as “current” mean current at the recorded legacy run.
+This documentation correction does not rerun Lean, the axiom audit, or PDF inspection.
+Author semantic approval remains pending.
+
+Historical publication manuscript: `manuscript/shallow_logical_operators_depth_threshold.tex`,
 37,090 bytes, SHA-256
 `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`.
 It is a verbatim copy of the selected frozen input
@@ -13,7 +31,7 @@ The short left-panel arrow is already absent. No additional local mathematical
 edits were made to this publication copy. All locations below refer to this
 selected revision, not the earlier snapshot or its line-number offsets.
 
-**Current-version verification passed.** The fresh run
+**Historical-release verification passed.** The recorded run
 `20261101T083613Z` compiled all 47 project modules and the root entry point.
 The recursive audit covered 972 theorems, 1,296 mathematical constants, and
 seven main targets. Source and artifact binding, module inventory, and all
@@ -24,7 +42,7 @@ acceptance are separate from author approval.
 
 The regenerated **53-input** source manifest has SHA-256
 `cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8`.
-It binds the selected manuscript and current Lean/configuration/verifier
+It binds the historical manuscript and historical Lean/configuration/verifier
 inputs. Author semantic approval must identify this manifest and publication
 manuscript hash together.
 

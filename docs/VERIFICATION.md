@@ -1,11 +1,48 @@
-# Verification record and independent replay
+# Historical verification record and independent replay
+
+**Historical record — VERSION_MISMATCH against the present manuscript.**
+
+This page records the legacy release at
+[c7e9b45](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/c7e9b4591c43c266947152b454f2008b12dc9f4c),
+whose manuscript SHA-256 is
+`18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`.
+The present manuscript SHA-256 is
+`98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227`.
+Recorded PASS results and source locations below apply to that historical input set.
+They do not certify the manuscript now at the same repository path.
+
+Use the [current Mathlib package](../mathlib-review/README.md),
+[current correspondence](../mathlib-review/THREE_LAYER_CORRESPONDENCE.md), and
+[version index](../VERIFICATION_STATUS.md) for the present release.
+Within the historical account, words such as “current” mean current at the recorded legacy run.
+This documentation correction does not rerun Lean, the axiom audit, or PDF inspection.
+Author semantic approval remains pending.
+
+## Replay routing
+
+For the current 29-target integrated source, run from the repository root:
+
+```sh
+cd mathlib-review
+lake exe cache get
+sh verify.sh
+```
+
+The historical commands below concern the separate 47-module project and its seven targets.
+Use a separate checkout pinned to the legacy release commit for a historical replay.
+A fresh invocation of the root scripts on another commit checks that root project;
+it does not replay the current 29-target Mathlib package.
+The unchanged root script creates a new input inventory for each run and does not
+validate the saved 53-row historical manifest.
+
+## Historical run and instructions
 
 **Lean checks passed; author semantic review pending.** This record binds the
-user-selected current manuscript (37,090 bytes, SHA-256
+then-selected historical manuscript (37,090 bytes, SHA-256
 `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`).
 The manuscript was copied verbatim with all selected revisions retained.
 
-## Accepted current checks
+## Recorded historical checks
 
 The fresh replay `20261101T083613Z` cleared prior project outputs, compiled all
 **47 project modules** and the root `CriticalDepth.lean` entry point, and passed
@@ -20,7 +57,7 @@ source, and passed the recursive axiom audit:
 
 | Declaration in `CriticalDepth.Manuscript` | Scope |
 | --- | --- |
-| `theoremOnePositive_proved` | Current manuscript Theorem 1, positive common budget |
+| `theoremOnePositive_proved` | Historical manuscript Theorem 1, positive common budget |
 | `theoremTwoPositive_proved` | Current manuscript Theorem 2, positive minimum |
 | `theoremOne_proved` | Stronger exact-depth core |
 | `theoremOne_nondense` | Core projective nondensity consequence |

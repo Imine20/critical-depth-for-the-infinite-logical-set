@@ -1,21 +1,74 @@
 {
-  "schema": 2,
-  "publication_tex_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
-  "pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
-  "pdf_bytes": 128094,
-  "pages": 6,
-  "typesetter": "Tectonic0.17.0 nativeLinux",
-  "typesetting": "passed",
-  "renderer": "MuPDF mutool1.21.1 nativeLinux",
-  "rendering": "passed",
-  "visual_inspection": "passed: all six CURRENT manuscript pages reviewed",
-  "figure_one": "Left short arrow absent; selected revised labels and brace layout preserved",
-  "text_math_refs": "No visible missing glyphs, clipping, overlap or unresolved citations observed",
-  "author_modifications": "All retained verbatim, including coloured links, email, affiliation, acknowledgement placeholder, introduction, bibliography and notation changes",
-  "acknowledgement_placeholder": "Retained per explicit user version-selection instruction; not treated as an unresolved rendering defect",
-  "retained_runtime_warnings": [
-    "Fontconfig default-configuration warning; bundled Latin Modern and AMS fonts rendered correctly",
-    "MuPDF ICC support unavailable; RGB page renders visually inspected"
-  ],
-  "memory_scope": "Same enforced8GB aggregate isolatedLinux tools"
+  "schema": 3,
+  "status": "VERSION_MISMATCH",
+  "record_scope": "HISTORICAL_RECORD_NOT_CURRENT_MANUSCRIPT_VERIFICATION",
+  "status_explanation": "This record binds the earlier manuscript and PDF hashes, not the current manuscript and PDF. The mismatch is a version/applicability mismatch, not a newly failed Lean proof or a withdrawal of the recorded historical pass.",
+  "historical_record": {
+    "relative_path": "pdf-qa.json",
+    "captured_from_commit": "d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e",
+    "original_bytes": 1270,
+    "original_sha256": "37dec4ffe9e0022e984cf371bd25112e59abb8cd66d233255ae23f5b65f4dcc6",
+    "historical_release_commit": "c7e9b4591c43c266947152b454f2008b12dc9f4c",
+    "historical_primary_code_commit": "e882b1bd36838b3f825d35f07d9d4b46a5d3357b",
+    "manuscript_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+    "pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
+    "evidence_status": "RECORDED_TYPESETTING_RENDERING_AND_VISUAL_QA_PASSED_FOR_HISTORICAL_PDF",
+    "kernel_status": "RECORDED_PASS_FOR_THE_HISTORICAL_RELEASE",
+    "source_manifest_sha256": "cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8"
+  },
+  "historical_field_scope": "The entire original parsed object is preserved unchanged under historical_qa. All original fields containing 'current', all publication hashes, and unqualified 'passed' or QA claims inside that object refer to the historical release and its 18ef manuscript only.",
+  "current_publication": {
+    "observed_at_commit": "d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e",
+    "manuscript": {
+      "relative_path": "../manuscript/shallow_logical_operators_depth_threshold.tex",
+      "sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227"
+    },
+    "pdf": {
+      "relative_path": "../manuscript/shallow_logical_operators_depth_threshold.pdf",
+      "sha256": "e5e5157b590a93c26fe5d5b99ac5fdacc3e34a2229493ea88ce9eaff2fcfcbde"
+    },
+    "proof_source_sha256": "85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8",
+    "applicability_of_this_historical_record": "VERSION_MISMATCH",
+    "current_pdf_qa": "NOT_ESTABLISHED_BY_THIS_HISTORICAL_QA_RECORD"
+  },
+  "current_entry": {
+    "paths_relative_to": "verification/",
+    "current_verification": "../mathlib-review/VERIFICATION.json",
+    "current_readme": "../mathlib-review/README.md",
+    "current_correspondence": "../mathlib-review/THREE_LAYER_CORRESPONDENCE.md",
+    "current_statements": "../mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+    "current_proof_entry": "../mathlib-review/CriticalDepthMathlib.lean",
+    "repository_status": "../VERIFICATION_STATUS.md",
+    "legacy_record_index": "README.md"
+  },
+  "author_semantic_review": "PENDING",
+  "work_performed_by_this_update": {
+    "kind": "Version-label and provenance clarification",
+    "new_lean_build": false,
+    "new_kernel_acceptance": false,
+    "new_dynamic_axiom_audit": false,
+    "new_dynamic_replay": false,
+    "new_pdf_compilation_rendering_or_visual_qa": false
+  },
+  "historical_qa": {
+    "schema": 2,
+    "publication_tex_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+    "pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
+    "pdf_bytes": 128094,
+    "pages": 6,
+    "typesetter": "Tectonic0.17.0 nativeLinux",
+    "typesetting": "passed",
+    "renderer": "MuPDF mutool1.21.1 nativeLinux",
+    "rendering": "passed",
+    "visual_inspection": "passed: all six CURRENT manuscript pages reviewed",
+    "figure_one": "Left short arrow absent; selected revised labels and brace layout preserved",
+    "text_math_refs": "No visible missing glyphs, clipping, overlap or unresolved citations observed",
+    "author_modifications": "All retained verbatim, including coloured links, email, affiliation, acknowledgement placeholder, introduction, bibliography and notation changes",
+    "acknowledgement_placeholder": "Retained per explicit user version-selection instruction; not treated as an unresolved rendering defect",
+    "retained_runtime_warnings": [
+      "Fontconfig default-configuration warning; bundled Latin Modern and AMS fonts rendered correctly",
+      "MuPDF ICC support unavailable; RGB page renders visually inspected"
+    ],
+    "memory_scope": "Same enforced8GB aggregate isolatedLinux tools"
+  }
 }

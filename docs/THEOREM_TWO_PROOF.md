@@ -1,8 +1,28 @@
-# Theorem 2: proof route and positive critical depth
+# Historical Theorem 2 proof route
+
+**Historical scope — VERSION_MISMATCH against the present manuscript.**
+
+This proof map describes the legacy release
+[c7e9b4591c43c266947152b454f2008b12dc9f4c](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/c7e9b4591c43c266947152b454f2008b12dc9f4c)
+and manuscript SHA-256
+`18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`.
+The present manuscript is `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227`.
+All run outcomes, source locations, API-coverage limits and uses of “current”
+below refer to that historical release, not the present Mathlib package.
+
+The [current proof package](../mathlib-review/README.md) contains the later
+arbitrary-Hilbert transport, closed five-qubit examples and strengthened Circle witnesses.
+Consult its [current correspondence](../mathlib-review/THREE_LAYER_CORRESPONDENCE.md)
+and the [version index](../VERIFICATION_STATUS.md).
+This page is not a current API inventory. No new build or axiom audit is claimed.
+Author semantic approval remains pending.
+
+## Historical proof map
+
 
 This proof map targets the selected current manuscript, SHA-256 `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85`. Its main declaration is `CriticalDepth.Manuscript.theoremTwoPositive_proved` in [PositiveDepth.lean](../CriticalDepth/PositiveDepth.lean), which uses the manuscript's minimum over positive depth budgets.
 
-**Current-version verification passed.** The fresh run `20261101T083613Z` compiled all 47 project modules and the root entry point, including this target and its examples. The recursive audit covered 972 theorems, 1,296 mathematical constants, and seven main targets, with source/artifact binding, module inventory, and all 46 mathematical module origins checked. A standalone consumer of the public root also passed. See [VERIFICATION.md](VERIFICATION.md). **Author semantic review remains pending.**
+**Historical-release verification passed.** The fresh run `20261101T083613Z` compiled all 47 project modules and the root entry point, including this target and its examples. The recursive audit covered 972 theorems, 1,296 mathematical constants, and seven main targets, with source/artifact binding, module inventory, and all 46 mathematical module origins checked. A standalone consumer of the public root also passed. See [VERIFICATION.md](VERIFICATION.md). **Author semantic review remains pending.**
 
 The original assumptions are a qubit stabilizer **subspace** code
 `C : Code n (fun _ => 2) (2 ^ k) 1`, with `k ≥ 1`, actual distance `d ≥ 2`, and gate arity `q ≥ 2`. `IsStabilizer C` requires an actual subgroup of Pauli unitaries whose simultaneous +1 eigenspace is exactly the encoded range. `HasActualDistance C d` includes detection of every supported complex operator of weight below `d` and an undetectable operator supported on `d` sites. A minimum-weight logical Pauli is derived from these assumptions.

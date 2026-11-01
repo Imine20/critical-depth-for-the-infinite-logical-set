@@ -1,22 +1,75 @@
 {
-  "schema": 2,
-  "publication_bytes": 37090,
-  "publication_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
-  "selected_source": "Current C-path revision frozen at user version-selection reply",
-  "selected_source_copied_verbatim": true,
-  "all_current_author_modifications_retained": true,
-  "figure_one_left_short_arrow_absent": true,
-  "acknowledgement_placeholder_retained_per_user_choice": true,
-  "prior_original_snapshot_bytes": 36983,
-  "prior_original_snapshot_sha256": "ec18f629bd6bfc770f470d71ed995de2743d1bf1368dfee7a4366edb43ac3138",
-  "prior_arrow_only_working_copy_bytes": 36886,
-  "prior_arrow_only_working_copy_sha256": "da9f2afe35304e35c5e716285fdcc8583cf57be049c133432eb256113a929f95",
-  "version_change_reason": "External author-source revision detected by prepublication hash check; user explicitly selected current revision and all modifications",
-  "mathematical_changes": [
-    "Theorem1 restricted to h>=1 and q>=2; accepted base Lean theorem is stronger.",
-    "Critical depth is now minimized over positive h>=1; PositiveDepth.lean proves equality with the nonnegative definition using actual finite budget0."
-  ],
-  "current_theorem1_line": 304,
-  "current_theorem2_line": 450,
-  "author_semantic_review": "pending"
+  "schema": 3,
+  "status": "VERSION_MISMATCH",
+  "record_scope": "HISTORICAL_RECORD_NOT_CURRENT_MANUSCRIPT_VERIFICATION",
+  "status_explanation": "This record binds the earlier manuscript and PDF hashes, not the current manuscript and PDF. The mismatch is a version/applicability mismatch, not a newly failed Lean proof or a withdrawal of the recorded historical pass.",
+  "historical_record": {
+    "relative_path": "manuscript-binding.json",
+    "captured_from_commit": "d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e",
+    "original_bytes": 1298,
+    "original_sha256": "cc4daa5aa10f494622d7b25e4eb22d8649b62eb92bc6fe6eb6dcaf39c80ea63b",
+    "historical_release_commit": "c7e9b4591c43c266947152b454f2008b12dc9f4c",
+    "historical_primary_code_commit": "e882b1bd36838b3f825d35f07d9d4b46a5d3357b",
+    "manuscript_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+    "pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
+    "evidence_status": "RECORDED_BINDING_TO_HISTORICAL_MANUSCRIPT",
+    "kernel_status": "RECORDED_PASS_FOR_THE_HISTORICAL_RELEASE",
+    "source_manifest_sha256": "cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8"
+  },
+  "historical_field_scope": "The entire original parsed object is preserved unchanged under historical_binding. All original fields containing 'current', all publication hashes, and unqualified 'passed' or QA claims inside that object refer to the historical release and its 18ef manuscript only.",
+  "current_publication": {
+    "observed_at_commit": "d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e",
+    "manuscript": {
+      "relative_path": "../manuscript/shallow_logical_operators_depth_threshold.tex",
+      "sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227"
+    },
+    "pdf": {
+      "relative_path": "../manuscript/shallow_logical_operators_depth_threshold.pdf",
+      "sha256": "e5e5157b590a93c26fe5d5b99ac5fdacc3e34a2229493ea88ce9eaff2fcfcbde"
+    },
+    "proof_source_sha256": "85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8",
+    "applicability_of_this_historical_record": "VERSION_MISMATCH",
+    "current_pdf_qa": "NOT_ESTABLISHED_BY_THIS_HISTORICAL_QA_RECORD"
+  },
+  "current_entry": {
+    "paths_relative_to": "verification/",
+    "current_verification": "../mathlib-review/VERIFICATION.json",
+    "current_readme": "../mathlib-review/README.md",
+    "current_correspondence": "../mathlib-review/THREE_LAYER_CORRESPONDENCE.md",
+    "current_statements": "../mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+    "current_proof_entry": "../mathlib-review/CriticalDepthMathlib.lean",
+    "repository_status": "../VERIFICATION_STATUS.md",
+    "legacy_record_index": "README.md"
+  },
+  "author_semantic_review": "PENDING",
+  "work_performed_by_this_update": {
+    "kind": "Version-label and provenance clarification",
+    "new_lean_build": false,
+    "new_kernel_acceptance": false,
+    "new_dynamic_axiom_audit": false,
+    "new_dynamic_replay": false,
+    "new_pdf_compilation_rendering_or_visual_qa": false
+  },
+  "historical_binding": {
+    "schema": 2,
+    "publication_bytes": 37090,
+    "publication_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+    "selected_source": "Current C-path revision frozen at user version-selection reply",
+    "selected_source_copied_verbatim": true,
+    "all_current_author_modifications_retained": true,
+    "figure_one_left_short_arrow_absent": true,
+    "acknowledgement_placeholder_retained_per_user_choice": true,
+    "prior_original_snapshot_bytes": 36983,
+    "prior_original_snapshot_sha256": "ec18f629bd6bfc770f470d71ed995de2743d1bf1368dfee7a4366edb43ac3138",
+    "prior_arrow_only_working_copy_bytes": 36886,
+    "prior_arrow_only_working_copy_sha256": "da9f2afe35304e35c5e716285fdcc8583cf57be049c133432eb256113a929f95",
+    "version_change_reason": "External author-source revision detected by prepublication hash check; user explicitly selected current revision and all modifications",
+    "mathematical_changes": [
+      "Theorem1 restricted to h>=1 and q>=2; accepted base Lean theorem is stronger.",
+      "Critical depth is now minimized over positive h>=1; PositiveDepth.lean proves equality with the nonnegative definition using actual finite budget0."
+    ],
+    "current_theorem1_line": 304,
+    "current_theorem2_line": 450,
+    "author_semantic_review": "pending"
+  }
 }

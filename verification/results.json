@@ -1,146 +1,199 @@
 {
-  "schema": 2,
-  "lean_version": "4.35.0",
-  "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
-  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
-  "status": "Lean checks passed; semantics pending",
-  "current_manuscript_targets": [
-    "CriticalDepth.Manuscript.theoremOnePositive_proved",
-    "CriticalDepth.Manuscript.theoremTwoPositive_proved"
-  ],
-  "source_manifest_sha256": "cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8",
-  "source_manifest_files": 53,
-  "main_targets": [
-    {
-      "declaration": "CriticalDepth.Manuscript.theoremOne_proved",
-      "source_build": "passed",
-      "real_call": "passed",
-      "recursive_axiom_audit": "passed",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "Lean checks passed; semantics pending"
+  "schema": 3,
+  "status": "VERSION_MISMATCH",
+  "record_scope": "HISTORICAL_RECORD_NOT_CURRENT_MANUSCRIPT_VERIFICATION",
+  "status_explanation": "This record binds the earlier manuscript and PDF hashes, not the current manuscript and PDF. The mismatch is a version/applicability mismatch, not a newly failed Lean proof or a withdrawal of the recorded historical pass.",
+  "historical_record": {
+    "relative_path": "results.json",
+    "captured_from_commit": "d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e",
+    "original_bytes": 5823,
+    "original_sha256": "20696ef92d064e3b36481dbd27f6a05792268bf22f9902d489f633790cd25570",
+    "historical_release_commit": "c7e9b4591c43c266947152b454f2008b12dc9f4c",
+    "historical_primary_code_commit": "e882b1bd36838b3f825d35f07d9d4b46a5d3357b",
+    "manuscript_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+    "pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
+    "evidence_status": "RECORDED_LEAN_KERNEL_AND_RECURSIVE_AXIOM_CHECKS_PASSED",
+    "kernel_status": "RECORDED_PASS_FOR_THE_HISTORICAL_RELEASE",
+    "source_manifest_sha256": "cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8"
+  },
+  "historical_field_scope": "The entire original parsed object is preserved unchanged under historical_result. All original fields containing 'current', all publication hashes, and unqualified 'passed' or QA claims inside that object refer to the historical release and its 18ef manuscript only.",
+  "current_publication": {
+    "observed_at_commit": "d0e1eb1cfdd58d4d0bad97ee58d9b121ca55117e",
+    "manuscript": {
+      "relative_path": "../manuscript/shallow_logical_operators_depth_threshold.tex",
+      "sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227"
     },
-    {
-      "declaration": "CriticalDepth.Manuscript.theoremOne_nondense",
-      "source_build": "passed",
-      "real_call": "passed",
-      "recursive_axiom_audit": "passed",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "Lean checks passed; semantics pending"
+    "pdf": {
+      "relative_path": "../manuscript/shallow_logical_operators_depth_threshold.pdf",
+      "sha256": "e5e5157b590a93c26fe5d5b99ac5fdacc3e34a2229493ea88ce9eaff2fcfcbde"
     },
-    {
-      "declaration": "CriticalDepth.Manuscript.theoremTwo_proved",
-      "source_build": "passed",
-      "real_call": "passed",
-      "recursive_axiom_audit": "passed",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "Lean checks passed; semantics pending"
-    },
-    {
-      "declaration": "CriticalDepth.Manuscript.theoremOneAtMost_proved",
-      "source_build": "passed",
-      "real_call": "passed",
-      "recursive_axiom_audit": "passed",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "Lean checks passed; semantics pending"
-    },
-    {
-      "declaration": "CriticalDepth.Manuscript.theoremTwoAtMost_proved",
-      "source_build": "passed",
-      "real_call": "passed",
-      "recursive_axiom_audit": "passed",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "Lean checks passed; semantics pending"
-    },
-    {
-      "declaration": "CriticalDepth.Manuscript.theoremOnePositive_proved",
-      "source_build": "passed",
-      "real_call": "passed",
-      "recursive_axiom_audit": "passed",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "Lean checks passed; semantics pending"
-    },
-    {
-      "declaration": "CriticalDepth.Manuscript.theoremTwoPositive_proved",
-      "source_build": "passed",
-      "real_call": "passed",
-      "recursive_axiom_audit": "passed",
-      "axioms": [
-        "propext",
-        "Classical.choice",
-        "Quot.sound"
-      ],
-      "status": "Lean checks passed; semantics pending"
-    }
-  ],
-  "fresh_project_modules": 47,
-  "root_entry_point": "passed",
-  "project_theorems_audited": 972,
-  "mathematical_constants_audited": 1296,
-  "audited_project_modules": 46,
-  "source_binding": "passed",
-  "artifact_binding": "passed",
-  "module_inventory": "passed",
-  "audit_origin_coverage": "passed",
-  "public_replay": "passed",
-  "public_replay_run": "20261101T083613Z",
-  "public_replay_command": "lake env sh scripts/verify.sh",
-  "full_lake_build": "not run",
-  "entire_mathlib_source_rebuild": "not run",
-  "author_semantic_review": "pending",
-  "trusted_boundary": "Pinned public dependency artifacts; own project freshly elaborated from source. Missing external modules built from exact pinned Git blobs.",
-  "aggregate_memory_limit_bytes": 8000000000,
-  "swap_limit_bytes": 0,
-  "memory_scope": "All task tool processes and descendants in the isolated Linux environment; user-approved exclusion of cloud models and Windows desktop controller",
-  "proof_run_kernel_charged_peak_bytes": 5972230144,
-  "proof_run_kernel_peak_scope": "Cumulative peak of the common cgroup, including preceding isolated task work; not a separate kernel per-job peak",
-  "proof_run_sampled_peak_bytes": 5555855360,
-  "proof_run_no_oom": true,
-  "proof_replay_started_unix": 1793522159.18948,
-  "proof_replay_finished_unix": 1793523328.52325,
-  "standalone_consumer": {
-    "status": "passed",
-    "command": "lake env lean -j 1 -M 6144 -DmaxHeartbeats=3000000 verification/AuxiliaryCalls.lean",
-    "source_sha256": "0357b6c06b8da0356514f19b47ede8a9a75d37545c21b8fba91f4d4a4f508831",
-    "targets": [
-      "CriticalDepth.Verification.StandaloneConsumer.exact_finiteness_call",
-      "CriticalDepth.Verification.StandaloneConsumer.exact_nondensity_call"
+    "proof_source_sha256": "85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8",
+    "applicability_of_this_historical_record": "VERSION_MISMATCH",
+    "current_pdf_qa": "NOT_ESTABLISHED_BY_THIS_HISTORICAL_QA_RECORD"
+  },
+  "current_entry": {
+    "paths_relative_to": "verification/",
+    "current_verification": "../mathlib-review/VERIFICATION.json",
+    "current_readme": "../mathlib-review/README.md",
+    "current_correspondence": "../mathlib-review/THREE_LAYER_CORRESPONDENCE.md",
+    "current_statements": "../mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+    "current_proof_entry": "../mathlib-review/CriticalDepthMathlib.lean",
+    "repository_status": "../VERIFICATION_STATUS.md",
+    "legacy_record_index": "README.md"
+  },
+  "author_semantic_review": "PENDING",
+  "work_performed_by_this_update": {
+    "kind": "Version-label and provenance clarification",
+    "new_lean_build": false,
+    "new_kernel_acceptance": false,
+    "new_dynamic_axiom_audit": false,
+    "new_dynamic_replay": false,
+    "new_pdf_compilation_rendering_or_visual_qa": false
+  },
+  "historical_result": {
+    "schema": 2,
+    "lean_version": "4.35.0",
+    "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "status": "Lean checks passed; semantics pending",
+    "current_manuscript_targets": [
+      "CriticalDepth.Manuscript.theoremOnePositive_proved",
+      "CriticalDepth.Manuscript.theoremTwoPositive_proved"
     ],
-    "axioms": [
-      "propext",
-      "Classical.choice",
-      "Quot.sound"
-    ]
-  },
-  "current_positive_calls": {
-    "theorem_one": "PositiveDepthExamples.fiveSite_distanceThree_positiveBudget_schema: concrete numeric parameters n=5,K=2,g=1,q=2,d=3,h=1, with supplied code/detection hypotheses; no five-qubit code construction claimed",
-    "theorem_two": "PositiveDepthExamples: closed explicit [[4,2,2]] stabilizer code, positive minimum 1 and continuous subgroup"
-  },
-  "current_publication_tex_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
-  "current_publication_pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
-  "timestamps": "Recorded separately in timestamps/README.md and timestamp receipts for the frozen publication manifest",
-  "artifact_manifest_publication": "Machine-specific compiled-output inventories and raw run records containing local absolute paths omitted; portable commands, audit and outcomes retained; replay regenerates full local records"
+    "source_manifest_sha256": "cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8",
+    "source_manifest_files": 53,
+    "main_targets": [
+      {
+        "declaration": "CriticalDepth.Manuscript.theoremOne_proved",
+        "source_build": "passed",
+        "real_call": "passed",
+        "recursive_axiom_audit": "passed",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "status": "Lean checks passed; semantics pending"
+      },
+      {
+        "declaration": "CriticalDepth.Manuscript.theoremOne_nondense",
+        "source_build": "passed",
+        "real_call": "passed",
+        "recursive_axiom_audit": "passed",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "status": "Lean checks passed; semantics pending"
+      },
+      {
+        "declaration": "CriticalDepth.Manuscript.theoremTwo_proved",
+        "source_build": "passed",
+        "real_call": "passed",
+        "recursive_axiom_audit": "passed",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "status": "Lean checks passed; semantics pending"
+      },
+      {
+        "declaration": "CriticalDepth.Manuscript.theoremOneAtMost_proved",
+        "source_build": "passed",
+        "real_call": "passed",
+        "recursive_axiom_audit": "passed",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "status": "Lean checks passed; semantics pending"
+      },
+      {
+        "declaration": "CriticalDepth.Manuscript.theoremTwoAtMost_proved",
+        "source_build": "passed",
+        "real_call": "passed",
+        "recursive_axiom_audit": "passed",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "status": "Lean checks passed; semantics pending"
+      },
+      {
+        "declaration": "CriticalDepth.Manuscript.theoremOnePositive_proved",
+        "source_build": "passed",
+        "real_call": "passed",
+        "recursive_axiom_audit": "passed",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "status": "Lean checks passed; semantics pending"
+      },
+      {
+        "declaration": "CriticalDepth.Manuscript.theoremTwoPositive_proved",
+        "source_build": "passed",
+        "real_call": "passed",
+        "recursive_axiom_audit": "passed",
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "status": "Lean checks passed; semantics pending"
+      }
+    ],
+    "fresh_project_modules": 47,
+    "root_entry_point": "passed",
+    "project_theorems_audited": 972,
+    "mathematical_constants_audited": 1296,
+    "audited_project_modules": 46,
+    "source_binding": "passed",
+    "artifact_binding": "passed",
+    "module_inventory": "passed",
+    "audit_origin_coverage": "passed",
+    "public_replay": "passed",
+    "public_replay_run": "20261101T083613Z",
+    "public_replay_command": "lake env sh scripts/verify.sh",
+    "full_lake_build": "not run",
+    "entire_mathlib_source_rebuild": "not run",
+    "author_semantic_review": "pending",
+    "trusted_boundary": "Pinned public dependency artifacts; own project freshly elaborated from source. Missing external modules built from exact pinned Git blobs.",
+    "aggregate_memory_limit_bytes": 8000000000,
+    "swap_limit_bytes": 0,
+    "memory_scope": "All task tool processes and descendants in the isolated Linux environment; user-approved exclusion of cloud models and Windows desktop controller",
+    "proof_run_kernel_charged_peak_bytes": 5972230144,
+    "proof_run_kernel_peak_scope": "Cumulative peak of the common cgroup, including preceding isolated task work; not a separate kernel per-job peak",
+    "proof_run_sampled_peak_bytes": 5555855360,
+    "proof_run_no_oom": true,
+    "proof_replay_started_unix": 1793522159.18948,
+    "proof_replay_finished_unix": 1793523328.52325,
+    "standalone_consumer": {
+      "status": "passed",
+      "command": "lake env lean -j 1 -M 6144 -DmaxHeartbeats=3000000 verification/AuxiliaryCalls.lean",
+      "source_sha256": "0357b6c06b8da0356514f19b47ede8a9a75d37545c21b8fba91f4d4a4f508831",
+      "targets": [
+        "CriticalDepth.Verification.StandaloneConsumer.exact_finiteness_call",
+        "CriticalDepth.Verification.StandaloneConsumer.exact_nondensity_call"
+      ],
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "current_positive_calls": {
+      "theorem_one": "PositiveDepthExamples.fiveSite_distanceThree_positiveBudget_schema: concrete numeric parameters n=5,K=2,g=1,q=2,d=3,h=1, with supplied code/detection hypotheses; no five-qubit code construction claimed",
+      "theorem_two": "PositiveDepthExamples: closed explicit [[4,2,2]] stabilizer code, positive minimum 1 and continuous subgroup"
+    },
+    "current_publication_tex_sha256": "18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85",
+    "current_publication_pdf_sha256": "2ece2b816f16d7a63e31b6ff1f3fb8b46098bedf2aceb127419a200fb408bb4b",
+    "timestamps": "Recorded separately in timestamps/README.md and timestamp receipts for the frozen publication manifest",
+    "artifact_manifest_publication": "Machine-specific compiled-output inventories and raw run records containing local absolute paths omitted; portable commands, audit and outcomes retained; replay regenerates full local records"
+  }
 }
