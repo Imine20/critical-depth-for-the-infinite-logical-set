@@ -1,0 +1,7 @@
+Policy OID: 2.16.840.1.114412.7.1
+Hash Algorithm: sha256
+Serial number: 0x3227BB7CE07A4D7305FEB47F5508297C
+Time stamp: Nov  1 12:08:21 2026 GMT
+Accuracy: unspecified
+Ordering: no
+Nonce: 0x3687F0075F562643

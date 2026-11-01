@@ -1,0 +1,239 @@
+{
+  "schema": 1,
+  "status": "RFC3161_VERIFIED_OTS_CALENDAR_PENDING",
+  "release_revision": "portable-r3",
+  "manifest": {
+    "file": "release-manifest.txt",
+    "bytes": 2276,
+    "sha256": "99617c524af8d44dc5f823275671e57e9a978b2b7be9f0dd827960dd0bf6e7ee",
+    "primary_file_count": 20,
+    "format": "SHA256 TAB decimal-byte-length TAB repository-relative-path",
+    "timestamp_evidence_excluded": true,
+    "standalone_zip_bytes": 609522,
+    "standalone_zip_sha256": "b4f45ce84875e43921a536cb69637544bddead761044bd1693f113bdfb97c4ad",
+    "lean_source_sha256": "85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8"
+  },
+  "rfc3161": {
+    "status": "SIGNATURE_REQUEST_FILE_NONCE_EKU_CHAIN_VERIFIED",
+    "provider_endpoint": "http://timestamp.digicert.com",
+    "algorithm": "SHA-256",
+    "message_imprint_sha256": "99617c524af8d44dc5f823275671e57e9a978b2b7be9f0dd827960dd0bf6e7ee",
+    "signed_gen_time_utc": "2026-11-01T12:08:21Z",
+    "nonce": "0x3687F0075F562643",
+    "policy_oid": "2.16.840.1.114412.7.1",
+    "token_serial": "0x3227BB7CE07A4D7305FEB47F5508297C",
+    "request_verification": "Verification: OK",
+    "file_verification": "Verification: OK",
+    "signature_verified": true,
+    "nonce_and_request_binding_verified": true,
+    "frozen_file_binding_verified": true,
+    "critical_timestamping_eku_verified": true,
+    "certificate_chain_verified": true,
+    "revocation": "UNCHECKED",
+    "signer_subject": "DigiCert SHA256 RSA4096 Timestamp Responder 2026 1",
+    "signer_certificate_sha256_der": "2da09da7f4131f9fe72db6c5e6e9c9656755af043f1ea742cc0d2120e141ebfc",
+    "trusted_root_subject": "DigiCert Trusted Root G4",
+    "trusted_root_sha256_der": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+    "trust_boundary": "The trust anchor was checked against an independent trusted source. The included root is not an independent trust anchor by itself; readers must compare its fingerprint using their own trusted source.",
+    "warning": "The untrusted stack also includes the signer, which is not a CA. Timestamp checks returned OK; no warning-free claim is made.",
+    "time_boundary": "The signed time is the TSA assertion, subject to its clock; no synchronized cross-service ordering claim."
+  },
+  "opentimestamps": {
+    "status": "CALENDAR_PENDING",
+    "client": {
+      "name": "opentimestamps",
+      "version": "0.4.9",
+      "source_commit_metadata_pin": "36e27fca500273a63e013fff62d963357e882a27",
+      "pin_is_metadata_not_independently_verified_local_git": true
+    },
+    "submission": "32-byte SHA256(file SHA256 digest concatenated with a fresh 16-byte nonce), not file contents",
+    "selected_calendar_urls": [
+      "https://a.pool.opentimestamps.org",
+      "https://b.pool.opentimestamps.org",
+      "https://a.pool.eternitywall.com"
+    ],
+    "actual_submit_requests": 5,
+    "actual_rounds": 2,
+    "actual_successful_selected_calendar_replies": 2,
+    "successful_selected_calendar_urls": [
+      "https://b.pool.opentimestamps.org",
+      "https://a.pool.eternitywall.com"
+    ],
+    "independent_operator_count_not_established": true,
+    "initial_receipt": {
+      "file": "ots/release-manifest.txt.initial.ots",
+      "bytes": 219,
+      "sha256": "08a11a234442edc8265018e448d03813c33222f6329f469325cadf72e423c43b",
+      "file_digest_matches": true,
+      "pending_calendar_uris": [
+        "https://bob.btc.calendar.opentimestamps.org"
+      ],
+      "preserved_unchanged": true
+    },
+    "merged_receipt": {
+      "file": "ots/release-manifest.txt.merged.ots",
+      "bytes": 446,
+      "sha256": "ff29d4e8d0b0aee8f120d9272e189fd76d41e146a553c01695173b77336bc140",
+      "file_digest_matches": true,
+      "pending_calendar_uris": [
+        "https://bob.btc.calendar.opentimestamps.org",
+        "https://finney.calendar.eternitywall.com"
+      ]
+    },
+    "alice": "AggregateError in both bounded rounds",
+    "upgrade": {
+      "status": "COMPLETED_CALENDAR_PENDING",
+      "input_receipt": "ots/release-manifest.txt.merged.ots",
+      "input_sha256": "ff29d4e8d0b0aee8f120d9272e189fd76d41e146a553c01695173b77336bc140",
+      "copy_file": "ots/release-manifest.txt.upgraded.ots",
+      "copy_bytes": 446,
+      "copy_sha256": "ff29d4e8d0b0aee8f120d9272e189fd76d41e146a553c01695173b77336bc140",
+      "file_digest_matches": true,
+      "official_reported_changed": false,
+      "initial_preserved": true,
+      "calendar_replies": [
+        {
+          "uri": "https://bob.btc.calendar.opentimestamps.org",
+          "successful_parsed_reply": false,
+          "response": "Pending confirmation in Bitcoin blockchain"
+        },
+        {
+          "uri": "https://finney.calendar.eternitywall.com",
+          "successful_parsed_reply": false,
+          "response": "Pending confirmation in Bitcoin blockchain"
+        }
+      ],
+      "successful_parsed_upgrade_replies": 0
+    },
+    "bitcoin_confirmed": false,
+    "bitcoin_status": "PENDING",
+    "bitcoin_attestation_heights": [],
+    "bitcoin_verification_attempts": [],
+    "bitcoin_verification_result": null
+  },
+  "evidence_scope": "Portable cryptographic bytes, public provider/certificate fields, verification results, relative reproduction commands and client metadata pins. No host metadata or raw client summaries are included.",
+  "receipt_file_hashes": [
+    {
+      "file": "ots/release-manifest.txt.initial.ots",
+      "bytes": 219,
+      "sha256": "08a11a234442edc8265018e448d03813c33222f6329f469325cadf72e423c43b"
+    },
+    {
+      "file": "ots/release-manifest.txt.merged.ots",
+      "bytes": 446,
+      "sha256": "ff29d4e8d0b0aee8f120d9272e189fd76d41e146a553c01695173b77336bc140"
+    },
+    {
+      "file": "ots/release-manifest.txt.upgraded.ots",
+      "bytes": 446,
+      "sha256": "ff29d4e8d0b0aee8f120d9272e189fd76d41e146a553c01695173b77336bc140"
+    },
+    {
+      "file": "README.md",
+      "bytes": 7009,
+      "sha256": "43c97a63379a173116c03e58d87b6d81d0054a869e609e2ba74da7bf79074382"
+    },
+    {
+      "file": "release-manifest.txt",
+      "bytes": 2276,
+      "sha256": "99617c524af8d44dc5f823275671e57e9a978b2b7be9f0dd827960dd0bf6e7ee"
+    },
+    {
+      "file": "rfc3161/actual-signer.pem",
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    {
+      "file": "rfc3161/query.txt",
+      "bytes": 292,
+      "sha256": "70ad832dc55b8713f67002a9dd517c68aad3b0ee6019ce981d5a721375adc244"
+    },
+    {
+      "file": "rfc3161/release-manifest.tsq",
+      "bytes": 69,
+      "sha256": "fc954320866f95070117a77dc86627b2dd25f9b877d3cfa9977dc660c186b6ce"
+    },
+    {
+      "file": "rfc3161/release-manifest.tsr",
+      "bytes": 6006,
+      "sha256": "4ce3caedaf9edb85b76087865fad73b0edeb06cf0076ce35bcf724a7bfc80893"
+    },
+    {
+      "file": "rfc3161/reply.txt",
+      "bytes": 514,
+      "sha256": "6773be7b3c76d39f5aa0481173aef6b9fc57ae6a03d0ba3efa7ac5f03f1bd050"
+    },
+    {
+      "file": "rfc3161/response-certificates.pem",
+      "bytes": 6834,
+      "sha256": "b65bce3ebb0be8a8de3a133a0dc76e77399a8bf4c80bab983fa350358e08dfe1"
+    },
+    {
+      "file": "rfc3161/root-fingerprint.txt",
+      "bytes": 65,
+      "sha256": "f7f04c190e318a031812dc6431e98e5286bf918d4950ba556a71276ae09914cf"
+    },
+    {
+      "file": "rfc3161/signer-chain-verification.txt",
+      "bytes": 337,
+      "sha256": "000e0f03b4313ed38e667d841f9127754d476a660aa3fc458c5cf4694fdc3eb5"
+    },
+    {
+      "file": "rfc3161/signer-EKU.txt",
+      "bytes": 54,
+      "sha256": "f1cc6aba9696aee75f3537ae1f0194d04078bf80a928d7c2116999e67b67503c"
+    },
+    {
+      "file": "rfc3161/signer-metadata.txt",
+      "bytes": 417,
+      "sha256": "9f23895105ab8cd216ecf3b62ffcc47f4cf5fb48cceca8034872dc85b98bcf08"
+    },
+    {
+      "file": "rfc3161/token-metadata.txt",
+      "bytes": 205,
+      "sha256": "408d9f4ac7a1b7f7300c11cb447f16c74de6d4023f2034dd150b2b6970c4cd3d"
+    },
+    {
+      "file": "rfc3161/token.der",
+      "bytes": 5997,
+      "sha256": "2e99d520b4f67e69f40ef95c659c5d4815351bad9f64b08a5d6e3051ca5f19f4"
+    },
+    {
+      "file": "rfc3161/trusted-root.pem",
+      "bytes": 1988,
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee"
+    },
+    {
+      "file": "rfc3161/tstinfo.der",
+      "bytes": 112,
+      "sha256": "4ea05916bc8e54668ec5090ee0af5e70bb8f6e63fb0d4d9b26e655451b0d17ce"
+    },
+    {
+      "file": "rfc3161/verify-file.txt",
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    },
+    {
+      "file": "rfc3161/verify-query.txt",
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    }
+  ],
+  "checksum_manifest": "SHA256SUMS covers every public-copy file except itself",
+  "r1_r2": "Separate earlier snapshots; not used as timestamp evidence for r3",
+  "publication": {
+    "repository": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set",
+    "primary_commit": "9fda1b1ef1b95495b929a90797baf9ea4a045250",
+    "primary_tree": "8b13b5bd02a9cab0718afcc45aa3e09b0e8fd56e",
+    "primary_commit_url": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/commit/9fda1b1ef1b95495b929a90797baf9ea4a045250",
+    "publication_check": "Root publication workflow read back main and matched all 20 remote Git blob identifiers and byte lengths",
+    "timestamp_manifest_binds": "File bytes, not Git author or commit dates",
+    "receipt_publication": "Separate from primary commit"
+  },
+  "limitations": [
+    "Trust in the TSA and its clock is required",
+    "Revocation unchecked",
+    "Pending calendars and unchanged upgrades are not Bitcoin confirmation",
+    "No authorship, originality, legal qualification, mathematical-correctness or author-approval conclusion"
+  ]
+}
