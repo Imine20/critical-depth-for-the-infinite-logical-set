@@ -22,3 +22,7 @@ The [20261102 report](verification-runs/20261102-3c90628/FINAL_VERIFICATION_REPO
 Those receipts describe their own earlier manuscript and execution environment. Their historical resource qualifications, rejected attempts and stopped optional dependency-source rebuild are retained in that report. They are not relabeled as the new independent replay.
 
 The [earlier approval record](archive/approval-history/20261102-pending.json) preserves the previous PENDING decision. The user's new approval supersedes it for the input identified above. [Archived source and timestamp evidence](archive/README.md) still refers only to its named historical bytes.
+
+## Bootstrap correction before the new replay
+
+The [correction record](docs/BOOTSTRAP_CORRECTION_20261103.json) preserves the failed checkout and the subsequent missing-Cli-output rejection. Neither attempt reached project compilation. The bootstrap now compiles the actual locked Cli library before admission; the proof source and nine-package checker are unchanged. A successor snapshot will be replayed in a new environment.

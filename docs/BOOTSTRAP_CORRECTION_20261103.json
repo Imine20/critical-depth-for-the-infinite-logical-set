@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "status": "BOOTSTRAP_CORRECTED_FRESH_REPLAY_PENDING",
+  "failed_snapshot": "7bc72f5505f97e665ee8c34d177b6e6b0cde8afc",
+  "attempts": [
+    {
+      "status": "FAILED",
+      "exit_code": 128,
+      "stage": "checkout",
+      "started_utc": "2026-11-02T18:33:05Z",
+      "recorded_utc": "2026-11-02T18:34:44.200780+00:00",
+      "requested_commit": "7bc72f5505f97e665ee8c34d177b6e6b0cde8afc",
+      "raw_status_sha256": "b63785583a67222136b08d6ffb3129bb1391aa62989654ea095a539c4310c146"
+    },
+    {
+      "status": "FAILED",
+      "exit_code": 2,
+      "stage": "source-and-consumer-verification",
+      "started_utc": "2026-11-02T18:37:23Z",
+      "recorded_utc": "2026-11-02T19:18:50.327354+00:00",
+      "requested_commit": "7bc72f5505f97e665ee8c34d177b6e6b0cde8afc",
+      "raw_status_sha256": "3b94b34dcf1ded80bd810f0abae7eaca3ef0e52ab7d96bee23f6fe9c404f12da"
+    }
+  ],
+  "diagnosis": "Mathlib cache populated eight public output roots but not the locked Cli library. Lake supplied the correct Cli path; its directory was absent. The nine-root admission check rejected the run before the project compiler started.",
+  "correction": "Build the real locked library with lake --no-cache build '@Cli/Cli:leanArts' after the public cache step, retaining a separate log and all nine-pin/source-cleanliness checks.",
+  "proof_or_checker_changed": false,
+  "project_compiler_started_in_failed_attempts": false,
+  "next_run": "A new immutable successor snapshot and a new workspace; earlier failures are retained as failures."
+}

@@ -36,8 +36,12 @@ prerequisites; this is not a container or an OS reproducibility claim.
    being run. It installs the release named by that checkout's `lean-toolchain`
    into the isolated Elan directory.
 4. Runs `lake exe cache get` using the committed dependency lock and an empty
-   public-cache directory. It never runs `lake update` and never imports a
-   pre-existing project Lean search path or Mathlib cache.
+   public-cache directory. It then runs
+   `lake --no-cache build '@Cli/Cli:leanArts'` to build the locked Cli library
+   from source, with Lake's build-cache downloads disabled. Mathlib's cached
+   import closure does not populate that library's output directory. All nine
+   pinned public output roots remain required. It never runs `lake update`
+   and never imports a pre-existing project Lean search path or Mathlib cache.
 5. Invokes `sh scripts/verify_release.sh`, which compiles the project source and
    its consumer in fresh verification directories. Before and after this
    verification, the wrapper checks the repository commit, recorded input
@@ -45,10 +49,11 @@ prerequisites; this is not a container or an OS reproducibility claim.
    and clean tracked dependency files.
 
 Here, **fresh replay** means a newly installed Lean runtime, newly downloaded
-public dependency caches, and newly compiled project/consumer artifacts. It
-does **not** mean that all public dependencies or the Lean compiler were built
-from source. Consult the separate dependency-source replay documentation for
-that stronger and more expensive scope. This command verifies the formal
+public dependency caches, a newly source-built locked Cli library, and newly
+compiled project/consumer artifacts. It does **not** mean that all public
+dependencies or the Lean compiler were built from source. Consult the separate
+dependency-source replay documentation for that stronger and more expensive
+scope. This command verifies the formal
 artifacts covered by the release verifier; it does not establish author
 semantic approval or a line-by-line manuscript-to-Lean correspondence.
 
@@ -56,8 +61,9 @@ semantic approval or a line-by-line manuscript-to-Lean correspondence.
 
 All records stay in the new workspace:
 
-- `bootstrap.log` records the overall run; `public-cache.log` and
-  `verification.log` record the two main stages.
+- `bootstrap.log` records the overall run; `public-cache.log`,
+  `locked-cli-library.log`, and `verification.log` record the cache download,
+  locked Cli source build, and project/consumer verification stages.
 - `environment.json`, `elan-version.txt`, `lean-version.txt`, and
   `lake-version.txt` identify the bootstrap and runtime environment.
 - `bootstrap/` contains the running wrapper, downloaded installer, committed

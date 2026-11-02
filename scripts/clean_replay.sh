@@ -59,7 +59,7 @@ record = {
     "recorded_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
     "requested_commit": commit, "verification_run": run or None,
     "dependency_mode": "fresh-public-cache",
-    "scope": "fresh project and consumer compilation; public dependencies use downloaded caches",
+    "scope": "fresh project and consumer compilation; Mathlib closure uses downloaded caches; locked Cli library is built from source",
 }
 pathlib.Path(root, "status.json").write_text(json.dumps(record, indent=2) + "\n")
 PY
@@ -206,8 +206,11 @@ PY
 }
 
 replay_stage=public-cache
-# This is the only dependency bootstrap. Do not replace it with `lake update`.
+# Bootstrap only the locked dependencies; never replace this with `lake update`.
 lake exe cache get 2>&1 | tee "$replay_workspace/public-cache.log"
+# Mathlib's import closure does not populate the locked Cli library output.
+replay_stage=locked-cli-library
+lake --no-cache build '@Cli/Cli:leanArts' 2>&1 | tee "$replay_workspace/locked-cli-library.log"
 replay_check_inputs "$replay_workspace/dependencies.before.json"
 replay_stage=source-and-consumer-verification
 sh scripts/verify_release.sh 2>&1 | tee "$replay_workspace/verification.log"

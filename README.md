@@ -23,10 +23,12 @@ The [aligned statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md) expo
 
 ## Article and versions
 
-The current [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) and [PDF](manuscript/shallow_logical_operators_depth_threshold.pdf) retain the author's text, with references ordered by first citation and the unused Beverland entry removed. The exact [approved input](manuscript/provenance/20261103v2-author-approved-input.tex) is preserved separately.
+The current [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) and [PDF](manuscript/shallow_logical_operators_depth_threshold.pdf) order references by first citation and remove the unused Beverland entry. They also incorporate the requested introduction wording, explicit Lean scope and a narrower Bonet-Monroig attribution; see the [scope and citation note](docs/LEAN_SCOPE_AND_CITATION_NOTE.md). The theorem statements and mathematical construction steps are unchanged. The exact [approved input](manuscript/provenance/20261103v2-author-approved-input.tex) is preserved separately.
 
 The final article will cite an immutable proof snapshot on this branch. Its publication commit follows that snapshot and records the article hashes and replay evidence; an article cannot contain its own enclosing Git commit SHA. Moving the branch later does not change the cited snapshot.
 
 Lean is 4.35.0 (compiler `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`), with Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679` and eight further locked packages. The proof trusts Lean, its bundled runtime and the pinned public dependency cache. It does not claim a full source rebuild of all dependencies.
 
 The [version index](VERIFICATION_STATUS.md) distinguishes current approval from historical execution records. [Archived evidence](archive/README.md), prior run receipts and existing timestamps retain their original bytes and scope.
+
+The [bootstrap correction record](docs/BOOTSTRAP_CORRECTION_20261103.json) preserves two failed setup attempts. The entry point now builds the locked Cli library missing from Mathlib's cache. A new fresh replay is pending; no successful result is claimed for those attempts.

@@ -1,3 +1,5 @@
+> Historical review note (2026-11-02): status words and manuscript hashes below refer to that review. See [current approval](../AUTHOR_SEMANTIC_APPROVAL.json), [current correspondence](../docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md), and the [historical-status ledger](../docs/HISTORICAL_STATUS_NOTES.md).
+
 # Response to the remaining review issues
 
 This response uses the actual replay-reference manuscript M98e19 below. The latest user-provided manuscript M1c17 and PDF are separately bound in [the revision comparison](../docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md) and [release binding](../verification-runs/20261102-3c90628/RELEASE_BINDING.json). The accepted Lean source is unchanged; theorem two is certified for ordinary stabilizer subspace codes (g=1). Author approval remains PENDING.

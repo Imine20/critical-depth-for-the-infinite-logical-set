@@ -1,3 +1,5 @@
+> Historical review note (2026-11-02): status words and manuscript hashes below refer to that review. See [current approval](../AUTHOR_SEMANTIC_APPROVAL.json), [current correspondence](../docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md), and the [historical-status ledger](../docs/HISTORICAL_STATUS_NOTES.md).
+
 # Manuscript → readable statements → Lean correspondence
 
 This table maps the replay-reference manuscript M98e19 to statements S47a462 and the current Lean source. It is not a build receipt or author approval. The latest manuscript is assessed separately in ../docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md. Actual main and consumer results use the pinned trusted Mathlib cache and are recorded separately. **Author semantic approval: PENDING. CAD formalization: deferred.**

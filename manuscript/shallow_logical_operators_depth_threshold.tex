@@ -62,7 +62,7 @@ As we will show in the following, the precise threshold depth is \(2\lceil\log_{
 More specifically, Theorem~\ref{thm:depth} rules out an infinite logical image when
 \(h<2\lceil\log_{\rho} d\rceil-1\), without any stabilizer or geometric locality
 assumption. And Theorem~\ref{cor:critical} shows that every qubit stabilizer
-subspace code encoding at least one qubit realizes a nontrivial
+code encoding at least one qubit realizes a nontrivial
 continuous logical family at depth \(2\lceil\log_{\rho} d\rceil-1\), when
 arbitrary gates on at most \(\rho\) qubits are allowed. Stabilizer subspace
 codes are thus the most capable candidates for the emergence of an infinite
@@ -497,8 +497,10 @@ Choose a Hermitian code-preserving Pauli \(P\) of weight \(d\), with
 We first compress its support so that its rotation fits in one allowed
 gate.
 
-Adapt the binary-tree compression of
-Ref.~\cite[Sec.~IV and Fig.~2(a)]{BonetMonroig}.
+We adapt the unitary parity-concentration part of the binary-tree
+in-line symmetry-verification circuit in
+Ref.~\cite[Sec.~IV and Fig.~2(a)]{BonetMonroig}
+to gates on at most \(\rho\) qubits.
 At each layer, partition the active factors into groups of \(\rho\),
 with at most one smaller group. In each group, basis changes and CNOTs
 compose into one allowed Clifford gate collecting the product onto
@@ -544,7 +546,7 @@ locality.
 by NSFC under Grant No. 12475023, Dushi Program, and a startup funding from YMSC.
 \end{acknowledgments}
 
-Lean formalizations of Theorems~\ref{thm:depth} and~\ref{cor:critical}, together with verification scripts, are available in the \href{https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/33176e0000d326ed22ccdf79db5d18d8e09c811a}{project repository} (commit \texttt{33176e0}).
+Lean proofs of the statements of Theorems~\ref{thm:depth} and~\ref{cor:critical}, under their stated hypotheses, together with verification scripts, are available in the \href{https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/7bc72f5505f97e665ee8c34d177b6e6b0cde8afc}{project repository} (proof snapshot \texttt{7bc72f5}). The formal proof of Theorem~\ref{thm:depth} uses an independent algebraic argument; it does not formalize the CAD construction in the End Matter.
 
 \begin{thebibliography}{17}
 \rightskip=0pt plus 1fil\relax
