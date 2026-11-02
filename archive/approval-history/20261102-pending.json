@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "status": "PENDING",
+  "scope": "Author approval of the two main mathematical statements, standard stabilizer convention and manuscript-to-formalization semantics; CAD proof certification is explicitly excluded/deferred",
+  "manuscript_sha256": "1c17ca04507174ce6b070af71a898626e279668d598d04b8b052787481d9ba0d",
+  "statements_sha256": "47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892",
+  "lean_sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2",
+  "approval_received": false,
+  "approver_identity": "Not supplied; no identity or author role is inferred",
+  "approval_evidence": "The user explicitly selected retain PENDING; no version-bound author semantic approval was granted.",
+  "final_kernel_acceptance": "PASS: actual main build, recursive axiom audit and separate consumer; see verification-runs/20261102-3c90628/VERIFICATION.json",
+  "technical_verification_sha256": "4d30510ea1f9379120a9187423d43b5bc7e94b1e296076b7ee531bec667da4fa",
+  "response_original": "暂不批准，保持 PENDING",
+  "response_recorded_at": "2026-11-02T01:03:37.3438883+08:00",
+  "CAD_scope": "Excluded: step-by-step CAD proof verification is deferred by the user",
+  "kernel_replay_reference_manuscript_sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227",
+  "response_bound_manuscript_sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227",
+  "latest_revision_status": "PENDING; latest manuscript was supplied after the actual Lean replay. No author approval has been granted for either packet.",
+  "latest_revision_correspondence": "See docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md; standard theorem-two interface covers stabilizer subspace codes with gauge dimension one."
+}

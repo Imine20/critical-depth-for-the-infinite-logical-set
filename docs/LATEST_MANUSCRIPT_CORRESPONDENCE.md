@@ -1,118 +1,66 @@
-# Latest manuscript: correspondence with the verified formal statements
+# Current manuscript and formal-statement correspondence
 
-**Status: `STATIC_MATCH_TWO_MAIN_RESULTS_UNDER_STANDARD_SUBSPACE_READING`.**
-The latest first theorem matches the verified statement after renaming gate
-arity `q` to `ρ`. The latest second theorem matches for ordinary `[[n,k,d]]`
-qubit stabilizer **subspace** codes, with gauge dimension one. The wording
-difference concerning this scope is recorded below. This is an AI/internal
-static correspondence review, not author approval or whole-paper validation.
-**Author semantic approval remains PENDING.**
+**Static correspondence: the two main results match under the ordinary stabilizer subspace-code reading. Semantic approval: APPROVED by the user's explicit instruction on 2026-11-03.**
 
-All 793 lines of the latest TeX were read, including the definitions and both
-theorem statements and proofs. The earlier definitions and main statements,
-the unchanged readable statements S, and the relevant declarations in F were
-compared. No TeX instruction or author TODO was executed. No Lean, WSL, build,
-network, or additional CAD proof audit was run for this comparison.
+This document binds the selected input manuscript to the unchanged mathematical Lean source. It is a static statement/definition comparison, not a fresh execution receipt or whole-paper certification. The approval and its scope are recorded in [AUTHOR_SEMANTIC_APPROVAL.json](../AUTHOR_SEMANTIC_APPROVAL.json).
 
-## Exact versions
+## Exact inputs
 
 | Object | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Selected TeX input, manuscript/provenance/20261103v2-author-approved-input.tex | 36,732 | 285ad9c537ad494418c250a6be1964476af1e6cd43b331a68733643a54d33ec2 |
+| Readable statements, mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md | 11,529 | 47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892 |
+| Integrated source, mathlib-review/CriticalDepthMathlib.lean | 543,694 | 3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2 |
+
+Manuscript line references below refer to this 817-line input, not to a later publication TeX after editorial or availability updates. TeX labels provide stable statement locators. Final TeX/PDF hashes and the article's cited proof snapshot are recorded separately in the release binding.
+
+The readable statements retain their historical reference manuscript hash and old line numbers. They have not been silently rebound or rewritten. The mapping below is the explicit bridge to the selected input.
+
+## Definitions and main conclusions
+
+"R" below abbreviates "CriticalDepth.ReviewV2". The manuscript's arity rho is the formal parameter q: a bound on the number of physical factors touched by a primitive gate, not a geometric radius.
+
+| Manuscript location | Mathematical content | Formal correspondence |
 | --- | --- | --- |
-| Latest supplied TeX, M1 | 35,519 | `1c17ca04507174ce6b070af71a898626e279668d598d04b8b052787481d9ba0d` |
-| Latest supplied PDF | 414,237 | `582ca90c612a57e2e9fdfa67081ab661c7b547178ed66e7be02d75c7cca347e1` |
-| Previous run-reference TeX, M0 | 36,687 | `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227` |
-| Readable statements S | 11,529 | `47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892` |
-| Formal source F | 543,694 | `3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2` |
-| Existing point-in-time `VERIFICATION.json` | 20,083 | `4d30510ea1f9379120a9187423d43b5bc7e94b1e296076b7ee531bec667da4fa` |
+| Lines 72-76 | Finite physical factors, isometric encoding, logical dimension K >= 2 and gauge dimension g >= 1 | Native matrix encoding and the Hilbert-coordinate transport. The arbitrary-carrier theorem preserves the physical tensor factors and their supports. |
+| Lines 77-82; eq:correctable | Every complex operator supported on fewer than d factors compresses to I_L tensor M_O | R.NativeDetectsBelow, source line 9924; this is a lower-distance condition, sufficient for Theorem 1. |
+| Lines 83-94; eq:encoded | Exact action UV = V(W tensor Z) for all logical and gauge states, counted modulo scalar phase; at most h disjoint-support layers | R.nativeLogicalImage and the gate/layer/circuit predicates; the image permits a number r <= h of layers. R.logical_factor_projective_unique supplies the phase-uniqueness bridge. |
+| Lines 205-219; thm:depth and eq:depth | Finiteness and non-density when h < 2 ceil(log_rho d) - 1 | R.NativeTheoremOne, source lines 10002-10007, proved by R.nativeTheoremOne_proved at line 10009. R.HilbertCircuitTransport.theoremOne_arbitrary_carriers at line 11025 supplies the general Hilbert-space presentation. |
+| Lines 382-390; eq:critical-definition | First positive depth budget with infinite image, or infinity if none exists | R.nativeCriticalDepth, source line 9984, and the proved legacy/native equality. |
+| Lines 478-488; cor:critical | Ordinary [[n,k,d]] qubit stabilizer subspace code, k >= 1, actual d >= 2, q >= 2 | R.StandardStabilizerCode, line 11793; R.NativeActualDistance, line 9930; R.StandardTheoremTwo, lines 11918-11927. |
+| Lines 483-487; eq:critical | Critical-depth equality and a nontrivial continuous one-parameter subgroup at that depth | R.standardTheoremTwo_proved, line 11929. Its conclusion includes a closed nontrivial subgroup with a topological group isomorphism from Circle and direct containment in the bounded-depth image. |
+| Lines 494-520; eq:pauli-family | A minimum-weight logical Pauli generates the compressed rotation construction, with projective period pi | The constructive stabilizer development and R.critical_circle_joint_witness, line 10167. The weight-d Pauli witness is derived from the stabilizer and actual-distance assumptions. |
 
-The PDF's exact bytes are identified here; this comparison did not visually
-verify its rendering or independently establish its derivation from the TeX.
-M0 and M1 were read from separate frozen revision copies. Neither was edited.
+Theorem 1 retains n >= 1, K >= 2, g >= 1, d >= 2, rho >= 2, h >= 1, the isometry and detection assumptions, and the strict depth inequality. No intermediate code-preservation, geometry, stabilizer or finite-alphabet condition is added. Theorem 2 retains actual distance, including the failure witness at weight d.
 
-## Notation and definition mapping
+## Stabilizer convention and gauge scope
 
-The code/S parameter `q` is the paper's new integer `ρ`: maximum **number of
-physical subsystems per gate**, not a geometric radius. The new
-`𝓛≤h(C,ρ)` is the previous `𝓛≤h(C;q)`. Both use one common total budget and
-one scalar logical phase. No change to F is needed for this renaming.
+The input introduction explicitly says "qubit stabilizer subspace code" at lines 64-67. Theorem 2 uses the ordinary [[n,k,d]] stabilizer-code notation. Its intended code is the whole common +1 eigenspace of an abelian Pauli subgroup excluding minus identity, with gauge dimension one. This is the standard interface in Lean.
 
-Names below beginning `R` mean `CriticalDepth.ReviewV2`; `Manuscript` means
-`CriticalDepth.Manuscript`. Formal line locations refer to unchanged F above.
+R.nativeStabilizer_iff_standard, source line 11895, proves the equivalence with the native whole-fixed-space convention under the isometry assumption. The required commutation, exclusion of minus identity and subgroup finiteness are proved. No extension of the sharp equality to nontrivial-gauge subsystem stabilizer codes is asserted.
 
-| Definition or conclusion | M0 lines | M1 lines | S/F correspondence and finding |
-| --- | --- | --- | --- |
-| Finite physical factors; encoding isometry; `K ≥ 2`, `g ≥ 1` | 258–270 | 238–242 | S §1; native raw-matrix isometry or Mathlib arbitrary-carrier linear isometry. Same assumptions. |
-| Detection below `d`: every supported complex operator compresses to `I_L ⊗ M_O` | 270–277, `eq:correctable` at 272 | 243–248, label at 245 | S §1; `R.NativeDetectsBelow` F:9924. M1 explicitly calls `d` a distance lower bound, consistent with T1's existing formal premise. |
-| Exact implementation `UV=V(W⊗Z)` on every logical/gauge state | 279–285, label at 280 | 249–255, label at 250 | S §2; equation inside `R.nativeLogicalImage`, F:9767. `R.logical_factor_projective_unique` supplies the phase-uniqueness bridge. |
-| At-most total depth, disjoint supports within layers, arbitrary supports/unitaries | 287–294 and 425–429 | 256–260, 287–293 | S §2; `NativeGateAllowed`, `NativeLayerAllowed`, `NativeCircuitAllowed`, F:9725; image quantifier `∃ r ≤ h`, F:9770. Definition moved before T1 without changing its scope. |
-| First theorem: finite logical image and nondensity below the strict threshold | 296–308; threshold label 300 | 280–294; threshold label 284 | S §3; `R.nativeTheoremOne_proved : NativeTheoremOne`, F:10002–10015, and `R.HilbertCircuitTransport.theoremOne_arbitrary_carriers`, F:11025. Same conclusion and bounds after `q=ρ`. |
-| First positive budget with infinite image; infinity if none | 425–440; definition label 431 | 451–461; definition label 452 | S §4; `R.nativeCriticalDepth`, F:9984. The minimum still uses `h ≥ 1`; circuits inside a positive budget may have length zero. |
-| Actual-distance ordinary qubit stabilizer code, `k ≥ 1`, arity at least two | 442–452 | 476–486 | S §4 and standard supplement; `R.StandardStabilizerCode` and `R.NativeActualDistance`. Match uses the standard subspace reading explained below. |
-| Critical equality `h∞ = 2⌈log_ρ d⌉−1` and nontrivial continuous subgroup | 447–451 | 481–485 | `R.standardTheoremTwo_proved : StandardTheoremTwo`, F:11918–11932; the original `R.nativeTheoremTwo_proved` remains. No additional theorem, Pauli witness, or desired conclusion is a premise. |
-| Pauli rotation family; projective period `π`; nontrivial `U(1)` subgroup | 475–483; family label 476 | 509–517; family label 510 | S §5; `R.critical_circle_joint_witness`, F:10167. The formal conclusion retains a closed Circle-isomorphic subgroup and membership for every angle, which is stronger than the main statement. |
+The formal circuit representation permits empty-support scalar gates. Removing such gates and absorbing their phases into the gauge factor preserves the projective logical image. Their inclusion does not change either main conclusion.
 
-For T1, all material bounds are retained: `n ≥ 1`, `K ≥ 2`, `g ≥ 1`,
-`d ≥ 2`, `ρ ≥ 2`, `h ≥ 1`, isometry, detection below `d`, and the strict
-depth inequality. There is no new stabilizer, geometry, finite gate alphabet,
-or intermediate code-preservation assumption. Actual distance is required
-for T2 and is not weakened to detection alone.
+## Independent proof route
 
-## Scope precision for the second theorem
+The input uses the corrected propagated insertion H_j at lines 270-277. Its finiteness proof then uses a smooth cell and path argument, with the End Matter lemma at lines 680-685. The Lean proof obtains the same finiteness conclusion by an algebraic/derivation route. The user explicitly accepts this difference; CAD-path formalization is outside the selected release scope rather than an unresolved approval condition. See [the route comparison](../mathlib-review/CAD_VS_ALGEBRAIC_PROOF.md).
 
-M0 explicitly said “stabilizer subspace code” and explained that a subspace
-code has `g=1`. M1 says “`[[n,k,d]]` qubit stabilizer code” at line 477 and
-removes the earlier subspace/gauge-dimension explanation. Under the usual
-ordinary stabilizer-code convention, its code space is the whole common +1
-eigenspace of an abelian Pauli subgroup excluding minus identity, has logical
-dimension `2^k`, and uses `g=1`. That is exactly the standard-code interface in
-F and S, with its proved native/standard equivalence and derived finiteness.
+## Claims outside the two formal interfaces
 
-This wording change is a precision difference. The correspondence does **not**
-infer an extension to subsystem stabilizer codes with `g>1`. Such an extension
-is not the theorem proved in F. Restating “subspace” or `g=1` would make the
-scope explicit, but the supplied manuscript is preserved unchanged and no
-further approval is requested. Author review of this interpretation remains
-PENDING.
-
-M1 also removes the explicit empty-support phase explanation from M0.
-F already allows empty-support gates and proves that their scalar phases can
-be absorbed into the gauge factor without changing the projective image.
-Thus their inclusion or removal does not change either counted image. The
-normalization's nonempty physical basis follows from the existing isometry
-and positive logical/gauge dimensions; it is not an extra premise.
-
-## Changes outside the two verified main statements
-
-The new article is more than a layout revision. The following distinctions
-must accompany any statement about verification coverage:
-
-| Latest passage | Coverage and limit |
+| Input passage | Coverage limit |
 | --- | --- |
-| Introduction, lines 53–64: error spread and a cited fault-tolerance threshold/constant-space construction | These are fault-tolerance and literature claims. F's locality bounds do not supply a noise model, decoder, threshold theorem, or overhead theorem. This comparison does not verify those claims. |
-| Introduction, lines 80–93: stabilizer codes attain the smallest onset depth at given distance and arity | This is a scoped consequence of the universal lower bound plus ordinary-stabilizer upper bound, within the same exact fixed-code circuit model. It establishes no general superiority in universality, overhead, error thresholds, or existence of codes for every parameter choice. |
-| Discussion, lines 412–437: the Dua `[[37,1,7]]` example and the pair `T†`, `√X†` generating a dense subgroup | F does not construct this 37-qubit code, prove those gadget implementations, or prove the pair's universality. Generic T1 applies if the actual encoding/detection hypotheses are supplied externally; this is not a closed formal application to that cited code. The stated numerical threshold is `2⌈log_3 7⌉−1=3`. |
-| Discussion, lines 440–449: compilation from a finite shallow alphabet and unbounded word lengths for uniform arbitrary-accuracy control | These are additional compilation/protocol observations. The distinction between finite bounded-budget image and possibly dense generated group is consistent with T1, but F does not provide a formal compilation or fault-tolerance protocol theorem. |
-| Removed M0 remarks, lines 486–510 | Their removal does not prove their converses. No full-register universality, subsystem critical-depth equality, intermediate fault tolerance, uniform cardinality bound, or overhead bound follows from the two main formal results. |
-| Figure and proof prose; End Matter lemma now at line 650 instead of 692 | The formal proof remains the alternative algebraic/derivation route. The manuscript's CAD smooth-cell/root/path argument remains deferred. No extra CAD correctness review or formal Clifford classification was performed here. |
+| Introduction, lines 49-70 | Literature statements, noise thresholds, space overhead and rhetorical comparisons are not established by the two main formal theorems. |
+| Lines 343-380 | A finite bounded-depth logical image need not have a finite or nondense generated group. The specific Dua [[37,1,7]] code and its universal generators are not instantiated by a closed formal proof here. No fault-tolerance protocol or uniform compilation-overhead theorem is claimed. |
+| Lines 524-528 | The central-gate fault example clarifies the construction's lack of protection against arbitrary single-gate faults. It is a written observation, not part of the two named formal targets. |
+| Figures and End Matter, lines 665-815 | The diagrams, finite smooth-cell construction, root branches and analytic path argument are not certified line by line by the independent algebraic Lean proof. |
+| Acknowledgment, funding and code availability | These are publication metadata, not formal mathematical conclusions or evidence of independent identity verification. |
 
-The methods/literature passages and author revision markers are source
-content, not instructions to this reviewer. Bibliographic assertions were not
-independently rechecked. The new narrative claims are not silently included
-in the formal main-theorem acceptance.
+The two theorems establish the onset of an infinite exact logical image and a continuous logical direction. They do not establish a finite-image cardinality bound uniform over code families, full logical addressability, fault-tolerant continuous control, or impossibility of a dense generated gate group.
 
-## Relation to the actual verification record
+## Approval and execution records
 
-The existing report identifies M0 `98e...`, S `47a...`, and F `3c906...`.
-Its actual formal audit records 1,268 theorem declarations, 1,749 mathematical
-constants, 41 targets, 29 exact-three targets, 13 named guards, and 12 Mathlib
-foundation checks under the explicit trusted-cache dependency policy. This
-document neither reruns those checks nor changes the report's original
-manuscript hash, timestamps, or point-in-time author-review status.
+The current semantic approval supersedes the old PENDING status for the identified input and scope. The old approval file is preserved byte for byte at [archive/approval-history/20261102-pending.json](../archive/approval-history/20261102-pending.json). It remains a valid historical record.
 
-S likewise remains explicitly bound to M0; its old manuscript line numbers
-are not claimed to be current M1 locations. The mapping above is the separate
-bridge to M1. It supports referencing the unchanged formal proofs for the two
-latest main statements under the stated subspace reading, without claiming
-that the earlier run processed M1, validated its new discussion or PDF, or
-checked the entire paper. No formal-source change or kernel rerun was
-identified as necessary for these two statement correspondences.
+This static correspondence does not relabel the 2026-11-02 execution as a run on the new manuscript. That run's reference input, timestamps and trust qualifications remain unchanged. New execution evidence must identify its own source snapshot, dependency policy and actual commands. Consult [VERIFICATION_STATUS.md](../VERIFICATION_STATUS.md) for the executed status of the new branch.
+
+The publication article and immutable proof snapshot belong to the same release branch. A later publication commit can update the article's availability citation and attach receipts while preserving the proof inputs. Exact final bytes and their relation to the approved input are a release-binding matter, distinct from this statement comparison.

@@ -134,6 +134,7 @@ if [ "$proof_status" -eq 0 ] &&
     > "$proof_out/artifact.sha256"
   cat "$proof_out/final-audit-marker.txt"
   printf 'CURRENT_SOURCE_AUDIT_PASSED dependency_mode=%s source_sha256=%s\n' "$proof_mode" "$proof_source_hash"
+  printf 'CURRENT_SOURCE_AUDIT_RUN=%s\n' "$proof_out"
 else
   # The directory was freshly allocated by this script; preserve rejected logs.
   rm -f "$proof_out/CriticalDepthMathlib.olean" "$proof_out/CriticalDepthMathlib.olean.private" \
