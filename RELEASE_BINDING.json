@@ -1,23 +1,23 @@
 {
   "schema": 2,
-  "status": "PROOF_AND_SCOPE_SNAPSHOT_ALGEBRAIC_ROUTE_WITH_UNCHANGED_REPLAYED_LEAN_SOURCE",
+  "status": "FINAL_ARTICLE_ALGEBRAIC_ROUTE_WITH_UNCHANGED_REPLAYED_LEAN_SOURCE",
   "release_branch": "revision/20261103v2-algebraic",
-  "cited_proof_and_scope_commit": "411ff86bd30e423b3bc15267006e7bb3b409506d",
+  "cited_proof_and_scope_commit": "ad6a378f6080ba32d92e7c31b6cf71b07685970a",
   "replayed_proof_commit": "411ff86bd30e423b3bc15267006e7bb3b409506d",
   "previous_publication_commit": "e199f3338e29ba3d8fbda5212f3a865af0b41d3a",
   "publication_commit": "Identified by the Git commit containing this file; its own SHA is not embedded.",
-  "publication_parent": "e199f3338e29ba3d8fbda5212f3a865af0b41d3a",
-  "paper_citation": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/411ff86bd30e423b3bc15267006e7bb3b409506d",
+  "publication_parent": "ad6a378f6080ba32d92e7c31b6cf71b07685970a",
+  "paper_citation": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/ad6a378f6080ba32d92e7c31b6cf71b07685970a",
   "article": {
     "tex": {
       "path": "manuscript/shallow_logical_operators_depth_threshold.tex",
       "bytes": 39541,
-      "sha256": "90dbcea5332c0221280e9f1484e14ed54203a56a16d5c1d84d41ebf4dea7f1a4"
+      "sha256": "cc64ad2f90a04131b41ba0d5dcd1707540cb7f0d5e8175d322d295cdefd37b91"
     },
     "pdf": {
       "path": "manuscript/shallow_logical_operators_depth_threshold.pdf",
-      "bytes": 451987,
-      "sha256": "efa33e51c1438fda30f538f15c3799c78d2709ec2a7e50b220b8213ab70d513a"
+      "bytes": 451870,
+      "sha256": "1d60a13da252f6504880242aaafb9e955e728db784aaf97b83a9552978345717"
     }
   },
   "lean_source": {
@@ -118,8 +118,8 @@
   },
   "article_check": {
     "path": "docs/20261103v2-algebraic-check.json",
-    "bytes": 1935,
-    "sha256": "1d33c355d2c65af27d8f1040e19a41471d19ff3c012faef049b3cb52807d73b0"
+    "bytes": 1924,
+    "sha256": "c28133d6af5d8ea1298b96a4ae2a203765dd2e7348e886abd237aa3596d6af58"
   },
   "changes": [
     "Replaced the smooth-cell/path proof by the coordinate-algebra and field-derivation proof used in Lean.",

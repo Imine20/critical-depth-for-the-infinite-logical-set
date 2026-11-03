@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "phase": "PROOF_AND_SCOPE_SNAPSHOT",
+  "phase": "FINAL_ARTICLE",
   "article": {
     "path": "manuscript/shallow_logical_operators_depth_threshold.tex",
     "bytes": 39541,
-    "sha256": "90dbcea5332c0221280e9f1484e14ed54203a56a16d5c1d84d41ebf4dea7f1a4"
+    "sha256": "cc64ad2f90a04131b41ba0d5dcd1707540cb7f0d5e8175d322d295cdefd37b91"
   },
   "pdf": {
     "path": "manuscript/shallow_logical_operators_depth_threshold.pdf",
-    "bytes": 451987,
-    "sha256": "efa33e51c1438fda30f538f15c3799c78d2709ec2a7e50b220b8213ab70d513a"
+    "bytes": 451870,
+    "sha256": "1d60a13da252f6504880242aaafb9e955e728db784aaf97b83a9552978345717"
   },
   "pages": 6,
   "compilation": {
