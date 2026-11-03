@@ -1,34 +1,28 @@
 # Critical depth for the infinite logical set
 
-This branch synchronizes the 20261103v2 article with its Lean proof and a clean-checkout verification entry point. The author has approved the semantics of the two main theorems and accepted the independent algebraic proof route; see the [approval record](AUTHOR_SEMANTIC_APPROVAL.json). The manuscript's CAD proof remains outside the formalization scope.
+**Independent clean replay: PASS. Author semantic approval: APPROVED.** This branch publishes the 20261103v2 article, its immutable Lean proof snapshot, and new execution evidence.
 
-The integrated proof source is unchanged from the previous verified release. A new independent replay is prepared on this branch; until a new execution receipt is published, the [20261102 run](verification-runs/20261102-3c90628/FINAL_VERIFICATION_REPORT.md) is historical evidence, not a fresh-environment result for this branch.
+The article cites proof commit [411ff86](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/411ff86bd30e423b3bc15267006e7bb3b409506d). The publication commit follows that snapshot on the same branch, release/20261103v2-verified. [RELEASE_BINDING.json](RELEASE_BINDING.json) identifies the final TeX/PDF hashes, the exact replay inputs, and the article's final code-availability citation after replay. Subsequent ordinary branch updates do not change the cited commit.
 
-## Reproduce
+## Article
 
-Use an immutable commit from this branch and a new empty workspace on Linux x86_64. Follow [the clean replay guide](docs/CLEAN_REPLAY.md). The entry point installs a pinned Lean toolchain in that workspace, clones the public repository, fetches the locked public dependency cache, and runs:
+Download the [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) or [five-page PDF](manuscript/shallow_logical_operators_depth_threshold.pdf). References are ordered by first citation, the unused Beverland entry is removed, and 17 entries remain. The [approved author input](manuscript/provenance/20261103v2-author-approved-input.tex) is preserved. The [editorial check](docs/20261103v2-editorial-check.json) records the bibliography changes, the separately requested introduction change from qubit stabilizer subspace code to qubit stabilizer code, the availability/Lean-scope paragraph and the clarified Bonet-Monroig attribution. It confirms that the remaining text, theorem statements, formulas and figures are unchanged.
 
-```sh
-sh scripts/verify_release.sh
-```
+## Reproduce the proof
 
-Both the integrated proof and [independent caller](mathlib-review/SourceConsumer.lean) must succeed. The caller uses the main module produced in that same run. All nine dependency checkout revisions must match [lake-manifest.json](lake-manifest.json). The [verification guide](docs/VERIFICATION.md) explains the checks and trusted inputs.
+Follow [the clean replay guide](docs/CLEAN_REPLAY.md), using the full proof commit above and a new workspace. Its script installs a fresh pinned toolchain, clones the public snapshot, downloads the locked public dependency cache, and runs both the main source audit and an independent caller.
 
-## Main results
+Read the [actual report](verification-runs/20261103v2-clean/FINAL_REPORT.md), [execution receipt](verification-runs/20261103v2-clean/VERIFICATION.json), [bootstrap provenance](verification-runs/20261103v2-clean/BOOTSTRAP.json), and [compressed full evidence](verification-runs/20261103v2-clean/evidence.tar.gz). The [version index](VERIFICATION_STATUS.md) distinguishes this run from historical records.
 
-- `CriticalDepth.ReviewV2.nativeTheoremOne_proved`: finiteness and non-density of exact logical actions within one common total depth budget, below the strict threshold, for the stated finite-dimensional subsystem codes.
-- `CriticalDepth.ReviewV2.standardTheoremTwo_proved`: the critical-depth equality and a nontrivial closed Circle-isomorphic subgroup for standard stabilizer subspace codes of actual distance d.
+The audit covers 1,268 theorem declarations, 1,749 mathematical constants and 41 registered targets. The independent caller makes three closed theorem calls on two explicit codes, covering both main interfaces. The two main recursive axiom sets are exactly propext, Classical.choice and Quot.sound. All nine dependency checkouts match the committed lock.
 
-The [aligned statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md) expose the assumptions. The [manuscript correspondence](docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md) separates semantic correspondence from compilation and from the proof route. The Lean proof does not formalize the CAD appendix line by line.
+## Main results and scope
 
-## Article and versions
+- CriticalDepth.ReviewV2.nativeTheoremOne_proved establishes finiteness and non-density of exact logical actions within one common total circuit-depth budget under the strict-threshold hypotheses.
+- CriticalDepth.ReviewV2.standardTheoremTwo_proved establishes the critical-depth equality and a nontrivial closed Circle-isomorphic subgroup for standard qubit stabilizer codes of actual distance d.
 
-The current [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) and [PDF](manuscript/shallow_logical_operators_depth_threshold.pdf) order references by first citation and remove the unused Beverland entry. They also incorporate the requested introduction wording, explicit Lean scope and a narrower Bonet-Monroig attribution; see the [scope and citation note](docs/LEAN_SCOPE_AND_CITATION_NOTE.md). The theorem statements and mathematical construction steps are unchanged. The exact [approved input](manuscript/provenance/20261103v2-author-approved-input.tex) is preserved separately.
+[Lean scope and citation note](docs/LEAN_SCOPE_AND_CITATION_NOTE.md), [aligned statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md), [current correspondence](docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md), and [author approval](AUTHOR_SEMANTIC_APPROVAL.json) describe the semantic scope. The independent algebraic proof route is accepted. No line-by-line formalization of the manuscript CAD appendix is claimed.
 
-The final article will cite an immutable proof snapshot on this branch. Its publication commit follows that snapshot and records the article hashes and replay evidence; an article cannot contain its own enclosing Git commit SHA. Moving the branch later does not change the cited snapshot.
+Lean is 4.35.0, compiler eb6cafb7290e8bd5f2937522d8d804f58f02bafc; Mathlib is 56a005855ea17e0b0958f73ec801ae140b0a1679. The compiler, runtime and pinned public dependency caches remain trusted; the new run rebuilt the project and caller, not every public dependency from source.
 
-Lean is 4.35.0 (compiler `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`), with Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679` and eight further locked packages. The proof trusts Lean, its bundled runtime and the pinned public dependency cache. It does not claim a full source rebuild of all dependencies.
-
-The [version index](VERIFICATION_STATUS.md) distinguishes current approval from historical execution records. [Archived evidence](archive/README.md), prior run receipts and existing timestamps retain their original bytes and scope.
-
-The [bootstrap correction record](docs/BOOTSTRAP_CORRECTION_20261103.json) preserves two failed setup attempts. The entry point now builds the locked Cli library missing from Mathlib's cache. A new fresh replay is pending; no successful result is claimed for those attempts.
+[Retained historical notes](docs/HISTORICAL_STATUS_NOTES.md) explain old PENDING/deferred wording in development documents. Earlier receipts, the original approval record and [archived evidence](archive/README.md) retain their historical bytes and scope.

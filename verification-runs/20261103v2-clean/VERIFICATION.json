@@ -1,0 +1,225 @@
+{
+   "bindings" : {
+      "inputs_unchanged" : true,
+      "main_artifacts_unchanged_during_consumer" : true,
+      "package_checkouts_unchanged" : true,
+      "public_artifacts_unchanged" : true
+   },
+   "checkouts" : {
+      "packages" : [
+         {
+            "commit" : "c24fe6078c630e89b489bffe59b3e20ac30d12c8",
+            "package" : "Cli",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "d6b4c7be5be75ec4917c873ac50c756dc1436372",
+            "package" : "LeanSearchClient",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "dce0ad79c486cb1fb504af04f953c3466b0c6db8",
+            "package" : "Qq",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "4a174c490d8707121c4a9290800489f105d85e07",
+            "package" : "aesop",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "66e469188fe07963e5cf666c7d4433f45b8131c5",
+            "package" : "batteries",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93",
+            "package" : "importGraph",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "56a005855ea17e0b0958f73ec801ae140b0a1679",
+            "package" : "mathlib",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "dfa4f38190d07c37e315953e08b90fe2d95b3c24",
+            "package" : "plausible",
+            "tracked_source_clean" : true
+         },
+         {
+            "commit" : "df72b022e558978a1c50264cfc4d7fec86fa8e04",
+            "package" : "proofwidgets",
+            "tracked_source_clean" : true
+         }
+      ],
+      "project_commit" : "411ff86bd30e423b3bc15267006e7bb3b409506d",
+      "project_worktree_clean" : true
+   },
+   "clean_environment_provenance" : "Recorded separately by the bootstrap runner; not established by this verifier alone.",
+   "consumer" : {
+      "artifacts" : [
+         {
+            "bytes" : 45376,
+            "file" : "SourceConsumer.olean",
+            "sha256" : "205875f846c8a2ccc369a277092e864786f5a225e1a25bee938538750dd82290"
+         },
+         {
+            "bytes" : 12674,
+            "file" : "SourceConsumer.ilean",
+            "sha256" : "1fdfc5b616b1d3f20223d6c780cacd8f9694f9cd4dbe02b02841f2a3d87f9a9b"
+         }
+      ],
+      "audit_marker" : "TRUSTED_CACHE_EXTERNAL_CONSUMER_PASSED call_count=3 imported_main_count=2 exact_three_count=5",
+      "call_count" : 3,
+      "end" : "2026-11-02T20:43:07.925809658Z",
+      "exact_three_count" : 5,
+      "exit_code" : 0,
+      "imported_main_count" : 2,
+      "log" : {
+         "bytes" : 1448,
+         "file" : "SourceConsumer.log",
+         "sha256" : "8b057a7c78db2501d71d9f202fe65fb6a262201112a860fd10c427b3043aca91"
+      },
+      "start" : "2026-11-02T20:43:03.674306058Z"
+   },
+   "dependency_policy" : "TRUSTED_PINNED_PUBLIC_CACHE",
+   "interval" : {
+      "end" : "2026-11-02T20:43:30.061517365Z",
+      "start" : "2026-11-02T20:36:30.312908335Z"
+   },
+   "main" : {
+      "artifacts" : [
+         {
+            "bytes" : 41290920,
+            "file" : "CriticalDepthMathlib.olean",
+            "sha256" : "57b4871e3934991aa11a48f091036beb5224891b6134b6d86a5cde142a117ecc"
+         },
+         {
+            "bytes" : 1598779,
+            "file" : "CriticalDepthMathlib.ilean",
+            "sha256" : "ea5d93486f4c7a86963ac32a870a6eee6a5a2b694120ed9bfa2aa493d3a94324"
+         }
+      ],
+      "audit" : {
+         "constant_count" : 1749,
+         "exact_three_count" : 29,
+         "foundation_count" : 12,
+         "imported_project_module_count" : 0,
+         "own_axiom_count" : 0,
+         "proposition_check_count" : 13,
+         "target_count" : 41,
+         "theorem_count" : 1268,
+         "unapproved_import_count" : 0
+      },
+      "audit_marker" : "STANDALONE_CRITICAL_DEPTH_V2_AUDIT_PASSED theorem_count=1268 constant_count=1749 target_count=41 exact_three_count=29 proposition_check_count=13 foundation_count=12 own_axiom_count=0 imported_project_module_count=0 unapproved_import_count=0",
+      "end" : "2026-11-02T20:42:38.995853674Z",
+      "exit_code" : 0,
+      "log" : {
+         "bytes" : 10430133,
+         "file" : "CriticalDepthMathlib.log",
+         "sha256" : "3a525491ff25f385111cac6d2f421e1890cb77656d941b521fd4f817ba6e7d71"
+      },
+      "start" : "2026-11-02T20:36:58.034235358Z"
+   },
+   "public_artifact_manifest" : {
+      "bytes" : 9379050,
+      "file" : "public-artifacts.after.jsonl",
+      "sha256" : "ac07f18c7672d7a328bf25fbdd60339e7b3b70271d18f64e9fbcd1736b8da96e"
+   },
+   "recursive_axiom_allowlist" : [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+   ],
+   "schema" : 1,
+   "semantic_scope" : "Formal main theorems and the recorded external calls; manuscript semantic approval is a separate bound record. CAD proof-route identity is not claimed.",
+   "source_inputs" : [
+      {
+         "bytes" : 25,
+         "file" : "lean-toolchain",
+         "sha256" : "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+      },
+      {
+         "bytes" : 442,
+         "file" : "lakefile.toml",
+         "sha256" : "82fa22259fb9a1cc329f3c89febd3afbf841ac7d859e11a926193cdc204bb1a0"
+      },
+      {
+         "bytes" : 3663,
+         "file" : "lake-manifest.json",
+         "sha256" : "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+      },
+      {
+         "bytes" : 7834,
+         "file" : "scripts/verify.sh",
+         "sha256" : "27104e0607379d2148cea49131f1d4fb4907852e8e3f4ff10dd128384a956501"
+      },
+      {
+         "bytes" : 12166,
+         "file" : "scripts/verify_release.sh",
+         "sha256" : "362149dee7e8a42c5f4369dcd3e0c02cc0cccf2ec20ac25f20faea8574500c8c"
+      },
+      {
+         "bytes" : 7109,
+         "file" : "scripts/verify_public_dependencies.pl",
+         "sha256" : "b93c58ef23ff9a8d438304b32645f1e19209335675dae8b34eda084c2bc0f05c"
+      },
+      {
+         "bytes" : 543694,
+         "file" : "mathlib-review/CriticalDepthMathlib.lean",
+         "sha256" : "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2"
+      },
+      {
+         "bytes" : 5765,
+         "file" : "mathlib-review/SourceConsumer.lean",
+         "sha256" : "14556a208ecf58045e5124c836e2e1bf662a46292d8856674b728a26f7cc25d5"
+      },
+      {
+         "bytes" : 11529,
+         "file" : "mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+         "sha256" : "47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892"
+      },
+      {
+         "bytes" : 333,
+         "file" : "mathlib-review/AUDIT_EXPECTED.txt",
+         "sha256" : "63794e2a409f3a7cc09626642ff2c89ded8505587bc0d4e43a54e15f2c70be93"
+      },
+      {
+         "bytes" : 960,
+         "file" : "mathlib-review/PAYLOAD_SHA256.txt",
+         "sha256" : "63c644f56f80049e187000e9fc0f9a4912fedcb501fbb1fe14e31351f8756c4c"
+      },
+      {
+         "bytes" : 25,
+         "file" : "mathlib-review/lean-toolchain",
+         "sha256" : "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+      },
+      {
+         "bytes" : 350,
+         "file" : "mathlib-review/lakefile.toml",
+         "sha256" : "d7452e002165998601d40ed58273fd25afb3f563b0c0f3bbdfb4ba164c15d35a"
+      },
+      {
+         "bytes" : 3663,
+         "file" : "mathlib-review/lake-manifest.json",
+         "sha256" : "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+      },
+      {
+         "bytes" : 36770,
+         "file" : "manuscript/shallow_logical_operators_depth_threshold.tex",
+         "sha256" : "f3e86958f9a64f7d868e2f106fc1da833befe3223b733da46ad33958e5df2ad4"
+      },
+      {
+         "bytes" : 3238,
+         "file" : "AUTHOR_SEMANTIC_APPROVAL.json",
+         "sha256" : "7ccfdc6cf22edca88e696ca7bc499628c60120b9fc274674ab65f7cd41e92324"
+      }
+   ],
+   "status" : "PASS",
+   "toolchain" : {
+      "compiler_sha256" : "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38",
+      "version" : "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)"
+   },
+   "validation" : "MAIN_SOURCE_AND_FRESH_ARTIFACT_CONSUMER"
+}

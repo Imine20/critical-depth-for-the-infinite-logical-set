@@ -1,0 +1,263 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "dependency_mode": "fresh-public-cache",
+      "exit_code": 128,
+      "raw_bootstrap_log": {
+        "bytes": 1425,
+        "file": "attempt-1-bootstrap.log (not exported)",
+        "sha256": "131caf243a99c20821ba9a001f4f428544700876cb1dbcd10d679584ea43b63d"
+      },
+      "raw_status": {
+        "bytes": 396,
+        "file": "attempt-1-status.json",
+        "sha256": "b63785583a67222136b08d6ffb3129bb1391aa62989654ea095a539c4310c146"
+      },
+      "reason": "HTTPS checkout failed with GnuTLS recv error (-110); no proof verification ran.",
+      "recorded_utc": "2026-11-02T18:34:44.200780+00:00",
+      "requested_commit": "7bc72f5505f97e665ee8c34d177b6e6b0cde8afc",
+      "scope": "fresh project and consumer compilation; public dependencies use downloaded caches",
+      "stage": "checkout",
+      "started_utc": "2026-11-02T18:33:05Z",
+      "status": "FAILED",
+      "verification_performed": false
+    },
+    {
+      "attempt": 2,
+      "dependency_mode": "fresh-public-cache",
+      "diagnostic_policy": "Later Cli-only diagnostics in the failed workspace are excluded from the selected replay evidence.",
+      "exit_code": 2,
+      "main_compilation_performed": false,
+      "raw_dependency_admission_log": {
+        "bytes": 327,
+        "file": "attempt-2-dependency-admission.log",
+        "sha256": "1785b39d5ab90b02e943c40c72a43e346a18d46ebb460b47415db920b980ac70"
+      },
+      "raw_status": {
+        "bytes": 418,
+        "file": "attempt-2-status.json",
+        "sha256": "3b94b34dcf1ded80bd810f0abae7eaca3ef0e52ab7d96bee23f6fe9c404f12da"
+      },
+      "reason": "Dependency admission rejected eight available public output roots; the locked Cli output was absent at that time. Project compilation and consumer verification did not run.",
+      "recorded_utc": "2026-11-02T19:18:50.327354+00:00",
+      "requested_commit": "7bc72f5505f97e665ee8c34d177b6e6b0cde8afc",
+      "scope": "fresh project and consumer compilation; public dependencies use downloaded caches",
+      "stage": "source-and-consumer-verification",
+      "started_utc": "2026-11-02T18:37:23Z",
+      "status": "FAILED",
+      "verification_performed": false
+    },
+    {
+      "attempt": 3,
+      "classification": "ABORTED_FOR_PERFORMANCE",
+      "dependency_mode": "fresh-public-cache",
+      "exit_code": 143,
+      "interruption_record": {
+        "bytes": 520,
+        "file": "attempt-3-interruption.json",
+        "sha256": "d6425aee24a813fcfd6f5d4346ced9e287099f59c7e4da964a088238afd34b02"
+      },
+      "main_compilation_performed": false,
+      "raw_dependency_admission_log": {
+        "bytes": 289,
+        "file": "attempt-3-dependency-admission.log",
+        "sha256": "f4f1fa9190ad8cb5ff2dd923a4c0a4978ac590ea0404494bdeac5e645ea01f6a"
+      },
+      "raw_status": {
+        "bytes": 458,
+        "file": "attempt-3-status.json",
+        "sha256": "3c7e9034e1eb4305f16d2d5cd5f2c1d1d83b240d3b4ab865932fcf7635a691d2"
+      },
+      "reason": "The exact dependency-hasher process was deliberately stopped before project compilation to restart on the task ext4 mount. This is an operational interruption, not a mathematical verification failure.",
+      "recorded_utc": "2026-11-02T20:29:51.884287+00:00",
+      "replacement_attempt": 4,
+      "requested_commit": "411ff86bd30e423b3bc15267006e7bb3b409506d",
+      "scope": "fresh project and consumer compilation; Mathlib closure uses downloaded caches; locked Cli library is built from source",
+      "stage": "source-and-consumer-verification",
+      "started_utc": "2026-11-02T19:32:39Z",
+      "status": "FAILED",
+      "verification_performed": false
+    },
+    {
+      "attempt": 4,
+      "dependency_mode": "fresh-public-cache",
+      "exit_code": 0,
+      "raw_status": {
+        "bytes": 543,
+        "file": "attempt-4-status.json (not exported)",
+        "sha256": "64befa00b69832cb55c0a9d540e94e30fa4541fe272cabbf635322569b8dc0e2"
+      },
+      "recorded_utc": "2026-11-02T20:43:30.257523+00:00",
+      "requested_commit": "411ff86bd30e423b3bc15267006e7bb3b409506d",
+      "scope": "fresh project and consumer compilation; Mathlib closure uses downloaded caches; locked Cli library is built from source",
+      "stage": "complete",
+      "started_utc": "2026-11-02T20:27:02Z",
+      "status": "PASSED",
+      "verification_performed": true,
+      "verification_receipt": {
+        "bytes": 8228,
+        "file": "VERIFICATION.json",
+        "sha256": "436eab62346aa87bd885661d9f4f11aa48821aef5d1a5a40c676d292b0d7249a"
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "plausible",
+      "revision": "dfa4f38190d07c37e315953e08b90fe2d95b3c24",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "d6b4c7be5be75ec4917c873ac50c756dc1436372",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "importGraph",
+      "revision": "a41f0e9a4dea23188ea9cc1c41ac9f8bbafe0b93",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "df72b022e558978a1c50264cfc4d7fec86fa8e04",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "aesop",
+      "revision": "4a174c490d8707121c4a9290800489f105d85e07",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "Qq",
+      "revision": "dce0ad79c486cb1fb504af04f953c3466b0c6db8",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "batteries",
+      "revision": "66e469188fe07963e5cf666c7d4433f45b8131c5",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "Cli",
+      "revision": "c24fe6078c630e89b489bffe59b3e20ac30d12c8",
+      "tracked_files_clean": true
+    },
+    {
+      "name": "mathlib",
+      "revision": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+      "tracked_files_clean": true
+    }
+  ],
+  "environment": {
+    "curl": "curl 8.5.0 (x86_64-pc-linux-gnu) libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.7",
+    "elan_asset_sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63",
+    "elan_asset_url": "https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz",
+    "elan_version": "4.2.4",
+    "git": "git version 2.43.0",
+    "home_changed": false,
+    "isolation": "fresh task directories on the host OS; not a container",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "proxy_configured": true,
+    "python": "3.12.3",
+    "repository_url": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set.git"
+  },
+  "filesystem_observation": {
+    "fstype": "ext4",
+    "image_file": "clean-linux.ext4",
+    "keeper": {
+      "child_exit_code": 0,
+      "child_exit_record": {
+        "bytes": 2,
+        "file": "native-replay4-child-exit.txt (not exported)",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "cleanup_record_present": false,
+      "launcher_source": {
+        "bytes": 2132,
+        "file": "launch_native_replay4.sh (not exported)",
+        "sha256": "f6e845661923a7947fe0b4ec548882ebfb8893bb5b5c6da7210940406036b94e"
+      },
+      "release_marker_present": false
+    },
+    "method": "Live findmnt source/type/target and losetup backing-file/attachment checks, compared with retained root and user observations.",
+    "mount_source_kind": "loop_device",
+    "observed_utc": "2026-11-02T20:45:54.991230+00:00",
+    "os_isolation_claimed": false,
+    "raw_loop_record": {
+      "bytes": 11,
+      "file": "native-replay4-loop.local.txt (not exported)",
+      "sha256": "e4c4dfb8cbd2cae6da837e87ca08481976a689757c7a12946360376bd4ed1707"
+    },
+    "raw_root_mount_record": {
+      "bytes": 71,
+      "file": "native-replay4-mount.local.txt (not exported)",
+      "sha256": "78332de8d4a584ff08147e5268d678ea803f4844711c9e19cb5d33733def04c2"
+    },
+    "single_loop_attachment": true,
+    "storage": "Task-owned ext4 loop image stored on the Windows E drive",
+    "user_fstype_record": {
+      "bytes": 5,
+      "file": "native-replay4-user-fstype.txt",
+      "sha256": "fc403f8c3380fdf4f72ccb327032346721ac7ea8a67ec45d03bfffdd6eb2791b"
+    }
+  },
+  "locked_cli_source_build": {
+    "bootstrap_script": {
+      "bytes": 10614,
+      "file": "scripts/clean_replay.sh",
+      "sha256": "655b78fa3331b223268b07356bef1fbf19c4e560b974b49d07ba9dedf6a5733a"
+    },
+    "command": [
+      "lake",
+      "--no-cache",
+      "build",
+      "@Cli/Cli:leanArts"
+    ],
+    "locked_commit": "c24fe6078c630e89b489bffe59b3e20ac30d12c8",
+    "log": {
+      "bytes": 139,
+      "file": "locked-cli-library.log",
+      "sha256": "8c2cdca5496f5f45594476a332e1ee62f524cbbe08b6bdb356f547d00ad6ab94"
+    },
+    "modules": [
+      "Cli.Basic",
+      "Cli.Extensions",
+      "Cli"
+    ],
+    "package": "Cli",
+    "public_artifact_count": 18,
+    "public_artifact_manifest": {
+      "bytes": 9379050,
+      "file": "public-artifacts.after.jsonl",
+      "sha256": "ac07f18c7672d7a328bf25fbdd60339e7b3b70271d18f64e9fbcd1736b8da96e"
+    }
+  },
+  "path_policy": "Raw bootstrap, mount, and launcher records containing host paths or local proxy settings are not exported. Exact path-free prior statuses, dependency-admission logs, the third-attempt interruption record, the user filesystem-type observation, and the selected Cli build log are included in the archive. This record retains selected nonsecret metadata, relative task directory layout, and hashes of retained local records.",
+  "raw_environment_record": {
+    "bytes": 1885,
+    "file": "environment.json (not exported)",
+    "sha256": "3a629a5385d12b213f63306d2139930a40cbc9011dabe3f6ca56df45ad2c1197"
+  },
+  "requested_commit": "411ff86bd30e423b3bc15267006e7bb3b409506d",
+  "schema": 1,
+  "scope": "Fresh task directories on a live ext4 loop mount backed by a task-owned image on the Windows E drive, a downloaded Lean toolchain and public Mathlib-closure caches, a source-built locked Cli library with Lake build-cache downloads disabled, and actual main and separate consumer compilation. The existing WSL OS and host utilities are shared prerequisites. This does not claim OS/container isolation or a rebuild of the Lean compiler and all public dependencies.",
+  "selected_attempt": 4,
+  "status": "PASSED",
+  "task_relative_directory_layout": {
+    "CARGO_HOME": "cache/cargo",
+    "ELAN_HOME": "elan",
+    "GIT_CONFIG_GLOBAL": "config/gitconfig",
+    "MATHLIB_CACHE_DIR": "cache/mathlib",
+    "TMPDIR": "tmp",
+    "XDG_CACHE_HOME": "cache/xdg",
+    "XDG_CONFIG_HOME": "config",
+    "XDG_DATA_HOME": "data",
+    "npm_config_cache": "cache/npm"
+  },
+  "tool_versions": {
+    "elan": "elan 4.2.4 (227caca13 2026-08-25)",
+    "lake": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)",
+    "lean": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)"
+  }
+}

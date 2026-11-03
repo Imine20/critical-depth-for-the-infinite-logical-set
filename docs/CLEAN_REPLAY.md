@@ -80,3 +80,16 @@ Successful completion requires exit code zero, `status.json` with `PASSED`,
 and the terminal marker `CLEAN_REPLAY_PASSED`. A downloaded toolchain, fetched
 cache, or started verifier alone does not establish completion. Local metadata
 contains absolute paths; review it before copying it into a public release.
+
+## Recorded 20261103v2 replay
+
+The [execution report](../verification-runs/20261103v2-clean/FINAL_REPORT.md) records a successful run at immutable commit 411ff86bd30e423b3bc15267006e7bb3b409506d. A concrete launch sequence is:
+
+~~~sh
+git clone https://github.com/Imine20/critical-depth-for-the-infinite-logical-set.git proof-launcher
+cd proof-launcher
+git checkout --detach 411ff86bd30e423b3bc15267006e7bb3b409506d
+bash scripts/clean_replay.sh 411ff86bd30e423b3bc15267006e7bb3b409506d "$PWD/../independent-replay"
+~~~
+
+The last path must not exist. The script remains identical in the proof and publication snapshots. The final article's publication commit is a descendant that carries the evidence and final code-availability citation; it is not substituted into the earlier execution receipt.

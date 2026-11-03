@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "BOOTSTRAP_CORRECTED_FRESH_REPLAY_PENDING",
+  "status": "BOOTSTRAP_CORRECTION_VERIFIED",
   "failed_snapshot": "7bc72f5505f97e665ee8c34d177b6e6b0cde8afc",
   "attempts": [
     {
@@ -26,5 +26,8 @@
   "correction": "Build the real locked library with lake --no-cache build '@Cli/Cli:leanArts' after the public cache step, retaining a separate log and all nine-pin/source-cleanliness checks.",
   "proof_or_checker_changed": false,
   "project_compiler_started_in_failed_attempts": false,
-  "next_run": "A new immutable successor snapshot and a new workspace; earlier failures are retained as failures."
+  "successful_snapshot": "411ff86bd30e423b3bc15267006e7bb3b409506d",
+  "successful_attempt": 4,
+  "complete_attempt_history": "../verification-runs/20261103v2-clean/BOOTSTRAP.json",
+  "verification_report": "../verification-runs/20261103v2-clean/FINAL_REPORT.md"
 }

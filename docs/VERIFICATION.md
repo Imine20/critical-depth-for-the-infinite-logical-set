@@ -12,7 +12,7 @@ With the locked toolchain and public dependency outputs already installed in a c
 sh scripts/verify_release.sh
 ```
 
-For initial dependency setup only, run `lake exe cache get`. Keep the committed lock file unchanged. Lean must be 4.35.0, compiler commit `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`. Mathlib is pinned to `56a005855ea17e0b0958f73ec801ae140b0a1679`; eight other package commits are listed in [lake-manifest.json](../lake-manifest.json).
+For initial dependency setup, run `lake exe cache get` followed by `lake --no-cache build '@Cli/Cli:leanArts'`. Mathlib's cache omits the locked Cli library; this additional command builds its actual Lean artifacts from source. Keep the committed lock file unchanged. Lean must be 4.35.0, compiler commit `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`. Mathlib is pinned to `56a005855ea17e0b0958f73ec801ae140b0a1679`; eight other package commits are listed in [lake-manifest.json](../lake-manifest.json).
 
 ## Required checks
 
@@ -32,7 +32,7 @@ The two main interfaces are `CriticalDepth.ReviewV2.nativeTheoremOne_proved` and
 
 ## Trust and semantic scope
 
-A fresh checkout and fresh cache download establish a new project/consumer compilation. The Lean compiler, bundled runtime and pinned public dependency cache remain trusted. This is not a source rebuild of all Mathlib dependencies. Main and consumer compilation each use one Lean thread and a 6,144 MiB Lean memory limit; those flags are not an aggregate operating-system memory cap.
+The workflow recompiles the project and consumer against freshly downloaded pinned dependency caches, with the locked Cli library built from source. Only a completed execution receipt establishes that those compilations succeeded. The Lean compiler, bundled runtime and pinned public dependency cache remain trusted. This is not a source rebuild of all Mathlib dependencies. Main and consumer compilation each use one Lean thread and a 6,144 MiB Lean memory limit; those flags are not an aggregate operating-system memory cap.
 
 The [version index](../VERIFICATION_STATUS.md) identifies actual execution records. Local .verification files are diagnostic outputs and include local paths; publish only an explicitly selected portable evidence bundle. A guide or prepared script is not an execution receipt.
 

@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "approved_input_sha256": "285ad9c537ad494418c250a6be1964476af1e6cd43b331a68733643a54d33ec2",
+  "final_tex_sha256": "672d39cd821058fe7a18e1079dac69167e982b831e53ce4e0123b0bd1c0521e6",
+  "retained_entries_byte_identical": true,
+  "reference_count": 17,
+  "first_citation_order": [
+    "Gottesman",
+    "EK",
+    "BK",
+    "PY",
+    "JKY",
+    "Webster",
+    "KL",
+    "Kribs",
+    "Faist",
+    "LiuZhou",
+    "Haferkamp",
+    "Plaumann",
+    "Dua",
+    "BonetMonroig",
+    "Cowtan",
+    "HaahLiuTan",
+    "GottesmanStabilizer"
+  ],
+  "removed_uncited_entry": "Beverland",
+  "proof_commit": "411ff86bd30e423b3bc15267006e7bb3b409506d",
+  "pdf_pages_visually_reviewed": 5,
+  "pdf_hyperlink_verified_after_stream_decompression": true,
+  "tex_build_exit_code": 0,
+  "additional_user_requested_edit": {
+    "location": "Introduction, source lines 64-65",
+    "before": "qubit stabilizer subspace code",
+    "after": "qubit stabilizer code",
+    "scope": "Only this introduction occurrence; theorem statements, definitions and proofs unchanged."
+  },
+  "pdf_sha256": "35772dffc0f66ff2b81aa31201f1c0ba2d519463f1485f4674face79c53ee4e2",
+  "theorem_statements_equations_and_figures_byte_identical": true,
+  "proof_text_unchanged_except_bonet_attribution": true,
+  "body_unchanged_except_authorized_editorial_regions": true,
+  "allowed_regions": [
+    "Bibliography order/count and removal of uncited Beverland",
+    "Code availability and explicit Lean scope",
+    "Requested introduction wording at original lines 64-65",
+    "Bonet-Monroig attribution restricted to unitary parity-concentration circuit"
+  ],
+  "bonet_monroig_check": {
+    "metadata": "Correct; unchanged",
+    "locator": "Section IV and Figure 2(a), confirmed",
+    "primary_sources": [
+      "https://arxiv.org/abs/1807.10050",
+      "https://arxiv.org/pdf/1807.10050",
+      "https://repository.tudelft.nl/file/File_f1750bae-1326-4792-86a9-b7d9d04aba71"
+    ],
+    "supported_content": "Binary-tree in-line symmetry-verification circuit and its unitary parity-concentration part; not the present arbitrary-arity exact depth formula."
+  },
+  "replay_reference_tex_sha256": "f3e86958f9a64f7d868e2f106fc1da833befe3223b733da46ad33958e5df2ad4",
+  "difference_from_replay_reference": "Only the immutable availability URL and short commit identifier.",
+  "unchanged_rendered_pages_after_commit_update": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "commit_citation_page_visually_checked": 4
+}
