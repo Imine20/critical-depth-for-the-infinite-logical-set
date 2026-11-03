@@ -36,7 +36,7 @@ The workflow recompiles the project and consumer against freshly downloaded pinn
 
 The [version index](../VERIFICATION_STATUS.md) identifies actual execution records. Local .verification files are diagnostic outputs and include local paths; publish only an explicitly selected portable evidence bundle. A guide or prepared script is not an execution receipt.
 
-[Author semantic approval](../AUTHOR_SEMANTIC_APPROVAL.json) is separately bound to the approved manuscript, readable statements and Lean source. Named proposition guards are definitional checks, not an independent semantic specification. The [correspondence](LATEST_MANUSCRIPT_CORRESPONDENCE.md) and [proof-route ledger](../mathlib-review/CAD_VS_ALGEBRAIC_PROOF.md) explain the scope: the algebraic route is accepted for the two main results, while the manuscript CAD construction is not formally checked line by line.
+[Author semantic approval](../AUTHOR_SEMANTIC_APPROVAL.json) is separately bound to the approved manuscript, readable statements and Lean source. Named proposition guards are definitional checks, not an independent semantic specification. The [correspondence](LATEST_MANUSCRIPT_CORRESPONDENCE.md) and [proof-route ledger](../mathlib-review/CAD_VS_ALGEBRAIC_PROOF.md) explain the scope: the revised manuscript presents the existing algebraic route for the two main results. Its new End Matter cardinality estimates and counting discussion remain outside the formal interfaces.
 
 ## Advanced modes and history
 

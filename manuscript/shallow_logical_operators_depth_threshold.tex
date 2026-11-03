@@ -30,6 +30,7 @@
 \setlength{\emergencystretch}{0.7em}
 
 \begin{document}
+\raggedbottom
 \title{Finiteness of Shallow Logical Operators and a Sharp Depth Threshold}
 \author{Yimin Lu}
 \email{lym23@mails.tsinghua.edu.cn}
@@ -93,24 +94,21 @@ when \(U\) has at most \(h\) layers of arbitrary unitary gates on disjoint
 supports of at most \(\rho\) physical subsystems.
 The depth bound applies to each complete circuit.
 
-To prove the finiteness of $|\mathcal L_{\le h}(\mathcal C,\rho)|$, we generalize the argument in 
-the Eastin--Knill Theorem~\cite{EK} and covariant error
-correction~\cite{Faist,LiuZhou} to circuit families that need not form
-groups. For each arrangement, the polynomial circuit
-map~\cite{Haferkamp} and encoding condition define a real algebraic
-set. Finite smooth cell
-decomposition~\cite[Cor.~8.4]{Plaumann},
-proved here in Lemma~\ref{lem:finite-smooth-decomposition}, reduces
-finiteness to constancy of the projective logical action on each cell.
-Along a smooth path within a cell, we differentiate the circuit into
-gate insertions. The depth bound makes each insertion's forward or
-backward support detectable. Error detection makes each compression
-gauge-only in a common frame, using the encoded action for the backward
-terms. The logical generator is therefore scalar, so each cell
-contributes at most one logical action up to phase.
+To prove finiteness, we extend the local rigidity argument of
+Eastin--Knill~\cite{EK} and covariant error correction~\cite{Faist,LiuZhou}
+to bounded-depth circuit families, which need not form groups.
+For each support arrangement, we encode the gates, their inverses and
+the encoded action in a finitely generated complex coordinate algebra.
+The two-sided light-cone argument makes every base-field derivation
+annihilate the logical conjugation coordinates at every field-valued
+solution. These coordinates are constant modulo each minimal prime.
+Noetherianity then gives a finite evaluation image, even when the
+coordinate algebra is nonreduced. Conjugation determines a unitary up
+to phase, so this proves global finiteness without assuming a group
+structure on the circuit family.
 
 
-\begin{figure}[!ht]
+\begin{figure}[t]
 \centering
 \resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
@@ -178,13 +176,13 @@ contributes at most one logical action up to phase.
 \node[anchor=west,align=left,text=FOneTeal] at (5.46,4.78)
  {forward \(H_j\)};
 \node[anchor=west,align=left,text=FOneNavy] at (5.46,3.40)
- {insertion \(i\dot u_j u_j^\dagger\)};
+ {insertion \(\delta(u_j)u_j^{-1}\)};
 \node[anchor=west,align=left,text=FOneAmber] at (5.46,2.04)
- {backward \(U^\dagger H_jU\)};
+ {backward \(U^{-1}H_jU\)};
 \node[inner sep=0pt] at (4.28,1.20)
  {\(\min\!\left\{
     \lvert\operatorname{supp}(H_j)\rvert,
-   \lvert\operatorname{supp}(U^\dagger H_jU)\rvert
+   \lvert\operatorname{supp}(U^{-1}H_jU)\rvert
    \right\}\le \rho^{\lceil \frac{h}{2}\rceil}<d\)};
 \node[f1footer,minimum width=8.13cm,
  font=\fontsize{10.5}{12}\selectfont] at (4.28,0.39)
@@ -192,9 +190,9 @@ contributes at most one logical action up to phase.
 
 \end{tikzpicture}%
 }
-\caption{Two-sided light cones. The variation of gate \(u_j\) in layer \(\ell\) gives the propagated
-generator \(H_j\). Under the depth condition, its forward support or
-the backward support of \(U^\dagger H_jU\) is detectable.
+\caption{Two-sided light cones. A derivation applied to gate \(u_j\) in layer \(\ell\) gives the propagated
+insertion \(H_j\). Under the depth condition, its forward support or
+the backward support of \(U^{-1}H_jU\) is detectable.
 Error detection and the exact encoded action yield gauge-only
 compression of \(H_j\) in the output frame.
 The brickwall arrangement assumes no geometric locality.}
@@ -221,122 +219,93 @@ All gate supports and unitary matrices are allowed. Consequently,
 
 \begin{proof}
 Equation~\eqref{eq:depth} is equivalent to
-\(\rho^{\lceil \frac{h}{2}\rceil}<d\).
-After we add singleton identity gates on idle sites and pad to
-\(h\) layers, each layer is a partition of the \(n\) sites into blocks
-of size at most \(\rho\). There are finitely many such partitions,
-so it suffices to prove finiteness for one support arrangement
-\(\alpha\).
+\(\rho^{\lceil h/2\rceil}<d\).
+Pad to \(h\) layers and \(n\) gate slots per layer, using identity gates
+on empty supports for unused slots. Empty-support scalar gates can be
+removed modulo global phase. There are finitely many ordered support
+arrangements \(\alpha\), so fix one of them. List its \(J=nh\) slots in
+execution order, with \(U=u_J\cdots u_1\).
 
-Fix \(\alpha\) and list its gates in layer order as
-\(u_1,\ldots,u_J\), with \(U=u_J\cdots u_1\).
-Let \(D_j\) be the Hilbert-space dimension on the support of gate \(j\).
-All admissible gate matrices and encoded factors are represented in
-\[
-  \mathcal P_\alpha=
-  \left(\prod_{j=1}^{J}\UU(D_j)\right)
-    \times\UU(K)\times\UU(g).
-\]
-Let \(\mathcal X_\alpha\subseteq\mathcal P_\alpha\) consist of the tuples
-\((\mathbf u,W,Z)\) satisfying Eq.~\eqref{eq:encoded}.
-Unitarity and the encoding condition are polynomial equations in the
-real and imaginary matrix entries, so \(\mathcal X_\alpha\) is a real
-algebraic set.
-
-The finite cell decomposition theorem~\cite[Cor.~8.4]{Plaumann}, in the smooth form proved in
-Lemma~\ref{lem:finite-smooth-decomposition} in the End Matter, gives
-\begin{equation}\label{eq:cells}
-  \mathcal X_\alpha=\bigsqcup_{r=1}^{N_\alpha}C_r,
-  \qquad N_\alpha<\infty,
-\end{equation}
-where each cell is smoothly diffeomorphic to an open cube
-\((0,1)^{\nu_r}\), with a point allowed when \(\nu_r=0\).
-The partition includes singular points of \(\mathcal X_\alpha\).
-It remains to show that \([W]\) is constant on every \(C_r\).
-
-Take two tuples \(x,y\in C_r\), choose a smooth diffeomorphism
-\(\varphi_r:(0,1)^{\nu_r}\to C_r\), and set
-\(a=\varphi_r^{-1}(x)\), \(b=\varphi_r^{-1}(y)\).
-They are joined within \(C_r\) by
-\begin{equation}\label{eq:cellpath}
-  \gamma(t)=\varphi_r\bigl((1-t)a+tb\bigr),
-  \qquad 0\le t\le1.
-\end{equation}
-The coordinates of \(\gamma\) supply smooth gates \(u_j(t)\) and factors
-\(W(t),Z(t)\) satisfying Eq.~\eqref{eq:encoded} throughout.
-To prove that \([W(t)]\) is independent of \(t\), we will show that the
-Hermitian generator of the physical path has gauge-only compression.
-With dots denoting derivatives in \(t\), the product rule gives
-\begin{equation}\label{eq:generator}
-  H=i\dot U U^\dagger
-   =\sum_{j=1}^{J}
-      U_{>j}\bigl(i\dot u_j u_j^\dagger\bigr)U_{>j}^\dagger=\sum_{j=1}^{J}H_j,
-\end{equation}
-where \(U_{>j}=u_J\cdots u_{j+1}\), and
-\(H_j=U_{>j}(i\dot u_j u_j^\dagger)U_{>j}^\dagger\)
-is the variation of gate \(j\) propagated through the later gates.
-If gate \(j\) is in layer \(\ell\), its insertion acts on at most
-\(\rho\) sites. Each later layer can enlarge its support by at most a
-factor \(\rho\), giving a forward support of at most
-\(\rho^{h-\ell+1}\) sites.
-To obtain a detectable term even when this bound is large, consider
-the same variation in the input frame,
-\[
-  U^\dagger H_jU
-   =U_{<j}^\dagger(iu_j^\dagger\dot u_j)U_{<j},
-\]
-where \(U_{<j}=u_{j-1}\cdots u_1\).
-Its backward support has at most \(\rho^\ell\) sites.
-Other gates in layer \(\ell\) have disjoint supports and cancel from
-both counts. Thus at least one of the two supports has size at most
-\[
-  \rho^{\min\{\ell,h-\ell+1\}}
-  \le \rho^{\lceil \frac{h}{2}\rceil}<d.
-\]
-
-We now compress every summand in the same output frame.
-If the forward support is smaller than \(d\),
-Eq.~\eqref{eq:correctable} applies directly to \(H_j\).
-Otherwise the backward support is smaller than \(d\), so
-\(V^\dagger U^\dagger H_jUV=\id_L\otimes N_j\).
-The exact encoded action in Eq.~\eqref{eq:encoded} transfers this to
-\begin{align*}
- V^\dagger H_jV
-  &=(W\otimes Z)(\id_L\otimes N_j)(W^\dagger\otimes Z^\dagger)\\
-  &=\id_L\otimes ZN_jZ^\dagger.
-\end{align*}
-In either case \(V^\dagger H_jV=\id_L\otimes M_j\).
-Summing gives the desired gauge-only compression
-\begin{equation}\label{eq:compression}
-  V^\dagger H V=\id_L\otimes M
-\end{equation}
-with \(M=\sum_{j=1}^{J}M_j\) Hermitian on \(\HH_G\).
-
-To translate this restriction into constancy of \([W(t)]\),
-differentiate Eq.~\eqref{eq:encoded} and use
-\(U^\dagger V=V(W^\dagger\otimes Z^\dagger)\). This gives
+For each slot introduce independent local matrix variables for the
+gate and its inverse; embed them in the full physical space as
+\(u_j,v_j\). Introduce logical matrices \(W,W'\) and gauge matrices
+\(Z,Z'\). Write \(E=V^\dagger\), a constant complex matrix, and
+\(Q=W\otimes Z\). The defining polynomial relations are
 \begin{align}
-  V^\dagger H V&=A\otimes\id_G+\id_L\otimes B,
-       \label{eq:logicalgen}\\
-  A&=i\dot W W^\dagger,\qquad B=i\dot Z Z^\dagger.\nonumber
+ u_jv_j=v_ju_j&=\id,\nonumber\\
+ WW'=W'W&=\id,\quad ZZ'=Z'Z=\id,\label{eq:algebraic-inverses}\\
+ UV&=VQ,\qquad EU=QE.\label{eq:algebraic-encoding}
 \end{align}
-Comparing Eqs.~\eqref{eq:compression} and~\eqref{eq:logicalgen}
-and taking the partial trace over \(\HH_G\) yields
-\[
-  A=\frac{\tr(M-B)}{g}\,\id_L.
-\]
-Thus \(A=\lambda(t)\id_L\) for real \(\lambda(t)\), and
-\(\dot W=-i\lambda(t)W\). Integrating gives
-\(W(1)=\exp\!\bigl(-i\int_0^1\lambda(t)\,dt\bigr)W(0)\),
-so the two arbitrary tuples \(x,y\in C_r\) have the same projective
-logical action.
+Let \(R_\alpha=\mathbb C[\mathbf x]/I_\alpha\) be the resulting
+coordinate algebra. It is Noetherian because there are finitely many
+matrix-entry variables. Every physical circuit counted by the theorem
+gives a complex evaluation of \(R_\alpha\): use adjoints for the inverse
+variables. The second relation in Eq.~\eqref{eq:algebraic-encoding}
+follows from unitarity and Eq.~\eqref{eq:encoded}.
+General field-valued solutions need not be unitary; their inverse
+variables are not interpreted as adjoints.
 
-Each cell therefore contributes at most one logical action up to
-phase, and \(\alpha\) contributes at most \(N_\alpha\) such actions.
-Taking the union over the finitely many support arrangements proves
-that \(\mathcal L_{\le h}(\mathcal C,\rho)\) is finite.
-Since \(K\ge2\), this finite set is closed and cannot be dense in
-\(\PU(K)\).
+Let \(F/\mathbb C\) be any field extension, let
+\(\phi:R_\alpha\to F\) be a complex-algebra homomorphism, and let
+\(\delta:F\to F\) be any \(\mathbb C\)-linear derivation. We use the same
+symbols for evaluated matrices. Detection in Eq.~\eqref{eq:correctable}
+extends to \(F\)-valued supported operators by expanding them in the
+complex matrix-unit basis. Thus it remains a consequence of the
+original detection hypothesis. The product rule gives
+\begin{equation}\label{eq:generator}
+ H=\delta(U)U^{-1}=\sum_{j=1}^{J}H_j,\qquad
+ H_j=U_{>j}\delta(u_j)u_j^{-1}U_{>j}^{-1},
+\end{equation}
+where \(U_{>j}=u_J\cdots u_{j+1}\). If slot \(j\) lies in layer
+\(\ell\), the forward support has at most \(\rho^{h-\ell+1}\) sites.
+In the input frame,
+\[
+ U^{-1}H_jU=U_{<j}^{-1}u_j^{-1}\delta(u_j)U_{<j},
+\]
+where \(U_{<j}=u_{j-1}\cdots u_1\), and the backward support has at
+most \(\rho^\ell\) sites. Other gates in layer \(\ell\) have disjoint
+supports and cancel from these counts. Hence one of the supports has
+size at most \(\rho^{\min\{\ell,h-\ell+1\}}\le\rho^{\lceil h/2\rceil}<d\).
+
+If the forward support is detectable, \(EH_jV=\id_L\otimes M_j\)
+directly. Otherwise detection gives
+\(EU^{-1}H_jUV=\id_L\otimes N_j\).
+Both encoding relations in Eq.~\eqref{eq:algebraic-encoding} are
+needed to transfer this to the output frame:
+\begin{align*}
+ EH_jV
+ &=Q(EU^{-1}H_jUV)Q^{-1}\\
+ &=\id_L\otimes ZN_jZ^{-1}.
+\end{align*}
+Thus, in a common frame,
+\begin{equation}\label{eq:compression}
+ EHV=\id_L\otimes M.
+\end{equation}
+Differentiating \(UV=VQ\), using \(EV=\id\) and
+\(U^{-1}V=VQ^{-1}\), also gives
+\begin{equation}\label{eq:logicalgen}
+ EHV=\delta(W)W^{-1}\otimes\id_G+
+       \id_L\otimes\delta(Z)Z^{-1}.
+\end{equation}
+Comparing these equations at one diagonal gauge matrix entry
+(\(g\ge1\)) shows that \(\delta(W)W^{-1}=\lambda\id_L\) for some
+\(\lambda\in F\). Since
+\(\delta(W^{-1})=-W^{-1}\delta(W)W^{-1}\), every coordinate
+\begin{equation}\label{eq:conjugation-coordinates}
+ r_{abce}=W_{ab}(W^{-1})_{ce}
+\end{equation}
+of \(A\mapsto WAW^{-1}\) has zero \(\delta\)-derivative.
+
+This holds for every \(F,\phi,\delta\). In particular it holds in the
+fraction field of \(R_\alpha/\mathfrak p\) for each minimal prime
+\(\mathfrak p\). Lemma~\ref{lem:algebraic-finite-image} in the End
+Matter therefore gives finitely many joint evaluations of all
+\(r_{abce}\). For unitary matrices, equal conjugation actions imply
+that their ratio commutes with every matrix and is a scalar of modulus
+one. Consequently each coordinate tuple represents at most one
+projective logical action. Taking the finite union over support
+arrangements proves finiteness. Since \(K\ge2\), the finite image
+cannot be dense in \(\PU(K)\).
 \end{proof}
 
 
@@ -534,7 +503,7 @@ For general quantum codes in the finite-dimensional setting considered
 here, bounded-range circuits below the stated threshold realize only
 finitely many exact logical actions up to phase. The proof combines a
 detectable light cone in one of the two circuit directions with a
-finite smooth decomposition of the admissible circuit parameters.
+finite-image criterion for the circuit coordinate algebra.
 Qubit stabilizer codes attain the bound by concentrating the support
 of a logical Pauli into one rotation gate and then reversing the
 compression. Together, the theorems locate the critical circuit depth to support
@@ -546,9 +515,21 @@ locality.
 by NSFC under Grant No. 12475023, Dushi Program, and a startup funding from YMSC.
 \end{acknowledgments}
 
-Lean proofs of the statements of Theorems~\ref{thm:depth} and~\ref{cor:critical}, under their stated hypotheses, together with verification scripts, are available in the \href{https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/411ff86bd30e423b3bc15267006e7bb3b409506d}{project repository} (proof snapshot \texttt{411ff86}). The formal proof of Theorem~\ref{thm:depth} uses an independent algebraic argument; it does not formalize the CAD construction in the End Matter.
+Lean proofs of the statements of Theorems~\ref{thm:depth}
+and~\ref{cor:critical}, together with verification scripts, are available
+in the \href{https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/411ff86bd30e423b3bc15267006e7bb3b409506d}{project repository}
+(proof snapshot \texttt{411ff86}). The proof of
+Theorem~\ref{thm:depth} follows the coordinate-algebra and derivation
+argument presented here, including scalar extension of detection,
+two-sided support bounds and the finite-evaluation-image criterion.
+The audited theorem dependencies contain no project axioms or
+\texttt{sorryAx}; their foundational axioms are
+\texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}.
+The quantitative bounds and computational discussion in the End Matter
+are additional mathematical deductions and are not formalized in this
+snapshot.
 
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \rightskip=0pt plus 1fil\relax
 \bibitem{Gottesman}
 D.~Gottesman,
@@ -613,24 +594,11 @@ Z.-W.~Liu and S.~Zhou,
 See also its long supplement,
 \href{https://arxiv.org/abs/2111.06360}{arXiv:2111.06360}, Sec.~VI.
 
-\bibitem{Haferkamp}
-J.~Haferkamp, P.~Faist, N.~B.~T.~Kothakonda, J.~Eisert, and
-N.~Yunger~Halpern,
-\href{https://doi.org/10.1038/s41567-022-01539-6}
-{Nat.\ Phys.\ \textbf{18}, 528 (2022)},
-\href{https://arxiv.org/abs/2106.05305}{arXiv:2106.05305},
-Methods and Appendix~A.
-
-\bibitem{Plaumann}
-D.~Plaumann,
-\href{https://wwwold.mathematik.tu-dortmund.de/~dplauman/notes/rag-ihp.pdf}
-{\emph{Real Algebraic Geometry}}
-(IHP lecture notes, 2023), Cor.~8.4 and the following discussion.
-
 \bibitem{Dua}
 A.~Dua, A.~Holmes, M.~J.~Gullans, and V.~V.~Albert,
 \emph{Qubit CSS codes with Universal Transversal Gates},
 \href{https://arxiv.org/abs/2610.06730v1}{arXiv:2610.06730v1} (2026).
+
 \bibitem{BonetMonroig}
 X.~Bonet-Monroig, R.~Sagastizabal, M.~Singh, and T.~E.~O'Brien,
 \href{https://doi.org/10.1103/PhysRevA.98.062339}
@@ -655,158 +623,256 @@ D.~Gottesman,
 Ph.D. thesis, California Institute of Technology (1997),
 \href{https://arxiv.org/abs/quant-ph/9705052}{arXiv:quant-ph/9705052}.
 
+\bibitem{Stacks}
+The Stacks Project Authors,
+\href{https://stacks.math.columbia.edu/tag/00FR}{Lemma 10.31.6 (Tag 00FR)}
+and \href{https://stacks.math.columbia.edu/tag/00E0}{Lemma 10.17.2 (Tag 00E0)},
+\emph{The Stacks Project}.
+
+\bibitem{BurgisserScheiblechner}
+P.~B\"urgisser and P.~Scheiblechner,
+\emph{On the complexity of counting components of algebraic varieties},
+\href{https://doi.org/10.1016/j.jsc.2008.02.009}{J.~Symbolic Comput.\ \textbf{44}, 1114--1136 (2009)};
+\href{https://www.scheiblechner.ch/files/count-comp.pdf}{author manuscript},
+Secs.~2.1.2--2.1.3.
+
+\bibitem{BasuPollackRoy}
+S.~Basu, R.~Pollack, and M.-F.~Roy,
+\href{https://doi.org/10.1007/3-540-33099-2}
+{\emph{Algorithms in Real Algebraic Geometry}},
+2nd ed. (Springer, Berlin, 2006).
+
 \end{thebibliography}
 
 \section*{End Matter}
-\subsection*{Finite smooth decomposition of polynomial zero sets}
+\subsection*{Algebraic finite-image criterion}
 
-Together with the infinitesimal argument of Theorem~\ref{thm:depth},
-finite Whitney stratification of the semialgebraic constraint set into
-connected smooth strata already gives a finite logical image.
-To keep the argument elementary and self-contained, we give a short proof
-using linear algebra and the implicit function theorem, with elementary
-polynomial arithmetic. The finite decomposition below is the polynomial
-case of standard semialgebraic theory~\cite{Plaumann}.
-A smooth cell below means an
-embedded smooth submanifold that is smoothly diffeomorphic to an open
-cube \((0,1)^r\), with a point allowed
-when \(r=0\). No smoothness of the full zero set is assumed.
+We give the global finiteness step in detail. The objects of interest
+are finitely many elements \(r_1,\ldots,r_m\) of a coordinate algebra
+\(R\), representing the output coordinates of a polynomial map.
+An evaluation is a unital \(\mathbb C\)-algebra homomorphism
+\(\phi:R\to\mathbb C\). We seek a finite set containing all output
+tuples \((\phi(r_1),\ldots,\phi(r_m))\); neither the set of evaluations
+nor the whole parameter space is required to be finite.
 
-\begin{lemma}\label{lem:finite-smooth-decomposition}
-For any finite family of real polynomials on \(\mathbb R^N\), there is a
-finite partition of \(\mathbb R^N\) into smooth cells on each of which
-every polynomial has constant sign. Consequently, the common zero set
-of finitely many real polynomials is a finite disjoint union of smooth
-cells.
+For a minimal prime ideal \(\mathfrak p\) of \(R\), put
+\[
+ F_{\mathfrak p}=\operatorname{Frac}(R/\mathfrak p),\qquad
+ \iota_{\mathfrak p}:R\longrightarrow R/\mathfrak p
+                         \longrightarrow F_{\mathfrak p}.
+\]
+The quotient is an integral domain, so its map into its fraction
+field is injective and \(\ker\iota_{\mathfrak p}=\mathfrak p\).
+A \(\mathbb C\)-linear derivation \(\delta:F_{\mathfrak p}\to
+F_{\mathfrak p}\) is a linear map satisfying
+\(\delta(xy)=\delta(x)y+x\delta(y)\).
+The derivations must be taken in these function fields: a
+\(\mathbb C\)-linear derivation of \(\mathbb C\) itself is always zero
+and would give no constraint on the outputs.
+
+\begin{lemma}\label{lem:algebraic-finite-image}
+Let \(R\) be a finitely generated commutative \(\mathbb C\)-algebra,
+and let \(r_1,\ldots,r_m\in R\). Suppose that, for every minimal prime
+\(\mathfrak p\) and every \(\mathbb C\)-linear derivation
+\(\delta:F_{\mathfrak p}\to F_{\mathfrak p}\),
+\[
+ \delta\bigl(\iota_{\mathfrak p}(r_i)\bigr)=0
+ \quad\text{for every }i.
+\]
+Then the joint evaluation image
+\[
+ \{(\phi(r_1),\ldots,\phi(r_m)):
+          \phi:R\to\mathbb C\text{ a }\mathbb C\text{-algebra map}\}
+\]
+is finite.
 \end{lemma}
 
 \begin{proof}
-We induct on \(N\). In one variable, the finitely many real roots of
-the nonzero polynomials partition the line into points and open
-intervals. The assertion is also immediate for \(N=0\).
-Write the variables in the induction step as \((x,t)\), where
-\(x\in\mathbb R^{N-1}\). Discard identically zero input polynomials,
-and write the remaining ones as \(p_1(x,t),\ldots,p_a(x,t)\).
+If \(R=0\), there is no unital map \(R\to\mathbb C\), and the image
+is empty. Assume \(R\ne0\).
 
-We first specify a finite family of projection polynomials in \(x\).
-For every nonempty subset \(I\subseteq\{1,\ldots,a\}\), form
-\(F_I=\prod_{i\in I}p_i\) and include all its coefficients in \(t\).
-For every truncation
+\emph{Constants in a function field.}
+We first explain why an element \(a\) of a field extension
+\(F/\mathbb C\) that is killed by every \(\mathbb C\)-linear
+derivation must belong to \(\mathbb C\).
+If \(a\) were transcendental, choose a transcendence basis \(B\) of
+\(F/\mathbb C\) containing \(a\). On the rational function field
+\(L=\mathbb C(B)\), partial differentiation with respect to \(a\)
+defines a derivation with \(\delta(a)=1\), \(\delta(b)=0\) for
+\(b\in B\setminus\{a\}\), and \(\delta(c)=0\) for \(c\in\mathbb C\).
+
+The extension \(F/L\) is algebraic and, in characteristic zero,
+separable. The derivation extends uniquely through this extension.
+To see the mechanism, let \(\beta\) have minimal polynomial
+\(f(T)=T^s+\sum_{j=0}^{s-1}a_jT^j\) over \(L\). Differentiating
+\(f(\beta)=0\) forces
 \[
- f(x,t)=\sum_{j=0}^{m}f_j(x)t^j
+ \delta(\beta)=-
+ \frac{\sum_{j=0}^{s-1}\delta(a_j)\beta^j}{f'(\beta)}.
 \]
-of \(F_I\), with \(1\le m\le\deg_t F_I\), also include all square
-minors of the coefficient matrix of the linear map
-\begin{equation}\label{eq:endmatter-Sylvester}
- \begin{gathered}
- T_f:(A,B)\longmapsto Af+B\partial_t f,\\
- \deg A\le m-1,\qquad\deg B\le m.
- \end{gathered}
+Separability gives \(f'(\beta)\ne0\). For existence, extend
+\(\delta\) from \(L\) to a derivation \(L[T]\to L(\beta)\), using
+evaluation at \(\beta\) for the module structure and the displayed
+value for \(\delta(T)\). The derivation kills \(f\), and the Leibniz
+rule then makes it kill the whole ideal \((f)\). It descends to
+\(L[T]/(f)=L(\beta)\), proving existence as well as uniqueness.
+Extensions to finite intermediate fields agree on their overlaps,
+so they define a derivation on \(F\). It still satisfies
+\(\delta(a)=1\), contradicting the assumed vanishing.
+Thus \(a\) is algebraic over \(\mathbb C\), and algebraic closedness
+gives \(a\in\mathbb C\).
+
+Apply this argument to \(F_{\mathfrak p}\). For each \(i,\mathfrak p\),
+there is a constant \(c_{i,\mathfrak p}\in\mathbb C\) with
+\(\iota_{\mathfrak p}(r_i)=c_{i,\mathfrak p}\).
+The kernel calculation above therefore gives
+\begin{equation}\label{eq:component-constants}
+ r_i-c_{i,\mathfrak p}\in\mathfrak p.
 \end{equation}
-The target consists of polynomials of degree at most \(2m-1\), so this
-matrix has \(2m\) rows and \(2m+1\) columns. Its entries and minors are
-polynomials in \(x\). Zero polynomials may be discarded. There are
-finitely many subsets, truncations, coefficients, and minors.
-By induction, partition the base \(\mathbb R^{N-1}\) into finitely many
-smooth cells on which these projection polynomials have constant signs.
+The same minimal prime supplies a whole constant output tuple.
+At this stage we have a conclusion on each irreducible component;
+we still need a finite number of components and control of every
+evaluation, including points where components meet.
 
-Fix one base cell \(C\). Each \(p_i\) is either identically zero as a
-polynomial in \(t\) at every \(x\in C\), or has one constant degree
-there. This follows from the coefficient signs. If all are identically
-zero, the cylinder \(C\times\mathbb R\) is already a suitable cell.
-Otherwise let \(I\) be the indices of the nonzero factors and set
-\(F=F_I\). Its degree \(m\) is constant on \(C\). If \(m=0\), the same
-cylinder suffices. Suppose \(m\ge1\). The truncation at this degree
-agrees with \(F\) on every fiber over \(C\), so its projected matrix
-represents \(T_F\).
-
-The projected minors make the rank of \(T_F\) constant on \(C\).
-At a point \(x\), write
-\(F=d_0 f_0\), \(\partial_tF=d_0 g_0\), where \(d_0\) is the monic greatest
-common divisor and \(f_0,g_0\) are coprime. Put \(s=\deg d_0\) and
-\(r=m-s\). Then \(\deg f_0=r\), \(\deg g_0=r-1\), and \(r\ge1\).
-The identity \(AF+B\partial_tF=0\) holds exactly when
-\(A=Qg_0\) and \(B=-Qf_0\). The degree restrictions in
-Eq.~\eqref{eq:endmatter-Sylvester} give \(\deg Q\le s\). Hence
+\emph{One polynomial for all evaluations.}
+Hilbert's basis theorem makes \(R\) Noetherian. Hence its set of
+minimal primes is finite and nonempty~\cite{Stacks}; write it as
+\(\{\mathfrak p_1,\ldots,\mathfrak p_t\}\).
+For each output coordinate form the monic polynomial
 \[
- \dim\ker T_F=s+1,\qquad \operatorname{rank}T_F=2m-s.
+ P_i(T)=\prod_{\nu=1}^{t}(T-c_{i,\mathfrak p_\nu}).
 \]
-In particular, \(s\) and \(r\) are constant on \(C\).
-
-The monic squarefree part \(G=\frac{f_0}{c}\), where \(c\) is the leading
-coefficient of \(F\), has precisely the real roots of \(F\), each
-simple: differentiation lowers each root multiplicity by one.
-We show that its coefficients depend smoothly on \(x\in C\), even
-where \(F\) has repeated roots. Solve
-\begin{equation}\label{eq:endmatter-monic-kernel}
- \begin{gathered}
- AF+B\partial_tF=0,\qquad\deg A<r,\\
- B=t^r+\sum_{j<r}b_jt^j.
- \end{gathered}
-\end{equation}
-There is exactly one solution: \(A=-\frac{g_0}{c}\), \(B=\frac{f_0}{c}\). The coefficient
-matrix for the \(2r\) unknown coefficients is a column submatrix of
-\(T_F\). It has full column rank: a homogeneous
-solution would have \(\deg B<r\), whereas any nonzero kernel vector
-has \(B=-Qf_0\) of degree at least \(r\).
-Choose a nonzero \(2r\)-by-\(2r\) minor of this coefficient matrix
-at one point of \(C\). It is among
-the projected minors and thus remains nonzero throughout \(C\).
-Cramer's rule expresses every coefficient in Eq.~\eqref{eq:endmatter-monic-kernel}
-as a rational function of \(x\) with a denominator that does not vanish
-on \(C\). Thus \(G=B\), the monic squarefree part, has smooth
-coefficients on \(C\). The same construction for the singleton
-products gives a smooth monic squarefree part \(G_i\) for every
-nonconstant active factor \(p_i\).
-
-The number of real roots of \(G\) is locally constant on \(C\).
-Indeed, at a point \(x_0\), its real roots are simple. Apply the
-implicit function theorem in a smooth coordinate chart of \(C\):
-each root persists uniquely and smoothly. A monic
-polynomial \(t^r+\sum_{j<r}b_jt^j\) has all its real roots in
-\(\lvert t\rvert\le1+\max_j\lvert b_j\rvert\). Near \(x_0\), this
-gives one uniform bound. Outside small disjoint intervals about the old
-roots, \(G(x_0,t)\) is bounded away from zero on the remaining compact
-interval. Continuity excludes new roots there. Within the small
-intervals, the derivative stays nonzero and there is exactly one root.
-Since \(C\) is connected, the number of real roots is constant, and
-ordering them gives globally smooth functions
+For any \(\nu\), one factor of \(P_i(r_i)\) lies in
+\(\mathfrak p_\nu\) by Eq.~\eqref{eq:component-constants}.
+Consequently
 \[
- \theta_1(x)<\cdots<\theta_b(x).
+ P_i(r_i)\in
+ \bigcap_{\nu=1}^{t}\mathfrak p_\nu=\sqrt{(0)}.
 \]
+The equality is the standard description of the nilradical as the
+intersection of the minimal primes~\cite{Stacks}.
+By definition of the nilradical, some positive integer \(a_i\)
+satisfies \(P_i(r_i)^{a_i}=0\).
+Thus \(r_i\) satisfies the monic polynomial \(P_i(T)^{a_i}\) in \(R\);
+this is exactly the integrality statement used in the formal proof.
+We have not assumed that \(R\) is reduced.
 
-Inactive factors vanish identically, and active constant factors have
-constant nonzero signs. For an active nonconstant factor, suppose
-\(p_i(x_0,\theta_j(x_0))=0\).
-The simple root of \(G_i\) at that point persists as a smooth root
-\(\beta(x)\). Because \(p_i\) divides \(F\), this is also a root of
-\(G\), and the local uniqueness of the latter root gives
-\(\beta(x)=\theta_j(x)\). Thus vanishing on the graph is an open
-condition in \(C\). Nonvanishing is open by continuity. Connectedness
-makes one alternative hold everywhere, and any nonzero sign is then
-constant.
-
-Partition \(C\times\mathbb R\) into these \(b\) root graphs and the
-\(b+1\) intervening open bands, including the unbounded bands.
-No active factor vanishes in a band, so its sign is constant there.
-A graph is diffeomorphic to \(C\). A band is diffeomorphic to
-\(C\times(0,1)\). For finite endpoints use affine interpolation.
-For a half-line use \(\frac{u}{1-u}\), and for the whole line use
-\(\frac{u}{1-u}-\frac{1-u}{u}\), where \(0<u<1\).
-Thus all pieces are smooth cells. There are finitely many base cells,
-and each yields finitely many pieces. This completes the induction. The common zero set is the union of those cells on which
-all the given polynomials vanish.
+Now let \(\phi:R\to\mathbb C\) be \emph{any} evaluation.
+Because \(\phi\) preserves the complex coefficients,
+\[
+ 0=\phi\bigl(P_i(r_i)^{a_i}\bigr)
+   =P_i\bigl(\phi(r_i)\bigr)^{a_i}.
+\]
+A field has no nonzero nilpotents, so \(P_i(\phi(r_i))=0\).
+In particular, the same polynomial \(P_i\), chosen before \(\phi\),
+constrains every value of the coordinate \(r_i\).
+Its root set \(Z(P_i)\subset\mathbb C\) is finite since \(P_i\) is
+nonzero. The joint evaluation image is contained in the finite product
+\[
+ Z(P_1)\times\cdots\times Z(P_m),
+\]
+which proves the lemma.
 \end{proof}
 
-To apply the lemma, express the unitary and encoding constraints
-for one circuit-support arrangement in real and imaginary matrix
-entries. Their common zero set is \(\mathcal X_\alpha\).
-For two points in one cell, a smooth chart from an open cube carries
-the straight segment between their preimages to a smooth path in
-\(\mathcal X_\alpha\). The circuit calculation in Theorem~\ref{thm:depth}
-gives \(\dot W=-i\lambda W\) along this path, so its endpoints have the
-same projective logical action. Each cell contributes at most one such
-action. Finitely many cells, followed by finitely many support
-arrangements, give the claimed finiteness.
+Geometrically, the minimal primes describe the irreducible components
+of the affine parameter space. The field-derivation calculation makes
+each output coordinate constant on every such component, and
+Noetherianity limits their number. The polynomial argument also
+handles nilpotent directions: for example, in
+\(R=\mathbb C[t,\epsilon]/(\epsilon^2)\), the element
+\(r=\epsilon\) is nonzero but every complex evaluation sends it to
+zero. The parameter \(t\) remains arbitrary. Thus a finite output
+image does not imply that the coordinate algebra is reduced or that
+its spectrum is zero-dimensional. No smoothness assumption or
+restriction to regular points enters the argument.
+
+For Theorem~\ref{thm:depth}, take \(R=R_\alpha\) and the \(K^4\)
+coordinates in Eq.~\eqref{eq:conjugation-coordinates}.
+The circuit calculation proves derivative vanishing for \emph{every}
+field-valued solution, so in particular it applies to each canonical
+map \(\iota_{\mathfrak p}\).
+The lemma therefore gives a finite set containing the outputs of
+all physical evaluations, including points on singular loci.
+At a physical point the coordinates give \(A\mapsto WAW^\dagger\);
+two such maps agree exactly when the two unitaries differ by a scalar
+phase. Restricting the finite output image to physical evaluations
+therefore proves finiteness of the required projective logical
+actions for that support arrangement. This is the algebraic route
+implemented in the cited Lean snapshot.
+
+\subsection*{Quantitative parameters and exact counting}
+
+The same component constants yield a cardinality bound. The kernel of
+any evaluation \(R_\alpha\to\mathbb C\) contains a minimal prime
+\(\mathfrak p\). All its logical conjugation coordinates therefore
+have the single joint value \((c_{i,\mathfrak p})_i\). Hence
+\begin{equation}\label{eq:component-bound}
+ |\mathcal L_{\le h}(\mathcal C,\rho)|
+ \le \sum_\alpha \#\operatorname{Min}(R_\alpha).
+\end{equation}
+Different components can give the same logical action, and some
+algebraic solutions need not be physical, so equality is not asserted.
+
+Here are explicit parameters for the presentation in the proof.
+Write \(q_i=\dim\HH_i\), \(P=\prod_iq_i\), and
+\(D_j=\prod_{i\in S_j}q_i\), taking \(D_j=1\) on empty supports.
+With \(J=nh\) slots, the number of complex variables is
+\begin{equation}\label{eq:coordinate-count}
+ N_\alpha=2\sum_{j=1}^{J}D_j^2+2K^2+2g^2.
+\end{equation}
+There are at most
+\(2JP^2+2K^2+2g^2+2PKg\) scalar defining relations, each of degree
+at most \(\Delta=\max\{2,J\}\). The term \(2JP^2\) counts the two
+inverse relations for each embedded physical gate; it is not an
+optimized presentation. The affine B\'ezout bound, counting
+irreducible components of all dimensions, gives
+\(\#\operatorname{Min}(R_\alpha)\le\Delta^{N_\alpha}\)~\cite{BurgisserScheiblechner}.
+Nilpotents do not add components or complex evaluations.
+
+A support arrangement assigns each site in each layer either to one
+of the \(n\) labelled slots or to no slot. There are therefore at most
+\((n+1)^{nh}\) arrangements; disjointness and the arity restriction
+only reduce this count. Set \(q_{\max}=\max_iq_i\) and
+\(s=\min\{\rho,n\}\). Since \(D_j\le q_{\max}^{s}\), under the
+hypotheses of Theorem~\ref{thm:depth} we obtain
+\begin{equation}\label{eq:explicit-bound}
+ \begin{gathered}
+ |\mathcal L_{\le h}(\mathcal C,\rho)|
+       \le (n+1)^{nh}\Delta^{N_*},\\
+ N_*=2nh\,q_{\max}^{2s}+2K^2+2g^2,\qquad
+ \Delta=\max\{2,nh\}.
+ \end{gathered}
+\end{equation}
+This bound is uniform over encodings with these dimensions, but very
+loose. For \(n=5\), \(h=\rho=2\), \(q_{\max}=K=2\), and \(g=1\),
+it is \(6^{10}10^{330}\). A bound depending only on \(d,\rho,h\)
+cannot hold across all codes: the \(k\)-fold tensor power of the
+\([[5,1,3]]\) stabilizer code keeps \(d=3,\rho=2,h=1\), while its
+depth-one logical image contains at least \(4^k\) projective logical
+Paulis.
+
+Exact counting requires more than a component bound. If the encoding
+entries are supplied as exact algebraic numbers, introduce variables
+\(y_i\) for the logical conjugation coordinates and eliminate all original
+matrix-entry variables from \(I_\alpha+(y_i-r_i)_i\).
+The resulting finite complex output variety gives candidate actions:
+its image is already finite and thus Zariski closed.
+For each candidate, retain its conjugation-coordinate equalities and
+test the original unitary and encoding equations in real and imaginary
+parts for solvability. Also,
+duplicate actions from different components and arrangements must be
+identified. Real quantifier elimination provides a decision procedure
+for this feasibility step~\cite{BasuPollackRoy}. The inverse variables
+of the enlarged complex model alone do not enforce physical unitarity.
+
+These procedures are effective in principle with exact algebraic
+input, but the variable count and elimination costs make direct
+enumeration impractical in general. Arbitrary unspecified complex
+encoding coefficients do not supply an effective input representation,
+even though the theorem and Eq.~\eqref{eq:explicit-bound} still hold.
+Exploiting symmetries, smaller presentations or a particular code may
+improve the calculation. Equations~\eqref{eq:component-bound}--\eqref{eq:explicit-bound},
+the B\'ezout estimate and the exact-counting procedure are not
+formalized or executed by the cited Lean development.
 
 \end{document}

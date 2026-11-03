@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "phase": "PROOF_AND_SCOPE_SNAPSHOT",
+  "article": {
+    "path": "manuscript/shallow_logical_operators_depth_threshold.tex",
+    "bytes": 39541,
+    "sha256": "90dbcea5332c0221280e9f1484e14ed54203a56a16d5c1d84d41ebf4dea7f1a4"
+  },
+  "pdf": {
+    "path": "manuscript/shallow_logical_operators_depth_threshold.pdf",
+    "bytes": 451987,
+    "sha256": "efa33e51c1438fda30f538f15c3799c78d2709ec2a7e50b220b8213ab70d513a"
+  },
+  "pages": 6,
+  "compilation": {
+    "engine": "TeX Live 2026 / pdfLaTeX via latexmk",
+    "exit_code": 0,
+    "new_lean_run": false,
+    "remaining_warnings": [
+      "RevTeX/nameref label-definition warning",
+      "RevTeX deferred-float placement warning; both figures visually inspected"
+    ]
+  },
+  "checks": {
+    "main_theorem_environments_unchanged": true,
+    "stabilizer_theorem_and_proof_unchanged": true,
+    "lean_source_byte_identical_to_replayed_snapshot": true,
+    "payload_manifest_valid": true,
+    "bibliography_in_first_citation_order": true,
+    "uncited_references": [],
+    "undefined_references": [],
+    "duplicate_labels": [],
+    "overfull_boxes": [],
+    "reference_count": 18,
+    "all_parameter_discussion_in_end_matter": true,
+    "new_correspondence_table": false
+  },
+  "review_scope": "Independent source comparison of the new main proof and finite-image lemma; independent mathematical review of End Matter estimates. No fresh author-approval declaration or Lean execution. New quantitative material is not formalized.",
+  "visual_review": "All six pages rendered and inspected; formulas and both figures are legible with no clipping or overlaps.",
+  "bibliography_keys": [
+    "Gottesman",
+    "EK",
+    "BK",
+    "PY",
+    "JKY",
+    "Webster",
+    "KL",
+    "Kribs",
+    "Faist",
+    "LiuZhou",
+    "Dua",
+    "BonetMonroig",
+    "Cowtan",
+    "HaahLiuTan",
+    "GottesmanStabilizer",
+    "Stacks",
+    "BurgisserScheiblechner",
+    "BasuPollackRoy"
+  ]
+}

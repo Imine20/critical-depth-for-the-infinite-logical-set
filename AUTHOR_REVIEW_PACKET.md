@@ -1,3 +1,7 @@
+# Historical approval packet
+
+This packet records approval of the earlier manuscript identified below. The algebraic-proof revision was subsequently requested by the user; its current scope is in docs/LEAN_SCOPE_AND_CITATION_NOTE.md and its bytes are in RELEASE_BINDING.json. The historical approval is not relabeled as formal verification of the added quantitative discussion.
+
 # Approved main-theorem semantic review packet
 
 Status: **APPROVED on 2026-11-03 (Asia/Shanghai)**. The user explicitly approved the current semantic review and authorized synchronization of the article and repository on a new branch. The approval accepts an independent algebraic formal proof; reproducing the manuscript CAD route is outside this release's scope.

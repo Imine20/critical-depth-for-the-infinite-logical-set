@@ -1,6 +1,8 @@
 # Aligned mathematical statements
 
-These statements expose the definitions used by the v2 public targets. The reference manuscript is the derived v2 TeX, SHA-256 `98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227`, based on the selected desktop revision `118b256bde608d7f52fd11c783ba464a3eba65da2e46a2a333d4fffbbc380a1c`. The earlier audited release `18efaf2918080dc29eaf5ef1d76838a4117029df0ee9cd2e069aba41e634bf85` is preserved separately. Build, recursive-axiom and author-approval records are separate version-bound evidence; these readable statements do not themselves certify any of those statuses.
+These mathematical statements and the corresponding Lean theorem interfaces are unchanged by the algebraic-proof revision. The current article now uses the coordinate-algebra and derivation route already implemented in CriticalDepthMathlib.lean. Its additional End Matter component counts, Bezout bound and exact-counting discussion are outside the formalized statements below.
+
+The former reference manuscripts and their hashes are retained in prior Git commits and historical evidence. The current article, cited snapshot, source hash and prior execution receipt are bound separately by ../RELEASE_BINDING.json. Source review, author approval and kernel replay remain distinct evidence.
 
 ## 1. Finite systems, support and encoding
 
@@ -32,13 +34,13 @@ For an integer `d ≥ 2`, **detection below `d`** means
 \exists M,\ V^\dagger O V=I_L\otimes M.
 \]
 
-This is Eq. `eq:correctable` at line 272. Theorem 1 needs only this lower bound. **Actual distance `d`** additionally requires a set `S` of size exactly `d` and a supported operator `O` whose compression is not gauge-only. The witness and detection together exclude a smaller support for an undetectable operator.
+This is Eq. `eq:correctable`. Theorem 1 needs only this lower bound. **Actual distance `d`** additionally requires a set `S` of size exactly `d` and a supported operator `O` whose compression is not gauge-only. The witness and detection together exclude a smaller support for an undetectable operator.
 
 ## 2. Circuits, logical classes and a common budget
 
 Fix an integer gate arity `q ≥ 2`. A gate is an arbitrary unitary supported on any set of at most `q` sites. A layer is an arbitrary finite list of such gates with pairwise disjoint supports. A depth-at-most-`h` circuit has some number `r ≤ h` of layers, including `r = 0`; its physical action is their ordered product. All support choices and all unitary matrices are allowed. There is no gate alphabet, geometric range constraint, ancilla system or intermediate code-preservation assumption.
 
-The empty tensor factor has dimension one. An empty-support gate is therefore a scalar phase. Such gates may be removed and their phases absorbed into the gauge factor without changing the projective logical image. This convention is explicit immediately before `thm:depth` in the derived manuscript.
+The empty tensor factor has dimension one. An empty-support gate is therefore a scalar phase. Such gates may be removed and their phases absorbed into the gauge factor without changing the projective logical image. This convention is used at the start of the proof of Theorem 1.
 
 A physical action `U` exactly implements logical and gauge unitaries `W` and `Z` when
 
@@ -46,7 +48,7 @@ A physical action `U` exactly implements logical and gauge unitaries `W` and `Z`
 UV=V(W\otimes Z).
 \]
 
-This is an operator equation on all logical and gauge states, as in Eq. `eq:encoded` at line 280. For positive logical and gauge dimensions (`K ≥ 1`, `g ≥ 1`), the logical factor is unique up to one global phase. Two logical unitaries represent the same action if `W = zW′` for a complex scalar `z` with `|z| = 1`.
+This is an operator equation on all logical and gauge states, as in Eq. `eq:encoded`. For positive logical and gauge dimensions (`K ≥ 1`, `g ≥ 1`), the logical factor is unique up to one global phase. Two logical unitaries represent the same action if `W = zW′` for a complex scalar `z` with `|z| = 1`.
 
 Write
 
@@ -74,7 +76,7 @@ h<H(q,d)\quad\Longrightarrow\quad
 \overline{\mathcal L_{\le h}(V;q)}\ne\operatorname{PU}(K).
 \]
 
-This is `thm:depth` at line 296 and its bound `eq:depth`. The conclusion concerns the actual projective unitary group. It is per code and does not assert a uniform numerical bound on the cardinality across all codes.
+This is `thm:depth` and its bound `eq:depth`. The conclusion concerns the actual projective unitary group. The formal interface proves finiteness for each code and contains no numerical cardinality bound; the revised article's End Matter estimates are separate deductions.
 
 The native closing target is `CriticalDepth.ReviewV2.nativeTheoremOne_proved : NativeTheoremOne`. The fully arbitrary finite-Hilbert-carrier version is `CriticalDepth.ReviewV2.HilbertCircuitTransport.theoremOne_arbitrary_carriers`. Neither asks the caller to assume derivative vanishing, coordinate integrality, zero-depth finiteness, a coordinate transport theorem, or Theorem 1 itself.
 
@@ -87,7 +89,7 @@ h_\infty(V;q)=\min\{h\in\mathbb Z_{\ge1}:\mathcal L_{\le h}(V;q)
 \text{ is infinite}\},
 \]
 
-with value `∞` for an empty set. The minimum ranges over positive budgets; the circuit sets at those budgets still include circuits of depth zero. This is `eq:critical-definition` at line 431. Lean uses the corresponding infimum in `ℕ∞` and proves its compatibility with the earlier positive-budget definition.
+with value `∞` for an empty set. The minimum ranges over positive budgets; the circuit sets at those budgets still include circuits of depth zero. This is `eq:critical-definition`. Lean uses the corresponding infimum in `ℕ∞` and proves its compatibility with the earlier positive-budget definition.
 
 Now let the physical sites be qubits, let `G` have dimension one, and let `L` have dimension `2^k`, with `k ≥ 1`. Assume that the encoding range is exactly the common `+1` fixed space of a Pauli stabilizer subgroup, and that the code has actual distance `d ≥ 2`. For every integer `q ≥ 2`,
 
@@ -95,7 +97,7 @@ Now let the physical sites be qubits, let `G` have dimension one, and let `L` ha
 h_\infty(V;q)=H(q,d).
 \]
 
-At budget `H(q,d)`, the logical image contains a nontrivial continuous one-parameter subgroup. This is `cor:critical` at line 442. Its hypotheses do not include Theorem 1 as an additional premise.
+At budget `H(q,d)`, the logical image contains a nontrivial continuous one-parameter subgroup. This is `cor:critical`. Its hypotheses do not include Theorem 1 as an additional premise.
 
 The strengthened native target also supplies a subgroup
 
@@ -107,7 +109,7 @@ that is closed, nontrivial, topologically group-isomorphic to the unit circle, a
 
 ## 5. Supplement: the same generator, exponential and exact circle
 
-The assertions in this section supplement the manuscript's proof around Eq. `eq:pauli-family`, line 476. They are stronger than merely asserting a nontrivial continuous real homomorphism.
+The assertions in this section supplement the manuscript's proof around Eq. `eq:pauli-family`. They are stronger than merely asserting a nontrivial continuous real homomorphism.
 
 Under exactly the stabilizer, actual-distance and parameter hypotheses of Theorem 2, there is one nonscalar logical matrix `A` satisfying `A† = A` and `A² = I` such that
 
@@ -136,7 +138,7 @@ One joint theorem, `CriticalDepth.ReviewV2.critical_circle_joint_witness`, binds
 
 An explicit five-qubit encoding has arbitrary-operator detection below three and an undetectable operator of support three. With `q = 2`, its positive budgets `h = 1` and `h = 2` both satisfy Theorem 1. The closed native calls are `CriticalDepth.ReviewV2.Examples.fiveQubit_native_depthOne` and `fiveQubit_native_depthTwo`. The previous five-site parametric call is not being used as an existence proof. The four-qubit stabilizer example separately realizes Theorem 2 at critical depth one.
 
-All foundational spaces, operators, tensors, unitary groups, quotients, subgroups and topological group equivalences in the v2 public interfaces are Mathlib objects. Support, detection, encoding relations, circuit budgets and stabilizer conditions are article-specific definitions. The historical baseline assembled file, SHA-256 85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8, passed the bound v2-033 audit and the later fresh replay at source revision 3361e6c. Those records are not acceptance of the newly supplemented source. The enlarged source has separate version-bound build and author-review records; the old acceptance is not transferred to it. The formal finiteness proof follows an alternative algebraic route and does not certify every step of the manuscript's CAD proof.
+All foundational spaces, operators, tensors, unitary groups, quotients, subgroups and topological group equivalences in the v2 public interfaces are Mathlib objects. Support, detection, encoding relations, circuit budgets and stabilizer conditions are article-specific definitions. The historical baseline assembled file, SHA-256 85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8, passed the bound v2-033 audit and the later fresh replay at source revision 3361e6c. Those records are not acceptance of the newly supplemented source. The enlarged source has separate version-bound build and author-review records; the old acceptance is not transferred to it. The revised manuscript now follows the formal algebraic finiteness route. Historical smooth-cell proofs are not part of the current manuscript.
 ## Standard stabilizer convention: explicit equivalence supplement
 
 For n qubits, let P_n consist of the matrices z times a tensor product of I, X, Y and Z, with z in {1, -1, i, -i}. The four single-qubit matrices are the usual concrete complex 2-by-2 matrices. The underlying group carrier below is Mathlib's matrix unitary group, and subgroup means Mathlib `Subgroup`.
@@ -157,4 +159,4 @@ The subgroup's finiteness is also derived from the finite four-phase/Pauli-word 
 
 `standardTheoremTwo_proved` takes this explicit standard-code predicate, the same isometry and actual-distance hypotheses, and the same n,k,d,q parameter restrictions as `nativeTheoremTwo_proved`. It concludes exactly the same positive critical-depth equality and the same nontrivial closed Circle-isomorphic subgroup inside the allowed-budget logical image. The equivalence supplies the native stabilizer premise; no Pauli witness, finiteness conclusion or critical-depth equality is added as an assumption.
 
-The source supplement and actual four-qubit applications were checked in a separate development build. Consult the source-hash-bound verification and author-approval records for the final integrated version; the readable statements are not those records. The manuscript CAD proof remains unchanged and its formalization is deferred by the user; see the separate CAD comparison for the exact route difference.
+The source supplement and actual four-qubit applications were checked in a separate development build. Consult the source-hash-bound verification and author-approval records for the final integrated version; the readable statements are not those records. The current article uses the algebraic route; its new quantitative End Matter discussion remains outside the formal theorem interfaces.

@@ -31,6 +31,6 @@ Current execution evidence and its trust/resource qualifications are identified 
 
 The user approved the current two-main-theorem semantic review on 2026-11-03. [The approval record](../AUTHOR_SEMANTIC_APPROVAL.json) binds the selected manuscript input and unchanged mathematical source. No independently authenticated identity or exact approval time is asserted.
 
-The manuscript's finiteness proof uses smooth cells and paths. The Lean proof uses an independent algebraic/derivation route, accepted by the user for this release. [The route comparison](CAD_VS_ALGEBRAIC_PROOF.md) describes the difference. Formalizing the CAD argument is outside this release's scope, not an approval or publication blocker. The mathematical conclusions, hypotheses and scope still have to match.
+The revised manuscript presents the coordinate-algebra and derivation argument used by Lean. [The proof-route note](CAD_VS_ALGEBRAIC_PROOF.md) explains its scope. The main theorem statements and Lean source are unchanged. The new End Matter component count, Bezout bound and exact-counting discussion are additional written deductions, not formalized cardinality theorems or executed algorithms.
 
 The formalization does not certify the entire article, its bibliography, a noise threshold, a universal generated gate set, a nontrivial-gauge extension of Theorem 2, or fault tolerance of the saturating rotation circuit.

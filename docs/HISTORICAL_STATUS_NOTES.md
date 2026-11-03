@@ -1,3 +1,7 @@
+# Algebraic revision note
+
+The current article uses the algebraic proof route. References below or in retained execution records to an independent route and an unformalized CAD appendix describe earlier manuscripts. Those records retain their original hashes and scope. The current End Matter quantitative discussion is new and outside the unchanged Lean theorem interfaces.
+
 # Retained historical review notes
 
 Several technical notes retained from the proof snapshot describe the 2026-11-02 review state. Their references to the "latest manuscript", PENDING approval, or deferred CAD work concern those historical inputs. Current approval is recorded in [AUTHOR_SEMANTIC_APPROVAL.json](../AUTHOR_SEMANTIC_APPROVAL.json), and current manuscript correspondence in [LATEST_MANUSCRIPT_CORRESPONDENCE.md](LATEST_MANUSCRIPT_CORRESPONDENCE.md). CAD line-by-line formalization is outside this release's scope.
