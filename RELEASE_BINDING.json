@@ -6,18 +6,18 @@
   "replayed_proof_commit": "411ff86bd30e423b3bc15267006e7bb3b409506d",
   "previous_publication_commit": "e199f3338e29ba3d8fbda5212f3a865af0b41d3a",
   "publication_commit": "Identified by the Git commit containing this file; its own SHA is not embedded.",
-  "publication_parent": "ad6a378f6080ba32d92e7c31b6cf71b07685970a",
+  "publication_parent": "f436e37d258b2a1a53d97c3be6b0fe07f368ab00",
   "paper_citation": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/ad6a378f6080ba32d92e7c31b6cf71b07685970a",
   "article": {
     "tex": {
       "path": "manuscript/shallow_logical_operators_depth_threshold.tex",
-      "bytes": 39541,
-      "sha256": "cc64ad2f90a04131b41ba0d5dcd1707540cb7f0d5e8175d322d295cdefd37b91"
+      "bytes": 39564,
+      "sha256": "523e7714d3e010b332b011de6ba8f0fd159c5daa89979a0dcffa4675e3b63c40"
     },
     "pdf": {
       "path": "manuscript/shallow_logical_operators_depth_threshold.pdf",
-      "bytes": 451870,
-      "sha256": "1d60a13da252f6504880242aaafb9e955e728db784aaf97b83a9552978345717"
+      "bytes": 450405,
+      "sha256": "b7b8c4376fc98ed11785b21f5763a499650bbeb9fbbc9b1537f791a8a45cdf98"
     }
   },
   "lean_source": {
@@ -118,16 +118,18 @@
   },
   "article_check": {
     "path": "docs/20261103v2-algebraic-check.json",
-    "bytes": 1924,
-    "sha256": "c28133d6af5d8ea1298b96a4ae2a203765dd2e7348e886abd237aa3596d6af58"
+    "bytes": 2410,
+    "sha256": "ea44bb94b5e66df7e803fe9966fe3dcce97b4added7eabd4ef24cfe34530dc1e"
   },
   "changes": [
     "Replaced the smooth-cell/path proof by the coordinate-algebra and field-derivation proof used in Lean.",
     "Replaced the CAD appendix with the algebraic finite-image lemma.",
     "Updated Figure 1, proof overview, conclusion, code availability and Lean scope statements.",
     "Added End Matter component count, explicit Bezout parameter bound, tensor-power limitation and exact-counting feasibility discussion.",
-    "Removed unused Haferkamp/Plaumann citations and added precise algebraic references; first-citation order retained."
+    "Removed unused Haferkamp/Plaumann citations and added precise algebraic references; first-citation order retained.",
+    "Updated only the author display name, email placeholder and acknowledgment wording after publication f436e37."
   ],
   "formal_scope": "The two main theorem statements and Lean source are unchanged. The main proof and finite-image lemma follow the existing formal route. New quantitative deductions and proposed algorithms are not formalized or executed.",
-  "evidence_scope": "The cited proof-and-scope snapshot and the final publication lie on this branch. Prior clean replay binds the identical Lean source at its original snapshot. Historical approval and execution receipts retain their original input hashes. This prose revision does not claim a new Lean run."
+  "evidence_scope": "The cited proof-and-scope snapshot and the final publication lie on this branch. Prior clean replay binds the identical Lean source at its original snapshot. Historical approval and execution receipts retain their original input hashes. This prose revision does not claim a new Lean run.",
+  "metadata_revision_base": "f436e37d258b2a1a53d97c3be6b0fe07f368ab00"
 }
