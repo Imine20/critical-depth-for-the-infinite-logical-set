@@ -39,9 +39,11 @@ The [aligned mathematical statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEM
 
 ## Manuscript versions
 
-The latest user-supplied article is available as [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) and [PDF](manuscript/shallow_logical_operators_depth_threshold.pdf), copied without edits.
+The current manuscript is [20261104v1.tex](manuscript/20261104v1.tex), published on 2026-11-04 from the supplied file without byte changes. Its SHA-256 is `7777ecaefbaf8891090754c6cdb884e49f57c9d3bdd2a29c7451da120b9c860d`. The historical verification reports below are bound to the exact manuscript and Lean source versions recorded in those reports.
 
-The actual Lean replay used the earlier M98e19 reference manuscript. Its receipt is preserved unchanged. The [latest-manuscript correspondence](docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md) separately compares the new M1c17 revision: paper rho corresponds to Lean q; Theorem 1 matches, and Theorem 2 matches under the ordinary [[n,k,d]] stabilizer-subspace reading (g=1). The new text omits the earlier explicit subspace/g=1 wording. A nontrivial-gauge extension and new universality/threshold discussion claims are not certified by this proof.
+The 2026-11-02 release article is available as [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) and [PDF](manuscript/shallow_logical_operators_depth_threshold.pdf), copied without edits.
+
+The actual Lean replay used the earlier M98e19 reference manuscript. Its receipt is preserved unchanged. The [M1c17 manuscript correspondence](docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md) separately compares the M1c17 revision: paper rho corresponds to Lean q; Theorem 1 matches, and Theorem 2 matches under the ordinary [[n,k,d]] stabilizer-subspace reading (g=1). The new text omits the earlier explicit subspace/g=1 wording. A nontrivial-gauge extension and new universality/threshold discussion claims are not certified by this proof.
 
 The [release binding](verification-runs/20261102-3c90628/RELEASE_BINDING.json) distinguishes latest article bytes, replay inputs and documentation-only changes. The exact [build inputs](verification-runs/20261102-3c90628/BUILD_INPUTS/) and [reference TeX](verification-runs/20261102-3c90628/REFERENCE_MANUSCRIPT.tex) remain available. No old receipt is relabeled as a new manuscript build.
 
