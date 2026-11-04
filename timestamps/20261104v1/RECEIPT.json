@@ -1,0 +1,78 @@
+{
+  "manuscript": "manuscript/20261104v1.tex",
+  "manuscript_bytes": 43033,
+  "manuscript_sha256": "7777ecaefbaf8891090754c6cdb884e49f57c9d3bdd2a29c7451da120b9c860d",
+  "manuscript_git_blob": "0f377da56b24d4728b435d3453b1a19659898234",
+  "source_publication_commit": "1e994a10da4040dfbe8d6937fba1bac96a87548a",
+  "timestamp_protocol": "RFC 3161",
+  "tsa_endpoint": "http://timestamp.digicert.com",
+  "request_hash_algorithm": "sha256",
+  "request_nonce": "0x1FD3E74A7C6BCFE6",
+  "response_status": "Granted",
+  "timestamp_utc": "2026-11-04T02:37:04Z",
+  "timestamp_asia_shanghai": "2026-11-04T10:37:04+08:00",
+  "tsa_policy_oid": "2.16.840.1.114412.7.1",
+  "tsa_token_serial": "0xF861F4E61EDDFF5A76032431249F901A",
+  "signer_sha256": "2da09da7f4131f9fe72db6c5e6e9c9656755af043f1ea742cc0d2120e141ebfc",
+  "root_der_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+  "root_provenance": "Windows LocalMachine Root, DDFB16CD4931C973A2037D3FC83A4D7D775D05E4, fingerprint cross-checked against DigiCert official root certificate documentation",
+  "signature_and_chain_verified": true,
+  "signer_timestamping_eku_critical": true,
+  "request_and_nonce_verified": true,
+  "frozen_file_verified": true,
+  "original_and_public_download_sha256_verified": true,
+  "revocation_checked": false,
+  "ots_status": "Suspended at the user request",
+  "openssl": "OpenSSL 3.2.4, Git for Windows mingw64 binary",
+  "verification_utc": "2026-11-04T02:38:35.5251159+00:00",
+  "artifacts": [
+    {
+      "name": "20261104v1.tex.tsq",
+      "bytes": 69,
+      "sha256": "8efd589c6cce59ea0d83bc66ca7ba80633bd10e53c9cbf9e9458a49a0a1a0903",
+      "git_blob": "e93475a4589a00e7cd351f15e6dff04b046351b7"
+    },
+    {
+      "name": "20261104v1.tex.tsr",
+      "bytes": 6007,
+      "sha256": "989e19290ff723279e2f96fe7d302b3e8fc16ff54dea7695dcc9f65b31fe498c",
+      "git_blob": "367063fd4a9bada9164192eff19794171abb1bea"
+    },
+    {
+      "name": "digicert-trusted-root-g4.pem",
+      "bytes": 2012,
+      "sha256": "83c858c6d092a38723703389e6cc5b0239e3537bcdc3114723b95da63a3d9360",
+      "git_blob": "94424105ff0b3d3804751a77f49e2638dc1dde1f"
+    },
+    {
+      "name": "issuer-intermediate.pem",
+      "bytes": 2424,
+      "sha256": "0edab770d65632eefbe6ccdb61034e224facf49a960acdf82ae13c64fa0a3519",
+      "git_blob": "dcfc0abca7ffb7b573d95a782726ed6bba1002ad"
+    },
+    {
+      "name": "actual-signer.pem",
+      "bytes": 2504,
+      "sha256": "b733bc1d837bc69be0495d068059305a659db35b51d487e6d46cd45df544af93",
+      "git_blob": "ee15ea654093e646db14963648dd541ab74d998a"
+    },
+    {
+      "name": "query.txt",
+      "bytes": 301,
+      "sha256": "93fe86f2df3b50a45821b12f2a694707086f3f93131ae3bf4e64364b2b4e2b45",
+      "git_blob": "9eeed8c28887a8dd8b7e01dfefce414767a11b07"
+    },
+    {
+      "name": "reply.txt",
+      "bytes": 531,
+      "sha256": "bce3264a744a462a7771199f491ceaf3962d410679bedb027d11328b21c45368",
+      "git_blob": "0abe50dd7e526cab41c82e1ce49133be704533d3"
+    },
+    {
+      "name": "verification.txt",
+      "bytes": 327,
+      "sha256": "270a43036a1dabfb2e8bccaeb7788e673b460e72d3dea8f4de57ddaf9393b33e",
+      "git_blob": "6d31a158d85ea88cdfe93c7f5a081669a4fd3062"
+    }
+  ]
+}

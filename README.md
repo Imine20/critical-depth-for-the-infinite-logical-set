@@ -39,7 +39,9 @@ The [aligned mathematical statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEM
 
 ## Manuscript versions
 
-The current manuscript is [20261104v1.tex](manuscript/20261104v1.tex), published on 2026-11-04 from the supplied file without byte changes. Its SHA-256 is `7777ecaefbaf8891090754c6cdb884e49f57c9d3bdd2a29c7451da120b9c860d`. The historical verification reports below are bound to the exact manuscript and Lean source versions recorded in those reports.
+The current manuscript is [20261104v1.tex](manuscript/20261104v1.tex), published on 2026-11-04 from the supplied file without byte changes. Its SHA-256 is `7777ecaefbaf8891090754c6cdb884e49f57c9d3bdd2a29c7451da120b9c860d`. The [RFC 3161 evidence and verification instructions](timestamps/20261104v1/README.md) record the signed time 2026-11-04 02:37:04 UTC for these exact TeX bytes.
+
+The historical verification reports below are bound to the exact manuscript and Lean source versions recorded in those reports.
 
 The 2026-11-02 release article is available as [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) and [PDF](manuscript/shallow_logical_operators_depth_threshold.pdf), copied without edits.
 
