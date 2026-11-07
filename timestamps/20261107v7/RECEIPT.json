@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "endpoint": "http://timestamp.digicert.com",
+  "publication_commit": "2b83c5232fb35ec4bf42a5f004a4ac875e5a71e9",
+  "root_der_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+  "root_provenance": "Self-signed DigiCert Trusted Root G4 exported from the local Windows trusted-root store.",
+  "intermediate_provenance": "DigiCert RFC 3161 knowledge-base chain link.",
+  "revocation_checked": false,
+  "records": [
+    {
+      "file": "manuscript/20261107v7.tex",
+      "bytes": 45311,
+      "sha256": "70c261a982af5cbf4bb6a8784f5996a6d1ca9bf7ab34cc8b3ed5034a42adf271",
+      "request_sha256": "31c0d383e21cb62de89419835653de4c9854ebc90847df721c73e12e80ec21bb",
+      "response_sha256": "b5f63780ab583ac7b5b732202108e4c6eaf0cde0ebf55394dd7bac46f5220828",
+      "nonce": "0x5AE953B28380A242",
+      "sent_utc": "2026-11-07T03:11:14.7844749+00:00",
+      "received_utc": "2026-11-07T03:11:15.4089450+00:00",
+      "tsa_time_utc": "Nov  7 03:11:10 2026 GMT",
+      "policy": "2.16.840.1.114412.7.1",
+      "serial": "0xE9C5271363DA6BBE06BFE7E79EF2426B",
+      "verify_query": "Verification: OK",
+      "verify_file": "Verification: OK",
+      "signer_metadata": "subject=C=US, O=DigiCert, Inc., CN=DigiCert SHA256 RSA4096 Timestamp Responder 2026 1\r\nissuer=C=US, O=DigiCert, Inc., CN=DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1\r\nserial=084FDC334F7E454EDBC30F8FF9921835\r\nsha256 Fingerprint=2D:A0:9D:A7:F4:13:1F:9F:E7:2D:B6:C5:E6:E9:C9:65:67:55:AF:04:3F:1E:A7:42:CC:0D:21:20:E1:41:EB:FC",
+      "signer_eku": "X509v3 Extended Key Usage: critical\r\n    Time Stamping"
+    },
+    {
+      "file": "manuscript/20261107v7.pdf",
+      "bytes": 469716,
+      "sha256": "ca3010f710a50fa394d40c651fdd5a5828e05b2871e9824e262236a0623f3137",
+      "request_sha256": "1ebb5ec0d560bcd5e534561fab185a75d8d72217532924c0c7b6eea38ce20f8c",
+      "response_sha256": "9952c032527989bfa98c3828e8fd4df5dffb3ad8f1278db21feed06e9fb2c9ab",
+      "nonce": "0xE54CF8A5CB7B485C",
+      "sent_utc": "2026-11-07T03:11:16.2098890+00:00",
+      "received_utc": "2026-11-07T03:11:16.8442816+00:00",
+      "tsa_time_utc": "Nov  7 03:11:11 2026 GMT",
+      "policy": "2.16.840.1.114412.7.1",
+      "serial": "0x2F232D8459B86350E89504DE5525E30B",
+      "verify_query": "Verification: OK",
+      "verify_file": "Verification: OK",
+      "signer_metadata": "subject=C=US, O=DigiCert, Inc., CN=DigiCert SHA256 RSA4096 Timestamp Responder 2026 1\r\nissuer=C=US, O=DigiCert, Inc., CN=DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1\r\nserial=084FDC334F7E454EDBC30F8FF9921835\r\nsha256 Fingerprint=2D:A0:9D:A7:F4:13:1F:9F:E7:2D:B6:C5:E6:E9:C9:65:67:55:AF:04:3F:1E:A7:42:CC:0D:21:20:E1:41:EB:FC",
+      "signer_eku": "X509v3 Extended Key Usage: critical\r\n    Time Stamping"
+    }
+  ]
+}

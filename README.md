@@ -2,7 +2,7 @@
 
 ## Latest manuscript
 
-[20261107v7 TeX](manuscript/20261107v7.tex) · [20261107v7 PDF](manuscript/20261107v7.pdf) · [Independent replay and semantic review](verification-runs/20261107v7/REPORT.md)
+[20261107v7 TeX](manuscript/20261107v7.tex) · [20261107v7 PDF](manuscript/20261107v7.pdf) · [Independent replay and semantic review](verification-runs/20261107v7/REPORT.md) · [RFC 3161 timestamps](timestamps/20261107v7/README.md)
 
 The v7 files are the exact supplied bytes. The manuscript cites [proof snapshot ad6a378](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/ad6a378f6080ba32d92e7c31b6cf71b07685970a), which has the same Lean proof and dependency lock as this release. See the [input hashes](verification-runs/20261107v7/INPUTS.sha256) for the exact bindings.
 
