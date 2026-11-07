@@ -26,10 +26,12 @@ The [replay entry](scripts/replay.sh) compiles the [integrated proof](mathlib-re
 ## What the proofs cover
 
 - CriticalDepth.ReviewV2.nativeTheoremOne_proved gives finiteness and non-density of the exact projective logical image under one total-depth budget.
-- CriticalDepth.ReviewV2.standardTheoremTwo_proved gives the positive critical depth and a nontrivial closed circle subgroup for ordinary qubit stabilizer subspace codes of actual distance d ≥ 2.
+- CriticalDepth.ReviewV2.standardTheoremTwo_proved gives the positive critical depth and a nontrivial closed circle subgroup for ordinary qubit stabilizer subspace codes of actual distance $`d \ge 2`$.
 - CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations is the finite-image criterion underlying Theorem 1.
 
-The [readable statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md) and [v7 review](verification-runs/20261107v7/REPORT.md) distinguish theorem-level correspondence from the abstract's scope wording, the alternative coordinate presentation and the unformalized quantitative and fault-tolerance discussion.
+The [readable statements](docs/math/ALIGNED_MATHEMATICAL_STATEMENTS.md), [stabilizer definition correspondence](docs/math/STABILIZER_DEFINITION_CORRESPONDENCE.md) and [original mathematical statements](docs/math/ORIGINAL_PURE_MATHEMATICAL_STATEMENTS.md) have GitHub reading editions with rendered equations.
+
+The [v7 review](verification-runs/20261107v7/REPORT.md) identifies the exact audit inputs and distinguishes theorem-level correspondence from the abstract's scope wording, the alternative coordinate presentation and the unformalized quantitative and fault-tolerance discussion.
 
 ## Previous versions
 
