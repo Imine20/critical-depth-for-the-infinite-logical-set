@@ -14,6 +14,19 @@ sh scripts/verify_release.sh
 
 For initial dependency setup, run `lake exe cache get` followed by `lake --no-cache build '@Cli/Cli:leanArts'`. Mathlib's cache omits the locked Cli library; this additional command builds its actual Lean artifacts from source. Keep the committed lock file unchanged. Lean must be 4.35.0, compiler commit `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`. Mathlib is pinned to `56a005855ea17e0b0958f73ec801ae140b0a1679`; eight other package commits are listed in [lake-manifest.json](../lake-manifest.json).
 
+## Combined entry for a fresh checkout
+
+Clone with byte-preserving settings when preparing the checkout with Windows Git, for example with git -c core.autocrlf=false clone. Run the verifier in Linux or WSL.
+
+~~~sh
+lake exe cache get
+sh scripts/replay.sh
+~~~
+
+The wrapper runs the source audit and the separate caller below in sequence. It requires a fresh output tree so the caller can only use the main artifact produced by the current run. It records and rechecks the hashes of that artifact's generated parts. To rerun in the same checkout, move the previous .verification directory aside first.
+
+For a separate kernel pass after the build and caller, run the wrapper with CRITICAL_DEPTH_KERNEL_REPLAY=1. This uses the bundled leanchecker from the selected toolchain and checks the project modules against the pinned imports. The operating-system resource boundary is supplied by the caller. In the trusted-cache mode described below, the wrapper uses the same explicit compiler and public cache roots as the source verifier.
+
 ## Required checks
 
 The release wrapper checks package revisions and compiles the main source through [verify.sh](../scripts/verify.sh). That script allocates a new output directory, validates source/payload bindings and checks dependency artifacts before and after compilation. The embedded audit covers 1,268 theorem declarations and 1,749 own mathematical constants, including private, generated and unused declarations. There are 41 registered targets, 29 exact-three targets, 13 named proposition guards and 12 Mathlib-foundation origin checks. Own mathematical declarations may have no recursive axioms outside:

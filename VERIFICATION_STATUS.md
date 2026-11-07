@@ -1,8 +1,12 @@
 # Verification versions and evidence scope
 
-## Algebraic-proof revision
+## 20261107v7
 
-The current branch is revision/20261103v2-algebraic. Its article presents the algebraic proof used by the existing Lean development. Both main theorem statements and the stabilizer proof are unchanged. The new component-count inequality, Bezout estimate and exact-counting discussion appear in End Matter and are not formalized.
+The current publication contains the exact [v7 TeX](manuscript/20261107v7.tex) and [PDF](manuscript/20261107v7.pdf). The [independent report](verification-runs/20261107v7/REPORT.md) and [execution receipt](verification-runs/20261107v7/REPLAY.json) record the fresh source audit, separate caller and bundled kernel replay. Author semantic review for v7 is PENDING.
+
+## Historical 20261103v2 algebraic-proof revision
+
+The earlier 20261103v2 article presents the algebraic proof used by the existing Lean development. Both main theorem statements and the stabilizer proof are unchanged. The new component-count inequality, Bezout estimate and exact-counting discussion appear in End Matter and are not formalized.
 
 The article cites proof-and-scope snapshot ad6a378f6080ba32d92e7c31b6cf71b07685970a. The unchanged Lean source SHA-256 is 3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2. The final article hashes and source/evidence bindings are in [RELEASE_BINDING.json](RELEASE_BINDING.json); its [article check](docs/20261103v2-algebraic-check.json) records compilation, reference checks and visual review. No new Lean run is claimed.
 

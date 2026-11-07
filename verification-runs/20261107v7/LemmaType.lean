@@ -1,0 +1,6 @@
+import CriticalDepthMathlib
+
+set_option pp.universes true
+set_option pp.maxSteps 1000000
+#check @CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations
+#print axioms CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations

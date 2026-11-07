@@ -1,19 +1,36 @@
 # Critical depth for the infinite logical set
 
-This branch presents the algebraic-proof revision of 20261103v2. The article now uses the same coordinate-algebra and derivation mechanism as the existing Lean proof. Both main theorem statements and the Lean source are unchanged.
+## Latest manuscript
 
-## Article
+[20261107v7 TeX](manuscript/20261107v7.tex) · [20261107v7 PDF](manuscript/20261107v7.pdf) · [Independent replay and semantic review](verification-runs/20261107v7/REPORT.md)
 
-Download the [TeX](manuscript/shallow_logical_operators_depth_threshold.tex) or [PDF](manuscript/shallow_logical_operators_depth_threshold.pdf). The finite smooth-cell proof has been replaced, including the proof overview, Figure 1 and End Matter. The End Matter also derives a coarse explicit cardinality bound and discusses exact counting with algebraic input. These quantitative additions are not formalized in Lean. References remain ordered by first citation, with unused proof-specific references removed.
+The v7 files are the exact supplied bytes. The manuscript cites [proof snapshot ad6a378](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/ad6a378f6080ba32d92e7c31b6cf71b07685970a), which has the same Lean proof and dependency lock as this release. See the [input hashes](verification-runs/20261107v7/INPUTS.sha256) for the exact bindings.
 
-[RELEASE_BINDING.json](RELEASE_BINDING.json) identifies the article bytes, cited proof-and-scope snapshot, unchanged Lean source and historical replay evidence. The final publication is a descendant of its cited snapshot on revision/20261103v2-algebraic; later branch updates do not change the cited commit.
+## Verify the Lean proof
 
-## Lean statements and verification
+Use a fresh Linux or WSL checkout with the pinned Lean toolchain and public Mathlib cache.
 
-CriticalDepth.ReviewV2.nativeTheoremOne_proved establishes finiteness and non-density of the exact projective logical image under the strict threshold. CriticalDepth.ReviewV2.standardTheoremTwo_proved establishes critical-depth equality and a nontrivial closed Circle-isomorphic subgroup for ordinary qubit stabilizer codes of actual distance d.
+~~~sh
+lake exe cache get
+sh scripts/replay.sh
+~~~
 
-Read the [scope statement](docs/LEAN_SCOPE_AND_CITATION_NOTE.md) and [mathematical statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md). The algebraic finite-image proof includes the nonreduced case and does not assume that the physical parameter space is zero-dimensional.
+The [replay entry](scripts/replay.sh) compiles the [integrated proof](mathlib-review/CriticalDepthMathlib.lean), checks its recursive axiom audit and compiles the [separate caller](mathlib-review/SourceConsumer.lean) against the fresh proof artifact. Set CRITICAL_DEPTH_KERNEL_REPLAY=1 for a second check of the two compiled modules with Lean's bundled checker. See the [verification guide](docs/VERIFICATION.md) for resource isolation, the exact commands and the trusted dependency boundary.
 
-The source is byte-identical to the source replayed at 411ff86bd30e423b3bc15267006e7bb3b409506d. The [existing clean-replay report](verification-runs/20261103v2-clean/FINAL_REPORT.md) records acceptance of the main source and independent caller, with no project axioms or sorryAx and main-theorem dependencies propext, Classical.choice and Quot.sound. This revision does not claim a new Lean run or extend the old receipt to new prose. Follow [the replay guide](docs/CLEAN_REPLAY.md) to reproduce that immutable source; [the version index](VERIFICATION_STATUS.md) distinguishes current and historical evidence.
+| Input | Pin |
+| --- | --- |
+| Lean | 4.35.0, compiler commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc |
+| Mathlib | 56a005855ea17e0b0958f73ec801ae140b0a1679 |
+| Transitive public packages | [lake-manifest.json](lake-manifest.json) |
 
-The original author-approved input and approval record are preserved. The user subsequently requested this proof rewrite, the End Matter discussion and repository synchronization. The new quantitative material has not been added to the two formal theorem interfaces.
+## What the proofs cover
+
+- CriticalDepth.ReviewV2.nativeTheoremOne_proved gives finiteness and non-density of the exact projective logical image under one total-depth budget.
+- CriticalDepth.ReviewV2.standardTheoremTwo_proved gives the positive critical depth and a nontrivial closed circle subgroup for ordinary qubit stabilizer subspace codes of actual distance d ≥ 2.
+- CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations is the finite-image criterion underlying Theorem 1.
+
+The [readable statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md) and [v7 review](verification-runs/20261107v7/REPORT.md) distinguish theorem-level correspondence from the abstract's scope wording, the alternative coordinate presentation and the unformalized quantitative and fault-tolerance discussion. The v7 author semantic review status is **PENDING**.
+
+## Previous versions
+
+The [version index](VERIFICATION_STATUS.md) separates the v7 evidence from the historical records. The [20261103v2 algebraic revision](RELEASE_BINDING.json) and its [earlier source replay](verification-runs/20261103v2-clean/FINAL_REPORT.md) remain in this branch. The [20261104v1 TeX and timestamp](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/38bc10f39e085099f76b38cf200215aa0208fd61/timestamps/20261104v1) remain available on the earlier main snapshot. The [archive](archive/README.md) retains the preceding records.

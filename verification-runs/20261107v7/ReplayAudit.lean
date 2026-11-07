@@ -1,0 +1,15 @@
+import CriticalDepthMathlib
+import SourceConsumer
+
+set_option pp.universes true
+set_option pp.explicit true
+
+#check @CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations
+#print axioms CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations
+#print axioms CriticalDepth.ReviewV2.nativeTheoremOne_proved
+#print axioms CriticalDepth.ReviewV2.HilbertCircuitTransport.theoremOne_arbitrary_carriers
+#print axioms CriticalDepth.ReviewV2.standardTheoremTwo_proved
+#print axioms CriticalDepth.ReviewV2.critical_circle_joint_witness
+#print axioms CriticalDepth.SourceConsumer.fiveQubit_depthOne
+#print axioms CriticalDepth.SourceConsumer.fiveQubit_depthTwo
+#print axioms CriticalDepth.SourceConsumer.fourQubit_criticalDepth_and_closedCircle
