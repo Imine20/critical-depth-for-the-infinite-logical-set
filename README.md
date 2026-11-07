@@ -2,7 +2,7 @@
 
 ## Latest manuscript
 
-[20261107v7 TeX](manuscript/20261107v7.tex) · [20261107v7 PDF](manuscript/20261107v7.pdf) · [Independent replay and semantic review](verification-runs/20261107v7/REPORT.md) · [RFC 3161 timestamps](timestamps/20261107v7/README.md)
+[20261107v7 TeX](manuscript/20261107v7.tex) · [20261107v7 PDF](manuscript/20261107v7.pdf) · [Independent replay and semantic review](verification-runs/20261107v7/REPORT.md) · [Semantic approval (APPROVED)](verification-runs/20261107v7/AUTHOR_SEMANTIC_APPROVAL.json) · [RFC 3161 timestamps](timestamps/20261107v7/README.md)
 
 The v7 files are the exact supplied bytes. The manuscript cites [proof snapshot ad6a378](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/ad6a378f6080ba32d92e7c31b6cf71b07685970a), which has the same Lean proof and dependency lock as this release. See the [input hashes](verification-runs/20261107v7/INPUTS.sha256) for the exact bindings.
 
@@ -29,7 +29,7 @@ The [replay entry](scripts/replay.sh) compiles the [integrated proof](mathlib-re
 - CriticalDepth.ReviewV2.standardTheoremTwo_proved gives the positive critical depth and a nontrivial closed circle subgroup for ordinary qubit stabilizer subspace codes of actual distance d ≥ 2.
 - CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations is the finite-image criterion underlying Theorem 1.
 
-The [readable statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md) and [v7 review](verification-runs/20261107v7/REPORT.md) distinguish theorem-level correspondence from the abstract's scope wording, the alternative coordinate presentation and the unformalized quantitative and fault-tolerance discussion. The v7 author semantic review status is **PENDING**.
+The [readable statements](mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md) and [v7 review](verification-runs/20261107v7/REPORT.md) distinguish theorem-level correspondence from the abstract's scope wording, the alternative coordinate presentation and the unformalized quantitative and fault-tolerance discussion.
 
 ## Previous versions
 

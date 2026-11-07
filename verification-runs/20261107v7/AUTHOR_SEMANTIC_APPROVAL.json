@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "manuscript_version": "20261107v7",
+  "status": "APPROVED",
+  "recorded_at_utc": "2026-11-07T10:13:27Z",
+  "approval_evidence": "Explicit approval by the user in the task conversation.",
+  "response_original": "通过语义签核",
+  "reviewed_snapshot": {
+    "repository": "Imine20/critical-depth-for-the-infinite-logical-set",
+    "branch": "revision/20261103v2-algebraic",
+    "commit": "810e1aa4ffcf278e60a6fa96e88b3b0ae532d726"
+  },
+  "scope": {
+    "summary": "The mathematical correspondence described in the independent review of the frozen v7 manuscript, with the hypotheses of each theorem body and the ordinary stabilizer subspace convention for Theorem 2.",
+    "reviewed_correspondences": [
+      {
+        "manuscript": "Theorem 1",
+        "lean": "CriticalDepth.ReviewV2.nativeTheoremOne_proved"
+      },
+      {
+        "manuscript": "Theorem 2",
+        "lean": "CriticalDepth.ReviewV2.standardTheoremTwo_proved"
+      },
+      {
+        "manuscript": "End Matter Lemma 1",
+        "lean": "CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations"
+      }
+    ],
+    "boundaries": "The report records the abstract distance-guard discrepancy, the source-level comparison of the two coordinate presentations, and the scope of the quantitative and fault-tolerance discussion."
+  },
+  "inputs_at_reviewed_snapshot": {
+    "tex": {
+      "path": "manuscript/20261107v7.tex",
+      "sha256": "70c261a982af5cbf4bb6a8784f5996a6d1ca9bf7ab34cc8b3ed5034a42adf271",
+      "bytes": 45311
+    },
+    "pdf": {
+      "path": "manuscript/20261107v7.pdf",
+      "sha256": "ca3010f710a50fa394d40c651fdd5a5828e05b2871e9824e262236a0623f3137",
+      "bytes": 469716
+    },
+    "lean_source": {
+      "path": "mathlib-review/CriticalDepthMathlib.lean",
+      "sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2",
+      "bytes": 543694
+    },
+    "aligned_statements": {
+      "path": "mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md",
+      "sha256": "330aec61416d6b191f47c7b6f717e1544ad51397e3aadda09920a46c6cfab95e",
+      "bytes": 11605
+    },
+    "lean_toolchain": {
+      "path": "lean-toolchain",
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c",
+      "bytes": 25
+    },
+    "dependency_lock": {
+      "path": "lake-manifest.json",
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2",
+      "bytes": 3663
+    },
+    "review_report": {
+      "path": "verification-runs/20261107v7/REPORT.md",
+      "sha256": "8aba821c2f2a55235b405eec2b708f9bcfc49b8fc8e0b726e00a480189d18071",
+      "bytes": 14070
+    },
+    "replay_receipt": {
+      "path": "verification-runs/20261107v7/REPLAY.json",
+      "sha256": "5de484abc9265c20d0ce9caaf4f0b7c6474a57c8fc0614d71e76365d3d7ff132",
+      "bytes": 7346
+    }
+  }
+}

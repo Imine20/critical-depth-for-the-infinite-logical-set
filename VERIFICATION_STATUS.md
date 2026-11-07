@@ -2,7 +2,9 @@
 
 ## 20261107v7
 
-The current publication contains the exact [v7 TeX](manuscript/20261107v7.tex) and [PDF](manuscript/20261107v7.pdf). The [independent report](verification-runs/20261107v7/REPORT.md) and [execution receipt](verification-runs/20261107v7/REPLAY.json) record the fresh source audit, separate caller and bundled kernel replay. Author semantic review for v7 is PENDING.
+The current publication contains the exact [v7 TeX](manuscript/20261107v7.tex) and [PDF](manuscript/20261107v7.pdf). The [independent report](verification-runs/20261107v7/REPORT.md) and [execution receipt](verification-runs/20261107v7/REPLAY.json) record the fresh source audit, separate caller and bundled kernel replay.
+
+The [v7 author semantic approval](verification-runs/20261107v7/AUTHOR_SEMANTIC_APPROVAL.json) records **APPROVED** for the reviewed correspondence. The report preserves the status at the time of replay.
 
 ## Historical 20261103v2 algebraic-proof revision
 
