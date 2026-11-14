@@ -203,6 +203,58 @@
       "run": "check-31",
       "exit_code": 0,
       "log_sha256": "f12e9e335a46afd4e54379d463b73276f68fbfeb58b7c81438b2060232edce29"
+    },
+    {
+      "module": "FaultAverageInfidelity",
+      "sha256": "daf7ce206a483dbc5f54d57758e02d8a96dd204331f821c47e6fdd3575aa70c6",
+      "run": "check-32",
+      "exit_code": 0,
+      "log_sha256": "cf65a6ee96001f0d468fffdb7c629ce249ca37e633b746d6370da26076e563b6"
+    },
+    {
+      "module": "FaultIdealAction",
+      "sha256": "05c5591d3dde7174ff7a818eb3d27de65bb255e6b781aa17adef31cb4e6d9082",
+      "run": "check-37",
+      "exit_code": 0,
+      "log_sha256": "a13900eeae80dc17866c690101658bdbbc72bde432e00a9e085798685ce102d1"
+    },
+    {
+      "module": "BinaryPermutationUnitary",
+      "sha256": "3c0dd8d669ab58d1ed459042625ad2dc5d7233d8e33352a14d56b4adbae1b70f",
+      "run": "check-37",
+      "exit_code": 0,
+      "log_sha256": "aec3ad455d123c9827537d8b4886c7ea0437eb1070c4bb6cae7dcdacc6315db7"
+    },
+    {
+      "module": "ShorPermutationAction",
+      "sha256": "b3b952edfc66ce4aa0697e7203eb67ed386b424220ebc5c77eb2852b8d54f78b",
+      "run": "check-37",
+      "exit_code": 0,
+      "log_sha256": "4554c57156db42b543e2a2efb4a126fb38383162eba56b949ec330f0a2d90c77"
+    },
+    {
+      "module": "FaultSupportPreserving",
+      "sha256": "67f9df57b49dc824351de7f4cf3335cdcff846dd7082edc6a2a0ddac16d325eb",
+      "run": "check-40",
+      "exit_code": 0,
+      "log_sha256": "0235ba760a4ce2bc5bece34844c03eeff0310513784f20242870c6f56a308eda"
+    },
+    {
+      "module": "FinalSupplementAudit",
+      "sha256": "fd1cc40799d1e0196996f9259e3f14daff76714abbfcf835ca655df7c6422102",
+      "run": "check-40",
+      "exit_code": 0,
+      "log_sha256": "8d5ec4e167b1608cf91e34d179e9d773bbe69de797cee4a3593a6d0c9ee826ba"
     }
-  ]
+  ],
+  "supplement_audit": {
+    "modules": 5,
+    "declarations": 63,
+    "run": "check-40",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  }
 }
