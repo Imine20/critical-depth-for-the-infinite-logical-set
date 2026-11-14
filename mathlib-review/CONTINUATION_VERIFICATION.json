@@ -521,8 +521,8 @@
     },
     {
       "module": "ShorFaultWitnessAmbiguity",
-      "sha256": "c03e8e7cacce06963ed22cc4d3af51cd602cf5b396ca509e8df618d22b5c4c2c",
-      "run": "check-61",
+      "sha256": "282cc4908439d8db093d5e0744442387b6f040b867be7c8da305ed2f2955e264",
+      "run": "check-78",
       "exit_code": 0,
       "log_sha256": "fe48cc5897bbf584914e6a29a89fd5f9e1225f8e467c6416b6f04be60e16f707"
     },
@@ -1267,6 +1267,111 @@
       "run": "check-78",
       "exit_code": 0,
       "log_sha256": "543ac235bb779db1021d614947389e0273d9adcbb2f9f88d32710eb97a04e788"
+    },
+    {
+      "module": "NativeMiddlePauliHistory",
+      "sha256": "de3cd1685d7365b0dd90b478f627a66ef01ce1fe9e83b024d0b547ecaea368d4",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "0b907ebc6cde109568e275284c512651d1128b231246c20db41165aa40adff72"
+    },
+    {
+      "module": "MidpointPauliCircuit",
+      "sha256": "409d6bd55b964c9236d34c8d6baa0e895d278eaf6cd8b75d55b0947838db9d9b",
+      "run": "check-73",
+      "exit_code": 0,
+      "log_sha256": "77e813053ab1919aa548f4de8fa7e27e8d2d7292c33f92455bc8926d58b6445f"
+    },
+    {
+      "module": "MidpointEvenPauliCircuit",
+      "sha256": "447529b2bbed1e3fb4473eed8bd652c8a6ac4fea3ea10be17e789c5708e827b3",
+      "run": "check-77",
+      "exit_code": 0,
+      "log_sha256": "a315b40abaa935c77201cbd9b7798497fd112918df519f4a7eb0d268e5e3caa7"
+    },
+    {
+      "module": "MidpointNativeHistories",
+      "sha256": "848d024a45104e95c36a726ad44e3d1dc3ce49cc60e325622492ed4fb92658cc",
+      "run": "check-77",
+      "exit_code": 0,
+      "log_sha256": "0ef29ce8eb3ae956303a7587e8fc1a6662718dcf72059481bf88b68a4e4f08ef"
+    },
+    {
+      "module": "MidpointExactFaultWitness",
+      "sha256": "f1fa939c551967215e964c185bb7a71ba6e8c0e6c6136c5caba28357502449ab",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "95ee9dd6aaaae61bb54ddd0bd740276e431d1c6e57e414ed68c951b0a2717dee"
+    },
+    {
+      "module": "MidpointLogicalCeiling",
+      "sha256": "0f726200b267ebe2ab340e0c44b46354ef9d88931522b1fef967500e48a9399e",
+      "run": "check-79",
+      "exit_code": 0,
+      "log_sha256": "f28e905066341c7aaabdebbe4987b23f8963ce902241e4b88a41e26d2a8b2aa8"
+    },
+    {
+      "module": "ShorOnset",
+      "sha256": "75e2d3000f49218de82706f0e718151740b61331f642b234b45a66446bc6d49d",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "68d22838a7924b087a363057b6cadbc307e3011c7d63973cd262bfe347475e4a"
+    },
+    {
+      "module": "FaultUpperOnsetWitness",
+      "sha256": "08e17b01c8fcbabf226df054a9f1cb95cf0c7e5107ede36dba039af63550e112",
+      "run": "check-79",
+      "exit_code": 0,
+      "log_sha256": "893acf7a8d67ef08fb582bf7d0ea3b8927f1709d964a6ccafb5fa51eb8b03eac"
+    },
+    {
+      "module": "FaultDiamondTraceInputs",
+      "sha256": "e101fed7663746f71400b1617165e8d252e8f661160eac3ec7ca164b9f7f9ee9",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "7baca240c9734f0ca992818963d3acc3b1f2becd047e57c15bad965806b7aa14"
+    },
+    {
+      "module": "FaultDiamondExponent",
+      "sha256": "ffec39fb87bdfc3edf3dc562b95d517ddf7b53315446c2e65c058d3e84a7f508",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "87645381634cf06c826eea9e4dc116bb57a3d10398f92260236bc992bf052154"
+    },
+    {
+      "module": "FaultChannelNormalization",
+      "sha256": "b5389d9efd42dae89f97948f0fb0382a218ad20080883e36ebe6bf96e8289e4b",
+      "run": "check-79",
+      "exit_code": 0,
+      "log_sha256": "907559bec91ce9cda43b5c25ee98b1f44b6541789cc9b8bd0c7a1d186db8de3f"
+    },
+    {
+      "module": "FaultDiamondNormalization",
+      "sha256": "080c6346f7db32d951ef2c664dbc42299faadc3c3c47a9e9fd083495fb109a98",
+      "run": "check-79",
+      "exit_code": 0,
+      "log_sha256": "fdf0d77d7b85247754e6f4fae2896249fd79b8072e845cfcec47b36a591a423b"
+    },
+    {
+      "module": "FaultDiamondPaperMetric",
+      "sha256": "738ce5d497a547567b21e2c41274f9f01f4eb1785c91e1d8cd968e0377939b26",
+      "run": "check-79",
+      "exit_code": 0,
+      "log_sha256": "0c235a20394b094f3d8367976b5426c80ef736817978dca8585d1b641bee4326"
+    },
+    {
+      "module": "FaultNativePauliDecoding",
+      "sha256": "173c4c5eb05fea499bc0ecd296873af1fd514304a815851f3b7dbb2b17e15140",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "513cd34164f2a01030a77a94410db53df24bef3d97e4ca9840810f8ab340fdf0"
+    },
+    {
+      "module": "FaultWitnessMetricAudit",
+      "sha256": "81ca4b1bfe34302a9217a33a4fa2799815ee067c249c0c383bf1279e589cd1b5",
+      "run": "check-80",
+      "exit_code": 0,
+      "log_sha256": "0fe2a06f7eb962d2446b622ef2611b9bfef445c9f2fbe44a8f381a8107f6423b"
     }
   ],
   "supplement_audit": {
@@ -1343,6 +1448,16 @@
     "modules": 22,
     "declarations": 401,
     "run": "check-78",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "fault_witness_metric_audit": {
+    "modules": 15,
+    "declarations": 168,
+    "run": "check-80",
     "allowed_axioms": [
       "propext",
       "Classical.choice",

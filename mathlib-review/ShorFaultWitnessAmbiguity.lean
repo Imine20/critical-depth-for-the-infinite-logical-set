@@ -141,7 +141,7 @@ theorem distinct_of_fault_layers {n q : ℕ} {L : Layers n q}
   obtain ⟨z, hz⟩ := Finset.card_pos.mp hx
   exact he ((hxlayer z hz).symm.trans (hylayer z (hxy ▸ hz)))
 
-private theorem two_history_eventual_lower
+theorem two_history_eventual_lower
     {Loc Phys Log : Type*} [Fintype Loc] [DecidableEq Loc] [Fintype Phys] [DecidableEq Phys]
     [Fintype Log] [DecidableEq Log] [Nonempty Log]
     {Label : Loc → Type*} [∀ i, Fintype (Label i)] [∀ i, DecidableEq (Label i)]
