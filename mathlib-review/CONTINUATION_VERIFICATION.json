@@ -245,12 +245,239 @@
       "run": "check-40",
       "exit_code": 0,
       "log_sha256": "8d5ec4e167b1608cf91e34d179e9d773bbe69de797cee4a3593a6d0c9ee826ba"
+    },
+    {
+      "module": "FaultLowerCriterion",
+      "sha256": "f7ab154332a6fa72e07a302d2275fb8a2b2f6a41b2d8f04bd2ee6ddc2c361922",
+      "run": "check-44",
+      "exit_code": 0,
+      "log_sha256": "c158f6cf124664b542f072156c35e570d491b2598e6cd77755f99eb90ee27c1d"
+    },
+    {
+      "module": "FaultOnSiteSupport",
+      "sha256": "381bb05dbb55af570f9b2a6850a875f3dcf02e2089e51887858d701a80129888",
+      "run": "check-45",
+      "exit_code": 0,
+      "log_sha256": "504d2a00eb825ff7265a17245dec0c3d8ed7aea0a902653de04a25cc6a0cfa3a"
+    },
+    {
+      "module": "FaultEnvelopeScaling",
+      "sha256": "c89b4ccf9ef7f8056803506bf6754e8bb4efdca38622f19c2901123d8af19807",
+      "run": "check-45",
+      "exit_code": 0,
+      "log_sha256": "9e625dcb395f312356038963b6d2f3d986ed9c94838f6b6157beadc1a2c707a0"
+    },
+    {
+      "module": "ShorPhysicalChecks",
+      "sha256": "50e9682f90f6cb631f374a91afe9efc611e167729905659b89eeb77748b1f9da",
+      "run": "check-45",
+      "exit_code": 0,
+      "log_sha256": "803a8a6b432b8f8a67872ce7dd47bf53f009fc2ca13fdc3f80e29a911cc0c2ca"
+    },
+    {
+      "module": "PauliGroup",
+      "sha256": "0e282a4998705bd753e5663ce346d06661c73554e0bebf0c948e8574667e83d1",
+      "run": "check-45",
+      "exit_code": 0,
+      "log_sha256": "8ca98bee431dbac64bee17b27f3a6aba7b48d8e3c27e83a315c2b33526ec7815"
+    },
+    {
+      "module": "FaultDepthOne",
+      "sha256": "1cedff2de5f5348c03d98ccae0b0c74b39f182846f2a7fb85b03b398bc8f4b6e",
+      "run": "check-47",
+      "exit_code": 0,
+      "log_sha256": "6a206e71e53301c8ef963bf302951fabc05f8eef975e4ae81a4e388ea1dcec3c"
+    },
+    {
+      "module": "ShorPhysicalCode",
+      "sha256": "6678f7b129dbabe2838de7427e57b786ec6896add6041ffe5bfa62dcc9774bef",
+      "run": "check-47",
+      "exit_code": 0,
+      "log_sha256": "094f12ee0adf6ae927c47e2bb73c0393e0cc4e9cc28766ad5ceb89525ff9c8e9"
+    },
+    {
+      "module": "Q37ParityPolynomial",
+      "sha256": "8a9415107591225838aee9e1a6b7fc5a5e9a59994e279b90fe72dc3508a57382",
+      "run": "check-48",
+      "exit_code": 0,
+      "log_sha256": "7077a9f54e6dd9b0b704de415fca06f64c1613ef1fb2ef5aa0a1263c9eab5ed4"
+    },
+    {
+      "module": "FaultHistoryNormalization",
+      "sha256": "9a53e98ef5bf8d9987663849fb6689c15210ddb051aba25e42317d645f72f871",
+      "run": "check-49",
+      "exit_code": 0,
+      "log_sha256": "2bd53fd8ade8799b21dce4e4ae183c10cd0980acb2d44f7f61bf84a4f97c5664"
+    },
+    {
+      "module": "CSSQuadraticPhase",
+      "sha256": "491b900f86746bd80dfad4b8ef5da04f764db2c12f67b30a4fd89d00a3db523d",
+      "run": "check-49",
+      "exit_code": 0,
+      "log_sha256": "1d5fa8b7671410b9a70b6c61cce74a85db854fba9f4782dc3797f41dffc3fdda"
+    },
+    {
+      "module": "CSSMonomial",
+      "sha256": "9ce0a869069a3999479a205e1956018db21bea971833bdcce9247bbfd1e26f3f",
+      "run": "check-50",
+      "exit_code": 0,
+      "log_sha256": "230a40c38f5d6a702ba03462267a85f3cc7920b624827ff052a9f046f01176ca"
+    },
+    {
+      "module": "CSSPhaseOverlap",
+      "sha256": "a02e27f64f6904a568fb72618e28ea3f66e10df34aaaeb4b0d1e11540c62136e",
+      "run": "check-50",
+      "exit_code": 0,
+      "log_sha256": "5c0d1ec108a57dc550c06c09335f911345413e9188378d102a315438b1c38ade"
+    },
+    {
+      "module": "ShorNativeFanout",
+      "sha256": "192da6ead422720177dcf4df9c68b87b4fe4007077daac5a126f4701fa282e22",
+      "run": "check-50",
+      "exit_code": 0,
+      "log_sha256": "38ec53a23a22ab9d4da4bf00124e6d0f75d0dfe164c7483381a68409247700dd"
+    },
+    {
+      "module": "ShorPhysicalZChecks",
+      "sha256": "30163fa43c1d4d44b130120df7790a26c4f73cb9a0242f7e61e824c5dd3089a9",
+      "run": "check-50",
+      "exit_code": 0,
+      "log_sha256": "d974485a94e4f724d03eb7ac63c5eb35eb63b52c0612587b0e90944aa1459e32"
+    },
+    {
+      "module": "ShorNativeSitePermutation",
+      "sha256": "eecd5199dbb8cddbfd829a1743f078e2cc9b69e8235a6ab3e63c150bccc1ae78",
+      "run": "check-51",
+      "exit_code": 0,
+      "log_sha256": "841b6664af20266b9341db95d560d3424185a5472e52da575a47b56a5c53f074"
+    },
+    {
+      "module": "Q37MaskCertificate",
+      "sha256": "30e2cccd43c091378cea74a2710dd7da9c8567330cb969f50dfeade8b49c3388",
+      "run": "check-51",
+      "exit_code": 0,
+      "log_sha256": "2df2064e2354dd1f59a658abdf0d1fba6270e188c07fccbca2229f55b202c441"
+    },
+    {
+      "module": "FaultHistoryExperimentNormalization",
+      "sha256": "4d64dba31ba3a89910564a9c9fe740cd758f8fd1534cecf55505776726c4af51",
+      "run": "check-52",
+      "exit_code": 0,
+      "log_sha256": "0a0c950c2100fc04af1dfbb4cb4c45237fea5ae33434b52d37567505023b532e"
+    },
+    {
+      "module": "ShorStabilizer",
+      "sha256": "35ba0f1e4c311c88751a64109dd7d092feb08f50c7f580ed503fb29131a7ffb8",
+      "run": "check-52",
+      "exit_code": 0,
+      "log_sha256": "b04c994c645bbad7fe3464aaa0ab81401706f18092ce561fd7e36481466603a3"
+    },
+    {
+      "module": "ShorNativeParallelFanout",
+      "sha256": "924452edb880aaa8d0484f8b0418dce913365aa0a30646ec350e1ec6fec4614f",
+      "run": "check-52",
+      "exit_code": 0,
+      "log_sha256": "1bee7e8bda1ac939ebf13873ba4d0cc60a9d1b3e8fb8ed547ebf8e8c2c205b1d"
+    },
+    {
+      "module": "FaultOnsetConsequence",
+      "sha256": "0e5babf7580641a9555936656bc79c01d061a257bde501060c6fcc942922a23b",
+      "run": "check-52",
+      "exit_code": 0,
+      "log_sha256": "c22c3ef60fdd1387aeb95ba988355b1cd18396c5503826d922ea89ab052410c8"
+    },
+    {
+      "module": "ShorPauliMasks",
+      "sha256": "9e61a38d4e4a24686ceeacdd22d0ccc68aae9c6102bed67e0b98f1feb65df6c7",
+      "run": "check-53",
+      "exit_code": 0,
+      "log_sha256": "d95c064dc6b4fd7cc94a5b366ccbd040146cd4bceefa3f938616ff7d509213fa"
+    },
+    {
+      "module": "ShorNativeParentLayer",
+      "sha256": "1ec593560e52928e61ff21d933fe3904f93b24e99defccab6c1a7e83c53409ee",
+      "run": "check-53",
+      "exit_code": 0,
+      "log_sha256": "6280e02547b80e92ed857dad1b6eb0c2523bfef691f800062ae4397e6f1ea666"
+    },
+    {
+      "module": "ShorDistanceDetection",
+      "sha256": "dd1894e9be8ec244425ccfb93ea4b18d75bffbfb5732993d8fe4f25cbce34a05",
+      "run": "check-54",
+      "exit_code": 0,
+      "log_sha256": "c99c56c44c0bb43b930651b9ec7b29b230ac398e14d404082ff866c9b078e02c"
+    },
+    {
+      "module": "ShorPhysicalXLogical",
+      "sha256": "0901dc41b2caf89a4ff4a67ddad805946fadc62b4860565850830eacf3345cdf",
+      "run": "check-54",
+      "exit_code": 0,
+      "log_sha256": "8c2dd84a5b65b03461405423bc743240bf335ae411833ea9b286e361403bcdb9"
+    },
+    {
+      "module": "ShorNativeTransitionArity",
+      "sha256": "fb47a58a5770bf71500972bf3cbe6fe39ab50d17dcd9bd0ea3dea81e9b392744",
+      "run": "check-55",
+      "exit_code": 0,
+      "log_sha256": "01b3d3e73003fc515e18280e6aceeeb4bf5ca19744868d1c4838c38749decb38"
+    },
+    {
+      "module": "ShorExactDistance",
+      "sha256": "5ff6a68f61f38096a46fc6fb454bcf917d5f19f7e6a1d0ba91fe4ece10cc4825",
+      "run": "check-56",
+      "exit_code": 0,
+      "log_sha256": "a796b4f91f87bd0d882d0d6cec5274748b53cbce1ae24fbb0f89059dc3b480f3"
+    },
+    {
+      "module": "ShorNativeSaturation",
+      "sha256": "7e2d3fe9a0b273012bc8af387d4d55fc772d468baba79cf1ab06e7cf68d92a70",
+      "run": "check-56",
+      "exit_code": 0,
+      "log_sha256": "e6807f80e815b44049e0d7125454f28d32dd6c415c9a62dee3194493ff619398"
+    },
+    {
+      "module": "ShorNativeTransition",
+      "sha256": "bfba23355b3a57175c6a63a0a4405a31b3019e763ba51f54782f0bdc1a49e821",
+      "run": "check-56",
+      "exit_code": 0,
+      "log_sha256": "4f1455c0fcf549e1a55c30f80da95e0fb8f88113eb7e0b90bbd6969ab154f5e8"
+    },
+    {
+      "module": "ShorNativeLayerAction",
+      "sha256": "77bf89214777688ccbd66bc8017c61908e2a5b9446a8c5b3e47f9792886d51f6",
+      "run": "check-56",
+      "exit_code": 0,
+      "log_sha256": "81c6d6485078c7220064e543f7ad4833b6bdc45c5310e1d1a97ded40aff6780b"
+    },
+    {
+      "module": "CSSDisjointEquations",
+      "sha256": "41ab8daaf2dc2a1a3d139b99b727d9fa7f88005b38e32eebcd18547114301599",
+      "run": "check-56",
+      "exit_code": 0,
+      "log_sha256": "2f819e7075574d0405af825a2262c6c5e2e424e11b2e0cabab08e3077ba131c9"
+    },
+    {
+      "module": "FurtherSupplementAudit",
+      "sha256": "37337431f9dab0a984e04d710f208a09155ac03d22815b72a4f515316c4ff968",
+      "run": "check-57",
+      "exit_code": 0,
+      "log_sha256": "d4502bda02d1a513107a2995b4c885e4225023854bb72d3ccac5af9ab0cefdf2"
     }
   ],
   "supplement_audit": {
     "modules": 5,
     "declarations": 63,
     "run": "check-40",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "further_supplement_audit": {
+    "modules": 30,
+    "declarations": 526,
+    "run": "check-57",
     "allowed_axioms": [
       "propext",
       "Classical.choice",
