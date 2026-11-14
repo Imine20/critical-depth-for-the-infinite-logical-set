@@ -1,0 +1,14 @@
+Verification UTC: 2026-11-14T08:03:10.5541229Z
+OpenSSL 3.2.4
+Request and nonce verification:
+Verification: OK
+File verification:
+Verification: OK
+CRL verification at genTime:
+20261114v0.tex.signer.pem: OK
+CRL verification at check time:
+20261114v0.tex.signer.pem: OK
+Signer:
+System.Object[]
+CRLs:
+System.Object[]

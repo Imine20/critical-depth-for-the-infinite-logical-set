@@ -1,0 +1,1282 @@
+% PRL organization; length reduction is deferred to a later revision.
+% Set \revtextrue for native APS REVTeX 4.2 (Overleaf / arXiv / MacTeX);
+% default \revtexfalse enables standalone two-column preview when revtex4-2.cls is unavailable.
+\newif\ifrevtex
+\revtexfalse
+\ifrevtex
+\documentclass[aps,prl,reprint,notitlepage,nofootinbib,nobibnotes]{revtex4-2}
+\else
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[letterpaper,top=0.72in,bottom=0.78in,left=0.68in,right=0.68in,columnsep=0.25in]{geometry}
+\makeatletter
+\def\@theemail{}\def\@theaffil{}
+\newcommand{\email}[1]{\gdef\@theemail{#1}}
+\newcommand{\affiliation}[1]{\gdef\@theaffil{#1}}
+\newsavebox{\@absbox}
+\renewenvironment{abstract}{%
+  \global\setbox\@absbox=\vbox\bgroup
+    \hsize=\dimexpr\textwidth-1.1in\relax
+    \small\noindent\ignorespaces
+}{\par\egroup}
+\renewcommand{\maketitle}{%
+  \twocolumn[{%
+    \begin{center}
+      {\large\bfseries \@title \par}\vskip 0.55em
+      {\normalsize \@author \par}\vskip 0.25em
+      {\small\itshape \@theaffil \par}\vskip 0.15em
+      {\footnotesize \texttt{\@theemail}\quad (\@date) \par}\vskip 0.75em
+      \hbox to \textwidth{\hss\box\@absbox\hss}\vskip 1.15em
+    \end{center}%
+  }]%
+}
+\makeatother
+\newenvironment{acknowledgments}{\par\medskip\noindent\textit{Acknowledgments.}---}{\par\medskip}
+\newcommand{\onecolumngrid}{\onecolumn}
+\newcommand{\twocolumngrid}{\twocolumn}
+\fi
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usetikzlibrary{arrows.meta,decorations.pathreplacing,calc}
+
+\definecolor{FOneInk}{HTML}{293744}
+\definecolor{FOneWire}{HTML}{A8B2BA}
+\definecolor{FOneTeal}{HTML}{226E78}
+\definecolor{FOneAmber}{HTML}{9D6826}
+\definecolor{FOneNavy}{HTML}{3C496B}
+\definecolor{LinkDarkRed}{HTML}{8B0000}
+
+\usepackage{hyperref}
+\Urlmuskip=0mu plus 2mu\relax
+\hypersetup{
+  colorlinks=true,
+  allcolors=LinkDarkRed,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Sharp Circuit-Depth Threshold for Continuous Logical Operations in Quantum Codes}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\UU}{\mathrm U}
+\newcommand{\PU}{\mathrm{PU}}
+\newcommand{\id}{I}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\FF}{\mathbb F}
+\setlength{\emergencystretch}{0.7em}
+
+\begin{document}
+\raggedbottom
+\title{Sharp Circuit-Depth Threshold for Continuous Logical Operations in Quantum Codes}
+\author{The Story Is Still Unfolding}
+\email{Mailing address}
+\affiliation{Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China\\
+ Qiuzhen College, Tsinghua University, Beijing 100084, China}
+\date{\today}
+
+\begin{abstract}
+How deep must a quantum circuit be to realize continuous logical control, and how does this depth affect error suppression? For any finite-dimensional code of distance \(d\ge2\), exact code-preserving circuits of \(\rho\)-body gates have a finite projective logical image below depth \(2\lceil\log_\rho d\rceil-1\), without geometric locality assumptions. For qubit stabilizer subspace codes, this bound is tight, giving the exact onset \(h_\infty=2\lceil\log_\rho d\rceil-1\) of continuous logical operations. Moreover, for any finite-dimensional subspace or subsystem code, the generator depth required for exact universal synthesis by finite words is \(h_{\mathrm{exact}}=\max\{h_\infty,h_{\mathrm{dense}}\}\), separating continuous control from dense generation. Under native-gate Pauli noise and optimal ideal terminal recovery, we also bound the per-code worst-case error-suppression exponent. Both endpoints are attainable: an explicit Shor-type construction saturates the lower bound for every parameter triple, while a probabilistic CSS family saturates the upper bound throughout a growing depth interval, with both distance and depth tending to infinity. The latter construction allows arbitrary native unitaries and has strictly separated bounds.
+\end{abstract}
+\maketitle
+
+Bounding error propagation is foundational to fault-tolerant quantum computation. Because a depth-\(h\) circuit composed of \(\rho\)-body gates spreads a single fault to at most \(\rho^h\) physical subsystems, shallow bounded-range circuits naturally confine errors between syndrome-extraction cycles, underpinning constant- and low-overhead threshold protocols~\cite{Gottesman,BravyiMemory}. This same causal confinement, however, severely restricts the logical transformations a shallow circuit can directly execute. Most prominently, the Eastin--Knill theorem and its additive-code precursors~\cite{Zeng,EK} establish that transversal gates respecting a fixed detectable partition can realize only a finite, discrete set of exact logical unitaries up to global phase, ruling out continuous logical symmetries. Analogous finiteness or Clifford-hierarchy bounds persist for constant-depth circuits under geometric locality, topological field theory, or stabilizer structure~\cite{BK,PY,Beverland,Anderson,JKY,Webster,LuFuLiu}. Yet modern reconfigurable architectures~\cite{Bluvstein2024} allow arbitrary nonlocal connectivity and layer-dependent gate partitions~\cite{Quintavalle,BreuckmannBurton}, raising a fundamental question: for an arbitrary quantum code without geometric locality or stabilizer assumptions, at what exact circuit depth can continuous---or infinitely many---exact logical operations first emerge?
+
+Theorem~\ref{thm:depth} bounds the depth at which an infinite projective logical image can occur. Theorem~\ref{cor:critical} proves that stabilizer subspace codes saturate this onset bound \(h_\infty=2\lceil\log_\rho d\rceil-1\) and establishes \(h_{\mathrm{exact}}=\max\{h_\infty,h_{\mathrm{dense}}\}\) for arbitrary finite-dimensional codes. Theorem~\ref{thm:fault-sharpness} gives bounds on the per-code worst-case error-suppression exponent and establishes that both endpoints are attained. The complete proof of Theorem~\ref{thm:depth} and the proofs of the two saturation constructions are given in the Supplemental Material.
+
+\begin{figure*}[t]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+ x=1cm,y=1cm,font=\fontsize{9.5}{11}\selectfont,text=FOneInk,
+ f1wire/.style={draw=FOneWire,line width=0.55pt},
+ f1brick/.style={draw=FOneWire,line width=0.55pt,fill=white,
+   rounded corners=0.5pt},
+ f1tree/.style={draw=FOneTeal,line width=0.65pt},
+ f1clifford/.style={draw=FOneTeal,line width=0.65pt,
+   fill=FOneTeal!13,rounded corners=0.7pt,
+   minimum width=0.39cm,minimum height=0.25cm,inner sep=0pt},
+ f1brace/.style={draw=FOneInk,line width=0.6pt,
+   decorate,decoration={brace,amplitude=3.5pt}},
+ f1footer/.style={draw=FOneWire!65,line width=0.55pt,
+   fill=FOneNavy!3,rounded corners=1.3pt,minimum height=0.58cm,
+   inner xsep=5pt,inner ysep=2pt},
+ f1panel/.style={anchor=west,font=\bfseries\fontsize{10}{11.5}\selectfont}
+]
+% Panel (a): Two-sided light cones below threshold
+\node[f1panel] at (0.00,5.88)
+ {(a) Sub-threshold two-sided light cones};
+\path[fill=FOneTeal,fill opacity=0.10]
+ (2.67,3.40)--(2.24,4.15)--(1.81,5.35)--(4.16,5.35)
+ --(3.73,4.15)--(3.30,3.40)--cycle;
+\path[fill=FOneAmber,fill opacity=0.10]
+ (2.67,3.40)--(2.24,2.65)--(1.81,1.80)--(4.16,1.80)
+ --(3.73,2.65)--(3.30,3.40)--cycle;
+\foreach \i in {0,...,9}{
+ \pgfmathsetmacro{\wx}{1.05+0.43*\i}
+ \draw[f1wire] (\wx,1.80)--(\wx,5.35);
+}
+\foreach \yy in {2.12,3.40,4.90}{
+ \foreach \i in {0,2,4,6,8}{
+  \pgfmathsetmacro{\xa}{0.94+0.43*\i}
+  \pgfmathsetmacro{\xb}{1.59+0.43*\i}
+  \draw[f1brick] (\xa,\yy-0.115) rectangle (\xb,\yy+0.115);
+ }
+}
+\foreach \yy in {2.65,4.15}{
+ \foreach \i in {1,3,5,7}{
+  \pgfmathsetmacro{\xa}{0.94+0.43*\i}
+  \pgfmathsetmacro{\xb}{1.59+0.43*\i}
+  \draw[f1brick] (\xa,\yy-0.115) rectangle (\xb,\yy+0.115);
+ }
+}
+\draw[FOneTeal,line width=0.8pt,-{Stealth[length=3.2pt,width=3pt]}]
+ (2.67,3.52)--(2.24,4.15)--(1.81,5.35);
+\draw[FOneTeal,line width=0.8pt,-{Stealth[length=3.2pt,width=3pt]}]
+ (3.30,3.52)--(3.73,4.15)--(4.16,5.35);
+\draw[FOneTeal,line width=0.8pt] (1.81,5.35)--(4.16,5.35);
+\draw[FOneAmber,line width=0.8pt,dashed,
+ -{Stealth[length=3.2pt,width=3pt]}]
+ (2.67,3.27)--(2.24,2.65)--(1.81,1.80);
+\draw[FOneAmber,line width=0.8pt,dashed,
+ -{Stealth[length=3.2pt,width=3pt]}]
+ (3.30,3.27)--(3.73,2.65)--(4.16,1.80);
+\draw[FOneAmber,line width=0.8pt,dashed] (1.81,1.80)--(4.16,1.80);
+\node[draw=FOneNavy,fill=FOneNavy!14,text=FOneInk,line width=0.7pt,
+ rounded corners=0.7pt,minimum width=0.76cm,minimum height=0.39cm,
+ inner sep=0pt] at (2.985,3.40) {\(u_j\)};
+\draw[FOneInk,line width=0.6pt,-{Stealth[length=4pt,width=3.5pt]}]
+ (0.32,1.80)--(0.32,5.35);
+\node[rotate=90,font=\fontsize{9}{10}\selectfont] at (0.04,3.575) {layers};
+\node at (0.66,2.12) {\(1\)};
+\node at (0.66,3.40) {\(\ell\)};
+\node at (0.66,4.90) {\(h\)};
+\node[anchor=west,align=left,text=FOneInk] at (5.34,4.78)
+ {forward cone \(H_j\)};
+\node[anchor=west,align=left,text=FOneInk] at (5.34,3.40)
+ {insertion \(\delta(u_j)u_j^{-1}\)};
+\node[anchor=west,align=left,text=FOneInk] at (5.34,2.04)
+ {backward cone \(U^{-1}H_jU\)};
+\node[inner sep=0pt] at (4.25,1.18)
+ {\(\min\bigl\{
+    \lvert\operatorname{supp}(H_j)\rvert,
+    \lvert\operatorname{supp}(U^{-1}H_jU)\rvert
+   \bigr\}\le \rho^{\lceil h/2\rceil}<d\)};
+\node[f1footer,minimum width=8.15cm,
+ font=\fontsize{10}{11.5}\selectfont] at (4.25,0.38)
+ {\(V^\dagger H_jV=\id_L\otimes M_j \;\Longrightarrow\; \delta(W)\propto W\)};
+
+
+% Panel (b): Symmetric Pauli compression tree at critical depth
+\node[f1panel] at (9.22,5.88)
+ {(b) Critical-depth Pauli compression};
+\draw[FOneInk,line width=0.6pt,-{Stealth[length=4pt,width=3.5pt]}]
+ (9.58,1.80)--(9.58,5.35);
+\node[rotate=90,font=\fontsize{9}{10}\selectfont] at (9.30,3.575) {layers};
+\foreach \sgn in {-1,1}{
+ \pgfmathsetmacro{\yl}{3.575+\sgn*1.775}
+ \pgfmathsetmacro{\yone}{3.575+\sgn*1.20}
+ \pgfmathsetmacro{\ytwo}{3.575+\sgn*0.62}
+ \pgfmathsetmacro{\yg}{3.575+\sgn*0.23}
+ \foreach \xa/\xb/\xc in {
+ 10.15/10.70/10.425,11.25/11.80/11.525,
+ 12.35/12.90/12.625,13.45/14.00/13.725}{
+  \draw[f1tree] (\xa,\yl)--(\xc,\yone);
+  \draw[f1tree] (\xb,\yl)--(\xc,\yone);
+  \node[f1clifford] at (\xc,\yone) {};
+ }
+ \foreach \xa/\xb/\xc in {10.425/11.525/10.975,12.625/13.725/13.175}{
+  \draw[f1tree] (\xa,\yone)--(\xc,\ytwo);
+  \draw[f1tree] (\xb,\yone)--(\xc,\ytwo);
+  \node[f1clifford] at (\xc,\ytwo) {};
+  \draw[f1tree] (\xc,\ytwo)--(\xc,\yg);
+ }
+ \foreach \xx in {10.15,10.70,11.25,11.80,12.35,12.90,13.45,14.00}{
+  \fill[FOneInk] (\xx,\yl) circle (1.2pt);
+ }
+}
+\node[font=\fontsize{8.8}{10}\selectfont] at (12.075,3.05)
+ {\(\operatorname{wt}(Q)\le \rho\)};
+\node[draw=FOneNavy,fill=FOneNavy!14,text=FOneInk,line width=0.7pt,
+ rounded corners=1pt,minimum width=3.04cm,minimum height=0.46cm,
+ inner sep=0pt,font=\fontsize{10.5}{12}\selectfont] at (12.075,3.575)
+ {\(e^{itQ}\)};
+\draw[f1brace] (14.32,3.30)--(14.32,1.80);
+\node[anchor=west,align=left,inner xsep=0pt] at (14.52,2.55)
+ {\(C\): \(\lceil\log_\rho d\rceil-1\) layers};
+\draw[f1brace] (14.32,3.82)--(14.32,3.33);
+\node[anchor=west,inner xsep=0pt] at (14.52,3.575) {1 rotation layer};
+\draw[f1brace] (14.32,5.35)--(14.32,3.86);
+\node[anchor=west,align=left,inner xsep=0pt] at (14.52,4.605)
+ {\(C^\dagger\): \(\lceil\log_\rho d\rceil-1\) layers};
+\node[inner sep=0pt] at (13.48,1.18)
+ {\(\operatorname{wt}(P)=d \;\xrightarrow{\;C\;}\;
+    \operatorname{wt}(Q)\le\rho \;\xrightarrow{\;C^\dagger\;}\;
+    \operatorname{wt}(P)=d\)};
+\node[f1footer,minimum width=8.25cm,
+ font=\fontsize{10}{11.5}\selectfont] at (13.48,0.38)
+ {\(U(t)=C^\dagger e^{itQ}C=e^{itP}\;\Longrightarrow\; W(t)=e^{it\overline P}\)};
+\end{tikzpicture}%
+}
+\caption{Duality between sub-threshold rigidity and critical-depth emergence of continuous logical symmetry (time runs upward).
+(a)~Theorem~\ref{thm:depth}: A derivation applied to gate \(u_j\) in layer \(\ell\) generates the output-frame insertion \(H_j\) and input-frame insertion \(U^{-1}H_jU\). When \(h<2\lceil\log_\rho d\rceil-1\), at least one causal cone touches fewer than \(d\) subsystems (the schematic brickwall layout assumes no geometric locality). Error detection and exact code preservation compress \(H_j\) purely into the gauge factor, forcing \(\delta(W)\propto W\) and freezing the logical image to a finite discrete set.
+(b)~Theorem~\ref{cor:critical}: For a qubit stabilizer subspace code of distance \(d\ge2\), a Clifford tree \(C\) of \(\lceil\log_\rho d\rceil-1\) layers concentrates a weight-\(d\) logical Pauli \(P\) onto \(Q=CPC^\dagger\) of weight at most \(\rho\) (illustrated for \(\rho=2\)). Applying a single \(\rho\)-body rotation \(e^{itQ}\) followed by \(C^\dagger\) realizes the continuous logical subgroup \(e^{it\overline P}\) at total depth \(2\lceil\log_\rho d\rceil-1\).}
+\label{fig:mechanisms}
+\end{figure*}
+
+The depth bound \(2\lceil\log_{\rho} d\rceil-1\) follows from the interaction between causal operator spreading and error detection (Fig.~\ref{fig:mechanisms}). Discrete logical gates can exist at shallow depth as isolated solutions because simultaneous finite-angle rotations across \(d\) or more subsystems can jump directly between distinct code-preserving configurations. By contrast, a continuous family of logical unitaries requires nonvanishing \emph{infinitesimal} generators. Crucially, the obstruction below logarithmic depth is not a shortage of physical gate parameters, but the Leibniz product rule, which decomposes any infinitesimal circuit variation additively into single-gate perturbations. For a perturbation at layer \(\ell\) to drive a nontrivial logical variation without leaking out of the code space, its backward light cone must reach at least \(d\) subsystems (\(\rho^{\ell}\ge d\)) to resolve nonlocal logical information at the input, while its forward light cone must also reach at least \(d\) subsystems (\(\rho^{h-\ell+1}\ge d\)) to restore the code space without leaving a detectable syndrome at the output. Together these require \(\ell\ge\lceil\log_\rho d\rceil\) and \(h-\ell+1\ge\lceil\log_\rho d\rceil\), forcing \(h\ge 2\lceil\log_\rho d\rceil-1\). Below this depth, the compression of every gate insertion is scalar on the logical factor. For stabilizer subspace codes, a parity-compression circuit with a central \(\rho\)-body rotation reaches the threshold.
+
+\textit{Settings and notations.}---Let the physical Hilbert space be \(\HH=\bigotimes_{i=1}^{n}\HH_i\), with \(n\ge1\) and finite-dimensional factors \(\HH_i\). A quantum code \(\mathcal C\) is specified by an isometric encoding \(V:\HH_L\otimes\HH_G\longrightarrow\HH\), where \(\dim\HH_L=K\ge2\) and \(\dim\HH_G=g\ge1\) denote the dimensions of the logical and gauge subsystems, respectively (with \(g=1\) corresponding to a subspace code). A distance lower bound \(d\ge 2\) means that every operator \(O\) supported on fewer than \(d\) physical subsystems satisfies
+\begin{equation}\label{eq:correctable}
+  V^\dagger O V=\id_L\otimes M_O
+\end{equation}
+for some operator \(M_O\) on \(\HH_G\)~\cite{KL,Kribs,Poulin}. For unitaries \(W\) on \(\HH_L\) and \(Z\) on \(\HH_G\), set \(Q=W\otimes Z\). A physical unitary \(U\) implements an exact logical action if such \(W,Z\) exist with
+\begin{equation}\label{eq:encoded}
+  UV=VQ=V(W\otimes Z).
+\end{equation}
+This equality holds across all logical and gauge states, and the induced projective logical action is the phase class \([W]\in\PU(K)\), where \(\PU(K)=\UU(K)/\UU(1)\) denotes the projective unitary group of \(K\times K\) unitaries modulo global phases \(e^{i\theta}\id_L\). For integers \(h\ge1\) and \(\rho\ge2\), let \(\mathcal L_{\le h}(\mathcal C,\rho)\subseteq\PU(K)\) denote the set of all logical classes realized by complete circuits \(U\) consisting of at most \(h\) layers of arbitrary unitary gates acting on disjoint supports of size at most \(\rho\) within each layer.
+
+Increasing the allowed depth gives the nested sets \(\mathcal L_{\le h}(\mathcal C,\rho)\subseteq\mathcal L_{\le h+1}(\mathcal C,\rho)\). Figure~\ref{fig:logical-hierarchy} previews the resulting symmetry hierarchy, defined below.
+
+
+
+
+\begin{samepage}
+\begin{theorem}\label{thm:depth}
+Let \(n,h\ge 1\), and \(\rho\ge2\) be integers, and let \(V\) encode a quantum code \(\mathcal C\) satisfying Eq.~\eqref{eq:correctable} for a distance \(d\ge2\) on \(n\) physical subsystems. If
+\begin{equation}\label{eq:depth}
+  h<2\lceil\log_{\rho} d\rceil-1,
+\end{equation}
+then the logical actions of all circuits of depth at most \(h\), with gates on at most \(\rho\) subsystems, that satisfy Eq.~\eqref{eq:encoded} obey
+\[
+ |\mathcal L_{\le h}(\mathcal C,\rho)|<\infty.
+\]
+All gate supports and unitary matrices are allowed. Consequently, \(\mathcal L_{\le h}(\mathcal C,\rho)\) is not dense in \(\PU(K)\).
+\end{theorem}
+\end{samepage}
+
+Note that when \(\rho\ge d\), \(2\lceil\log_\rho d\rceil-1=1\), so Eq.~\eqref{eq:depth} is vacuous for \(h\ge 1\) (consistent with a single \(\rho\)-body gate already spanning \(d\) subsystems, whereas the empty depth-\(0\) circuit trivially realizes only \(\{[\id_L]\}\)); Eq.~\eqref{eq:depth} constrains positive depths \(1\le h\le 2\lceil\log_\rho d\rceil-2\) whenever \(d>\rho\). Moreover, both exact error detection [Eq.~\eqref{eq:correctable}] and exact code preservation [Eq.~\eqref{eq:encoded}] are essential: if approximate encoding is permitted, continuous covariant \(\UU(1)\) actions exist even at depth \(h=1\) and range \(\rho=1\), with worst-case infidelity scaling inversely with system size~\cite{Faist,WoodsAlhambra,KubicaDemkowicz,ZhouLiuJiang,LiuZhou}.
+
+\begin{proof}[Proof sketch]
+Unlike fixed-partition transversal gates~\cite{EK,Faist,LiuZhou}, circuits of depth at most \(h\) are not closed under composition and do not form a Lie group. Padding circuits to \(J=nh\) gate slots leaves finitely many support arrangements \(\alpha\); for each \(\alpha\), introducing explicit inverse gate variables places all solutions of Eq.~\eqref{eq:encoded} inside a complex affine algebraic set with coordinate algebra \(R_\alpha\), which may contain singular points where smooth tangent-space arguments fail. We therefore work over the function field \(F_{\mathfrak p}=\operatorname{Frac}(R_\alpha/\mathfrak p)\) of each minimal prime \(\mathfrak p\) of \(R_\alpha\) (its irreducible components) and apply an arbitrary \(\mathbb C\)-linear derivation \(\delta:F_{\mathfrak p}\to F_{\mathfrak p}\).
+
+Writing \(U=u_J\cdots u_1\) with \(U_{>j}=u_J\cdots u_{j+1}\) and \(U_{<j}=u_{j-1}\cdots u_1\), the Leibniz rule yields
+\begin{equation}\label{eq:sketch-generator}
+ \delta(U)U^{-1}
+  =\sum_{j=1}^J U_{>j}\delta(u_j)u_j^{-1}U_{>j}^{-1}
+  =\sum_{j=1}^J H_j=H,
+\end{equation}
+while pulling \(H_j\) back to the input frame gives \(U^{-1}H_jU=U_{<j}^{-1}u_j^{-1}\delta(u_j)U_{<j}\). For a gate \(u_j\) in layer \(\ell\in\{1,\ldots,h\}\), single-layer conjugation expands supports by at most a factor \(\rho\), giving \(|\supp(H_j)|\le\rho^{h-\ell+1}\) and \(|\supp(U^{-1}H_jU)|\le\rho^\ell\) [Fig.~\ref{fig:mechanisms}(a)]. Under Eq.~\eqref{eq:depth}, \(\min\{h-\ell+1,\ell\}\le\lceil h/2\rceil\le\lceil\log_\rho d\rceil-1\), so at least one of these two operators acts on fewer than \(d\) subsystems. Extending Eq.~\eqref{eq:correctable} linearly over \(F_{\mathfrak p}\) and transporting input-frame compression via \(UV=VQ\) yields \(V^\dagger H_jV=\id_L\otimes M_j\) for every \(j\), hence \(V^\dagger HV=\id_L\otimes M\) with \(M=\sum_{j=1}^J M_j\).
+
+Conversely, differentiating \(UV=VQ\) with \(Q=W\otimes Z\) gives
+\begin{align*}
+ V^\dagger HV &= \delta(Q)Q^{-1} \\
+  &= \delta(W)W^{-1}\otimes\id_G+\id_L\otimes\delta(Z)Z^{-1}.
+\end{align*}
+Comparing with \(\id_L\otimes M\) forces \(\delta(W)=\lambda W\) for some \(\lambda\in F_{\mathfrak p}\), so the conjugation coordinates of \(X\mapsto WXW^{-1}\) are annihilated by every \(\delta\). By Lemma~\ref{lem:algebraic-finite-image} in the Supplemental Material, these coordinates take at most one value on each minimal prime---including at singular configurations---and hence finitely many complex values overall, fixing finitely many projective classes \([W]\in\PU(K)\) per \(\alpha\). The complete coordinate-algebra proof is given in the Supplemental Material.
+\end{proof}
+
+\textit{Depth thresholds for continuous logical actions.}---For fixed \(\mathcal C\) and \(\rho\), we distinguish the onset of an infinite image, dense generation, and exact generation:
+\begin{align}
+ h_\infty(\mathcal C,\rho)
+ &=\min\{h\ge1:\mathcal L_{\le h}(\mathcal C,\rho)\text{ is infinite}\},
+ \label{eq:critical-definition}\\
+ h_{\mathrm{dense}}(\mathcal C,\rho)
+ &=\min\{h\ge1:\overline{\langle \mathcal L_{\le h}(\mathcal C,\rho)\rangle}=\PU(K)\},
+ \label{eq:dense-depth}\\
+ h_{\mathrm{exact}}(\mathcal C,\rho)
+ &=\min\{h\ge1:\langle \mathcal L_{\le h}(\mathcal C,\rho)\rangle=\PU(K)\}.
+ \label{eq:exact-depth}
+\end{align}
+The minima are over positive integers, with value \(\infty\) for an empty defining set. The closure in Eq.~\eqref{eq:dense-depth} is the ordinary Lie-group topology. The group \(\langle \mathcal L_{\le h}(\mathcal C,\rho)\rangle\) consists of finite words in \(\mathcal L_{\le h}(\mathcal C,\rho)\), which is inverse-closed by circuit reversal. The last two thresholds bound the depth of each generator; a word of \(r\) generators has physical depth at most \(rh\). Because \(\PU(K)\) is uncountable while a finite alphabet generates only countably many finite words, \(h_{\mathrm{exact}}\ge\max\{h_\infty,h_{\mathrm{dense}}\}\) for every code under Eq.~\eqref{eq:encoded}; if Eq.~\eqref{eq:correctable} also holds for \(d\ge2\), Theorem~\ref{thm:depth} further gives
+\begin{equation}\label{eq:critical-lower}
+ h_{\mathrm{exact}}\ge h_\infty
+ \ge2\lceil\log_\rho d\rceil-1.
+\end{equation}
+
+Crucially, \(h_{\mathrm{dense}}\) is not constrained by Eq.~\eqref{eq:critical-lower} and plays a distinct physical role from \(h_\infty\). Whereas \(h_\infty\) requires a single depth-\(h\) circuit family to sweep out infinitely many logical operations, \(h_{\mathrm{dense}}\) allows composing arbitrarily long finite words from a fixed shallow gate set to approximate general targets in \(\PU(K)\)~\cite{Boykin,ZhuLavasaniBarkeshli}. Because a finite discrete alphabet can already generate a dense subgroup of \(\PU(K)\), \(h_{\mathrm{dense}}\) can lie strictly below \(h_\infty\), even at unit depth. A canonical example is the \([[37,1,7]]\) CSS code \(Q_{37}\) of Dua \emph{et al.}~\cite{Dua} at gate range \(\rho=3\) (Proposition~\ref{prop:dua-example} in the Supplemental Material): Eq.~\eqref{eq:critical-lower} forces \(h_\infty\ge 2\lceil\log_3 7\rceil-1=3\), so depths \(h\le2\) realize only finitely many logical gates; yet two depth-\(1\) gate partitions implement \(\overline T^\dagger\) and \(\sqrt{\overline X}^{\,\dagger}\), whose finite words generate \(\overline H\) and \(\overline T\) and hence a dense subgroup of \(\PU(2)\)~\cite{Boykin}, giving \(h_{\mathrm{dense}}=1<h_\infty\). By contrast, exact synthesis by finite words remains blocked until continuous logical rotations turn on at \(h=3\), where \(h_\infty=h_{\mathrm{exact}}=3\). This separation motivates determining whether Eq.~\eqref{eq:critical-lower} is tight for general stabilizer codes, and how \(h_{\mathrm{exact}}\) relates to \(h_\infty\) and \(h_{\mathrm{dense}}\) for arbitrary quantum codes (Fig.~\ref{fig:logical-hierarchy}).
+
+\begin{figure}[htb]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[
+ x=1cm,y=1cm,text=FOneInk,
+ font=\fontsize{9}{11}\selectfont,
+ hierarchyheading/.style={font=\bfseries\fontsize{9}{11}\selectfont},
+ hierarchytick/.style={font=\fontsize{9.5}{11}\selectfont,anchor=west,inner sep=0pt},
+ hierarchyline/.style={line width=.65pt},
+ hierarchycap/.style={dash pattern=on 2.4pt off 2pt,line width=.65pt}
+]
+% Complete the trapezoid while retaining the omitted-depth markers.
+\path[fill=FOneWire!17]
+ (3.484,-1.82)--(6.316,-1.82)--(7.15,2.35)--(2.65,2.35)--cycle;
+\path[fill=FOneTeal!11]
+ (2.65,2.35)--(7.15,2.35)--(7.58,4.50)--(2.22,4.50)--cycle;
+\path[fill=FOneNavy!11]
+ (2.22,4.50)--(7.58,4.50)--(7.93,6.25)--(1.87,6.25)--cycle;
+\draw[draw=FOneWire,hierarchyline]
+ (3.484,-1.82)--(1.87,6.25) (6.316,-1.82)--(7.93,6.25);
+\draw[draw=FOneWire,hierarchyline] (3.484,-1.82)--(6.316,-1.82);
+\draw[draw=FOneNavy,hierarchyline] (1.87,6.25)--(7.93,6.25);
+
+% Single-line depth labels share the same initial h and align with tier caps.
+\draw[draw=FOneInk,line width=.9pt,-{Stealth[length=5pt,width=4pt]}]
+ (-.35,-2.02)--(-.35,6.55);
+\node[rotate=90] at (-.84,2.26) {Circuit depth \(h\)};
+\foreach \yy/\depthlabel/\tickcolor in {
+ -1.22/1/FOneInk,
+ -.66/2/FOneInk,
+ .60/\mathrm{constant}/FOneInk,
+ 2.35/h_\infty/FOneTeal,
+ 4.50/h_{\rm exact}/FOneNavy} {
+ \draw[draw=\tickcolor,hierarchyline] (-.45,\yy)--(-.20,\yy);
+ \node[hierarchytick,text=\tickcolor] at (.04,\yy) {\(h=\depthlabel\)};
+}
+
+% Explicit low-depth tiers, followed by two equal ellipsis gaps.
+\draw[draw=FOneInk!55,hierarchycap] (3.364,-1.22)--(6.436,-1.22);
+\draw[draw=FOneInk!55,hierarchycap] (3.252,-.66)--(6.548,-.66);
+\draw[draw=FOneInk!55,hierarchycap] (3.00,.60)--(6.80,.60);
+\node at (4.90,-1.52) {\(\mathcal L_{\le1}\)};
+\node at (4.90,-.94) {\(\mathcal L_{\le2}\)};
+\node at (4.90,.26) {\(\mathcal L_{\le\mathrm{constant}}\)};
+\foreach \yc in {-.37,.89} {
+ \foreach \dy in {-.12,0,.12}
+  \fill[FOneInk!75] (4.90,{\yc+\dy}) circle[radius=.013];
+}
+\node[hierarchyheading] at (4.90,1.94) {Discrete logical actions};
+\node at (4.90,1.52) {\(\lvert\mathcal L_{\le h}\rvert<\infty\)};
+
+% Continuous image: a circle of logical Pauli rotations.
+\draw[draw=FOneTeal,hierarchycap] (2.65,2.35)--(7.15,2.35);
+\draw[draw=FOneTeal,line width=1pt] (4.90,4.08) ellipse[x radius=.34,y radius=.20];
+\fill[FOneTeal] (5.24,4.08) circle[radius=.045];
+\node[hierarchyheading,text=FOneTeal] at (4.90,3.58)
+ {\(\UU(1)\) continuous symmetry};
+\node at (4.90,3.05)
+ {\(\{[e^{it\overline P}]:t\in\mathbb R\}\subseteq\mathcal L_{\le h}\)};
+\node[font=\fontsize{8}{10}\selectfont,text=FOneTeal] at (4.90,2.65)
+ {Logical Pauli rotations};
+
+% The universal group is generated by finite words of allowed gates.
+\draw[draw=FOneNavy,hierarchycap] (2.22,4.50)--(7.58,4.50);
+\node[hierarchyheading,text=FOneNavy] at (4.90,5.87)
+ {Full \(\PU(K)\) symmetry};
+\node[font=\fontsize{11}{13}\selectfont] at (4.90,5.31)
+ {\(\PU(K)=\big\langle\mathcal L_{\le h_{\rm exact}}\big\rangle\)};
+\node[font=\fontsize{8}{10}\selectfont,text=FOneNavy] at (4.90,4.84)
+ {Exact generation by finite products};
+
+\node[anchor=north,font=\fontsize{8.5}{10}\selectfont] at (4.15,-2.27)
+ {\(\mathcal L_{\le1}\subseteq\mathcal L_{\le2}\subseteq\cdots\subseteq\mathcal L_{\le\mathrm{constant}}\subseteq\cdots\subseteq\PU(K)\)};
+\end{tikzpicture}%
+}
+\caption{Depth hierarchy of exact logical symmetries. The allowed logical images grow by inclusion, with constant-depth levels lying below \(h_\infty\) for fixed \(\rho\) and sufficiently large \(d\). For a qubit stabilizer subspace code, \(h_\infty=2\lceil\log_\rho d\rceil-1\) and the image at \(h_\infty\) already contains a continuous subgroup isomorphic to \(\UU(1)\) [Theorem~\ref{cor:critical}(1)]. More generally, for any finite-dimensional code, finite words in the allowed gates generate \(\PU(K)\) exactly at \(h_{\rm exact}=\max\{h_\infty,h_{\rm dense}\}\) [Theorem~\ref{cor:critical}(2)]. This bounds each generator's depth rather than single-circuit synthesis depth. Widths and depth separations are schematic, and the thresholds may coincide.}
+\label{fig:logical-hierarchy}
+\end{figure}
+
+\begin{theorem}\label{cor:critical}
+Let \(n\ge1\) and \(\rho\ge2\) be integers, and consider \(\rho\)-body native unitary gates on \(n\) finite-dimensional physical subsystems.
+\begin{enumerate}
+\item[(1)] For every \([[n,k,d]]\) qubit stabilizer subspace code \(\mathcal C\) with \(k\ge1\) and actual distance \(d\ge2\), the lower bound in Eq.~\eqref{eq:critical-lower} is tight:
+\begin{equation}\label{eq:critical}
+ h_\infty(\mathcal C,\rho)=2\lceil\log_\rho d\rceil-1,
+\end{equation}
+and \(\mathcal L_{\le h_\infty}(\mathcal C,\rho)\) contains a nontrivial one-parameter subgroup.
+\item[(2)] For every finite-dimensional quantum subsystem code \(\mathcal C\) (\(\dim\HH_L\ge2\), \(\dim\HH_G\ge1\)) under Eq.~\eqref{eq:encoded},
+\begin{equation}\label{eq:exact-max}
+ h_{\mathrm{exact}}(\mathcal C,\rho)
+ =\max\{h_\infty(\mathcal C,\rho),\,h_{\mathrm{dense}}(\mathcal C,\rho)\}.
+\end{equation}
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof of part (1)]
+Equation~\eqref{eq:critical-lower} gives \(h_\infty\ge2\lceil\log_\rho d\rceil-1\). Conversely, a stabilizer code of actual distance \(d\) has a Hermitian logical Pauli \(P\) of weight \(d\) with nonscalar logical action \(\overline P\)~\cite[Sec.~3.2]{GottesmanStabilizer}.
+
+For any Hermitian Pauli of weight \(w\ge2\), partition its active factors in each layer into disjoint groups of size \(\rho\) and at most one smaller group; a Clifford gate on each group concentrates its Pauli product onto one representative~\cite{BonetMonroig,Cowtan,HaahLiuTan}. After \(j\) rounds the active weight is \(\lceil w/\rho^j\rceil\). With \(r=\lceil\log_\rho w\rceil\), \(r-1\) rounds yield a circuit \(C\) such that \(Q=CPC^\dagger\) is supported on at most \(\rho\) sites, so
+\begin{equation}\label{eq:pauli-family}
+ U(t)=C^\dagger e^{itQ}C=e^{itP}
+\end{equation}
+has depth at most \(2r-1\) for every \(t\in\mathbb R\). Applying this to the weight-\(d\) logical Pauli implements the nontrivial one-parameter subgroup \([e^{it\overline P}]\) exactly on the subspace code, giving \(h_\infty\le 2\lceil\log_\rho d\rceil-1\).
+\end{proof}
+
+\begin{proof}[Proof of part (2)]
+As noted before Eq.~\eqref{eq:critical-lower}, \(h_{\mathrm{exact}}\ge\max\{h_\infty,h_{\mathrm{dense}}\}\) (including when either threshold is \(\infty\)). Conversely, fix a finite depth \(h\ge\max\{h_\infty,h_{\mathrm{dense}}\}\), so \(\mathcal L_{\le h}(\mathcal C,\rho)\) is infinite and \(G=\langle\mathcal L_{\le h}(\mathcal C,\rho)\rangle\) is dense in \(\PU(K)\). For each support arrangement \(\alpha\), unitarity and Eq.~\eqref{eq:encoded} define a compact real algebraic set in the real and imaginary entries of the local gates, \(W\), and \(Z\); projecting onto the real conjugation coordinates of \(X\mapsto WXW^\dagger\) and taking the finite union over \(\alpha\) makes \(\mathcal L_{\le h}(\mathcal C,\rho)\) a compact real semialgebraic set~\cite{BasuPollackRoy}.
+
+Because \(\mathcal L_{\le h}(\mathcal C,\rho)\) is infinite, a positive-dimensional smooth semialgebraic stratum contains a smooth curve \(a(t)\) near \(0\) with \(a'(0)\ne0\). By inverse-closure, \(c(t)=a(t)a(0)^{-1}\) lies in \(G\) with \(c(0)=e\) and nonzero tangent \(X=c'(0)\in\mathfrak{su}(K)\). The \(\operatorname{Ad}_G\)-invariant subspace \(E=\operatorname{span}_{\mathbb R}\{\operatorname{Ad}_g X:g\in G\}\) is finite-dimensional, hence closed, so density of \(G\) makes \(E\) \(\operatorname{Ad}_{\PU(K)}\)-invariant---a nonzero ideal of the simple real Lie algebra \(\mathfrak{su}(K)\)---forcing \(E=\mathfrak{su}(K)\). Choosing \(g_1,\ldots,g_N\in G\) (\(N=K^2-1\)) so that \(\{\operatorname{Ad}_{g_j}X\}\) is a basis of \(\mathfrak{su}(K)\), the product map \((t_1,\ldots,t_N)\mapsto\prod_{j=1}^N g_jc(t_j)g_j^{-1}\) has invertible derivative at the origin. By the inverse function theorem, \(G\) contains an identity neighborhood in \(\PU(K)\) and is thus an open subgroup of the connected group \(\PU(K)\), giving \(G=\PU(K)\) and \(h_{\mathrm{exact}}\le h\).
+\end{proof}
+
+The ceiling in part (1) is essential for integer circuit depth; when \(d\) is a power of \(\rho\), Eq.~\eqref{eq:critical} reduces to \(2\log_\rho d-1\).
+
+\textit{Fault suppression and circuit depth.}---Increasing circuit depth \(h\) amplifies fault propagation and erodes worst-case logical error suppression even before continuous symmetries emerge (Fig.~\ref{fig:depth-noise-symmetry}). Consider an exact code-preserving circuit of depth at most \(h\) built from \(\rho\)-body native unitaries on the original qubits of a stabilizer subspace code \(\mathcal C\), with an ideally encoded input and an optimal ideal recovery channel applied only at the output. Under independent native-gate Pauli noise---where each gate location fails with probability \(p\) and applies every nonidentity Pauli on its support with \(p\)-independent positive conditional weight---let \(\epsilon_{\rm L}^{\rm opt}(p)\) be the minimum logical entanglement infidelity over all terminal recoveries. The circuit's error-suppression exponent is the largest integer \(m\) (or \(\infty\)) satisfying \(\epsilon_{\rm L}^{\rm opt}(p)=O(p^m)\) as \(p\to0\), and its minimum over all admissible circuits of depth at most \(h\) defines the per-code worst-case exponent \(m_{\rm pc}(\mathcal C;\rho,h)\).
+
+Across all stabilizer codes of actual distance \(d\), \(m_{\rm pc}(\mathcal C;\rho,h)\) is bracketed between two universal depth-dependent envelopes: a \emph{guaranteed lower bound} \(m_-(h)\) that every distance-\(d\) code achieves, and a \emph{best-achievable upper bound} \(m_+(h)\) that no distance-\(d\) code can exceed,
+\begin{equation}\label{eq:envelopes-def}
+ m_-(h)=\left\lceil\frac{d}{\rho^h+\rho}\right\rceil,
+ \qquad
+ m_+(h)=\left\lceil\frac{d}{2\rho^{\lceil h/2\rceil}}\right\rceil .
+\end{equation}
+To see why \(m_-(h)\) provides a universal floor, note that two histories of at most \(r\) faults are jointly correctable whenever their Knill--Laflamme cross term acts on fewer than \(d\) qubits in either the input or output frame~\cite{KL}; since a layer-\(\ell\) fault has input and output light cones of sizes at most \(\rho^\ell\) and \(\rho^{h-\ell+1}\) with \(\rho^\ell+\rho^{h-\ell+1}\le\rho^h+\rho\), the smaller frame sum over the at most \(2r\) faulty locations is at most \(r(\rho^h+\rho)\), guaranteeing that for \(N_{\rm loc}\) unflagged locations under any local-stochastic noise of strength \(p\) (joint failure probability at most \(p^a\) on any \(a\) locations),
+\begin{equation}\label{eq:discussion-noise-exponent}
+ \epsilon_{\rm L}^{\rm opt}(p)
+ \le \binom{N_{\rm loc}}{m_-(h)}\,p^{m_-(h)}.
+\end{equation}
+Conversely, \(m_+(h)\) sets the best-possible ceiling because any weight-\(d\) logical Pauli can be implemented at depth \(h\) by compressing and uncompressing blocks of size at most \(\rho^{\lceil h/2\rceil}\), allowing \(m_+(h)\) midpoint faults to create indistinguishable logical-error branches.
+
+As \(h\) increases in the regime \(d\gg\rho\) (already exact for \(d>2\rho\)), both the guaranteed floor \(m_-(h)\) and the best-possible ceiling \(m_+(h)\) decay from \(\Theta(d)\) at constant depth down to \(1\)---marking the loss of superlinear fault suppression (\(\epsilon_{\rm L}^{\rm opt}=\Theta(p)\))---at the respective critical depths
+\begin{equation}\label{eq:discussion-exponent-depths}
+ h_- = \lceil\log_\rho(d-\rho)\rceil,\qquad
+ h_+ = 2\lceil\log_\rho(d/2)\rceil-1,
+\end{equation}
+which satisfy \(h_-\le h_+\le h_\infty\) with \(h_\infty-h_+\in\{0,2\}\). Below \(h_-\), distance alone guarantees multi-fault suppression (\(m_{\rm pc}\ge m_-(h)\ge2\)); across \([h_-,h_+)\), generic distance-based protection fails (\(m_-(h)=1\)) while structured codes can still sustain exponents up to \(m_+(h)\); once \(h\ge h_+\), even the best-case ceiling collapses to \(m_+(h)=1\), so worst-case error suppression vanishes for every stabilizer code before (or right as) continuous symmetries turn on at \(h_\infty\) [although single faults remain individually detectable below \(h_\infty\) and first become undetectable logical errors at \(h=h_\infty\), e.g., via \(e^{i\varepsilon Q}\) in Eq.~\eqref{eq:pauli-family}].
+
+\begin{figure}[htb]
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}[x=.563cm,y=.382cm,font=\scriptsize,text=FOneInk,>=Latex]
+  \def\UpperCurve{(2.76,5.82)
+    .. controls (3.66,5.82) and (8.10,1.30) .. (8.75,1.30)}
+  \def\LowerCurve{(2.76,5.82)
+    .. controls (4.068,5.82) and (5.108,1.30) .. (5.849,1.30)}
+
+  \fill[FOneNavy!6] (.95,.64) rectangle (9.35,7.25);
+  \fill[FOneAmber!10] (9.35,.64) rectangle (13.00,7.25);
+  \draw[FOneWire!75,line width=.42pt] (.95,1.30) -- (13.00,1.30);
+
+  \path[fill=FOneTeal!18] \UpperCurve -- (5.849,1.30)
+    .. controls (5.108,1.30) and (4.068,5.82) .. (2.76,5.82) -- cycle;
+
+  \draw[FOneWire!85,densely dotted,line width=.47pt] (.95,4.69) -- (4.517,4.69);
+  \draw[FOneWire!85,densely dotted,line width=.47pt] (4.517,.64) -- (4.517,4.69);
+  \draw[FOneWire!85,densely dotted,line width=.47pt] (.95,3.56) -- (5.849,3.56);
+  \draw[FOneWire!85,densely dotted,line width=.47pt] (5.849,.64) -- (5.849,3.56);
+  \draw[FOneTeal,densely dotted,line width=.58pt] (8.75,.64) -- (8.75,1.30);
+  \draw[FOneAmber!88,densely dashed,line width=.65pt] (9.35,.64) -- (9.35,7.25);
+
+  \draw[FOneTeal,line width=.93pt] (1.25,5.82) -- \LowerCurve -- (8.75,1.30);
+  \draw[FOneNavy,line width=.93pt] (1.25,5.82) -- \UpperCurve;
+  \draw[FOneInk,line width=.94pt] (8.75,1.30) -- (13.00,1.30);
+
+  \fill[FOneInk] (1.25,5.82) circle[radius=1.25pt];
+  \fill[FOneInk] (2.08,5.82) circle[radius=1.25pt];
+  \fill[FOneNavy] (4.517,4.69) circle[radius=1.15pt];
+  \fill[FOneTeal] (4.517,3.56) circle[radius=1.15pt];
+  \fill[FOneNavy] (5.849,3.56) circle[radius=1.15pt];
+  \fill[FOneTeal] (5.849,1.30) circle[radius=1.25pt];
+  \fill[FOneTeal] (8.75,1.30) circle[radius=1.35pt];
+
+  % Axes with scale break // and axis labels placed right near both arrowheads
+  \draw[FOneInk,line width=.48pt] (.95,.64) -- (2.48,.64);
+  \draw[FOneInk,line width=.48pt] (2.42,.45) -- (2.54,.83);
+  \draw[FOneInk,line width=.48pt] (2.56,.45) -- (2.68,.83);
+  \draw[FOneInk,-{Latex[length=1.55mm]},line width=.48pt]
+    (2.62,.64) -- (13.60,.64)
+    node[anchor=north east,inner sep=1.5pt,yshift=-2.2pt] {Circuit depth \(h\)};
+
+  \draw[FOneInk,-{Latex[length=1.55mm]},line width=.48pt]
+    (.95,.64) -- (.95,8.00)
+    node[anchor=west,inner sep=2pt,xshift=1.5pt,yshift=-1pt] {Error suppression exponent \(m\)};
+
+  \foreach \y/\lab in {5.82/\(\Theta(d)\),4.69/\(\Theta(d^{\frac34})\),3.56/\(\Theta(\sqrt d)\),1.30/\(1\)} {
+    \draw[FOneInk,line width=.44pt] (.84,\y) -- (.95,\y);
+    \node[anchor=east,text=FOneInk,inner sep=1.8pt] at (.84,\y) {\lab};
+  }
+
+  \foreach \tx/\lx/\lab in {
+    1.25/1.25/\(1\),
+    2.08/2.08/const.,
+    4.517/4.457/\(\frac12\log_\rho d\),
+    5.849/5.909/\(h_-\),
+    8.75/8.70/\(h_+\),
+    9.35/9.44/\(h_\infty\)} {
+    \draw[FOneInk,line width=.44pt] (\tx,.64) -- (\tx,.50);
+    \node[anchor=north,text=FOneInk,inner sep=1.5pt] at (\lx,.43) {\lab};
+  }
+
+  \node[text=FOneInk,font=\scriptsize\bfseries] at (5.15,6.68)
+    {Discrete logical symmetries};
+  \node[text=FOneInk,font=\scriptsize\bfseries,align=center] at (11.18,6.45)
+    {Continuous\\symmetries};
+
+  \node[text=FOneInk] at (6.80,4.02) {\(m_+(h)\)};
+  \node[text=FOneInk] at (3.52,2.50) {\(m_-(h)\)};
+  \node[text=FOneInk,font=\scriptsize\bfseries] at (6.38,2.15)
+    {\(\boldsymbol{m_{\rm pc}}\)};
+  \node[text=FOneInk,align=center,inner sep=2pt] at (11.18,2.67)
+    {\(m_{\rm pc}=1\)\\[2pt]Linear in \(p\)};
+\end{tikzpicture}%
+}
+\caption{Depth-induced suppression of the per-code worst-case error exponent \(m_{\rm pc}\) [Eq.~\eqref{eq:discussion-fixed-code-exponent}]. Across constant depths (\(1\) to \(\mathrm{const.}\), left of the axis break), both envelopes remain \(\Theta(d)\). At logarithmic depths, \(m_-(h)\) and \(m_+(h)\) separate, reaching \(\Theta(\sqrt d)\) versus \(\Theta_\rho(d^{\frac34})\) at \(h=\tfrac{1}{2}\log_\rho d\) [Theorem~\ref{thm:fault-sharpness}(2)] and \(1\) versus \(\Theta(\sqrt d)\) at \(h_-\) [Eq.~\eqref{eq:discussion-exponent-depths}]. From \(h_+\) onward, \(m_{\rm pc}=1\) (\(\epsilon_{\rm L}^{\rm opt}=\Theta(p)\)), separated by at most two layers from the continuous-symmetry onset \(h_\infty=2\lceil\log_\rho d\rceil-1\). Curves and depth separations are schematic.}
+\label{fig:depth-noise-symmetry}
+\end{figure}
+
+\begin{theorem}[Sharp fault-suppression bounds]\label{thm:fault-sharpness}
+For every stabilizer subspace code of actual distance \(d\ge2\), under the independent native-gate Pauli noise and optimal terminal recovery model above,
+\begin{equation}\label{eq:discussion-fixed-code-exponent}
+ \left\lceil\frac{d}{\rho^h+\rho}\right\rceil
+ \le m_{\rm pc}(\mathcal C;\rho,h)
+ \le \left\lceil\frac{d}{2\rho^{\lceil h/2\rceil}}\right\rceil,
+\end{equation}
+matching the floor \(m_-(h)\) and ceiling \(m_+(h)\) of Eq.~\eqref{eq:envelopes-def}.
+\begin{enumerate}
+\item[(1)] For every \(d\ge2\), \(\rho\ge2\), and \(h\ge1\), there is an explicit stabilizer subspace code of actual distance \(d\) with \(m_{\rm pc}=m_-(h)\).
+\item[(2)] For every fixed \(\rho\ge2\) and all sufficiently large integers \(t\), there exists a CSS subspace code \(\mathcal C_t\) of actual distance \(d_t=\rho^{2t}\) (with asymptotic rate approaching \(1\)) such that \(m_{\mathrm{pc}}(\mathcal C_t;\rho,h)=m_+(h)\) simultaneously for all \(1\le h\le t=\tfrac12\log_\rho d_t\); in particular, at \(h=\tfrac12\log_\rho d_t\), \(m_{\mathrm{pc}}=m_+=\Theta_\rho(d_t^{\frac34})\) strictly exceeds \(m_-=\Theta(\sqrt{d_t})\).
+\end{enumerate}
+Both statements allow arbitrary native unitaries on the original physical register.
+\end{theorem}
+
+\begin{proof}
+The lower bound follows from Eq.~\eqref{eq:discussion-noise-exponent}. For the upper bound, partition a weight-\(d\) logical Pauli \(P\) into \(b=\lceil d/\rho^{\lceil h/2\rceil}\rceil\) blocks of size at most \(\rho^{\lceil h/2\rceil}\). For \(h=2t\), compress each block to one site in \(t\) layers, absorb the resulting one-site Pauli into layer \(t\) (applying a one-qubit Pauli gate if idle there), and invert the compression in \(t\) layers; for \(h=2t+1\), compress each block to at most \(\rho\) sites in \(t\) layers, apply its compressed Pauli as one middle gate, and invert. Both circuits implement \(P\) exactly, while a single midpoint fault in any block inserts that block's factor of \(P\) at the output.
+
+Splitting these \(b\) midpoint faults into two histories of sizes \(\lfloor b/2\rfloor\) and \(\lceil b/2\rceil\) produces output errors with identical syndrome that differ by \(P\). Under any common terminal recovery, their conditional entanglement fidelities are overlaps of one recovered Choi state with two orthogonal logical Choi vectors and thus sum to at most \(1\). Since the less probable history occurs with probability \(\Theta(p^{\lceil b/2\rceil})\), \(\epsilon_{\rm L}^{\rm opt}(p)=\Omega(p^{\lceil b/2\rceil})\) even for \(p\)-dependent recovery, giving \(m_{\rm pc}\le\lceil b/2\rceil=m_+(h)\).
+
+Part~(1) is proved in Proposition~\ref{prop:lower-saturation} (Supplemental Material) via a rectangular Shor code admitting two order-\(p^{m_-}\) fault histories differing by a logical Pauli. Part~(2) is proved in Proposition~\ref{prop:upper-saturation} via CSS codes on which every exact code-preserving circuit of depth at most \(t\) acts globally as an on-site Pauli product up to phase, allowing all faults to be bounded in a common frame by their shorter light cone.
+\end{proof}
+
+\textit{Discussion.}---The three depth thresholds separate when an exact shallow logical alphabet becomes infinite (\(h_\infty\)), when its finite words become dense (\(h_{\mathrm{dense}}\)), and when finite words already realize every logical unitary (\(h_{\mathrm{exact}}\)). Complementing \(Q_{37}\)---where \(h_{\mathrm{dense}}<h_\infty=h_{\mathrm{exact}}\)---rectangular Bacon--Shor subsystem codes (Proposition~\ref{prop:bacon-shor-saturation} in the Supplemental Material) show that \(h_{\mathrm{exact}}\) equals \(h_\infty\) at moderate aspect ratios yet exceeds \(h_\infty\) arbitrarily on elongated rectangles.
+
+The fault exponent adds a distinct depth-dependent constraint. Both envelopes in Eq.~\eqref{eq:discussion-fixed-code-exponent} are attained after optimizing the terminal recovery and then taking the worst circuit for each code. The lower construction attains its endpoint for every parameter triple. The upper construction attains its endpoint over an increasing depth interval, with a growing separation from the lower envelope. Thus a universal distance-and-depth bound cannot be replaced by a single exponent without additional information about the code. These are low-noise statements for a fixed circuit with ideal terminal recovery; they do not by themselves establish a threshold for noisy repeated correction. Continuous logical control and one-fault correction also have different onset depths, as Fig.~\ref{fig:depth-noise-symmetry} makes explicit.
+
+\begin{acknowledgments}
+We used generative AI tools for language editing and to assist with the derivation and checking of the exact-generation results and the two examples. This work is supported in part by the National Natural Science Foundation of China (NSFC) under Grant No.~12475023, the Dushi Program, and startup funding from the Yau Mathematical Sciences Center (YMSC).
+\end{acknowledgments}
+
+\textit{Data availability.}---
+Ref.~\cite{LeanRepo} (snapshot \texttt{ad6a378}) contains Lean~4 proofs of Theorem~\ref{thm:depth} and the original stabilizer subspace result \(h_\infty=2\lceil\log_\rho d\rceil-1\), together with verification scripts. The proof of Theorem~\ref{thm:depth} uses the coordinate algebra, scalar extension of error detection, two-sided support bounds, and the finite-evaluation-image criterion. Its axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. Part (2) of Theorem~\ref{cor:critical}, Theorem~\ref{thm:fault-sharpness}, both fault-saturation constructions and their rigidity and probability lemmas, Propositions~\ref{prop:bacon-shor-saturation} and~\ref{prop:dua-example}, and the further synthesis bounds and algorithms lie outside that formalization. The CSS existence proof includes finite algebraic acceptance tests and exhaustive selection, without a claim of efficient construction or decoding.
+
+\begin{thebibliography}{41}
+\rightskip=0pt plus 1fil\relax
+\bibitem{Gottesman}
+D.~Gottesman,
+Quantum Inf.\ Comput.\ \textbf{14}, 1338--1371 (2014),
+\href{https://arxiv.org/abs/1310.2984}{arXiv:1310.2984}.
+
+\bibitem{BravyiMemory}
+S.~Bravyi, A.~W.~Cross, J.~M.~Gambetta, D.~Maslov, P.~Rall, and T.~J.~Yoder,
+Nature (London) \textbf{627}, 778--782 (2024),
+\href{https://arxiv.org/abs/2308.07915}{arXiv:2308.07915}.
+
+\bibitem{Zeng}
+B.~Zeng, A.~Cross, and I.~L.~Chuang,
+IEEE Trans.\ Inf.\ Theory \textbf{57}, 6272--6284 (2011),
+\href{https://arxiv.org/abs/0706.1382}{arXiv:0706.1382}.
+
+\bibitem{EK}
+B.~Eastin and E.~Knill,
+\href{https://link.aps.org/doi/10.1103/PhysRevLett.102.110502}{Phys.\ Rev.\ Lett.\ \textbf{102}, 110502 (2009)},
+\href{https://arxiv.org/abs/0811.4262}{arXiv:0811.4262}.
+
+\bibitem{BK}
+S.~Bravyi and R.~K\"onig,
+\href{https://link.aps.org/doi/10.1103/PhysRevLett.110.170503}{Phys.\ Rev.\ Lett.\ \textbf{110}, 170503 (2013)},
+\href{https://arxiv.org/abs/1206.1609}{arXiv:1206.1609}.
+
+\bibitem{PY}
+F.~Pastawski and B.~Yoshida,
+\href{https://link.aps.org/doi/10.1103/PhysRevA.91.012305}{Phys.\ Rev.\ A \textbf{91}, 012305 (2015)},
+arXiv:1408.1720.
+
+\bibitem{Beverland}
+M.~E.~Beverland, O.~Buerschaper, R.~K\"onig, F.~Pastawski, J.~Preskill, and S.~Sijher,
+J.\ Math.\ Phys.\ \textbf{57}, 022201 (2016),
+\href{https://arxiv.org/abs/1409.3898}{arXiv:1409.3898}.
+
+\bibitem{Anderson}
+J.~T.~Anderson and T.~Jochym-O'Connor,
+Quantum Inf.\ Comput.\ \textbf{16}, 771--802 (2016),
+\href{https://arxiv.org/abs/1409.8320}{arXiv:1409.8320}.
+
+\bibitem{JKY}
+T.~Jochym-O'Connor, A.~Kubica, and T.~J.~Yoder,
+\href{https://link.aps.org/doi/10.1103/PhysRevX.8.021047}{Phys.\ Rev.\ X \textbf{8}, 021047 (2018)},
+\href{https://arxiv.org/abs/1710.07256}{arXiv:1710.07256}.
+
+\bibitem{Webster}
+P.~Webster, M.~Vasmer, T.~R.~Scruby, and S.~D.~Bartlett,
+\href{https://link.aps.org/doi/10.1103/PhysRevResearch.4.013092}{Phys.\ Rev.\ Research \textbf{4}, 013092 (2022)},
+arXiv:2012.05260.
+
+\bibitem{LuFuLiu}
+Y.~Lu, E.~X.~Fu, and Z.-W.~Liu,
+\emph{Intrinsic locality dimension of quantum codes},
+\href{https://arxiv.org/abs/2605.31441}{arXiv:2605.31441} (2026).
+
+\bibitem{Bluvstein2024}
+D.~Bluvstein \emph{et al.},
+Nature (London) \textbf{626}, 58--65 (2024),
+\href{https://arxiv.org/abs/2312.03982}{arXiv:2312.03982}.
+
+\bibitem{Quintavalle}
+A.~O.~Quintavalle, P.~Webster, and M.~Vasmer,
+\href{https://quantum-journal.org/papers/q-2023-10-24-1153/}{Quantum \textbf{7}, 1153 (2023)},
+\href{https://arxiv.org/abs/2204.10812}{arXiv:2204.10812}.
+
+\bibitem{BreuckmannBurton}
+N.~P.~Breuckmann and S.~Burton,
+\href{https://quantum-journal.org/papers/q-2024-06-13-1372/}{Quantum \textbf{8}, 1372 (2024)},
+\href{https://arxiv.org/abs/2202.06647}{arXiv:2202.06647}.
+
+\bibitem{ZhuLavasaniBarkeshli}
+G.~Zhu, A.~Lavasani, and M.~Barkeshli,
+\href{https://link.aps.org/doi/10.1103/PhysRevLett.125.050502}{Phys.\ Rev.\ Lett.\ \textbf{125}, 050502 (2020)},
+arXiv:1806.02358.
+
+\bibitem{Dua}
+A.~Dua, A.~Holmes, M.~J.~Gullans, and V.~V.~Albert,
+\emph{Qubit CSS codes with Universal Transversal Gates},
+[arXiv:2610.06730v1] (2026).
+
+\bibitem{GottesmanStabilizer}
+D.~Gottesman,
+\emph{Stabilizer Codes and Quantum Error Correction},
+Ph.D. thesis, California Institute of Technology (1997),
+\href{https://arxiv.org/abs/quant-ph/9705052}{arXiv:quant-ph/9705052}.
+
+\bibitem{Boykin}
+P.~O.~Boykin, T.~Mor, M.~Pulver, V.~Roychowdhury, and F.~Vatan,
+\emph{On Universal and Fault-Tolerant Quantum Computing},
+\href{https://arxiv.org/abs/quant-ph/9906054}{arXiv:quant-ph/9906054}.
+
+\bibitem{Faist}
+P.~Faist, S.~Nezami, V.~V.~Albert, G.~Salton, F.~Pastawski,
+P.~Hayden, and J.~Preskill,
+\href{https://link.aps.org/doi/10.1103/PhysRevX.10.041018}{Phys.\ Rev.\ X \textbf{10}, 041018 (2020)},
+\href{https://arxiv.org/abs/1902.07714}{arXiv:1902.07714}.
+
+\bibitem{WoodsAlhambra}
+M.~P.~Woods and \'A.~M.~Alhambra,
+\href{https://quantum-journal.org/papers/q-2020-03-23-245/}{Quantum \textbf{4}, 245 (2020)},
+\href{https://arxiv.org/abs/1902.07725}{arXiv:1902.07725}.
+
+\bibitem{KubicaDemkowicz}
+A.~Kubica and R.~Demkowicz-Dobrza\'nski,
+\href{https://link.aps.org/doi/10.1103/PhysRevLett.126.150503}{Phys.\ Rev.\ Lett.\ \textbf{126}, 150503 (2021)},
+\href{https://arxiv.org/abs/2004.11893}{arXiv:2004.11893}.
+
+\bibitem{ZhouLiuJiang}
+S.~Zhou, Z.-W.~Liu, and L.~Jiang,
+\href{https://quantum-journal.org/papers/q-2021-08-09-521/}{Quantum \textbf{5}, 521 (2021)},
+arXiv:2005.11918.
+
+\bibitem{LiuZhou}
+Z.-W.~Liu and S.~Zhou,
+npj Quantum Inf.\ \textbf{9}, 119 (2023),
+\href{https://arxiv.org/abs/2111.06355}{arXiv:2111.06355};
+see also the companion supplement, arXiv:2111.06360, Sec.~VI.
+
+\bibitem{BravyiKitaev}
+S.~Bravyi and A.~Kitaev,
+\href{https://link.aps.org/doi/10.1103/PhysRevA.71.022316}{Phys.\ Rev.\ A \textbf{71}, 022316 (2005)},
+\href{https://arxiv.org/abs/quant-ph/0403025}{arXiv:quant-ph/0403025}.
+
+\bibitem{Horsman}
+C.~Horsman, A.~G.~Fowler, S.~Devitt, and R.~Van~Meter,
+New J.\ Phys.\ \textbf{14}, 123011 (2012),
+\href{https://arxiv.org/abs/1111.4022}{arXiv:1111.4022}.
+
+\bibitem{PaetznickReichardt}
+A.~Paetznick and B.~W.~Reichardt,
+\href{https://link.aps.org/doi/10.1103/PhysRevLett.111.090505}{Phys.\ Rev.\ Lett.\ \textbf{111}, 090505 (2013)},
+\href{https://arxiv.org/abs/1304.3709}{arXiv:1304.3709}.
+
+\bibitem{BombinGauge}
+H.~Bomb\'in,
+New J.\ Phys.\ \textbf{17}, 083002 (2015),
+\href{https://arxiv.org/abs/1311.0879}{arXiv:1311.0879}.
+
+\bibitem{KL}
+E.~Knill and R.~Laflamme,
+Phys.\ Rev.\ A \textbf{55}, 900--911 (1997),
+\href{https://arxiv.org/abs/quant-ph/9604034}{arXiv:quant-ph/9604034}.
+
+\bibitem{Kribs}
+D.~Kribs, R.~Laflamme, and D.~Poulin,
+Phys.\ Rev.\ Lett.\ \textbf{94}, 180501 (2005),
+arXiv:quant-ph/0412076.
+
+\bibitem{Poulin}
+D.~Poulin,
+Phys.\ Rev.\ Lett.\ \textbf{95}, 230504 (2005),
+\href{https://arxiv.org/abs/quant-ph/0508131}{arXiv:quant-ph/0508131}.
+
+\bibitem{Bacon}
+D.~Bacon,
+Phys.\ Rev.\ A \textbf{73}, 012340 (2006),
+\href{https://arxiv.org/abs/quant-ph/0506023}{arXiv:quant-ph/0506023}.
+
+\bibitem{BaconCasaccino}
+D.~Bacon and A.~Casaccino,
+\emph{Quantum Error Correcting Subsystem Codes From Two Classical Linear Codes},
+\href{https://arxiv.org/abs/quant-ph/0610088}{arXiv:quant-ph/0610088}.
+
+\bibitem{BonetMonroig}
+X.~Bonet-Monroig, R.~Sagastizabal, M.~Singh, and T.~E.~O'Brien,
+Phys.\ Rev.\ A \textbf{98}, 062339 (2018),
+\href{https://arxiv.org/abs/1807.10050}{arXiv:1807.10050}.
+
+\bibitem{Cowtan}
+A.~Cowtan, S.~Dilkes, R.~Duncan, W.~Simmons, and S.~Sivarajah,
+Electron.\ Proc.\ Theor.\ Comput.\ Sci.\ \textbf{318}, 213--228 (2020),
+\href{https://arxiv.org/abs/1906.01734}{arXiv:1906.01734}.
+
+\bibitem{HaahLiuTan}
+J.~Haah, Y.~Liu, and X.~Tan,
+Commun.\ Math.\ Phys.\ \textbf{406}, 309 (2025),
+arXiv:2402.05239.
+
+\bibitem{Barenco}
+A.~Barenco, C.~H.~Bennett, R.~Cleve, D.~P.~DiVincenzo,
+N.~Margolus, P.~Shor, T.~Sleator, J.~A.~Smolin, and H.~Weinfurter,
+\href{https://doi.org/10.1103/PhysRevA.52.3457}{Phys.\ Rev.\ A \textbf{52}, 3457--3467 (1995)},
+\href{https://arxiv.org/abs/quant-ph/9503016}{arXiv:quant-ph/9503016}.
+
+\bibitem{Shende}
+V.~V.~Shende, S.~S.~Bullock, and I.~L.~Markov,
+\href{https://doi.org/10.1109/TCAD.2005.855930}{IEEE Trans.\ Comput.-Aided Des.\ Integr.\ Circuits Syst.\ \textbf{25}, 1000--1010 (2006)},
+\href{https://arxiv.org/abs/quant-ph/0406176}{arXiv:quant-ph/0406176}.
+
+\bibitem{LeanRepo}
+Formalized Lean~4 development for \emph{Sharp Circuit-Depth Threshold for Continuous Logical Operations in Quantum Codes} (snapshot \texttt{ad6a378}, 2026),
+\nolinkurl{github.com/Imine20/critical-depth-for-the-infinite-logical-set}.
+
+\bibitem{Stacks}
+The Stacks Project Authors,
+Lemma 10.31.6 (Tag 00FR) and Lemma 10.17.2 (Tag 00E0),
+\emph{The Stacks Project}.
+
+\bibitem{BurgisserScheiblechner}
+P.~B\"urgisser and P.~Scheiblechner,
+\emph{On the complexity of counting components of algebraic varieties},
+J.~Symbolic Comput.\ \textbf{44}, 1114--1136 (2009), Secs.~2.1.2--2.1.3.
+
+\bibitem{BasuPollackRoy}
+S.~Basu, R.~Pollack, and M.-F.~Roy,
+\emph{Algorithms in Real Algebraic Geometry},
+2nd ed. (Springer, Berlin, 2006).
+
+\end{thebibliography}
+
+\onecolumngrid
+\clearpage
+\setcounter{equation}{0}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\theHequation}{S\arabic{equation}}
+\setcounter{lemma}{0}
+\renewcommand{\thelemma}{S\arabic{lemma}}
+\setcounter{proposition}{0}
+\renewcommand{\theproposition}{S\arabic{proposition}}
+\section*{Supplemental Material}
+The Supplemental Material first establishes the algebraic finiteness criterion and gives the complete proof of Theorem~\ref{thm:depth}, then proves both fault-exponent saturation statements in Theorem~\ref{thm:fault-sharpness}. The remaining sections give exact synthesis bounds and the two code examples.
+\subsection*{Algebraic finite-image criterion}
+
+Here we establish the global algebraic finiteness criterion invoked in the proof of Theorem~\ref{thm:depth}. Let \(r_1,\ldots,r_m\) be finitely many elements of a commutative coordinate algebra \(R\), representing the output coordinates of a polynomial map. An evaluation is a unital \(\mathbb C\)-algebra homomorphism \(\phi:R\to\mathbb C\). We seek to show that the set of output tuples \((\phi(r_1),\ldots,\phi(r_m))\) is finite, without requiring either the set of evaluations or the ambient parameter variety to be finite or smooth.
+
+For each minimal prime ideal \(\mathfrak p\) of \(R\), set
+\[
+ F_{\mathfrak p}=\operatorname{Frac}(R/\mathfrak p),\qquad
+ \iota_{\mathfrak p}:R\longrightarrow R/\mathfrak p
+                         \longrightarrow F_{\mathfrak p}.
+\]
+Since \(R/\mathfrak p\) is an integral domain, its canonical map into \(F_{\mathfrak p}\) is injective and \(\ker\iota_{\mathfrak p}=\mathfrak p\). A \(\mathbb C\)-linear derivation \(\delta:F_{\mathfrak p}\to F_{\mathfrak p}\) is a \(\mathbb C\)-linear map obeying \(\delta(xy)=\delta(x)y+x\delta(y)\). Crucially, derivations are tested in the function fields \(F_{\mathfrak p}\) rather than after specializing to \(\mathbb C\), since every \(\mathbb C\)-linear derivation of \(\mathbb C\) vanishes identically.
+
+\begin{lemma}\label{lem:algebraic-finite-image}
+Let \(R\) be a finitely generated commutative \(\mathbb C\)-algebra, and let \(r_1,\ldots,r_m\in R\). Suppose that, for every minimal prime \(\mathfrak p\) of \(R\) and every \(\mathbb C\)-linear derivation \(\delta:F_{\mathfrak p}\to F_{\mathfrak p}\),
+\[
+ \delta\bigl(\iota_{\mathfrak p}(r_i)\bigr)=0
+ \quad\text{for every }i.
+\]
+Then the joint evaluation image
+\[
+ \{(\phi(r_1),\ldots,\phi(r_m)):
+          \phi:R\to\mathbb C\text{ a }\mathbb C\text{-algebra map}\}
+\]
+is finite.
+\end{lemma}
+
+\begin{proof}
+If \(R=0\), no unital map \(R\to\mathbb C\) exists and the image is empty. Assume \(R\ne0\).
+
+\emph{Constants in a function field.}---Fix a minimal prime \(\mathfrak p\) and write \(F=F_{\mathfrak p}\), which is finitely generated as a field over \(\mathbb C\). Suppose \(a\in F\) is annihilated by every \(\mathbb C\)-linear derivation of \(F\). If \(a\) were transcendental over \(\mathbb C\), we could extend \(\{a\}\) to a transcendence basis \(B\) of \(F/\mathbb C\) and take partial differentiation \(\partial\) with respect to \(a\) on the rational function field \(L=\mathbb C(B)\), so that \(\partial(a)=1\) while \(B\setminus\{a\}\) and \(\mathbb C\) are killed. Because \(F/L\) is finitely generated and algebraic in characteristic zero, it is finite and separable, so the primitive element theorem gives \(F=L(\beta)\) with minimal polynomial \(f(T)=T^s+\sum_{j=0}^{s-1}a_jT^j\in L[T]\). Differentiating \(f(\beta)=0\) dictates
+\[
+ c=-\frac{\sum_{j=0}^{s-1}\partial(a_j)\beta^j}{f'(\beta)},
+\]
+where \(f'(\beta)\ne 0\) by separability. Defining \(D\bigl(\sum_j b_jT^j\bigr)=\sum_j\partial(b_j)\beta^j+g'(\beta)c\) on \(g(T)=\sum_j b_jT^j\in L[T]\) satisfies \(D(gh)=D(g)h(\beta)+g(\beta)D(h)\) and \(D(f)=0\), so \(D\) descends through \(L[T]/(f)\cong F\) to a \(\mathbb C\)-linear derivation of \(F\) extending \(\partial\), contradicting \(D(a)=\partial(a)=1\). Hence \(a\) is algebraic over \(\mathbb C\), and thus \(a\in\mathbb C\). Applying this to each \(\iota_{\mathfrak p}(r_i)\) yields constants \(c_{i,\mathfrak p}\in\mathbb C\) such that
+\begin{equation}\label{eq:component-constants}
+ r_i-c_{i,\mathfrak p}\in\mathfrak p.
+\end{equation}
+
+\emph{From component constants to all evaluations.}---By Hilbert's basis theorem, \(R\) is Noetherian and therefore possesses a finite nonempty set of minimal primes \(\{\mathfrak p_1,\ldots,\mathfrak p_t\}\)~\cite{Stacks}. For any complex evaluation \(\phi:R\to\mathbb C\), \(\ker\phi\) is prime and thus contains some minimal prime \(\mathfrak p_\nu\)~\cite{Stacks}. Applying \(\phi\) to Eq.~\eqref{eq:component-constants} gives \(\phi(r_i)=c_{i,\mathfrak p_\nu}\) simultaneously for all \(i\) with the same index \(\nu\), bounding the number of realized joint tuples by \(t\).
+
+\emph{Monic identities in the coordinate algebra.}---Forming \(P_i(T)=\prod_{\nu=1}^{t}(T-c_{i,\mathfrak p_\nu})\) gives \(P_i(r_i)\in\bigcap_{\nu=1}^{t}\mathfrak p_\nu=\sqrt{(0)}\), the nilradical of \(R\)~\cite{Stacks}. Thus \(P_i(r_i)^{a_i}=0\) for some integer \(a_i\ge1\) (providing the monic integrality polynomials used in the Lean formalization~\cite{LeanRepo}), which likewise forces \(P_i(\phi(r_i))=0\) at every complex evaluation \(\phi\).
+\end{proof}
+
+Geometrically, the minimal primes represent the irreducible components of \(\operatorname{Spec} R\). Vanishing field derivations force the output map to be constant on each component, while nilpotent directions (e.g., \(r=\epsilon\) in \(\mathbb C[t,\epsilon]/(\epsilon^2)\)) evaluate to zero under every homomorphism to \(\mathbb C\). Consequently, neither reducedness, zero-dimensionality, nor smoothness of physical evaluations is required; in Theorem~\ref{thm:depth}, \(R=R_\alpha\) and the conclusion holds directly at singular circuit configurations.
+
+\subsection*{Complete proof of Theorem~\ref{thm:depth}}
+\label{sm:proof-thm-depth}
+
+Unlike fixed-partition transversal gates~\cite{EK,Faist,LiuZhou}, circuits of depth at most \(h\) are not closed under composition and do not form a Lie group; for a fixed gate-support arrangement, the code-preserving circuits instead lie inside a complex affine algebraic variety that may contain singular points where smooth-manifold tangent-space arguments fail. Formulating the circuit constraints over a finitely generated coordinate algebra \(R_\alpha\) allows Lemma~\ref{lem:algebraic-finite-image} to bound the projective logical image globally across all irreducible components, including singular configurations.
+
+\begin{proof}[Proof of Theorem~\ref{thm:depth}]
+We pad each circuit to \(h\) layers and \(n\) slots per layer using identity gates on empty supports. Since each slot admits finitely many supports of size at most \(\rho\), there are finitely many ordered support arrangements \(\alpha\). Fix one arrangement \(\alpha\) and index its \(J=nh\) slots in execution order. For slot \(j\) with support \(S_j\), take two independent matrices on \(\bigotimes_{i\in S_j}\HH_i\), extend both by the identity on the complement to obtain \(u_j,v_j\), and write \(U=u_J\cdots u_1\). Take a \(K\times K\) matrix \(W\) and a \(g\times g\) matrix \(Z\), setting \(Q=W\otimes Z\) as in Eq.~\eqref{eq:encoded}. The matrices \(V\) and \(V^\dagger\) have constant complex entries with \(V^\dagger V=\id_L\otimes\id_G\).
+
+Let \(\mathbf x\) collect all matrix entries of the local factors of \(u_j,v_j\) and of \(W,Z\). Introducing explicit inverse variables \(v_j\) renders the circuit constraints purely polynomial. Define \(R_\alpha=\mathbb C[\mathbf x]/I_\alpha\), where \(I_\alpha\) is generated by the entrywise differences in
+\begin{equation}
+ u_jv_j=v_ju_j=\id,\quad UV=VQ,\quad V^\dagger U=QV^\dagger.\label{eq:algebraic-encoding}
+\end{equation}
+In \(R_\alpha\), \(v_j=u_j^{-1}\) and \(U^{-1}=v_1\cdots v_J\). The two encoding relations yield \((V^\dagger U^{-1}V)Q=V^\dagger U^{-1}UV=\id_L\otimes\id_G\) and \(Q(V^\dagger U^{-1}V)=V^\dagger UU^{-1}V=\id_L\otimes\id_G\), so \(Q^{-1}=V^\dagger U^{-1}V\) over \(R_\alpha\). Because \(W\otimes\id_G\) and \(\id_L\otimes Z\) commute and multiply to \(Q\), their two-sided inverses are \((\id_L\otimes Z)Q^{-1}\) and \((W\otimes\id_G)Q^{-1}\), respectively. Extracting a diagonal gauge block of the first matrix gives \(W^{-1}\), and a diagonal logical block of the second gives \(Z^{-1}\), both as matrices over \(R_\alpha\).
+
+Every physical circuit satisfying Eq.~\eqref{eq:encoded} induces a unital \(\mathbb C\)-algebra evaluation \(\phi:R_\alpha\to\mathbb C\) upon assigning \(v_j=u_j^\dagger\): indeed \(UV=VQ\) implies \(U^{-1}V=VQ^{-1}\), whose adjoint gives \(V^\dagger U=QV^\dagger\) by unitarity of \(U\) and \(Q\) (though general complex evaluations of \(R_\alpha\) also include nonunitary solutions). For \(1\le a,b,c,e\le K\), define the \(K^4\) conjugation coordinates in \(R_\alpha\),
+\begin{equation}\label{eq:conjugation-coordinates}
+ r_{abce}=W_{ab}(W^{-1})_{ce},
+\end{equation}
+which record the matrix entries of \(X\mapsto WXW^{-1}\) in the matrix-unit basis \(\{\mathsf e_{bc}\}\) via \(W\mathsf e_{bc}W^{-1}=\sum_{a,e=1}^{K}\phi(r_{abce})\,\mathsf e_{ae}\).
+
+To apply Lemma~\ref{lem:algebraic-finite-image}, let \(F/\mathbb C\) be an arbitrary field extension, \(\phi:R_\alpha\to F\) a \(\mathbb C\)-algebra homomorphism, and \(\delta:F\to F\) a \(\mathbb C\)-linear derivation (acting entrywise on matrices over \(F\), with \(V,V^\dagger\) constant). Error detection extends linearly from \(\mathbb C\) to \(F\): any operator \(O\) over \(F\) supported on fewer than \(d\) subsystems expands as \(O=\sum_\mu a_\mu B_\mu\) with \(a_\mu\in F\) and complex matrix units \(B_\mu\) satisfying Eq.~\eqref{eq:correctable}, giving \(V^\dagger OV=\id_L\otimes\sum_\mu a_\mu M_{B_\mu}\).
+
+Setting \(U_{>j}=u_J\cdots u_{j+1}\) and \(U_{<j}=u_{j-1}\cdots u_1\) (empty products being \(\id\)), the Leibniz rule gives \(\delta(U)=\sum_{j=1}^J U_{>j}\delta(u_j)U_{<j}\). Multiplying on the right by \(U^{-1}=U_{<j}^{-1}u_j^{-1}U_{>j}^{-1}\) cancels \(U_{<j}U_{<j}^{-1}\) in the \(j\)th term, yielding
+\begin{equation}\label{eq:generator}
+ \delta(U)U^{-1}=\sum_{j=1}^JU_{>j}\delta(u_j)u_j^{-1}U_{>j}^{-1}=\sum_{j=1}^J H_j=H.
+\end{equation}
+Transforming \(H_j\) back to the input frame cancels \(U_{>j}\) instead:
+\[
+ \begin{aligned}
+ U^{-1}H_jU
+ &=U_{<j}^{-1}u_j^{-1}\bigl(\delta(u_j)u_j^{-1}\bigr)u_jU_{<j}\\
+ &=U_{<j}^{-1}u_j^{-1}\delta(u_j)U_{<j}.
+ \end{aligned}
+\]
+Because the identity factors outside \(S_j\) are constant, both \(\delta(u_j)u_j^{-1}\) and \(u_j^{-1}\delta(u_j)\) are supported on \(S_j\) and commute with all other disjoint gates in the same layer. Conjugating an operator supported on a set \(T\) by any single layer (or its inverse) spreads its support only to the union of the disjoint gate blocks meeting \(T\), enlarging the support size by a factor of at most \(\rho\).
+
+For slot \(j\) in layer \(\ell\in\{1,\ldots,h\}\), the initial support \(|S_j|\le\rho\) propagates through \(h-\ell\) layers toward the output and \(\ell-1\) layers toward the input, giving support bounds \(\rho^{h-\ell+1}\) for \(H_j\) and \(\rho^\ell\) for \(U^{-1}H_jU\) [Fig.~\ref{fig:mechanisms}(a)]. Since \(\min\{h-\ell+1,\ell\}\le\lceil h/2\rceil\) and Eq.~\eqref{eq:depth} implies \(h\le 2m-2\) for \(m=\lceil\log_\rho d\rceil\), the smaller support satisfies \(\rho^{\lceil h/2\rceil}\le\rho^{m-1}<d\).
+
+If \(|\operatorname{supp}(H_j)|<d\), Eq.~\eqref{eq:correctable} directly gives \(V^\dagger H_jV=\id_L\otimes M_j\). Otherwise \(|\operatorname{supp}(U^{-1}H_jU)|<d\), so input-frame detection gives \(V^\dagger U^{-1}H_jUV=\id_L\otimes N_j\). Using \(V^\dagger U^{-1}=Q^{-1}V^\dagger\) and \(UV=VQ\), we transport this back to the output frame:
+\begin{align*}
+ V^\dagger H_jV &= Q(V^\dagger U^{-1}H_jUV)Q^{-1} \\
+                &= Q(\id_L\otimes N_j)Q^{-1} = \id_L\otimes ZN_jZ^{-1}.
+\end{align*}
+In both cases \(V^\dagger H_jV=\id_L\otimes M_j\), and summing over \(j\) yields
+\begin{equation}\label{eq:compression}
+ V^\dagger HV=\id_L\otimes M,\qquad M=\sum_{j=1}^J M_j.
+\end{equation}
+
+Differentiating \(UV=VQ\) gives \(\delta(U)V=V\delta(Q)\), which together with \(U^{-1}V=VQ^{-1}\) implies \(V^\dagger HV=V^\dagger\delta(U)VQ^{-1}=\delta(Q)Q^{-1}\). Expanding \(Q=W\otimes Z\) gives
+\begin{equation}\label{eq:logicalgen}
+ \delta(Q)Q^{-1}
+   =\delta(W)W^{-1}\otimes\id_G+\id_L\otimes\delta(Z)Z^{-1}.
+\end{equation}
+Equating this to \(\id_L\otimes M\) from Eq.~\eqref{eq:compression} and extracting the \((1,1)\) gauge block yields \(\delta(W)W^{-1}=\lambda\id_L\) with \(\lambda=(M-\delta(Z)Z^{-1})_{11}\in F\). Hence \(\delta(W)=\lambda W\) and \(\delta(W^{-1})=-W^{-1}\delta(W)W^{-1}=-\lambda W^{-1}\), so every conjugation coordinate satisfies
+\[
+ \delta\bigl(\phi(r_{abce})\bigr)
+   =\lambda\phi(r_{abce})-\lambda\phi(r_{abce})=0.
+\]
+Specializing to \(F=\operatorname{Frac}(R_\alpha/\mathfrak p)\) and the canonical map \(\phi=\iota_{\mathfrak p}\) for each minimal prime \(\mathfrak p\) of \(R_\alpha\) verifies the hypothesis of Lemma~\ref{lem:algebraic-finite-image}, proving that the joint tuple \((\phi(r_{abce}))\) takes only finitely many values across all complex evaluations \(\phi:R_\alpha\to\mathbb C\).
+
+Finally, if two physical evaluations yield the same conjugation map \(W_1XW_1^{-1}=W_2XW_2^{-1}\) for all \(X\), then \(W_2^{-1}W_1\) commutes with every matrix unit \(\mathsf e_{bc}\) and is therefore scalar; unitarity gives \(W_1=e^{i\theta}W_2\), fixing a unique class \([W]\in\PU(K)\). Taking the finite union over all support arrangements \(\alpha\) establishes \(|\mathcal L_{\le h}(\mathcal C,\rho)|<\infty\), a closed proper subset of the infinite Hausdorff group \(\PU(K)\) for \(K\ge2\).
+\end{proof}
+
+\subsection*{Saturation of the lower fault exponent}
+\label{em:lower-saturation}
+
+The lower bound in Eq.~\eqref{eq:discussion-fixed-code-exponent} is attained over stabilizer subspace codes for every choice of \(d,\rho,h\) in the stated model. We first give a recovery bound for the two fault histories used in the construction.
+
+\begin{lemma}[Logical ambiguity between two histories]
+\label{lem:two-pauli-histories}
+Consider a subspace code of dimension \(K\) with isometry \(V\). Suppose two fault histories have probabilities \(a,b\) and apply output errors \(E_0,E_1\) after the ideal logical action. If
+\[
+ E_1V=E_0V\overline P
+\]
+up to a scalar phase, where \(\overline P\) is a traceless logical Pauli, the optimal terminal-recovery entanglement infidelity is at least \(\min(a,b)\).
+\end{lemma}
+
+\begin{proof}
+Absorb the noiseless logical action into the input coordinates. This leaves the optimal entanglement infidelity unchanged, since precomposing the two channels being compared by the same unitary preserves their Choi-state fidelity. Let \(|\Phi\rangle\) be a normalized maximally entangled state of the logical system and a reference. Before recovery, the Choi states of the two branches are related by \(\overline P^{\mathsf T}\) acting on the reference. A common terminal recovery \(\mathcal R\) acts on the physical output and commutes with this reference operation. If \(\sigma\) is the recovered Choi state of the first branch, the conditional entanglement fidelities are its overlaps with
+\[
+ |\Phi\rangle,\qquad
+ \bigl((\overline P^{\mathsf T})^\dagger\otimes\id\bigr)|\Phi\rangle.
+\]
+These vectors are orthogonal by \(\tr\overline P=0\). Their fidelities therefore sum to at most one. The sum of the two conditional infidelities is at least one, so their contribution to the total infidelity is at least \(\min(a,b)\). This holds for each recovery, including one chosen as a function of the noise strength.
+\end{proof}
+
+\begin{proposition}[Sharpness of the lower exponent]
+\label{prop:lower-saturation}
+Let \(d,\rho,h\) be integers with \(d\ge2\), \(\rho\ge2\), and \(h\ge1\). Set
+\begin{equation}\label{em:lower-parameters}
+ s=\left\lceil\frac{d}{\rho^h+\rho}\right\rceil,\qquad
+ N=s(\rho^h+\rho).
+\end{equation}
+There is an \([[Nd,1,d]]\) stabilizer subspace code and a depth-\(h\) circuit on its original qubits for which
+\(\epsilon_{\rm L}^{\rm opt}(p)=\Theta(p^s)\) under the independent native-gate Pauli noise of Eq.~\eqref{eq:discussion-fixed-code-exponent}. Consequently this code has \(m_{\rm pc}(\mathcal C;\rho,h)=s\).
+\end{proposition}
+
+\begin{proof}
+\emph{Code and row transformations.}
+Use a rectangular Shor code on \(N\) rows and \(d\) columns~\cite{BaconCasaccino}. Write \(X_{ij},Z_{ij}\) for single-qubit Paulis at row \(i\), column \(j\), and let \(R_i=\prod_{j=1}^d Z_{ij}\). The stabilizer generators are
+\begin{align}
+ X_{ij}X_{i,j+1}
+ &\quad (1\le i\le N,\ 1\le j<d),\nonumber\\
+ R_iR_{i+1}
+ &\quad (1\le i<N).
+ \label{em:lower-stabilizers}
+\end{align}
+Each \(X\) pair overlaps a full row in zero or two positions. The generators therefore commute. The \(X\) generators span the even masks independently in each row, giving rank \(N(d-1)\). The \(Z\) generators span the masks on even numbers of full rows, giving rank \(N-1\). All signs are positive and the total rank is \(Nd-1\), so the code encodes one qubit.
+
+Write a Pauli modulo phase as \(X(x)Z(z)\) with binary masks \(x,z\) on the rectangle. It centralizes the stabilizer precisely when \(z\) is constant in each row and the parities of \(x\) across the columns are equal in all rows. Such a Pauli is a stabilizer precisely when its common \(X\)-parity bit is zero and it has an even number of full \(Z\) rows. A nontrivial common \(X\)-parity bit requires support in every row, giving weight at least \(N\). An odd number of full \(Z\) rows requires weight at least \(d\). The Pauli \(R_1\) attains weight \(d\) and
+\begin{equation}\label{em:lower-logical-X}
+ P=\prod_{i=1}^N X_{i1}
+\end{equation}
+is the nontrivial logical \(X\). Since \(N\ge d\), the distance is \(d\).
+
+We will apply the same binary linear row transformation \(\Lambda\) in each column. Its reversible computational-basis action on a column is \(|x\rangle\mapsto|\Lambda x\rangle\). If \(\Lambda\mathbf 1=\mathbf 1\), where \(\mathbf 1\) is the all-ones row vector viewed as a column, this action preserves the stabilizer. Indeed, the sum over columns of an \(X\) mask transforms by \(\Lambda\), preserving the zero sum. A \(Z\) stabilizer has identical even-parity masks in all columns. Their common mask transforms by \(\Lambda^{-\mathsf T}\), which preserves even parity because \(\Lambda^{-1}\mathbf 1=\mathbf 1\). The computational-basis permutation conjugates the pure \(X\) and \(Z\) generators with positive signs. It also fixes the logical zero state, the normalized uniform sum of the bit strings in the \(X\)-stabilizer space. These strings are permuted by the row transformation. It commutes with \(P\) in Eq.~\eqref{em:lower-logical-X}, so it fixes the logical one state as well.
+
+\emph{Circuit for \(h\ge2\).}
+Within each column, divide the \(N\) rows into \(s\) groups of \(\rho^h+\rho\) rows. Each group consists of \(\rho\) cells with \(K_{\rm cell}=\rho^{h-1}+1\) sites per cell. In each cell mark one site as a seed. Track the \(X\) mask \(A\) that is initially present just on the seeds and the \(X\) mask \(D\) that is initially present on all other sites. These masks serve to specify and verify the gates. The gates are applied unitarily on the whole register.
+
+The elementary operation used within a cell is one native \(\rho\)-site Clifford, consisting of CNOTs from a chosen site to the other \(\rho-1\) sites in its support. On binary \(X\) masks it maps the singleton at the chosen site to the full support and maps the full support back to that singleton. Thus one such gate expands a marked site into \(\rho-1\) unmarked sites, or compresses a full \(\rho\)-site mask onto its chosen site. A cyclic permutation of \(\rho\) sites is also one allowed native gate and preserves the full \(X\) mask on those sites.
+
+In layer \(1\), apply one cyclic permutation to the \(\rho\) seeds of each group. At the same time, in each cell partition its \(\rho^{h-1}\) sites of \(D\) into sets of size \(\rho\), and compress each set to one site. These gates have disjoint supports. At the end of the layer each cell has one site of \(A\) and \(\rho^{h-2}\) sites of \(D\).
+
+In each layer \(j=2,\ldots,h-1\), expand \(A\) from \(\rho^{j-2}\) sites to \(\rho^{j-1}\) sites in each cell, using only its current sites and sites outside the current union of \(A,D\). At the same time, partition the \(\rho^{h-j}\) current sites of \(D\) into sets of size \(\rho\) and compress them to \(\rho^{h-j-1}\) sites. The two operations use disjoint sites. The required sites for expansion exist because
+\[
+ \rho^{j-1}+\rho^{h-j}
+ \le 2\rho^{h-2}\le\rho^{h-1}<K_{\rm cell}.
+\]
+Here the first term counts all sites of the expanded \(A\) and the second counts the support used for compression of \(D\). Choose any ordering of available sites to assign the gates, using the same choices in every column. If \(h=2\), there are no layers in this range.
+
+At the start of layer \(h\), each cell has \(\rho^{h-2}\) sites of \(A\) and one remaining representative of \(D\). Expand \(A\) by a factor \(\rho\) onto all \(K_{\rm cell}-1\) sites other than that representative. Apply one cyclic permutation to the \(\rho\) representatives of \(D\) in each group. Again, the two operations have disjoint supports. The final masks \(A,D\) partition the entire group. They are the images of the corresponding initial masks under the linear row transformation. Their sum is the all-ones mask at both endpoints, so the implemented \(\Lambda\) satisfies \(\Lambda\mathbf 1=\mathbf 1\). The argument following Eq.~\eqref{em:lower-logical-X} shows that the depth-\(h\) circuit implements the logical identity exactly.
+
+Now restrict attention to the first column. In the first history, in each of its \(s\) row groups insert the full \(X\) mask on the seed permutation gate immediately after that gate in layer \(1\). All other locations are clean. The first layer preserves the initial \(A\) mask. The subsequent layers therefore propagate these faults to precisely the final \(A\) mask in that column. In the second history, insert the full \(X\) mask immediately after each of the \(s\) final permutation gates on the representatives of \(D\) in that column, with all other locations clean. The output error of this history is the final \(D\) mask. These two propagated output errors multiply to \(P\) in Eq.~\eqref{em:lower-logical-X}.
+
+\emph{Circuit for \(h=1\).}
+Here each row group has size \(2\rho\). Split it into two disjoint sets of \(\rho\) sites, and apply a native cyclic permutation on each set in each column. The induced row transformation preserves the all-ones mask and hence acts as the logical identity. In the first column, the first history faults all \(s\) permutation gates on the first sets by their full \(X\) masks. The second history faults the other \(s\) permutation gates by their full \(X\) masks. The resulting errors again multiply to \(P\). This construction also applies when \(s=1\).
+
+\emph{Optimal-recovery exponent.}
+Each of these histories contains exactly \(s\) faulty native locations, and every specified conditional Pauli has positive probability independent of \(p\). With \(N_{\rm loc}\) native locations in the circuit, the two history probabilities have the form \(\alpha p^s(1-p)^{N_{\rm loc}-s}\) and \(\beta p^s(1-p)^{N_{\rm loc}-s}\) for \(\alpha,\beta>0\). The histories are unflagged and their output errors differ by the same nontrivial logical Pauli \(P\). Lemma~\ref{lem:two-pauli-histories} gives an \(\Omega(p^s)\) lower bound for every terminal recovery. The universal bound in Eq.~\eqref{eq:discussion-noise-exponent} gives an \(O(p^s)\) upper bound on the optimal infidelity of this circuit. The lower bound in Eq.~\eqref{eq:discussion-fixed-code-exponent} applies to all other admissible circuits on this code, establishing the claimed equality for \(m_{\rm pc}\).
+\end{proof}
+
+
+\subsection*{Codes attaining the upper exponent bound}
+\label{em:upper-saturation}
+
+We construct CSS subspace codes for which every exact code-preserving circuit up to a prescribed depth implements a tensor product of Pauli operators on the full physical Hilbert space, up to a scalar phase. The gates in the circuit may be arbitrary native unitaries. Once the overall unitary has this product form, the smaller of the input and output light cones bounds the support of each fault in a common frame.
+
+For a binary subspace \(B\subseteq\mathbb F_2^n\), let \(\operatorname{dist}(B)\) denote its minimum nonzero Hamming weight. We use \(\operatorname{dist}(\{0\})=\infty\). For \(v\in\mathbb F_2^n\), write \(X(v)=\bigotimes_i X_i^{v_i}\) and \(Z(v)=\bigotimes_i Z_i^{v_i}\). Let \(H,J\subseteq\mathbb F_2^n\) be the binary \(X\)- and \(Z\)-check spaces, respectively, with \(J\subseteq H^\perp\). Write \(a=\dim H\), \(b=\dim J\), \(D=a+1\), and \(L=J^\perp\). The CSS code has orthonormal basis
+\begin{equation}\label{em:upper-css-basis}
+ |x+H\rangle=|H|^{-1/2}\sum_{y\in x+H}|y\rangle ,
+ \qquad x+H\in L/H .
+\end{equation}
+
+\begin{lemma}[Product form of shallow physical unitaries]
+\label{em:upper-rigidity}
+Let \(\rho\ge2\) and \(t\ge1\) be integers, and put \(R=\rho^t\). Suppose \(a\ge1\), \(a+b<n\), and that \(H,J\) have the following properties.
+\begin{enumerate}
+\item \(\operatorname{dist}(H^\perp)>R+1\) and
+  \(\operatorname{dist}(J^\perp)>RD\).
+\item \(\operatorname{dist}(J)>T\), where
+\begin{equation}\label{em:upper-deletion}
+ T=\max\{RD,(b+1)(R+1)+R\}.
+\end{equation}
+\item The identity is the only \(F\in\operatorname{GL}(n,\mathbb F_2)\) with row and column weights at most \(R\) and \(FH=H\).
+\item The zero matrix is the only symmetric binary matrix \(Q\) with row weights at most \(R+1\) and \(QH\subseteq J\).
+\end{enumerate}
+Then the total physical unitary of every exact code-preserving depth-at-most-\(t\) circuit of gates on at most \(\rho\) qubits is a product of single-qubit Pauli operators up to phase. The circuit acts on the original \(n\) qubits.
+\end{lemma}
+
+\begin{proof}
+Throughout the proof, conjugation by the circuit or its inverse expands the support of a one-site operator to at most \(R\) sites. A support of size \(u\) expands to at most \(Ru\) sites.
+
+\emph{The physical unitary is monomial.}
+Let \(\Pi\) be the code projector. A Pauli stabilizer with nonzero \(X\) mask has weight at least \(\operatorname{dist}(H)\), and a nonidentity pure \(Z\) stabilizer has weight at least \(\operatorname{dist}(J)\). Since \(H\subseteq L\), both distances exceed \(RD\). It follows that the maps \(P\Pi\), with \(P\) ranging over distinct phase-free Pauli strings supported on any set \(A\) of size at most \(RD\), are mutually orthogonal in the Hilbert--Schmidt inner product. Indeed, \(\operatorname{Tr}(\Pi P^\dagger P'\Pi)=\operatorname{Tr}(P^\dagger P'\Pi)\) vanishes unless \(P^\dagger P'\) is a stabilizer up to phase. For distinct \(P,P'\) the latter possibility is excluded by the support bound.
+
+For an operator supported on \(A\) that preserves the code, all Pauli coefficients outside the stabilizer centralizer therefore vanish. Such a Pauli takes the code into a nontrivial syndrome sector, so its restriction \(P\Pi\) is orthogonal to the restriction of the code-preserving operator. A centralizing Pauli has \(X\) mask in \(J^\perp\) and \(Z\) mask in \(H^\perp\). The distance of \(J^\perp\) thus forces every centralizing Pauli on \(A\) to be pure \(Z\).
+
+A basis of \(H^\perp\) can be chosen with each word of weight at most \(D\). To see this, write \(H^\perp\) as the nullspace of an \(a\)-row matrix whose rows form a basis of \(H\). Choose \(a\) independent columns. Each remaining column is a linear combination of these \(a\) columns, and its dependency gives one basis word. For each such word \(v\), \(UZ(v)U^\dagger\) preserves the code and is supported on at most \(RD\) sites, where \(U\) is the total physical unitary. It is a linear combination of the operators \(Z(w)\) with \(w\in H^\perp\), by the preceding paragraph. The algebra generated by the \(Z(v)\) for the chosen basis is the span of \(Z(H^\perp)\). Conjugation by \(U\) sends this algebra into itself and, by injectivity and finite dimension, onto itself.
+
+Every \(UZ(e_i)U^\dagger\) commutes with this algebra, since \(Z(e_i)\) did. The \(X\) masks in its Pauli expansion belong to \((H^\perp)^\perp=H\). The operator is supported on at most \(R\) sites, and \(\operatorname{dist}(H)>RD\) excludes a nonzero \(X\) mask there. Hence the conjugates of all single-qubit \(Z\) operators are diagonal. They generate the entire diagonal algebra, whose minimal projections are the computational-basis lines. Thus
+\begin{equation}\label{em:upper-monomial}
+ U|x\rangle=u(x)|f(x)\rangle
+\end{equation}
+for a permutation \(f\) of \(\mathbb F_2^n\) and a unit-modulus phase function \(u\).
+
+\emph{The permutation is a translation.}
+Each coordinate of \(f\) depends on at most \(R\) input coordinates, since \(U^\dagger Z(e_i)U\) is supported on at most \(R\) sites. Flipping one input coordinate changes at most \(R\) specified output coordinates for all inputs. Indeed, \(UX(e_i)U^\dagger\) maps the computational-basis line \(f(x)\) to \(f(x+e_i)\), and is supported on a set of size at most \(R\) independent of \(x\).
+
+By Eq.~\eqref{em:upper-css-basis} and code preservation, \(f\) maps each \(H\)-coset in \(L\) onto another \(H\)-coset in \(L\). The image of a coset state has exactly \(|H|\) nonzero computational-basis coefficients, and a code state has constant coefficients on each \(H\)-coset in \(L\). Therefore, for \(\alpha\in H\) and \(x\in L\),
+\[
+ f(x+\alpha)+f(x)\in H .
+\]
+For each basis word \(v\) of \(H^\perp\) of weight at most \(D\), the equation \(v\cdot(f(x+\alpha)+f(x))=0\) depends on at most \(RD\) input bits. The projection of \(L\) onto any set of at most \(RD\) coordinates is surjective. A failure of surjectivity would give a nonzero word of \(L^\perp=J\) supported on that set. Thus all these equations hold for every \(x\in\mathbb F_2^n\).
+
+Put \(\partial_i f(x)=f(x+e_i)+f(x)\), with addition over \(\mathbb F_2\). The difference \(\partial_i f(x+\alpha)+\partial_i f(x)\) belongs to \(H\) and has weight at most \(2R\). Since \(\operatorname{dist}(H)>RD\ge2R\), it vanishes. Each coordinate of \(\partial_i f\) therefore is \(H\)-translation invariant and depends on at most \(R\) coordinates. The projection of \(H\) onto those coordinates is surjective by \(\operatorname{dist}(H^\perp)>R+1\), so each such function is constant. Hence \(f(x)=Fx+c\), where invertibility of \(F\) follows from bijectivity of \(f\). Its row and column weights are at most \(R\), and the coset property gives \(FH=H\). Property 3 gives \(F=I\).
+
+\emph{The phase is a Pauli phase.}
+For a unit-modulus function \(w\), define \(\Delta_v w(x)=w(x+v)/w(x)\), and abbreviate \(\Delta_{e_i}\) by \(\Delta_i\). These multiplicative differences commute. The diagonal operator representing \(\Delta_i u\) is \(U^\dagger X(e_i)U X(e_i)\). The first factor has support at most \(R\) and contains site \(i\), because it flips bit \(i\) on every computational-basis line. Thus \(\Delta_i u\) depends on at most \(R\) bits. Define a graph with edge \(ij\), \(i\ne j\), when \(\Delta_i\Delta_j u\) is not identically one. Its maximum degree is at most \(R\). A nontrivial \(\Delta_i\Delta_j u\) depends on at most \(R\) coordinates, since in that case bit \(j\) is already among the variables of \(\Delta_i u\).
+
+For each \(\alpha\in H\), the function \(v_\alpha=\Delta_\alpha u\) equals one on \(L\) by the uniform coefficients in Eq.~\eqref{em:upper-css-basis} and \(f(x)=x+c\). Its graph is contained in that of \(u\). We next show that each \(\Delta_i\Delta_j v_\alpha\) is identically one. It suffices to consider an edge \(ij\) of the graph of \(u\).
+
+Let \(B_J\) be a \(b\times n\) binary matrix whose rows form a basis of \(J\). After deleting at most \(T\) columns, the remaining columns still span \(\mathbb F_2^b\), by the minimum weight of \(J\). Hence for any specified site \(i\) and set of at most \(T\) forbidden sites including \(i\), one can extend \(e_i\) to a word of \(L\) by adding at most \(b\) sites outside the forbidden set. Take \(z\in L\) by extending \(e_i\) and excluding \(i,j\) and all neighbors of \(j\) from the added sites. Take \(z'\in L\) by extending \(e_j\) and excluding \(j\), the support of \(z\), and all neighbors of that support from the added sites. The latter excluded set has size at most \(1+(b+1)(R+1)\le T\). The supports of \(z,z'\) are disjoint, and their only cross edge in the graph is \(ij\).
+
+To evaluate \(\Delta_z\Delta_{z'}v_\alpha\), order the support of \(z\) starting with \(i\) and that of \(z'\) starting with \(j\). Telescoping both differences expresses it as a product of \(\Delta_s\Delta_{s'}v_\alpha\) evaluated at translates of \(x\), one factor for each \(s\in\operatorname{supp}(z)\), \(s'\in\operatorname{supp}(z')\). The \(ij\) factor is evaluated at \(x\) itself. Every other factor is one by the absence of other cross edges. It follows that
+\[
+ \Delta_i\Delta_j v_\alpha(x)=\Delta_z\Delta_{z'}v_\alpha(x)=1
+ \qquad (x\in L),
+\]
+where the second equality uses \(z,z'\in L\). The left side is \(\Delta_\alpha\Delta_i\Delta_j u(x)\) and depends on at most \(R\) variables. Surjectivity of the projection of \(L\) onto those variables makes it one for all \(x\). Therefore \(\Delta_i\Delta_j u\) is \(H\)-translation invariant and, by surjectivity of the projection of \(H\) onto its variables, constant. Flipping bit \(i\) inverts this constant, so it is \(+1\) or \(-1\).
+
+Let \(Q_0\) be the symmetric matrix with zero diagonal whose \(ij\) entry for \(i\ne j\) is one exactly when that constant is \(-1\). Dividing \(u\) by the phase \((-1)^{\sum_{i<j}(Q_0)_{ij}x_i x_j}\) removes every mixed difference. Each single-coordinate difference of the quotient then depends on that coordinate alone, which gives, by telescoping from \(0\),
+\begin{equation}\label{em:upper-phase}
+ u(x)=u(0)\prod_i\eta_i^{x_i}
+          (-1)^{\sum_{i<j}(Q_0)_{ij}x_i x_j}
+\end{equation}
+for unit phases \(\eta_i\). In particular \(Q_0\) has row weights at most \(R\).
+
+For \(\alpha\in H\), Eq.~\eqref{em:upper-phase} gives
+\[
+ \begin{aligned}
+ v_\alpha(x)&=v_\alpha(0)\prod_i r_i(\alpha)^{x_i},\\
+ r_i(\alpha)&=\eta_i^{-2\alpha_i}(-1)^{(Q_0\alpha)_i}.
+ \end{aligned}
+\]
+We have \(v_\alpha(0)=1\). For each site \(i\), choose two words \(z,z'\in L\) whose supports intersect precisely at \(i\). The column-spanning argument gives the first by extending \(e_i\) with at most \(b\) other sites and the second by extending \(e_i\) outside the support of the first. Because \(v_\alpha=1\) on \(L\), comparing \(v_\alpha(z)v_\alpha(z')\) with \(v_\alpha(z+z')\) gives \(r_i(\alpha)^2=1\). Some \(\alpha\in H\) has \(\alpha_i=1\) by the distance of \(H^\perp\), so \(\eta_i^{-2}=(-1)^{q_i}\) for a binary digit \(q_i\). Consequently, for \(Q=Q_0+\operatorname{diag}(q_i)\), the constancy of \(v_\alpha\) on \(L\) is equivalent to \(Q\alpha\in L^\perp=J\). The symmetric matrix \(Q\) has row weights at most \(R+1\). Property 4 forces \(Q=0\), so \(Q_0=0\) and \(\eta_i\in\{+1,-1\}\). Equation~\eqref{em:upper-monomial} now has the asserted Pauli form.
+\end{proof}
+
+\begin{lemma}[Existence of the check spaces]
+\label{em:upper-existence}
+Fix \(\rho\ge2\), take \(R=\rho^t\), and set
+\begin{equation}\label{em:upper-parameters}
+ n=R^{12},\qquad d=R^2,\qquad a=R^4,\qquad b=R^6.
+\end{equation}
+For every sufficiently large integer \(t\), there are spaces \(H,J\) satisfying Lemma~\ref{em:upper-rigidity} with
+\[
+ \dim H=a,\qquad \dim J=b,\qquad
+ \operatorname{dist}(H^\perp)=d.
+\]
+\end{lemma}
+
+\begin{proof}
+All ranks and weights in this proof are binary. Choose \(p_0\in\mathbb F_2^n\) of weight \(d\). Sample the columns of an \(n\times a\) matrix \(G\) independently and uniformly in \(p_0^\perp\). Set \(H=\operatorname{im}G\) and condition on \(\dim H=a\) when sampling a uniform \(b\)-dimensional space \(J\subset H^\perp\). We show that the required conditions hold with probability tending to one as \(t\to\infty\).
+
+\emph{Dimensions and distances.}
+For \(y\ne0\) in \(\mathbb F_2^a\), \(Gy\) is uniform in \(p_0^\perp\). With \(D=a+1\), the probability that some such \(Gy\) has weight at most \(RD\), including zero, is at most
+\[
+ 2^{a-n+1}\sum_{j=0}^{RD}\binom nj=o(1).
+\]
+Thus \(G\) has full column rank and \(\operatorname{dist}(H)>RD\) except on a set of probability \(o(1)\). For every nonzero \(v\ne p_0\), the condition \(G^\top v=0\) has probability \(2^{-a}\), since \(v\) defines a nonzero linear functional on \(p_0^\perp\). The probability of such a word of weight at most \(d\) is at most \(2^{-a}\sum_{j=1}^{d}\binom nj=o(1)\). Since \(p_0\) belongs to \(H^\perp\) by construction, we obtain \(\operatorname{dist}(H^\perp)=d\).
+
+For full-rank \(G\), write \(N=n-a=\dim H^\perp\). A specified nonzero word in \(H^\perp\) belongs to the uniform \(b\)-space \(J\) with probability \((2^b-1)/(2^N-1)\le2^{b-N+1}\). Therefore the probability of a word of \(J\) of weight between one and \(T\) is at most \(2^{b-N+1}\sum_{j=1}^{T}\binom nj=o(1)\), with \(T\) given by Eq.~\eqref{em:upper-deletion}. Now fix a nonzero \(v\) of weight at most \(RD\). On the event \(\operatorname{dist}(H)>RD\), \(v\notin H\). The equation \(v\cdot w=0\) cuts a hyperplane in \(H^\perp\), so \(v\in J^\perp\) precisely if \(J\) lies in that hyperplane. Sampling an ordered basis for \(J\) gives probability
+\[
+ \prod_{j=0}^{b-1}\frac{2^{N-1}-2^j}{2^N-2^j}
+ \le 2^{-b}.
+\]
+Thus \(\operatorname{dist}(J^\perp)>RD\) fails with probability at most \(2^{-b}\sum_{j=1}^{RD}\binom nj=o(1)\) on this event. Each asymptotic follows from \(a=R^4\), \(b=R^6\), \(RD=O(R^5)\), \(T=O(R^7)\), and \(\log_2 n=12\log_2 R\).
+
+\emph{Exclusion of sparse linear automorphisms.}
+Consider a nonidentity \(F\in\operatorname{GL}(n,\mathbb F_2)\) with row and column weights at most \(R\). If \(FH=H\) and \(G\) has full column rank, then \(FG=GS\) for some \(S\in\operatorname{GL}(a,\mathbb F_2)\). If \(S=I\), a nonzero row of \(F-I\) belongs to \(H^\perp\) and has weight at most \(R+1<d\). It remains to exclude \(S\ne I\).
+
+For the probability bound, first let \(G\) be an unrestricted uniform binary matrix, with rows \(g_i\). Let \(u\) be the number of rows in which \(F\) differs from \(I\). At each unchanged row, \(g_i=g_iS\) has probability at most \(1/2\) for \(S\ne I\), independently across those rows. This gives a bound \(2^{-(n-u)}\). Every changed row \(i\) has an off-diagonal entry \(F_{ij}=1\), since \(F\) is invertible and a row supported only at \(i\) would be unchanged. The row equation involves at most \(R+1\) variables \(g_j\), counting \(g_i\), and includes an off-diagonal variable with coefficient one. For uniform independent \(g_j\), its probability is \(2^{-a}\). Any variable occurs in at most \(R+1\) row equations, counting the equation with its own row index. A greedy selection of equations whose variable sets are pairwise disjoint retains at least \(u/(R+1)^2\) equations, because each retained set intersects at most \((R+1)^2\) sets, including itself. The selected equations are independent. Their probability bound is \(2^{-au/(R+1)^2}\).
+
+The minimum of the two bounds is at most their geometric mean. Conditioning on \(G^\top p_0=0\) costs a factor \(2^a\), since this event has probability \(2^{-a}\) under the unrestricted distribution. The number of choices of \(F\) with \(u\) changed rows is at most \(n^{(R+3)u}\). This bound counts the set of changed rows and, for each, the choice of at most \(R\) column positions. There are at most \(2^{a^2}\) choices of \(S\). Thus the probability that some such \(F,S\ne I\) obey \(FG=GS\) is at most
+\begin{multline}\label{em:upper-sparse-linear-count}
+ 2^{a+a^2-n/2}\sum_{u=1}^{n}2^{uB_R},\\
+ B_R=(R+3)\log_2 n+\frac12
+             -\frac{a}{2(R+1)^2}.
+\end{multline}
+Here \(B_R\to-\infty\) and \(a+a^2=o(n)\), so the bound tends to zero. Together with the dual distance condition, this gives property 3 of Lemma~\ref{em:upper-rigidity}.
+
+\emph{Exclusion of sparse symmetric matrices.}
+Write \(K_0=R+1\) for the row weight bound on \(Q\). For each nonzero symmetric \(Q\), let \(u\) be its number of nonzero rows. Symmetry makes the number of nonzero columns \(u\) as well. Any row basis has a union of supports containing every nonzero column, so \(\operatorname{rank}Q\ge u/K_0\). Let \(r\) be the rank of the restriction of \(Q\) to \(p_0^\perp\). Passing to this hyperplane lowers the rank by at most one. The restriction is nonzero, because if it vanished every nonzero row of \(Q\) would equal \(p_0\), of weight \(d>K_0\). These two facts give \(r\ge u/(2K_0)\).
+
+Under the sampling of \(G\), \(QG\) has independent uniform columns in the \(r\)-dimensional image \(Q(p_0^\perp)\). The probability that its rank is less than \(\min(r,a)/2\) is at most \(4\cdot2^{-ra/4}\). In fact, for \(s=\lfloor\min(r,a)/2\rfloor\), every such matrix has column span contained in an \(s\)-dimensional subspace. The number of \(s\)-subspaces of an \(r\)-space is at most \(4\cdot2^{s(r-s)}\), by the product formula for the Gaussian binomial and \(\prod_{j\ge1}(1-2^{-j})>1/4\). The latter inequality follows from the first three factors and \(\prod_{j\ge4}(1-2^{-j})\ge1-\sum_{j\ge4}2^{-j}=7/8\). For each \(s\)-space the probability all \(a\) columns lie in it is \(2^{-(r-s)a}\). The resulting exponent is \(-(r-s)(a-s)\le-ra/4\).
+
+On the remaining event with \(\dim H=a\), set \(s'=\dim(QH)\ge\min(r,a)/2\). If \(QH\) lies outside \(H^\perp\) or \(s'>b\), containment in \(J\) is impossible. Otherwise the probability that the uniform \(J\) contains \(QH\), conditional on \(G\), is
+\[
+ \prod_{j=0}^{s'-1}\frac{2^b-2^j}{2^N-2^j}
+ \le 2^{-(N-b)s'}
+ \le 2^{-ra/5}
+\]
+for all sufficiently large \(t\). The product follows by counting ordered independent \(s'\)-tuples in a \(b\)-space and in the full \(N\)-space. The last inequality uses \(N-b\ge2n/5\), \(r,a\le n\), and \(n\min(r,a)\ge ra\). For given \(u\), the number of possible \(Q\) is at most \(n^{(K_0+3)u}\), by choosing the nonzero rows and their at most \(K_0\) positions. The two probability bounds, summed over all \(Q\), are at most
+\[
+ 5\sum_{u=1}^n
+ 2^{u[(K_0+3)\log_2 n-a/(10K_0)]}=o(1).
+\]
+This excludes every nonzero \(Q\) with \(QH\subseteq J\) on the full-rank event. The dimension, distance, and two matrix conditions hold simultaneously with positive probability for all sufficiently large \(t\).
+\end{proof}
+
+\begin{proposition}[Sharpness of the upper exponent bound]
+\label{prop:upper-saturation}
+For each \(\rho\ge2\) and all sufficiently large integers \(t\), there is an
+\[
+ [[R^{12},\,R^{12}-R^4-R^6,\,R^2]]
+\]
+CSS subspace code \(\mathcal C_t\), where \(R=\rho^t\), for which the exponent of Eq.~\eqref{eq:discussion-fixed-code-exponent} satisfies
+\begin{equation}\label{em:upper-sharpness}
+ m_{\rm pc}(\mathcal C_t;\rho,\ell)
+ =\left\lceil\frac{R^2}{2\rho^{\lceil\ell/2\rceil}}\right\rceil
+ =m_+(\ell),\qquad 1\le\ell\le t .
+\end{equation}
+Here the minimum over exact code-preserving circuits permits arbitrary native unitaries of arity at most \(\rho\) on the code's original physical qubits, with the independent Pauli noise and ideal terminal recovery of the main text.
+\end{proposition}
+
+\begin{proof}
+Take \(H,J\) from Lemma~\ref{em:upper-existence}. The number of encoded qubits is \(n-a-b\). The \(X\) mask of a centralizing Pauli lies in \(J^\perp\), and if nonzero has weight greater than \(RD\ge d\). The \(Z\) mask lies in \(H^\perp\), whose minimum weight is \(d\). A word of weight \(d\) in \(H^\perp\) is outside \(J\), since \(\operatorname{dist}(J)>RD\ge d\), and therefore supplies a nontrivial logical Pauli. The actual distance is \(d\).
+
+Let \(U\) be the total physical unitary of an exact circuit of depth at most \(\ell\). By Lemma~\ref{em:upper-rigidity}, \(U\) is an on-site Pauli product up to phase, so conjugating by it preserves every support. For a fault after a gate in layer \(j\), the error propagated to the output has support size at most \(\rho^{\ell-j+1}\), and its pullback through \(U\) has support size at most \(\rho^j\). The product form puts both bounds on the output error, giving support size at most \(\rho^{\lceil\ell/2\rceil}\). A history of at most \(s\) faults thus produces an output error supported on at most \(s\rho^{\lceil\ell/2\rceil}\) sites. Every product of one such error's adjoint with another such error has support size at most \(2s\rho^{\lceil\ell/2\rceil}\). When this is less than \(d\), the Knill--Laflamme conditions hold for the whole set of histories, including the no-fault history. An ideal common recovery corrects all of them. At fixed circuit size, the probability of more than \(s\) faults is \(O(p^{s+1})\), so this gives an exponent of at least
+\[
+ 1+\left\lfloor\frac{d-1}{2\rho^{\lceil\ell/2\rceil}}\right\rfloor
+ =m_+(\ell).
+\]
+The compression and reverse-compression circuit in the proof of Eq.~\eqref{eq:discussion-fixed-code-exponent} gives an exponent at most \(m_+(\ell)\) on \(\mathcal C_t\), using its weight-\(d\) logical Pauli. This proves Eq.~\eqref{em:upper-sharpness}.
+\end{proof}
+
+At \(\ell=t\), the lower bound in Eq.~\eqref{eq:discussion-fixed-code-exponent} is \(\lceil R^2/(R+\rho)\rceil=R-\rho+1\) for \(R+\rho>\rho^2\), whereas Eq.~\eqref{em:upper-sharpness} is \(\Theta_\rho(R^{3/2})\). Thus \(m_{\rm pc}=m_+>m_-\) at growing depth \(t=\tfrac12\log_\rho d\), with \(d\to\infty\).
+
+The probabilistic argument also gives a finite exhaustive selection procedure. For each parameter choice in Eq.~\eqref{em:upper-parameters}, enumerate pairs of binary row-reduced bases of dimensions \(a\) and \(b\). Check \(J\subseteq H^\perp\), \(p_0\in H^\perp\), the stated minimum weights, and the two matrix exclusion conditions by enumerating the indicated sparse matrices. Retain the first pair passing all tests in a fixed lexicographic order. Lemma~\ref{em:upper-existence} guarantees that a pair passes for every sufficiently large \(t\). This procedure selects the code without testing any continuous family of physical circuits.
+
+
+\subsection*{Constructive exact logical synthesis}
+
+Finiteness of the logical image at a given depth is compatible with dense generation by a finite alphabet. A sequence of shallow exact logical gates can approximate an arbitrary target when the generated subgroup is dense, as illustrated by constructions using nonlocal permutations~\cite{ZhuLavasaniBarkeshli}. Exact universal generation by finite words requires an uncountable alphabet. Approximate encodings and implementations~\cite{Faist,WoodsAlhambra,KubicaDemkowicz,ZhouLiuJiang,LiuZhou}, as well as state distillation, lattice surgery, and gauge fixing~\cite{BravyiKitaev,Horsman,PaetznickReichardt,BombinGauge,Webster}, change the assumptions of the unitary model considered here.
+
+\textit{A constructive upper bound for stabilizer codes.}---For an \([[n,k,d]]\) stabilizer subspace code, choose a logical Pauli frame \(\{\overline X_i,\overline Z_i\}_{i=1}^k\) and a connected tree \(T\) on the \(k\) logical qubits; the edge set is empty for \(k=1\). For each logical direction in
+\begin{equation}\label{eq:logical-frame-set}
+ \mathcal F_T=
+ \{\overline X_i,\overline Z_i:1\le i\le k\}
+ \cup\{\overline Z_i\overline Z_j:ij\in E(T)\},
+\end{equation}
+select a Hermitian physical Pauli representative \(P_A\) with logical action \(A\), and put
+\begin{equation}\label{eq:frame-weight}
+ D=\max_{A\in\mathcal F_T}\operatorname{wt}(P_A).
+\end{equation}
+An edge representative may be chosen independently in its stabilizer coset; it need not be the literal product of the two selected \(Z\) representatives. Minimum-weight choices give a tighter bound, but are not required for the construction.
+
+\begin{proposition}[Exact universal generator bound]\label{prop:exact-upper}
+For the stabilizer subspace code and Pauli frame specified above,
+\begin{align}
+ 2\lceil\log_\rho d\rceil-1
+ &\le h_{\mathrm{exact}}(\mathcal C,\rho)\nonumber\\
+ &\le 2\lceil\log_\rho D\rceil-1
+ \le 2\lceil\log_\rho n\rceil-1.
+ \label{eq:exact-upper}
+\end{align}
+More explicitly, all rotations \(e^{itA}\), for \(A\in\mathcal F_T\) and \(t\in\mathbb R\), have physical implementations of depth at most \(2\lceil\log_\rho D\rceil-1\), and finite products of these rotations exactly realize every projective logical unitary.
+\end{proposition}
+
+\begin{proof}
+Every selected direction is a nontrivial logical Pauli, so \(2\le d\le\operatorname{wt}(P_A)\le D\le n\). Apply the compression tree in the proof of Theorem~\ref{cor:critical} to \(P_A\), replacing \(d\) by \(w=\operatorname{wt}(P_A)\). A Clifford circuit \(C_A\) of depth \(\lceil\log_\rho w\rceil-1\) maps \(P_A\) to a Pauli \(Q_A\) of weight at most \(\rho\). Consequently,
+\[
+ C_A^\dagger e^{itQ_A}C_A=e^{itP_A}
+\]
+is an exact logical implementation of \(e^{itA}\) of the claimed depth, for every real \(t\).
+
+Rotations about \(\overline X_i\) and \(\overline Z_i\) give every single-logical-qubit unitary up to phase by the exact Euler decomposition. For a tree edge \(ij\),
+\begin{align}
+ \overline{\mathrm{CZ}}_{ij}
+ ={}&e^{i\pi/4}
+ e^{-i\pi\overline Z_i/4}
+ e^{-i\pi\overline Z_j/4}
+ e^{i\pi\overline Z_i\overline Z_j/4}.
+ \label{eq:exact-cz}
+\end{align}
+Conjugating by a Hadamard on the target gives logical CNOT. Three CNOTs implement SWAP, so routing along the connected tree gives CNOT between any pair of logical qubits, with every routing permutation undone afterward. All single-qubit unitaries and CNOT exactly generate every finite-qubit unitary~\cite{Barenco,Shende}; a direct finite synthesis procedure is detailed below. Thus the displayed parameterized rotation families generate \(\PU(2^k)\) exactly. The lower bound follows because \(h_{\mathrm{exact}}\ge h_\infty\) and Theorem~\ref{cor:critical} determines \(h_\infty\).
+\end{proof}
+
+The following procedure makes the upper bound constructive, including the dependence on an arbitrary target matrix \(W\in\UU(2^k)\). Its purpose is exact synthesis; it does not assert an efficient gate count or that the complete circuit has the generator depth in Eq.~\eqref{eq:exact-upper}.
+\begin{enumerate}
+\item Obtain a logical Pauli frame by binary symplectic elimination of the stabilizer check matrix. Express the target matrix \(W\) in the computational basis defined by that frame, applying a basis change if the input encoding uses different logical coordinates. Choose a logical tree and representatives for Eq.~\eqref{eq:logical-frame-set}. If minimum weights are desired, enumerate the finite stabilizer coset of each representative and choose one of smallest support. Construct and retain each compression circuit \(C_A\).
+\item Perform exact Givens elimination on \(W\), working column by column. In each column, use the diagonal pivot row and rows below it to eliminate entries below the diagonal, preserving zeros in previous columns. If the selected column entries are \(a,b\) and \(r=(|a|^2+|b|^2)^{1/2}>0\), the block
+\[
+ \frac1r\begin{pmatrix}a^*&b^*\\-b&a\end{pmatrix}
+\]
+maps \((a,b)^\mathsf T\) to \((r,0)^\mathsf T\); skip a pair when \(r=0\). A triangular unitary is diagonal, so at most \(2^k(2^k-1)/2\) such eliminations leave only basis-state phases. Reverse the eliminations to express \(W\) exactly as a finite product.
+\item Compile each two-level factor as follows. Choose a simple Gray path \(s_0,\ldots,s_\ell\) between its two basis strings. Execute the adjacent basis-state transpositions \((s_\ell\ s_{\ell-1}),\ldots,(s_2\ s_1)\), taking the empty sequence if \(\ell=1\). This permutation fixes \(s_0\) and moves \(s_\ell\) to its neighbor \(s_1\). Conjugation by the permutation turns the factor into a single-qubit unitary conditioned on specified values of all other bits; undo the permutation after that gate. Decompose the conditional unitary into a phase and three Euler rotations. For a control pattern \(y\) on a set \(B\), its projector is
+\begin{equation}\label{eq:control-projector}
+ \Pi_y=2^{-|B|}\prod_{j\in B}
+        \bigl(\id+(-1)^{y_j}\overline Z_j\bigr).
+\end{equation}
+For \(A=\overline X_t\) or \(\overline Z_t\) on the target outside \(B\), the controlled rotation is \(e^{it\Pi_y A}\). Expanding the product in Eq.~\eqref{eq:control-projector} expresses \(\Pi_y A\) as a sum of mutually commuting Pauli strings, hence its exponential is exactly the finite product of their rotations. Conditional phases \(e^{i\alpha\Pi_y}\) are handled by the same expansion. The adjacent transpositions are controlled \(X\) gates and use
+\[
+ (\id-\Pi_y)+\Pi_y\overline X_t
+   =e^{i\pi\Pi_y/2}e^{-i\pi\Pi_y\overline X_t/2}.
+\]
+The final diagonal phases use Eq.~\eqref{eq:control-projector} with all logical bits in \(B\). Thus the phase of a two-level block is retained even when it is relative to the other basis states.
+\item Implement each resulting logical Pauli rotation by single-qubit Clifford basis changes and CNOT parity computation, a one-qubit \(Z\) rotation, and the inverse parity computation and basis changes. Route the CNOTs along \(T\), and replace them using Eq.~\eqref{eq:exact-cz}; replace each local Clifford by Euler rotations. Finally replace each rotation about a member of \(\mathcal F_T\) by its stored physical compression circuit. Every resulting primitive has depth at most \(2\lceil\log_\rho D\rceil-1\), preserves the same code, and acts exactly as prescribed.
+\end{enumerate}
+All steps use exact matrix identities and real-valued gate parameters. No limiting product, approximation tolerance, ancillary qubit, measurement, or code change is used. A global scalar may be omitted in \(\PU(2^k)\); if required in \(\UU(2^k)\), it can be restored by a scalar phase on any physical gate. If the expanded word has \(r\) primitives, serial execution gives total depth at most \(r(2\lceil\log_\rho D\rceil-1)\).
+
+\subsection*{Rectangular Bacon--Shor subsystem codes}
+
+Consider the Bacon--Shor subsystem code \(\mathcal B_{m,b}\) on an \(m\times b\) rectangle, with \(2\le m\le b\). Its gauge generators are horizontal \(XX\) pairs and vertical \(ZZ\) pairs on adjacent sites~\cite{Bacon,BaconCasaccino}. In the standard subsystem identification, a bare logical Pauli acts on the protected factor with the identity on \(\HH_G\). We write \(d_{\mathrm{bare}}\) for the minimum weight of a nontrivial bare logical Pauli.
+
+\begin{samepage}
+\begin{proposition}\label{prop:bacon-shor-saturation}
+For \(\mathcal B_{m,b}\), \(d=d_{\mathrm{bare}}=m\), and for every \(\rho\ge2\),
+\begin{align}
+ h_\infty &= 2\lceil\log_\rho m\rceil-1,
+ \label{eq:bacon-shor-onset}\\
+ \max\{h_\infty,\lceil\log_\rho(b/m)\rceil\}
+ &\le h_{\mathrm{exact}}
+ \le 2\lceil\log_\rho b\rceil-1.
+ \label{eq:bacon-shor-exact-bounds}
+\end{align}
+In particular, \(h_{\mathrm{exact}}=h_\infty\) whenever
+\begin{equation}\label{eq:bacon-shor-saturation}
+ m\le b\le \rho^{\lceil\log_\rho m\rceil}.
+\end{equation}
+\end{proposition}
+\end{samepage}
+
+\begin{proof}
+Working modulo phases, the \(X\) gauge masks have even parity on each row and the \(Z\) gauge masks have even parity on each column. Their dimensions are \(m(b-1)\) and \(b(m-1)\), respectively. The center is generated by \(X\) on pairs of adjacent full columns and \(Z\) on pairs of adjacent full rows, of total rank \(m+b-2\). Subtracting this rank from the gauge rank and dividing by two gives \((m-1)(b-1)\) gauge qubits and leaves one protected qubit. Thus the code parameters are \([[mb,1,(m-1)(b-1),m]]\) once the distance is established.
+
+A Pauli commuting with the stabilizer has a common \(X\) parity across all rows and a common \(Z\) parity across all columns. These two bits label the dressed logical Pauli classes because their common kernel is the gauge group. A nontrivial dressed class has an odd parity in every row or in every column, which requires weight at least \(m\) or \(b\), respectively. A full \(X\) column has weight \(m\) and realizes the first class. On a support of size less than \(m\), a Pauli either has nonzero syndrome and compresses to zero, or acts only on the gauge factor. Pauli expansion gives Eq.~\eqref{eq:correctable} with \(d=m\), and the full column proves that the distance is attained.
+
+For a bare representative, commuting with the vertical \(ZZ\) gauge pairs makes the \(X\) mask constant down each column. Commuting with the horizontal \(XX\) pairs makes the \(Z\) mask constant across each row. A nontrivial bare \(X\) representative therefore requires at least one full column and a nontrivial bare \(Z\) representative at least one full row. Their minimum weights are \(m\) and \(b\). A bare representative of the mixed axis contains at least one full row, so its weight is at least \(b\). This proves \(d_{\mathrm{bare}}=m\). Equation~\eqref{eq:critical-lower}, using the dressed distance \(m\), gives \(h_\infty\ge 2\lceil\log_\rho m\rceil-1\).
+
+Applying Eq.~\eqref{eq:pauli-family} to the two bare axes realizes their arbitrary-angle rotations at depths \(2\lceil\log_\rho m\rceil-1\) and \(2\lceil\log_\rho b\rceil-1\). For either bare representative, \(PV=V(\overline P\otimes\id_G)\), so the physical rotation acts as \(e^{it\overline P}\otimes\id_G\) on the encoding. The shorter \(X\) rotation gives the matching onset upper bound in Eq.~\eqref{eq:bacon-shor-onset}. Euler decomposition into rotations about the two axes gives every projective logical one-qubit gate as a finite word. This proves the upper bound in Eq.~\eqref{eq:bacon-shor-exact-bounds} and gives equality with \(h_\infty\) under Eq.~\eqref{eq:bacon-shor-saturation}.
+
+For the additional lower bound, use the normalized gauge trace
+\begin{equation}\label{eq:gauge-trace}
+ \Gamma(O)=g^{-1}\operatorname{Tr}_G(V^\dagger OV).
+\end{equation}
+Gauge conjugation leaves \(\Gamma\) invariant. Thus a Pauli anticommuting with any gauge Pauli contributes zero, and a Pauli commuting with every gauge Pauli contributes its bare action. Let \(P_X\) be the bare \(X\) column and \(U\) an exact logical circuit of depth at most \(h\). The support of \(UP_XU^\dagger\) has size at most \(m\rho^h\). If \(m\rho^h<b\), its Pauli expansion can contribute only the identity and the bare \(X\) axis to \(\Gamma\). Equation~\eqref{eq:encoded} then gives
+\[
+ W\overline X W^\dagger
+ =\Gamma(UP_XU^\dagger)\in
+ \operatorname{span}_{\mathbb C}\{\id_L,\overline X\}.
+\]
+Tracelessness and spectrum \(\{+1,-1\}\) force \(W\overline XW^\dagger=\pm\overline X\). Every such generator preserves the \(\overline X\) axis, and so does every word in these generators. Their group is contained in the proper normalizer of this axis. Thus exact universal generation requires \(m\rho^h\ge b\), proving the remaining lower bound.
+\end{proof}
+
+For each fixed \(\rho\ge2\), the nonsquare rectangles \(m=\rho^j+1\) and \(b=\rho^{j+1}\), with \(j\ge1\), satisfy Eq.~\eqref{eq:bacon-shor-saturation} and have \(h_{\mathrm{exact}}=h_\infty=2j+1\). At fixed \(m\) and \(\rho\), taking \(b>m\rho^{h_\infty}\) makes the inequality \(h_{\mathrm{exact}}>h_\infty\) strict.
+
+\subsection*{The 37-qubit CSS code of Dua et al.}
+
+Dua \emph{et al.}~\cite[Sec.~V and App.~B]{Dua} construct the \([[37,1,7]]\) CSS code \(Q_{37}\), denoted \texttt{lift:ghz37}. At gate range \(\rho=3\), two gate partitions provide depth-one implementations of \(\overline T^\dagger\) and \(\sqrt{\overline X}^{\,\dagger}\).
+
+\begin{proposition}\label{prop:dua-example}
+For \(Q_{37}\) at \(\rho=3\),
+\begin{equation}\label{eq:dua-thresholds}
+ h_{\mathrm{dense}}=1,\qquad h_\infty=h_{\mathrm{exact}}=3.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+In the logical \(Z\) basis, choose \(D=\operatorname{diag}(1,e^{-i\pi/4})\) and \(B=e^{i\pi\overline X/4}\) as representatives of the two depth-one classes. Since \(D^2=\operatorname{diag}(1,-i)\), direct multiplication gives
+\begin{equation}\label{eq:dua-hadamard}
+ \overline H=D^2BD^2,\qquad \overline T=D^7 .
+\end{equation}
+Their finite words include the usual \(H,T\) pair, which generates a dense subgroup~\cite{Boykin}. Equation~\eqref{eq:dua-hadamard} writes \(\overline H\) as a word of five depth-one factors. This establishes \(h_{\mathrm{dense}}=1\).
+
+Theorem~\ref{cor:critical} gives \(h_\infty=3\le h_{\mathrm{exact}}\). To attain this lower bound, take the logical representative \(P_Z=Z_1Z_8Z_9Z_{16}Z_{17}Z_{30}Z_{31}\) of Ref.~\cite[App.~B.1, Eq.~(33)]{Dua}. One physical layer \(C_Z\) compresses its factors on the disjoint groups \(\{1,16,17\}\), \(\{8,30\}\), and \(\{9,31\}\). In the first group the single three-qubit Clifford is the product of the CNOTs \(16\to1\) and \(17\to1\). The other groups use CNOTs \(30\to8\) and \(31\to9\), respectively. Hence \(C_ZP_ZC_Z^\dagger=Z_1Z_8Z_9\). A middle rotation about that product followed by \(C_Z^\dagger\) implements \(e^{it\overline Z}\) exactly in three layers.
+
+Since \(\overline H\) is a word in the depth-one gates, conjugating the depth-three \(Z\) rotation by this word gives \(e^{it\overline X}\) in the group generated by \(\mathcal L_{\le3}(\mathcal C,\rho)\). The two continuous axes give an exact Euler decomposition of every projective logical qubit gate. Consequently \(h_{\mathrm{exact}}\le3\), which proves Eq.~\eqref{eq:dua-thresholds}.
+\end{proof}
+
+\end{document}

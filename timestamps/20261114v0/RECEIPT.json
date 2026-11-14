@@ -1,0 +1,19 @@
+{
+  "file": "manuscript/20261114v0.tex",
+  "bytes": 115166,
+  "sha256": "de0a9890b6bec7eb82bf55f8467339538e799b064ecc2a19b695f41d4236c975",
+  "tsa": "http://timestamp.digicert.com",
+  "genTime_utc": "2026-11-14T07:58:18Z",
+  "policy_oid": "2.16.840.1.114412.7.1",
+  "serial_hex": "68699E680E7D0A2DC9BD5CD94063BC7D",
+  "nonce_hex": "5E20E90FAA4108FB",
+  "status": "Granted",
+  "request_sha256": "831099f094675f73da5a78b4108f55d07e53785a5ce8b564a717e1dfc627a7c2",
+  "response_sha256": "c815e5b3dbe961494675d49d398312bd8bb4408848633263c452c7b1d1cd55a2",
+  "root_der_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+  "signer_eku": "critical id-kp-timeStamping",
+  "verified_utc": "2026-11-14T08:03:10.5541229Z",
+  "openssl_request_verification": "OK",
+  "openssl_file_verification": "OK",
+  "revocation_check": "CA-signed CRLs valid at generation time and verification time. OpenSSL verify -purpose timestampsign -crl_check_all passed at both times."
+}
