@@ -1,0 +1,208 @@
+{
+  "source_commit": "215fa045ed87099011f7cb1934b54ed5b5b63b8f",
+  "manuscript_sha256": "8526b900d71edba946cae84dfbafb12062bbdd2fb98cde447165116b2e03e8ba",
+  "lean_version": "4.35.0",
+  "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "mathlib_commit": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "audit": {
+    "modules": 26,
+    "declarations": 678,
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "run": "check-31"
+  },
+  "modules": [
+    {
+      "module": "OrthogonalRecovery",
+      "sha256": "b9492c1f95bb66e3ebcc2a3a5d639465d1ef13724891f574b369de16b9263310",
+      "run": "check-02",
+      "exit_code": 0,
+      "log_sha256": "a9ef0528b08c03871cfd002df54aa08d2c42d4f7ea4f00f4acd7a77306a27d7f"
+    },
+    {
+      "module": "IndependentFaultHistories",
+      "sha256": "260997f4211a3a88bf3dbf1b9ec7f6bb109a1ea3082e73227883428c616c2185",
+      "run": "check-03",
+      "exit_code": 0,
+      "log_sha256": "24a9cdefb78401c5f75998cf3d517b81fa512bb07249c3694b53e5f40244c2cd"
+    },
+    {
+      "module": "FaultExponent",
+      "sha256": "ae05ec14f1e292c985b69ff7537a8317e3626f56491d45f528184208b609c526",
+      "run": "check-04",
+      "exit_code": 0,
+      "log_sha256": "c989162e496890f99e02bb31487a13142c5c357dc59031484b6a1f8266e0179f"
+    },
+    {
+      "module": "KnillLaflammeGram",
+      "sha256": "2d42d5a4e82bcb9b18d93b62bbcfccce4b4222db5233a3217aa2d28270373508",
+      "run": "check-05",
+      "exit_code": 0,
+      "log_sha256": "3480ab794c9cbb27b54ffdd5749d3727532bb89f44870ba8114cb76ec0e19325"
+    },
+    {
+      "module": "FaultEntanglementFidelity",
+      "sha256": "bc250a2a4e2dadc582aafee95084e30bbfccd7db840531fcc4d6fdff69649d38",
+      "run": "check-05",
+      "exit_code": 0,
+      "log_sha256": "57ecbdfa05909eb7fe5849679916a43d055fd787bec7dcd07abef608deae9857"
+    },
+    {
+      "module": "FaultAmbiguity",
+      "sha256": "2525869fc2404ed4c52669c8056b25f1673010780d94e9d0304c7dea0e1b0f00",
+      "run": "check-06",
+      "exit_code": 0,
+      "log_sha256": "93bd26a030751984757534043753168a80a20dea798caa9020217f8caaebd531"
+    },
+    {
+      "module": "EncodedFaultRecovery",
+      "sha256": "ff75db221eaf3d3980550639fb6b2ee74b6e20376970d11915a32fdbdcbe7d24",
+      "run": "check-06",
+      "exit_code": 0,
+      "log_sha256": "8e62b77fbaab801992708f7e07884ca4b301b24c5e79479855c456398addeb20"
+    },
+    {
+      "module": "FaultHistoryGeometry",
+      "sha256": "1a7368bc5e16cd189a0e79778ff17d14a7aeeae4228ea2859d1dc839d66c1340",
+      "run": "check-18",
+      "exit_code": 0,
+      "log_sha256": "8ed436630cba75d745afb29cb102e6ee83c7f07c1f15103e572eef8298f4b5b0"
+    },
+    {
+      "module": "FaultKrausCompactness",
+      "sha256": "55fa5c597b42ed9773c0143e874b29fdd2e2bf8f78ac415949fa3790d8556573",
+      "run": "check-09",
+      "exit_code": 0,
+      "log_sha256": "11751ee1b39b500390176ebb14ef9061bb6be0534d5250fb332b44859c34fa6e"
+    },
+    {
+      "module": "FaultKrausCompression",
+      "sha256": "57e5102ec32d460f13a049a9cd43b03e603ae93828cc4923ac64dd2d8cb85cc5",
+      "run": "check-13",
+      "exit_code": 0,
+      "log_sha256": "c8168a36f19f9544a05c57f709aaaafa6f352926ce6b15d90514edeeacc4db72"
+    },
+    {
+      "module": "FaultStabilizerTrace",
+      "sha256": "93e3637d14519b8fb175a99a0ab00444d6535c5e4095caf36594a557d3dec2cc",
+      "run": "check-14",
+      "exit_code": 0,
+      "log_sha256": "42f20c0f641bfe36c33c6e82f4497fed2408f465a3cb0dcf8a532a5ec43f9cc3"
+    },
+    {
+      "module": "MidpointFaultWitness",
+      "sha256": "c69e0b55add13d3d7f18d3c7f8a9cba9b3ae0ea7c4eace44f24074784725ed1b",
+      "run": "check-18",
+      "exit_code": 0,
+      "log_sha256": "5bbc1dddea8e83ca5028a30c60569fca778d1b9dd758b60725c9fd24456940e2"
+    },
+    {
+      "module": "FaultShorSaturation",
+      "sha256": "623ecc602b4bbee951faf9c8a51392d57f291f4663a5ebcc6d1ed3d201107c57",
+      "run": "check-06",
+      "exit_code": 0,
+      "log_sha256": "ee5d0069d1a71f5e4cd46bd7455fbd507b1e3605ca93d2cfd0ceee7e5d099c0f"
+    },
+    {
+      "module": "FaultShorEncoding",
+      "sha256": "889a5fdf51e92fe74a80d6740022c436eca0cc4594d4d72c9e8e5207db2a35e4",
+      "run": "check-08",
+      "exit_code": 0,
+      "log_sha256": "f221c9be0b732ae30d7330dc9fc829dbf31d2b8c7c0095976068e455f0954ed3"
+    },
+    {
+      "module": "CSSCheckSpaces",
+      "sha256": "4e30b7fbe72d8cc8e03a4c54d2c9e31e577c59ecaf35adb094b62ecb3608344d",
+      "run": "check-07",
+      "exit_code": 0,
+      "log_sha256": "eada89a7404123f097bf1b2889a4366ce1c5213e486ea28d3fa04d9a117fb66c"
+    },
+    {
+      "module": "SupplementSynthesis",
+      "sha256": "2a425c6483cc917c1ae966d477d2b50cf2896524b2edd2a9da09272532d01082",
+      "run": "check-04",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "FaultUpperWitness",
+      "sha256": "13a0632f645d06c3caced6c3672a43a6736b172f24c7dab2d868857287867790",
+      "run": "check-20",
+      "exit_code": 0,
+      "log_sha256": "5c3ffb8f99e163ad8afae95e2e54b948f99079b88593725ad2603bdd8f138c27"
+    },
+    {
+      "module": "FaultCPTPRepresentation",
+      "sha256": "6fd6be3d29fe3bd88a74f24b1e7a39898e261208a3c86958419e95fbcebb2170",
+      "run": "check-20",
+      "exit_code": 0,
+      "log_sha256": "948fdfc07d5a7d93bff38daeec47542ac30b8331da1855c56c1e9a02671b0eac"
+    },
+    {
+      "module": "FaultCPTPOptimality",
+      "sha256": "785580ac3896154fdce7e0f158a8568ca258b108c8d440753b37b7263de34ec4",
+      "run": "check-24",
+      "exit_code": 0,
+      "log_sha256": "c1801b5624285a79d1332b5be8699b201efcc025af97c936f9a264d0c46cd7ff"
+    },
+    {
+      "module": "FaultLawIndependence",
+      "sha256": "852b71a5eb52198d826b1aaa38d874242a28661e18280236412bfe8f396f7232",
+      "run": "check-24",
+      "exit_code": 0,
+      "log_sha256": "8276dfa4f4861dd692d6ac9a66bedc643aa6db105ce4e71afa329b8c90086aad"
+    },
+    {
+      "module": "FaultNativeModel",
+      "sha256": "d06172258eb262858f2250f71762d3cf298f71dd89b5e2b987635e0695f743d9",
+      "run": "check-30",
+      "exit_code": 0,
+      "log_sha256": "f0a5f0decdd425421296bf37e68ca4c954f7410d36f8329c5a1a6ed878bf84a7"
+    },
+    {
+      "module": "FaultNativeCeiling",
+      "sha256": "451ce63e6fbe906c6562d0abcede93a744d14af34c167e9ba8340d377e811615",
+      "run": "check-30",
+      "exit_code": 0,
+      "log_sha256": "b26ac062edc3e0e3ad0f80618ebfd46882c159baee96741e82ff45ef102aea77"
+    },
+    {
+      "module": "FaultShorSchedule",
+      "sha256": "e38de65a35555f49a23d91caa731fb9dbc48ca0739f9b9453f5402861e3a9c10",
+      "run": "check-21",
+      "exit_code": 0,
+      "log_sha256": "096ae4b91d2bee4c13b2ad965995a6151cb052b41c33c842e5e47f7d5526e0c1"
+    },
+    {
+      "module": "FaultShorScheduleIteration",
+      "sha256": "80ef4955e7dd6690b846e3f46ae231b461356f596f779750580a9ce6ebe5f31f",
+      "run": "check-24",
+      "exit_code": 0,
+      "log_sha256": "a80cc32c9f2d419a5a941688128719beab7cf7bc9c222bb410f6b29ee2befcb2"
+    },
+    {
+      "module": "CSSPermutationRigidity",
+      "sha256": "7c6f2ca0ee7b311823a5c01b33a3d75049d2200d2c05d465fb1c38a743b1793b",
+      "run": "check-25",
+      "exit_code": 0,
+      "log_sha256": "bcd81c551abbcb6ab4e863d541297e6e92c74b973abdfd00597014df735163bf"
+    },
+    {
+      "module": "CSSPhaseDifferences",
+      "sha256": "641ec7ba3591ed866a7185b0462bb2caf59b0c773381dcf0171da4cee28fd03e",
+      "run": "check-29",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "ContinuationAudit",
+      "sha256": "f5d9f401ee10c50d30cfe4030aec037c9473942e8ee932a14e8de6138e292f9f",
+      "run": "check-31",
+      "exit_code": 0,
+      "log_sha256": "f12e9e335a46afd4e54379d463b73276f68fbfeb58b7c81438b2060232edce29"
+    }
+  ]
+}

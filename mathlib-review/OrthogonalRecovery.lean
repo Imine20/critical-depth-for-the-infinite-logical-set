@@ -120,6 +120,31 @@ private theorem resetKraus_complete (A : Hist → Matrix Phys Log ℂ) (state : 
       rw [resetRow_complete state hstate, Matrix.mul_one, remainder_selfAdjoint,
         remainder_idempotent A hiso horth]
 
+/-- Complete the orthogonal isometries to a single recovery with
+specified scalar action on every branch. -/
+theorem existsRecoveryKraus_scalar (A : Hist → Matrix Phys Log ℂ) (state : Log → ℂ)
+    (hiso : ∀ s, (A s).conjTranspose * A s = 1)
+    (horth : ∀ s t, s ≠ t → (A s).conjTranspose * A t = 0)
+    (hstate : ∑ a, star (state a) * state a = 1) :
+    ∃ R : Hist ⊕ Phys → Matrix Log Phys ℂ,
+      (∑ k, (R k).conjTranspose * R k) = 1 ∧
+      ∃ z : (Hist ⊕ Phys) → Hist → ℂ, ∀ k t, R k * A t = z k t • (1 : Matrix Log Log ℂ) := by
+  classical
+  refine ⟨recoveryKraus A state, ?_, fun k t => if k = Sum.inl t then 1 else 0, ?_⟩
+  · rw [Fintype.sum_sum_type]
+    simp only [recoveryKraus, Matrix.conjTranspose_conjTranspose,
+      resetKraus_complete A state hiso horth hstate, remainder, sector]
+    abel
+  · intro k t
+    cases k with
+    | inl s =>
+      by_cases h : s = t
+      · subst s
+        simp [recoveryKraus, hiso]
+      · simp [recoveryKraus, h, horth s t h]
+    | inr j =>
+      simp [recoveryKraus, resetKraus, Matrix.mul_assoc, remainder_mul_branch A hiso horth]
+
 /-- Complete a family of orthogonal error isometries to one recovery. The
 witness simultaneously inverts every error branch and sends each remaining
 physical basis coordinate to the same normalized logical reset state. -/
@@ -172,6 +197,7 @@ example (A : Unit → Matrix (Fin 3) (Fin 2) ℂ)
     (fun s t h => False.elim (h (Subsingleton.elim _ _))) (by simp [Fin.sum_univ_two])
   exact ⟨R, hcomplete, hrestore ()⟩
 
+#print axioms existsRecoveryKraus_scalar
 #print axioms existsRecoveryKraus
 
 end

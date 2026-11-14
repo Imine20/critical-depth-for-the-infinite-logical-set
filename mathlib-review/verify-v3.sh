@@ -12,7 +12,7 @@ export LEAN_NUM_THREADS=1
 lean --version > "$out/toolchain.txt"
 grep -F 'version 4.35.0,' "$out/toolchain.txt"
 grep -F 'eb6cafb7290e8bd5f2937522d8d804f58f02bafc' "$out/toolchain.txt"
-modules='CriticalDepthMathlib SourceConsumer EncodedInverse Manuscript20261114Baseline GenerationThresholds RealAlgebraicImage BarePauliRotations FaultDepthArithmetic FaultProbability FaultHistoryLoss FaultChoiBound PauliSyndromeOptimization FaultCircuitSupport OrthogonalRecovery RecoveryCrossTerms Q37BinaryData Q37DistanceData Manuscript20261114Audit RealAlgebraicCurves CircuitRealPolynomial UnitaryAdjointSpan DenseUnitaryAdjointSpan UnitaryCurveProducts NativeLogicalCurves ExactGeneration ExactGenerationAudit'
+modules='CriticalDepthMathlib SourceConsumer EncodedInverse Manuscript20261114Baseline GenerationThresholds RealAlgebraicImage BarePauliRotations FaultDepthArithmetic FaultProbability FaultHistoryLoss FaultChoiBound PauliSyndromeOptimization FaultCircuitSupport OrthogonalRecovery RecoveryCrossTerms Q37BinaryData Q37DistanceData Manuscript20261114Audit RealAlgebraicCurves CircuitRealPolynomial UnitaryAdjointSpan DenseUnitaryAdjointSpan UnitaryCurveProducts NativeLogicalCurves ExactGeneration ExactGenerationAudit IndependentFaultHistories FaultExponent KnillLaflammeGram FaultEntanglementFidelity FaultAmbiguity EncodedFaultRecovery FaultHistoryGeometry FaultKrausCompactness FaultKrausCompression FaultStabilizerTrace MidpointFaultWitness FaultUpperWitness FaultCPTPRepresentation FaultCPTPOptimality FaultLawIndependence FaultNativeModel FaultNativeCeiling FaultShorSaturation FaultShorEncoding FaultShorSchedule FaultShorScheduleIteration CSSCheckSpaces CSSPermutationRigidity CSSPhaseDifferences SupplementSynthesis ContinuationAudit'
 for module in $modules; do
   sha256sum "$module.lean"
 done > "$out/inputs.sha256"
@@ -24,6 +24,7 @@ done
 sha256sum -c "$out/inputs.sha256"
 grep -F V3_RECURSIVE_AUDIT_PASSED "$out/Manuscript20261114Audit.log"
 grep -F EXACT_GENERATION_AUDIT_PASSED "$out/ExactGenerationAudit.log"
+grep -F CONTINUATION_AUDIT_PASSED "$out/ContinuationAudit.log"
 if grep -E 'uses .sorry.|sorryAx|depends on axioms:.*native_decide' "$out"/*.log; then
   exit 1
 fi
