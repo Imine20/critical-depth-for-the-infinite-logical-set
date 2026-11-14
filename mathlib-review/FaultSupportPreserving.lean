@@ -95,13 +95,14 @@ private theorem scalar_from_gauge (C : Code n (fun _ => 2) K 1)
   obtain rfl : b = 0 := Subsingleton.elim _ _
   simp [Matrix.one_apply, Matrix.smul_apply, mul_comm]
 
-theorem circuit_upperEnvelope_le_exponent [Nonempty (Fin K × Fin 1)]
+theorem scalarCrossTerms_of_preservesSupports
     (C : Code n (fun _ => 2) K 1) (d h : ℕ) (hq : 1 ≤ q)
     (hdet : DetectsBelow C d) (hL : L.length ≤ h)
-    (hpreserve : PreservesSupports (layerSequenceEval L))
-    (μ : Law (fun i : Location L => FaultLabel i)) :
-    (upperEnvelope q d h : ℕ∞) ≤ FaultExponent.exponent (circuitInfidelity C L μ) := by
-  apply guaranteed_exponent_of_scalarCrossTerms μ _ (encodedBranch_isometry C)
+    (hpreserve : PreservesSupports (layerSequenceEval L)) :
+    ∀ x y : History (fun i : Location L => FaultLabel i),
+      (faults x).card < upperEnvelope q d h → (faults y).card < upperEnvelope q d h →
+      ∃ z : ℂ, (encodedBranch C x).conjTranspose * encodedBranch C y =
+        z • (1 : Operator (Fin K × Fin 1)) := by
   intro x y hx hy
   obtain ⟨S, hs, hxS⟩ := shortHistory hq hpreserve x
   obtain ⟨T, ht, hyT⟩ := shortHistory hq hpreserve y
@@ -127,6 +128,14 @@ theorem circuit_upperEnvelope_le_exponent [Nonempty (Fin K × Fin 1)]
   obtain ⟨z, hz⟩ := hcomp
   exact ⟨z, by simpa only [encodedBranch, Matrix.conjTranspose_mul, Matrix.mul_assoc] using hz⟩
 
+theorem circuit_upperEnvelope_le_exponent [Nonempty (Fin K × Fin 1)]
+    (C : Code n (fun _ => 2) K 1) (d h : ℕ) (hq : 1 ≤ q)
+    (hdet : DetectsBelow C d) (hL : L.length ≤ h)
+    (hpreserve : PreservesSupports (layerSequenceEval L))
+    (μ : Law (fun i : Location L => FaultLabel i)) :
+    (upperEnvelope q d h : ℕ∞) ≤ FaultExponent.exponent (circuitInfidelity C L μ) :=
+  guaranteed_exponent_of_scalarCrossTerms μ _ (encodedBranch_isometry C)
+    (upperEnvelope q d h) (scalarCrossTerms_of_preservesSupports C d h hq hdet hL hpreserve)
 /-- The theorem of upper saturation follows once each allowed exact
 circuit's total unitary has support-preserving conjugation. -/
 theorem perCodeExponent_eq_upper_of_preservesSupports {k d h : ℕ}

@@ -602,6 +602,244 @@
       "run": "check-69",
       "exit_code": 0,
       "log_sha256": "eab02c5de564db42962905db0b300ef6ad1beb177cf29909e25676a6723a1957"
+    },
+    {
+      "module": "CSSCodeOrthogonality",
+      "sha256": "db46d9d7f3c1086381661280c534db65e52a23f4eb5641451c93fc306d2188c2",
+      "run": "check-63",
+      "exit_code": 0,
+      "log_sha256": "6a18acdb2a25a68c34f387918de7fe48dac2cd4c01e4ebeaec8381baa02e9eb5"
+    },
+    {
+      "module": "CSSCodeCosets",
+      "sha256": "19adef2a3f70b9223e4c2244c3fc82ea615e63b7ffaf0ffb72aa45a939c112b9",
+      "run": "check-66",
+      "exit_code": 0,
+      "log_sha256": "39143166b4066932f0394fd8e8e20e53d661e4db08952bae7708283cb899e5c1"
+    },
+    {
+      "module": "CSSCodeCosetRange",
+      "sha256": "a3bb9124feba412a96b40755e023a2b7b19f82c2c881ff6e0b83ffde99194d8f",
+      "run": "check-67",
+      "exit_code": 0,
+      "log_sha256": "e56056303271ff915a29cd6e9922200ceaa0519ef04535f77db8a532e80a7646"
+    },
+    {
+      "module": "CSSCodeEncoding",
+      "sha256": "a6f8389566efba4b639f7c68bd8fe8dcd8931875fb5f1fc75f4943c29d771a26",
+      "run": "check-67",
+      "exit_code": 0,
+      "log_sha256": "2d94bbd0377ab6ce4349e50c03eaa5a904ebce33ed93e8fb7cb07679ef9fabea"
+    },
+    {
+      "module": "CSSCodeStabilizer",
+      "sha256": "6f234c5f3a5adc4bcfb288650f8e0f4958b606c2783265edafcc47b46c6d700d",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "7c3be20f9d1696efa9aabcfd0e2617a6132ec5aadbe5f06efec4631c39271b68"
+    },
+    {
+      "module": "CSSCodeDimension",
+      "sha256": "a63f8313e00629cc96b25daf5e265524fcc64b21498961e194d32da720095651",
+      "run": "check-67",
+      "exit_code": 0,
+      "log_sha256": "c36008502cfe74814fc61e7fd4f24bb5906b9f4c4f4941ef22bb10a5578072c0"
+    },
+    {
+      "module": "CSSCodeDistance",
+      "sha256": "fb82e1fd88b0cf800742ea09b2e13a7d640aa053cbdb75cf02c8d2561c602e1f",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "26f851a84e43c27bc4892a6eb8a1c6a74f4142c3c221e7443940fb1a649471e6"
+    },
+    {
+      "module": "CSSDegenerateDistance",
+      "sha256": "c997fb24dc2c8daea836f41c364ae7af53c0949caa0bd8d4ae2f70b23c7cd230",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "edf634f7777a1e7c4be429b6706d3eb215534c86f41e3503d667c8a143670513"
+    },
+    {
+      "module": "CSSCodePauliChecks",
+      "sha256": "996cb745c8605ff4f34d410f3f6db9b649bc0ebaa19ff57bd6e9b13070e4cd29",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "bb7bfaeaa322fec07a4fe06068c81d8d72071458b3e6bc16b69f9c3dc586a642"
+    },
+    {
+      "module": "CSSCodePauliMasks",
+      "sha256": "6c99c6d925795e0aa199aafc1055a819990694732bff47942de04c9e718ebadd",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "649a6e56e13af415bb68cb0244b994a4039cb8ea8a628467467e534a1945c1c9"
+    },
+    {
+      "module": "CSSCodeStabilizerElements",
+      "sha256": "9f52467aaf5350bba4f92ee11a4cfc5e01175223ccfa5333d4e817e65110272b",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "f902ec89ddf726d2b717b52d6008c795bd8b8031a34e262a4b554a56478b9124"
+    },
+    {
+      "module": "CSSCodeNormalizerAction",
+      "sha256": "5bf891d3400cb110da59fa47f3b4930e687f27a6ea139ac0e52154d62e5a4a5c",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "cf12dd86b78b61e0871d8f27ebf53cc9d4f4e761aa6dbb5a287d500189a0f9a2"
+    },
+    {
+      "module": "CSSRigidityCheckSpaces",
+      "sha256": "0227e973a5ebc47f30e15cb1f3439f999e00f4988149c0c686b87bd7b29ccf0a",
+      "run": "check-64",
+      "exit_code": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "CSSPhysicalCheckClassification",
+      "sha256": "2e24eaa67a5257b79a38db36479af90355789a6b3a29b5f1c45c73df9a6a7ae1",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "be516b1b879061313ca300fe2d887cad4619b96c19684095a902b21f2fdcb584"
+    },
+    {
+      "module": "CSSConcreteMonomial",
+      "sha256": "2ec2e259115ba74a89f90f40096f7f8bd259fff1b3ead8a5a14a7d77e7555162",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "788a04eb6e06d0aff7ed62a224678ed42b800811f75b395ddaad2abb513761ea"
+    },
+    {
+      "module": "CSSPhaseGraph",
+      "sha256": "a38f10b5918d992320959955c5b620069a7be2960dd2277ce4f64fbc5ee102b3",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "394262a3d327573d43fd5026eb6b419ab618685611b22005884aa46e4c388f7e"
+    },
+    {
+      "module": "CSSPhaseRigidity",
+      "sha256": "c7b0d4098c917f03fb4df7e90d663d77c8ee8bbe6ffdb35b25b45d697e2bb1ab",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "ed78d69a4c15f6b52344856cca240a944374002f67243029e54592a0d303c4a4"
+    },
+    {
+      "module": "CSSPauliMonomial",
+      "sha256": "a9ddfad5647a74f262abc7a67329437d619db281e08cbe03d549e65ce848f9ba",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "8127c52da9731d65cbc98a1ae5e966c8b25d3ec8b91ce561c98b15ce7b523a4a"
+    },
+    {
+      "module": "CSSCircuitRigidity",
+      "sha256": "5b296b9cd61daafad444f0bc11b83eb301f4e3857f8801d52f2d166c21d7dfab",
+      "run": "check-73",
+      "exit_code": 0,
+      "log_sha256": "e4ada739aff09c2de3a451929e7551c714c0d8662672be5ec115c7ddfe0bf3f0"
+    },
+    {
+      "module": "CSSUpperSaturation",
+      "sha256": "25ff59d505ad34a4752c57f50590ab0b1d66a2881bca89b48024598dabd8cd19",
+      "run": "check-74",
+      "exit_code": 0,
+      "log_sha256": "78fde8b4b2da4983752d55dcc510f75f1304d2b46e287f0c0eb3a9bbc4f83f3b"
+    },
+    {
+      "module": "CSSBinaryMonomial",
+      "sha256": "28b6aa38d3db76b9a1e49ccca03bc404d09f26b3e52b82666fedfe085bba9870",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "0bd8b523fd7464bd2460ddee1645b3a2f62a5f27985ed0b0984ce98a98f4aff3"
+    },
+    {
+      "module": "CSSComputationalMonomial",
+      "sha256": "64b637d67e60a6dd0ecaa83de4636457d606ddf8e7dced9340ec82455a5fa784",
+      "run": "check-62",
+      "exit_code": 0,
+      "log_sha256": "d6e36e5115567e5e13e745e2fec261e0b99b7591debe6ae34f29fa49bb539887"
+    },
+    {
+      "module": "CSSIsolatingShifts",
+      "sha256": "9a4068cd91f7c6d1cec57db244803cbb38ee384723d27961206265e973b09463",
+      "run": "check-67",
+      "exit_code": 0,
+      "log_sha256": "33cb64b68619bd0659ac06e93ad13985b0ee43b35d08d0f4e82ef2f44496d570"
+    },
+    {
+      "module": "CSSMixedConstancy",
+      "sha256": "35dd38b2e6663a8c448b330f98a6fc334bae3d972627ff415d0bff249edd938c",
+      "run": "check-64",
+      "exit_code": 0,
+      "log_sha256": "152a9c75adfeee5149b0d3f1dddeddbf70c65112b2697e55ae25e7611f4d8988"
+    },
+    {
+      "module": "CSSMonomialCosets",
+      "sha256": "6a91ac2d340232f1d127548a7a5991ba2f6ede2c294ac74bb03acb5c527cf55a",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "bed8a4bfeaf39e0e985b991363bcf5b34936adcccae39ef7f4e8f0bc9910aae8"
+    },
+    {
+      "module": "CSSMonomialLocality",
+      "sha256": "0d8096b5f0d3283893199ef433e07445ccb60d1dd0ee5481cd279a98acc1aec1",
+      "run": "check-65",
+      "exit_code": 0,
+      "log_sha256": "0051dae071ee3428cb7c8df41ba57436df7f420163a69379cdf097872c97a7eb"
+    },
+    {
+      "module": "CSSMonomialPhaseLocality",
+      "sha256": "e0d1833c9663437a60583a4e99152b08e93dc252e6c6dbad873b8b491f9280aa",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "3b43e2291c7833307eedf27001a59c7ec5a39cd14c3b8391ed9185ed040a41a9"
+    },
+    {
+      "module": "CSSPauliRestriction",
+      "sha256": "1b95293de45c490e3ebd6ee2066c7dcb299a0ed2702848673845a79664a189d4",
+      "run": "check-63",
+      "exit_code": 0,
+      "log_sha256": "ed9ea9bf924cae388c48d340349b3d2d8c7ea5cc1116ae26c8b2d3affc7eb786"
+    },
+    {
+      "module": "CSSPhysicalMonomial",
+      "sha256": "ed669147410610c4f8eaf8aa41c08bd91fd1ecadea2ac7eb481268fb0eb76038",
+      "run": "check-67",
+      "exit_code": 0,
+      "log_sha256": "76d99bff240b5215732a4dd01d6474f6212fbe1257f1fed458723e90cb259118"
+    },
+    {
+      "module": "CSSPhysicalRangePreservation",
+      "sha256": "6e2fc6d68095be701d45b9fb0cdd450372d0ce7dad531d2a91228377928667c0",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "bf0e5f24ab29495b45a1f4c82270751c005a98d0591913f9b45fb2ba7984ecad"
+    },
+    {
+      "module": "CSSShortDualTests",
+      "sha256": "49610a01eb6336fdf533ede62618a5cce1e17041bfd02adb989a4128cd5ba3bd",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "48e1dcde0d20cee980196ffb3af1dcf10c70a606667a4f8d3a93ded412298c3a"
+    },
+    {
+      "module": "CSSZCentralizer",
+      "sha256": "a801a60db05a6422d91d93c09de47868e1351867dda4c8a7168e2694b1b10f66",
+      "run": "check-65",
+      "exit_code": 0,
+      "log_sha256": "ac6e006c0f80ae1b7641ae0742daaf7c12b9d99b3d9258e5b302943ba1be5bbb"
+    },
+    {
+      "module": "CSSZConjugation",
+      "sha256": "0fc4a9ecde9f55c3b808fdcd2b41d6ee398684a083fc0f5c40a1ae8343b244f4",
+      "run": "check-64",
+      "exit_code": 0,
+      "log_sha256": "e087b3f2672129750a1044ad07d31ebc855e0963060b6abed86ce97669f813af"
+    },
+    {
+      "module": "CSSPhysicalRigidityAudit",
+      "sha256": "11292490cafa5249150f95f7d33bc1afaa96e03e34fb3075cfc05121b42500ee",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "f0d7828af3f23f42d8710c80b8cade355c82fd0e8addada8807eeffbf3ff7b17"
     }
   ],
   "supplement_audit": {
@@ -628,6 +866,16 @@
     "modules": 19,
     "declarations": 384,
     "run": "check-69",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "css_physical_rigidity_audit": {
+    "modules": 33,
+    "declarations": 339,
+    "run": "check-76",
     "allowed_axioms": [
       "propext",
       "Classical.choice",
