@@ -93,11 +93,11 @@ theorem channelBranchLoss_kraus [Fintype Rec] (R : Rec → Matrix Log Phys ℂ)
 def RecoveryChannel (Phys Log : Type*) [Fintype Phys] [Fintype Log] :=
   {L : MatrixChannel Phys Log // IsCompletelyPositive L ∧ IsTracePreserving L}
 
-private def fromKraus (R : TerminalRecovery Phys Log) : RecoveryChannel Phys Log :=
+def fromKraus (R : TerminalRecovery Phys Log) : RecoveryChannel Phys Log :=
   ⟨krausMap R.kraus, kraus_isCompletelyPositive _,
     (kraus_isTracePreserving_iff _).mpr R.complete⟩
 
-private theorem fromKraus_surjective :
+theorem fromKraus_surjective :
     Function.Surjective (fromKraus (Phys := Phys) (Log := Log)) := by
   intro L
   obtain ⟨K, hEq, hTP⟩ := (cptp_iff_exists_completeKraus L.val).mp L.property

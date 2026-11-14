@@ -156,7 +156,7 @@ theorem exists_kraus_of_cp (L : MatrixChannel In Out) (hCP : IsCompletelyPositiv
     choi_kraus_entry]
   simpa only [K, Matrix.of_apply, Matrix.mul_apply, Matrix.conjTranspose_apply] using he.symm
 
-private theorem amplify_kraus [Fintype Kraus] [Fintype Ref] [DecidableEq Ref]
+theorem amplify_kraus [Fintype Kraus] [Fintype Ref] [DecidableEq Ref]
     (K : Kraus → Matrix Out In ℂ) (X : Matrix (Ref × In) (Ref × In) ℂ) :
     amplify (krausMap K) X = ∑ k,
       ((1 : Matrix Ref Ref ℂ) ⊗ₖ K k) * X *

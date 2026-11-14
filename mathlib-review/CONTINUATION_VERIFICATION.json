@@ -136,17 +136,17 @@
     },
     {
       "module": "FaultCPTPRepresentation",
-      "sha256": "6fd6be3d29fe3bd88a74f24b1e7a39898e261208a3c86958419e95fbcebb2170",
-      "run": "check-20",
+      "sha256": "8fa4ba9cce5506afdc5cc514ac549ee82e77e49526ead9c61134b081c2fee4a9",
+      "run": "check-72",
       "exit_code": 0,
       "log_sha256": "948fdfc07d5a7d93bff38daeec47542ac30b8331da1855c56c1e9a02671b0eac"
     },
     {
       "module": "FaultCPTPOptimality",
-      "sha256": "785580ac3896154fdce7e0f158a8568ca258b108c8d440753b37b7263de34ec4",
-      "run": "check-24",
+      "sha256": "dbc6e7d875e91bf7fd23cd905fa83416496b54e4417d678cdcb22181b0238385",
+      "run": "check-70",
       "exit_code": 0,
-      "log_sha256": "c1801b5624285a79d1332b5be8699b201efcc025af97c936f9a264d0c46cd7ff"
+      "log_sha256": "83a73d18d3e4160c148cb9f387586d9e467423fcafab4cffd77dfdb452a13fe2"
     },
     {
       "module": "FaultLawIndependence",
@@ -360,10 +360,10 @@
     },
     {
       "module": "FaultHistoryExperimentNormalization",
-      "sha256": "4d64dba31ba3a89910564a9c9fe740cd758f8fd1534cecf55505776726c4af51",
-      "run": "check-52",
+      "sha256": "4cbeb7f173d09f091b12fea997a51ee4ad94d3925467806cce8eb1ea751c8bd5",
+      "run": "check-70",
       "exit_code": 0,
-      "log_sha256": "0a0c950c2100fc04af1dfbb4cb4c45237fea5ae33434b52d37567505023b532e"
+      "log_sha256": "d86b2cf3c5796eed2ca570a500c83ea86898382a0dd9feb61eae60735d8888ec"
     },
     {
       "module": "ShorStabilizer",
@@ -840,6 +840,433 @@
       "run": "check-76",
       "exit_code": 0,
       "log_sha256": "f0d7828af3f23f42d8710c80b8cade355c82fd0e8addada8807eeffbf3ff7b17"
+    },
+    {
+      "module": "BaconShorAdjacentGauges",
+      "sha256": "0787e3bd41de6104154153fdb2832a07c1c0506447549a2eb8343823e2217d1e",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "28477e641bf57cb2e1b5f2208490d1d938edd469315b9caf43cbb6dea125f328"
+    },
+    {
+      "module": "BaconShorAspectRatio",
+      "sha256": "4e323732f8681fce9a1572df735cf5ac827a35e9ee1ea7ffb018766a64152731",
+      "run": "check-77",
+      "exit_code": 0,
+      "log_sha256": "57c233add78b46538a61b0ed043284e4c4924d8cd291f1e78e5774fd38ba35a4"
+    },
+    {
+      "module": "BaconShorBareAxes",
+      "sha256": "b092702a38eb52fe08c7c639499abab0afac9130fa9ff69e68d2780576a9410d",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "cf7ebd0677b1eb08a46e02bc7f544893363be20cbd70123a1534925b8be663a0"
+    },
+    {
+      "module": "BaconShorBinaryGeometry",
+      "sha256": "cf345dea6fa97944994062c30953c158f4b30510d5fbd1a91557b5b3c01d0924",
+      "run": "check-66",
+      "exit_code": 0,
+      "log_sha256": "ad40efa5125ea3d5b03dbadc01985e602d286bead4da72171fcd3dc705b7186e"
+    },
+    {
+      "module": "BaconShorCoordinates",
+      "sha256": "dec14c0dd89dbba128dde437170e0da842d5b9b99c7a0b13034f8e7997106204",
+      "run": "check-66",
+      "exit_code": 0,
+      "log_sha256": "c8279c2d0c681fb70e439c3cf383097c67e750aa0cd5975677417aa09fd5d719"
+    },
+    {
+      "module": "BaconShorDressedDistance",
+      "sha256": "3a94f1d94287afb4042945205d1821724b21d4be3dedb8be84d318511e2cd8b0",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "ec61e31065875de6a6a3db37803a2e4a836908dc0a255371e196eb5d3d57c759"
+    },
+    {
+      "module": "BaconShorFixedSpace",
+      "sha256": "ad21773eb1a53b1d97f0d46180ae65ff701cfca1bb41c4c491965bc6526fe1a1",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "935da9c069507d59e33857ba30116bdf8aa837a96a9c8e34bc936a4de745fbb0"
+    },
+    {
+      "module": "BaconShorGaugeActions",
+      "sha256": "8c2f7e5afd91d283dbde5b7c015ea469d753c72163eb081602b8253aa0980eba",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "494e0a5c02ab301cd8b47783502900e3aeb6cbe3c3de598996578afedb758c55"
+    },
+    {
+      "module": "BaconShorGaugeCoordinates",
+      "sha256": "73db2d8c1215327a851fd348d7bf87e43a10338ac1e146830449b298cb5e14ab",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "5fa91b34acf9fb188da7d1e51f60a24317d7b12423272e3bf5bf4f1984a3b524"
+    },
+    {
+      "module": "BaconShorGaugeTrace",
+      "sha256": "d4a6352c7191c388f6036831569887fd04f5ab504e98dee3c5d9aed3c3c2a2c9",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "0dfd263b0423d0508ffc83c68adc963518eae8b875ebb80d89320dc52d9e58da"
+    },
+    {
+      "module": "BaconShorProposition",
+      "sha256": "6d3a4e8fb56ef54a5ffa3dd7ef6b0a5b6cc982cad7ed759c1ae89ab5d40b1e54",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "88faa9878329711af2e1419900dae71375872e4f4459aaccfa339dd9997e6628"
+    },
+    {
+      "module": "BaconShorRealLog",
+      "sha256": "fd9ea87ba18d6c4b9d750fded6644740a6e43ce09fd1439aef155d82d3860758",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "26ee5b02ac5ab26f7df5aa51013e5ce037aa10240c39ca60e58a7fe4c54aa14b"
+    },
+    {
+      "module": "BaconShorShortTrace",
+      "sha256": "5760108a1633bf14954b5f44b09cdabc89721ca1c17b96945dd4321380c6e76d",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "9ed2120ecb6237f38244c43f7c3de262dd5ecb8eb3d43bb769797db0a03c939b"
+    },
+    {
+      "module": "BaconShorSubsystemEncoding",
+      "sha256": "9b5fa5ca2e6c130451e4284177ba8893d08860b57e1bbe6a5751104c528bedb3",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "3c4d83a4a37e9128fba8fb4e10c06c17dcdec92cc7d9f001ef89088026428f59"
+    },
+    {
+      "module": "BaconShorThresholdUpper",
+      "sha256": "eae5c3c224db9afa492bb745963354148cbe271c56320358ba681a9982024a96",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "71513a5f8e51adbafe5294de6a0cf603eaa3b009f3565cde56e7bc3613d1db10"
+    },
+    {
+      "module": "BaconShorXAxisNormalizer",
+      "sha256": "2404e9a8965fbd1a6cb1f3aa67d066e638b3aa11d6512bcf02a78fc0f7800a36",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "2895ea97ffbdfb37c65807c5a1600883304d7c375caf0a36262afba3ac062b60"
+    },
+    {
+      "module": "BaconShorAudit",
+      "sha256": "8a8781c02acb5faa68d10169055d674535c11b7fd8d5b3a89688f196147e01a5",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "f81936434973097c2c4ed7668f0840892525c8872f8ee547c3fb9e70437d33e1"
+    },
+    {
+      "module": "EncodedInverse",
+      "sha256": "a903f37a73686c499b66df8b63b077e3c489147cbd1a0e59887b2875e70c0381",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "c2889280619142926d43413819d75b2d5088c29a79851af1e375ea642f925feb"
+    },
+    {
+      "module": "ReducedCircuitPresentation",
+      "sha256": "5ba28cb8e2f8174536a21184cd10fde7de2754466355ca7a0cb67f42b26494fb",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "4e158e8eb78797c0d2d5de3e819011b110f848e016e113bc0ddc2d2d8c44753b"
+    },
+    {
+      "module": "ReducedCircuitInverses",
+      "sha256": "de368ad6a4e9babeedb6dc770c5173731a15546b45620c8da0008927f0066fab",
+      "run": "check-75",
+      "exit_code": 0,
+      "log_sha256": "859ca8d96e61ddb250dbbf03da88ce4fe5462582804a939629506299deb0b7ba"
+    },
+    {
+      "module": "ReducedCircuitIsomorphism",
+      "sha256": "05fdd366ea1b3d97bd61bb91e1314a75873368a418e09f67f53af319f8c48ff5",
+      "run": "check-77",
+      "exit_code": 0,
+      "log_sha256": "463cededd4e3c01a98caf88e29a8f8ec9c676477c86ff233fa7f304d0d80f423"
+    },
+    {
+      "module": "ReducedCircuitFiniteImage",
+      "sha256": "58ba8cf5ebcc0131f65151ebf66304bdc883d779dfc6be98bde989a1506626b0",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "d708c42146d29220ec2579b5e2d980e1fba7425b377bbfbc076f3d2677ccb340"
+    },
+    {
+      "module": "ReducedCircuitAudit",
+      "sha256": "f843ddd09af2673401eefd119f91bf4e5af413b58e13e7e265689c4907e1eb52",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "983f3939938ad22f680d7ca25053e466136273a6beaa53b156fa26d685d21c31"
+    },
+    {
+      "module": "Q37CheckSpaces",
+      "sha256": "5db1817ccd373d08d6d3e4ccb9982d979388185b5a121c2919515a1a91809bba",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "2b5650bf58dd04bcdd3c548e26e2c02199e86c67c24278b72df45ebccccb4ad9"
+    },
+    {
+      "module": "Q37SupportSplits",
+      "sha256": "91fdf353f5ef239b592fcb7e3f5c8c01a3dd21d08ccbde70fe3a8318cb265f56",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "dca5ac2710fd434663a0a904f7af12ca1db09c31d250bbf7c8e374353b9bf08f"
+    },
+    {
+      "module": "Q37SignatureBits",
+      "sha256": "9a39e210ea254b57d1cd69afee300364c7354127c95cb9bff9777c512f81dee1",
+      "run": "check-73",
+      "exit_code": 0,
+      "log_sha256": "cee2fe42849401cd68272fe5fae9aa3d86f430f38d6753d5755cf3492acbd927"
+    },
+    {
+      "module": "Q37PackedSignatures",
+      "sha256": "fa73eca7ff24af6a655a402ee5a337df2297f094778b1eb94b2ef91b0f380e22",
+      "run": "check-74",
+      "exit_code": 0,
+      "log_sha256": "1ed98cbeb9b149f040bfc2f90b4eed3318e6e8970cf3f5541e83de07a5927c79"
+    },
+    {
+      "module": "Q37ActualDistance",
+      "sha256": "7b5a900b76adaf6ad70b24d0a172d59e7c10f01dc0d506da28ebc397361dc223",
+      "run": "check-74",
+      "exit_code": 0,
+      "log_sha256": "e707125d730c38d29dc1fe526d8e05362378dfdce935f86476a463d84bd4faf8"
+    },
+    {
+      "module": "Q37CanonicalEncoding",
+      "sha256": "c59051cebc4f519e247e7853fff7cd1aa936799a732f0311b915e8319c30cdb6",
+      "run": "check-72",
+      "exit_code": 0,
+      "log_sha256": "2f237cf9388525d234aa37c3e2a145f19650d40c484009eb17effbbd2c47b908"
+    },
+    {
+      "module": "Q37CanonicalLogicalPauli",
+      "sha256": "82cdf81aca358a49185e150728c76531876072f7777332061783550729588963",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "b003c8f5bc996ddc6490aee28b79c5209f4376a8c50c74a2ae12a463c9ffe7e0"
+    },
+    {
+      "module": "Q37CanonicalDistance",
+      "sha256": "5ad05e8e13bbfa550e0874ec8c2373313229692bf2721c5bc72220094ef6d626",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "9b8c4b2d62bc982c7d1dfbb7e209e71bf2baff7308be3c2e44c1c316d3e02419"
+    },
+    {
+      "module": "Q37PhaseCoefficientWords",
+      "sha256": "317448aa3973a01e25135710c30a10b204a0b87edf393122fa9c1b326e7f39c8",
+      "run": "check-73",
+      "exit_code": 0,
+      "log_sha256": "9edce3b7a9f1e6d10c26ae4106fbef6c41fdc72f5bd7cd9537883235480e5b7f"
+    },
+    {
+      "module": "Q37DirectPhaseCertificate",
+      "sha256": "aaf17958598eb30e654fe0659e009f9db70b70f07a102f09e59fcdee85fd465b",
+      "run": "check-74",
+      "exit_code": 0,
+      "log_sha256": "54ba2b5fbaf5f9040471f4ced0741aa38360d6c6adfb60174a41529b77a6787e"
+    },
+    {
+      "module": "Q37BlockPhasePolynomial",
+      "sha256": "ab11a0efcd027e79417fcc2cf5c1548e8dbe1c696db29fece0eec2aa0ef69d49",
+      "run": "check-67",
+      "exit_code": 0,
+      "log_sha256": "5a3febda1445881756c0546efc899537ce96436c27cc9588792d1cd86910c90c"
+    },
+    {
+      "module": "Q37NativeParityLayer",
+      "sha256": "3d50ead860f84eea092673027292b0799ff1d08b215f2686d162797c35f6f0ac",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "35b983376a0a440fbf414576288b7f71d74c2cdf35031803c090ef586b1a441b"
+    },
+    {
+      "module": "Q37ConjugatedParityLayer",
+      "sha256": "ec725afb8b270e47d0948117d60157b1acb691d7fda1758f35b203b41afdff5b",
+      "run": "check-68",
+      "exit_code": 0,
+      "log_sha256": "7dc787824dade25fdf7956017bf59ce9dfbd12253bca80ba7de6909b3b0e1325"
+    },
+    {
+      "module": "Q37NativeBlocks",
+      "sha256": "5775f9b83ef4aa7227cfecb7950034f42a02531fd91e08838b5d3327fa422c9e",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "880eaae2e3443127f0d178b4844b3cd7327f79fbc47790fe24ec2699a4a950d3"
+    },
+    {
+      "module": "Q37PhaseBridge",
+      "sha256": "c4a86a8cc8731f6d462c2be592731e39248329b53ad4de0e0b954e4d89518af0",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "9cb04a6dc4ee37876fe98f9c841e7a185185c73e19712ec8797a0a7ae6a43d12"
+    },
+    {
+      "module": "Q37PhysicalParityLayers",
+      "sha256": "d4002a0f5dfd383c07d515e058bfc038b51ba6dd93af58baaca785bad5fa551c",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "02013ffdc34941fbce58a670b1dc6202461cfa454e69aa004f0edbb4d8c3b07b"
+    },
+    {
+      "module": "CSSFourierCharacterSums",
+      "sha256": "239b498d16fa63f77908f9199cd052591344f46ade78d9135374bebe81b242ed",
+      "run": "check-70",
+      "exit_code": 0,
+      "log_sha256": "7cb6a2d80f7722d814567198856ce182aeae214efb6c0b6288993fa5202a155f"
+    },
+    {
+      "module": "Q37DataAudit",
+      "sha256": "b1b4437eaaf82acf34e3e9128a5d281c7b0db39498d915aa301192b3aeb417d8",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "6ffdc52eb6a12e1d1fc175416dba86a49a58665054c71924757f81de13409081"
+    },
+    {
+      "module": "FaultChannelEffects",
+      "sha256": "b02fadfd9960bd84ffd32f803327a7d369ea7fd243d2d600429f3a9ba9e530a9",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "4bd7de6c24ef4e642cd80c321d75a97bb89499980e271a2017261fc69989e465"
+    },
+    {
+      "module": "FaultDiamondEffects",
+      "sha256": "4737d7f606b4d84c1a7f8ab7cfc7255c7508829fb88ce7d154d55d9bfdbbc5bc",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "4a0d23ac3051c5f1c0e8ca831703c1d08195eb16369b64041ce39c3e20090c11"
+    },
+    {
+      "module": "FaultVariationalTrace",
+      "sha256": "0c493f6ff9d6970d62af7c14d136112f01c8f3cfbc23b79f435d1b5869c322d0",
+      "run": "check-75",
+      "exit_code": 0,
+      "log_sha256": "3a139f278af648a4f7f5b889415f01db4bd911387cf3d046f7b2a1ba3df7ec68"
+    },
+    {
+      "module": "FaultTraceNorm",
+      "sha256": "a80f8fd58424ede2f1d3c128e0992d855937a061205e9b4689f75e51805585c1",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "548369599df9bde0ad21c75df0bc68386852ae50187b7399ceead24bc4a80718"
+    },
+    {
+      "module": "FaultDiamondVariational",
+      "sha256": "67e12132418e2f1ed989b30df98cc937c67da5e18a1f92f5e397d79970477da0",
+      "run": "check-75",
+      "exit_code": 0,
+      "log_sha256": "e2f7c7a66b07d968d1511c99efb4c708abf5789bd57ec09e029bb584696cab77"
+    },
+    {
+      "module": "FaultBellEffect",
+      "sha256": "048252ee4266ee7be1b1d041f7e423adda377d631aeb9dfeb8e04a37024fc310",
+      "run": "check-73",
+      "exit_code": 0,
+      "log_sha256": "c550fe4a19e9394f9c6ac3263032ad7cae048232007d10c5f26e68901a304a24"
+    },
+    {
+      "module": "FaultDiamondFrame",
+      "sha256": "57fe774eebd5e82a6a6305e1f47fd633037af33ea3e3f7b3b492a62d75402e05",
+      "run": "check-73",
+      "exit_code": 0,
+      "log_sha256": "b93e40c0ac9b9e7af26c3338f912eed0426675bd047645a354a125615d10314b"
+    },
+    {
+      "module": "FaultDiamondHistories",
+      "sha256": "2c1e3e482e5ddf89ca4f15a34a70608184ba9e248b17f1462c1fbe6773e78c8d",
+      "run": "check-74",
+      "exit_code": 0,
+      "log_sha256": "de5dea90cc77a8bcb3e266e7d90d7295ec284f37339fc841ba08c983feab2fcc"
+    },
+    {
+      "module": "FaultDiamondTail",
+      "sha256": "6f657fe122b7a816bbd7a48ba1627b1aa952f1f0854fd83354b4ff13a7fce175",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "b5e34d185c0c0084122f21910017b40cb7e1974042405802ebadfbc7ad2fac67"
+    },
+    {
+      "module": "FaultDiamondOptimality",
+      "sha256": "acd106245d9151ebd110b483f4f5ac47ec67b7014e1cb6bdb5818d35a7c7680c",
+      "run": "check-75",
+      "exit_code": 0,
+      "log_sha256": "978dff840a8af26172a69952da026f2a9481258b023ea3c1d294a99850b6ac2f"
+    },
+    {
+      "module": "FaultDiamondIdealAction",
+      "sha256": "3d7ad3a3dbc32e87d0972d137db32cc05e6ebae2fec7a55c2153336205bec48f",
+      "run": "check-75",
+      "exit_code": 0,
+      "log_sha256": "a6d6b538edf78bcd3bb7879f69c8cb1eabeccaf276fa5907e1c99021a3174877"
+    },
+    {
+      "module": "FaultStabilizerSyndrome",
+      "sha256": "176b3641f69a37ca178b29b413538e65cce1a96bd2a4ef852974bf8899ff382b",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "6bd2c5982612163ffb8ab6ab01ba818ddaf0aecf31e496a95976135ba2643f29"
+    },
+    {
+      "module": "FaultPauliSyndromeChannel",
+      "sha256": "42f138d25926eac061f71f450fa378668ece1a79c73ab8bf9ddee79160fbaef1",
+      "run": "check-69",
+      "exit_code": 0,
+      "log_sha256": "b031b70d0383d0abdece5760be940924d5331cde24279d75c9c711b157c373fe"
+    },
+    {
+      "module": "FaultStabilizerLogicalTrace",
+      "sha256": "36a7c382ac7800d792195686e7b7e2e3b9fd97bfe5901cc9e64b62b4cc1169b1",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "18b2fc1560e68a4a7a889f2ebf773c63364a31b5346104d782998cad72beb6b2"
+    },
+    {
+      "module": "FaultStabilizerLogicalBasis",
+      "sha256": "cbe2ec2f9a98bb12fb07f0a289b3b6a812a49f322506a09ce04d3bf9a6673bd4",
+      "run": "check-74",
+      "exit_code": 0,
+      "log_sha256": "cca0101f8f9c2c4b93ed834f8d1fc2e4da26c8a5e153b16c1a638ed2ad9ab1a0"
+    },
+    {
+      "module": "FaultStabilizerPauliChannel",
+      "sha256": "4b40a269d9fff1f20f52cfd256bd6e3d970c095c21a08bbd2632a4d037a7a869",
+      "run": "check-76",
+      "exit_code": 0,
+      "log_sha256": "065cbed1a0c9ba924afc7b04cb35056609ad66661cee5aa5a56f77568d77fa1f"
+    },
+    {
+      "module": "FaultHaarSphere",
+      "sha256": "4adc823f4689ed3cc01daf731d1e41f3f0a96897938987913a5637342178c83b",
+      "run": "check-71",
+      "exit_code": 0,
+      "log_sha256": "1f33ac00b45172c75ca932960cdf4397f7871c0f8cdb9abc59c79e1b46ad4378"
+    },
+    {
+      "module": "FaultHaarRealMoments",
+      "sha256": "2a9dd38f9016acbc6a960f73d87a0a4bd72ed72f76b77f0b5acb60fb1f4101f1",
+      "run": "check-75",
+      "exit_code": 0,
+      "log_sha256": "9c470242ebef93b272b2db81f62a116a68eda2f7ab73268c1046ea7036748a88"
+    },
+    {
+      "module": "FaultHaarComplexMoment",
+      "sha256": "49a46bc02de70bcd4bb116f84be47e60efbed5049a90144bc6a28f02239ada34",
+      "run": "check-77",
+      "exit_code": 0,
+      "log_sha256": "1bdcc6228daa24107e43dc1e86c4a4bb3029e7e453bb41b8578c835a925ce83e"
+    },
+    {
+      "module": "ErrorMeasuresFoundationAudit",
+      "sha256": "339ea888611a11b50aaa090dcaeb827695eb52e9067d4579f7b155325cb2d781",
+      "run": "check-78",
+      "exit_code": 0,
+      "log_sha256": "543ac235bb779db1021d614947389e0273d9adcbb2f9f88d32710eb97a04e788"
     }
   ],
   "supplement_audit": {
@@ -876,6 +1303,46 @@
     "modules": 33,
     "declarations": 339,
     "run": "check-76",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "bacon_shor_audit": {
+    "modules": 16,
+    "declarations": 230,
+    "run": "check-78",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "reduced_circuit_audit": {
+    "modules": 5,
+    "declarations": 94,
+    "run": "check-78",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "q37_data_audit": {
+    "modules": 17,
+    "declarations": 241,
+    "run": "check-78",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "error_measures_foundation_audit": {
+    "modules": 22,
+    "declarations": 401,
+    "run": "check-78",
     "allowed_axioms": [
       "propext",
       "Classical.choice",

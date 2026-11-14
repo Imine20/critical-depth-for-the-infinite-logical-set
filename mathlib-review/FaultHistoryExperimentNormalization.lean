@@ -174,7 +174,7 @@ private theorem reverseLabelEquiv_physicalFault (L : Layers n q)
         {p : R → SinglePauli // p ≠ fun _ => .I}) hST) x) = f S x := by subst T; rfl
   exact h _ _ (reverseLocationEquiv_support L i).symm a
 
-private def reverseHistoryEquiv (L : Layers n q) :
+def reverseHistoryEquiv (L : Layers n q) :
     History (fun i : Location L => FaultLabel i) ≃ History (PaperLabel (paperLayersOfNative L)) :=
   (reverseLocationEquiv L).piCongr (fun i => Equiv.optionCongr (reverseLabelEquiv L i))
 
@@ -280,7 +280,7 @@ private theorem reverseLaw_apply (L : Layers n q)
   change reverseWeights L μ.weight (reverseLocationEquiv L i) (reverseLabelEquiv L i a) = _
   rw [reverseWeights_apply, Equiv.symm_apply_apply]
 
-private theorem reverseHistoryEquiv_mass (L : Layers n q)
+theorem reverseHistoryEquiv_mass (L : Layers n q)
     (μ : Law (fun i : Location L => FaultLabel i)) (p : ℝ)
     (x : History (fun i : Location L => FaultLabel i)) :
     mass (reverseLaw L μ) p (reverseHistoryEquiv L x) = mass μ p x := by
@@ -296,6 +296,12 @@ private theorem reverseHistoryEquiv_mass (L : Layers n q)
     change (reverseLaw L μ).weight (reverseLocationEquiv L i) (reverseLabelEquiv L i a) * p = _
     rw [reverseLaw_apply]
     rfl
+
+theorem paperEncodedBranch_eq_reverse (C : Code n (fun _ => 2) K 1)
+    (L : Layers n q) (x : History (fun i : Location L => FaultLabel i)) :
+    paperEncodedBranch C (paperLayersOfNative L) (reverseHistoryEquiv L x) =
+      encodedBranch C x := by
+  simp only [paperEncodedBranch, reverseOutputHistory_eq, encodedBranch]
 
 theorem nativeCircuitInfidelity_eq_paper (C : Code n (fun _ => 2) K 1)
     (L : Layers n q) (μ : Law (fun i : Location L => FaultLabel i)) :
