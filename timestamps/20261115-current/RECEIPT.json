@@ -1,0 +1,96 @@
+{
+  "intermediate": {
+    "der_sha256": "ca0b1554ecd901ea19dcad8749e9f2648c8d6dfcea1add9d2c2109415bb82ccd",
+    "source": "https://knowledge.digicert.com/content/dam/kb/attachments/time-stamp/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.pem"
+  },
+  "openssl": "OpenSSL 3.5.9 29 Sep 2026 (Library: OpenSSL 3.5.9 29 Sep 2026)",
+  "ots": "Suspended at the author request; no OpenTimestamps network calls were made.",
+  "protocol": "RFC 3161",
+  "provider": "DigiCert",
+  "provider_documentation": "https://knowledge.digicert.com/general-information/rfc3161-compliant-time-stamp-authority-server",
+  "request_payload": "SHA-256 message imprint, fresh nonce and certificate-request flag; no file contents",
+  "revocation": {
+    "checked_at_gen_time_and_verification_time": true,
+    "urls": [
+      "http://crl3.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crl",
+      "http://crl3.digicert.com/DigiCertTrustedRootG4.crl"
+    ]
+  },
+  "schema": "critical-depth.rfc3161.v1",
+  "snapshot_policy": "Frozen copies matched their source bytes before and after both timestamp verifications.",
+  "tokens": [
+    {
+      "epoch": 1794730768,
+      "input": {
+        "bytes": 126168,
+        "sha256": "08452c4636132e06dd9f4757d530c479ef5a17ce02bc070908e90b8c0e896343"
+      },
+      "input_path": "manuscript/Update_branch.tex",
+      "nonce": "0x9FC93D7D96E2A92E",
+      "policy": "2.16.840.1.114412.7.1",
+      "request": {
+        "bytes": 70,
+        "sha256": "7e927aa79c7880142a1902089e86ee89f5408afbaa25fd0acc9b16e4802c0ab4"
+      },
+      "request_path": "timestamps/20261115-current/Update_branch.tex.tsq",
+      "response": {
+        "bytes": 6008,
+        "sha256": "21c4db676ecc8e30fda9e6abaf3c389f4a13c7e30a81a21445e7088d1a52a9d7"
+      },
+      "response_path": "timestamps/20261115-current/Update_branch.tex.tsr",
+      "serial": "0xBE8CA786C65F99217FF6EFE8570DF7D0",
+      "signer_der_sha256": "2da09da7f4131f9fe72db6c5e6e9c9656755af043f1ea742cc0d2120e141ebfc",
+      "signer_path": "timestamps/20261115-current/Update_branch.tex.signer.pem",
+      "status": "granted",
+      "time_utc": "2026-11-15T08:19:28Z",
+      "verification": {
+        "file": "OK",
+        "request": "OK",
+        "revocation_at_gen_time": "OK",
+        "revocation_at_verification_time": "OK",
+        "signature_chain": "OK"
+      },
+      "verified_utc": "2026-11-15T08:21:07.446546Z"
+    },
+    {
+      "epoch": 1794730784,
+      "input": {
+        "bytes": 117620,
+        "sha256": "daf4afc98769cf7f1f2d7714a532ce2742ddee86ed73fb3b1d76752506e1178b"
+      },
+      "input_path": "timestamps/20261115-current/PAYLOAD.json",
+      "nonce": "0x32A1E33F74A25EE6",
+      "policy": "2.16.840.1.114412.7.1",
+      "request": {
+        "bytes": 69,
+        "sha256": "e62ff6d5d2dbc33e5846a78e5568aa64807410db0a67a405fe547961d0f50b89"
+      },
+      "request_path": "timestamps/20261115-current/PAYLOAD.json.tsq",
+      "response": {
+        "bytes": 6007,
+        "sha256": "05aff0c3a0d5b08a3e285f843d234ad85729c5a25c4cd20796fcb6fac7837e6b"
+      },
+      "response_path": "timestamps/20261115-current/PAYLOAD.json.tsr",
+      "serial": "0xCBC6BEB34C4D1A22C5CB42CF952A3378",
+      "signer_der_sha256": "2da09da7f4131f9fe72db6c5e6e9c9656755af043f1ea742cc0d2120e141ebfc",
+      "signer_path": "timestamps/20261115-current/PAYLOAD.json.signer.pem",
+      "status": "granted",
+      "time_utc": "2026-11-15T08:19:44Z",
+      "verification": {
+        "file": "OK",
+        "request": "OK",
+        "revocation_at_gen_time": "OK",
+        "revocation_at_verification_time": "OK",
+        "signature_chain": "OK"
+      },
+      "verified_utc": "2026-11-15T08:21:08.155630Z"
+    }
+  ],
+  "trusted_root": {
+    "der_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+    "name": "DigiCert Trusted Root G4",
+    "origin": "Windows LocalMachine Root certificate store",
+    "windows_thumbprint_sha1": "DDFB16CD4931C973A2037D3FC83A4D7D775D05E4"
+  },
+  "tsa": "http://timestamp.digicert.com"
+}

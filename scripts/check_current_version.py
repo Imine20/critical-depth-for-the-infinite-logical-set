@@ -4,11 +4,13 @@
 Run `python -B scripts/check_current_version.py` from any directory, or provide
 `--root /path/to/checkout`. This reads files and streams the evidence archive;
 it does not extract files, invoke Lean, or change the checkout.
+Timestamp checks compare bytes and recorded outcomes; they do not verify TSA signatures.
 """
 
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timedelta
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
@@ -230,6 +232,103 @@ def check_archive(root: Path, contents_path: Path, contents: dict[str, object],
     return len(seen)
 
 
+def check_timestamp(root: Path, current: dict[str, object],
+                    publications: dict[str, dict[str, object]],
+                    proof_inputs: dict[str, dict[str, object]]) -> int:
+    """Check timestamp bindings and declared outcomes, without cryptographic verification."""
+    timestamp = current.get("timestamp")
+    require(isinstance(timestamp, dict) and timestamp.get("protocol") == "RFC 3161",
+            "Unexpected current timestamp protocol")
+    directory = relative_name(timestamp.get("directory"))
+    prefix = directory + "/"
+    directory_path = (root / directory).resolve(strict=True)
+    require(directory_path.is_dir() and directory_path.is_relative_to(root),
+            "Timestamp directory escapes repository or is not a directory")
+    metadata = {}
+    for key in ["payload_manifest_path", "receipt_path", "readme_path"]:
+        name = relative_name(timestamp.get(key))
+        require(name.startswith(prefix) and name in publications,
+                f"Timestamp metadata is outside its directory or publication binding: {key}")
+        metadata[key] = name
+    require(len(set(metadata.values())) == 3, "Timestamp metadata paths must be distinct")
+    manifest_name = metadata["payload_manifest_path"]
+    payload = parse_json(inside(root, manifest_name).read_bytes(), manifest_name)
+    require(payload.get("schema") == "critical-depth.timestamp-payload.v1",
+            "Unexpected timestamp payload schema")
+    require(isinstance(current.get("repository"), str) and bool(current["repository"])
+            and payload.get("repository") == current["repository"],
+            "Timestamp payload repository differs from current publication")
+    require(isinstance(payload.get("base_commit"), str)
+            and re.fullmatch(r"[0-9a-f]{40}", payload["base_commit"]) is not None,
+            "Timestamp payload lacks a base commit")
+    require(payload.get("excluded_paths") == ["CURRENT_VERSION.json"]
+            and payload.get("excluded_prefixes") == [prefix],
+            "Timestamp payload exclusion policy differs from its binding graph")
+    files = path_map(payload.get("files"), "timestamp.payload.files")
+    require(all(name.casefold() != "current_version.json"
+                and not name.casefold().startswith(prefix.casefold()) for name in files),
+            "Timestamp payload includes CURRENT_VERSION or its own evidence directory")
+    compare_disk(root, files, "timestamp payload")
+    for name, expected in proof_inputs.items():
+        require(files.get(name) == expected, f"Timestamp payload omits or changes proof input: {name}")
+    for name, expected in publications.items():
+        if not name.startswith(prefix):
+            require(files.get(name) == expected,
+                    f"Timestamp payload omits or changes publication file: {name}")
+    actual_directory_files = set()
+    for path in directory_path.rglob("*"):
+        require(not path.is_symlink(), "Symlink in timestamp evidence directory")
+        if path.is_file():
+            actual_directory_files.add(path.relative_to(root).as_posix())
+    recorded_directory_files = {name for name in publications if name.startswith(prefix)}
+    require(actual_directory_files == recorded_directory_files,
+            "Timestamp directory files differ from the publication binding")
+
+    receipt_name = metadata["receipt_path"]
+    receipt = parse_json(inside(root, receipt_name).read_bytes(), receipt_name)
+    require(receipt.get("schema") == "critical-depth.rfc3161.v1"
+            and receipt.get("protocol") == "RFC 3161", "Unexpected timestamp receipt schema or protocol")
+    require(isinstance(receipt.get("tsa"), str)
+            and re.fullmatch(r"https?://[^\s]+", receipt["tsa"]) is not None,
+            "Timestamp receipt lacks its TSA endpoint")
+    tokens = receipt.get("tokens")
+    require(isinstance(tokens, list) and len(tokens) == 2, "Expected exactly two timestamp tokens")
+    require(all(isinstance(token, dict) for token in tokens), "Invalid timestamp token record")
+    inputs = [relative_name(token.get("input_path")) for token in tokens]
+    require(set(inputs) == {"manuscript/Update_branch.tex", manifest_name},
+            "Timestamp tokens must bind the current TeX and payload manifest once each")
+    evidence_paths = set(metadata.values())
+    checks = ["request", "file", "signature_chain", "revocation_at_gen_time",
+              "revocation_at_verification_time"]
+    for token, input_name in zip(tokens, inputs):
+        require(descriptor(token.get("input"), input_name) == file_digest(inside(root, input_name)),
+                f"Timestamp token input bytes differ: {input_name}")
+        for kind in ["request", "response"]:
+            name = relative_name(token.get(kind + "_path"))
+            require(name.startswith(prefix) and name in publications and name not in evidence_paths,
+                    f"Unbound, repeated, or cyclic timestamp {kind} path: {name}")
+            evidence_paths.add(name)
+            require(descriptor(token.get(kind), name) == publications[name],
+                    f"Timestamp {kind} descriptor differs from publication: {name}")
+            require(file_digest(inside(root, name)) == publications[name],
+                    f"Timestamp {kind} bytes differ: {name}")
+        require(token.get("status") == "granted", "Timestamp token was not granted")
+        nonce = token.get("nonce")
+        require(isinstance(nonce, str) and re.fullmatch(r"0x[0-9A-Fa-f]+", nonce) is not None,
+                "Timestamp token has no hexadecimal nonce")
+        require(int(nonce, 16) > 0, "Timestamp token nonce must be positive")
+        time_utc = token.get("time_utc")
+        require(isinstance(time_utc, str) and re.fullmatch(
+            r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|\+00:00)", time_utc) is not None,
+            "Timestamp token has no UTC issue time")
+        require(datetime.fromisoformat(time_utc.replace("Z", "+00:00")).utcoffset() == timedelta(0),
+                "Timestamp token issue time is not UTC")
+        verification = token.get("verification")
+        require(isinstance(verification, dict) and all(verification.get(key) == "OK" for key in checks),
+                "Timestamp receipt does not record all required verification outcomes")
+    return len(files)
+
+
 def check(root: Path) -> dict[str, int]:
     root = root.resolve(strict=True)
     require(root.is_dir(), "Repository root is not a directory")
@@ -257,8 +356,11 @@ def check(root: Path) -> dict[str, int]:
     contents = parse_json(contents_path.read_bytes(), "EVIDENCE_CONTENTS.json")
     archived = check_archive(root, contents_path, contents, receipt, receipt_path, proof_inputs_path,
                              modules, markers, output_files)
-    return {"publication_files": len(publications), "proof_inputs": len(inputs),
-            "modules": len(modules), "audits": len(markers), "archive_members": archived}
+    counts = {"publication_files": len(publications), "proof_inputs": len(inputs),
+              "modules": len(modules), "audits": len(markers), "archive_members": archived}
+    if "timestamp" in current:
+        counts["timestamp_payload_files"] = check_timestamp(root, current, publications, inputs)
+    return counts
 
 
 if __name__ == "__main__":
@@ -272,3 +374,5 @@ if __name__ == "__main__":
         sys.exit(1)
     print("CURRENT_VERSION_CHECK_PASSED " + " ".join(f"{key}={value}" for key, value in counts.items()))
     print("Checked publication bytes and recorded replay evidence; no Lean process was run.")
+    if "timestamp_payload_files" in counts:
+        print("Checked timestamp file bindings and declared outcomes; TSA signatures were not reverified.")

@@ -1,6 +1,14 @@
-# Update_branch release record
+# Historical Update_branch release record
 
-- **Manuscript** [Update_branch.tex](../../manuscript/Update_branch.tex), 125,926 bytes, SHA-256 `bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22`.
+This record describes the publication at commit
+`dc1f6d7de3c9435be66c841095650f3bdb0ed72a`. Its manuscript hashes, execution
+results and timestamp evidence retain that historical scope. See
+[CURRENT_VERSION.json](../../CURRENT_VERSION.json) for the current manuscript,
+statements and verification evidence. The preserved input manifest binds this
+record's original bytes at publication; checking all of its entries requires
+that snapshot rather than the current working tree.
+
+- **Manuscript** [Update_branch.tex](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/blob/dc1f6d7de3c9435be66c841095650f3bdb0ed72a/manuscript/Update_branch.tex), 125,926 bytes, SHA-256 `bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22`.
 - **Supplied manuscript** 125,598 bytes, SHA-256 `ab55244ce633ae2ce1f0987f52059e00db70f6c98c01ff432fcdc7b915b02b0c`. The published source changes only Data availability and the `LeanRepo` bibliography entry. The wording, formulae and figures in the supplied mathematical text carry through to the release.
 - **Lean proof snapshot** [e22fb613f4463e0da04c1b0d6c2ea20eacf80c61](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/e22fb613f4463e0da04c1b0d6c2ea20eacf80c61).
 - **Timestamp evidence** [DigiCert RFC 3161 requests and responses](../../timestamps/update-branch/README.md) for the published TeX and [release input manifest](INPUTS.sha256.tsv).

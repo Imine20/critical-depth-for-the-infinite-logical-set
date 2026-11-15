@@ -61,7 +61,7 @@ To check that a downloaded publication still matches those document, source and 
 python -B scripts/check_current_version.py
 ~~~
 
-This read-only check verifies the existing publication and its evidence archive. A fresh proof replay still requires the full command above.
+This read-only check verifies the existing publication, its evidence archive and the current timestamp payload's file bindings. It checks the timestamp receipt's recorded outcomes but does not reverify TSA signatures. Use the [current timestamp commands](../timestamps/20261115-current/README.md) for request, file, signature-chain and revocation checks. A fresh proof replay still requires the full command above.
 
 ## Historical baseline replay
 
