@@ -1,0 +1,2809 @@
+{
+  "base_commit": "0f0212793b7a911471d9318f554c8c2a9e41fb1a",
+  "excluded_paths": [
+    "CURRENT_VERSION.json"
+  ],
+  "excluded_prefixes": [
+    "timestamps/20261115-current/"
+  ],
+  "files": {
+    ".gitattributes": {
+      "bytes": 78,
+      "sha256": "8fe620e4eecc20b261c0bc9b1c0f339762c92534e275e7f55f34575afea4a98b"
+    },
+    ".gitignore": {
+      "bytes": 59,
+      "sha256": "c838c7005bcd7262b83b94cf9f5ca85cbc6ed4e49ecf283f3a7961a3448cb9a1"
+    },
+    "AUTHOR_REVIEW_PACKET.md": {
+      "bytes": 5865,
+      "sha256": "30d2a8194d2990f9e4b64a38f251029dff1046ea77da67188453c390a6ab55bf"
+    },
+    "AUTHOR_SEMANTIC_APPROVAL.json": {
+      "bytes": 3238,
+      "sha256": "7ccfdc6cf22edca88e696ca7bc499628c60120b9fc274674ab65f7cd41e92324"
+    },
+    "FORMALIZATION_20261114v3.md": {
+      "bytes": 7264,
+      "sha256": "82d3fa65e10a45ae10bb8cb276879f2934440b7061ba7aeb331e24c72d82f48a"
+    },
+    "FORMALIZATION_UPDATE_BRANCH.md": {
+      "bytes": 5461,
+      "sha256": "a200a968f66f4a6834814f44b97b659d4e9b1631347b7d561f4c36b44ef6b0b5"
+    },
+    "LICENSE": {
+      "bytes": 1065,
+      "sha256": "080f184389ac12e7970303ee0cb4592b3ffa3d98cbde35f50fbd3d24fca7a786"
+    },
+    "README.md": {
+      "bytes": 2953,
+      "sha256": "9b37728195f2a7a0d54df2450b47dd47086b2d5d4edab5955ef9c1844fc64fa4"
+    },
+    "RELEASE_BINDING.json": {
+      "bytes": 5972,
+      "sha256": "03546816d2308457145836f22d6aeae268f411b16f166f9dbc0934345fddf21f"
+    },
+    "VERIFICATION_STATUS.md": {
+      "bytes": 5643,
+      "sha256": "0afb690f4256e61026fb2703fa17956c6bb81f35cb5b0e82d13de5ba75772ab7"
+    },
+    "archive/README.md": {
+      "bytes": 2008,
+      "sha256": "6360a3cfd1a8f221f09d4fcb986cadb6dce90ec689003efa7132dc51dd1f0cb5"
+    },
+    "archive/approval-history/20261102-pending.json": {
+      "bytes": 1784,
+      "sha256": "698e2cafd60960130f130adc9da5219ecb9ec7ac15d4e42d54ae323f2b56b564"
+    },
+    "archive/legacy-47/README.md": {
+      "bytes": 1438,
+      "sha256": "414d140fe2db3efdd0c96a706b197e09ee6ff0fb8139ad7cfcc4c5a6b3897da3"
+    },
+    "archive/previous-main-5c602/.gitignore": {
+      "bytes": 59,
+      "sha256": "c838c7005bcd7262b83b94cf9f5ca85cbc6ed4e49ecf283f3a7961a3448cb9a1"
+    },
+    "archive/previous-main-5c602/CriticalDepth.lean": {
+      "bytes": 149,
+      "sha256": "db676b016bf8cefa9cff3ea93cb5e30710e80b5465b1476ea944abe0328286f4"
+    },
+    "archive/previous-main-5c602/CriticalDepth/AlgebraicFiniteImage.lean": {
+      "bytes": 4150,
+      "sha256": "39ab40ee8ae2b5463543f378d74b1fac179485e0bc31318f37c05e727ba62811"
+    },
+    "archive/previous-main-5c602/CriticalDepth/AlgebraicFrame.lean": {
+      "bytes": 7892,
+      "sha256": "37fb04eec13069e9226575e12cb8d3a3910fc8555f84dec7ac3267476dee2a19"
+    },
+    "archive/previous-main-5c602/CriticalDepth/AlgebraicRigidity.lean": {
+      "bytes": 8626,
+      "sha256": "f9affd32baf73d575ffdaaf15dfab4ea4a4a31e1dcd960cfbbb92bd4b8ebbb2b"
+    },
+    "archive/previous-main-5c602/CriticalDepth/Arithmetic.lean": {
+      "bytes": 6532,
+      "sha256": "86dcf32c19428fdbc0b500972cf3b9369b0ee483adcdaf49039322dfb6214272"
+    },
+    "archive/previous-main-5c602/CriticalDepth/ArithmeticExamples.lean": {
+      "bytes": 2953,
+      "sha256": "9036c8ed051c88bcd71dafd1b7c086d2070e839800a070b9c06ff5e3988cc9bc"
+    },
+    "archive/previous-main-5c602/CriticalDepth/Audit.lean": {
+      "bytes": 7134,
+      "sha256": "6391482a73ee4699e598c57e403f8d4fe6b9c1e6bc46ccb31a6cb15be3ed4d97"
+    },
+    "archive/previous-main-5c602/CriticalDepth/BudgetSemantics.lean": {
+      "bytes": 7693,
+      "sha256": "bb5e3761dcbad8773a60b7801b249cb481c31bffbbeb3c8ec3886407d0990139"
+    },
+    "archive/previous-main-5c602/CriticalDepth/CircuitNormalization.lean": {
+      "bytes": 18762,
+      "sha256": "c5524e20fd9a162c72fd6b2c5280c1fb3962a0eb984628e0e6ae1dbc173d214e"
+    },
+    "archive/previous-main-5c602/CriticalDepth/CircuitParameters.lean": {
+      "bytes": 5061,
+      "sha256": "5de081dad176ba0ccd52cac651b6e076a37cf320c69393928ebc826c381e1eaf"
+    },
+    "archive/previous-main-5c602/CriticalDepth/CircuitPoints.lean": {
+      "bytes": 17761,
+      "sha256": "d5235a2d3de9bae4fde1fde8fdfe0d76a1056fc538eb67724f2b0835c70961ca"
+    },
+    "archive/previous-main-5c602/CriticalDepth/CircuitSolutions.lean": {
+      "bytes": 16009,
+      "sha256": "1cfbf7b5a621ab50e2a6c946cdf572e868f1b35b708ab45f06da051f8166f7cb"
+    },
+    "archive/previous-main-5c602/CriticalDepth/ComponentConstants.lean": {
+      "bytes": 2866,
+      "sha256": "29b9660fc056c6e80bf9f4afb60f150d09003fdd7726fd0496522f0520074beb"
+    },
+    "archive/previous-main-5c602/CriticalDepth/Compression.lean": {
+      "bytes": 5978,
+      "sha256": "433e1c3d42d5d16c3e065657f137929f6b307dba343f4c4aa67a42245a6fddff"
+    },
+    "archive/previous-main-5c602/CriticalDepth/DepthZero.lean": {
+      "bytes": 4538,
+      "sha256": "0579b3b022f22a7689d5a984e6c4dd28e0f297f5fca9a56e9a188d920f4ea162"
+    },
+    "archive/previous-main-5c602/CriticalDepth/DerivationExtension.lean": {
+      "bytes": 5059,
+      "sha256": "5d42a69eeb51e53b3b6105149752dd3cdcff5449fd7f45cbd57f333525a30611"
+    },
+    "archive/previous-main-5c602/CriticalDepth/FieldConstants.lean": {
+      "bytes": 7452,
+      "sha256": "0ca698d92f3ee902c1727df10365e6e6d2258540356acd4b644c0817ef8f2b61"
+    },
+    "archive/previous-main-5c602/CriticalDepth/FieldLayerDerivative.lean": {
+      "bytes": 8418,
+      "sha256": "86396a45830fe5dd3a15c326d5102590167677526ac432da5ae0e3ab7d5fdf57"
+    },
+    "archive/previous-main-5c602/CriticalDepth/FieldLightCone.lean": {
+      "bytes": 12894,
+      "sha256": "b58fa61f017768c4216d5a59399d571635461da9cfc63d933f6f044c2a4976ff"
+    },
+    "archive/previous-main-5c602/CriticalDepth/FourQubitExample.lean": {
+      "bytes": 9807,
+      "sha256": "c576f4cf2058e7330f3aeb5a7dba94c998cbe38438665a98e007c59ca66310d7"
+    },
+    "archive/previous-main-5c602/CriticalDepth/FourQubitStabilizer.lean": {
+      "bytes": 9786,
+      "sha256": "2a2d0ee94e4f1788e7ca58e44c0e35771cc4948ff45650d4765cf56c6b8b21b5"
+    },
+    "archive/previous-main-5c602/CriticalDepth/InsertionDetection.lean": {
+      "bytes": 7728,
+      "sha256": "424bc26c5b5ec827132b772f3203aaffe7f6cf9a331df95a45f85f84b2e72df4"
+    },
+    "archive/previous-main-5c602/CriticalDepth/IntegralImage.lean": {
+      "bytes": 1647,
+      "sha256": "c67d112265d72337cab336507da0e2d0682577a6ce1a68427548bb900fcef573"
+    },
+    "archive/previous-main-5c602/CriticalDepth/LayerOperations.lean": {
+      "bytes": 5832,
+      "sha256": "6351e0efea697f274db1dbd32e5147e524dbdb9cc44b605d5f9d50154e78933f"
+    },
+    "archive/previous-main-5c602/CriticalDepth/LocalScalarCoordinates.lean": {
+      "bytes": 3504,
+      "sha256": "4607791218fe73b6bf7267c394c591645ef346a914936f2da7b3baa2b1b5d43c"
+    },
+    "archive/previous-main-5c602/CriticalDepth/MainExamples.lean": {
+      "bytes": 3205,
+      "sha256": "3ecf26531e4f80149b3ca9b0df4337132dc378c3cf29d554ae48b43142e53e37"
+    },
+    "archive/previous-main-5c602/CriticalDepth/MainResults.lean": {
+      "bytes": 937,
+      "sha256": "3201e51c5017435e3729ec240a3f824b84a8b1a59cee2dc6bd31e1c352968ea7"
+    },
+    "archive/previous-main-5c602/CriticalDepth/ManuscriptStatements.lean": {
+      "bytes": 6615,
+      "sha256": "a83fefc1928efbc9adf5e348aa37dfae403c5313c5de326b1486e5dbd626666a"
+    },
+    "archive/previous-main-5c602/CriticalDepth/MatrixCore.lean": {
+      "bytes": 4989,
+      "sha256": "6e7a8bd257b20b7874e3cbe556f9b16ec57ef74efc01c12cecdd9c5b10ca0c61"
+    },
+    "archive/previous-main-5c602/CriticalDepth/MatrixDerivation.lean": {
+      "bytes": 2980,
+      "sha256": "3219508fb614599074fd555a84a1d0cb5ea9073df3c606cfe3c9b7de8043837d"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PauliCompression.lean": {
+      "bytes": 22881,
+      "sha256": "dd52f1f0f883ac61a674d3a37e5e33ce7b47a5f9b43a9b20a829b9446ab670e8"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PauliConjugation.lean": {
+      "bytes": 8242,
+      "sha256": "e34ff5da491aec96c9feb8c19cdc8f80e9ecc5493590bfb1a29dc734401415b0"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PauliSpan.lean": {
+      "bytes": 7362,
+      "sha256": "686238212d7f49ccae85eb5a5baf7cb9af67acf91e589f0c01f88ce72bcf3eb5"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PauliSynthesis.lean": {
+      "bytes": 9304,
+      "sha256": "5675ebc520314bcd222be3b69cd1f1cdd88925f4595e988a38f5c8b057f4a32a"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PauliTensor.lean": {
+      "bytes": 9804,
+      "sha256": "b24c215d2d7974fde674ab951544d0297b7a9773f6b3f71789dd9ab3cf19816f"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PhysicalCompressionExample.lean": {
+      "bytes": 5629,
+      "sha256": "1e800478d45eef678be822bf126e0a3f3878e1c616749ba6f29e3ea07bc0e8ae"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PositiveDepth.lean": {
+      "bytes": 4245,
+      "sha256": "93d551ecaceae7ad662417d9f7a8f538e98907985cc00671e3d9763325a60bb6"
+    },
+    "archive/previous-main-5c602/CriticalDepth/PositiveDepthExamples.lean": {
+      "bytes": 2391,
+      "sha256": "747b764b835e1d9303ba1535b6159bfdfa5a21b9c8f27ad20411b6a600a96472"
+    },
+    "archive/previous-main-5c602/CriticalDepth/ProjectiveFaithfulness.lean": {
+      "bytes": 6100,
+      "sha256": "e6ebf2136ba72d2d1cff1763cf4b39fbe1a11bb4e2fcca5d3e9d6413d6d3abb9"
+    },
+    "archive/previous-main-5c602/CriticalDepth/ProjectiveTopology.lean": {
+      "bytes": 9167,
+      "sha256": "82c75f1ee54111cb2970997d42c46ec47dc1f555cd15a060a45118d6728b05f5"
+    },
+    "archive/previous-main-5c602/CriticalDepth/RotationExamples.lean": {
+      "bytes": 1839,
+      "sha256": "dbc72423f12d70f8939cb6afc463311487adc0d5fb597ab0a86641a8d7de18a5"
+    },
+    "archive/previous-main-5c602/CriticalDepth/Rotations.lean": {
+      "bytes": 8091,
+      "sha256": "1ee6539e9955a4f3ed391d25c32894fdeacedb0324b4ea470215ad9bb71d1079"
+    },
+    "archive/previous-main-5c602/CriticalDepth/ScalarConstants.lean": {
+      "bytes": 2438,
+      "sha256": "c82166415ae0609b27a763821920190ea37c4da943f9f765f23ed70df048c2df"
+    },
+    "archive/previous-main-5c602/CriticalDepth/ScalarExtension.lean": {
+      "bytes": 9790,
+      "sha256": "a4320bd7e559673e9fcb6dadc4c1127f9aabce73284b86ee4def6eb0cdb10539"
+    },
+    "archive/previous-main-5c602/CriticalDepth/StabilizerWitness.lean": {
+      "bytes": 16204,
+      "sha256": "aaa0a58eeb6c7e78ae350ab7e6a8e0b18db3f2d7cca7a2447c41c4894d0f3d53"
+    },
+    "archive/previous-main-5c602/CriticalDepth/Support.lean": {
+      "bytes": 22680,
+      "sha256": "a431f17d7481655ab24241d15b7850d2fa45a65fa7b3fc33e135d4206ce08ecd"
+    },
+    "archive/previous-main-5c602/CriticalDepth/TheoremOne.lean": {
+      "bytes": 11635,
+      "sha256": "9834ba1acbf60e5784c0e797e85ba0fba82865e821d535df4b6cbe0cfee25d8c"
+    },
+    "archive/previous-main-5c602/CriticalDepth/TheoremTwoReduction.lean": {
+      "bytes": 7530,
+      "sha256": "dc8e711bfb8e7322809f20ea1562e3ac64e1d67eb0c70470ce59e7a0f5405516"
+    },
+    "archive/previous-main-5c602/LICENSE": {
+      "bytes": 1065,
+      "sha256": "080f184389ac12e7970303ee0cb4592b3ffa3d98cbde35f50fbd3d24fca7a786"
+    },
+    "archive/previous-main-5c602/README.md": {
+      "bytes": 1744,
+      "sha256": "6170428cc3884bed44ec61c0c673e4835eb61fbf72daf58941ca0bfd6975018b"
+    },
+    "archive/previous-main-5c602/VERIFICATION_STATUS.md": {
+      "bytes": 6027,
+      "sha256": "77382a935223bab28e9f1fe0a31ed284e92a6e9b842c7eada69b0bd245318ee7"
+    },
+    "archive/previous-main-5c602/docs/CORRESPONDENCE.md": {
+      "bytes": 9644,
+      "sha256": "3388925c1900aeb5c6abed0405ce3931461c10604c339cddb312022bb83fe26c"
+    },
+    "archive/previous-main-5c602/docs/THEOREM_ONE_PROOF.md": {
+      "bytes": 11743,
+      "sha256": "0e7bc26e563dce472356b3271bbe1e5bf373329dcb24c193799220357d7650f1"
+    },
+    "archive/previous-main-5c602/docs/THEOREM_TWO_PROOF.md": {
+      "bytes": 9286,
+      "sha256": "901bcd651aefe2e505efd817efb43219cfda7496ec87e6ac6363abdd6c8eb695"
+    },
+    "archive/previous-main-5c602/docs/VERIFICATION.md": {
+      "bytes": 11085,
+      "sha256": "8cfbe14a699ddeb13f15f7c0630927abf51550fdac92ec8ca89000ecc34e6550"
+    },
+    "archive/previous-main-5c602/lake-manifest.json": {
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+    },
+    "archive/previous-main-5c602/lakefile.toml": {
+      "bytes": 313,
+      "sha256": "11ef90f1cc646cdfc7b38c86e16d27502ac69d0071f4cf42089ed42f36fb02e6"
+    },
+    "archive/previous-main-5c602/lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    "archive/previous-main-5c602/manuscript/shallow_logical_operators_depth_threshold.pdf": {
+      "bytes": 127292,
+      "sha256": "e5e5157b590a93c26fe5d5b99ac5fdacc3e34a2229493ea88ce9eaff2fcfcbde"
+    },
+    "archive/previous-main-5c602/manuscript/shallow_logical_operators_depth_threshold.tex": {
+      "bytes": 36687,
+      "sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/README.md": {
+      "bytes": 7009,
+      "sha256": "43c97a63379a173116c03e58d87b6d81d0054a869e609e2ba74da7bf79074382"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/SHA256SUMS": {
+      "bytes": 2023,
+      "sha256": "b941a475bec963810df4c2fcbb4be7c3b3e18d76b23956ec6f98f5e10590988f"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/ots/release-manifest.txt.initial.ots": {
+      "bytes": 219,
+      "sha256": "08a11a234442edc8265018e448d03813c33222f6329f469325cadf72e423c43b"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/ots/release-manifest.txt.merged.ots": {
+      "bytes": 446,
+      "sha256": "ff29d4e8d0b0aee8f120d9272e189fd76d41e146a553c01695173b77336bc140"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/ots/release-manifest.txt.upgraded.ots": {
+      "bytes": 446,
+      "sha256": "ff29d4e8d0b0aee8f120d9272e189fd76d41e146a553c01695173b77336bc140"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/release-manifest.txt": {
+      "bytes": 2276,
+      "sha256": "99617c524af8d44dc5f823275671e57e9a978b2b7be9f0dd827960dd0bf6e7ee"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/actual-signer.pem": {
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/query.txt": {
+      "bytes": 292,
+      "sha256": "70ad832dc55b8713f67002a9dd517c68aad3b0ee6019ce981d5a721375adc244"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/release-manifest.tsq": {
+      "bytes": 69,
+      "sha256": "fc954320866f95070117a77dc86627b2dd25f9b877d3cfa9977dc660c186b6ce"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/release-manifest.tsr": {
+      "bytes": 6006,
+      "sha256": "4ce3caedaf9edb85b76087865fad73b0edeb06cf0076ce35bcf724a7bfc80893"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/reply.txt": {
+      "bytes": 514,
+      "sha256": "6773be7b3c76d39f5aa0481173aef6b9fc57ae6a03d0ba3efa7ac5f03f1bd050"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/response-certificates.pem": {
+      "bytes": 6834,
+      "sha256": "b65bce3ebb0be8a8de3a133a0dc76e77399a8bf4c80bab983fa350358e08dfe1"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/root-fingerprint.txt": {
+      "bytes": 65,
+      "sha256": "f7f04c190e318a031812dc6431e98e5286bf918d4950ba556a71276ae09914cf"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/signer-EKU.txt": {
+      "bytes": 54,
+      "sha256": "f1cc6aba9696aee75f3537ae1f0194d04078bf80a928d7c2116999e67b67503c"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/signer-chain-verification.txt": {
+      "bytes": 337,
+      "sha256": "000e0f03b4313ed38e667d841f9127754d476a660aa3fc458c5cf4694fdc3eb5"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/signer-metadata.txt": {
+      "bytes": 417,
+      "sha256": "9f23895105ab8cd216ecf3b62ffcc47f4cf5fb48cceca8034872dc85b98bcf08"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/token-metadata.txt": {
+      "bytes": 205,
+      "sha256": "408d9f4ac7a1b7f7300c11cb447f16c74de6d4023f2034dd150b2b6970c4cd3d"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/token.der": {
+      "bytes": 5997,
+      "sha256": "2e99d520b4f67e69f40ef95c659c5d4815351bad9f64b08a5d6e3051ca5f19f4"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/trusted-root.pem": {
+      "bytes": 1988,
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/tstinfo.der": {
+      "bytes": 112,
+      "sha256": "4ea05916bc8e54668ec5090ee0af5e70bb8f6e63fb0d4d9b26e655451b0d17ce"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/verify-file.txt": {
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/rfc3161/verify-query.txt": {
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    },
+    "archive/previous-main-5c602/mathlib-review-timestamps/verification.json": {
+      "bytes": 10027,
+      "sha256": "136acd257f9dcd7b968bcf6ecd9312156594b1dcc6654d4327f610a609246618"
+    },
+    "archive/previous-main-5c602/mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md": {
+      "bytes": 8392,
+      "sha256": "b0a1108b54c4e5cd54499ce7fd32d7e05f9b4ad7a2220b4b22ad07b931c49c4f"
+    },
+    "archive/previous-main-5c602/mathlib-review/AUDIT_RESPONSE.md": {
+      "bytes": 11322,
+      "sha256": "f3c22f90ead9190a568f6fd315a1766d6434760c9ab08244498ce9461c2104cc"
+    },
+    "archive/previous-main-5c602/mathlib-review/CriticalDepthMathlib.lean": {
+      "bytes": 527431,
+      "sha256": "85af30d2f9cdf217a729c004d7af0ad67f87b4a821eb28e38ae70dfec840dfd8"
+    },
+    "archive/previous-main-5c602/mathlib-review/KERNEL_AUDIT.txt": {
+      "bytes": 6865198,
+      "sha256": "8b291fbbbc1ee74e7f69087fd9add1f1cf2f923b831469c687aa189b41856f1e"
+    },
+    "archive/previous-main-5c602/mathlib-review/PAYLOAD_SHA256.txt": {
+      "bytes": 1412,
+      "sha256": "eb7ccf23e4db2e69747d078876a4ec3e327cbb14eb19c20dfa87d160b380ee5f"
+    },
+    "archive/previous-main-5c602/mathlib-review/README.md": {
+      "bytes": 3246,
+      "sha256": "0c0f8365a5feb6fed126cffa282bed11cd8c5d7da81f35bc78b37623cf937c2a"
+    },
+    "archive/previous-main-5c602/mathlib-review/THREE_LAYER_CORRESPONDENCE.md": {
+      "bytes": 11453,
+      "sha256": "ac16b8e99e7ab7c206dc17ae80971d40dcb4344266e23fc58ca6068e7861b587"
+    },
+    "archive/previous-main-5c602/mathlib-review/VERIFICATION.json": {
+      "bytes": 6715438,
+      "sha256": "c2c180483be3e9ddd89420a325dc6f36288b3534da1d40250ad9a62976353198"
+    },
+    "archive/previous-main-5c602/mathlib-review/critical_depth_mathlib_review_lean435.zip": {
+      "bytes": 609522,
+      "sha256": "b4f45ce84875e43921a536cb69637544bddead761044bd1693f113bdfb97c4ad"
+    },
+    "archive/previous-main-5c602/mathlib-review/inputs/original_pure_formal_statements.lean.txt": {
+      "bytes": 912,
+      "sha256": "964755075bb1a9f233e1c179b62732e080a2fbe08b7253163a9e7f0c679186b4"
+    },
+    "archive/previous-main-5c602/mathlib-review/inputs/original_pure_mathematical_statements.md": {
+      "bytes": 2926,
+      "sha256": "30a2707370aa7a79065d77e902b7630ddc303960d327d30448134b91fc83b305"
+    },
+    "archive/previous-main-5c602/mathlib-review/lake-manifest.json": {
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+    },
+    "archive/previous-main-5c602/mathlib-review/lakefile.toml": {
+      "bytes": 327,
+      "sha256": "20b6bfa241aab1c492d4acdac855734b5526abe5cfbbc79a61671d7ae06bc77b"
+    },
+    "archive/previous-main-5c602/mathlib-review/lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    "archive/previous-main-5c602/mathlib-review/manuscript/shallow_logical_operators_depth_threshold.pdf": {
+      "bytes": 127292,
+      "sha256": "e5e5157b590a93c26fe5d5b99ac5fdacc3e34a2229493ea88ce9eaff2fcfcbde"
+    },
+    "archive/previous-main-5c602/mathlib-review/manuscript/shallow_logical_operators_depth_threshold.tex": {
+      "bytes": 36687,
+      "sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227"
+    },
+    "archive/previous-main-5c602/mathlib-review/verify.sh": {
+      "bytes": 1436,
+      "sha256": "a6c0421918838799fc0a8f8c28c51de3d330fbb8e8fb52b8c4ad137b665fec28"
+    },
+    "archive/previous-main-5c602/scripts/verify.sh": {
+      "bytes": 6700,
+      "sha256": "a62f2da7a9fe6b8acabafcb81d78b86f113a1139b04dc8cbd5e24402dce149d2"
+    },
+    "archive/previous-main-5c602/timestamps/README.md": {
+      "bytes": 10372,
+      "sha256": "748340d7e7f6bf03f837ac0a7ace2522bfcfe8a8f52487f921f714454e044c74"
+    },
+    "archive/previous-main-5c602/timestamps/client-lock.json": {
+      "bytes": 33821,
+      "sha256": "6c9ae735072213cc0a0324d5019e91d2216f824990b88696df255280b99fb2c5"
+    },
+    "archive/previous-main-5c602/timestamps/client-package.json": {
+      "bytes": 58,
+      "sha256": "9316fd7bd32551d47a3a8e2614ecf82c53f29a774cc750c15a801877a0fb4c30"
+    },
+    "archive/previous-main-5c602/timestamps/ots/release-manifest.txt.ots": {
+      "bytes": 794,
+      "sha256": "28ae737b9fbffbbd3518f9677e96220b97eb2e9c7e5ff59e884bf5717bc50824"
+    },
+    "archive/previous-main-5c602/timestamps/ots/release-manifest.txt.upgrade.ots": {
+      "bytes": 794,
+      "sha256": "28ae737b9fbffbbd3518f9677e96220b97eb2e9c7e5ff59e884bf5717bc50824"
+    },
+    "archive/previous-main-5c602/timestamps/receipts.sha256": {
+      "bytes": 2043,
+      "sha256": "6f2185a050d7ae847e1e20477119bce8d084545080bb9845066e622f4f65dc8b"
+    },
+    "archive/previous-main-5c602/timestamps/release-manifest.txt": {
+      "bytes": 8278,
+      "sha256": "a3e283cc6e07c705e8d181a54cdbda4e01f3e2ecb873d15b63ad9cba60f8a2a8"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/actual-signer.pem": {
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/query.txt": {
+      "bytes": 292,
+      "sha256": "18739226219b55a2c8a48ff7cac0e443b46e2ae87208cf633c552c70c6c5a092"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/release-manifest.tsq": {
+      "bytes": 69,
+      "sha256": "d56095ce6ba08c9d782f6160e8851665b54378baeba2e5c9fe2eaee3b213bb84"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/release-manifest.tsr": {
+      "bytes": 6007,
+      "sha256": "56fb02d48f9e62118a242d360f4c1624f4dbde6d808e866e990135c6f872bf92"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/reply.txt": {
+      "bytes": 514,
+      "sha256": "dfede342f9869235610ec36fb32552168cde2933624f0d78b4291e74d748b950"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/response-certificates.pem": {
+      "bytes": 6834,
+      "sha256": "b65bce3ebb0be8a8de3a133a0dc76e77399a8bf4c80bab983fa350358e08dfe1"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/signer-EKU.txt": {
+      "bytes": 54,
+      "sha256": "f1cc6aba9696aee75f3537ae1f0194d04078bf80a928d7c2116999e67b67503c"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/signer-chain-verification.txt": {
+      "bytes": 337,
+      "sha256": "000e0f03b4313ed38e667d841f9127754d476a660aa3fc458c5cf4694fdc3eb5"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/signer-metadata.txt": {
+      "bytes": 417,
+      "sha256": "9f23895105ab8cd216ecf3b62ffcc47f4cf5fb48cceca8034872dc85b98bcf08"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/trusted-root-metadata.txt": {
+      "bytes": 397,
+      "sha256": "3c3efbb6a8e156a53a06cdd6ea7313747530e28d852a80a03f429407cea7510b"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/trusted-root.pem": {
+      "bytes": 1988,
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/verify-file.txt": {
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    },
+    "archive/previous-main-5c602/timestamps/rfc3161/verify-query.txt": {
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    },
+    "archive/previous-main-5c602/timestamps/verification.json": {
+      "bytes": 5412,
+      "sha256": "b00764b9e402a01fe0111f89662ae194b298a5653488b4475a837939870ab696"
+    },
+    "archive/previous-main-5c602/verification-runs/20261101-3361e6c/ARTIFACT_MANIFEST.json": {
+      "bytes": 929,
+      "sha256": "e4975766a142679f4c7f97562833770dbdc11806388bc32c72ff27f2bbfe868d"
+    },
+    "archive/previous-main-5c602/verification-runs/20261101-3361e6c/CONSUMER_VERIFICATION.json": {
+      "bytes": 3108,
+      "sha256": "fdfd4b61a545b12d84a69be1ebc94946819146d4450e1e3ec48d60ef8add0738"
+    },
+    "archive/previous-main-5c602/verification-runs/20261101-3361e6c/FINAL_VERIFICATION_REPORT.md": {
+      "bytes": 7937,
+      "sha256": "e2da8f35dae9525fc67a0377e366baff5aa505fd5173322be8f5dbabb0a8182b"
+    },
+    "archive/previous-main-5c602/verification-runs/20261101-3361e6c/FreshConsumer.lean": {
+      "bytes": 5886,
+      "sha256": "725b6432a412ab4154a42336ed915783eec3c32169d521dd02550df97af0de94"
+    },
+    "archive/previous-main-5c602/verification-runs/20261101-3361e6c/KERNEL_AUDIT.txt": {
+      "bytes": 6865198,
+      "sha256": "8b291fbbbc1ee74e7f69087fd9add1f1cf2f923b831469c687aa189b41856f1e"
+    },
+    "archive/previous-main-5c602/verification-runs/20261101-3361e6c/SHA256SUMS.txt": {
+      "bytes": 529,
+      "sha256": "35259586e3835c043a8cbd44f96c51aa9022abc5fcbed793d8454112d157f8c9"
+    },
+    "archive/previous-main-5c602/verification-runs/20261101-3361e6c/VERIFICATION.json": {
+      "bytes": 11743,
+      "sha256": "389d03c0b122cbb1b93224dcdf1766264cd98f37c300bbca8e5ebe43c14c9ea9"
+    },
+    "archive/previous-main-5c602/verification/AuxiliaryCalls.lean": {
+      "bytes": 1111,
+      "sha256": "0357b6c06b8da0356514f19b47ede8a9a75d37545c21b8fba91f4d4a4f508831"
+    },
+    "archive/previous-main-5c602/verification/README.md": {
+      "bytes": 2570,
+      "sha256": "39d6049786a5d52093d4ed70b49e9773fe719d33da679cdf79305ab6d6604662"
+    },
+    "archive/previous-main-5c602/verification/audit.txt": {
+      "bytes": 162704,
+      "sha256": "5d9c45cf8e48573308588ce60543610b3338fbb86f424316106b8fd6c89022ec"
+    },
+    "archive/previous-main-5c602/verification/audited-modules.txt": {
+      "bytes": 1401,
+      "sha256": "c538b62285e61add49d71d8f87181fa7856a2b636dd04ec095a69118d12866d5"
+    },
+    "archive/previous-main-5c602/verification/consumer-source.sha256": {
+      "bytes": 99,
+      "sha256": "f7e839f5949ec4c23a9453aebb076a3aa72a8e2d2969877a7ae7a91cc4282a53"
+    },
+    "archive/previous-main-5c602/verification/entry-point.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "archive/previous-main-5c602/verification/expanded-main-types.txt": {
+      "bytes": 20770,
+      "sha256": "e1bc992b46bd56c531ba5ddb98b0022586a2ba9375459454bbe30b519fb6ca7f"
+    },
+    "archive/previous-main-5c602/verification/expected-audited-modules.txt": {
+      "bytes": 1401,
+      "sha256": "c538b62285e61add49d71d8f87181fa7856a2b636dd04ec095a69118d12866d5"
+    },
+    "archive/previous-main-5c602/verification/manuscript-binding.json": {
+      "bytes": 4495,
+      "sha256": "31f38245e66cd3582beef7d66f14e0c471217ef6e9b9dc84dbc1120a4a526a5d"
+    },
+    "archive/previous-main-5c602/verification/pdf-qa.json": {
+      "bytes": 4472,
+      "sha256": "350707a60c8aad26a323b1ef1845229e2695659f5f50589a464f1232dbea9c25"
+    },
+    "archive/previous-main-5c602/verification/proof-run-resource.json": {
+      "bytes": 1370,
+      "sha256": "0cbc87aa438fc3608e7ca5b7e70e8ad57f2e839aa04f58d8c08e94d320c16463"
+    },
+    "archive/previous-main-5c602/verification/replay-source-inputs.sha256": {
+      "bytes": 5296,
+      "sha256": "43cf18fea45259eb9e2877b6ca9fb83197a8e7394e85ff6cee6a87863adea1eb"
+    },
+    "archive/previous-main-5c602/verification/results.json": {
+      "bytes": 9268,
+      "sha256": "309f8d346625f48832bb5eadd3bd583c18400b7cd9d0f1dfbe0a7187c13e0f31"
+    },
+    "archive/previous-main-5c602/verification/source-binding-check.txt": {
+      "bytes": 2010,
+      "sha256": "8b3606a39269b4e3d5c3d098333476d4e6f80d6b47962fa30c13dd53a6b795ea"
+    },
+    "archive/previous-main-5c602/verification/source-manifest.sha256": {
+      "bytes": 5296,
+      "sha256": "cdb7bde150cadbaa6e10ba24b1f38be560c582331d4385fb50b0486a1202b4a8"
+    },
+    "archive/previous-main-5c602/verification/source-manifest.status.json": {
+      "bytes": 2923,
+      "sha256": "4baab34a1f44020087d11a2c3e6d3a8bf38ec00d82108603fa3cb2c3244f0753"
+    },
+    "archive/previous-main-5c602/verification/toolchain.txt": {
+      "bytes": 106,
+      "sha256": "eb22144228dd41cd51a0c84af4f976cd0cef473102dcf99b60be756b11f2b95a"
+    },
+    "docs/20261103v2-algebraic-check.json": {
+      "bytes": 2410,
+      "sha256": "ea44bb94b5e66df7e803fe9966fe3dcce97b4added7eabd4ef24cfe34530dc1e"
+    },
+    "docs/20261103v2-editorial-check.json": {
+      "bytes": 2527,
+      "sha256": "2f475f0cc2711cf7beb145e50fa9cf520b459e30add39773bc22bf46cbe2d359"
+    },
+    "docs/BOOTSTRAP_CORRECTION_20261103.json": {
+      "bytes": 1681,
+      "sha256": "1caeb763d6e8f96c2f86cae0a5c41db2678118247104263ace32a0872bc07457"
+    },
+    "docs/CLEAN_REPLAY.md": {
+      "bytes": 5785,
+      "sha256": "04b3a5d7571ba160961bf436a74079accd17fec05fb657fe36c15fb4f8ea8092"
+    },
+    "docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md": {
+      "bytes": 33525,
+      "sha256": "82ebb9b1f16e0f87dfcf67aeae0bf03d5270654ad5c4da911c587f399c84dc16"
+    },
+    "docs/DEPENDENCY_SOURCE_REPLAY.md": {
+      "bytes": 1480,
+      "sha256": "fb336040beb5190e17cff402984307a012e4f71d8a1ece03be59c0ba37c65624"
+    },
+    "docs/HISTORICAL_STATUS_NOTES.md": {
+      "bytes": 2266,
+      "sha256": "d72165544cadc583e6b2918da1da6dc67326a03fc773ca1fa649d0a2881afc7d"
+    },
+    "docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md": {
+      "bytes": 1875,
+      "sha256": "e5140b7d28111f7c7f5610e2fac0473644bae30eeedcb2d87c7f92149958d5c8"
+    },
+    "docs/LEAN_SCOPE_AND_CITATION_NOTE.md": {
+      "bytes": 3225,
+      "sha256": "85a0dacbd98eb0a4a87a1f0ae274ad9c3fd7c602c0de9bd3db4b7c5e2d4a1d2f"
+    },
+    "docs/VERIFICATION.md": {
+      "bytes": 5265,
+      "sha256": "008d90420b903a234b641c93fce1dbfaac453a41d68e8952c9e6b31f533b1a8f"
+    },
+    "docs/math/ALIGNED_MATHEMATICAL_STATEMENTS.md": {
+      "bytes": 12084,
+      "sha256": "70b452c1db3b762249f99e16973d9fd8c1a71a185055d608aa8f2a0530c8b111"
+    },
+    "docs/math/CURRENT_MATHEMATICAL_STATEMENTS.md": {
+      "bytes": 33485,
+      "sha256": "72b71b6533dcf06a53f6886b6cdace9669589892ff6b791513322bcf68487f8d"
+    },
+    "docs/math/ORIGINAL_PURE_MATHEMATICAL_STATEMENTS.md": {
+      "bytes": 3101,
+      "sha256": "8b623894e4f6a51a09b29676c99ccd097caa034553a25333c25cc749b624fbae"
+    },
+    "docs/math/STABILIZER_DEFINITION_CORRESPONDENCE.md": {
+      "bytes": 8480,
+      "sha256": "5814346cfc53045527ef5be7263042ccc6e8b65d280a4cc1537df2a6e54a5670"
+    },
+    "lake-manifest.json": {
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+    },
+    "lakefile.toml": {
+      "bytes": 442,
+      "sha256": "82fa22259fb9a1cc329f3c89febd3afbf841ac7d859e11a926193cdc204bb1a0"
+    },
+    "lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    "manuscript/20261104v1.tex": {
+      "bytes": 43033,
+      "sha256": "7777ecaefbaf8891090754c6cdb884e49f57c9d3bdd2a29c7451da120b9c860d"
+    },
+    "manuscript/20261107v7.pdf": {
+      "bytes": 469716,
+      "sha256": "ca3010f710a50fa394d40c651fdd5a5828e05b2871e9824e262236a0623f3137"
+    },
+    "manuscript/20261107v7.tex": {
+      "bytes": 45311,
+      "sha256": "70c261a982af5cbf4bb6a8784f5996a6d1ca9bf7ab34cc8b3ed5034a42adf271"
+    },
+    "manuscript/20261114v0.tex": {
+      "bytes": 115166,
+      "sha256": "de0a9890b6bec7eb82bf55f8467339538e799b064ecc2a19b695f41d4236c975"
+    },
+    "manuscript/Update_branch.pdf": {
+      "bytes": 285864,
+      "sha256": "59183f925f792b4132d12c1818c7954e0f886bff76c03f9a5a1025a630c0ae28"
+    },
+    "manuscript/Update_branch.tex": {
+      "bytes": 126168,
+      "sha256": "08452c4636132e06dd9f4757d530c479ef5a17ce02bc070908e90b8c0e896343"
+    },
+    "manuscript/provenance/20261103v2-author-approved-input.tex": {
+      "bytes": 36732,
+      "sha256": "285ad9c537ad494418c250a6be1964476af1e6cd43b331a68733643a54d33ec2"
+    },
+    "manuscript/shallow_logical_operators_depth_threshold.pdf": {
+      "bytes": 450405,
+      "sha256": "b7b8c4376fc98ed11785b21f5763a499650bbeb9fbbc9b1537f791a8a45cdf98"
+    },
+    "manuscript/shallow_logical_operators_depth_threshold.tex": {
+      "bytes": 39564,
+      "sha256": "523e7714d3e010b332b011de6ba8f0fd159c5daa89979a0dcffa4675e3b63c40"
+    },
+    "mathlib-review/ALIGNED_MATHEMATICAL_STATEMENTS.md": {
+      "bytes": 11605,
+      "sha256": "330aec61416d6b191f47c7b6f717e1544ad51397e3aadda09920a46c6cfab95e"
+    },
+    "mathlib-review/AUDIT_EXPECTED.txt": {
+      "bytes": 333,
+      "sha256": "63794e2a409f3a7cc09626642ff2c89ded8505587bc0d4e43a54e15f2c70be93"
+    },
+    "mathlib-review/AUDIT_RESPONSE.md": {
+      "bytes": 5717,
+      "sha256": "87ee0839661bb3681103c64d66fbdabf155270e1c2aa512843e2f2a5bd5c62cd"
+    },
+    "mathlib-review/BaconShorAdjacentGauges.lean": {
+      "bytes": 7770,
+      "sha256": "0787e3bd41de6104154153fdb2832a07c1c0506447549a2eb8343823e2217d1e"
+    },
+    "mathlib-review/BaconShorAspectRatio.lean": {
+      "bytes": 7141,
+      "sha256": "4e323732f8681fce9a1572df735cf5ac827a35e9ee1ea7ffb018766a64152731"
+    },
+    "mathlib-review/BaconShorAudit.lean": {
+      "bytes": 2077,
+      "sha256": "8a8781c02acb5faa68d10169055d674535c11b7fd8d5b3a89688f196147e01a5"
+    },
+    "mathlib-review/BaconShorBareAxes.lean": {
+      "bytes": 5552,
+      "sha256": "b092702a38eb52fe08c7c639499abab0afac9130fa9ff69e68d2780576a9410d"
+    },
+    "mathlib-review/BaconShorBinaryGeometry.lean": {
+      "bytes": 6686,
+      "sha256": "cf345dea6fa97944994062c30953c158f4b30510d5fbd1a91557b5b3c01d0924"
+    },
+    "mathlib-review/BaconShorCoordinates.lean": {
+      "bytes": 5856,
+      "sha256": "dec14c0dd89dbba128dde437170e0da842d5b9b99c7a0b13034f8e7997106204"
+    },
+    "mathlib-review/BaconShorDressedDistance.lean": {
+      "bytes": 6321,
+      "sha256": "3a94f1d94287afb4042945205d1821724b21d4be3dedb8be84d318511e2cd8b0"
+    },
+    "mathlib-review/BaconShorFixedSpace.lean": {
+      "bytes": 10314,
+      "sha256": "ad21773eb1a53b1d97f0d46180ae65ff701cfca1bb41c4c491965bc6526fe1a1"
+    },
+    "mathlib-review/BaconShorGaugeActions.lean": {
+      "bytes": 5892,
+      "sha256": "8c2f7e5afd91d283dbde5b7c015ea469d753c72163eb081602b8253aa0980eba"
+    },
+    "mathlib-review/BaconShorGaugeCoordinates.lean": {
+      "bytes": 4946,
+      "sha256": "73db2d8c1215327a851fd348d7bf87e43a10338ac1e146830449b298cb5e14ab"
+    },
+    "mathlib-review/BaconShorGaugeTrace.lean": {
+      "bytes": 5941,
+      "sha256": "d4a6352c7191c388f6036831569887fd04f5ab504e98dee3c5d9aed3c3c2a2c9"
+    },
+    "mathlib-review/BaconShorProposition.lean": {
+      "bytes": 9547,
+      "sha256": "6d3a4e8fb56ef54a5ffa3dd7ef6b0a5b6cc982cad7ed759c1ae89ab5d40b1e54"
+    },
+    "mathlib-review/BaconShorRealLog.lean": {
+      "bytes": 1231,
+      "sha256": "fd9ea87ba18d6c4b9d750fded6644740a6e43ce09fd1439aef155d82d3860758"
+    },
+    "mathlib-review/BaconShorShortTrace.lean": {
+      "bytes": 11487,
+      "sha256": "5760108a1633bf14954b5f44b09cdabc89721ca1c17b96945dd4321380c6e76d"
+    },
+    "mathlib-review/BaconShorSubsystemEncoding.lean": {
+      "bytes": 5581,
+      "sha256": "9b5fa5ca2e6c130451e4284177ba8893d08860b57e1bbe6a5751104c528bedb3"
+    },
+    "mathlib-review/BaconShorThresholdUpper.lean": {
+      "bytes": 6429,
+      "sha256": "eae5c3c224db9afa492bb745963354148cbe271c56320358ba681a9982024a96"
+    },
+    "mathlib-review/BaconShorXAxisNormalizer.lean": {
+      "bytes": 7175,
+      "sha256": "2404e9a8965fbd1a6cb1f3aa67d066e638b3aa11d6512bcf02a78fc0f7800a36"
+    },
+    "mathlib-review/BarePauliRotations.lean": {
+      "bytes": 5450,
+      "sha256": "62545cd14d29c89fdbe55fa8ff002f56bcca599e2d0376ceca6b65779810c1ff"
+    },
+    "mathlib-review/BinaryPauliMasks.lean": {
+      "bytes": 8471,
+      "sha256": "41f71cde2d650df0fc3b0732111ade069caf06c1b8353c258d42ec5554a5311f"
+    },
+    "mathlib-review/BinaryPermutationDiagonal.lean": {
+      "bytes": 1604,
+      "sha256": "d6cafef8dd659d91e1f6db49d8d9e1c17685cc8a154b2e823c326f768f1ad38b"
+    },
+    "mathlib-review/BinaryPermutationUnitary.lean": {
+      "bytes": 6554,
+      "sha256": "3c0dd8d669ab58d1ed459042625ad2dc5d7233d8e33352a14d56b4adbae1b70f"
+    },
+    "mathlib-review/BinarySymplecticElimination.lean": {
+      "bytes": 6409,
+      "sha256": "0eeb18a5eaad364a4aa0c29bee35f9b8195bb1e734db2b35df2fda9c58516dc1"
+    },
+    "mathlib-review/CAD_VS_ALGEBRAIC_PROOF.md": {
+      "bytes": 1888,
+      "sha256": "b32c2de97cc9db8c4eb6fb90d9dc93c894d0b8b828b5b2b88f9a4b2e1dae1260"
+    },
+    "mathlib-review/CONTINUATION_VERIFICATION.json": {
+      "bytes": 336719,
+      "sha256": "2af7d2a1418fccec48a700554bca01a3ce814d64e89c4c6c60fb070a20c5ca15"
+    },
+    "mathlib-review/CSSBadWordCounts.lean": {
+      "bytes": 1921,
+      "sha256": "b3e80cd4855b3bc371c87229942917e9889acaa4e2be2a877fac22b3f46c8ca1"
+    },
+    "mathlib-review/CSSBinaryMonomial.lean": {
+      "bytes": 1439,
+      "sha256": "28b6aa38d3db76b9a1e49ccca03bc404d09f26b3e52b82666fedfe085bba9870"
+    },
+    "mathlib-review/CSSCheckSpaces.lean": {
+      "bytes": 8306,
+      "sha256": "4e30b7fbe72d8cc8e03a4c54d2c9e31e577c59ecaf35adb094b62ecb3608344d"
+    },
+    "mathlib-review/CSSCircuitRigidity.lean": {
+      "bytes": 8552,
+      "sha256": "5b296b9cd61daafad444f0bc11b83eb301f4e3857f8801d52f2d166c21d7dfab"
+    },
+    "mathlib-review/CSSCodeCosetRange.lean": {
+      "bytes": 4116,
+      "sha256": "a3bb9124feba412a96b40755e023a2b7b19f82c2c881ff6e0b83ffde99194d8f"
+    },
+    "mathlib-review/CSSCodeCosets.lean": {
+      "bytes": 6112,
+      "sha256": "19adef2a3f70b9223e4c2244c3fc82ea615e63b7ffaf0ffb72aa45a939c112b9"
+    },
+    "mathlib-review/CSSCodeDimension.lean": {
+      "bytes": 2697,
+      "sha256": "a63f8313e00629cc96b25daf5e265524fcc64b21498961e194d32da720095651"
+    },
+    "mathlib-review/CSSCodeDistance.lean": {
+      "bytes": 8138,
+      "sha256": "fb82e1fd88b0cf800742ea09b2e13a7d640aa053cbdb75cf02c8d2561c602e1f"
+    },
+    "mathlib-review/CSSCodeEncoding.lean": {
+      "bytes": 2308,
+      "sha256": "a6f8389566efba4b639f7c68bd8fe8dcd8931875fb5f1fc75f4943c29d771a26"
+    },
+    "mathlib-review/CSSCodeNormalizerAction.lean": {
+      "bytes": 3194,
+      "sha256": "5bf891d3400cb110da59fa47f3b4930e687f27a6ea139ac0e52154d62e5a4a5c"
+    },
+    "mathlib-review/CSSCodeOrthogonality.lean": {
+      "bytes": 4326,
+      "sha256": "db46d9d7f3c1086381661280c534db65e52a23f4eb5641451c93fc306d2188c2"
+    },
+    "mathlib-review/CSSCodePauliChecks.lean": {
+      "bytes": 4793,
+      "sha256": "996cb745c8605ff4f34d410f3f6db9b649bc0ebaa19ff57bd6e9b13070e4cd29"
+    },
+    "mathlib-review/CSSCodePauliMasks.lean": {
+      "bytes": 3305,
+      "sha256": "6c99c6d925795e0aa199aafc1055a819990694732bff47942de04c9e718ebadd"
+    },
+    "mathlib-review/CSSCodeStabilizer.lean": {
+      "bytes": 6058,
+      "sha256": "6f234c5f3a5adc4bcfb288650f8e0f4958b606c2783265edafcc47b46c6d700d"
+    },
+    "mathlib-review/CSSCodeStabilizerElements.lean": {
+      "bytes": 5727,
+      "sha256": "9f52467aaf5350bba4f92ee11a4cfc5e01175223ccfa5333d4e817e65110272b"
+    },
+    "mathlib-review/CSSColumnRankCounts.lean": {
+      "bytes": 2612,
+      "sha256": "b8cde967b7726cc83406d658e5e225b213c97cf81bf1a9bf89e033e3c60e64af"
+    },
+    "mathlib-review/CSSColumnRankFactorization.lean": {
+      "bytes": 5696,
+      "sha256": "be9cbe9ac8627db50e5fa844bd91587a8d1d5ad61fd31c2bcdc65aafb1bf819c"
+    },
+    "mathlib-review/CSSComputationalMonomial.lean": {
+      "bytes": 5785,
+      "sha256": "64b637d67e60a6dd0ecaa83de4636457d606ddf8e7dced9340ec82455a5fa784"
+    },
+    "mathlib-review/CSSConcreteMonomial.lean": {
+      "bytes": 6005,
+      "sha256": "2ec2e259115ba74a89f90f40096f7f8bd259fff1b3ead8a5a14a7d77e7555162"
+    },
+    "mathlib-review/CSSDegenerateDistance.lean": {
+      "bytes": 5741,
+      "sha256": "c997fb24dc2c8daea836f41c364ae7af53c0949caa0bd8d4ae2f70b23c7cd230"
+    },
+    "mathlib-review/CSSDisjointEquations.lean": {
+      "bytes": 3680,
+      "sha256": "41ab8daaf2dc2a1a3d139b99b727d9fa7f88005b38e32eebcd18547114301599"
+    },
+    "mathlib-review/CSSDisjointSolutionCounts.lean": {
+      "bytes": 2732,
+      "sha256": "cc010ac9e4c9bb92ead45967898092c5fe0e3f9cd3b94fd3ee13bdef3b21c548"
+    },
+    "mathlib-review/CSSExhaustiveSelection.lean": {
+      "bytes": 14238,
+      "sha256": "61e12b1e1273981b363c93ed0cb7404bc651678692186638dd49b132f2488178"
+    },
+    "mathlib-review/CSSExistenceAudit.lean": {
+      "bytes": 3231,
+      "sha256": "5d95e8ec3360acf3a7792d2f3e49552cafc4ae5a36446884692af5fb246aede6"
+    },
+    "mathlib-review/CSSFiniteColumns.lean": {
+      "bytes": 1863,
+      "sha256": "b74f7b16c97ba24b4563b6ea52cf587444f60dcb16161b54137f3118391f0247"
+    },
+    "mathlib-review/CSSFiniteCounts.lean": {
+      "bytes": 3799,
+      "sha256": "e503ed820031458b5438be64258cfc620a754012d0bd0a91c89747115c74f299"
+    },
+    "mathlib-review/CSSFourierCharacterSums.lean": {
+      "bytes": 4167,
+      "sha256": "239b498d16fa63f77908f9199cd052591344f46ade78d9135374bebe81b242ed"
+    },
+    "mathlib-review/CSSGeneratorFibers.lean": {
+      "bytes": 2057,
+      "sha256": "1d7c26272a7df1af262b0cab7a7e666a1fe4494dc3642790e640a7823eecda68"
+    },
+    "mathlib-review/CSSIsolatingShifts.lean": {
+      "bytes": 5327,
+      "sha256": "9a4068cd91f7c6d1cec57db244803cbb38ee384723d27961206265e973b09463"
+    },
+    "mathlib-review/CSSLinearFibers.lean": {
+      "bytes": 1247,
+      "sha256": "79ebfe0cc0cddb4b70c399176d8e2648ff84994195d5800834ea85ce6e8931d6"
+    },
+    "mathlib-review/CSSMixedConstancy.lean": {
+      "bytes": 3700,
+      "sha256": "35dd38b2e6663a8c448b330f98a6fc334bae3d972627ff415d0bff249edd938c"
+    },
+    "mathlib-review/CSSMonomial.lean": {
+      "bytes": 2544,
+      "sha256": "9ce0a869069a3999479a205e1956018db21bea971833bdcce9247bbfd1e26f3f"
+    },
+    "mathlib-review/CSSMonomialCosets.lean": {
+      "bytes": 8375,
+      "sha256": "6a91ac2d340232f1d127548a7a5991ba2f6ede2c294ac74bb03acb5c527cf55a"
+    },
+    "mathlib-review/CSSMonomialLocality.lean": {
+      "bytes": 9887,
+      "sha256": "0d8096b5f0d3283893199ef433e07445ccb60d1dd0ee5481cd279a98acc1aec1"
+    },
+    "mathlib-review/CSSMonomialPhaseLocality.lean": {
+      "bytes": 4143,
+      "sha256": "e0d1833c9663437a60583a4e99152b08e93dc252e6c6dbad873b8b491f9280aa"
+    },
+    "mathlib-review/CSSOrderedBasisContainment.lean": {
+      "bytes": 9417,
+      "sha256": "8479f3686e765b07898486a4664b688bef07c8418f0156fe3dfff88a86562285"
+    },
+    "mathlib-review/CSSOrderedBasisSampling.lean": {
+      "bytes": 7576,
+      "sha256": "4966b112195570a8eafe806f2ba11ae6b9d3d974ca746df06be14926340eb248"
+    },
+    "mathlib-review/CSSPauliMonomial.lean": {
+      "bytes": 4163,
+      "sha256": "a9ddfad5647a74f262abc7a67329437d619db281e08cbe03d549e65ce848f9ba"
+    },
+    "mathlib-review/CSSPauliRestriction.lean": {
+      "bytes": 9708,
+      "sha256": "1b95293de45c490e3ebd6ee2066c7dcb299a0ed2702848673845a79664a189d4"
+    },
+    "mathlib-review/CSSPermutationRigidity.lean": {
+      "bytes": 12242,
+      "sha256": "7c6f2ca0ee7b311823a5c01b33a3d75049d2200d2c05d465fb1c38a743b1793b"
+    },
+    "mathlib-review/CSSPhaseDifferences.lean": {
+      "bytes": 8250,
+      "sha256": "641ec7ba3591ed866a7185b0462bb2caf59b0c773381dcf0171da4cee28fd03e"
+    },
+    "mathlib-review/CSSPhaseGraph.lean": {
+      "bytes": 4678,
+      "sha256": "a38f10b5918d992320959955c5b620069a7be2960dd2277ce4f64fbc5ee102b3"
+    },
+    "mathlib-review/CSSPhaseOverlap.lean": {
+      "bytes": 7074,
+      "sha256": "a02e27f64f6904a568fb72618e28ea3f66e10df34aaaeb4b0d1e11540c62136e"
+    },
+    "mathlib-review/CSSPhaseRigidity.lean": {
+      "bytes": 20101,
+      "sha256": "c7b0d4098c917f03fb4df7e90d663d77c8ee8bbe6ffdb35b25b45d697e2bb1ab"
+    },
+    "mathlib-review/CSSPhysicalCheckClassification.lean": {
+      "bytes": 9905,
+      "sha256": "2e24eaa67a5257b79a38db36479af90355789a6b3a29b5f1c45c73df9a6a7ae1"
+    },
+    "mathlib-review/CSSPhysicalMonomial.lean": {
+      "bytes": 6179,
+      "sha256": "ed669147410610c4f8eaf8aa41c08bd91fd1ecadea2ac7eb481268fb0eb76038"
+    },
+    "mathlib-review/CSSPhysicalRangePreservation.lean": {
+      "bytes": 1398,
+      "sha256": "6e2fc6d68095be701d45b9fb0cdd450372d0ce7dad531d2a91228377928667c0"
+    },
+    "mathlib-review/CSSPhysicalRigidityAudit.lean": {
+      "bytes": 2833,
+      "sha256": "11292490cafa5249150f95f7d33bc1afaa96e03e34fb3075cfc05121b42500ee"
+    },
+    "mathlib-review/CSSPlantedHyperplane.lean": {
+      "bytes": 2437,
+      "sha256": "db6c7f66690ef5403c4c184a1c0376d7f3f9424dc62f6545a2d4aee2f03cb3bf"
+    },
+    "mathlib-review/CSSPlantedSelection.lean": {
+      "bytes": 4026,
+      "sha256": "19c55188ae7aa83760494dc0ba7deb53a56e32e74df5d8bc3c4674e66ad86b80"
+    },
+    "mathlib-review/CSSQuadraticPhase.lean": {
+      "bytes": 11550,
+      "sha256": "491b900f86746bd80dfad4b8ef5da04f764db2c12f67b30a4fd89d00a3db523d"
+    },
+    "mathlib-review/CSSRandomDistanceCounts.lean": {
+      "bytes": 4041,
+      "sha256": "9bc21b8530694180bf96adc31dccaa2e6cd71af8101971a042edd89608a1aada"
+    },
+    "mathlib-review/CSSRandomJointSample.lean": {
+      "bytes": 11800,
+      "sha256": "ebf816c6dc3533ac94c068a8eaa614b8fb8822e555812a589b82d049859b9366"
+    },
+    "mathlib-review/CSSRandomLimit.lean": {
+      "bytes": 2447,
+      "sha256": "a847f481c183a6e1d47770251bf26224fb28c88eb45e9f901bd7c006c4567285"
+    },
+    "mathlib-review/CSSRandomLinearBound.lean": {
+      "bytes": 3890,
+      "sha256": "99ea94e341b8c6e2cddc37778cfd36ebddf959a24b3fb336ca44f6da09b3a0d0"
+    },
+    "mathlib-review/CSSRandomParameters.lean": {
+      "bytes": 3088,
+      "sha256": "1cb1ecc27bceb841a03686bcf8e19bdc5b6d15a4bc6ac4f2dcef813585304803"
+    },
+    "mathlib-review/CSSRandomProbabilityArithmetic.lean": {
+      "bytes": 4660,
+      "sha256": "7cd84825b15fadab5f77af4856dc8e8baba5f53a8ccef485f6a189901074a2f9"
+    },
+    "mathlib-review/CSSRandomRigidity.lean": {
+      "bytes": 11712,
+      "sha256": "02b08100421061652b152fccf4c4bf9e9f05bc304ee90b40ac2ee8cb0a8748b5"
+    },
+    "mathlib-review/CSSRandomScale.lean": {
+      "bytes": 3873,
+      "sha256": "02392737c5961517281443e8269c4a09c2e4fe23b6bd51d9fdf0149a240c70ff"
+    },
+    "mathlib-review/CSSRandomShellScale.lean": {
+      "bytes": 488,
+      "sha256": "5fc8a84cbd2a17e7b60ba8ed318aff1b39aeee21c00f30ed938cca7900103b29"
+    },
+    "mathlib-review/CSSRandomSparseScale.lean": {
+      "bytes": 2728,
+      "sha256": "2ac02718f7ea208a985d845dd9ecddf20e3c2f67b8a0603ef8d9ec76d93e9f04"
+    },
+    "mathlib-review/CSSRandomXChecks.lean": {
+      "bytes": 8677,
+      "sha256": "6f9c40d109342dcfe57a06c23eb3e7f3e1bf271a92c604e9187505633c87427e"
+    },
+    "mathlib-review/CSSRandomZChecks.lean": {
+      "bytes": 8130,
+      "sha256": "ebf815a766297709b42732a73c9a8f28790c08a2f4f09ea0c8718a48ec2a6ac7"
+    },
+    "mathlib-review/CSSReducedRowBasis.lean": {
+      "bytes": 8323,
+      "sha256": "04162a46a27d0ed52b34f04b5f9c2364b1243098dd67d65bd357b528f83e0e78"
+    },
+    "mathlib-review/CSSRestrictionFibers.lean": {
+      "bytes": 1996,
+      "sha256": "6aeace42a6fa25c2c877ab1e12965742c2f415e35d38c041d76717683015c679"
+    },
+    "mathlib-review/CSSRigidityCheckSpaces.lean": {
+      "bytes": 2136,
+      "sha256": "0227e973a5ebc47f30e15cb1f3439f999e00f4988149c0c686b87bd7b29ccf0a"
+    },
+    "mathlib-review/CSSShortDualTests.lean": {
+      "bytes": 9593,
+      "sha256": "49610a01eb6336fdf533ede62618a5cce1e17041bfd02adb989a4128cd5ba3bd"
+    },
+    "mathlib-review/CSSSparseLinearBudget.lean": {
+      "bytes": 3729,
+      "sha256": "a96be96924e0e34da2d9f6b0ceac15767ee6ed06be66ea98e794a02c94f28a94"
+    },
+    "mathlib-review/CSSSparseLinearEquations.lean": {
+      "bytes": 7295,
+      "sha256": "311742c5528e97b379cdf9d079ed0ba0097e75071535177ab6bb084a4176a324"
+    },
+    "mathlib-review/CSSSparseLinearIntertwiner.lean": {
+      "bytes": 3247,
+      "sha256": "a7acebd93c4572f903fb9ad923631aa65de363e9d246b51015d17d32272662cf"
+    },
+    "mathlib-review/CSSSparseLinearSample.lean": {
+      "bytes": 6224,
+      "sha256": "d53f1e795dc181b36a775d6199c6a712d392dc47b1b8e338c955e915cfb0112f"
+    },
+    "mathlib-review/CSSSparseLinearUnchanged.lean": {
+      "bytes": 4191,
+      "sha256": "ec8068a34b11399923c77196e9be99950d1d23d3f14583016c5359246a19ad40"
+    },
+    "mathlib-review/CSSSparseMatrixCounts.lean": {
+      "bytes": 5846,
+      "sha256": "4e8ee9871b2b59eecf9f4534547924cbc731dececca2f4f913baf5e4639fa843"
+    },
+    "mathlib-review/CSSSparseSymmetricRank.lean": {
+      "bytes": 7225,
+      "sha256": "2b8b7a9e015812479f092f4fa6f22ce79f1be1c0eb4a934a3077dc9267c00054"
+    },
+    "mathlib-review/CSSSparseSymmetricSampling.lean": {
+      "bytes": 8291,
+      "sha256": "7e02cad164ead551b760479b6c3f5b401fe43466be2f572b0c706c64d96e7b6a"
+    },
+    "mathlib-review/CSSSparseSymmetricUnion.lean": {
+      "bytes": 9281,
+      "sha256": "571a65c77584f183c98db7388928abbae273a43f5e2495d7fe6e602095b046ee"
+    },
+    "mathlib-review/CSSUpperGap.lean": {
+      "bytes": 2433,
+      "sha256": "2d4e7fd66ecdde47b8fac5c8c29cd07d1b3bc1109ffd2dfa7eb3aeb1e8079489"
+    },
+    "mathlib-review/CSSUpperSaturation.lean": {
+      "bytes": 2065,
+      "sha256": "25ff59d505ad34a4752c57f50590ab0b1d66a2881bca89b48024598dabd8cd19"
+    },
+    "mathlib-review/CSSUpperSaturationFamily.lean": {
+      "bytes": 3558,
+      "sha256": "f6fefef393d07df3f8061b2ba9a9609ed3ab38d94db9b938b85b3d50f0d1f12a"
+    },
+    "mathlib-review/CSSWeightBallCounts.lean": {
+      "bytes": 1954,
+      "sha256": "0d4cabb4e749806edf190ff5e77a3f292506842d8c0d0512557ceccc6802a35d"
+    },
+    "mathlib-review/CSSZCentralizer.lean": {
+      "bytes": 7051,
+      "sha256": "a801a60db05a6422d91d93c09de47868e1351867dda4c8a7168e2694b1b10f66"
+    },
+    "mathlib-review/CSSZConjugation.lean": {
+      "bytes": 5824,
+      "sha256": "0fc4a9ecde9f55c3b808fdcd2b41d6ee398684a083fc0f5c40a1ae8343b244f4"
+    },
+    "mathlib-review/CircuitRealPolynomial.lean": {
+      "bytes": 19469,
+      "sha256": "6a5c25cb8d3e9808bec0cf19a2cc02710abe9e4e09df68e20fa3c82156221ce0"
+    },
+    "mathlib-review/CliffordTClosureCriterion.lean": {
+      "bytes": 2774,
+      "sha256": "5a6e3e3687c738e3bfd5bdd8b1f19aa1fc747253c61378b496c372d30d5e440c"
+    },
+    "mathlib-review/CliffordTDenseCircle.lean": {
+      "bytes": 3258,
+      "sha256": "24976386dfecc5acc7abecbb23fca773008580c91e24d33c9d125acbcac9744a"
+    },
+    "mathlib-review/CliffordTDensity.lean": {
+      "bytes": 8092,
+      "sha256": "1c7300c98407f71a7f5805b3bf0ae5cecf675b3b00434591805b033f6af75e77"
+    },
+    "mathlib-review/CliffordTIrrationalAngle.lean": {
+      "bytes": 3602,
+      "sha256": "9f643ce51fc6bef27d311c92f79c1ac5e42358bce99c32fe45ff88ed80e10c4a"
+    },
+    "mathlib-review/CliffordTMixedAxis.lean": {
+      "bytes": 6309,
+      "sha256": "49aa577cc746ffea0e1d0c937d9b4a8e5317023972705f09059bc364ed99e528"
+    },
+    "mathlib-review/CliffordTNativeThreshold.lean": {
+      "bytes": 1945,
+      "sha256": "6a74cc8b7b725ca98b81651074095496b7d501f7ae7802170b58f5ade1207d8e"
+    },
+    "mathlib-review/CliffordTTangents.lean": {
+      "bytes": 5938,
+      "sha256": "f007dd562805282672950e04d066af19136dfad3474ca37fa0fe30b3ca90832c"
+    },
+    "mathlib-review/CliffordTWords.lean": {
+      "bytes": 5266,
+      "sha256": "8e6c0d8f3730169d180028e2d10f26dd46b47af37483b70cc78154f4f3a4a833"
+    },
+    "mathlib-review/ConnectedPauliFrameSynthesis.lean": {
+      "bytes": 8348,
+      "sha256": "bd58df4362e929d8939a2cc940a87307df1ef7484ea7543e1b08b6e09f58e0b6"
+    },
+    "mathlib-review/ConstructiveSynthesisAudit.lean": {
+      "bytes": 3594,
+      "sha256": "158d0f91833ffd359066250f763631a1f9864cb55bf91f7534ff80f7cd8efd1e"
+    },
+    "mathlib-review/ContinuationAudit.lean": {
+      "bytes": 1993,
+      "sha256": "f5d9f401ee10c50d30cfe4030aec037c9473942e8ee932a14e8de6138e292f9f"
+    },
+    "mathlib-review/CriticalDepthMathlib.lean": {
+      "bytes": 543694,
+      "sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2"
+    },
+    "mathlib-review/DenseUnitaryAdjointSpan.lean": {
+      "bytes": 5154,
+      "sha256": "38595ac3fe40bef2fd2fa30330a1485319cc3db478ec30281fa617a07f93752a"
+    },
+    "mathlib-review/EncodedFaultRecovery.lean": {
+      "bytes": 5329,
+      "sha256": "ff75db221eaf3d3980550639fb6b2ee74b6e20376970d11915a32fdbdcbe7d24"
+    },
+    "mathlib-review/EncodedInverse.lean": {
+      "bytes": 3621,
+      "sha256": "a903f37a73686c499b66df8b63b077e3c489147cbd1a0e59887b2875e70c0381"
+    },
+    "mathlib-review/ErrorMeasuresFoundationAudit.lean": {
+      "bytes": 2426,
+      "sha256": "339ea888611a11b50aaa090dcaeb827695eb52e9067d4579f7b155325cb2d781"
+    },
+    "mathlib-review/ExactCZCNOTSwap.lean": {
+      "bytes": 6464,
+      "sha256": "7e5e171182bf9467a63a1a47a8a0a43ff97b8e98c4c5c46263a20616761a5386"
+    },
+    "mathlib-review/ExactConditionalPhase.lean": {
+      "bytes": 5016,
+      "sha256": "01ef17bd32f8d4872748c8841d429f563a70baa38ab92a87f541f0ab86c1d652"
+    },
+    "mathlib-review/ExactConditionalRotation.lean": {
+      "bytes": 6337,
+      "sha256": "0db46de8fb39368528513b668b842f77b9c42fe6f132a0f8cabe4a14c658c9f0"
+    },
+    "mathlib-review/ExactConnectedCNOT.lean": {
+      "bytes": 2240,
+      "sha256": "8acc0358d5048ccc725521120a38aee96c67a8c34b8e0f93e210ce720a628df6"
+    },
+    "mathlib-review/ExactControlProjector.lean": {
+      "bytes": 4818,
+      "sha256": "3b25f5bd15cb0cb2d6b1d55eed17169efffb59eecab25ad8cea23e44018c0be7"
+    },
+    "mathlib-review/ExactControlProjectorProduct.lean": {
+      "bytes": 1750,
+      "sha256": "5dae0d9542ba92e89d02f7b7ccaf30889445098d2cbe48d6807ff4a86c6e0bf7"
+    },
+    "mathlib-review/ExactControlledTarget.lean": {
+      "bytes": 10256,
+      "sha256": "cb7047366df4bafeef30aa09ccfda82b462f60921941a839723bede57930eb07"
+    },
+    "mathlib-review/ExactControlledWord.lean": {
+      "bytes": 4565,
+      "sha256": "d13a5490dc459bcb5e7b572a42086d4f51c12501e66bc9d1ae7b252ebe3d172a"
+    },
+    "mathlib-review/ExactGeneration.lean": {
+      "bytes": 5625,
+      "sha256": "b82c3261499a79e14c9bba9ba366d667d154635378224c751d49b388d0881e53"
+    },
+    "mathlib-review/ExactGenerationAudit.lean": {
+      "bytes": 1412,
+      "sha256": "4f51a81ad362acc764c25ffb5f27e2ff669ce8aeb925e1752f83817b01929b13"
+    },
+    "mathlib-review/ExactGivensBlock.lean": {
+      "bytes": 2593,
+      "sha256": "e655ce004f7a14e8319080402b09babf5143fd7860d7a3bbaf463dbaf3d0ac8b"
+    },
+    "mathlib-review/ExactGivensCompiler.lean": {
+      "bytes": 9172,
+      "sha256": "f61ad636786873edf0375a7fd4ced2c0c1f38c0d318a46919f1df155ea304829"
+    },
+    "mathlib-review/ExactGivensElimination.lean": {
+      "bytes": 13618,
+      "sha256": "4fb0d38397543b6f825085cd1d09ef97c522ae738012ac9106242c2d22cdf6a7"
+    },
+    "mathlib-review/ExactGivensNativeTarget.lean": {
+      "bytes": 3830,
+      "sha256": "f2d93440930d61910e48e9c84a7ac8db486156f967d099f0bfaec8f3750f5843"
+    },
+    "mathlib-review/ExactGivensNativeWord.lean": {
+      "bytes": 3835,
+      "sha256": "8985c6b18520e0680b4afe1148be757aa45649922214ab7a37eade964aee75a1"
+    },
+    "mathlib-review/ExactGivensStep.lean": {
+      "bytes": 5964,
+      "sha256": "093a8d058fd762af4f6579f953c2dc6c0cb4aa4e3c5db3e8cb1a5375395127e6"
+    },
+    "mathlib-review/ExactGraphCNOTRouting.lean": {
+      "bytes": 3798,
+      "sha256": "6bc8bbf17ddc0e5c50c9a499de24502d1a2e298af8e0c2815a97d81fd7cdddc1"
+    },
+    "mathlib-review/ExactGraphEdgeOperator.lean": {
+      "bytes": 6266,
+      "sha256": "cabd7ab5d2ba39e5f20152dbfe46aea9ab37439eeb9b03056c1361f8aafca0af"
+    },
+    "mathlib-review/ExactGraphSWAP.lean": {
+      "bytes": 3364,
+      "sha256": "83029ed3ebab10860206d7fab8b67c8878042db47dff97aa788cc10cd795df59"
+    },
+    "mathlib-review/ExactGrayRouting.lean": {
+      "bytes": 5453,
+      "sha256": "3f6423fbcd07b56c775056dee132a6490a07733690c5289441b6f5de7c9193d8"
+    },
+    "mathlib-review/ExactGrayTwoLevel.lean": {
+      "bytes": 8017,
+      "sha256": "49c9f55eac687bb269449b3edfd0e5bdbe688ff03a7a23a6db496409b4baab06"
+    },
+    "mathlib-review/ExactPauliCliffordParity.lean": {
+      "bytes": 5433,
+      "sha256": "67b47cb3c1d71242ca7313d59ac921e3bd3e2deb595e8374040de7ee1e234b38"
+    },
+    "mathlib-review/ExactPauliParityCircuit.lean": {
+      "bytes": 5435,
+      "sha256": "71099874847f3fb41760490c41aae95edd7801528347d486d39efe188a68a1d6"
+    },
+    "mathlib-review/ExactSerialSynthesis.lean": {
+      "bytes": 3811,
+      "sha256": "4bb8231347ac946a4439df7558c575ecda819188e61aabd8e9a36b2dca6ba46e"
+    },
+    "mathlib-review/ExactTwoLevelWord.lean": {
+      "bytes": 7570,
+      "sha256": "06264eee175318cbf8a353703746822e91e968d524e974bf22c606d34d2631a5"
+    },
+    "mathlib-review/FaultAmbiguity.lean": {
+      "bytes": 5429,
+      "sha256": "2525869fc2404ed4c52669c8056b25f1673010780d94e9d0304c7dea0e1b0f00"
+    },
+    "mathlib-review/FaultAverageInfidelity.lean": {
+      "bytes": 7773,
+      "sha256": "daf7ce206a483dbc5f54d57758e02d8a96dd204331f821c47e6fdd3575aa70c6"
+    },
+    "mathlib-review/FaultBellEffect.lean": {
+      "bytes": 4495,
+      "sha256": "048252ee4266ee7be1b1d041f7e423adda377d631aeb9dfeb8e04a37024fc310"
+    },
+    "mathlib-review/FaultCPTPOptimality.lean": {
+      "bytes": 7863,
+      "sha256": "dbc6e7d875e91bf7fd23cd905fa83416496b54e4417d678cdcb22181b0238385"
+    },
+    "mathlib-review/FaultCPTPRepresentation.lean": {
+      "bytes": 10268,
+      "sha256": "8fa4ba9cce5506afdc5cc514ac549ee82e77e49526ead9c61134b081c2fee4a9"
+    },
+    "mathlib-review/FaultChannelEffects.lean": {
+      "bytes": 4701,
+      "sha256": "b02fadfd9960bd84ffd32f803327a7d369ea7fd243d2d600429f3a9ba9e530a9"
+    },
+    "mathlib-review/FaultChannelNormalization.lean": {
+      "bytes": 3251,
+      "sha256": "b5389d9efd42dae89f97948f0fb0382a218ad20080883e36ebe6bf96e8289e4b"
+    },
+    "mathlib-review/FaultChoiBound.lean": {
+      "bytes": 4123,
+      "sha256": "44f0cd5ff51d290af35ce954be4f9c15ef3a4d1d50ed45e8ac18772a5c56c373"
+    },
+    "mathlib-review/FaultCircuitSupport.lean": {
+      "bytes": 13732,
+      "sha256": "a11f37390d2f261f66ecc2d4d51fd28af6ce0d3cf6aed9d73976a1fdd5d4bbb5"
+    },
+    "mathlib-review/FaultDepthArithmetic.lean": {
+      "bytes": 9817,
+      "sha256": "ffa749664b5ab57ac8303585b822f3cf78caeb7008ab7dd490749e80bbb601d1"
+    },
+    "mathlib-review/FaultDepthOne.lean": {
+      "bytes": 1143,
+      "sha256": "1cedff2de5f5348c03d98ccae0b0c74b39f182846f2a7fb85b03b398bc8f4b6e"
+    },
+    "mathlib-review/FaultDiamondCSSSaturation.lean": {
+      "bytes": 2669,
+      "sha256": "6386718873c6a1a0343e1ee3b0029910ddca1ee0b5686472fe72d27e8385a3e4"
+    },
+    "mathlib-review/FaultDiamondEffects.lean": {
+      "bytes": 3844,
+      "sha256": "4737d7f606b4d84c1a7f8ab7cfc7255c7508829fb88ce7d154d55d9bfdbbc5bc"
+    },
+    "mathlib-review/FaultDiamondExponent.lean": {
+      "bytes": 8188,
+      "sha256": "ffec39fb87bdfc3edf3dc562b95d517ddf7b53315446c2e65c058d3e84a7f508"
+    },
+    "mathlib-review/FaultDiamondFrame.lean": {
+      "bytes": 6285,
+      "sha256": "57fe774eebd5e82a6a6305e1f47fd633037af33ea3e3f7b3b492a62d75402e05"
+    },
+    "mathlib-review/FaultDiamondHistories.lean": {
+      "bytes": 5086,
+      "sha256": "2c1e3e482e5ddf89ca4f15a34a70608184ba9e248b17f1462c1fbe6773e78c8d"
+    },
+    "mathlib-review/FaultDiamondIdealAction.lean": {
+      "bytes": 2797,
+      "sha256": "3d7ad3a3dbc32e87d0972d137db32cc05e6ebae2fec7a55c2153336205bec48f"
+    },
+    "mathlib-review/FaultDiamondNormalization.lean": {
+      "bytes": 2936,
+      "sha256": "080c6346f7db32d951ef2c664dbc42299faadc3c3c47a9e9fd083495fb109a98"
+    },
+    "mathlib-review/FaultDiamondOptimality.lean": {
+      "bytes": 5795,
+      "sha256": "acd106245d9151ebd110b483f4f5ac47ec67b7014e1cb6bdb5818d35a7c7680c"
+    },
+    "mathlib-review/FaultDiamondPaperMetric.lean": {
+      "bytes": 2099,
+      "sha256": "738ce5d497a547567b21e2c41274f9f01f4eb1785c91e1d8cd968e0377939b26"
+    },
+    "mathlib-review/FaultDiamondTail.lean": {
+      "bytes": 7037,
+      "sha256": "6f657fe122b7a816bbd7a48ba1627b1aa952f1f0854fd83354b4ff13a7fce175"
+    },
+    "mathlib-review/FaultDiamondTraceInputs.lean": {
+      "bytes": 9781,
+      "sha256": "e101fed7663746f71400b1617165e8d252e8f661160eac3ec7ca164b9f7f9ee9"
+    },
+    "mathlib-review/FaultDiamondVariational.lean": {
+      "bytes": 2619,
+      "sha256": "67e12132418e2f1ed989b30df98cc937c67da5e18a1f92f5e397d79970477da0"
+    },
+    "mathlib-review/FaultEntanglementFidelity.lean": {
+      "bytes": 9417,
+      "sha256": "bc250a2a4e2dadc582aafee95084e30bbfccd7db840531fcc4d6fdff69649d38"
+    },
+    "mathlib-review/FaultEnvelopeScaling.lean": {
+      "bytes": 8703,
+      "sha256": "c89b4ccf9ef7f8056803506bf6754e8bb4efdca38622f19c2901123d8af19807"
+    },
+    "mathlib-review/FaultExponent.lean": {
+      "bytes": 8218,
+      "sha256": "ae05ec14f1e292c985b69ff7537a8317e3626f56491d45f528184208b609c526"
+    },
+    "mathlib-review/FaultFirstBadOrder.lean": {
+      "bytes": 10979,
+      "sha256": "daa78f93319718c8a5de28c0510c2d5ba10e7cbd2be5dfce58de5fd2c25c4a5b"
+    },
+    "mathlib-review/FaultFirstBadOrderLower.lean": {
+      "bytes": 6304,
+      "sha256": "7e4596f2cbac6a859193f88f19afa542d214641547e12246d66e67b29102958a"
+    },
+    "mathlib-review/FaultFirstBadOrderUpper.lean": {
+      "bytes": 8342,
+      "sha256": "cfc3f2147b5ce8fa3c9118516cdb641f99fc5bb6c998ab2912e8b6f8e661779e"
+    },
+    "mathlib-review/FaultHaarChannelFidelity.lean": {
+      "bytes": 3748,
+      "sha256": "79ba4e96cd0768dc5d8a117d4c5a29b72b3c8c28675270ab80ce7ee5f492e22d"
+    },
+    "mathlib-review/FaultHaarChannelGeometry.lean": {
+      "bytes": 5685,
+      "sha256": "95ad151e5ae5bce1335c61e2c2b321ccd25c743cb6f2efac0db64c162f84dd06"
+    },
+    "mathlib-review/FaultHaarComplexMoment.lean": {
+      "bytes": 13362,
+      "sha256": "49a46bc02de70bcd4bb116f84be47e60efbed5049a90144bc6a28f02239ada34"
+    },
+    "mathlib-review/FaultHaarNativeModel.lean": {
+      "bytes": 5121,
+      "sha256": "8df2e9ece49c7fa9333848c87d100846acbf2052293a1495e26d1673ff094c93"
+    },
+    "mathlib-review/FaultHaarOptimality.lean": {
+      "bytes": 3829,
+      "sha256": "ca12a042501dd3cd74da68da7443d4fbbb9a522eab8f8bbb7dbbcfb6ca9d238d"
+    },
+    "mathlib-review/FaultHaarRealMoments.lean": {
+      "bytes": 18454,
+      "sha256": "2a9dd38f9016acbc6a960f73d87a0a4bd72ed72f76b77f0b5acb60fb1f4101f1"
+    },
+    "mathlib-review/FaultHaarSaturation.lean": {
+      "bytes": 1427,
+      "sha256": "ce544941912250d92872065ceabd86e5e7c3e67ecd23178e911980ec94ee3f21"
+    },
+    "mathlib-review/FaultHaarShor.lean": {
+      "bytes": 1904,
+      "sha256": "913659b2d4d3062f7063d024a474e137748ec78f871d366cef1528ebc1629d03"
+    },
+    "mathlib-review/FaultHaarSphere.lean": {
+      "bytes": 5122,
+      "sha256": "4adc823f4689ed3cc01daf731d1e41f3f0a96897938987913a5637342178c83b"
+    },
+    "mathlib-review/FaultHistoryExperimentNormalization.lean": {
+      "bytes": 16898,
+      "sha256": "4cbeb7f173d09f091b12fea997a51ee4ad94d3925467806cce8eb1ea751c8bd5"
+    },
+    "mathlib-review/FaultHistoryGeometry.lean": {
+      "bytes": 12208,
+      "sha256": "1a7368bc5e16cd189a0e79778ff17d14a7aeeae4228ea2859d1dc839d66c1340"
+    },
+    "mathlib-review/FaultHistoryLoss.lean": {
+      "bytes": 3837,
+      "sha256": "9737448c06a3ed13914e2540731ba94b90050084a756614220a67a1be153c1ab"
+    },
+    "mathlib-review/FaultHistoryNormalization.lean": {
+      "bytes": 24962,
+      "sha256": "9a53e98ef5bf8d9987663849fb6689c15210ddb051aba25e42317d645f72f871"
+    },
+    "mathlib-review/FaultIdealAction.lean": {
+      "bytes": 2512,
+      "sha256": "05c5591d3dde7174ff7a818eb3d27de65bb255e6b781aa17adef31cb4e6d9082"
+    },
+    "mathlib-review/FaultKrausCompactness.lean": {
+      "bytes": 5097,
+      "sha256": "55fa5c597b42ed9773c0143e874b29fdd2e2bf8f78ac415949fa3790d8556573"
+    },
+    "mathlib-review/FaultKrausCompression.lean": {
+      "bytes": 10332,
+      "sha256": "57e5102ec32d460f13a049a9cd43b03e603ae93828cc4923ac64dd2d8cb85cc5"
+    },
+    "mathlib-review/FaultLawIndependence.lean": {
+      "bytes": 5770,
+      "sha256": "852b71a5eb52198d826b1aaa38d874242a28661e18280236412bfe8f396f7232"
+    },
+    "mathlib-review/FaultLocalStochasticPaper.lean": {
+      "bytes": 4134,
+      "sha256": "ca1a1ec345770647f78ea501899743c4c8a11cd4ea272d6abd3fba5b6a06536d"
+    },
+    "mathlib-review/FaultLocalStochasticRecovery.lean": {
+      "bytes": 10156,
+      "sha256": "0694fc3e0b8114f593135296ec3c69b24b9347b354cbb85ee82ede7391148961"
+    },
+    "mathlib-review/FaultLowerCriterion.lean": {
+      "bytes": 1433,
+      "sha256": "f7ab154332a6fa72e07a302d2275fb8a2b2f6a41b2d8f04bd2ee6ddc2c361922"
+    },
+    "mathlib-review/FaultNativeCeiling.lean": {
+      "bytes": 12099,
+      "sha256": "451ce63e6fbe906c6562d0abcede93a744d14af34c167e9ba8340d377e811615"
+    },
+    "mathlib-review/FaultNativeModel.lean": {
+      "bytes": 8342,
+      "sha256": "d06172258eb262858f2250f71762d3cf298f71dd89b5e2b987635e0695f743d9"
+    },
+    "mathlib-review/FaultNativePauliDecoding.lean": {
+      "bytes": 6047,
+      "sha256": "173c4c5eb05fea499bc0ecd296873af1fd514304a815851f3b7dbb2b17e15140"
+    },
+    "mathlib-review/FaultOnSiteSupport.lean": {
+      "bytes": 5744,
+      "sha256": "381bb05dbb55af570f9b2a6850a875f3dcf02e2089e51887858d701a80129888"
+    },
+    "mathlib-review/FaultOnsetConsequence.lean": {
+      "bytes": 1970,
+      "sha256": "0e5babf7580641a9555936656bc79c01d061a257bde501060c6fcc942922a23b"
+    },
+    "mathlib-review/FaultOnsetScaling.lean": {
+      "bytes": 5128,
+      "sha256": "356ee04c52c1cc75db72f3ac138e33f08f6eb236daa5fe16262c3eb4b6a93b4b"
+    },
+    "mathlib-review/FaultPaperFixedCircuit.lean": {
+      "bytes": 4974,
+      "sha256": "cacbb8e7d447bbcc2940b2231eab10542a6ee279aac1c74d6f10b799129c4eb9"
+    },
+    "mathlib-review/FaultPaperSaturationWitness.lean": {
+      "bytes": 5643,
+      "sha256": "379783709846b85404c97c3a2172cde1e6736a08ea93b9e1a1aa33f6b5fd2040"
+    },
+    "mathlib-review/FaultPauliSyndromeChannel.lean": {
+      "bytes": 12362,
+      "sha256": "42f138d25926eac061f71f450fa378668ece1a79c73ab8bf9ddee79160fbaef1"
+    },
+    "mathlib-review/FaultPointwiseAmbiguity.lean": {
+      "bytes": 5126,
+      "sha256": "abc54586bfd00c645211ebcac462e4a5a85ebd31bb66ccc56cd6d77a26358bda"
+    },
+    "mathlib-review/FaultProbability.lean": {
+      "bytes": 7451,
+      "sha256": "31ec38003d156dd278193a1d56a2776291b97741045a39f034adf3c3f4ef8f9b"
+    },
+    "mathlib-review/FaultSharpnessAllMetrics.lean": {
+      "bytes": 2636,
+      "sha256": "06f3cf1285011a5cae9388bc3a079dc721a7d9eb4d9b7a30798f7d9ac7ec7e76"
+    },
+    "mathlib-review/FaultSharpnessAudit.lean": {
+      "bytes": 2770,
+      "sha256": "269dae0a0c192567d842bafd1cef004b89579f9262ff27cbe16e8cbfb629bac9"
+    },
+    "mathlib-review/FaultShorEncoding.lean": {
+      "bytes": 5264,
+      "sha256": "889a5fdf51e92fe74a80d6740022c436eca0cc4594d4d72c9e8e5207db2a35e4"
+    },
+    "mathlib-review/FaultShorSaturation.lean": {
+      "bytes": 13060,
+      "sha256": "623ecc602b4bbee951faf9c8a51392d57f291f4663a5ebcc6d1ed3d201107c57"
+    },
+    "mathlib-review/FaultShorSchedule.lean": {
+      "bytes": 14733,
+      "sha256": "e38de65a35555f49a23d91caa731fb9dbc48ca0739f9b9453f5402861e3a9c10"
+    },
+    "mathlib-review/FaultShorScheduleIteration.lean": {
+      "bytes": 7282,
+      "sha256": "80ef4955e7dd6690b846e3f46ae231b461356f596f779750580a9ce6ebe5f31f"
+    },
+    "mathlib-review/FaultStabilizerLogicalBasis.lean": {
+      "bytes": 9791,
+      "sha256": "cbe2ec2f9a98bb12fb07f0a289b3b6a812a49f322506a09ce04d3bf9a6673bd4"
+    },
+    "mathlib-review/FaultStabilizerLogicalTrace.lean": {
+      "bytes": 7355,
+      "sha256": "36a7c382ac7800d792195686e7b7e2e3b9fd97bfe5901cc9e64b62b4cc1169b1"
+    },
+    "mathlib-review/FaultStabilizerPauliChannel.lean": {
+      "bytes": 10724,
+      "sha256": "4b40a269d9fff1f20f52cfd256bd6e3d970c095c21a08bbd2632a4d037a7a869"
+    },
+    "mathlib-review/FaultStabilizerSyndrome.lean": {
+      "bytes": 7916,
+      "sha256": "176b3641f69a37ca178b29b413538e65cce1a96bd2a4ef852974bf8899ff382b"
+    },
+    "mathlib-review/FaultStabilizerTrace.lean": {
+      "bytes": 9512,
+      "sha256": "93e3637d14519b8fb175a99a0ab00444d6535c5e4095caf36594a557d3dec2cc"
+    },
+    "mathlib-review/FaultSupportPreserving.lean": {
+      "bytes": 7446,
+      "sha256": "343164d64cceb4ce866fdf85936fc48091987169c8875eeecd2979b4ffdf8464"
+    },
+    "mathlib-review/FaultTraceNorm.lean": {
+      "bytes": 5681,
+      "sha256": "a80f8fd58424ede2f1d3c128e0992d855937a061205e9b4689f75e51805585c1"
+    },
+    "mathlib-review/FaultUpperOnsetWitness.lean": {
+      "bytes": 2782,
+      "sha256": "08e17b01c8fcbabf226df054a9f1cb95cf0c7e5107ede36dba039af63550e112"
+    },
+    "mathlib-review/FaultUpperWitness.lean": {
+      "bytes": 5462,
+      "sha256": "13a0632f645d06c3caced6c3672a43a6736b172f24c7dab2d868857287867790"
+    },
+    "mathlib-review/FaultVariationalTrace.lean": {
+      "bytes": 6161,
+      "sha256": "0c493f6ff9d6970d62af7c14d136112f01c8f3cfbc23b79f435d1b5869c322d0"
+    },
+    "mathlib-review/FaultWitnessMetricAudit.lean": {
+      "bytes": 2066,
+      "sha256": "81ca4b1bfe34302a9217a33a4fa2799815ee067c249c0c383bf1279e589cd1b5"
+    },
+    "mathlib-review/FinalSupplementAudit.lean": {
+      "bytes": 1456,
+      "sha256": "fd1cc40799d1e0196996f9259e3f14daff76714abbfcf835ca655df7c6422102"
+    },
+    "mathlib-review/FurtherSupplementAudit.lean": {
+      "bytes": 2705,
+      "sha256": "37337431f9dab0a984e04d710f208a09155ac03d22815b72a4f515316c4ff968"
+    },
+    "mathlib-review/GenerationThresholds.lean": {
+      "bytes": 9008,
+      "sha256": "e68784c97b42258da58bffc255a1095d6fd42444bc08ed9d3b084045604b0e31"
+    },
+    "mathlib-review/IndependentFaultHistories.lean": {
+      "bytes": 5335,
+      "sha256": "260997f4211a3a88bf3dbf1b9ec7f6bb109a1ea3082e73227883428c616c2185"
+    },
+    "mathlib-review/KERNEL_AUDIT.txt": {
+      "bytes": 10166994,
+      "sha256": "aea2c0407ed7909ba8565f187e711777b2921760bf7ef76222b66d3087ab910a"
+    },
+    "mathlib-review/KnillLaflammeGram.lean": {
+      "bytes": 9118,
+      "sha256": "2d42d5a4e82bcb9b18d93b62bbcfccce4b4222db5233a3217aa2d28270373508"
+    },
+    "mathlib-review/LogicalFrameRotationTransport.lean": {
+      "bytes": 3501,
+      "sha256": "2ec41cbfaabcd5cc550a2c895b5165937143f1c3aa027f9e88c81399613fe6ad"
+    },
+    "mathlib-review/LogicalPauliOrbit.lean": {
+      "bytes": 4874,
+      "sha256": "8b68565bd130c8ec7abd1b1a852af5790883ab4a9e4b5fe48045f57c7a752cd9"
+    },
+    "mathlib-review/LogicalPauliOrbitBasis.lean": {
+      "bytes": 8958,
+      "sha256": "0f3d4b918567ce0b1f23c7f8d326458198e97e276c90f0be63c2efbdc8556cd3"
+    },
+    "mathlib-review/LogicalPauliVacuum.lean": {
+      "bytes": 3130,
+      "sha256": "a2ff33f62bdbd0529532d62d704ef613302ce37f291fdd71892e97f00c2fa683"
+    },
+    "mathlib-review/Manuscript20261114Audit.lean": {
+      "bytes": 2018,
+      "sha256": "e5eb18322938224b060dccf4535e4323fddfbd63efaafee56d03f5a233bf4863"
+    },
+    "mathlib-review/Manuscript20261114Baseline.lean": {
+      "bytes": 3542,
+      "sha256": "bdcc7b3a3e5b99a840d7577ee3d913727583145ea6bff0174fb39c8d5fc1f175"
+    },
+    "mathlib-review/MatrixUnitaryConnected.lean": {
+      "bytes": 3111,
+      "sha256": "c85e377a4bc2c06cc59760d085c5dc21d7a754ade9fe3b0984690b35de1d9ea2"
+    },
+    "mathlib-review/MidpointEvenPauliCircuit.lean": {
+      "bytes": 7154,
+      "sha256": "447529b2bbed1e3fb4473eed8bd652c8a6ac4fea3ea10be17e789c5708e827b3"
+    },
+    "mathlib-review/MidpointExactFaultWitness.lean": {
+      "bytes": 9752,
+      "sha256": "f1fa939c551967215e964c185bb7a71ba6e8c0e6c6136c5caba28357502449ab"
+    },
+    "mathlib-review/MidpointFaultWitness.lean": {
+      "bytes": 9684,
+      "sha256": "c69e0b55add13d3d7f18d3c7f8a9cba9b3ae0ea7c4eace44f24074784725ed1b"
+    },
+    "mathlib-review/MidpointLogicalCeiling.lean": {
+      "bytes": 1730,
+      "sha256": "0f726200b267ebe2ab340e0c44b46354ef9d88931522b1fef967500e48a9399e"
+    },
+    "mathlib-review/MidpointNativeHistories.lean": {
+      "bytes": 8669,
+      "sha256": "848d024a45104e95c36a726ad44e3d1dc3ce49cc60e325622492ed4fb92658cc"
+    },
+    "mathlib-review/MidpointPauliCircuit.lean": {
+      "bytes": 3620,
+      "sha256": "409d6bd55b964c9236d34c8d6baa0e895d278eaf6cd8b75d55b0947838db9d9b"
+    },
+    "mathlib-review/NamedBareRotation.lean": {
+      "bytes": 1390,
+      "sha256": "230bc0366ad23da0bdba1475f17957fc69a2147980d30a28977164697b18e092"
+    },
+    "mathlib-review/NativeLogicalCurves.lean": {
+      "bytes": 7996,
+      "sha256": "6128780a0ca73f5399af268f129f1cf111e62bf6cb984b0d773b577715b3aff7"
+    },
+    "mathlib-review/NativeMiddlePauliHistory.lean": {
+      "bytes": 8427,
+      "sha256": "de3cd1685d7365b0dd90b478f627a66ef01ce1fe9e83b024d0b547ecaea368d4"
+    },
+    "mathlib-review/NativeScalarPhase.lean": {
+      "bytes": 7097,
+      "sha256": "7b63d19fbcd0f7c19cc35f1d6a3a299716a2ac906f4d129dd25c8ba658e9daa6"
+    },
+    "mathlib-review/OneQubitBareSynthesis.lean": {
+      "bytes": 4182,
+      "sha256": "14bb91b537f4d4d86febd3462dd496f9e34fac58dd31f75d51cbb6bc41714e39"
+    },
+    "mathlib-review/OneQubitEuler.lean": {
+      "bytes": 10108,
+      "sha256": "360b42bb96d0a69c9a347eaf5c364405e4e4459e5f5119a60ea0d0455970b544"
+    },
+    "mathlib-review/OrthogonalRecovery.lean": {
+      "bytes": 8742,
+      "sha256": "b9492c1f95bb66e3ebcc2a3a5d639465d1ef13724891f574b369de16b9263310"
+    },
+    "mathlib-review/PAYLOAD_SHA256.txt": {
+      "bytes": 960,
+      "sha256": "fdd1e5912584b0218042408d334cb62ac2d1aacac4ab44c9f7048a2799d2ff73"
+    },
+    "mathlib-review/PauliGroup.lean": {
+      "bytes": 3915,
+      "sha256": "0e282a4998705bd753e5663ce346d06661c73554e0bebf0c948e8574667e83d1"
+    },
+    "mathlib-review/PauliSyndromeOptimization.lean": {
+      "bytes": 2442,
+      "sha256": "c20f936532645577d26cb70692e2a5a6f05a6b43e705878df9d7bb61cb317647"
+    },
+    "mathlib-review/Q37ActualDistance.lean": {
+      "bytes": 6750,
+      "sha256": "7b5a900b76adaf6ad70b24d0a172d59e7c10f01dc0d506da28ebc397361dc223"
+    },
+    "mathlib-review/Q37BinaryData.lean": {
+      "bytes": 4760,
+      "sha256": "bbfbf115342b814cf5bc7ad32c2a240aca53f1ff539d6c89f836b899685e71df"
+    },
+    "mathlib-review/Q37BlockPhasePolynomial.lean": {
+      "bytes": 1952,
+      "sha256": "ab11a0efcd027e79417fcc2cf5c1548e8dbe1c696db29fece0eec2aa0ef69d49"
+    },
+    "mathlib-review/Q37CanonicalDistance.lean": {
+      "bytes": 7639,
+      "sha256": "5ad05e8e13bbfa550e0874ec8c2373313229692bf2721c5bc72220094ef6d626"
+    },
+    "mathlib-review/Q37CanonicalEncoding.lean": {
+      "bytes": 5840,
+      "sha256": "c59051cebc4f519e247e7853fff7cd1aa936799a732f0311b915e8319c30cdb6"
+    },
+    "mathlib-review/Q37CanonicalLogicalPauli.lean": {
+      "bytes": 1706,
+      "sha256": "82cdf81aca358a49185e150728c76531876072f7777332061783550729588963"
+    },
+    "mathlib-review/Q37CheckSpaces.lean": {
+      "bytes": 5055,
+      "sha256": "5db1817ccd373d08d6d3e4ccb9982d979388185b5a121c2919515a1a91809bba"
+    },
+    "mathlib-review/Q37CliffordTWords.lean": {
+      "bytes": 2003,
+      "sha256": "c942c6f99d3d08c59536029ab7bc2e16c84dcc0dd0cad5ac0b978248c5728d65"
+    },
+    "mathlib-review/Q37ConcreteThreshold.lean": {
+      "bytes": 2629,
+      "sha256": "abfa2028d5e20d94abe8ca1f2e2e05fe06a291ff7eb477b7c84e97f1f6726da3"
+    },
+    "mathlib-review/Q37ConjugatedParityLayer.lean": {
+      "bytes": 5254,
+      "sha256": "ec725afb8b270e47d0948117d60157b1acb691d7fda1758f35b203b41afdff5b"
+    },
+    "mathlib-review/Q37DataAudit.lean": {
+      "bytes": 2082,
+      "sha256": "b1b4437eaaf82acf34e3e9128a5d281c7b0db39498d915aa301192b3aeb417d8"
+    },
+    "mathlib-review/Q37DirectPhaseCertificate.lean": {
+      "bytes": 4770,
+      "sha256": "aaf17958598eb30e654fe0659e009f9db70b70f07a102f09e59fcdee85fd465b"
+    },
+    "mathlib-review/Q37DistanceData.lean": {
+      "bytes": 5778,
+      "sha256": "2c70eb5b70bb06c2c8cee3bdf5625401610bde132d193149b14398a96d8c2749"
+    },
+    "mathlib-review/Q37GatesAudit.lean": {
+      "bytes": 2106,
+      "sha256": "2a600904c0a58821575114a68c0de43783264d84609141e2817fc66eeebe6a05"
+    },
+    "mathlib-review/Q37HadamardFourier.lean": {
+      "bytes": 12306,
+      "sha256": "9688f0fbae6a30cfdb9207d659c9a89bfbe81b26b23909a85c3399b08c6dace3"
+    },
+    "mathlib-review/Q37LogicalNativeGates.lean": {
+      "bytes": 14355,
+      "sha256": "300b358c88679c8da0d8380012ace7185b154658748c355a4703555e3ad1ebe8"
+    },
+    "mathlib-review/Q37MaskCertificate.lean": {
+      "bytes": 3125,
+      "sha256": "30e2cccd43c091378cea74a2710dd7da9c8567330cb969f50dfeade8b49c3388"
+    },
+    "mathlib-review/Q37NamedRotation.lean": {
+      "bytes": 902,
+      "sha256": "a700f836936aea5b7dafe30ab60abeb6d4813a2a4083257fe1b2e8990148f9ec"
+    },
+    "mathlib-review/Q37NativeBlocks.lean": {
+      "bytes": 6332,
+      "sha256": "5775f9b83ef4aa7227cfecb7950034f42a02531fd91e08838b5d3327fa422c9e"
+    },
+    "mathlib-review/Q37NativeParityLayer.lean": {
+      "bytes": 7558,
+      "sha256": "3d50ead860f84eea092673027292b0799ff1d08b215f2686d162797c35f6f0ac"
+    },
+    "mathlib-review/Q37PackedSignatures.lean": {
+      "bytes": 5205,
+      "sha256": "fa73eca7ff24af6a655a402ee5a337df2297f094778b1eb94b2ef91b0f380e22"
+    },
+    "mathlib-review/Q37ParityPolynomial.lean": {
+      "bytes": 7593,
+      "sha256": "8a9415107591225838aee9e1a6b7fc5a5e9a59994e279b90fe72dc3508a57382"
+    },
+    "mathlib-review/Q37PhaseBridge.lean": {
+      "bytes": 2730,
+      "sha256": "c4a86a8cc8731f6d462c2be592731e39248329b53ad4de0e0b954e4d89518af0"
+    },
+    "mathlib-review/Q37PhaseCoefficientWords.lean": {
+      "bytes": 2988,
+      "sha256": "317448aa3973a01e25135710c30a10b204a0b87edf393122fa9c1b326e7f39c8"
+    },
+    "mathlib-review/Q37PhysicalCompression.lean": {
+      "bytes": 11480,
+      "sha256": "8a302d4d8906bfb088e280a33f386a0245133e7e1a8861bf72a68b4a46145f4e"
+    },
+    "mathlib-review/Q37PhysicalParityLayers.lean": {
+      "bytes": 1437,
+      "sha256": "d4002a0f5dfd383c07d515e058bfc038b51ba6dd93af58baaca785bad5fa551c"
+    },
+    "mathlib-review/Q37PhysicalPhases.lean": {
+      "bytes": 6679,
+      "sha256": "2255dc4879e0968c5ba2ce2cc44af981066e78e26fee4f4b4b925d2811d7be55"
+    },
+    "mathlib-review/Q37SignatureBits.lean": {
+      "bytes": 4684,
+      "sha256": "9a39e210ea254b57d1cd69afee300364c7354127c95cb9bff9777c512f81dee1"
+    },
+    "mathlib-review/Q37SupportSplits.lean": {
+      "bytes": 4148,
+      "sha256": "91fdf353f5ef239b592fcb7e3f5c8c01a3dd21d08ccbde70fe3a8318cb265f56"
+    },
+    "mathlib-review/Q37Threshold.lean": {
+      "bytes": 5274,
+      "sha256": "1452574f990bec1d2596c2928f54f51f801888c501e6112bc41dc97af1bd27a0"
+    },
+    "mathlib-review/README.md": {
+      "bytes": 5040,
+      "sha256": "b5a4d7bc640e217ceba03c52e37a5286abb12d22f6236c01f2f19b7415c19bd2"
+    },
+    "mathlib-review/RealAlgebraicCurves.lean": {
+      "bytes": 11201,
+      "sha256": "a7ab7367a591b4b91869ba307925567a75b4dd80210f705c7cde4f535af57dad"
+    },
+    "mathlib-review/RealAlgebraicImage.lean": {
+      "bytes": 10543,
+      "sha256": "cf1cb6bf7f8fba82e4475bd4e43030acb23a441c756e18280d0184e9033128fa"
+    },
+    "mathlib-review/RecoveryCrossTerms.lean": {
+      "bytes": 1638,
+      "sha256": "b8c48df57b2cd5d51be10b86475e0bf8dd2e491ca3dde73a13c9cc0266bfc7b7"
+    },
+    "mathlib-review/ReducedCircuitAudit.lean": {
+      "bytes": 1507,
+      "sha256": "f843ddd09af2673401eefd119f91bf4e5af413b58e13e7e265689c4907e1eb52"
+    },
+    "mathlib-review/ReducedCircuitFiniteImage.lean": {
+      "bytes": 1827,
+      "sha256": "58ba8cf5ebcc0131f65151ebf66304bdc883d779dfc6be98bde989a1506626b0"
+    },
+    "mathlib-review/ReducedCircuitInverses.lean": {
+      "bytes": 8254,
+      "sha256": "de368ad6a4e9babeedb6dc770c5173731a15546b45620c8da0008927f0066fab"
+    },
+    "mathlib-review/ReducedCircuitIsomorphism.lean": {
+      "bytes": 12210,
+      "sha256": "05fdd366ea1b3d97bd61bb91e1314a75873368a418e09f67f53af319f8c48ff5"
+    },
+    "mathlib-review/ReducedCircuitPresentation.lean": {
+      "bytes": 6741,
+      "sha256": "5ba28cb8e2f8174536a21184cd10fde7de2754466355ca7a0cb67f42b26494fb"
+    },
+    "mathlib-review/STABILIZER_DEFINITION_CORRESPONDENCE.md": {
+      "bytes": 8193,
+      "sha256": "326ec4aa53d2278ac5e2f28b59d292797e6163f86d789a39531f2e0a01be5874"
+    },
+    "mathlib-review/SharpFaultSuppression.lean": {
+      "bytes": 2417,
+      "sha256": "47da672f2d3c41ff51856f2d3108bf90ef0d7a7f6a4decd33d2d7cd13adb056f"
+    },
+    "mathlib-review/ShorBoundaryCircuit.lean": {
+      "bytes": 3221,
+      "sha256": "94758fb9f178bbeeabd95b2b172a3f3cd77048973f30927f8e76d0299257a8b7"
+    },
+    "mathlib-review/ShorBoundaryRows.lean": {
+      "bytes": 4345,
+      "sha256": "668c7eeb304829db72a0686a6a45c8c03bb597a795cb22db1eaec5c8090eed1f"
+    },
+    "mathlib-review/ShorCycleAction.lean": {
+      "bytes": 4705,
+      "sha256": "5c85edcb5b30d00388a0f07a3d6a39c1125d6c2cac05416b98138cb878dd2481"
+    },
+    "mathlib-review/ShorCyclePacking.lean": {
+      "bytes": 5644,
+      "sha256": "a2443b1d331de65934db4c3c54ac9d7ca7d696b9e85f800523fe35e4246b5e73"
+    },
+    "mathlib-review/ShorDepthOneWitness.lean": {
+      "bytes": 16412,
+      "sha256": "59a0c5bc767a264330217981601b13d3484b8aa7d2041965e260b5da91b5e668"
+    },
+    "mathlib-review/ShorDistanceDetection.lean": {
+      "bytes": 5905,
+      "sha256": "dd1894e9be8ec244425ccfb93ea4b18d75bffbfb5732993d8fe4f25cbce34a05"
+    },
+    "mathlib-review/ShorExactDistance.lean": {
+      "bytes": 5152,
+      "sha256": "5ff6a68f61f38096a46fc6fb454bcf917d5f19f7e6a1d0ba91fe4ece10cc4825"
+    },
+    "mathlib-review/ShorFaultWitness.lean": {
+      "bytes": 12068,
+      "sha256": "8085db5c684d776c7107a4a6b05e3c9604aa648db7dc0d8a8c6bda95657a2b2f"
+    },
+    "mathlib-review/ShorFaultWitnessAmbiguity.lean": {
+      "bytes": 11575,
+      "sha256": "282cc4908439d8db093d5e0744442387b6f040b867be7c8da305ed2f2955e264"
+    },
+    "mathlib-review/ShorGroupLayout.lean": {
+      "bytes": 5045,
+      "sha256": "b0f881019f614fb34f006ed21ebe432453e030b2714e8ce868a1e50b4846b9a1"
+    },
+    "mathlib-review/ShorGroupedAction.lean": {
+      "bytes": 5461,
+      "sha256": "fef8344cc0c7c46b70b093539d236185c6d8974bd90c23b2ea7fe64873ef9663"
+    },
+    "mathlib-review/ShorGroupedCircuit.lean": {
+      "bytes": 6894,
+      "sha256": "3654bbd74e274f3da4229c792924c24e115377a37b9f0aff075648b6f47b7bc7"
+    },
+    "mathlib-review/ShorIndexedSchedule.lean": {
+      "bytes": 11216,
+      "sha256": "7473d0016ca31472cb8b144ba163b7d06c69b7334ff4f5dbed12959774da98d7"
+    },
+    "mathlib-review/ShorIndexedScheduleColumn.lean": {
+      "bytes": 4527,
+      "sha256": "0ca056c676df00ad003226afe9af630733e1ce40be450f84cd1be9c80ef24821"
+    },
+    "mathlib-review/ShorIndexedScheduleLift.lean": {
+      "bytes": 5438,
+      "sha256": "232773b9872d162666b0ec847498748fa03efd1bbdb6d1940b92070dab938a57"
+    },
+    "mathlib-review/ShorIndexedScheduleMasks.lean": {
+      "bytes": 8324,
+      "sha256": "8c31d39b97f01b1dfd2cd6cc610e9eb4de039faa0bf3691babaa1f8a8a51a9a3"
+    },
+    "mathlib-review/ShorLowerSaturation.lean": {
+      "bytes": 2120,
+      "sha256": "bf514a2883ddb510b3cf02584bf7cc3fdca3e7033b599263ed61745a8f01c32d"
+    },
+    "mathlib-review/ShorMultilayerSaturation.lean": {
+      "bytes": 7607,
+      "sha256": "e00eb3bf880712f621f77435ab3eeaf0997b8459957549acb720cb76173f65b8"
+    },
+    "mathlib-review/ShorNativeFanout.lean": {
+      "bytes": 3386,
+      "sha256": "192da6ead422720177dcf4df9c68b87b4fe4007077daac5a126f4701fa282e22"
+    },
+    "mathlib-review/ShorNativeLayerAction.lean": {
+      "bytes": 2570,
+      "sha256": "77bf89214777688ccbd66bc8017c61908e2a5b9446a8c5b3e47f9792886d51f6"
+    },
+    "mathlib-review/ShorNativeParallelFanout.lean": {
+      "bytes": 2770,
+      "sha256": "924452edb880aaa8d0484f8b0418dce913365aa0a30646ec350e1ec6fec4614f"
+    },
+    "mathlib-review/ShorNativeParentLayer.lean": {
+      "bytes": 3313,
+      "sha256": "1ec593560e52928e61ff21d933fe3904f93b24e99defccab6c1a7e83c53409ee"
+    },
+    "mathlib-review/ShorNativeSaturation.lean": {
+      "bytes": 3101,
+      "sha256": "7e2d3fe9a0b273012bc8af387d4d55fc772d468baba79cf1ab06e7cf68d92a70"
+    },
+    "mathlib-review/ShorNativeSitePermutation.lean": {
+      "bytes": 2189,
+      "sha256": "eecd5199dbb8cddbfd829a1743f078e2cc9b69e8235a6ab3e63c150bccc1ae78"
+    },
+    "mathlib-review/ShorNativeTransition.lean": {
+      "bytes": 1175,
+      "sha256": "bfba23355b3a57175c6a63a0a4405a31b3019e763ba51f54782f0bdc1a49e821"
+    },
+    "mathlib-review/ShorNativeTransitionArity.lean": {
+      "bytes": 3330,
+      "sha256": "fb47a58a5770bf71500972bf3cbe6fe39ab50d17dcd9bd0ea3dea81e9b392744"
+    },
+    "mathlib-review/ShorOnset.lean": {
+      "bytes": 1872,
+      "sha256": "75e2d3000f49218de82706f0e718151740b61331f642b234b45a66446bc6d49d"
+    },
+    "mathlib-review/ShorPauliMasks.lean": {
+      "bytes": 6859,
+      "sha256": "9e61a38d4e4a24686ceeacdd22d0ccc68aae9c6102bed67e0b98f1feb65df6c7"
+    },
+    "mathlib-review/ShorPermutationAction.lean": {
+      "bytes": 3735,
+      "sha256": "b3b952edfc66ce4aa0697e7203eb67ed386b424220ebc5c77eb2852b8d54f78b"
+    },
+    "mathlib-review/ShorPhysicalChecks.lean": {
+      "bytes": 6858,
+      "sha256": "50e9682f90f6cb631f374a91afe9efc611e167729905659b89eeb77748b1f9da"
+    },
+    "mathlib-review/ShorPhysicalCode.lean": {
+      "bytes": 5330,
+      "sha256": "6678f7b129dbabe2838de7427e57b786ec6896add6041ffe5bfa62dcc9774bef"
+    },
+    "mathlib-review/ShorPhysicalXLogical.lean": {
+      "bytes": 3296,
+      "sha256": "0901dc41b2caf89a4ff4a67ddad805946fadc62b4860565850830eacf3345cdf"
+    },
+    "mathlib-review/ShorPhysicalZChecks.lean": {
+      "bytes": 4345,
+      "sha256": "30163fa43c1d4d44b130120df7790a26c4f73cb9a0242f7e61e824c5dd3089a9"
+    },
+    "mathlib-review/ShorRowAction.lean": {
+      "bytes": 15492,
+      "sha256": "c10ebc495184b55c04c1e852aff5b9ce8fa3adff832ac740f292b1973bb9e3cc"
+    },
+    "mathlib-review/ShorRowActionColumns.lean": {
+      "bytes": 7545,
+      "sha256": "11999272f7956a6fef7e750d89670a193086b94e9aa251b6434ff4583ecefc8a"
+    },
+    "mathlib-review/ShorSaturationAudit.lean": {
+      "bytes": 2167,
+      "sha256": "36b64a4824766c4f3d34edb8926c47c166d87fe8a760c5a11f5bd03044f597f9"
+    },
+    "mathlib-review/ShorSaturationConsumer.lean": {
+      "bytes": 764,
+      "sha256": "b1849f1773ff100feffbe6b5d486350e16ec690da5e022572fb46877c6a9c966"
+    },
+    "mathlib-review/ShorStabilizer.lean": {
+      "bytes": 7221,
+      "sha256": "35ba0f1e4c311c88751a64109dd7d092feb08f50c7f580ed503fb29131a7ffb8"
+    },
+    "mathlib-review/SingleFaultDetectability.lean": {
+      "bytes": 5462,
+      "sha256": "7d0397b0c93e575e4e7fa8200673181d7d456796e31cd450ed7c4d66f88894fc"
+    },
+    "mathlib-review/SourceConsumer.lean": {
+      "bytes": 5765,
+      "sha256": "14556a208ecf58045e5124c836e2e1bf662a46292d8856674b728a26f7cc25d5"
+    },
+    "mathlib-review/StabilizerCosetSelection.lean": {
+      "bytes": 2259,
+      "sha256": "7b4f680c42407825c86cd4b3ea8e3b1cb4ef991ab2a8d2d34288f02a6a3ba50c"
+    },
+    "mathlib-review/StabilizerFrameSynthesis.lean": {
+      "bytes": 14147,
+      "sha256": "ec67631e6238cd672ed541ab9458519fb9b9b26c827ff0acad2abe3640f1fee7"
+    },
+    "mathlib-review/StabilizerLogicalFrame.lean": {
+      "bytes": 5226,
+      "sha256": "c0efde4e3c52082fd5c58d54889ff4c7092c02705be71d07fe4e30f97a51ceed"
+    },
+    "mathlib-review/StabilizerMinUnphased.lean": {
+      "bytes": 3746,
+      "sha256": "c5d0f5b37853d04dea774ec078e87faf1a35c91a3d4d9736a5054142b09e85a4"
+    },
+    "mathlib-review/StabilizerNativeGivens.lean": {
+      "bytes": 4375,
+      "sha256": "5cfaa5d66eac9889e36509f171c782493da2adbcb0a2b9ef92d9f31724104a1e"
+    },
+    "mathlib-review/StabilizerPauliFrame.lean": {
+      "bytes": 12656,
+      "sha256": "94cfa9b450b90c5e465b8c6983ba12d714331ec98ff52f71d2c4aabc2260da80"
+    },
+    "mathlib-review/StabilizerPauliFrameAction.lean": {
+      "bytes": 4672,
+      "sha256": "850afb232c25acfe2e121693b6c16d35bedf5b909e08f71ee2fb77c4f571cc58"
+    },
+    "mathlib-review/SupplementSynthesis.lean": {
+      "bytes": 6481,
+      "sha256": "2a425c6483cc917c1ae966d477d2b50cf2896524b2edd2a9da09272532d01082"
+    },
+    "mathlib-review/SynthesisFiniteWords.lean": {
+      "bytes": 2667,
+      "sha256": "72f6f6676180de7762fc13f759aa555b0e24e89b434cfc998f3c3ff3a79b854d"
+    },
+    "mathlib-review/THREE_LAYER_CORRESPONDENCE.md": {
+      "bytes": 12747,
+      "sha256": "efecfb7684c2a65d736b62fefcb0c8aa617f736a36227810560359b4f4a97f8d"
+    },
+    "mathlib-review/TensorPauliConjugation.lean": {
+      "bytes": 8503,
+      "sha256": "6016e6ac8f6b09d10facf34c20cc85775791f8d2d5125bce2bb99d4f6fa1e8d8"
+    },
+    "mathlib-review/TensorPauliConnectedFrame.lean": {
+      "bytes": 11149,
+      "sha256": "24a489ab03d35994dbad9276c685ee544cc7301906664c4597d20176249e0472"
+    },
+    "mathlib-review/TensorPauliTangents.lean": {
+      "bytes": 5075,
+      "sha256": "e3e7979b965df2f2641657d29877f9c607519f809fa97060e1142d7271083484"
+    },
+    "mathlib-review/UnitaryAdjointSpan.lean": {
+      "bytes": 12303,
+      "sha256": "79a7fbbaff85de8492c39f50a4904a099449a30e0f861cdbecf44dd3c195692f"
+    },
+    "mathlib-review/UnitaryCurveProducts.lean": {
+      "bytes": 12972,
+      "sha256": "7a0269a9b465bc5d52bfea335a7c43d6dc5fce936b8b7bb50e1b9b9c4a08d653"
+    },
+    "mathlib-review/UpdateBranchAudit.lean": {
+      "bytes": 3185,
+      "sha256": "3d8c39451f950d2e6a9b8bd233dd863015c337b5844af2e522715a6d74bc3d47"
+    },
+    "mathlib-review/UpdateBranchConsumer.lean": {
+      "bytes": 3358,
+      "sha256": "64db94928dd5410fe0d88dc1a6876c9e914ea7cdd55941a17e24198c55e48d22"
+    },
+    "mathlib-review/V3BaselineConsumerAudit.lean": {
+      "bytes": 1272,
+      "sha256": "8bf5b3ceb148bab6953cd8376ee50b7b0dff7d5f51f328551c6eca8f4895b868"
+    },
+    "mathlib-review/VERIFICATION.json": {
+      "bytes": 20083,
+      "sha256": "4d30510ea1f9379120a9187423d43b5bc7e94b1e296076b7ee531bec667da4fa"
+    },
+    "mathlib-review/inputs/original_pure_formal_statements.lean.txt": {
+      "bytes": 912,
+      "sha256": "964755075bb1a9f233e1c179b62732e080a2fbe08b7253163a9e7f0c679186b4"
+    },
+    "mathlib-review/inputs/original_pure_mathematical_statements.md": {
+      "bytes": 2926,
+      "sha256": "30a2707370aa7a79065d77e902b7630ddc303960d327d30448134b91fc83b305"
+    },
+    "mathlib-review/lake-manifest.json": {
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+    },
+    "mathlib-review/lakefile.toml": {
+      "bytes": 350,
+      "sha256": "d7452e002165998601d40ed58273fd25afb3f563b0c0f3bbdfb4ba164c15d35a"
+    },
+    "mathlib-review/lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    "mathlib-review/manuscript/shallow_logical_operators_depth_threshold.pdf": {
+      "bytes": 414237,
+      "sha256": "582ca90c612a57e2e9fdfa67081ab661c7b547178ed66e7be02d75c7cca347e1"
+    },
+    "mathlib-review/manuscript/shallow_logical_operators_depth_threshold.tex": {
+      "bytes": 35519,
+      "sha256": "1c17ca04507174ce6b070af71a898626e279668d598d04b8b052787481d9ba0d"
+    },
+    "mathlib-review/verify-v3.sh": {
+      "bytes": 9551,
+      "sha256": "eb7cfd973e815ceeb5c24393668d9d466a834514968643f8de1f52eec39af314"
+    },
+    "mathlib-review/verify.sh": {
+      "bytes": 1893,
+      "sha256": "a439a112c6cc773b63cd6041b028999c0c9dd6b74df9326355f1c8a7a18d71ea"
+    },
+    "scripts/check_current_version.py": {
+      "bytes": 22025,
+      "sha256": "7d208518fa3d392781d86b91e7b707b5810ede833955b1f0f3b89face2b9b9e1"
+    },
+    "scripts/clean_replay.sh": {
+      "bytes": 10614,
+      "sha256": "655b78fa3331b223268b07356bef1fbf19c4e560b974b49d07ba9dedf6a5733a"
+    },
+    "scripts/replay.sh": {
+      "bytes": 2735,
+      "sha256": "86d744ad88efb2b57cf8647b718fa30a3df946661ae409044abfb5e675eb1058"
+    },
+    "scripts/verify.sh": {
+      "bytes": 7834,
+      "sha256": "27104e0607379d2148cea49131f1d4fb4907852e8e3f4ff10dd128384a956501"
+    },
+    "scripts/verify_full.py": {
+      "bytes": 23813,
+      "sha256": "f3f5873598694afbdd56bb7679ac35764a049ed39be014b6599ac4bc4a090e4b"
+    },
+    "scripts/verify_public_dependencies.pl": {
+      "bytes": 7109,
+      "sha256": "b93c58ef23ff9a8d438304b32645f1e19209335675dae8b34eda084c2bc0f05c"
+    },
+    "scripts/verify_release.sh": {
+      "bytes": 12166,
+      "sha256": "362149dee7e8a42c5f4369dcd3e0c02cc0cccf2ec20ac25f20faea8574500c8c"
+    },
+    "timestamps/20261102-current/README.md": {
+      "bytes": 4202,
+      "sha256": "e294d7016170284d5e2ad7cbc4d6dc36bcf311008d7f132fead79c37e058ddea"
+    },
+    "timestamps/20261102-current/RECEIPTS.json": {
+      "bytes": 4306,
+      "sha256": "57e76466e5c934c44abf7c3e6208eccaeaf17a78889d7e2eb4d1cd650b199d82"
+    },
+    "timestamps/20261102-current/SHA256SUMS.txt": {
+      "bytes": 2294,
+      "sha256": "220db1e2f269bbdc70bd5e9625c7feee716c97b0351b9f54339f945e2a02a504"
+    },
+    "timestamps/20261102-current/ots/first-attempt-single-calendar.ots": {
+      "bytes": 289,
+      "sha256": "c7a62ceeae7a4eeb235fb5e835f94304feb5a7de4f06d2b135fae5f162c85305"
+    },
+    "timestamps/20261102-current/ots/release-manifest.txt.upgrade.ots": {
+      "bytes": 737,
+      "sha256": "f803ed4d9c12bbb9671a6dcc8969128faf45600ad545172917ea3c3da826779a"
+    },
+    "timestamps/20261102-current/release-manifest.txt": {
+      "bytes": 6735,
+      "sha256": "dee22d1fb2fbc9f25583321df7185bbe07521417dbea03d9f9b52f90cd5240cf"
+    },
+    "timestamps/20261102-current/release-manifest.txt.ots": {
+      "bytes": 737,
+      "sha256": "f803ed4d9c12bbb9671a6dcc8969128faf45600ad545172917ea3c3da826779a"
+    },
+    "timestamps/20261102-current/rfc3161/actual-signer.pem": {
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    "timestamps/20261102-current/rfc3161/query.txt": {
+      "bytes": 292,
+      "sha256": "4a9bfc56a8c034961e2873686fa8cafd0a8972f22df7a7223cdea412a0baea0b"
+    },
+    "timestamps/20261102-current/rfc3161/release-manifest.tsq": {
+      "bytes": 70,
+      "sha256": "36d010f370c0dfa57f5ddb2f5460270ef99896f6957bf9fa9c5cc867050b88de"
+    },
+    "timestamps/20261102-current/rfc3161/release-manifest.tsr": {
+      "bytes": 6008,
+      "sha256": "a89f888222042ed4c271c09d55c358077f26727a8a0376b3fe0ec98e3c693b58"
+    },
+    "timestamps/20261102-current/rfc3161/reply.txt": {
+      "bytes": 514,
+      "sha256": "208cb960f77a202ada64401718b13df494790195255315564923d8b4782aecf5"
+    },
+    "timestamps/20261102-current/rfc3161/request-start-UTC.txt": {
+      "bytes": 21,
+      "sha256": "6ed2b3dca1d57d2abf4d641669eaaa9c2264ea4594eee1260800fd0779a7eda1"
+    },
+    "timestamps/20261102-current/rfc3161/response-certificates.pem": {
+      "bytes": 6834,
+      "sha256": "b65bce3ebb0be8a8de3a133a0dc76e77399a8bf4c80bab983fa350358e08dfe1"
+    },
+    "timestamps/20261102-current/rfc3161/response-end-UTC.txt": {
+      "bytes": 21,
+      "sha256": "7a8ded57ecd1e86b666518cfc99d57b3b1936a681ed4c69d50c304373a3541c8"
+    },
+    "timestamps/20261102-current/rfc3161/signer-EKU.txt": {
+      "bytes": 54,
+      "sha256": "f1cc6aba9696aee75f3537ae1f0194d04078bf80a928d7c2116999e67b67503c"
+    },
+    "timestamps/20261102-current/rfc3161/signer-metadata.txt": {
+      "bytes": 417,
+      "sha256": "9f23895105ab8cd216ecf3b62ffcc47f4cf5fb48cceca8034872dc85b98bcf08"
+    },
+    "timestamps/20261102-current/rfc3161/token-metadata.txt": {
+      "bytes": 205,
+      "sha256": "35a77d15cc0b1e274d8d6660c065f93be81483170f15755d146c0923a5a56801"
+    },
+    "timestamps/20261102-current/rfc3161/token.der": {
+      "bytes": 5999,
+      "sha256": "37c0cd80627e5092ddd1fd15c8884528a6b52f6ccf5a812ad96396e65b12dded"
+    },
+    "timestamps/20261102-current/rfc3161/trusted-root-DER-SHA256.txt": {
+      "bytes": 65,
+      "sha256": "f7f04c190e318a031812dc6431e98e5286bf918d4950ba556a71276ae09914cf"
+    },
+    "timestamps/20261102-current/rfc3161/trusted-root.pem": {
+      "bytes": 1988,
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee"
+    },
+    "timestamps/20261102-current/rfc3161/tstinfo.der": {
+      "bytes": 114,
+      "sha256": "91b7a9adede66f109537b3ddf0a6caf39015581685b78a6a12af3fa8a2514eb8"
+    },
+    "timestamps/20261102-current/rfc3161/verification-UTC.txt": {
+      "bytes": 21,
+      "sha256": "7a8ded57ecd1e86b666518cfc99d57b3b1936a681ed4c69d50c304373a3541c8"
+    },
+    "timestamps/20261102-current/rfc3161/verification-scope.txt": {
+      "bytes": 589,
+      "sha256": "67be65ca3a75b0ffcb73ef1d24a60dcbf3f3c55e7dedf7b8c1d6c1b8c9d56a8e"
+    },
+    "timestamps/20261102-current/rfc3161/verify-file.txt": {
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    },
+    "timestamps/20261102-current/rfc3161/verify-query.txt": {
+      "bytes": 17,
+      "sha256": "0fcf850642f4c89e2ef10aad49678b61d6c2fb60fd6ca9d7ab08b59627ebdc4f"
+    },
+    "timestamps/20261104v1/20261104v1.tex.tsq": {
+      "bytes": 69,
+      "sha256": "8efd589c6cce59ea0d83bc66ca7ba80633bd10e53c9cbf9e9458a49a0a1a0903"
+    },
+    "timestamps/20261104v1/20261104v1.tex.tsr": {
+      "bytes": 6007,
+      "sha256": "989e19290ff723279e2f96fe7d302b3e8fc16ff54dea7695dcc9f65b31fe498c"
+    },
+    "timestamps/20261104v1/README.md": {
+      "bytes": 3495,
+      "sha256": "444390d323a1ee466df1f6878b7f9449a7f800c52aa207d29ffd4654629f9639"
+    },
+    "timestamps/20261104v1/RECEIPT.json": {
+      "bytes": 3287,
+      "sha256": "92c3bc043a52ef0f29bc63cb8a8abd69d3d55f0764ea177b3f921a5eb743fe23"
+    },
+    "timestamps/20261104v1/SHA256SUMS.txt": {
+      "bytes": 861,
+      "sha256": "2470fe02a82aa125eab4d1c0eb6e2c460d3ddc9bcc97845cbc78e040bc7783cb"
+    },
+    "timestamps/20261104v1/actual-signer.pem": {
+      "bytes": 2504,
+      "sha256": "b733bc1d837bc69be0495d068059305a659db35b51d487e6d46cd45df544af93"
+    },
+    "timestamps/20261104v1/digicert-trusted-root-g4.pem": {
+      "bytes": 2012,
+      "sha256": "83c858c6d092a38723703389e6cc5b0239e3537bcdc3114723b95da63a3d9360"
+    },
+    "timestamps/20261104v1/issuer-intermediate.pem": {
+      "bytes": 2424,
+      "sha256": "0edab770d65632eefbe6ccdb61034e224facf49a960acdf82ae13c64fa0a3519"
+    },
+    "timestamps/20261104v1/query.txt": {
+      "bytes": 301,
+      "sha256": "93fe86f2df3b50a45821b12f2a694707086f3f93131ae3bf4e64364b2b4e2b45"
+    },
+    "timestamps/20261104v1/reply.txt": {
+      "bytes": 531,
+      "sha256": "bce3264a744a462a7771199f491ceaf3962d410679bedb027d11328b21c45368"
+    },
+    "timestamps/20261104v1/verification.txt": {
+      "bytes": 327,
+      "sha256": "270a43036a1dabfb2e8bccaeb7788e673b460e72d3dea8f4de57ddaf9393b33e"
+    },
+    "timestamps/20261107v7/20261107v7.pdf.query.txt": {
+      "bytes": 292,
+      "sha256": "d629235e1d9a6a6e660a0e9ef8aaed9e04326ed2bb9d23c81906f4c6cef71f39"
+    },
+    "timestamps/20261107v7/20261107v7.pdf.reply.txt": {
+      "bytes": 514,
+      "sha256": "52c0fba7608690daeb69cb6b896b73f0a2e8c621886fd4f7f36cb48b4ce42938"
+    },
+    "timestamps/20261107v7/20261107v7.pdf.signer.pem": {
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    "timestamps/20261107v7/20261107v7.pdf.tsq": {
+      "bytes": 70,
+      "sha256": "1ebb5ec0d560bcd5e534561fab185a75d8d72217532924c0c7b6eea38ce20f8c"
+    },
+    "timestamps/20261107v7/20261107v7.pdf.tsr": {
+      "bytes": 6007,
+      "sha256": "9952c032527989bfa98c3828e8fd4df5dffb3ad8f1278db21feed06e9fb2c9ab"
+    },
+    "timestamps/20261107v7/20261107v7.tex.query.txt": {
+      "bytes": 292,
+      "sha256": "5216182f24c09f55986f3dc8719f232754f2c62052816a8569feee6542fa0b7c"
+    },
+    "timestamps/20261107v7/20261107v7.tex.reply.txt": {
+      "bytes": 514,
+      "sha256": "6f2e7938811ebe9f2109087c3bf870c9d3ac9bd2bd8a4eb1fbad6d3e9be35a84"
+    },
+    "timestamps/20261107v7/20261107v7.tex.signer.pem": {
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    "timestamps/20261107v7/20261107v7.tex.tsq": {
+      "bytes": 69,
+      "sha256": "31c0d383e21cb62de89419835653de4c9854ebc90847df721c73e12e80ec21bb"
+    },
+    "timestamps/20261107v7/20261107v7.tex.tsr": {
+      "bytes": 6007,
+      "sha256": "b5f63780ab583ac7b5b732202108e4c6eaf0cde0ebf55394dd7bac46f5220828"
+    },
+    "timestamps/20261107v7/README.md": {
+      "bytes": 2159,
+      "sha256": "7772e831b627eb1d3dc95da4c2d6b38d153d001fe75a53fbbcf59897f5fb114a"
+    },
+    "timestamps/20261107v7/RECEIPT.json": {
+      "bytes": 2811,
+      "sha256": "4b81e15ded74e09eaa5c6b1af06620b307fc39ddb02a1b7d86bd9996b2b900d8"
+    },
+    "timestamps/20261107v7/SHA256SUMS.txt": {
+      "bytes": 1228,
+      "sha256": "d0e2fa218425cc638f4d5fef033e2ff91b54f0faa15db8efce306840c41b4885"
+    },
+    "timestamps/20261107v7/digicert-trusted-root-g4.pem": {
+      "bytes": 1988,
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee"
+    },
+    "timestamps/20261107v7/issuer-intermediate.pem": {
+      "bytes": 2386,
+      "sha256": "5e13de210e735b614d6ec948361aadef9dd6c0ef575382a75f57fd59e183b90e"
+    },
+    "timestamps/20261114v0/20261114v0.tex.query.txt": {
+      "bytes": 292,
+      "sha256": "da3e87fb77ac85cd3a0455ea616c6876d938a2ff1ff5fa746fb9f809790810b4"
+    },
+    "timestamps/20261114v0/20261114v0.tex.reply.txt": {
+      "bytes": 514,
+      "sha256": "2050ac9cad39496fd851a2ae1a31ef772eddc809f45d91e824ea368f4976e198"
+    },
+    "timestamps/20261114v0/20261114v0.tex.signer.pem": {
+      "bytes": 2504,
+      "sha256": "b733bc1d837bc69be0495d068059305a659db35b51d487e6d46cd45df544af93"
+    },
+    "timestamps/20261114v0/20261114v0.tex.tsq": {
+      "bytes": 69,
+      "sha256": "831099f094675f73da5a78b4108f55d07e53785a5ce8b564a717e1dfc627a7c2"
+    },
+    "timestamps/20261114v0/20261114v0.tex.tsr": {
+      "bytes": 6006,
+      "sha256": "c815e5b3dbe961494675d49d398312bd8bb4408848633263c452c7b1d1cd55a2"
+    },
+    "timestamps/20261114v0/README.md": {
+      "bytes": 2260,
+      "sha256": "6d5f78892bc4293fab30ab2eb04fc6a47286a5e17c1d231b5af2c818dc368f59"
+    },
+    "timestamps/20261114v0/RECEIPT.json": {
+      "bytes": 996,
+      "sha256": "909883929d386e484e8819990fec99f35f4182699b8fea3d5dbc2d528eef1bdb"
+    },
+    "timestamps/20261114v0/SHA256SUMS.txt": {
+      "bytes": 1030,
+      "sha256": "ede5a5b9707b5197ff959400d26aff61d6ecd3fc75d0b4c564276042432e8409"
+    },
+    "timestamps/20261114v0/VERIFICATION.txt": {
+      "bytes": 313,
+      "sha256": "0a3e5a0b4961ab81fbcd041c00aaf13a491f31e618de6ac4e6747b1e18f8eccb"
+    },
+    "timestamps/20261114v0/digicert-crls.pem": {
+      "bytes": 2398,
+      "sha256": "e7c2a4625b5467237e02d62c7c0604ad181aaa83bb50572da156339d977a6b23"
+    },
+    "timestamps/20261114v0/intermediate.pem": {
+      "bytes": 2386,
+      "sha256": "5e13de210e735b614d6ec948361aadef9dd6c0ef575382a75f57fd59e183b90e"
+    },
+    "timestamps/20261114v0/trusted-root.pem": {
+      "bytes": 2020,
+      "sha256": "a5633a9efd24cf171235ebe09bafc0fc293c263c7d63b496ae3c30d774d9e487"
+    },
+    "timestamps/update-branch/INPUTS.sha256.tsv.query.txt": {
+      "bytes": 292,
+      "sha256": "3ba768414b94d625f80f6a3c0b3645a0545eb091c97e7d382e0162454df8170d"
+    },
+    "timestamps/update-branch/INPUTS.sha256.tsv.reply.txt": {
+      "bytes": 514,
+      "sha256": "e833d8b0136e62d2e1b4dd7edda6aa779759211662f2a0e68cd6494f20565cd3"
+    },
+    "timestamps/update-branch/INPUTS.sha256.tsv.signer.pem": {
+      "bytes": 2503,
+      "sha256": "1c51443c063a1fac082663cf4fa8b3d8a2f972cfad5dda3e29c0e6a0818ac267"
+    },
+    "timestamps/update-branch/INPUTS.sha256.tsv.tsq": {
+      "bytes": 70,
+      "sha256": "308bda22b420f3e620a060e60a208f72d64c187678e74bbb5e5d42c98943604c"
+    },
+    "timestamps/update-branch/INPUTS.sha256.tsv.tsr": {
+      "bytes": 6008,
+      "sha256": "5b2ec446cddc30868dc95adbedc0ebf8b95d99b635d65fbe4a9ae43d5a329b0f"
+    },
+    "timestamps/update-branch/README.md": {
+      "bytes": 5216,
+      "sha256": "fe195a9f4a08af34f39c5eee58b4115198b9dcc79b422209bb3ad14316d97ec7"
+    },
+    "timestamps/update-branch/RECEIPT.json": {
+      "bytes": 3030,
+      "sha256": "97c9737e861d084fa6d732d2c6270cf08283f4232230b71080c746797d425401"
+    },
+    "timestamps/update-branch/SHA256SUMS.txt": {
+      "bytes": 1406,
+      "sha256": "5d8731cf81606717cf1f541285bbd11a56d0824f5681aedbc63a7e8760f21d35"
+    },
+    "timestamps/update-branch/Update_branch.tex.query.txt": {
+      "bytes": 292,
+      "sha256": "e4813aaec9088d280a0a2709b1cea66818a44576691c6469d37646402d544972"
+    },
+    "timestamps/update-branch/Update_branch.tex.reply.txt": {
+      "bytes": 514,
+      "sha256": "3fd746d45f2200cce50e6a484ca2f3caa049604b2e21ae5213aa0dc3a8be4e6e"
+    },
+    "timestamps/update-branch/Update_branch.tex.signer.pem": {
+      "bytes": 2503,
+      "sha256": "1c51443c063a1fac082663cf4fa8b3d8a2f972cfad5dda3e29c0e6a0818ac267"
+    },
+    "timestamps/update-branch/Update_branch.tex.tsq": {
+      "bytes": 70,
+      "sha256": "4908a95829486e45dece62c6e9160b335e4bc1c1f64bf8f08ed2dee9565b3234"
+    },
+    "timestamps/update-branch/Update_branch.tex.tsr": {
+      "bytes": 6008,
+      "sha256": "9ab161aab693e11f30d507a7e0d7adc3600bd0459212641afbae857a6c9a164a"
+    },
+    "timestamps/update-branch/VERIFICATION.txt": {
+      "bytes": 954,
+      "sha256": "2753ce2276ebc06ed6f41ca1b5f4a467c850a562dd0cdf3d5a43734a913a3188"
+    },
+    "timestamps/update-branch/digicert-crls.pem": {
+      "bytes": 2394,
+      "sha256": "2bacd12379d6dbe15d2a4dbb911ee4bc0b406549f98208794c3146ec8f67d81e"
+    },
+    "timestamps/update-branch/intermediate.pem": {
+      "bytes": 2386,
+      "sha256": "5e13de210e735b614d6ec948361aadef9dd6c0ef575382a75f57fd59e183b90e"
+    },
+    "timestamps/update-branch/trusted-root.pem": {
+      "bytes": 1988,
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee"
+    },
+    "verification-runs/20261101-3361e6c/ARTIFACT_MANIFEST.json": {
+      "bytes": 929,
+      "sha256": "e4975766a142679f4c7f97562833770dbdc11806388bc32c72ff27f2bbfe868d"
+    },
+    "verification-runs/20261101-3361e6c/CONSUMER_VERIFICATION.json": {
+      "bytes": 3108,
+      "sha256": "fdfd4b61a545b12d84a69be1ebc94946819146d4450e1e3ec48d60ef8add0738"
+    },
+    "verification-runs/20261101-3361e6c/FINAL_VERIFICATION_REPORT.md": {
+      "bytes": 7937,
+      "sha256": "e2da8f35dae9525fc67a0377e366baff5aa505fd5173322be8f5dbabb0a8182b"
+    },
+    "verification-runs/20261101-3361e6c/FreshConsumer.lean": {
+      "bytes": 5886,
+      "sha256": "725b6432a412ab4154a42336ed915783eec3c32169d521dd02550df97af0de94"
+    },
+    "verification-runs/20261101-3361e6c/KERNEL_AUDIT.txt": {
+      "bytes": 6865198,
+      "sha256": "8b291fbbbc1ee74e7f69087fd9add1f1cf2f923b831469c687aa189b41856f1e"
+    },
+    "verification-runs/20261101-3361e6c/SHA256SUMS.txt": {
+      "bytes": 529,
+      "sha256": "35259586e3835c043a8cbd44f96c51aa9022abc5fcbed793d8454112d157f8c9"
+    },
+    "verification-runs/20261101-3361e6c/VERIFICATION.json": {
+      "bytes": 11743,
+      "sha256": "389d03c0b122cbb1b93224dcdf1766264cd98f37c300bbca8e5ebe43c14c9ea9"
+    },
+    "verification-runs/20261102-3c90628/ARTIFACT_MANIFEST.json": {
+      "bytes": 13924,
+      "sha256": "a48522da595728e471a0937d2e5cc87f02e0d7fc45febae354b97a9cf96ccccb"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/ALIGNED_MATHEMATICAL_STATEMENTS.md": {
+      "bytes": 11529,
+      "sha256": "47a462bdb4e0ca113940fa2263bd933e9c81737bc042aa93ad28d57b7be9b892"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/AUDIT_EXPECTED.txt": {
+      "bytes": 333,
+      "sha256": "63794e2a409f3a7cc09626642ff2c89ded8505587bc0d4e43a54e15f2c70be93"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/CAD_VS_ALGEBRAIC_PROOF.md": {
+      "bytes": 6108,
+      "sha256": "e86aca9e8b534dd9731bfbb2fb2de4e901bd7fac745804f973ef5a22513366cb"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/CriticalDepthMathlib.lean": {
+      "bytes": 543694,
+      "sha256": "3c90628e5567d329989aacf62e8216776e23eee508ae789d563f579f250d7ff2"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/PAYLOAD_SHA256.txt": {
+      "bytes": 874,
+      "sha256": "671b36d2cbfe5764e4609c6de5eeb714e5c16215be26f8042a6200d20af2b5b5"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/README.md": {
+      "bytes": 3445,
+      "sha256": "6c04e618e87935ff9bcff6bf48d847b7dc7bd5615154fc2dc8d8d7fae3a815ec"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/STABILIZER_DEFINITION_CORRESPONDENCE.md": {
+      "bytes": 7622,
+      "sha256": "e37bb0c6f0b2bcb080cc3f3725538e5de237fc1410cafd6291d48cce6da8c43b"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/lake-manifest.json": {
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/lakefile.toml": {
+      "bytes": 350,
+      "sha256": "d7452e002165998601d40ed58273fd25afb3f563b0c0f3bbdfb4ba164c15d35a"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    "verification-runs/20261102-3c90628/BUILD_INPUTS/verify.sh": {
+      "bytes": 1893,
+      "sha256": "a439a112c6cc773b63cd6041b028999c0c9dd6b74df9326355f1c8a7a18d71ea"
+    },
+    "verification-runs/20261102-3c90628/FINAL_VERIFICATION_REPORT.md": {
+      "bytes": 9999,
+      "sha256": "23a79f1f1d67bf498a787abfeb8c8bd912644724edcd90f556e0edbd6337c273"
+    },
+    "verification-runs/20261102-3c90628/KERNEL_AUDIT.txt": {
+      "bytes": 10166994,
+      "sha256": "aea2c0407ed7909ba8565f187e711777b2921760bf7ef76222b66d3087ab910a"
+    },
+    "verification-runs/20261102-3c90628/REFERENCE_MANUSCRIPT.tex": {
+      "bytes": 36687,
+      "sha256": "98e19ea527d1c6caff7b06debace8a03790fb57126bbe9754bc89d8341919227"
+    },
+    "verification-runs/20261102-3c90628/RELEASE_BINDING.json": {
+      "bytes": 2849,
+      "sha256": "9868019e0554d88e9e45df0f5fbdad6e178ab0a225e917b21fddfeb5fb870851"
+    },
+    "verification-runs/20261102-3c90628/SHA256SUMS.txt": {
+      "bytes": 6166,
+      "sha256": "bd9ce153776bec9ff23700d5216cc9cb48dbb86d01a3fe3bb8feee56661d4c3f"
+    },
+    "verification-runs/20261102-3c90628/SourceConsumer.lean": {
+      "bytes": 5765,
+      "sha256": "14556a208ecf58045e5124c836e2e1bf662a46292d8856674b728a26f7cc25d5"
+    },
+    "verification-runs/20261102-3c90628/VERIFICATION.json": {
+      "bytes": 20083,
+      "sha256": "4d30510ea1f9379120a9187423d43b5bc7e94b1e296076b7ee531bec667da4fa"
+    },
+    "verification-runs/20261103v2-clean/BOOTSTRAP.json": {
+      "bytes": 10963,
+      "sha256": "d82c8cf628bd2445b863370f5f842bfa68e44e73f8e4f47e86eab79a19cdcc44"
+    },
+    "verification-runs/20261103v2-clean/EVIDENCE_MANIFEST.json": {
+      "bytes": 7492,
+      "sha256": "a9fe14dbe185166e0c9d466053ae60f9cb2428e0f1770d55191f4db3994d3da8"
+    },
+    "verification-runs/20261103v2-clean/FINAL_REPORT.md": {
+      "bytes": 5260,
+      "sha256": "e782534e90c2b4212dd4ef5090cd789607b6224692c5b4afa58edcaefa40c0ab"
+    },
+    "verification-runs/20261103v2-clean/REFERENCE_MANUSCRIPT.tex": {
+      "bytes": 36770,
+      "sha256": "f3e86958f9a64f7d868e2f106fc1da833befe3223b733da46ad33958e5df2ad4"
+    },
+    "verification-runs/20261103v2-clean/VERIFICATION.json": {
+      "bytes": 8228,
+      "sha256": "436eab62346aa87bd885661d9f4f11aa48821aef5d1a5a40c676d292b0d7249a"
+    },
+    "verification-runs/20261103v2-clean/evidence.tar.gz": {
+      "bytes": 5537630,
+      "sha256": "0bea46f2a2dfe415c5b016fb4fbd8d84563eb5c426a193eec0b346c5d40de853"
+    },
+    "verification-runs/20261107v7/AUTHOR_SEMANTIC_APPROVAL.json": {
+      "bytes": 2824,
+      "sha256": "1f2093f744a05d6c631e175a046ae74bb31c931b57073b0d29e8c9de010a8a84"
+    },
+    "verification-runs/20261107v7/EXECUTED_INPUTS.sha256": {
+      "bytes": 1249,
+      "sha256": "169061ac74cd28d9e02c50781899dbd6b00f55b336137806583108bfceea2c17"
+    },
+    "verification-runs/20261107v7/INPUTS.sha256": {
+      "bytes": 1700,
+      "sha256": "8d12291f6fdbadee8f07c883ffddb416c98f28173ca8edf879083cc35a312d70"
+    },
+    "verification-runs/20261107v7/LemmaType.lean": {
+      "bytes": 243,
+      "sha256": "69c42cb2cc8b733eed9a1b4184878153aaa053f26f17d94ecda9c10f088b8659"
+    },
+    "verification-runs/20261107v7/REPLAY.json": {
+      "bytes": 7346,
+      "sha256": "5de484abc9265c20d0ce9caaf4f0b7c6474a57c8fc0614d71e76365d3d7ff132"
+    },
+    "verification-runs/20261107v7/REPORT.md": {
+      "bytes": 14070,
+      "sha256": "8aba821c2f2a55235b405eec2b708f9bcfc49b8fc8e0b726e00a480189d18071"
+    },
+    "verification-runs/20261107v7/ReplayAudit.lean": {
+      "bytes": 753,
+      "sha256": "010aaa6699849488a829abda568e9c252562552c74d43c4cc5730d25d5d1eae9"
+    },
+    "verification-runs/20261107v7/TARGET_AXIOMS.txt": {
+      "bytes": 6295,
+      "sha256": "5240782139e491d4759fb0e7a42a5a32e602e96e5112e0d4545677d48bbc1e73"
+    },
+    "verification-runs/20261107v7/TARGET_TYPES.txt": {
+      "bytes": 2365991,
+      "sha256": "97548b96acee42da3ea5e071bcbf4079cc06ad79c27a16af683720c361da845b"
+    },
+    "verification-runs/20261115-semantic-alignment/COMPILER_EVIDENCE.tar.gz": {
+      "bytes": 6399251,
+      "sha256": "5d64c4287eb59695a1ef78d97d5a08d278726b1317b04366c14c6a1d230090e3"
+    },
+    "verification-runs/20261115-semantic-alignment/EVIDENCE_CONTENTS.json": {
+      "bytes": 50915,
+      "sha256": "647f9a1ef06ca3a5bf41d3d200fc34ad39d417fc5f521f9f150b9bef6ae73ae9"
+    },
+    "verification-runs/20261115-semantic-alignment/INPUTS.json": {
+      "bytes": 55482,
+      "sha256": "df6fa1740e7f411868bcbf43de17c2438a2f882ab43a3809a5703de00474c888"
+    },
+    "verification-runs/20261115-semantic-alignment/LATEX_CHECK.json": {
+      "bytes": 7424,
+      "sha256": "8ef2e7a1e1db1f17858b7c77f0b4be4330716229b7c2d5729599d1678787a9c4"
+    },
+    "verification-runs/20261115-semantic-alignment/REPLAY.json": {
+      "bytes": 211953,
+      "sha256": "d024134c4c759e152176d3f56036e733894178df33a0768fa048f84893027b8d"
+    },
+    "verification-runs/20261115-semantic-alignment/REPORT.md": {
+      "bytes": 7899,
+      "sha256": "d945d319109eb0dc9ca5327fed168fb89fef29bb0725a04fc97131d9dee6996c"
+    },
+    "verification-runs/20261115-semantic-alignment/SOURCE_COMPARISON.json": {
+      "bytes": 1452,
+      "sha256": "9713516927c65f32eedcd7bcc4bcbcc83baaadc41217e941009129ad7bb03c6b"
+    },
+    "verification-runs/20261115-semantic-alignment/TOOLCHAIN_PROVENANCE.json": {
+      "bytes": 771,
+      "sha256": "e1d0cb9d2f59e935b8dc771f5c17d5986f52e2884f174fa2b3e94afaf3fb5250"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/Update_branch.blg": {
+      "bytes": 3458,
+      "sha256": "c4797d5b53c583141dce0875f693dcbf8a88ffd008990e91302ca5fccd708215"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/Update_branch.log": {
+      "bytes": 32057,
+      "sha256": "e813d4d1310a3d43aa8f9f3f7aeb6da2bbda872c4da1da61b90b8652cb14f5ea"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/baseline-console.log": {
+      "bytes": 4660,
+      "sha256": "02a620aa932e05473d03b831bcbd8845da9269964c8c8d136c68599634118fbb"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/baseline.blg": {
+      "bytes": 3458,
+      "sha256": "c4797d5b53c583141dce0875f693dcbf8a88ffd008990e91302ca5fccd708215"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/baseline.log": {
+      "bytes": 32057,
+      "sha256": "6ed25f6089fc8c3c15049e45ba312fefada3eb4d29688d9d7fdff9039cb47c24"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/compile-console.log": {
+      "bytes": 20936,
+      "sha256": "d06afab968b24f3b4e96906d542722defa17b9f99ec868e400ae04116dc1ea25"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/pdfinfo.txt": {
+      "bytes": 565,
+      "sha256": "9a2cff16db2c59923a339871ac36abcc4babaee55716f5087509164ab32b8237"
+    },
+    "verification-runs/update-branch/INPUTS.sha256.tsv": {
+      "bytes": 39848,
+      "sha256": "9d698ce8a6dec815b43d5b1ebb449d04717acf0fd2e46a6ac93e0e475d7b2e8b"
+    },
+    "verification-runs/update-branch/RELEASE.md": {
+      "bytes": 6934,
+      "sha256": "09f89ca4349fb5c7d0fe932266256303bbe40404eba28b0c1d3edef6fa81e1bc"
+    },
+    "verification-runs/update-branch/UpdateBranchAudit.log": {
+      "bytes": 18760,
+      "sha256": "f239d7cd5fcfc57dff239144017ade5fcd3d8f7b5a7b873028a6fb6b90d51e70"
+    }
+  },
+  "repository": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set",
+  "schema": "critical-depth.timestamp-payload.v1"
+}

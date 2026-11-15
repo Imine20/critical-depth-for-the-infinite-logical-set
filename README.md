@@ -7,6 +7,7 @@
 - [Manuscript → statements → Lean correspondence](docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md)
 - [Exact version and evidence binding](CURRENT_VERSION.json)
 - [Full verification report](verification-runs/20261115-semantic-alignment/REPORT.md)
+- [Current RFC 3161 timestamps and verification commands](timestamps/20261115-current/README.md)
 
 The current statements cover the bounded-depth projective logical image, continuous onset, dense and exact generation, the three optimized fault-suppression exponents, both saturation constructions, and the synthesis and code examples. The distinction between one complete circuit's depth and the depth of each generator is explicit.
 
@@ -26,4 +27,4 @@ Use `python3` if that is the interpreter name on your system. The output directo
 
 ## Version history
 
-[VERIFICATION_STATUS.md](VERIFICATION_STATUS.md) separates the current run from earlier builds and approvals. [RELEASE_BINDING.json](RELEASE_BINDING.json), the root author-approval record, and the earlier [Update_branch release record](verification-runs/update-branch/RELEASE.md) retain their historical scope. The [existing RFC 3161 evidence](timestamps/update-branch/README.md) binds the earlier manuscript bytes; it is not a timestamp of this revised TeX. No historical approval or timestamp is reassigned to the new statements.
+[VERIFICATION_STATUS.md](VERIFICATION_STATUS.md) separates the current publication from earlier builds and approvals. The new [RFC 3161 evidence](timestamps/20261115-current/README.md) binds the current TeX directly and the publication inputs through a SHA-256 manifest. [RELEASE_BINDING.json](RELEASE_BINDING.json), the root author-approval record, and the earlier [Update_branch release record](verification-runs/update-branch/RELEASE.md) retain their historical scope. The [earlier timestamps](timestamps/update-branch/README.md) still bind their original manuscript and manifest; their tokens and input manifest are unchanged. No historical approval or timestamp is reassigned to the new statements.

@@ -1,0 +1,209 @@
+{
+  "additional_exported_file_check_passed": true,
+  "finished_utc": "2026-11-15T08:19:31+00:00",
+  "historical_manifest_scope": "The root agent reported the existing 360-entry comparison against the publication commit. This task verifies the preserved manifest file and its token; it does not repeat the complete 360-entry comparison.",
+  "historical_manuscript": {
+    "bytes": 125926,
+    "commit": "dc1f6d7de3c9435be66c841095650f3bdb0ed72a",
+    "exported_path": "historical-check/Update_branch.pre-alignment.tex",
+    "git_path": "manuscript/Update_branch.tex",
+    "sha256": "bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22"
+  },
+  "installed_ts_help_supports_digest": true,
+  "openssl_version": "OpenSSL 3.5.9 29 Sep 2026 (Library: OpenSSL 3.5.9 29 Sep 2026)",
+  "original_readme_commands_passed": 6,
+  "original_readme_commands_total": 6,
+  "preserved_repository_evidence_unchanged": true,
+  "preserved_repository_file_hashes": {
+    "timestamps/update-branch/INPUTS.sha256.tsv.query.txt": "3ba768414b94d625f80f6a3c0b3645a0545eb091c97e7d382e0162454df8170d",
+    "timestamps/update-branch/INPUTS.sha256.tsv.reply.txt": "e833d8b0136e62d2e1b4dd7edda6aa779759211662f2a0e68cd6494f20565cd3",
+    "timestamps/update-branch/INPUTS.sha256.tsv.signer.pem": "1c51443c063a1fac082663cf4fa8b3d8a2f972cfad5dda3e29c0e6a0818ac267",
+    "timestamps/update-branch/INPUTS.sha256.tsv.tsq": "308bda22b420f3e620a060e60a208f72d64c187678e74bbb5e5d42c98943604c",
+    "timestamps/update-branch/INPUTS.sha256.tsv.tsr": "5b2ec446cddc30868dc95adbedc0ebf8b95d99b635d65fbe4a9ae43d5a329b0f",
+    "timestamps/update-branch/RECEIPT.json": "97c9737e861d084fa6d732d2c6270cf08283f4232230b71080c746797d425401",
+    "timestamps/update-branch/SHA256SUMS.txt": "5d8731cf81606717cf1f541285bbd11a56d0824f5681aedbc63a7e8760f21d35",
+    "timestamps/update-branch/Update_branch.tex.query.txt": "e4813aaec9088d280a0a2709b1cea66818a44576691c6469d37646402d544972",
+    "timestamps/update-branch/Update_branch.tex.reply.txt": "3fd746d45f2200cce50e6a484ca2f3caa049604b2e21ae5213aa0dc3a8be4e6e",
+    "timestamps/update-branch/Update_branch.tex.signer.pem": "1c51443c063a1fac082663cf4fa8b3d8a2f972cfad5dda3e29c0e6a0818ac267",
+    "timestamps/update-branch/Update_branch.tex.tsq": "4908a95829486e45dece62c6e9160b335e4bc1c1f64bf8f08ed2dee9565b3234",
+    "timestamps/update-branch/Update_branch.tex.tsr": "9ab161aab693e11f30d507a7e0d7adc3600bd0459212641afbae857a6c9a164a",
+    "timestamps/update-branch/VERIFICATION.txt": "2753ce2276ebc06ed6f41ca1b5f4a467c850a562dd0cdf3d5a43734a913a3188",
+    "timestamps/update-branch/digicert-crls.pem": "2bacd12379d6dbe15d2a4dbb911ee4bc0b406549f98208794c3146ec8f67d81e",
+    "timestamps/update-branch/intermediate.pem": "5e13de210e735b614d6ec948361aadef9dd6c0ef575382a75f57fd59e183b90e",
+    "timestamps/update-branch/trusted-root.pem": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee",
+    "verification-runs/update-branch/INPUTS.sha256.tsv": "9d698ce8a6dec815b43d5b1ebb449d04717acf0fd2e46a6ac93e0e475d7b2e8b"
+  },
+  "publication_note": "Absolute session paths are normalized to REPOSITORY and SESSION_WORK. Other recorded check outcomes are preserved; the raw local transcript is not included.",
+  "results": [
+    {
+      "argv": [
+        "openssl",
+        "version"
+      ],
+      "check": "openssl_version",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "OpenSSL 3.5.9 29 Sep 2026 (Library: OpenSSL 3.5.9 29 Sep 2026)\r\n"
+    },
+    {
+      "argv": [
+        "openssl",
+        "ts",
+        "-help"
+      ],
+      "check": "timestamp_option_support",
+      "exit_code": 0,
+      "stderr": "Usage: ts [options]\r\n\r\nGeneral options:\r\n -help                 Display this summary\r\n -config infile        Configuration file\r\n -section val          Section to use within config file\r\n -engine val           Use engine, possibly a hardware device\r\n -inkey val            File with private key for reply\r\n -signer val           Signer certificate file\r\n -chain infile         File with signer CA chain\r\n -CAfile infile        File with trusted CA certs\r\n -CApath dir           Path to trusted CA files\r\n -CAstore uri          URI to trusted CA store\r\n -untrusted infile     Extra untrusted certs\r\n -token_in             Input is a PKCS#7 file\r\n -token_out            Output is a PKCS#7 file\r\n -passin val           Input file pass phrase source\r\n -*                    Any supported digest\r\n\r\nQuery options:\r\n -query                Generate a TS query\r\n -data infile          File to hash\r\n -digest val           Digest (as a hex string)\r\n -queryfile infile     File containing a TS query\r\n -cert                 Put cert request into query\r\n -in infile            Input file\r\n\r\nVerify options:\r\n -verify               Verify a TS response\r\n -reply                Generate a TS reply\r\n -tspolicy val         Policy OID to use\r\n -no_nonce             Do not include a nonce\r\n -out outfile          Output file\r\n -text                 Output text (not DER)\r\n\r\nRandom state options:\r\n -rand val             Load the given file(s) into the random number generator\r\n -writerand outfile    Write random data to the specified file\r\n\r\nValidation options:\r\n -policy val           adds policy to the acceptable policy set\r\n -purpose val          certificate chain purpose\r\n -verify_name val      verification policy name\r\n -verify_depth int     chain depth limit\r\n -auth_level int       chain authentication security level\r\n -attime intmax        verification epoch time\r\n -verify_hostname val  expected peer hostname\r\n -verify_email val     expected peer email\r\n -verify_ip val        expected peer IP address\r\n -ignore_critical      permit unhandled critical extensions\r\n -issuer_checks        (deprecated)\r\n -crl_check            check leaf certificate revocation\r\n -crl_check_all        check full chain revocation\r\n -policy_check         perform rfc5280 policy checks\r\n -explicit_policy      set policy variable require-explicit-policy\r\n -inhibit_any          set policy variable inhibit-any-policy\r\n -inhibit_map          set policy variable inhibit-policy-mapping\r\n -x509_strict          disable certificate compatibility work-arounds\r\n -extended_crl         enable extended CRL features\r\n -use_deltas           use delta CRLs\r\n -policy_print         print policy processing diagnostics\r\n -check_ss_sig         check root CA self-signatures\r\n -trusted_first        search trust store first (default)\r\n -suiteB_128_only      Suite B 128-bit-only mode\r\n -suiteB_128           Suite B 128-bit mode allowing 192-bit algorithms\r\n -suiteB_192           Suite B 192-bit-only mode\r\n -partial_chain        accept chains anchored by intermediate trust-store CAs\r\n -no_alt_chains        (deprecated)\r\n -no_check_time        ignore certificate validity time\r\n -allow_proxy_certs    allow the use of proxy certificates\r\n\r\nProvider options:\r\n -provider-path val    Provider load path (must be before 'provider' argument if required)\r\n -provider val         Provider to load (can be specified multiple times)\r\n -provparam val        Set a provider key-value parameter\r\n -propquery val        Property query used when fetching algorithms\r\n\r\nTypical uses:\r\n openssl ts -query [-rand file...] [-config file] [-data file]\r\n    [-digest hexstring] [-tspolicy oid] [-no_nonce] [-cert]\r\n    [-in file] [-out file] [-text]\r\n\r\n openssl ts -reply [-config file] [-section tsa_section]\r\n    [-queryfile file] [-passin password]\r\n    [-signer tsa_cert.pem] [-inkey private_key.pem]\r\n    [-chain certs_file.pem] [-tspolicy oid]\r\n    [-in file] [-token_in] [-out file] [-token_out]\r\n    [-text] [-engine id]\r\n\r\n openssl ts -verify -CApath dir -CAfile root-cert.pem -CAstore uri\r\n   -untrusted extra-certs.pem [-data file] [-digest hexstring]\r\n    [-queryfile request.tsq] -in response.tsr [-token_in] ...\r\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "openssl",
+        "ts",
+        "-verify",
+        "-queryfile",
+        "Update_branch.tex.tsq",
+        "-in",
+        "Update_branch.tex.tsr",
+        "-CAfile",
+        "SESSION_WORK\\trusted-root.pem",
+        "-untrusted",
+        "intermediate.pem"
+      ],
+      "check": "legacy_manuscript_query_and_nonce",
+      "exit_code": 0,
+      "stderr": "Using configuration from openssl.cnf\r\n",
+      "stdout": "Verification: OK\r\n"
+    },
+    {
+      "argv": [
+        "openssl",
+        "ts",
+        "-verify",
+        "-digest",
+        "bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22",
+        "-in",
+        "Update_branch.tex.tsr",
+        "-CAfile",
+        "SESSION_WORK\\trusted-root.pem",
+        "-untrusted",
+        "intermediate.pem"
+      ],
+      "check": "legacy_manuscript_digest",
+      "exit_code": 0,
+      "stderr": "Using configuration from openssl.cnf\r\n",
+      "stdout": "Verification: OK\r\n"
+    },
+    {
+      "argv": [
+        "openssl",
+        "ts",
+        "-verify",
+        "-queryfile",
+        "INPUTS.sha256.tsv.tsq",
+        "-in",
+        "INPUTS.sha256.tsv.tsr",
+        "-CAfile",
+        "SESSION_WORK\\trusted-root.pem",
+        "-untrusted",
+        "intermediate.pem"
+      ],
+      "check": "legacy_manifest_query_and_nonce",
+      "exit_code": 0,
+      "stderr": "Using configuration from openssl.cnf\r\n",
+      "stdout": "Verification: OK\r\n"
+    },
+    {
+      "argv": [
+        "openssl",
+        "ts",
+        "-verify",
+        "-data",
+        "../../verification-runs/update-branch/INPUTS.sha256.tsv",
+        "-in",
+        "INPUTS.sha256.tsv.tsr",
+        "-CAfile",
+        "SESSION_WORK\\trusted-root.pem",
+        "-untrusted",
+        "intermediate.pem"
+      ],
+      "check": "legacy_manifest_file",
+      "exit_code": 0,
+      "stderr": "Using configuration from openssl.cnf\r\n",
+      "stdout": "Verification: OK\r\n"
+    },
+    {
+      "argv": [
+        "openssl",
+        "verify",
+        "-purpose",
+        "timestampsign",
+        "-attime",
+        "1794709999",
+        "-crl_check_all",
+        "-CRLfile",
+        "digicert-crls.pem",
+        "-CAfile",
+        "SESSION_WORK\\trusted-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "Update_branch.tex.signer.pem"
+      ],
+      "check": "legacy_manuscript_signer_at_genTime",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Update_branch.tex.signer.pem: OK\r\n"
+    },
+    {
+      "argv": [
+        "openssl",
+        "verify",
+        "-purpose",
+        "timestampsign",
+        "-attime",
+        "1794710352",
+        "-crl_check_all",
+        "-CRLfile",
+        "digicert-crls.pem",
+        "-CAfile",
+        "SESSION_WORK\\trusted-root.pem",
+        "-untrusted",
+        "intermediate.pem",
+        "INPUTS.sha256.tsv.signer.pem"
+      ],
+      "check": "legacy_manifest_signer_at_genTime",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "INPUTS.sha256.tsv.signer.pem: OK\r\n"
+    },
+    {
+      "argv": [
+        "openssl",
+        "ts",
+        "-verify",
+        "-data",
+        "SESSION_WORK\\historical-check\\Update_branch.pre-alignment.tex",
+        "-in",
+        "Update_branch.tex.tsr",
+        "-CAfile",
+        "SESSION_WORK\\trusted-root.pem",
+        "-untrusted",
+        "intermediate.pem"
+      ],
+      "check": "legacy_manuscript_exported_file",
+      "exit_code": 0,
+      "stderr": "Using configuration from openssl.cnf\r\n",
+      "stdout": "Verification: OK\r\n"
+    }
+  ],
+  "revocation_scope": "The preserved CRLs were used only with -attime at the two recorded genTime values. These results do not assert present-time CRL freshness or current revocation status.",
+  "schema_version": 1,
+  "started_utc": "2026-11-15T08:19:30+00:00",
+  "status": "PASS",
+  "timestamp_verification_scope": "Query, nonce, imprint and file checks use the independently supplied trusted root. These commands do not contact a TSA or request new timestamps.",
+  "trust_anchor": {
+    "der_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+    "pem_sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee",
+    "source": "Independently exported from the Windows root store by the root agent"
+  }
+}

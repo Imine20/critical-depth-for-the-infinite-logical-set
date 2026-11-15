@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "d7d89e69855f00e73d957b513c49538a420c465c84b9d212cf1add400eecdf54",
+  "archive_url": "https://github.com/git-for-windows/git/releases/download/v2.56.1.windows.1/Git-2.56.1-64-bit.tar.bz2",
+  "distribution": "Git for Windows 2.56.1",
+  "installation": "Isolated session workspace; no system installation",
+  "official_release_digest_verified": true,
+  "openssl": "OpenSSL 3.5.9 29 Sep 2026 (Library: OpenSSL 3.5.9 29 Sep 2026)",
+  "openssl_executable": {
+    "bytes": 1008796,
+    "sha256": "77a399eadd9c2eb5fd70012cd1953b86ebca8b9fda1bdf193932dc8830985874"
+  },
+  "trust_boundary": "Official prebuilt OpenSSL distribution, independently read Windows trusted root, and signed DigiCert responses/CRLs."
+}

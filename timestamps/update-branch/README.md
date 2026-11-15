@@ -1,6 +1,12 @@
-# Update_branch RFC 3161 timestamp evidence
+# Historical Update_branch RFC 3161 timestamp evidence
 
-DigiCert issued one token for the [published TeX](../../manuscript/Update_branch.tex)
+This evidence belongs to the publication at commit
+`dc1f6d7de3c9435be66c841095650f3bdb0ed72a`, before semantic alignment. The
+current manuscript and its evidence are identified by
+[CURRENT_VERSION.json](../../CURRENT_VERSION.json). The tokens below retain
+their original inputs and signed times.
+
+DigiCert issued one token for the [published TeX](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/blob/dc1f6d7de3c9435be66c841095650f3bdb0ed72a/manuscript/Update_branch.tex)
 and one for the [release input manifest](../../verification-runs/update-branch/INPUTS.sha256.tsv).
 
 | Input | UTC genTime | SHA-256 |
@@ -26,14 +32,40 @@ at verification time. [RECEIPT.json](RECEIPT.json) records the policy, serials,
 nonces and checksums. [VERIFICATION.txt](VERIFICATION.txt) contains the
 verification outcomes.
 
-Run these commands from this directory with OpenSSL:
+Run these commands from this directory with OpenSSL. The manuscript command
+uses the historical SHA-256 imprint directly, so it does not read the revised
+TeX at the current branch's manuscript path. The query checks also verify the
+original requests and nonces; the manifest file remains unchanged.
 
     openssl ts -verify -queryfile Update_branch.tex.tsq -in Update_branch.tex.tsr -CAfile trusted-root.pem -untrusted intermediate.pem
-    openssl ts -verify -data ../../manuscript/Update_branch.tex -in Update_branch.tex.tsr -CAfile trusted-root.pem -untrusted intermediate.pem
+    openssl ts -verify -digest bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22 -in Update_branch.tex.tsr -CAfile trusted-root.pem -untrusted intermediate.pem
     openssl ts -verify -queryfile INPUTS.sha256.tsv.tsq -in INPUTS.sha256.tsv.tsr -CAfile trusted-root.pem -untrusted intermediate.pem
     openssl ts -verify -data ../../verification-runs/update-branch/INPUTS.sha256.tsv -in INPUTS.sha256.tsv.tsr -CAfile trusted-root.pem -untrusted intermediate.pem
     openssl verify -purpose timestampsign -attime 1794709999 -crl_check_all -CRLfile digicert-crls.pem -CAfile trusted-root.pem -untrusted intermediate.pem Update_branch.tex.signer.pem
     openssl verify -purpose timestampsign -attime 1794710352 -crl_check_all -CRLfile digicert-crls.pem -CAfile trusted-root.pem -untrusted intermediate.pem INPUTS.sha256.tsv.signer.pem
+
+To verify against the original manuscript file as well, extract its exact Git
+blob bytes. From a writable scratch directory, run the following with Python 3,
+replacing `/path/to/checkout` with a checkout that contains the publication
+commit. Forward slashes also work in Windows paths; use `python3` if that is
+your interpreter's name.
+
+~~~sh
+python -c "import hashlib, pathlib, subprocess; data = subprocess.check_output(['git', '--no-optional-locks', '-C', '/path/to/checkout', 'show', 'dc1f6d7de3c9435be66c841095650f3bdb0ed72a:manuscript/Update_branch.tex']); assert len(data) == 125926 and hashlib.sha256(data).hexdigest() == 'bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22'; pathlib.Path('Update_branch.pre-alignment.tex').write_bytes(data)"
+~~~
+
+This writes only the scratch file and preserves its bytes on both Windows and
+POSIX systems. Avoid exporting the Git output through a text pipeline or shell
+redirection that may re-encode it. Then, from this evidence directory, substitute
+the scratch file's path in the file-based check:
+
+    openssl ts -verify -data "/path/to/scratch/Update_branch.pre-alignment.tex" -in Update_branch.tex.tsr -CAfile trusted-root.pem -untrusted intermediate.pem
+
+The digest check verifies the signed imprint; the extraction and file-based
+check additionally establish that the recovered manuscript has those bytes.
+The original 360-entry manifest describes the publication snapshot, including
+the release record as it stood then. A full comparison of that manifest's
+entries therefore requires that snapshot, not the revised working tree.
 
 The [release record](../../verification-runs/update-branch/RELEASE.md) gives the
 manuscript and proof correspondence. The tokens bind the exact input bytes to

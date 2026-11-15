@@ -1,9 +1,10 @@
 {
   "base_commit": "dc1f6d7de3c9435be66c841095650f3bdb0ed72a",
-  "binding_policy": "This record binds final publication files; INPUTS.json binds all proof sources and verification inputs. The enclosing Git commit binds this record itself. The execution receipt names the base checkout and separately records the exact replay inputs, including the new verifier.",
+  "binding_policy": "This record binds the complete current publication and timestamp evidence; its enclosing Git commit binds this record itself. The signed PAYLOAD.json binds all publication inputs except this record and the later timestamp evidence directory. The unchanged INPUTS.json and REPLAY.json retain the proof execution binding and original base checkout.",
   "manuscript_path": "manuscript/Update_branch.tex",
   "mathematical_statements_path": "docs/math/CURRENT_MATHEMATICAL_STATEMENTS.md",
   "pdf_path": "manuscript/Update_branch.pdf",
+  "previous_publication_commit": "0f0212793b7a911471d9318f554c8c2a9e41fb1a",
   "proof": {
     "additional_toolbox_dependency": false,
     "mathlib_review_tree_at_snapshot_and_base": "ac7a3e6f4d945d5c89ff2355935d29c96bd9499b",
@@ -18,20 +19,20 @@
       "sha256": "8fe620e4eecc20b261c0bc9b1c0f339762c92534e275e7f55f34575afea4a98b"
     },
     "README.md": {
-      "bytes": 2684,
-      "sha256": "e14d689ea0e9a4acc0a96e72c71f857b03afc340555be66bce19c8036a94bd57"
+      "bytes": 2953,
+      "sha256": "9b37728195f2a7a0d54df2450b47dd47086b2d5d4edab5955ef9c1844fc64fa4"
     },
     "VERIFICATION_STATUS.md": {
-      "bytes": 4217,
-      "sha256": "8311e1e50e6126abbea71d1bc7e250b0b852b4b8a934696b51bd6745c70d718e"
+      "bytes": 5643,
+      "sha256": "0afb690f4256e61026fb2703fa17956c6bb81f35cb5b0e82d13de5ba75772ab7"
     },
     "docs/CLEAN_REPLAY.md": {
       "bytes": 5785,
       "sha256": "04b3a5d7571ba160961bf436a74079accd17fec05fb657fe36c15fb4f8ea8092"
     },
     "docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md": {
-      "bytes": 33311,
-      "sha256": "b0e7408cfa5a2f928c74b02dfdb55c88870ff14ef61562a608208b6b70807497"
+      "bytes": 33525,
+      "sha256": "82ebb9b1f16e0f87dfcf67aeae0bf03d5270654ad5c4da911c587f399c84dc16"
     },
     "docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md": {
       "bytes": 1875,
@@ -42,8 +43,8 @@
       "sha256": "85a0dacbd98eb0a4a87a1f0ae274ad9c3fd7c602c0de9bd3db4b7c5e2d4a1d2f"
     },
     "docs/VERIFICATION.md": {
-      "bytes": 4991,
-      "sha256": "d3e2087f46e941714ccf8cac9acaa12ca7c9fe5efba896cc814f7d64bfe8d5f5"
+      "bytes": 5265,
+      "sha256": "008d90420b903a234b641c93fce1dbfaac453a41d68e8952c9e6b31f533b1a8f"
     },
     "docs/math/CURRENT_MATHEMATICAL_STATEMENTS.md": {
       "bytes": 33485,
@@ -58,12 +59,92 @@
       "sha256": "08452c4636132e06dd9f4757d530c479ef5a17ce02bc070908e90b8c0e896343"
     },
     "scripts/check_current_version.py": {
-      "bytes": 15288,
-      "sha256": "af53f3e932a26acc3982ddd6d04493d459d6a6bd020380e84d894437358959e1"
+      "bytes": 22025,
+      "sha256": "7d208518fa3d392781d86b91e7b707b5810ede833955b1f0f3b89face2b9b9e1"
     },
     "scripts/verify_full.py": {
       "bytes": 23813,
       "sha256": "f3f5873598694afbdd56bb7679ac35764a049ed39be014b6599ac4bc4a090e4b"
+    },
+    "timestamps/20261115-current/HISTORICAL_CHECK.json": {
+      "bytes": 12306,
+      "sha256": "eb0244dfb4e7cf8269e53957548c3c3207de9bb0e06ae81c55b1e6fb89b7887d"
+    },
+    "timestamps/20261115-current/PAYLOAD.json": {
+      "bytes": 117620,
+      "sha256": "daf4afc98769cf7f1f2d7714a532ce2742ddee86ed73fb3b1d76752506e1178b"
+    },
+    "timestamps/20261115-current/PAYLOAD.json.query.txt": {
+      "bytes": 292,
+      "sha256": "16a960652edb8d20717d112e57be4d81cdcc048f94a6d2f4d984f0f1020fe822"
+    },
+    "timestamps/20261115-current/PAYLOAD.json.reply.txt": {
+      "bytes": 514,
+      "sha256": "8c20edddbba316d08bc7ca6f1b530317a3fd181a464b9186c4ec5e7c754fd50a"
+    },
+    "timestamps/20261115-current/PAYLOAD.json.signer.pem": {
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    "timestamps/20261115-current/PAYLOAD.json.tsq": {
+      "bytes": 69,
+      "sha256": "e62ff6d5d2dbc33e5846a78e5568aa64807410db0a67a405fe547961d0f50b89"
+    },
+    "timestamps/20261115-current/PAYLOAD.json.tsr": {
+      "bytes": 6007,
+      "sha256": "05aff0c3a0d5b08a3e285f843d234ad85729c5a25c4cd20796fcb6fac7837e6b"
+    },
+    "timestamps/20261115-current/README.md": {
+      "bytes": 5998,
+      "sha256": "8ca52ee2413e5ab361752307e4ea48efc9f125b887e4c8818eefd6e5e0e4e609"
+    },
+    "timestamps/20261115-current/RECEIPT.json": {
+      "bytes": 4009,
+      "sha256": "40bb50959e04fa623363765cc736009ab29ee80632e887f11e246d9f1976ebfa"
+    },
+    "timestamps/20261115-current/TOOLCHAIN.json": {
+      "bytes": 725,
+      "sha256": "2f34d4b30551e198fe222a9505a846ad0cf96699d6b33d3b26a5997de44765d9"
+    },
+    "timestamps/20261115-current/Update_branch.tex.query.txt": {
+      "bytes": 292,
+      "sha256": "b0eb03874087a6425dfa9156c4436f05490257e8d9d4d3965d3ee7db65f4d8cd"
+    },
+    "timestamps/20261115-current/Update_branch.tex.reply.txt": {
+      "bytes": 514,
+      "sha256": "9fa2c5ad0edbf65da4d1d997c1196515e8950cd66cf8b2021afdc782bf5b9ef1"
+    },
+    "timestamps/20261115-current/Update_branch.tex.signer.pem": {
+      "bytes": 2464,
+      "sha256": "9379d7c9f7dec4b3c49dce91eb0bc87fab426c384a724e59070802ad91c165a4"
+    },
+    "timestamps/20261115-current/Update_branch.tex.tsq": {
+      "bytes": 70,
+      "sha256": "7e927aa79c7880142a1902089e86ee89f5408afbaa25fd0acc9b16e4802c0ab4"
+    },
+    "timestamps/20261115-current/Update_branch.tex.tsr": {
+      "bytes": 6008,
+      "sha256": "21c4db676ecc8e30fda9e6abaf3c389f4a13c7e30a81a21445e7088d1a52a9d7"
+    },
+    "timestamps/20261115-current/VERIFICATION.txt": {
+      "bytes": 24173,
+      "sha256": "263e1f23e8ad223fc9e2981e8717f24f49f9c8254e4f62a4f7fad730fbf56986"
+    },
+    "timestamps/20261115-current/digicert-crls.pem": {
+      "bytes": 2396,
+      "sha256": "f0ec494825ea0cab727e50deb54393e5e46cf1cafd93bc3e2cdbab4ed25c162a"
+    },
+    "timestamps/20261115-current/intermediate.pem": {
+      "bytes": 2386,
+      "sha256": "5e13de210e735b614d6ec948361aadef9dd6c0ef575382a75f57fd59e183b90e"
+    },
+    "timestamps/20261115-current/trusted-root.pem": {
+      "bytes": 1988,
+      "sha256": "ce7d6b44f5d510391be98c8d76b18709400a30cd87659bfebe1c6f97ff5181ee"
+    },
+    "timestamps/update-branch/README.md": {
+      "bytes": 5216,
+      "sha256": "fe195a9f4a08af34f39c5eee58b4115198b9dcc79b422209bb3ad14316d97ec7"
     },
     "verification-runs/20261115-semantic-alignment/COMPILER_EVIDENCE.tar.gz": {
       "bytes": 6399251,
@@ -124,26 +205,39 @@
     "verification-runs/20261115-semantic-alignment/latex/pdfinfo.txt": {
       "bytes": 565,
       "sha256": "9a2cff16db2c59923a339871ac36abcc4babaee55716f5087509164ab32b8237"
+    },
+    "verification-runs/update-branch/RELEASE.md": {
+      "bytes": 6934,
+      "sha256": "09f89ca4349fb5c7d0fe932266256303bbe40404eba28b0c1d3edef6fa81e1bc"
     }
   },
-  "publication_id": "20261115-semantic-alignment",
-  "recorded_utc": "2026-11-15T04:31:41+00:00",
+  "publication_id": "20261115-timestamp-refresh",
+  "recorded_utc": "2026-11-15T08:22:25.528435+00:00",
   "repository": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set",
   "schema": "critical-depth.current-version.v1",
   "semantic_scope": {
     "author_approval": "No new author-approval record is asserted. Historical approvals retain their original inputs and scope.",
     "mathematical_conclusions": "Unchanged; explicit hypotheses, quantifiers and model conventions are recorded in the current statements and correspondence.",
     "statement_provenance": "Extracted from the current manuscript and checked against the Lean interfaces, with parallel cross-review in this revision.",
-    "timestamps": "Existing RFC 3161 timestamps retain their earlier file bindings. No timestamp of this revised manuscript is asserted."
+    "timestamps": "New RFC 3161 tokens bind the current TeX directly and the current publication inputs through PAYLOAD.json. Historical tokens and input manifests retain their original bytes and scope. The tokens do not timestamp the later receipt or CURRENT_VERSION.json."
   },
   "three_layer_correspondence_path": "docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md",
+  "timestamp": {
+    "directory": "timestamps/20261115-current",
+    "payload_manifest_path": "timestamps/20261115-current/PAYLOAD.json",
+    "protocol": "RFC 3161",
+    "readme_path": "timestamps/20261115-current/README.md",
+    "receipt_path": "timestamps/20261115-current/RECEIPT.json"
+  },
   "verification": {
     "audits_passed": 19,
     "evidence_contents_path": "verification-runs/20261115-semantic-alignment/EVIDENCE_CONTENTS.json",
+    "execution_publication_id": "20261115-semantic-alignment",
     "latex_check_path": "verification-runs/20261115-semantic-alignment/LATEX_CHECK.json",
     "modules_passed": 346,
     "proof_inputs_path": "verification-runs/20261115-semantic-alignment/INPUTS.json",
     "receipt_path": "verification-runs/20261115-semantic-alignment/REPLAY.json",
+    "replay_reused_with_unchanged_inputs": true,
     "report_path": "verification-runs/20261115-semantic-alignment/REPORT.md",
     "scope": "Fresh source compilation of all project modules against pinned dependency artifacts",
     "status": "PASSED",
