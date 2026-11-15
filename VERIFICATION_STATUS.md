@@ -1,8 +1,14 @@
 # Verification versions and evidence scope
 
-## Update_branch
+## 20261115 semantic alignment (current)
 
-The current release pairs the [manuscript](manuscript/Update_branch.tex) with the [proof and evidence record](verification-runs/update-branch/RELEASE.md). The recorded full-source replay compiled 346 project modules and passed 19 recursive audit checks for Lean proof commit `e22fb613f4463e0da04c1b0d6c2ea20eacf80c61`. The [RFC 3161 evidence](timestamps/update-branch/README.md) binds the release manuscript and the release input manifest. Earlier builds, manuscript hashes and author approvals retain their original scope.
+The [current version record](CURRENT_VERSION.json) binds the revised manuscript, [complete mathematical statements](docs/math/CURRENT_MATHEMATICAL_STATEMENTS.md), [three-layer correspondence](docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md), and [new full replay](verification-runs/20261115-semantic-alignment/REPLAY.json). The [report](verification-runs/20261115-semantic-alignment/REPORT.md) states the observed results and trust boundary. The Lean proof bytes and mathematical conclusions are unchanged. Only the two background/noise conventions and the availability reference change in the manuscript.
+
+Historical author approvals are not approvals of this newly extracted specification. Existing timestamps still bind their original TeX and manifests; no new timestamp is asserted.
+
+## Update_branch publication before semantic alignment
+
+The earlier release pairs the [manuscript at publication](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/blob/dc1f6d7de3c9435be66c841095650f3bdb0ed72a/manuscript/Update_branch.tex) with the [proof and evidence record](verification-runs/update-branch/RELEASE.md). The recorded full-source replay compiled 346 project modules and passed 19 recursive audit checks for Lean proof commit `e22fb613f4463e0da04c1b0d6c2ea20eacf80c61`. The [RFC 3161 evidence](timestamps/update-branch/README.md) binds the release manuscript and the release input manifest. Earlier builds, manuscript hashes and author approvals retain their original scope.
 
 
 ## 20261107v7
@@ -25,4 +31,4 @@ Those records also contain the manuscript and documentation hashes used at the t
 
 ## Historical records
 
-Previous publication e199f3338e29ba3d8fbda5212f3a865af0b41d3a, the preserved author input, earlier verification runs, approval history and timestamps retain their original bytes and scope. Historical CAD-route comparisons describe earlier manuscripts. Current scope is in [the Lean statement](docs/LEAN_SCOPE_AND_CITATION_NOTE.md).
+Previous publication e199f3338e29ba3d8fbda5212f3a865af0b41d3a, the preserved author input, earlier verification runs, approval history and timestamps retain their original bytes and scope. Historical CAD-route comparisons describe earlier manuscripts. Current scope is in [the three-layer correspondence](docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md).

@@ -1,0 +1,18 @@
+Title:           Sharp Circuit-Depth Threshold for Continuous Logical Operations in Quantum Codes
+Creator:         LaTeX with hyperref
+Producer:        xdvipdfmx (0.1)
+CreationDate:    Sun Nov 15 11:28:57 2026 �й���׼ʱ��
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           21
+Encrypted:       no
+Page size:       612 x 792 pts (letter)
+Page rot:        0
+File size:       285864 bytes
+Optimized:       no
+PDF version:     1.5

@@ -1,0 +1,152 @@
+{
+  "base_commit": "dc1f6d7de3c9435be66c841095650f3bdb0ed72a",
+  "binding_policy": "This record binds final publication files; INPUTS.json binds all proof sources and verification inputs. The enclosing Git commit binds this record itself. The execution receipt names the base checkout and separately records the exact replay inputs, including the new verifier.",
+  "manuscript_path": "manuscript/Update_branch.tex",
+  "mathematical_statements_path": "docs/math/CURRENT_MATHEMATICAL_STATEMENTS.md",
+  "pdf_path": "manuscript/Update_branch.pdf",
+  "proof": {
+    "additional_toolbox_dependency": false,
+    "mathlib_review_tree_at_snapshot_and_base": "ac7a3e6f4d945d5c89ff2355935d29c96bd9499b",
+    "project_lean_and_dependency_configuration_bytes_unchanged": true,
+    "project_lean_file_count": 346,
+    "snapshot_commit": "e22fb613f4463e0da04c1b0d6c2ea20eacf80c61",
+    "source_comparison_path": "verification-runs/20261115-semantic-alignment/SOURCE_COMPARISON.json"
+  },
+  "publication_files": {
+    ".gitattributes": {
+      "bytes": 78,
+      "sha256": "8fe620e4eecc20b261c0bc9b1c0f339762c92534e275e7f55f34575afea4a98b"
+    },
+    "README.md": {
+      "bytes": 2684,
+      "sha256": "e14d689ea0e9a4acc0a96e72c71f857b03afc340555be66bce19c8036a94bd57"
+    },
+    "VERIFICATION_STATUS.md": {
+      "bytes": 4217,
+      "sha256": "8311e1e50e6126abbea71d1bc7e250b0b852b4b8a934696b51bd6745c70d718e"
+    },
+    "docs/CLEAN_REPLAY.md": {
+      "bytes": 5785,
+      "sha256": "04b3a5d7571ba160961bf436a74079accd17fec05fb657fe36c15fb4f8ea8092"
+    },
+    "docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md": {
+      "bytes": 33311,
+      "sha256": "b0e7408cfa5a2f928c74b02dfdb55c88870ff14ef61562a608208b6b70807497"
+    },
+    "docs/LATEST_MANUSCRIPT_CORRESPONDENCE.md": {
+      "bytes": 1875,
+      "sha256": "e5140b7d28111f7c7f5610e2fac0473644bae30eeedcb2d87c7f92149958d5c8"
+    },
+    "docs/LEAN_SCOPE_AND_CITATION_NOTE.md": {
+      "bytes": 3225,
+      "sha256": "85a0dacbd98eb0a4a87a1f0ae274ad9c3fd7c602c0de9bd3db4b7c5e2d4a1d2f"
+    },
+    "docs/VERIFICATION.md": {
+      "bytes": 4991,
+      "sha256": "d3e2087f46e941714ccf8cac9acaa12ca7c9fe5efba896cc814f7d64bfe8d5f5"
+    },
+    "docs/math/CURRENT_MATHEMATICAL_STATEMENTS.md": {
+      "bytes": 33485,
+      "sha256": "72b71b6533dcf06a53f6886b6cdace9669589892ff6b791513322bcf68487f8d"
+    },
+    "manuscript/Update_branch.pdf": {
+      "bytes": 285864,
+      "sha256": "59183f925f792b4132d12c1818c7954e0f886bff76c03f9a5a1025a630c0ae28"
+    },
+    "manuscript/Update_branch.tex": {
+      "bytes": 126168,
+      "sha256": "08452c4636132e06dd9f4757d530c479ef5a17ce02bc070908e90b8c0e896343"
+    },
+    "scripts/check_current_version.py": {
+      "bytes": 15288,
+      "sha256": "af53f3e932a26acc3982ddd6d04493d459d6a6bd020380e84d894437358959e1"
+    },
+    "scripts/verify_full.py": {
+      "bytes": 23813,
+      "sha256": "f3f5873598694afbdd56bb7679ac35764a049ed39be014b6599ac4bc4a090e4b"
+    },
+    "verification-runs/20261115-semantic-alignment/COMPILER_EVIDENCE.tar.gz": {
+      "bytes": 6399251,
+      "sha256": "5d64c4287eb59695a1ef78d97d5a08d278726b1317b04366c14c6a1d230090e3"
+    },
+    "verification-runs/20261115-semantic-alignment/EVIDENCE_CONTENTS.json": {
+      "bytes": 50915,
+      "sha256": "647f9a1ef06ca3a5bf41d3d200fc34ad39d417fc5f521f9f150b9bef6ae73ae9"
+    },
+    "verification-runs/20261115-semantic-alignment/INPUTS.json": {
+      "bytes": 55482,
+      "sha256": "df6fa1740e7f411868bcbf43de17c2438a2f882ab43a3809a5703de00474c888"
+    },
+    "verification-runs/20261115-semantic-alignment/LATEX_CHECK.json": {
+      "bytes": 7424,
+      "sha256": "8ef2e7a1e1db1f17858b7c77f0b4be4330716229b7c2d5729599d1678787a9c4"
+    },
+    "verification-runs/20261115-semantic-alignment/REPLAY.json": {
+      "bytes": 211953,
+      "sha256": "d024134c4c759e152176d3f56036e733894178df33a0768fa048f84893027b8d"
+    },
+    "verification-runs/20261115-semantic-alignment/REPORT.md": {
+      "bytes": 7899,
+      "sha256": "d945d319109eb0dc9ca5327fed168fb89fef29bb0725a04fc97131d9dee6996c"
+    },
+    "verification-runs/20261115-semantic-alignment/SOURCE_COMPARISON.json": {
+      "bytes": 1452,
+      "sha256": "9713516927c65f32eedcd7bcc4bcbcc83baaadc41217e941009129ad7bb03c6b"
+    },
+    "verification-runs/20261115-semantic-alignment/TOOLCHAIN_PROVENANCE.json": {
+      "bytes": 771,
+      "sha256": "e1d0cb9d2f59e935b8dc771f5c17d5986f52e2884f174fa2b3e94afaf3fb5250"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/Update_branch.blg": {
+      "bytes": 3458,
+      "sha256": "c4797d5b53c583141dce0875f693dcbf8a88ffd008990e91302ca5fccd708215"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/Update_branch.log": {
+      "bytes": 32057,
+      "sha256": "e813d4d1310a3d43aa8f9f3f7aeb6da2bbda872c4da1da61b90b8652cb14f5ea"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/baseline-console.log": {
+      "bytes": 4660,
+      "sha256": "02a620aa932e05473d03b831bcbd8845da9269964c8c8d136c68599634118fbb"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/baseline.blg": {
+      "bytes": 3458,
+      "sha256": "c4797d5b53c583141dce0875f693dcbf8a88ffd008990e91302ca5fccd708215"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/baseline.log": {
+      "bytes": 32057,
+      "sha256": "6ed25f6089fc8c3c15049e45ba312fefada3eb4d29688d9d7fdff9039cb47c24"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/compile-console.log": {
+      "bytes": 20936,
+      "sha256": "d06afab968b24f3b4e96906d542722defa17b9f99ec868e400ae04116dc1ea25"
+    },
+    "verification-runs/20261115-semantic-alignment/latex/pdfinfo.txt": {
+      "bytes": 565,
+      "sha256": "9a2cff16db2c59923a339871ac36abcc4babaee55716f5087509164ab32b8237"
+    }
+  },
+  "publication_id": "20261115-semantic-alignment",
+  "recorded_utc": "2026-11-15T04:31:41+00:00",
+  "repository": "https://github.com/Imine20/critical-depth-for-the-infinite-logical-set",
+  "schema": "critical-depth.current-version.v1",
+  "semantic_scope": {
+    "author_approval": "No new author-approval record is asserted. Historical approvals retain their original inputs and scope.",
+    "mathematical_conclusions": "Unchanged; explicit hypotheses, quantifiers and model conventions are recorded in the current statements and correspondence.",
+    "statement_provenance": "Extracted from the current manuscript and checked against the Lean interfaces, with parallel cross-review in this revision.",
+    "timestamps": "Existing RFC 3161 timestamps retain their earlier file bindings. No timestamp of this revised manuscript is asserted."
+  },
+  "three_layer_correspondence_path": "docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md",
+  "verification": {
+    "audits_passed": 19,
+    "evidence_contents_path": "verification-runs/20261115-semantic-alignment/EVIDENCE_CONTENTS.json",
+    "latex_check_path": "verification-runs/20261115-semantic-alignment/LATEX_CHECK.json",
+    "modules_passed": 346,
+    "proof_inputs_path": "verification-runs/20261115-semantic-alignment/INPUTS.json",
+    "receipt_path": "verification-runs/20261115-semantic-alignment/REPLAY.json",
+    "report_path": "verification-runs/20261115-semantic-alignment/REPORT.md",
+    "scope": "Fresh source compilation of all project modules against pinned dependency artifacts",
+    "status": "PASSED",
+    "trust_boundary": "Installed Lean runtime/core library and pinned public dependency artifacts; not a dependency source rebuild"
+  }
+}

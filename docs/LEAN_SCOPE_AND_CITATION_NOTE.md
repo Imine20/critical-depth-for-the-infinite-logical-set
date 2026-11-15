@@ -1,4 +1,6 @@
-# Lean scope and Bonet-Monroig citation
+# Historical two-theorem scope note
+
+This note belongs to the earlier two-theorem release. Use [CURRENT_THREE_LAYER_CORRESPONDENCE.md](CURRENT_THREE_LAYER_CORRESPONDENCE.md), [the current statements](math/CURRENT_MATHEMATICAL_STATEMENTS.md) and [CURRENT_VERSION.json](../CURRENT_VERSION.json) for the expanded manuscript.
 
 ## Formal result scope
 

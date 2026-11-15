@@ -1,0 +1,39 @@
+{
+  "all_project_lean_bytes_identical": true,
+  "all_six_dependency_configuration_files_identical": true,
+  "checked_utc": "2026-11-15T04:31:36+00:00",
+  "compared_commits": [
+    "dc1f6d7de3c9435be66c841095650f3bdb0ed72a",
+    "e22fb613f4463e0da04c1b0d6c2ea20eacf80c61"
+  ],
+  "configuration_hashes": {
+    "lake-manifest.json": {
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+    },
+    "lakefile.toml": {
+      "bytes": 442,
+      "sha256": "82fa22259fb9a1cc329f3c89febd3afbf841ac7d859e11a926193cdc204bb1a0"
+    },
+    "lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    "mathlib-review/lake-manifest.json": {
+      "bytes": 3663,
+      "sha256": "b514bb81363b70f61906b8ed89400839126a4422186df8dfb46f2747e4371cc2"
+    },
+    "mathlib-review/lakefile.toml": {
+      "bytes": 350,
+      "sha256": "d7452e002165998601d40ed58273fd25afb3f563b0c0f3bbdfb4ba164c15d35a"
+    },
+    "mathlib-review/lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    }
+  },
+  "mathlib_review_tree_at_both_commits": "ac7a3e6f4d945d5c89ff2355935d29c96bd9499b",
+  "method": "Raw Git blob SHA-1 comparison for every project Lean file and all six lock/toolchain/Lake files, without checkout filters",
+  "project_lean_files": 346,
+  "toolbox_dependency_added": false
+}
