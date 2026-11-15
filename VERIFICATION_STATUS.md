@@ -1,8 +1,13 @@
 # Verification versions and evidence scope
 
+## Update_branch
+
+The current release pairs the [manuscript](manuscript/Update_branch.tex) with the [proof and evidence record](verification-runs/update-branch/RELEASE.md). The recorded full-source replay compiled 346 project modules and passed 19 recursive audit checks for Lean proof commit `e22fb613f4463e0da04c1b0d6c2ea20eacf80c61`. The [RFC 3161 evidence](timestamps/update-branch/README.md) binds the release manuscript and the release input manifest. Earlier builds, manuscript hashes and author approvals retain their original scope.
+
+
 ## 20261107v7
 
-The current publication contains the exact [v7 TeX](manuscript/20261107v7.tex) and [PDF](manuscript/20261107v7.pdf). The [independent report](verification-runs/20261107v7/REPORT.md) and [execution receipt](verification-runs/20261107v7/REPLAY.json) record the fresh source audit, separate caller and bundled kernel replay.
+This historical publication contains the exact [v7 TeX](manuscript/20261107v7.tex) and [PDF](manuscript/20261107v7.pdf). The [independent report](verification-runs/20261107v7/REPORT.md) and [execution receipt](verification-runs/20261107v7/REPLAY.json) record the fresh source audit, separate caller and bundled kernel replay.
 
 The [v7 author semantic approval](verification-runs/20261107v7/AUTHOR_SEMANTIC_APPROVAL.json) records **APPROVED** for the reviewed correspondence. The report preserves the status at the time of replay.
 

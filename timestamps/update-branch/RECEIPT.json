@@ -1,0 +1,66 @@
+{
+  "protocol": "RFC 3161",
+  "provider": "DigiCert",
+  "tsa": "http://timestamp.digicert.com",
+  "provider_documentation": "https://knowledge.digicert.com/general-information/rfc3161-compliant-time-stamp-authority-server",
+  "request_payload": "SHA-256 message imprint, fresh nonce and certificate-request flag",
+  "openssl": "3.2.4",
+  "trusted_root": {
+    "name": "DigiCert Trusted Root G4",
+    "origin": "Windows trusted Root certificate store, checked before issuing the timestamp requests",
+    "der_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988"
+  },
+  "intermediate": {
+    "name": "DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1",
+    "der_sha256": "ca0b1554ecd901ea19dcad8749e9f2648c8d6dfcea1add9d2c2109415bb82ccd",
+    "source": "https://knowledge.digicert.com/content/dam/kb/attachments/time-stamp/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.pem"
+  },
+  "revocation": {
+    "at_gen_time": "verified with signed CRLs",
+    "at_verification_time": "verified with signed CRLs",
+    "urls": [
+      "http://crl3.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crl",
+      "http://crl3.digicert.com/DigiCertTrustedRootG4.crl"
+    ]
+  },
+  "proof_commit": "e22fb613f4463e0da04c1b0d6c2ea20eacf80c61",
+  "manifest_entries": 360,
+  "tokens": [
+    {
+      "path": "manuscript/Update_branch.tex",
+      "sha256": "bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22",
+      "bytes": 125926,
+      "time_utc": "2026-11-15T02:33:19Z",
+      "epoch": 1794709999,
+      "policy": "2.16.840.1.114412.7.1",
+      "serial": "0xBB8098D496CC15CCE7CB0B321ADDCE90",
+      "nonce": "0xEA9E6E581B82604E",
+      "request": "Update_branch.tex.tsq",
+      "request_sha256": "4908a95829486e45dece62c6e9160b335e4bc1c1f64bf8f08ed2dee9565b3234",
+      "response": "Update_branch.tex.tsr",
+      "response_sha256": "9ab161aab693e11f30d507a7e0d7adc3600bd0459212641afbae857a6c9a164a",
+      "signer": "Update_branch.tex.signer.pem",
+      "signer_pem_sha256": "1c51443c063a1fac082663cf4fa8b3d8a2f972cfad5dda3e29c0e6a0818ac267",
+      "request_verification": "OK",
+      "file_verification": "OK"
+    },
+    {
+      "path": "verification-runs/update-branch/INPUTS.sha256.tsv",
+      "sha256": "9d698ce8a6dec815b43d5b1ebb449d04717acf0fd2e46a6ac93e0e475d7b2e8b",
+      "bytes": 39848,
+      "time_utc": "2026-11-15T02:39:12Z",
+      "epoch": 1794710352,
+      "policy": "2.16.840.1.114412.7.1",
+      "serial": "0x8AD9766246A8BAE3610BE00E6E6AEE28",
+      "nonce": "0xB1D2EACEB9F68704",
+      "request": "INPUTS.sha256.tsv.tsq",
+      "request_sha256": "308bda22b420f3e620a060e60a208f72d64c187678e74bbb5e5d42c98943604c",
+      "response": "INPUTS.sha256.tsv.tsr",
+      "response_sha256": "5b2ec446cddc30868dc95adbedc0ebf8b95d99b635d65fbe4a9ae43d5a329b0f",
+      "signer": "INPUTS.sha256.tsv.signer.pem",
+      "signer_pem_sha256": "1c51443c063a1fac082663cf4fa8b3d8a2f972cfad5dda3e29c0e6a0818ac267",
+      "request_verification": "OK",
+      "file_verification": "OK"
+    }
+  ]
+}

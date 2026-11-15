@@ -1,0 +1,319 @@
+RECURSIVE_AXIOMS _private.FaultFirstBadOrderLower.0.CriticalDepth.FaultFirstBadOrder.uniform_loss_of_failed_crossTerms: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.EncodedFaultRecovery.branchLoss.eq_1: [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.optimalInfidelity_eventual_powerLower_of_bad_order: [propext,
+ Classical.choice,
+ Quot.sound]
+MODULE_AUDIT_PASSED FaultFirstBadOrderLower declarations=3
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.exists_common_cptp_recovery_of_all_scalarCrossTerms: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS _private.FaultFirstBadOrderUpper.0.CriticalDepth.FaultFirstBadOrder.optimalInfidelity_nonneg_of_isometries: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.common_cptp_recovery_iff_scalarCrossTerms: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.optimalHistoryDiamond_isBigO_of_scalarCrossTerms: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.optimalInfidelity_eq_zero_of_common_cptp_recovery: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS _private.FaultFirstBadOrderUpper.0.CriticalDepth.FaultFirstBadOrder.channelFidelity_identity: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.optimalHistoryDiamond_le_tail_of_scalarCrossTerms: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.optimalHistoryDiamond_eq_zero_of_common_cptp_recovery: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS _private.FaultFirstBadOrderUpper.0.CriticalDepth.FaultFirstBadOrder.optimalHistoryDiamond_le_tail_of_recovery: [propext,
+ Classical.choice,
+ Quot.sound]
+MODULE_AUDIT_PASSED FaultFirstBadOrderUpper declarations=9
+RECURSIVE_AXIOMS CriticalDepth.FaultPointwiseAmbiguity.minMass_le_paperCircuitInfidelity_of_ambiguous_pair: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultPointwiseAmbiguity.minMass_le_optimalInfidelity_of_ambiguous_pair: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultPointwiseAmbiguity.minWeight_le_optimalCPTPInfidelity_of_ambiguous_pair: [propext,
+ Classical.choice,
+ Quot.sound]
+MODULE_AUDIT_PASSED FaultPointwiseAmbiguity declarations=3
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.historyErrors_firstUncorrectableOrder: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.firstUncorrectableOrder.eq_1: [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.historyErrors_isTheta_of_first_failure: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.correctableThrough_iff_common_cptp_recovery: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.historyErrorExponents_eq_firstUncorrectableOrder: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS _private.FaultFirstBadOrder.0.CriticalDepth.FaultFirstBadOrder.exponent_eq_top_of_eventually_zero: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS _private.FaultFirstBadOrder.0.CriticalDepth.FaultFirstBadOrder.power_isBigO_of_eventual_lower: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.correctableThrough.congr_simp: [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.correctableThrough_zero._simp_1_1: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS _private.FaultFirstBadOrder.0.CriticalDepth.FaultFirstBadOrder.eventually_small_noise: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.correctableThrough_zero: [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.exponent_eq_of_powerTheta: [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultChannelEffects.optimalHistoryDiamond.congr_simp: [propext,
+ Classical.choice,
+ Quot.sound]
+MODULE_AUDIT_PASSED FaultFirstBadOrder declarations=15
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.paperPerCodeDiamondExponent_eq_entanglement: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.paperCircuitErrors_isTheta_of_exponent_eq: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.exists_paperExperiment_at_finite_perCodeExponent._proof_1_1: [propext,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.paperCircuitErrors_isTheta_of_exponent_eq_any_law: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.paperCircuitErrorExponents_eq_firstUncorrectableOrder: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultFirstBadOrder.exists_paperExperiment_at_finite_perCodeExponent: [propext,
+ Classical.choice,
+ Quot.sound]
+MODULE_AUDIT_PASSED FaultPaperFixedCircuit declarations=6
+RECURSIVE_AXIOMS CriticalDepth.Manuscript20261114.sharpFaultSuppression_bounds_allMetrics: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript20261114.sharpFaultSuppression_lower_paper_witness_allMetrics: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultHistoryExperimentNormalization.PaperExperiment.mk.congr_simp: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.FaultHistoryExperimentNormalization.paperExperimentOfNative.eq_1: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.Manuscript20261114.sharpFaultSuppression_upper_paper_witness_allMetrics: [propext,
+ Classical.choice,
+ Quot.sound]
+MODULE_AUDIT_PASSED FaultPaperSaturationWitness declarations=5
+RECURSIVE_AXIOMS CriticalDepth.UpdateBranchConsumer.binary_css_paper_witness_interval: [propext,
+ Classical.choice,
+ Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.UpdateBranchConsumer.fourQubit_exactDepth_eq_max: [propext, Classical.choice, Quot.sound]
+RECURSIVE_AXIOMS CriticalDepth.UpdateBranchConsumer.shor_d7_binary_depthTwo_allMetrics: [propext,
+ Classical.choice,
+ Quot.sound]
+MODULE_AUDIT_PASSED UpdateBranchConsumer declarations=3
+UPDATE_BRANCH_AUDIT_PASSED declarations=44 modules=7
+CriticalDepth.ReviewV2.nativeTheoremOne_proved : CriticalDepth.ReviewV2.NativeTheoremOne
+'CriticalDepth.ReviewV2.nativeTheoremOne_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+CriticalDepth.ReviewV2.standardTheoremTwo_proved : CriticalDepth.ReviewV2.StandardTheoremTwo
+'CriticalDepth.ReviewV2.standardTheoremTwo_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+@CriticalDepth.ReviewV2.nativeExactDepth_eq_max : ∀ {n K g : ℕ} {dim : Fin n → ℕ}
+  (V : Matrix (CriticalDepth.Manuscript.PhysicalBasis n dim) (Fin K × Fin g) ℂ),
+  V.conjTranspose * V = 1 →
+    2 ≤ K →
+      1 ≤ g →
+        ∀ (q : ℕ),
+          CriticalDepth.ReviewV2.nativeExactDepth V q =
+            max (CriticalDepth.ReviewV2.nativeCriticalDepth V q) (CriticalDepth.ReviewV2.nativeDenseDepth V q)
+'CriticalDepth.ReviewV2.nativeExactDepth_eq_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+@CriticalDepth.Manuscript20261114.sharpFaultSuppression_bounds_allMetrics : ∀ {n k d q h : ℕ}
+  (C : CriticalDepth.Manuscript.Code n (fun x => 2) (2 ^ k) 1),
+  CriticalDepth.Manuscript.IsStabilizer C →
+    CriticalDepth.Manuscript.HasActualDistance C d →
+      2 ≤ d →
+        2 ≤ q →
+          1 ≤ h →
+            have lo := ↑(CriticalDepth.FaultDepthArithmetic.lowerEnvelope q d h);
+            have hi := ↑(CriticalDepth.FaultDepthArithmetic.upperEnvelope q d h);
+            (lo ≤ CriticalDepth.FaultHistoryExperimentNormalization.paperPerCodeExponent C q h ∧
+                CriticalDepth.FaultHistoryExperimentNormalization.paperPerCodeExponent C q h ≤ hi) ∧
+              (lo ≤ CriticalDepth.FaultAverageInfidelity.paperPerCodeAverageExponent C q h ∧
+                  CriticalDepth.FaultAverageInfidelity.paperPerCodeAverageExponent C q h ≤ hi) ∧
+                lo ≤ CriticalDepth.FaultChannelEffects.paperPerCodeDiamondExponent C q h ∧
+                  CriticalDepth.FaultChannelEffects.paperPerCodeDiamondExponent C q h ≤ hi
+'CriticalDepth.Manuscript20261114.sharpFaultSuppression_bounds_allMetrics' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CriticalDepth.Manuscript20261114.sharpFaultSuppression_lower_paper_witness_allMetrics : ∀ (d q h : ℕ),
+  2 ≤ d →
+    2 ≤ q →
+      1 ≤ h →
+        have m := CriticalDepth.FaultDepthArithmetic.lowerEnvelope q d h;
+        ∃ C,
+          CriticalDepth.Manuscript.IsStabilizer C ∧
+            CriticalDepth.Manuscript.HasActualDistance C d ∧
+              CriticalDepth.FaultHistoryExperimentNormalization.paperPerCodeExponent C q h = ↑m ∧
+                CriticalDepth.FaultAverageInfidelity.paperPerCodeAverageExponent C q h = ↑m ∧
+                  CriticalDepth.FaultChannelEffects.paperPerCodeDiamondExponent C q h = ↑m ∧
+                    ∃ e,
+                      List.length e.layers = h ∧
+                        e.logical = 1 ∧
+                          ∀
+                            (μ :
+                              CriticalDepth.IndependentFaultHistories.Law
+                                (CriticalDepth.FaultHistoryNormalization.PaperLabel e.layers)),
+                            (CriticalDepth.FaultHistoryExperimentNormalization.paperCircuitInfidelity C e.layers
+                                  μ =Θ[nhdsWithin 0 (Set.Ioi 0)]
+                                fun p => p ^ m) ∧
+                              (CriticalDepth.FaultAverageInfidelity.paperCircuitAverageInfidelity C e.layers
+                                    μ =Θ[nhdsWithin 0 (Set.Ioi 0)]
+                                  fun p => p ^ m) ∧
+                                CriticalDepth.FaultChannelEffects.paperCircuitDiamond C e.layers
+                                    μ =Θ[nhdsWithin 0 (Set.Ioi 0)]
+                                  fun p => p ^ m
+'CriticalDepth.Manuscript20261114.sharpFaultSuppression_lower_paper_witness_allMetrics' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+CriticalDepth.Manuscript20261114.sharpFaultSuppression_upper_paper_witness_allMetrics : ∀ (q t : ℕ),
+  2 ≤ q →
+    20 ≤ t →
+      have R := q ^ t;
+      ∃ H J,
+        ∃ (hc : H ≤ CriticalDepth.Manuscript20261114.CSSCode.cssOrthogonal J),
+          have C := CriticalDepth.Manuscript20261114.CSSCode.physicalCSSCode H J hc;
+          CriticalDepth.Manuscript.IsStabilizer C ∧
+            CriticalDepth.Manuscript.HasActualDistance C
+                (CriticalDepth.Manuscript20261114.CSSCheckSpaces.cssDistance R) ∧
+              CriticalDepth.Manuscript20261114.CSSCode.cssLogicalQubits H J =
+                  CriticalDepth.Manuscript20261114.CSSCheckSpaces.cssSites R -
+                      CriticalDepth.Manuscript20261114.CSSCheckSpaces.cssXDimension R -
+                    CriticalDepth.Manuscript20261114.CSSCheckSpaces.cssZDimension R ∧
+                ∀ (h : ℕ),
+                  1 ≤ h →
+                    h ≤ t →
+                      have m :=
+                        CriticalDepth.FaultDepthArithmetic.upperEnvelope q
+                          (CriticalDepth.Manuscript20261114.CSSCheckSpaces.cssDistance R) h;
+                      CriticalDepth.FaultHistoryExperimentNormalization.paperPerCodeExponent C q h = ↑m ∧
+                        CriticalDepth.FaultAverageInfidelity.paperPerCodeAverageExponent C q h = ↑m ∧
+                          CriticalDepth.FaultChannelEffects.paperPerCodeDiamondExponent C q h = ↑m ∧
+                            ∃ e,
+                              ∀
+                                (μ :
+                                  CriticalDepth.IndependentFaultHistories.Law
+                                    (CriticalDepth.FaultHistoryNormalization.PaperLabel e.layers)),
+                                (CriticalDepth.FaultHistoryExperimentNormalization.paperCircuitInfidelity C e.layers
+                                      μ =Θ[nhdsWithin 0 (Set.Ioi 0)]
+                                    fun p => p ^ m) ∧
+                                  (CriticalDepth.FaultAverageInfidelity.paperCircuitAverageInfidelity C e.layers
+                                        μ =Θ[nhdsWithin 0 (Set.Ioi 0)]
+                                      fun p => p ^ m) ∧
+                                    CriticalDepth.FaultChannelEffects.paperCircuitDiamond C e.layers
+                                        μ =Θ[nhdsWithin 0 (Set.Ioi 0)]
+                                      fun p => p ^ m
+'CriticalDepth.Manuscript20261114.sharpFaultSuppression_upper_paper_witness_allMetrics' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@CriticalDepth.FaultFirstBadOrder.historyErrors_firstUncorrectableOrder : ∀ {Phys : Type u_1} {Log : Type u_2}
+  {Loc : Type u_3} [inst : Fintype Phys] [inst_1 : DecidableEq Phys] [inst_2 : Fintype Log] [inst_3 : DecidableEq Log]
+  [Nonempty Log] [inst_5 : Fintype Loc] [inst_6 : DecidableEq Loc] {Label : Loc → Type u_4}
+  [inst_7 : (i : Loc) → Fintype (Label i)] [(i : Loc) → DecidableEq (Label i)]
+  (μ : CriticalDepth.IndependentFaultHistories.Law Label)
+  (A : CriticalDepth.IndependentFaultHistories.History Label → Matrix Phys Log ℂ),
+  (∀ (x : CriticalDepth.IndependentFaultHistories.History Label), (A x).conjTranspose * A x = 1) →
+    (CriticalDepth.FaultFirstBadOrder.firstUncorrectableOrder A = ⊤ ∧
+        ∃ R,
+          (∀ (x : CriticalDepth.IndependentFaultHistories.History Label),
+              CriticalDepth.FaultCPTPOptimality.recoverBranch (↑R) (A x) = LinearMap.id) ∧
+            ∀ (p : ℝ),
+              0 ≤ p →
+                p ≤ 1 →
+                  CriticalDepth.EncodedFaultRecovery.optimalInfidelity μ A p = 0 ∧
+                    CriticalDepth.FaultAverageInfidelity.optimalAverageInfidelity μ A p = 0 ∧
+                      CriticalDepth.FaultChannelEffects.optimalHistoryDiamond μ A p = 0) ∨
+      ∃ m,
+        CriticalDepth.FaultFirstBadOrder.firstUncorrectableOrder A = ↑m ∧
+          (∀ j < m, CriticalDepth.FaultFirstBadOrder.correctableThrough A j) ∧
+            ¬CriticalDepth.FaultFirstBadOrder.correctableThrough A m ∧
+              (CriticalDepth.EncodedFaultRecovery.optimalInfidelity μ A =Θ[nhdsWithin 0 (Set.Ioi 0)] fun p => p ^ m) ∧
+                (CriticalDepth.FaultAverageInfidelity.optimalAverageInfidelity μ A =Θ[nhdsWithin 0 (Set.Ioi 0)] fun p =>
+                    p ^ m) ∧
+                  CriticalDepth.FaultChannelEffects.optimalHistoryDiamond μ A =Θ[nhdsWithin 0 (Set.Ioi 0)] fun p =>
+                    p ^ m
+'CriticalDepth.FaultFirstBadOrder.historyErrors_firstUncorrectableOrder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@CriticalDepth.FaultFirstBadOrder.paperCircuitErrorExponents_eq_firstUncorrectableOrder : ∀ {n K q : ℕ}
+  [Nonempty (Fin K × Fin 1)] (C : CriticalDepth.Manuscript.Code n (fun x => 2) K 1)
+  (L : CriticalDepth.FaultHistoryNormalization.PaperLayers)
+  (μ : CriticalDepth.IndependentFaultHistories.Law (CriticalDepth.FaultHistoryNormalization.PaperLabel L)),
+  have order :=
+    CriticalDepth.FaultFirstBadOrder.firstUncorrectableOrder
+      (CriticalDepth.FaultHistoryExperimentNormalization.paperEncodedBranch C L);
+  CriticalDepth.FaultExponent.exponent
+        (CriticalDepth.FaultHistoryExperimentNormalization.paperCircuitInfidelity C L μ) =
+      order ∧
+    CriticalDepth.FaultExponent.exponent (CriticalDepth.FaultAverageInfidelity.paperCircuitAverageInfidelity C L μ) =
+        order ∧
+      CriticalDepth.FaultExponent.exponent (CriticalDepth.FaultChannelEffects.paperCircuitDiamond C L μ) = order
+'CriticalDepth.FaultFirstBadOrder.paperCircuitErrorExponents_eq_firstUncorrectableOrder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@CriticalDepth.FaultPointwiseAmbiguity.minWeight_le_optimalCPTPInfidelity_of_ambiguous_pair : ∀ {Phys : Type u_1}
+  {Log : Type u_2} [inst : Fintype Phys] [DecidableEq Phys] [inst_2 : Fintype Log] [inst_3 : DecidableEq Log]
+  [Nonempty Log] {Hist : Type u_3} [inst_5 : Fintype Hist] [DecidableEq Hist] (A : Hist → Matrix Phys Log ℂ),
+  (∀ (x : Hist), (A x).conjTranspose * A x = 1) →
+    ∀ (weight : Hist → ℝ),
+      (∀ (x : Hist), 0 ≤ weight x) →
+        ∀ (x y : Hist),
+          x ≠ y →
+            ∀ (P : Matrix Log Log ℂ),
+              P * P.conjTranspose = 1 →
+                P.trace = 0 →
+                  ∀ (u : ℂ),
+                    ‖u‖ = 1 →
+                      A y = u • (A x * P) →
+                        min (weight x) (weight y) ≤
+                          sInf
+                            (Set.range fun L =>
+                              ∑ z, weight z * CriticalDepth.FaultCPTPOptimality.channelBranchLoss (A z) ↑L)
+'CriticalDepth.FaultPointwiseAmbiguity.minWeight_le_optimalCPTPInfidelity_of_ambiguous_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+def CriticalDepth.ReviewV2.NativeTheoremOne : Prop :=
+∀ (n K g d : ℕ) (dim : Fin n → ℕ),
+  1 ≤ n →
+    2 ≤ K →
+      1 ≤ g →
+        2 ≤ d →
+          ∀ (V : Matrix (CriticalDepth.Manuscript.PhysicalBasis n dim) (Fin K × Fin g) ℂ),
+            V.conjTranspose * V = 1 →
+              CriticalDepth.ReviewV2.NativeDetectsBelow V d →
+                ∀ (q h : ℕ),
+                  2 ≤ q →
+                    1 ≤ h →
+                      h < CriticalDepth.Arithmetic.criticalDepth q d →
+                        (CriticalDepth.ReviewV2.nativeLogicalImage V q h).Finite ∧
+                          ¬Dense (CriticalDepth.ReviewV2.nativeLogicalImage V q h)
+def CriticalDepth.ReviewV2.StandardTheoremTwo : Prop :=
+∀ (n k d q : ℕ),
+  1 ≤ k →
+    2 ≤ d →
+      2 ≤ q →
+        ∀ (V : Matrix (CriticalDepth.Manuscript.QubitBasis n) (Fin (2 ^ k) × Fin 1) ℂ),
+          V.conjTranspose * V = 1 →
+            CriticalDepth.ReviewV2.StandardStabilizerCode V →
+              CriticalDepth.ReviewV2.NativeActualDistance V d →
+                CriticalDepth.ReviewV2.nativeCriticalDepth V q = ↑(CriticalDepth.Arithmetic.criticalDepth q d) ∧
+                  ∃ S,
+                    IsClosed ↑S ∧
+                      S ≠ ⊥ ∧
+                        Nonempty (Circle ≃ₜ* ↥S) ∧
+                          ↑S ⊆
+                            CriticalDepth.ReviewV2.nativeLogicalImage V q (CriticalDepth.Arithmetic.criticalDepth q d)

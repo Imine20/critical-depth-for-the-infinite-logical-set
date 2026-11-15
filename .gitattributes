@@ -1,3 +1,9 @@
 /manuscript/20261107v7.tex -text
 /manuscript/20261107v7.pdf -text
 /manuscript/20261114v0.tex -text
+
+/manuscript/20261104v1.tex -text
+/manuscript/Update_branch.tex -text
+/timestamps/update-branch/** -text
+/verification-runs/update-branch/INPUTS.sha256.tsv -text
+/verification-runs/update-branch/UpdateBranchAudit.log -text

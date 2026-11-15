@@ -1,38 +1,26 @@
 # Critical depth for the infinite logical set
 
-## Latest manuscript
+## Current manuscript and Lean proofs
 
-[20261107v7 TeX](manuscript/20261107v7.tex) · [20261107v7 PDF](manuscript/20261107v7.pdf) · [Independent replay and semantic review](verification-runs/20261107v7/REPORT.md) · [Semantic approval (APPROVED)](verification-runs/20261107v7/AUTHOR_SEMANTIC_APPROVAL.json) · [RFC 3161 timestamps](timestamps/20261107v7/README.md)
+- [Update_branch.tex](manuscript/Update_branch.tex)
+- [Manuscript-to-Lean correspondence and replay instructions](verification-runs/update-branch/RELEASE.md)
+- [Full-source replay and recursive axiom audit](mathlib-review/CONTINUATION_VERIFICATION.json)
+- [RFC 3161 timestamps](timestamps/update-branch/README.md)
 
-The v7 files are the exact supplied bytes. The manuscript cites [proof snapshot ad6a378](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/ad6a378f6080ba32d92e7c31b6cf71b07685970a), which has the same Lean proof and dependency lock as this release. See the [input hashes](verification-runs/20261107v7/INPUTS.sha256) for the exact bindings.
+The manuscript cites the [immutable Lean proof snapshot e22fb61](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/e22fb613f4463e0da04c1b0d6c2ea20eacf80c61). The snapshot proves finiteness of the bounded-depth logical image, the two logical depth threshold results, both universal fault-suppression bounds and their Shor and CSS saturations. It also gives the first uncorrectable fault order and the three optimal error exponents of a fixed circuit. The full replay compiled 346 project modules and passed 19 audit checks. The audited declarations depend only on `propext`, `Classical.choice` and `Quot.sound`.
 
-## Verify the Lean proof
+## Reproduce the full project verification
 
-Use a fresh Linux or WSL checkout with the pinned Lean toolchain and public Mathlib cache.
+Use a fresh Linux or WSL checkout with the versions pinned in [lean-toolchain](lean-toolchain) and [lake-manifest.json](lake-manifest.json). From the repository root, run:
 
 ~~~sh
 lake exe cache get
-sh scripts/replay.sh
+lake --no-cache build '@Cli/Cli:leanArts'
+lake env sh mathlib-review/verify-v3.sh /absolute/path/to/new-output
 ~~~
 
-The [replay entry](scripts/replay.sh) compiles the [integrated proof](mathlib-review/CriticalDepthMathlib.lean), checks its recursive axiom audit and compiles the [separate caller](mathlib-review/SourceConsumer.lean) against the fresh proof artifact. Set CRITICAL_DEPTH_KERNEL_REPLAY=1 for a second check of the two compiled modules with Lean's bundled checker. See the [verification guide](docs/VERIFICATION.md) for resource isolation, the exact commands and the trusted dependency boundary.
-
-| Input | Pin |
-| --- | --- |
-| Lean | 4.35.0, compiler commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc |
-| Mathlib | 56a005855ea17e0b0958f73ec801ae140b0a1679 |
-| Transitive public packages | [lake-manifest.json](lake-manifest.json) |
-
-## What the proofs cover
-
-- CriticalDepth.ReviewV2.nativeTheoremOne_proved gives finiteness and non-density of the exact projective logical image under one total-depth budget.
-- CriticalDepth.ReviewV2.standardTheoremTwo_proved gives the positive critical depth and a nontrivial closed circle subgroup for ordinary qubit stabilizer subspace codes of actual distance $`d \ge 2`$.
-- CriticalDepth.evaluation_image_finite_of_minimalPrime_derivations is the finite-image criterion underlying Theorem 1.
-
-The [readable statements](docs/math/ALIGNED_MATHEMATICAL_STATEMENTS.md), [stabilizer definition correspondence](docs/math/STABILIZER_DEFINITION_CORRESPONDENCE.md) and [original mathematical statements](docs/math/ORIGINAL_PURE_MATHEMATICAL_STATEMENTS.md) have GitHub reading editions with rendered equations.
-
-The [v7 review](verification-runs/20261107v7/REPORT.md) identifies the exact audit inputs and distinguishes theorem-level correspondence from the abstract's scope wording, the alternative coordinate presentation and the unformalized quantitative and fault-tolerance discussion.
+The [release record](verification-runs/update-branch/RELEASE.md) states the source, dependency and manuscript bindings, and gives the scope of the replay.
 
 ## Previous versions
 
-The [version index](VERIFICATION_STATUS.md) separates the v7 evidence from the historical records. The [20261103v2 algebraic revision](RELEASE_BINDING.json) and its [earlier source replay](verification-runs/20261103v2-clean/FINAL_REPORT.md) remain in this branch. The [20261104v1 TeX and timestamp](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/38bc10f39e085099f76b38cf200215aa0208fd61/timestamps/20261104v1) remain available on the earlier main snapshot. The [archive](archive/README.md) retains the preceding records.
+See the [version index](VERIFICATION_STATUS.md) for the historical scope of earlier builds and author approvals. The [20261107v7 TeX](manuscript/20261107v7.tex), [PDF](manuscript/20261107v7.pdf), [review](verification-runs/20261107v7/REPORT.md) and [timestamps](timestamps/20261107v7/README.md) are preserved. The [20261114v0 TeX and timestamp](timestamps/20261114v0/README.md) and the [20261104v1 TeX and timestamp](timestamps/20261104v1/README.md) retain their original bindings. The [algebraic-proof revision](RELEASE_BINDING.json) and [archive](archive/README.md) document the earlier history.

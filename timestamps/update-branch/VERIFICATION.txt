@@ -1,0 +1,20 @@
+Update_branch.tex request and nonce
+Using configuration from C:/Program Files/Git/mingw64/etc/ssl/openssl.cnf
+Verification: OK
+Update_branch.tex file bytes
+Using configuration from C:/Program Files/Git/mingw64/etc/ssl/openssl.cnf
+Verification: OK
+Update_branch.tex signer and signed CRLs at genTime
+timestamps/update-branch/Update_branch.tex.signer.pem: OK
+Update_branch.tex signer and signed CRLs at verification time
+timestamps/update-branch/Update_branch.tex.signer.pem: OK
+INPUTS.sha256.tsv request and nonce
+Using configuration from C:/Program Files/Git/mingw64/etc/ssl/openssl.cnf
+Verification: OK
+INPUTS.sha256.tsv file bytes
+Using configuration from C:/Program Files/Git/mingw64/etc/ssl/openssl.cnf
+Verification: OK
+INPUTS.sha256.tsv signer and signed CRLs at genTime
+timestamps/update-branch/INPUTS.sha256.tsv.signer.pem: OK
+INPUTS.sha256.tsv signer and signed CRLs at verification time
+timestamps/update-branch/INPUTS.sha256.tsv.signer.pem: OK

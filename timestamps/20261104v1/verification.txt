@@ -1,0 +1,8 @@
+Verification of signer
+E:/Codex/work/20261104_critical_depth_v1_release/actual-signer.pem: OK
+Verification of query
+Using configuration from C:/Program Files/Git/mingw64/etc/ssl/openssl.cnf
+Verification: OK
+Verification of file
+Using configuration from C:/Program Files/Git/mingw64/etc/ssl/openssl.cnf
+Verification: OK
