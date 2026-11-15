@@ -1,0 +1,16 @@
+{
+  "archive": {
+    "bytes": 622724192,
+    "name": "lean-4.35.0-windows.tar.zst",
+    "sha256": "893fde3f52b48c647e3edcf33844cbb61f8ef70fcd88e0536bfc83f29844081e"
+  },
+  "compiler_version_observed": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "dependency_bootstrap": [
+    "lake exe cache get",
+    "lake --no-cache build '@Cli/Cli:leanArts'"
+  ],
+  "dependency_trust_boundary": "Installed Lean runtime/core library and pinned public dependency artifacts; not a dependency source rebuild",
+  "download_url": "https://github.com/leanprover/lean4/releases/download/v4.35.0/lean-4.35.0-windows.tar.zst",
+  "mathlib_cache_files_downloaded_and_decompressed": 9031,
+  "official_release_sha256_matched": true
+}

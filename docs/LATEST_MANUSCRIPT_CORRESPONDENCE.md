@@ -1,4 +1,6 @@
-# Current manuscript and Lean scope
+# Historical algebraic-revision correspondence
+
+This page describes the 20261103v2 algebraic revision. The current manuscript is covered by [CURRENT_THREE_LAYER_CORRESPONDENCE.md](CURRENT_THREE_LAYER_CORRESPONDENCE.md) and [the complete statements](math/CURRENT_MATHEMATICAL_STATEMENTS.md). The earlier text below retains its original scope.
 
 The two main theorem environments are unchanged from publication e199f3338e29ba3d8fbda5212f3a865af0b41d3a. Theorem 1 retains the finite-dimensional subsystem-code setting, all-operator detection below d, one total circuit-depth budget and the strict depth inequality. Theorem 2 retains ordinary qubit stabilizer codes with trivial gauge subsystem and actual distance d. No intermediate code-preservation or geometry assumption has been added.
 

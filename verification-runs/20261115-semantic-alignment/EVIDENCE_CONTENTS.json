@@ -1,0 +1,1414 @@
+{
+  "archive": {
+    "bytes": 6399251,
+    "path": "COMPILER_EVIDENCE.tar.gz",
+    "sha256": "5d64c4287eb59695a1ef78d97d5a08d278726b1317b04366c14c6a1d230090e3"
+  },
+  "compiled_objects": "Not committed; their hashes are retained in REPLAY.json. Rebuild them using scripts/verify_full.py.",
+  "members": {
+    "BaconShorAdjacentGauges.log": {
+      "bytes": 2626,
+      "sha256": "28477e641bf57cb2e1b5f2208490d1d938edd469315b9caf43cbb6dea125f328"
+    },
+    "BaconShorAspectRatio.log": {
+      "bytes": 276,
+      "sha256": "57c233add78b46538a61b0ed043284e4c4924d8cd291f1e78e5774fd38ba35a4"
+    },
+    "BaconShorAudit.log": {
+      "bytes": 26915,
+      "sha256": "f81936434973097c2c4ed7668f0840892525c8872f8ee547c3fb9e70437d33e1"
+    },
+    "BaconShorBareAxes.log": {
+      "bytes": 270,
+      "sha256": "cf7ebd0677b1eb08a46e02bc7f544893363be20cbd70123a1534925b8be663a0"
+    },
+    "BaconShorBinaryGeometry.log": {
+      "bytes": 888,
+      "sha256": "ad40efa5125ea3d5b03dbadc01985e602d286bead4da72171fcd3dc705b7186e"
+    },
+    "BaconShorCoordinates.log": {
+      "bytes": 375,
+      "sha256": "c8279c2d0c681fb70e439c3cf383097c67e750aa0cd5975677417aa09fd5d719"
+    },
+    "BaconShorDressedDistance.log": {
+      "bytes": 464,
+      "sha256": "ec61e31065875de6a6a3db37803a2e4a836908dc0a255371e196eb5d3d57c759"
+    },
+    "BaconShorFixedSpace.log": {
+      "bytes": 333,
+      "sha256": "935da9c069507d59e33857ba30116bdf8aa837a96a9c8e34bc936a4de745fbb0"
+    },
+    "BaconShorGaugeActions.log": {
+      "bytes": 397,
+      "sha256": "494e0a5c02ab301cd8b47783502900e3aeb6cbe3c3de598996578afedb758c55"
+    },
+    "BaconShorGaugeCoordinates.log": {
+      "bytes": 262,
+      "sha256": "5fa91b34acf9fb188da7d1e51f60a24317d7b12423272e3bf5bf4f1984a3b524"
+    },
+    "BaconShorGaugeTrace.log": {
+      "bytes": 451,
+      "sha256": "0dfd263b0423d0508ffc83c68adc963518eae8b875ebb80d89320dc52d9e58da"
+    },
+    "BaconShorProposition.log": {
+      "bytes": 824,
+      "sha256": "88faa9878329711af2e1419900dae71375872e4f4459aaccfa339dd9997e6628"
+    },
+    "BaconShorRealLog.log": {
+      "bytes": 141,
+      "sha256": "26ee5b02ac5ab26f7df5aa51013e5ce037aa10240c39ca60e58a7fe4c54aa14b"
+    },
+    "BaconShorShortTrace.log": {
+      "bytes": 282,
+      "sha256": "9ed2120ecb6237f38244c43f7c3de262dd5ecb8eb3d43bb769797db0a03c939b"
+    },
+    "BaconShorSubsystemEncoding.log": {
+      "bytes": 395,
+      "sha256": "3c4d83a4a37e9128fba8fb4e10c06c17dcdec92cc7d9f001ef89088026428f59"
+    },
+    "BaconShorThresholdUpper.log": {
+      "bytes": 1118,
+      "sha256": "71513a5f8e51adbafe5294de6a0cf603eaa3b009f3565cde56e7bc3613d1db10"
+    },
+    "BaconShorXAxisNormalizer.log": {
+      "bytes": 924,
+      "sha256": "2895ea97ffbdfb37c65807c5a1600883304d7c375caf0a36262afba3ac062b60"
+    },
+    "BarePauliRotations.log": {
+      "bytes": 648,
+      "sha256": "d562664365c7e32bbe3ca3394053b9326b2f40acfcfa2fc2f3c80a393454f71a"
+    },
+    "BinaryPauliMasks.log": {
+      "bytes": 382,
+      "sha256": "e7d995ae2f0981d8d515eb89fbfb36de0abee9568ae774078944b38cf03aa623"
+    },
+    "BinaryPermutationDiagonal.log": {
+      "bytes": 266,
+      "sha256": "d55de7ede277be14aae476fda27e3d1c7a6ce5f90f48a77f2bfa617ee3b77b2a"
+    },
+    "BinaryPermutationUnitary.log": {
+      "bytes": 554,
+      "sha256": "aec3ad455d123c9827537d8b4886c7ea0437eb1070c4bb6cae7dcdacc6315db7"
+    },
+    "BinarySymplecticElimination.log": {
+      "bytes": 480,
+      "sha256": "c1183bf22c3b8e2ebb5e0c3c11e8a722b0934a7e97b9db96d9eb8599fbb8a497"
+    },
+    "CSSBadWordCounts.log": {
+      "bytes": 141,
+      "sha256": "a7b28b745145e258d757e91413b17e8cf144fc699624c3446da5fccd4cbef395"
+    },
+    "CSSBinaryMonomial.log": {
+      "bytes": 147,
+      "sha256": "0bd8b523fd7464bd2460ddee1645b3a2f62a5f27985ed0b0984ce98a98f4aff3"
+    },
+    "CSSCheckSpaces.log": {
+      "bytes": 260,
+      "sha256": "eada89a7404123f097bf1b2889a4366ce1c5213e486ea28d3fa04d9a117fb66c"
+    },
+    "CSSCircuitRigidity.log": {
+      "bytes": 302,
+      "sha256": "e4ada739aff09c2de3a451929e7551c714c0d8662672be5ec115c7ddfe0bf3f0"
+    },
+    "CSSCodeCosetRange.log": {
+      "bytes": 127,
+      "sha256": "e56056303271ff915a29cd6e9922200ceaa0519ef04535f77db8a532e80a7646"
+    },
+    "CSSCodeCosets.log": {
+      "bytes": 248,
+      "sha256": "39143166b4066932f0394fd8e8e20e53d661e4db08952bae7708283cb899e5c1"
+    },
+    "CSSCodeDimension.log": {
+      "bytes": 254,
+      "sha256": "c36008502cfe74814fc61e7fd4f24bb5906b9f4c4f4941ef22bb10a5578072c0"
+    },
+    "CSSCodeDistance.log": {
+      "bytes": 271,
+      "sha256": "26f851a84e43c27bc4892a6eb8a1c6a74f4142c3c221e7443940fb1a649471e6"
+    },
+    "CSSCodeEncoding.log": {
+      "bytes": 365,
+      "sha256": "2d94bbd0377ab6ce4349e50c03eaa5a904ebce33ed93e8fb7cb07679ef9fabea"
+    },
+    "CSSCodeNormalizerAction.log": {
+      "bytes": 130,
+      "sha256": "cf12dd86b78b61e0871d8f27ebf53cc9d4f4e761aa6dbb5a287d500189a0f9a2"
+    },
+    "CSSCodeOrthogonality.log": {
+      "bytes": 519,
+      "sha256": "6a18acdb2a25a68c34f387918de7fe48dac2cd4c01e4ebeaec8381baa02e9eb5"
+    },
+    "CSSCodePauliChecks.log": {
+      "bytes": 254,
+      "sha256": "bb7bfaeaa322fec07a4fe06068c81d8d72071458b3e6bc16b69f9c3dc586a642"
+    },
+    "CSSCodePauliMasks.log": {
+      "bytes": 364,
+      "sha256": "649a6e56e13af415bb68cb0244b994a4039cb8ea8a628467467e534a1945c1c9"
+    },
+    "CSSCodeStabilizer.log": {
+      "bytes": 391,
+      "sha256": "7c3be20f9d1696efa9aabcfd0e2617a6132ec5aadbe5f06efec4631c39271b68"
+    },
+    "CSSCodeStabilizerElements.log": {
+      "bytes": 129,
+      "sha256": "f902ec89ddf726d2b717b52d6008c795bd8b8031a34e262a4b554a56478b9124"
+    },
+    "CSSColumnRankCounts.log": {
+      "bytes": 645,
+      "sha256": "7958238604c4ec36d2779afe708ef30e65aee9267b01d2cff91d02f783242b96"
+    },
+    "CSSColumnRankFactorization.log": {
+      "bytes": 1103,
+      "sha256": "e1a505cef25a3b8b6f601b8fa78769bac76d5c059aed2af4f4e064adda28f899"
+    },
+    "CSSComputationalMonomial.log": {
+      "bytes": 776,
+      "sha256": "d6e36e5115567e5e13e745e2fec261e0b99b7591debe6ae34f29fa49bb539887"
+    },
+    "CSSConcreteMonomial.log": {
+      "bytes": 401,
+      "sha256": "788a04eb6e06d0aff7ed62a224678ed42b800811f75b395ddaad2abb513761ea"
+    },
+    "CSSDegenerateDistance.log": {
+      "bytes": 442,
+      "sha256": "edf634f7777a1e7c4be429b6706d3eb215534c86f41e3503d667c8a143670513"
+    },
+    "CSSDisjointEquations.log": {
+      "bytes": 145,
+      "sha256": "2f819e7075574d0405af825a2262c6c5e2e424e11b2e0cabab08e3077ba131c9"
+    },
+    "CSSDisjointSolutionCounts.log": {
+      "bytes": 278,
+      "sha256": "5efa13cfbe9b13a64b8b107260e2a898c93e903793aaeeceff85dc67a7d0cb3c"
+    },
+    "CSSExhaustiveSelection.log": {
+      "bytes": 1388,
+      "sha256": "9654b474c0247b8be6ef9a6c1b834547a83373d94526c0a2aa54ef2cd119e266"
+    },
+    "CSSExistenceAudit.log": {
+      "bytes": 53314,
+      "sha256": "6961777b106ea8996806e7b299769680b0ffcaaf10b68bd3270a83bcf8bec607"
+    },
+    "CSSFiniteColumns.log": {
+      "bytes": 485,
+      "sha256": "ed6f6fd4a79ed4a03828b937892df7206780172a7d97f2e1aae59e083d1eab4d"
+    },
+    "CSSFiniteCounts.log": {
+      "bytes": 1443,
+      "sha256": "3b9f78a38ba97bf54e651511d34bef74dfef606eeb2b990f3a65a562a3382f66"
+    },
+    "CSSFourierCharacterSums.log": {
+      "bytes": 533,
+      "sha256": "7cb6a2d80f7722d814567198856ce182aeae214efb6c0b6288993fa5202a155f"
+    },
+    "CSSGeneratorFibers.log": {
+      "bytes": 140,
+      "sha256": "84d30e2c089ccbb5f8afd9efeab8a42bbbeed187aa840edbb9746748085cfe25"
+    },
+    "CSSIsolatingShifts.log": {
+      "bytes": 820,
+      "sha256": "33cb64b68619bd0659ac06e93ad13985b0ee43b35d08d0f4e82ef2f44496d570"
+    },
+    "CSSLinearFibers.log": {
+      "bytes": 140,
+      "sha256": "03dc242c6696d19256a4e2a869117e03f9028ab080e9461d93135ebd706d3374"
+    },
+    "CSSMixedConstancy.log": {
+      "bytes": 648,
+      "sha256": "152a9c75adfeee5149b0d3f1dddeddbf70c65112b2697e55ae25e7611f4d8988"
+    },
+    "CSSMonomial.log": {
+      "bytes": 128,
+      "sha256": "230a40c38f5d6a702ba03462267a85f3cc7920b624827ff052a9f046f01176ca"
+    },
+    "CSSMonomialCosets.log": {
+      "bytes": 1905,
+      "sha256": "bed8a4bfeaf39e0e985b991363bcf5b34936adcccae39ef7f4e8f0bc9910aae8"
+    },
+    "CSSMonomialLocality.log": {
+      "bytes": 2751,
+      "sha256": "0051dae071ee3428cb7c8df41ba57436df7f420163a69379cdf097872c97a7eb"
+    },
+    "CSSMonomialPhaseLocality.log": {
+      "bytes": 884,
+      "sha256": "3b43e2291c7833307eedf27001a59c7ec5a39cd14c3b8391ed9185ed040a41a9"
+    },
+    "CSSOrderedBasisContainment.log": {
+      "bytes": 2842,
+      "sha256": "7c392285e1a2edf28eb750497cbc58f2e90bd22d4d41220319f2d0bef71f0f74"
+    },
+    "CSSOrderedBasisSampling.log": {
+      "bytes": 1035,
+      "sha256": "eb3c639ed92fcdc702e72ff2430739ee2dd3a4233a486944bbc656defc4836c0"
+    },
+    "CSSPauliMonomial.log": {
+      "bytes": 656,
+      "sha256": "8127c52da9731d65cbc98a1ae5e966c8b25d3ec8b91ce561c98b15ce7b523a4a"
+    },
+    "CSSPauliRestriction.log": {
+      "bytes": 300,
+      "sha256": "ed9ea9bf924cae388c48d340349b3d2d8c7ea5cc1116ae26c8b2d3affc7eb786"
+    },
+    "CSSPermutationRigidity.log": {
+      "bytes": 382,
+      "sha256": "bcd81c551abbcb6ab4e863d541297e6e92c74b973abdfd00597014df735163bf"
+    },
+    "CSSPhaseDifferences.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CSSPhaseGraph.log": {
+      "bytes": 601,
+      "sha256": "394262a3d327573d43fd5026eb6b419ab618685611b22005884aa46e4c388f7e"
+    },
+    "CSSPhaseOverlap.log": {
+      "bytes": 1849,
+      "sha256": "5c0d1ec108a57dc550c06c09335f911345413e9188378d102a315438b1c38ade"
+    },
+    "CSSPhaseRigidity.log": {
+      "bytes": 2703,
+      "sha256": "ed78d69a4c15f6b52344856cca240a944374002f67243029e54592a0d303c4a4"
+    },
+    "CSSPhysicalCheckClassification.log": {
+      "bytes": 1452,
+      "sha256": "be516b1b879061313ca300fe2d887cad4619b96c19684095a902b21f2fdcb584"
+    },
+    "CSSPhysicalMonomial.log": {
+      "bytes": 151,
+      "sha256": "76d99bff240b5215732a4dd01d6474f6212fbe1257f1fed458723e90cb259118"
+    },
+    "CSSPhysicalRangePreservation.log": {
+      "bytes": 147,
+      "sha256": "bf0e5f24ab29495b45a1f4c82270751c005a98d0591913f9b45fb2ba7984ecad"
+    },
+    "CSSPhysicalRigidityAudit.log": {
+      "bytes": 40881,
+      "sha256": "f0d7828af3f23f42d8710c80b8cade355c82fd0e8addada8807eeffbf3ff7b17"
+    },
+    "CSSPlantedHyperplane.log": {
+      "bytes": 637,
+      "sha256": "19dfbc1844449d73e6e59ae06ac33d37e9b96bd79e52bde342b90e030fbe40bf"
+    },
+    "CSSPlantedSelection.log": {
+      "bytes": 425,
+      "sha256": "8e05eb4929c346c81f6de2a5d0714fad9033b25fd9ccd54b461e4f3a0ea5a8ea"
+    },
+    "CSSQuadraticPhase.log": {
+      "bytes": 550,
+      "sha256": "1d5fa8b7671410b9a70b6c61cce74a85db854fba9f4782dc3797f41dffc3fdda"
+    },
+    "CSSRandomDistanceCounts.log": {
+      "bytes": 698,
+      "sha256": "5ed37b90d75dd730e0aba3f786e70429f87d7948da356972bf3270b659d86ffd"
+    },
+    "CSSRandomJointSample.log": {
+      "bytes": 2508,
+      "sha256": "46d2b99d62867b3c678d5aa5c6e8d3245668ceda6df6c9eada3f484f1c06fec1"
+    },
+    "CSSRandomLimit.log": {
+      "bytes": 490,
+      "sha256": "589274c3a0772789fe9e9df2ebcf0d792eb9eb3cb5090a36c8f3668036b941ab"
+    },
+    "CSSRandomLinearBound.log": {
+      "bytes": 491,
+      "sha256": "ff9dcc1300e47f1fbba4285ba55c061cf08809ea3a1981992a9eb28a70cbcdd3"
+    },
+    "CSSRandomParameters.log": {
+      "bytes": 426,
+      "sha256": "bf6716be8130db754277bbd30f4a2ec91e699510d6f15b5a3989e96f66b01fd2"
+    },
+    "CSSRandomProbabilityArithmetic.log": {
+      "bytes": 389,
+      "sha256": "23d983abc2869db55dd4f336fbdde31b8acbf7c56bdbfc9c2d40443605978e7f"
+    },
+    "CSSRandomRigidity.log": {
+      "bytes": 2141,
+      "sha256": "fdac371c3af259aaf8a73c97f407d69202ce658783a01bdad4b1f5e3007db99e"
+    },
+    "CSSRandomScale.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CSSRandomShellScale.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CSSRandomSparseScale.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CSSRandomXChecks.log": {
+      "bytes": 1368,
+      "sha256": "f1bbd8fb4201c9428e5acab4475d5d54ac22e4c1bc13de49c817f8d6705c2bce"
+    },
+    "CSSRandomZChecks.log": {
+      "bytes": 889,
+      "sha256": "ce62bd6ec003ec46464a52107785e19a85d79b94ce0d14777ad73e4cc69bdad3"
+    },
+    "CSSReducedRowBasis.log": {
+      "bytes": 724,
+      "sha256": "fdaaf9afb02d78b0db20ec8415af697ee5527c8bbbcfee5a57abfe2cf8dbee92"
+    },
+    "CSSRestrictionFibers.log": {
+      "bytes": 141,
+      "sha256": "d9aa3a638802436998df70bb366c25ff2b5675c8c7a08d3fe85f6858eee3509a"
+    },
+    "CSSRigidityCheckSpaces.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CSSShortDualTests.log": {
+      "bytes": 609,
+      "sha256": "48e1dcde0d20cee980196ffb3af1dcf10c70a606667a4f8d3a93ded412298c3a"
+    },
+    "CSSSparseLinearBudget.log": {
+      "bytes": 292,
+      "sha256": "d99706b713d77be3e6a59f9bd06501487c01b25f6723fa916eb09ecf94cdbf0b"
+    },
+    "CSSSparseLinearEquations.log": {
+      "bytes": 150,
+      "sha256": "f5f7b95c3311d6b53efbdbc0e1f2c606a4a4ffc2f93a790d566629761b874486"
+    },
+    "CSSSparseLinearIntertwiner.log": {
+      "bytes": 559,
+      "sha256": "4a5ceb104ffad1e47e40e0805cb91a0ff934d3ee81b7caf0ed54ab23c638d882"
+    },
+    "CSSSparseLinearSample.log": {
+      "bytes": 145,
+      "sha256": "08cdb6d6251fe9572e536198f26d93b6d56e35a7f6b8f701ce0d505a6f33ee09"
+    },
+    "CSSSparseLinearUnchanged.log": {
+      "bytes": 502,
+      "sha256": "21637bbb7c4d90bfda92fc3a065234f0f59acee720652d3ff186f5ec71f42252"
+    },
+    "CSSSparseMatrixCounts.log": {
+      "bytes": 646,
+      "sha256": "651692bf0e3609be410dfeea8d47eeec608784a4aba6360830819951905cff4e"
+    },
+    "CSSSparseSymmetricRank.log": {
+      "bytes": 937,
+      "sha256": "65ae88fd4e7b6c9e939ce3e45b0a105e6164122ee4599b9e5dd47f03abf3e543"
+    },
+    "CSSSparseSymmetricSampling.log": {
+      "bytes": 1983,
+      "sha256": "e0e77446e17a8ea52b47ecfd1117e60b48cef5cfbbdc5662f556368ccf350eab"
+    },
+    "CSSSparseSymmetricUnion.log": {
+      "bytes": 720,
+      "sha256": "bdeffacb8f5d5e0d9b029797e96e62e0e9fb0e9f378b4b5af6f1a75f2e83c4a3"
+    },
+    "CSSUpperGap.log": {
+      "bytes": 301,
+      "sha256": "22f800a7470c8bf3ccf588a767f190bce49461c7d31b5297966e6b20fe92b4ae"
+    },
+    "CSSUpperSaturation.log": {
+      "bytes": 145,
+      "sha256": "78fde8b4b2da4983752d55dcc510f75f1304d2b46e287f0c0eb3a9bbc4f83f3b"
+    },
+    "CSSUpperSaturationFamily.log": {
+      "bytes": 449,
+      "sha256": "1d62af1664cded49d50778712190377c76caed1254e3ec89fde6104454e58f36"
+    },
+    "CSSWeightBallCounts.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "CSSZCentralizer.log": {
+      "bytes": 151,
+      "sha256": "ac6e006c0f80ae1b7641ae0742daaf7c12b9d99b3d9258e5b302943ba1be5bbb"
+    },
+    "CSSZConjugation.log": {
+      "bytes": 584,
+      "sha256": "e087b3f2672129750a1044ad07d31ebc855e0963060b6abed86ce97669f813af"
+    },
+    "CircuitRealPolynomial.log": {
+      "bytes": 182,
+      "sha256": "4e9b9004a881b302513a38fd84955f721a7f52807c3bec663fab03c4a2fcf1be"
+    },
+    "CliffordTClosureCriterion.log": {
+      "bytes": 147,
+      "sha256": "5646c4219839ce443d1565202dd802750204770603c6b4d1a885ccad65f08f31"
+    },
+    "CliffordTDenseCircle.log": {
+      "bytes": 291,
+      "sha256": "1c8118e1e2a107f0a08699ad072e27f16a201e9a07d868c0db2b09d3416deb13"
+    },
+    "CliffordTDensity.log": {
+      "bytes": 497,
+      "sha256": "ea21adf95d44b2b17e969635bfe61e85efdde19e733fe3a3b6561e25aeea745d"
+    },
+    "CliffordTIrrationalAngle.log": {
+      "bytes": 797,
+      "sha256": "8c18a3489fa736d92656494cafe5e75631b20356ff7deb7f17c5b0dcce18cdbc"
+    },
+    "CliffordTMixedAxis.log": {
+      "bytes": 1403,
+      "sha256": "a9bdf534c6521bd1802ff26631df5d2de5c13911f668d2425b6b70972b63e702"
+    },
+    "CliffordTNativeThreshold.log": {
+      "bytes": 271,
+      "sha256": "05850c5d92e88019489c217e9eed52d142610b74b3804e7c17a6bde08a6f7774"
+    },
+    "CliffordTTangents.log": {
+      "bytes": 771,
+      "sha256": "3956ba76a2993f556a0961730877beadf4dc92f81eab9c3380eab7dc44afceed"
+    },
+    "CliffordTWords.log": {
+      "bytes": 3292,
+      "sha256": "58525aede1dbad277a8dd3a38c128a712ae04cc7f24b5cc426d3c402cc92f6f5"
+    },
+    "ConnectedPauliFrameSynthesis.log": {
+      "bytes": 265,
+      "sha256": "aea5b5bd7bd2620d95707883b49be355341e285a00571e17e9e8f56a289d6125"
+    },
+    "ConstructiveSynthesisAudit.log": {
+      "bytes": 71547,
+      "sha256": "e8d98f06116a360ba4e8a28684c14a28a262a57650f5de28d6e4068c243c1fa7"
+    },
+    "ContinuationAudit.log": {
+      "bytes": 60795,
+      "sha256": "9f408da43ce2af421bbd2a5e8e71e9d3f4dac66fea48a1b2bebf95a1eadac4f4"
+    },
+    "CriticalDepthMathlib.log": {
+      "bytes": 10427926,
+      "sha256": "7c441cd6c1a092623cd115d0962e375d369191db881ee81a98f2e2cf1ce4ecc5"
+    },
+    "DEPENDENCY_INPUTS.json": {
+      "bytes": 24527604,
+      "sha256": "21645a26986c366f0914c1809f25b8b7340f4290b67df2e44fd0fbc49feb32d0"
+    },
+    "DenseUnitaryAdjointSpan.log": {
+      "bytes": 267,
+      "sha256": "c82db543b5c3f4a12910937a350e4c62609bf32e77f608af4839bc40d058daaf"
+    },
+    "EncodedFaultRecovery.log": {
+      "bytes": 1038,
+      "sha256": "8e62b77fbaab801992708f7e07884ca4b301b24c5e79479855c456398addeb20"
+    },
+    "EncodedInverse.log": {
+      "bytes": 238,
+      "sha256": "c2889280619142926d43413819d75b2d5088c29a79851af1e375ea642f925feb"
+    },
+    "ErrorMeasuresFoundationAudit.log": {
+      "bytes": 40421,
+      "sha256": "543ac235bb779db1021d614947389e0273d9adcbb2f9f88d32710eb97a04e788"
+    },
+    "ExactCZCNOTSwap.log": {
+      "bytes": 3921,
+      "sha256": "446f68e22a668ddfecd5a82b51142a99b1df222d65af11af77171aaac151ed5a"
+    },
+    "ExactConditionalPhase.log": {
+      "bytes": 903,
+      "sha256": "ee92e979eab5b3ac21859f8733f32644b7462e37004d357c493a6ed9de5e3972"
+    },
+    "ExactConditionalRotation.log": {
+      "bytes": 520,
+      "sha256": "d8991a969158d74229fdc949e6e6d316a91b02451ab4ae822635075dd25c3aaf"
+    },
+    "ExactConnectedCNOT.log": {
+      "bytes": 465,
+      "sha256": "a9b7713c8fe55df38e32e94d577be941cc9017417484057b26111c300b8ebaa8"
+    },
+    "ExactControlProjector.log": {
+      "bytes": 1320,
+      "sha256": "7e50fd491e35a8305c2329ef9f5a3a4eaff054487014f7286054e165f11d9d0f"
+    },
+    "ExactControlProjectorProduct.log": {
+      "bytes": 530,
+      "sha256": "65575e70f21e2e8638041bf2e2a1df8581f4447c4c5b57e999eaf32da841f8b1"
+    },
+    "ExactControlledTarget.log": {
+      "bytes": 2103,
+      "sha256": "a22b8e34bf9ec3a95f53dd64bd8a07ccc4b06e29c9c8e0c178cf4a05dc05ad82"
+    },
+    "ExactControlledWord.log": {
+      "bytes": 136,
+      "sha256": "5a6cfc97c9fba2f4b96557227b8db480db34d8364b71813ac580b1e92d82d256"
+    },
+    "ExactGeneration.log": {
+      "bytes": 1123,
+      "sha256": "b482c843d3bb23446187fa3edeaf30fc475d5f69c6572fb5b6961affedd7000d"
+    },
+    "ExactGenerationAudit.log": {
+      "bytes": 18137,
+      "sha256": "59f80bd62dfaf58689cb0095392a73e29a85ded01450b51e8b632b8b19fd4845"
+    },
+    "ExactGivensBlock.log": {
+      "bytes": 1805,
+      "sha256": "a4cd068221d5a8fe9ba2a85816052742ba216c2c7a330204d965482b0e6323d3"
+    },
+    "ExactGivensCompiler.log": {
+      "bytes": 137,
+      "sha256": "31d6aaf511d2e7d80b7e8508944c4b955f81535f44a63de80dd9f42c9ed6907c"
+    },
+    "ExactGivensElimination.log": {
+      "bytes": 1703,
+      "sha256": "110ed0170d3397d7a8e1fdd47b90b435f7e97390fb692d3c1044ce9e49703a86"
+    },
+    "ExactGivensNativeTarget.log": {
+      "bytes": 510,
+      "sha256": "86111d0a6d6271ea551962a47831022f526f78748f864786bb07f66eebcccc77"
+    },
+    "ExactGivensNativeWord.log": {
+      "bytes": 623,
+      "sha256": "0b31e698aacc297770acfdbee784692cdf37b18c70111d5d1f2fa5690ce0bb09"
+    },
+    "ExactGivensStep.log": {
+      "bytes": 1213,
+      "sha256": "4cc1c1942099cf11eada20d58393e90042bae8530bd84f96401101be25cd8b14"
+    },
+    "ExactGraphCNOTRouting.log": {
+      "bytes": 614,
+      "sha256": "21c8ab3af1a7513052e5539b6354568c3abb4ec8d4c70418c919b02d177dc3d2"
+    },
+    "ExactGraphEdgeOperator.log": {
+      "bytes": 956,
+      "sha256": "932ce288261c6794ec53822ca63e3fba557c31bc5cf9e53055d045dfed40f2cf"
+    },
+    "ExactGraphSWAP.log": {
+      "bytes": 760,
+      "sha256": "d9780852d8d4ec31867c2aaf34e0abdf90f6d1fb703ed46945efc4df27ad0fd7"
+    },
+    "ExactGrayRouting.log": {
+      "bytes": 484,
+      "sha256": "422241a72f97e2ce35a980681d6a0f181651f03e46664f303a28292beeaef1ba"
+    },
+    "ExactGrayTwoLevel.log": {
+      "bytes": 587,
+      "sha256": "5044fc625d99c3e2fb89f24158c7158ce8e03778b99c63708658ed5c8b842c59"
+    },
+    "ExactPauliCliffordParity.log": {
+      "bytes": 845,
+      "sha256": "7ad4aa2afaeabf4fb898352513c72354f38e5feb5af20166da04e4f83355e941"
+    },
+    "ExactPauliParityCircuit.log": {
+      "bytes": 502,
+      "sha256": "5626485e0e7ebb500d07a152dd38276f5d79ea3cda3025193385e2cb9f92db09"
+    },
+    "ExactSerialSynthesis.log": {
+      "bytes": 504,
+      "sha256": "62c2d44fb6a41023472fd9db0d8ba1c9138084bd74ed0a3e8ccdc7f5ba9c19c8"
+    },
+    "ExactTwoLevelWord.log": {
+      "bytes": 128,
+      "sha256": "4322efe949f00cc1b57819ea72b9d4207f212bc000eaaa09880ba7be1ce6d3ad"
+    },
+    "FaultAmbiguity.log": {
+      "bytes": 1069,
+      "sha256": "93bd26a030751984757534043753168a80a20dea798caa9020217f8caaebd531"
+    },
+    "FaultAverageInfidelity.log": {
+      "bytes": 1637,
+      "sha256": "cf65a6ee96001f0d468fffdb7c629ce249ca37e633b746d6370da26076e563b6"
+    },
+    "FaultBellEffect.log": {
+      "bytes": 1690,
+      "sha256": "c550fe4a19e9394f9c6ac3263032ad7cae048232007d10c5f26e68901a304a24"
+    },
+    "FaultCPTPOptimality.log": {
+      "bytes": 2340,
+      "sha256": "83a73d18d3e4160c148cb9f387586d9e467423fcafab4cffd77dfdb452a13fe2"
+    },
+    "FaultCPTPRepresentation.log": {
+      "bytes": 2506,
+      "sha256": "948fdfc07d5a7d93bff38daeec47542ac30b8331da1855c56c1e9a02671b0eac"
+    },
+    "FaultChannelEffects.log": {
+      "bytes": 1466,
+      "sha256": "4bd7de6c24ef4e642cd80c321d75a97bb89499980e271a2017261fc69989e465"
+    },
+    "FaultChannelNormalization.log": {
+      "bytes": 272,
+      "sha256": "907559bec91ce9cda43b5c25ee98b1f44b6541789cc9b8bd0c7a1d186db8de3f"
+    },
+    "FaultChoiBound.log": {
+      "bytes": 1546,
+      "sha256": "d6943b7377bb03a4db881cf9eb59f412ee4d2800f4b121e6bdd0d3e1ae8e4d69"
+    },
+    "FaultCircuitSupport.log": {
+      "bytes": 1205,
+      "sha256": "2f53d22a26c5034b58062604450a5ad41edcb9b5a160ad1eb9a7ec44fa51e07a"
+    },
+    "FaultDepthArithmetic.log": {
+      "bytes": 1145,
+      "sha256": "1b032663d967c955da0cdb391343c9e265582cf00058db871e006170d34d5e54"
+    },
+    "FaultDepthOne.log": {
+      "bytes": 246,
+      "sha256": "6a206e71e53301c8ef963bf302951fabc05f8eef975e4ae81a4e388ea1dcec3c"
+    },
+    "FaultDiamondCSSSaturation.log": {
+      "bytes": 133,
+      "sha256": "bd886b00b9de3ec2eadc2c0871bb0ed9c23274ad5511e56b935f5550453f4840"
+    },
+    "FaultDiamondEffects.log": {
+      "bytes": 1975,
+      "sha256": "4a0d23ac3051c5f1c0e8ca831703c1d08195eb16369b64041ce39c3e20090c11"
+    },
+    "FaultDiamondExponent.log": {
+      "bytes": 545,
+      "sha256": "87645381634cf06c826eea9e4dc116bb57a3d10398f92260236bc992bf052154"
+    },
+    "FaultDiamondFrame.log": {
+      "bytes": 570,
+      "sha256": "b93e40c0ac9b9e7af26c3338f912eed0426675bd047645a354a125615d10314b"
+    },
+    "FaultDiamondHistories.log": {
+      "bytes": 981,
+      "sha256": "de5dea90cc77a8bcb3e266e7d90d7295ec284f37339fc841ba08c983feab2fcc"
+    },
+    "FaultDiamondIdealAction.log": {
+      "bytes": 844,
+      "sha256": "a6d6b538edf78bcd3bb7879f69c8cb1eabeccaf276fa5907e1c99021a3174877"
+    },
+    "FaultDiamondNormalization.log": {
+      "bytes": 135,
+      "sha256": "fdf0d77d7b85247754e6f4fae2896249fd79b8072e845cfcec47b36a591a423b"
+    },
+    "FaultDiamondOptimality.log": {
+      "bytes": 1131,
+      "sha256": "978dff840a8af26172a69952da026f2a9481258b023ea3c1d294a99850b6ac2f"
+    },
+    "FaultDiamondPaperMetric.log": {
+      "bytes": 282,
+      "sha256": "0c235a20394b094f3d8367976b5426c80ef736817978dca8585d1b641bee4326"
+    },
+    "FaultDiamondTail.log": {
+      "bytes": 975,
+      "sha256": "b5e34d185c0c0084122f21910017b40cb7e1974042405802ebadfbc7ad2fac67"
+    },
+    "FaultDiamondTraceInputs.log": {
+      "bytes": 766,
+      "sha256": "7baca240c9734f0ca992818963d3acc3b1f2becd047e57c15bad965806b7aa14"
+    },
+    "FaultDiamondVariational.log": {
+      "bytes": 577,
+      "sha256": "e2f7c7a66b07d968d1511c99efb4c708abf5789bd57ec09e029bb584696cab77"
+    },
+    "FaultEntanglementFidelity.log": {
+      "bytes": 3896,
+      "sha256": "57ecbdfa05909eb7fe5849679916a43d055fd787bec7dcd07abef608deae9857"
+    },
+    "FaultEnvelopeScaling.log": {
+      "bytes": 648,
+      "sha256": "9e625dcb395f312356038963b6d2f3d986ed9c94838f6b6157beadc1a2c707a0"
+    },
+    "FaultExponent.log": {
+      "bytes": 446,
+      "sha256": "c989162e496890f99e02bb31487a13142c5c357dc59031484b6a1f8266e0179f"
+    },
+    "FaultFirstBadOrder.log": {
+      "bytes": 1711,
+      "sha256": "915b57bfb4ad552e6d170161251a4aa18b5cb66d1c28f8ddcbd7b899cdb48e23"
+    },
+    "FaultFirstBadOrderLower.log": {
+      "bytes": 147,
+      "sha256": "61ddf5a862d9589dda5fb45756fe710f6a8b42f9b628811596cd0fa1a2265540"
+    },
+    "FaultFirstBadOrderUpper.log": {
+      "bytes": 873,
+      "sha256": "c80034fff15a9e25b8d0b9cfc70521ecb0290db93272b79f1a1209bd7e983927"
+    },
+    "FaultHaarChannelFidelity.log": {
+      "bytes": 787,
+      "sha256": "0d1f0b5b8deca5cb755019d39502b2d10cc94fb9bd84668877c58fa603e79278"
+    },
+    "FaultHaarChannelGeometry.log": {
+      "bytes": 1798,
+      "sha256": "8983d07d20bd3b2a97b5c868629be185b81bb481bcd1184aae1b480ea501b2d8"
+    },
+    "FaultHaarComplexMoment.log": {
+      "bytes": 3905,
+      "sha256": "1bdcc6228daa24107e43dc1e86c4a4bb3029e7e453bb41b8578c835a925ce83e"
+    },
+    "FaultHaarNativeModel.log": {
+      "bytes": 691,
+      "sha256": "51e8ddf313712acdd9f13fee56e7516efe916d29c7a5a7699ad0f50458b9a2f7"
+    },
+    "FaultHaarOptimality.log": {
+      "bytes": 1299,
+      "sha256": "824352a14d56342ed9b343490ddfdccc7dfbb74459a7acc444aac0bc51061de7"
+    },
+    "FaultHaarRealMoments.log": {
+      "bytes": 6110,
+      "sha256": "9c470242ebef93b272b2db81f62a116a68eda2f7ab73268c1046ea7036748a88"
+    },
+    "FaultHaarSaturation.log": {
+      "bytes": 136,
+      "sha256": "bd29443c1734dc4b439dea6a8aa499aaf13f32745d58f3ee266ac678325d70e5"
+    },
+    "FaultHaarShor.log": {
+      "bytes": 137,
+      "sha256": "7d3bd075a24af9775adf45cc398bc22810e1f1ab9946d19e8ccbbd64ceea73f8"
+    },
+    "FaultHaarSphere.log": {
+      "bytes": 2232,
+      "sha256": "1f33ac00b45172c75ca932960cdf4397f7871c0f8cdb9abc59c79e1b46ad4378"
+    },
+    "FaultHistoryExperimentNormalization.log": {
+      "bytes": 2463,
+      "sha256": "d86b2cf3c5796eed2ca570a500c83ea86898382a0dd9feb61eae60735d8888ec"
+    },
+    "FaultHistoryGeometry.log": {
+      "bytes": 2393,
+      "sha256": "8ed436630cba75d745afb29cb102e6ee83c7f07c1f15103e572eef8298f4b5b0"
+    },
+    "FaultHistoryLoss.log": {
+      "bytes": 534,
+      "sha256": "7f7f3c776a7cf7a2d72c9e6d299a7d7f17c050a4c7b902f51529862725739a7f"
+    },
+    "FaultHistoryNormalization.log": {
+      "bytes": 3108,
+      "sha256": "2bd53fd8ade8799b21dce4e4ae183c10cd0980acb2d44f7f61bf84a4f97c5664"
+    },
+    "FaultIdealAction.log": {
+      "bytes": 1184,
+      "sha256": "a13900eeae80dc17866c690101658bdbbc72bde432e00a9e085798685ce102d1"
+    },
+    "FaultKrausCompactness.log": {
+      "bytes": 1433,
+      "sha256": "11751ee1b39b500390176ebb14ef9061bb6be0534d5250fb332b44859c34fa6e"
+    },
+    "FaultKrausCompression.log": {
+      "bytes": 992,
+      "sha256": "c8168a36f19f9544a05c57f709aaaafa6f352926ce6b15d90514edeeacc4db72"
+    },
+    "FaultLawIndependence.log": {
+      "bytes": 843,
+      "sha256": "8276dfa4f4861dd692d6ac9a66bedc643aa6db105ce4e71afa329b8c90086aad"
+    },
+    "FaultLocalStochasticPaper.log": {
+      "bytes": 279,
+      "sha256": "bdec629c3bfc6781246f97088de9b94f028bd7a1f484b76be4f67987cdf8143c"
+    },
+    "FaultLocalStochasticRecovery.log": {
+      "bytes": 1199,
+      "sha256": "12915d4c301dd485ed4a5ad9e9ada31a2ba4d43d8400dce2a39e06afb0299f4b"
+    },
+    "FaultLowerCriterion.log": {
+      "bytes": 132,
+      "sha256": "c158f6cf124664b542f072156c35e570d491b2598e6cd77755f99eb90ee27c1d"
+    },
+    "FaultNativeCeiling.log": {
+      "bytes": 1006,
+      "sha256": "b26ac062edc3e0e3ad0f80618ebfd46882c159baee96741e82ff45ef102aea77"
+    },
+    "FaultNativeModel.log": {
+      "bytes": 689,
+      "sha256": "f0a5f0decdd425421296bf37e68ca4c954f7410d36f8329c5a1a6ed878bf84a7"
+    },
+    "FaultNativePauliDecoding.log": {
+      "bytes": 1348,
+      "sha256": "513cd34164f2a01030a77a94410db53df24bef3d97e4ca9840810f8ab340fdf0"
+    },
+    "FaultOnSiteSupport.log": {
+      "bytes": 402,
+      "sha256": "504d2a00eb825ff7265a17245dec0c3d8ed7aea0a902653de04a25cc6a0cfa3a"
+    },
+    "FaultOnsetConsequence.log": {
+      "bytes": 247,
+      "sha256": "c22c3ef60fdd1387aeb95ba988355b1cd18396c5503826d922ea89ab052410c8"
+    },
+    "FaultOnsetScaling.log": {
+      "bytes": 271,
+      "sha256": "70b6938b310b317e51ee6b7b47ea2976d0d211565c5ddfbcb1fd8088cbcdb4d2"
+    },
+    "FaultPaperFixedCircuit.log": {
+      "bytes": 1478,
+      "sha256": "9a11bb2e8ed3720ab42c265c93562147114980442a7e096c93c9ed657b898858"
+    },
+    "FaultPaperSaturationWitness.log": {
+      "bytes": 434,
+      "sha256": "ecf5611a670e2e3cad8956901edc0dfdc6fbfc9dd6c25021684cec4773e65093"
+    },
+    "FaultPauliSyndromeChannel.log": {
+      "bytes": 1332,
+      "sha256": "b031b70d0383d0abdece5760be940924d5331cde24279d75c9c711b157c373fe"
+    },
+    "FaultPointwiseAmbiguity.log": {
+      "bytes": 455,
+      "sha256": "e0801c01f3593b5fbd08955ccdb348ac78e0451472931939096bae27da8ba85a"
+    },
+    "FaultProbability.log": {
+      "bytes": 1394,
+      "sha256": "a8196f6907e017fca1b30ae3b2b1164ecd14700dd3128e58aa2f337b9c4ddb81"
+    },
+    "FaultSharpnessAllMetrics.log": {
+      "bytes": 270,
+      "sha256": "43b0debe1bd05860814b6b303cc233e47530671a1528f40d00e85e696db4f6a1"
+    },
+    "FaultSharpnessAudit.log": {
+      "bytes": 32767,
+      "sha256": "2f7ca568c8cd92e1a6c24f2462db9971499c593c0bf9026e0126f51983f7fade"
+    },
+    "FaultShorEncoding.log": {
+      "bytes": 468,
+      "sha256": "f221c9be0b732ae30d7330dc9fc829dbf31d2b8c7c0095976068e455f0954ed3"
+    },
+    "FaultShorSaturation.log": {
+      "bytes": 4004,
+      "sha256": "ee5d0069d1a71f5e4cd46bd7455fbd507b1e3605ca93d2cfd0ceee7e5d099c0f"
+    },
+    "FaultShorSchedule.log": {
+      "bytes": 1544,
+      "sha256": "096ae4b91d2bee4c13b2ad965995a6151cb052b41c33c842e5e47f7d5526e0c1"
+    },
+    "FaultShorScheduleIteration.log": {
+      "bytes": 719,
+      "sha256": "a80cc32c9f2d419a5a941688128719beab7cf7bc9c222bb410f6b29ee2befcb2"
+    },
+    "FaultStabilizerLogicalBasis.log": {
+      "bytes": 2620,
+      "sha256": "cca0101f8f9c2c4b93ed834f8d1fc2e4da26c8a5e153b16c1a638ed2ad9ab1a0"
+    },
+    "FaultStabilizerLogicalTrace.log": {
+      "bytes": 771,
+      "sha256": "18b2fc1560e68a4a7a889f2ebf773c63364a31b5346104d782998cad72beb6b2"
+    },
+    "FaultStabilizerPauliChannel.log": {
+      "bytes": 2815,
+      "sha256": "065cbed1a0c9ba924afc7b04cb35056609ad66661cee5aa5a56f77568d77fa1f"
+    },
+    "FaultStabilizerSyndrome.log": {
+      "bytes": 611,
+      "sha256": "6bd2c5982612163ffb8ab6ab01ba818ddaf0aecf31e496a95976135ba2643f29"
+    },
+    "FaultStabilizerTrace.log": {
+      "bytes": 1198,
+      "sha256": "42f20c0f641bfe36c33c6e82f4497fed2408f465a3cb0dcf8a532a5ec43f9cc3"
+    },
+    "FaultSupportPreserving.log": {
+      "bytes": 280,
+      "sha256": "0235ba760a4ce2bc5bece34844c03eeff0310513784f20242870c6f56a308eda"
+    },
+    "FaultTraceNorm.log": {
+      "bytes": 1169,
+      "sha256": "548369599df9bde0ad21c75df0bc68386852ae50187b7399ceead24bc4a80718"
+    },
+    "FaultUpperOnsetWitness.log": {
+      "bytes": 135,
+      "sha256": "893acf7a8d67ef08fb582bf7d0ea3b8927f1709d964a6ccafb5fa51eb8b03eac"
+    },
+    "FaultUpperWitness.log": {
+      "bytes": 677,
+      "sha256": "5c3ffb8f99e163ad8afae95e2e54b948f99079b88593725ad2603bdd8f138c27"
+    },
+    "FaultVariationalTrace.log": {
+      "bytes": 861,
+      "sha256": "3a139f278af648a4f7f5b889415f01db4bd911387cf3d046f7b2a1ba3df7ec68"
+    },
+    "FaultWitnessMetricAudit.log": {
+      "bytes": 20004,
+      "sha256": "0fe2a06f7eb962d2446b622ef2611b9bfef445c9f2fbe44a8f381a8107f6423b"
+    },
+    "FinalSupplementAudit.log": {
+      "bytes": 7892,
+      "sha256": "df90cb36cd3ac57fe22fb32ecff8c4bd832b42737c8737f69135109276e12147"
+    },
+    "FurtherSupplementAudit.log": {
+      "bytes": 52036,
+      "sha256": "829c09acb1b189284b52af1158429275e71f8f1b0f6c05769c7c0e404d80ec77"
+    },
+    "GenerationThresholds.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "INPUTS.json": {
+      "bytes": 55482,
+      "sha256": "df6fa1740e7f411868bcbf43de17c2438a2f882ab43a3809a5703de00474c888"
+    },
+    "IndependentFaultHistories.log": {
+      "bytes": 3212,
+      "sha256": "24a9cdefb78401c5f75998cf3d517b81fa512bb07249c3694b53e5f40244c2cd"
+    },
+    "KnillLaflammeGram.log": {
+      "bytes": 3146,
+      "sha256": "3480ab794c9cbb27b54ffdd5749d3727532bb89f44870ba8114cb76ec0e19325"
+    },
+    "LogicalFrameRotationTransport.log": {
+      "bytes": 161,
+      "sha256": "ec6f8764ac911618d5c1ef5d7ba04ba4be5f9d6cd3279b40316b7aeabdebddc4"
+    },
+    "LogicalPauliOrbit.log": {
+      "bytes": 1751,
+      "sha256": "2494c46cf823099aedf113319eb446bb0223d746a055f3cecacc537174ddce7b"
+    },
+    "LogicalPauliOrbitBasis.log": {
+      "bytes": 1179,
+      "sha256": "f51604d88d785153fd2c7b4e496edc3a4d82347a4d024b72c24b5d2f73622eb2"
+    },
+    "LogicalPauliVacuum.log": {
+      "bytes": 1518,
+      "sha256": "1b9cfe4cfdfcb3489ed095450283aa8a5920ab13404250be3cfbf5b1fc32ab4a"
+    },
+    "Manuscript20261114Audit.log": {
+      "bytes": 55400,
+      "sha256": "2ef09e3ffc3198a11a1e21493adeaeb991225fa2cc6802d650ec60d960182f55"
+    },
+    "Manuscript20261114Baseline.log": {
+      "bytes": 1929,
+      "sha256": "7c130f7ad0b18a8842e8bb265ab7ea52a0f32b6d9b28bba326cb22aacf9f2442"
+    },
+    "MatrixUnitaryConnected.log": {
+      "bytes": 944,
+      "sha256": "c9d2dc79c3acc749d4de1188c09943c3fd2bff8ea9c5099df83dc685a356baa2"
+    },
+    "MidpointEvenPauliCircuit.log": {
+      "bytes": 391,
+      "sha256": "a315b40abaa935c77201cbd9b7798497fd112918df519f4a7eb0d268e5e3caa7"
+    },
+    "MidpointExactFaultWitness.log": {
+      "bytes": 645,
+      "sha256": "95ee9dd6aaaae61bb54ddd0bd740276e431d1c6e57e414ed68c951b0a2717dee"
+    },
+    "MidpointFaultWitness.log": {
+      "bytes": 1540,
+      "sha256": "5bbc1dddea8e83ca5028a30c60569fca778d1b9dd758b60725c9fd24456940e2"
+    },
+    "MidpointLogicalCeiling.log": {
+      "bytes": 136,
+      "sha256": "f28e905066341c7aaabdebbe4987b23f8963ce902241e4b88a41e26d2a8b2aa8"
+    },
+    "MidpointNativeHistories.log": {
+      "bytes": 2399,
+      "sha256": "0ef29ce8eb3ae956303a7587e8fc1a6662718dcf72059481bf88b68a4e4f08ef"
+    },
+    "MidpointPauliCircuit.log": {
+      "bytes": 127,
+      "sha256": "77e813053ab1919aa548f4de8fa7e27e8d2d7292c33f92455bc8926d58b6445f"
+    },
+    "NamedBareRotation.log": {
+      "bytes": 143,
+      "sha256": "d1709ec5ec7756f8eb93ee6d530a647fd7954f6c07795f796e848aea980c9c4b"
+    },
+    "NativeLogicalCurves.log": {
+      "bytes": 1616,
+      "sha256": "60ceb1933f65e65488010c70d7d5f64d76f7646b023eda08035635aaaae40d11"
+    },
+    "NativeMiddlePauliHistory.log": {
+      "bytes": 841,
+      "sha256": "0b907ebc6cde109568e275284c512651d1128b231246c20db41165aa40adff72"
+    },
+    "NativeScalarPhase.log": {
+      "bytes": 762,
+      "sha256": "b9a6b003884a3e537ecaf1c7b8dc18b4da7c9dcbbbb7333a60aeb8349dd4b758"
+    },
+    "OneQubitBareSynthesis.log": {
+      "bytes": 440,
+      "sha256": "1f304dcadb0169c399b03c99e457b4cb975c78544842b7f7657cd8e50f0c615d"
+    },
+    "OneQubitEuler.log": {
+      "bytes": 816,
+      "sha256": "dec836a6978bd20af9399c4a40d81758d78a4980157c9f9e454d381cb4002f60"
+    },
+    "OrthogonalRecovery.log": {
+      "bytes": 713,
+      "sha256": "a9ef0528b08c03871cfd002df54aa08d2c42d4f7ea4f00f4acd7a77306a27d7f"
+    },
+    "PauliGroup.log": {
+      "bytes": 218,
+      "sha256": "8ca98bee431dbac64bee17b27f3a6aba7b48d8e3c27e83a315c2b33526ec7815"
+    },
+    "PauliSyndromeOptimization.log": {
+      "bytes": 908,
+      "sha256": "05dbd72bcf6670d8a3a28fda99b145fb4ee3e1b843dcedeb100193af28e90c8b"
+    },
+    "Q37ActualDistance.log": {
+      "bytes": 274,
+      "sha256": "e707125d730c38d29dc1fe526d8e05362378dfdce935f86476a463d84bd4faf8"
+    },
+    "Q37BinaryData.log": {
+      "bytes": 485,
+      "sha256": "c1964d13bca5c00ccd9304c20e0318a6147abb9bf13d280eb32d63117de6cb41"
+    },
+    "Q37BlockPhasePolynomial.log": {
+      "bytes": 118,
+      "sha256": "5a3febda1445881756c0546efc899537ce96436c27cc9588792d1cd86910c90c"
+    },
+    "Q37CanonicalDistance.log": {
+      "bytes": 1101,
+      "sha256": "9b8c4b2d62bc982c7d1dfbb7e209e71bf2baff7308be3c2e44c1c316d3e02419"
+    },
+    "Q37CanonicalEncoding.log": {
+      "bytes": 575,
+      "sha256": "2f237cf9388525d234aa37c3e2a145f19650d40c484009eb17effbbd2c47b908"
+    },
+    "Q37CanonicalLogicalPauli.log": {
+      "bytes": 1024,
+      "sha256": "b003c8f5bc996ddc6490aee28b79c5209f4376a8c50c74a2ae12a463c9ffe7e0"
+    },
+    "Q37CheckSpaces.log": {
+      "bytes": 437,
+      "sha256": "2b5650bf58dd04bcdd3c548e26e2c02199e86c67c24278b72df45ebccccb4ad9"
+    },
+    "Q37CliffordTWords.log": {
+      "bytes": 261,
+      "sha256": "eb44f121262559a4d8ca73232495ac31115bffe5f3d5c2d8ce15c4aa2b0fcdca"
+    },
+    "Q37ConcreteThreshold.log": {
+      "bytes": 493,
+      "sha256": "74a608b25370cc7871eb709eb800a4956b6093b4c680e2c746e9175b72c97ce0"
+    },
+    "Q37ConjugatedParityLayer.log": {
+      "bytes": 261,
+      "sha256": "7dc787824dade25fdf7956017bf59ce9dfbd12253bca80ba7de6909b3b0e1325"
+    },
+    "Q37DataAudit.log": {
+      "bytes": 21339,
+      "sha256": "6ffdc52eb6a12e1d1fc175416dba86a49a58665054c71924757f81de13409081"
+    },
+    "Q37DirectPhaseCertificate.log": {
+      "bytes": 454,
+      "sha256": "54ba2b5fbaf5f9040471f4ced0741aa38360d6c6adfb60174a41529b77a6787e"
+    },
+    "Q37DistanceData.log": {
+      "bytes": 561,
+      "sha256": "26bce91031f89531191d5ef78fa05961dd0cd959030eb61565152a8763e0cbca"
+    },
+    "Q37GatesAudit.log": {
+      "bytes": 25835,
+      "sha256": "d897c4830179c3cbfecb50a02c5fccd6754536d0a0173276544b3e579e096ea0"
+    },
+    "Q37HadamardFourier.log": {
+      "bytes": 1317,
+      "sha256": "108749d1bbdc359e5fb95f532e14369a2e4e3a1244b54906877ce8aafa8776ca"
+    },
+    "Q37LogicalNativeGates.log": {
+      "bytes": 1520,
+      "sha256": "9cf4f27b48a32624dcc68392b9b9cad81104b86c83602be5b8aa37a9b4f1165d"
+    },
+    "Q37MaskCertificate.log": {
+      "bytes": 243,
+      "sha256": "2df2064e2354dd1f59a658abdf0d1fba6270e188c07fccbca2229f55b202c441"
+    },
+    "Q37NamedRotation.log": {
+      "bytes": 126,
+      "sha256": "738ab23c428e7aecce1049417fbebf5066f00aa45bdaa44cf20cd1581f7024cb"
+    },
+    "Q37NativeBlocks.log": {
+      "bytes": 1393,
+      "sha256": "880eaae2e3443127f0d178b4844b3cd7327f79fbc47790fe24ec2699a4a950d3"
+    },
+    "Q37NativeParityLayer.log": {
+      "bytes": 569,
+      "sha256": "35b983376a0a440fbf414576288b7f71d74c2cdf35031803c090ef586b1a441b"
+    },
+    "Q37PackedSignatures.log": {
+      "bytes": 295,
+      "sha256": "1ed98cbeb9b149f040bfc2f90b4eed3318e6e8970cf3f5541e83de07a5927c79"
+    },
+    "Q37ParityPolynomial.log": {
+      "bytes": 247,
+      "sha256": "7077a9f54e6dd9b0b704de415fca06f64c1613ef1fb2ef5aa0a1263c9eab5ed4"
+    },
+    "Q37PhaseBridge.log": {
+      "bytes": 231,
+      "sha256": "9cb04a6dc4ee37876fe98f9c841e7a185185c73e19712ec8797a0a7ae6a43d12"
+    },
+    "Q37PhaseCoefficientWords.log": {
+      "bytes": 237,
+      "sha256": "9edce3b7a9f1e6d10c26ae4106fbef6c41fdc72f5bd7cd9537883235480e5b7f"
+    },
+    "Q37PhysicalCompression.log": {
+      "bytes": 1106,
+      "sha256": "148b2986eb1003bef98465f4c7f5803cff633fbfdb5f2df2d6c9a7b8f9043ef2"
+    },
+    "Q37PhysicalParityLayers.log": {
+      "bytes": 223,
+      "sha256": "02013ffdc34941fbce58a670b1dc6202461cfa454e69aa004f0edbb4d8c3b07b"
+    },
+    "Q37PhysicalPhases.log": {
+      "bytes": 495,
+      "sha256": "710d0ea5c0e4d44698e93d31508d51da06e33f1ef366935128e5e295550c76a0"
+    },
+    "Q37SignatureBits.log": {
+      "bytes": 1502,
+      "sha256": "cee2fe42849401cd68272fe5fae9aa3d86f430f38d6753d5755cf3492acbd927"
+    },
+    "Q37SupportSplits.log": {
+      "bytes": 284,
+      "sha256": "dca5ac2710fd434663a0a904f7af12ca1db09c31d250bbf7c8e374353b9bf08f"
+    },
+    "Q37Threshold.log": {
+      "bytes": 1084,
+      "sha256": "8469dc1bd7f22c92c445dbf12d977401e9d9b7fa53d5471b9fa14ff501f9ad19"
+    },
+    "REPLAY.json": {
+      "bytes": 211953,
+      "sha256": "d024134c4c759e152176d3f56036e733894178df33a0768fa048f84893027b8d"
+    },
+    "RealAlgebraicCurves.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "RealAlgebraicImage.log": {
+      "bytes": 329,
+      "sha256": "2bbd29e3597eb1d3e499085578e4bf59526b07aa913dab279c4c42182aeab691"
+    },
+    "RecoveryCrossTerms.log": {
+      "bytes": 285,
+      "sha256": "abf431902ff5014bd893572a7bffc9ae69896109be075d21db025b6d14fed1ce"
+    },
+    "ReducedCircuitAudit.log": {
+      "bytes": 8128,
+      "sha256": "983f3939938ad22f680d7ca25053e466136273a6beaa53b156fa26d685d21c31"
+    },
+    "ReducedCircuitFiniteImage.log": {
+      "bytes": 138,
+      "sha256": "d708c42146d29220ec2579b5e2d980e1fba7425b377bbfbc076f3d2677ccb340"
+    },
+    "ReducedCircuitInverses.log": {
+      "bytes": 239,
+      "sha256": "859ca8d96e61ddb250dbbf03da88ce4fe5462582804a939629506299deb0b7ba"
+    },
+    "ReducedCircuitIsomorphism.log": {
+      "bytes": 111,
+      "sha256": "463cededd4e3c01a98caf88e29a8f8ec9c676477c86ff233fa7f304d0d80f423"
+    },
+    "ReducedCircuitPresentation.log": {
+      "bytes": 713,
+      "sha256": "4e158e8eb78797c0d2d5de3e819011b110f848e016e113bc0ddc2d2d8c44753b"
+    },
+    "SharpFaultSuppression.log": {
+      "bytes": 373,
+      "sha256": "80679a4de7405bb3066327339bd7a3de6e71002bede2c7f9e6928c53860d9f43"
+    },
+    "ShorBoundaryCircuit.log": {
+      "bytes": 256,
+      "sha256": "d9399a2d690c77fee026c6e56238fee30e2ab37acba1d940db8536a91f0eb591"
+    },
+    "ShorBoundaryRows.log": {
+      "bytes": 124,
+      "sha256": "72455b326e0f0af3081a0276917f1fc8715350cb56004a169fbad66acaef4584"
+    },
+    "ShorCycleAction.log": {
+      "bytes": 726,
+      "sha256": "c4ba3b83821e6010a012fc1cb8241ea5ac5bd2a8e766e2767a7008fec17a7a34"
+    },
+    "ShorCyclePacking.log": {
+      "bytes": 253,
+      "sha256": "36f71ce6163359a8d81f0dc0b7067d53defa3443e82f64055e1cc9521d370e29"
+    },
+    "ShorDepthOneWitness.log": {
+      "bytes": 263,
+      "sha256": "2f3d8c307284870ba0e6b52f7d81a25b7b553ce1edfd0c50fa61f53b93106af2"
+    },
+    "ShorDistanceDetection.log": {
+      "bytes": 262,
+      "sha256": "c99c56c44c0bb43b930651b9ec7b29b230ac398e14d404082ff866c9b078e02c"
+    },
+    "ShorExactDistance.log": {
+      "bytes": 259,
+      "sha256": "a796b4f91f87bd0d882d0d6cec5274748b53cbce1ae24fbb0f89059dc3b480f3"
+    },
+    "ShorFaultWitness.log": {
+      "bytes": 628,
+      "sha256": "b3214808e7da9ddba1c173a2c5818eb8bf040d947be8d1c6ca9079b241eb14cf"
+    },
+    "ShorFaultWitnessAmbiguity.log": {
+      "bytes": 792,
+      "sha256": "fe48cc5897bbf584914e6a29a89fd5f9e1225f8e467c6416b6f04be60e16f707"
+    },
+    "ShorGroupLayout.log": {
+      "bytes": 240,
+      "sha256": "1bb7779c2bc582a2a41c39ff1d69043a04be8bd89772da22e47133e45add9448"
+    },
+    "ShorGroupedAction.log": {
+      "bytes": 243,
+      "sha256": "bfe9c64c675030e8433b9c4d01ed2e6527fcf832d4590700dfe10eabf3750f48"
+    },
+    "ShorGroupedCircuit.log": {
+      "bytes": 430,
+      "sha256": "9978b2bf05f76f611b0d5eff491eb717524b50e682d406bafb0d0c2c9a5ce553"
+    },
+    "ShorIndexedSchedule.log": {
+      "bytes": 366,
+      "sha256": "256e10b70ba5a407877b85bc91bd5437cb49cf4eccf674112a6a78a5d84ce149"
+    },
+    "ShorIndexedScheduleColumn.log": {
+      "bytes": 765,
+      "sha256": "55c456447d186f5ca514195dd5e901ad85ca02129fd84f7070439cf605776349"
+    },
+    "ShorIndexedScheduleLift.log": {
+      "bytes": 353,
+      "sha256": "b91bc3f86143981373bced099a49e07e22972f765abe852d4717d5b0d5a2aa24"
+    },
+    "ShorIndexedScheduleMasks.log": {
+      "bytes": 1373,
+      "sha256": "c9d1a699854a4db87fc41500f8da9bc0b822ab1fb5c17985944d184b156186cb"
+    },
+    "ShorLowerSaturation.log": {
+      "bytes": 825,
+      "sha256": "6471782854a565bd8dc2417426427cef780f990ca249b6df40737218e94b7546"
+    },
+    "ShorMultilayerSaturation.log": {
+      "bytes": 258,
+      "sha256": "bcde8e6ee469b79971ee0e4ba0449a42a8c0570f097e4b73994c30b404355e93"
+    },
+    "ShorNativeFanout.log": {
+      "bytes": 232,
+      "sha256": "38ec53a23a22ab9d4da4bf00124e6d0f75d0dfe164c7483381a68409247700dd"
+    },
+    "ShorNativeLayerAction.log": {
+      "bytes": 128,
+      "sha256": "81c6d6485078c7220064e543f7ad4833b6bdc45c5310e1d1a97ded40aff6780b"
+    },
+    "ShorNativeParallelFanout.log": {
+      "bytes": 231,
+      "sha256": "1bee7e8bda1ac939ebf13873ba4d0cc60a9d1b3e8fb8ed547ebf8e8c2c205b1d"
+    },
+    "ShorNativeParentLayer.log": {
+      "bytes": 230,
+      "sha256": "6280e02547b80e92ed857dad1b6eb0c2523bfef691f800062ae4397e6f1ea666"
+    },
+    "ShorNativeSaturation.log": {
+      "bytes": 412,
+      "sha256": "e6807f80e815b44049e0d7125454f28d32dd6c415c9a62dee3194493ff619398"
+    },
+    "ShorNativeSitePermutation.log": {
+      "bytes": 240,
+      "sha256": "841b6664af20266b9341db95d560d3424185a5472e52da575a47b56a5c53f074"
+    },
+    "ShorNativeTransition.log": {
+      "bytes": 128,
+      "sha256": "4f1455c0fcf549e1a55c30f80da95e0fb8f88113eb7e0b90bbd6969ab154f5e8"
+    },
+    "ShorNativeTransitionArity.log": {
+      "bytes": 244,
+      "sha256": "01b3d3e73003fc515e18280e6aceeeb4bf5ca19744868d1c4838c38749decb38"
+    },
+    "ShorOnset.log": {
+      "bytes": 121,
+      "sha256": "68d22838a7924b087a363057b6cadbc307e3011c7d63973cd262bfe347475e4a"
+    },
+    "ShorPauliMasks.log": {
+      "bytes": 729,
+      "sha256": "d95c064dc6b4fd7cc94a5b366ccbd040146cd4bceefa3f938616ff7d509213fa"
+    },
+    "ShorPermutationAction.log": {
+      "bytes": 414,
+      "sha256": "4554c57156db42b543e2a2efb4a126fb38383162eba56b949ec330f0a2d90c77"
+    },
+    "ShorPhysicalChecks.log": {
+      "bytes": 481,
+      "sha256": "803a8a6b432b8f8a67872ce7dd47bf53f009fc2ca13fdc3f80e29a911cc0c2ca"
+    },
+    "ShorPhysicalCode.log": {
+      "bytes": 480,
+      "sha256": "094f12ee0adf6ae927c47e2bb73c0393e0cc4e9cc28766ad5ceb89525ff9c8e9"
+    },
+    "ShorPhysicalXLogical.log": {
+      "bytes": 477,
+      "sha256": "8c2dd84a5b65b03461405423bc743240bf335ae411833ea9b286e361403bcdb9"
+    },
+    "ShorPhysicalZChecks.log": {
+      "bytes": 348,
+      "sha256": "d974485a94e4f724d03eb7ac63c5eb35eb63b52c0612587b0e90944aa1459e32"
+    },
+    "ShorRowAction.log": {
+      "bytes": 831,
+      "sha256": "032c5d58aede762a921451ce89d1df145dfa892b8e0a82dadb3853ba9ccc073f"
+    },
+    "ShorRowActionColumns.log": {
+      "bytes": 547,
+      "sha256": "be0f2f0f89e70d83dd84e92f9ae092378d3671d43153ce2ea8d4143481446e0b"
+    },
+    "ShorSaturationAudit.log": {
+      "bytes": 35502,
+      "sha256": "c54039d64677f35b23cd65d54c83a5e902993c5d0b83e7ae20b2d11d00f4ac79"
+    },
+    "ShorSaturationConsumer.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ShorStabilizer.log": {
+      "bytes": 506,
+      "sha256": "b04c994c645bbad7fe3464aaa0ab81401706f18092ce561fd7e36481466603a3"
+    },
+    "SingleFaultDetectability.log": {
+      "bytes": 276,
+      "sha256": "25717f7d00149af7726df327c3aeaf30fa989707c6727b7d430a05329e69f09d"
+    },
+    "SourceConsumer.log": {
+      "bytes": 1448,
+      "sha256": "8b057a7c78db2501d71d9f202fe65fb6a262201112a860fd10c427b3043aca91"
+    },
+    "StabilizerCosetSelection.log": {
+      "bytes": 263,
+      "sha256": "f66563471fb10cbb4a9e69869b848c706aea457366fb06019a3b5df535999f4e"
+    },
+    "StabilizerFrameSynthesis.log": {
+      "bytes": 1813,
+      "sha256": "a70b95949aa94aa4002b17e6d67a465c38442947f296bfcbe094d779888af6cb"
+    },
+    "StabilizerLogicalFrame.log": {
+      "bytes": 909,
+      "sha256": "0d379055ba2e8951100a4251084dcfd040b572b5c4ef994f12de234497a698ee"
+    },
+    "StabilizerMinUnphased.log": {
+      "bytes": 388,
+      "sha256": "6e515339e0de354ffe6978ceea2470294213ccfc525a5bc7a316b1d351ff0dd0"
+    },
+    "StabilizerNativeGivens.log": {
+      "bytes": 134,
+      "sha256": "04865edd953ce9c51af376e3fdf2317362769bea356496d26e29c272a6a2dd5b"
+    },
+    "StabilizerPauliFrame.log": {
+      "bytes": 1875,
+      "sha256": "d0fd0bc9c94630fc4f4ed412569910abf03a8f8045731f11c73d4d1cecc252e7"
+    },
+    "StabilizerPauliFrameAction.log": {
+      "bytes": 381,
+      "sha256": "d7d19683d283b87143bb0fea76489b78e09769457da0a5b3781a5515181ac07f"
+    },
+    "SupplementSynthesis.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "SynthesisFiniteWords.log": {
+      "bytes": 278,
+      "sha256": "c06941866c770a6fc7c80341c2be9e780905ad7e6bf1719a03dfac2eb903a732"
+    },
+    "TensorPauliConjugation.log": {
+      "bytes": 136,
+      "sha256": "23468141831b4a4cd3849b5030af359c23a98a4801543fc469ab08fe248b3e29"
+    },
+    "TensorPauliConnectedFrame.log": {
+      "bytes": 141,
+      "sha256": "7aca3212ac7c01979b3e8331540ad13204fffb71015990541d645d8df36e55bb"
+    },
+    "TensorPauliTangents.log": {
+      "bytes": 876,
+      "sha256": "f54af7b206ef80c8dfa221c9a8e5f941bce430db7cee01036d78e24e759df3d4"
+    },
+    "UnitaryAdjointSpan.log": {
+      "bytes": 3830,
+      "sha256": "297c0ed104cf5e3fc1b27ebb62d477314717edc0459106a511bdfa5825ff9784"
+    },
+    "UnitaryCurveProducts.log": {
+      "bytes": 1236,
+      "sha256": "83cde185ee4c825fb56a748313f08e3921d77f091db5db313af17cb45dad4e19"
+    },
+    "UpdateBranchAudit.log": {
+      "bytes": 18760,
+      "sha256": "f239d7cd5fcfc57dff239144017ade5fcd3d8f7b5a7b873028a6fb6b90d51e70"
+    },
+    "UpdateBranchConsumer.log": {
+      "bytes": 391,
+      "sha256": "75af3dd5f3cb9bf648e124b4b6f449f134436d7442528876a04453c128aadb4e"
+    },
+    "V3BaselineConsumerAudit.log": {
+      "bytes": 451,
+      "sha256": "54d1cfe1e4cf3f4182e13b33af01c93ca8efa22ef6679757f2f2cf3b42383a28"
+    },
+    "lake-version.txt": {
+      "bytes": 54,
+      "sha256": "777e9ffd2d23b0cf86f8a85667d72c2b9a9c9c9a62bc57df0c7ef8c40a0efdfe"
+    },
+    "toolchain.txt": {
+      "bytes": 105,
+      "sha256": "b4ab9ebb701e4668c357265b8d2dd1363a99b4d9776c7a5e925fa0d621b9aed6"
+    }
+  }
+}

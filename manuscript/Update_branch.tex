@@ -86,7 +86,7 @@
 \date{\today}
 
 \begin{abstract}
-\zw{A fundamental result that constrains fault-tolerant quantum computation is that transversal gates on finite-dimensional quantum error-correcting codes can only implement a finite group of logical unitaries. When transversality is relaxed to circuits of bounded-size gates, how much depth is required to implement infinite or continuous logical operations? Here we show that, }
+\zw{A fundamental result that constrains fault-tolerant quantum computation is that transversal gates respecting a fixed partition into detectable blocks of a finite-dimensional quantum error-correcting code implement only finitely many logical unitaries up to global phase. When transversality is relaxed to circuits of bounded-size gates, how much depth is required to implement infinite or continuous logical operations? Here we show that, }
 for any finite-dimensional code of distance $d\ge2$, circuits of $\rho$-body gates at depth $h<2\lceil\log_\rho d\rceil-1$ realize only finitely many logical unitaries up to phase. This bound requires neither geometric locality nor stabilizer structure. Moreover, the
 generator depth required for exact universal synthesis by finite words is
 $h_{\mathrm{exact}}=\max\{h_\infty,h_{\mathrm{dense}}\}$, separating continuous control from dense
@@ -758,8 +758,8 @@ Ref.~\cite{LeanRepo} provides Lean~4 proofs of Theorems~\ref{thm:depth}--\ref{th
 including both saturation constructions and the common error exponent for a fixed circuit.
 The audited declarations depend only on \texttt{propext}, \texttt{Classical.choice},
 and \texttt{Quot.sound}. The
-\href{https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/blob/update-branch-20261115/verification-runs/update-branch/RELEASE.md}{release record}
-links the manuscript-to-Lean correspondence, replay instructions, and RFC~3161 timestamp evidence.
+\href{https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/blob/main/CURRENT_VERSION.json}{current version record}
+links the mathematical statements, three-layer correspondence, and full replay evidence; earlier RFC~3161 timestamps retain their original file bindings.
 
 \begin{thebibliography}{45}
 
@@ -1255,7 +1255,7 @@ C,\rho)|<\infty$, a closed proper subset of the infinite Hausdorff group $\PU(K)
 \label{sm:logical-error-measures}
 
 We use the stabilizer-subspace noise setting of Theorem~\ref{thm:fault-sharpness}, with ideal
-encoding and ideal terminal recovery. After each native gate at location $j$, independently apply
+encoding and ideal terminal recovery. Noise locations are precisely the native gates with nonempty support, including identity gates on such supports; empty-support scalar gates have no noise location. After each noise location $j$, independently apply
 the identity with probability $1-p$, or a nonidentity Pauli $P$ on that gate's support with
 probability $p\,a_{j,P}$. The conditional weights $a_{j,P}$ are positive, sum to one at each
 location, and are independent of $p$. The complete fault record is unobserved.

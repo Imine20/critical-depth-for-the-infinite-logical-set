@@ -1,4 +1,6 @@
-# Fresh Linux replay
+# Historical two-main-theorem bootstrap
+
+This guide describes the earlier CriticalDepthMathlib/SourceConsumer replay. For the complete current 346-module check, use [VERIFICATION.md](VERIFICATION.md). The scripts below retain their historical scope.
 
 Run the wrapper from a checkout of the commit to be verified:
 

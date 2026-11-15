@@ -1,0 +1,54 @@
+note: using only cached resource files
+note: Running TeX ...
+Fontconfig error: Cannot load default config file: No such file: (null)
+Fontconfig error: No writable cache directories
+warning: Update_branch.tex:116: Underfull \hbox (badness 1831) in paragraph at lines 101--116
+warning: Update_branch.tex:116: Underfull \hbox (badness 1270) in paragraph at lines 101--116
+warning: Update_branch.tex:364: Underfull \hbox (badness 3199) in paragraph at lines 354--364
+warning: Update_branch.tex:516: Underfull \hbox (badness 10000) in paragraph at lines 514--516
+warning: Update_branch.tex:593: Underfull \hbox (badness 2368) in paragraph at lines 592--593
+warning: Update_branch.tex:803: Underfull \hbox (badness 10000) in paragraph at lines 800--803
+warning: Update_branch.tex:803: Underfull \hbox (badness 1360) in paragraph at lines 800--803
+warning: Update_branch.tex:862: Underfull \hbox (badness 3735) in paragraph at lines 859--862
+warning: Update_branch.tex:869: Underfull \hbox (badness 4168) in paragraph at lines 864--869
+warning: Update_branch.tex:919: Underfull \hbox (badness 1005) in paragraph at lines 916--919
+warning: Update_branch.tex:919: Underfull \hbox (badness 1817) in paragraph at lines 916--919
+warning: Update_branch.tex:963: Underfull \hbox (badness 5817) in paragraph at lines 960--963
+warning: Update_branch.tex:990: Underfull \hbox (badness 6445) in paragraph at lines 987--990
+note: Running BibTeX on Update_branch.aux ...
+note: warnings were issued by BibTeX; use --print and/or --keep-logs for details.
+note: Rerunning TeX because bibtex was run ...
+warning: Update_branch.tex:116: Underfull \hbox (badness 1831) in paragraph at lines 101--116
+warning: Update_branch.tex:116: Underfull \hbox (badness 1270) in paragraph at lines 101--116
+warning: Update_branch.tex:364: Underfull \hbox (badness 3199) in paragraph at lines 354--364
+warning: Update_branch.tex:516: Underfull \hbox (badness 10000) in paragraph at lines 514--516
+warning: Update_branch.tex:593: Underfull \hbox (badness 2368) in paragraph at lines 592--593
+warning: Update_branch.tex:803: Underfull \hbox (badness 10000) in paragraph at lines 800--803
+warning: Update_branch.tex:803: Underfull \hbox (badness 1466) in paragraph at lines 800--803
+warning: Update_branch.tex:862: Underfull \hbox (badness 3977) in paragraph at lines 859--862
+warning: Update_branch.tex:869: Underfull \hbox (badness 4391) in paragraph at lines 864--869
+warning: Update_branch.tex:919: Underfull \hbox (badness 1117) in paragraph at lines 916--919
+warning: Update_branch.tex:919: Underfull \hbox (badness 1953) in paragraph at lines 916--919
+warning: Update_branch.tex:990: Underfull \hbox (badness 6792) in paragraph at lines 987--990
+note: Rerunning TeX because "Update_branch.out" changed ...
+warning: Update_branch.tex:116: Underfull \hbox (badness 1831) in paragraph at lines 101--116
+warning: Update_branch.tex:116: Underfull \hbox (badness 1270) in paragraph at lines 101--116
+warning: Update_branch.tex:364: Underfull \hbox (badness 3199) in paragraph at lines 354--364
+warning: Update_branch.tex:516: Underfull \hbox (badness 10000) in paragraph at lines 514--516
+warning: Update_branch.tex:593: Underfull \hbox (badness 2368) in paragraph at lines 592--593
+warning: Update_branch.tex:803: Underfull \hbox (badness 10000) in paragraph at lines 800--803
+warning: Update_branch.tex:803: Underfull \hbox (badness 1466) in paragraph at lines 800--803
+warning: Update_branch.tex:862: Underfull \hbox (badness 3977) in paragraph at lines 859--862
+warning: Update_branch.tex:869: Underfull \hbox (badness 4391) in paragraph at lines 864--869
+warning: Update_branch.tex:919: Underfull \hbox (badness 1117) in paragraph at lines 916--919
+warning: Update_branch.tex:919: Underfull \hbox (badness 1953) in paragraph at lines 916--919
+warning: Update_branch.tex:990: Underfull \hbox (badness 6792) in paragraph at lines 987--990
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: Writing `work/latex-check/baseline-build\Update_branch.aux` (15.0693359375 KiB)
+note: Writing `work/latex-check/baseline-build\Update_branch.log` (31.3056640625 KiB)
+note: Writing `work/latex-check/baseline-build\Update_branch.bbl` (1.935546875 KiB)
+note: Writing `work/latex-check/baseline-build\Update_branch.pdf` (278.9453125 KiB)
+note: Writing `work/latex-check/baseline-build\Update_branch.blg` (3.376953125 KiB)
+note: Writing `work/latex-check/baseline-build\Update_branchNotes.bib` (104 B)
+note: Writing `work/latex-check/baseline-build\Update_branch.out` (2.7578125 KiB)

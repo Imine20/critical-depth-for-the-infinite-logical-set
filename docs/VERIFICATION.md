@@ -1,58 +1,68 @@
-# Verify the current proof
+# Verify the complete current Lean project
 
-The sole default target is `CriticalDepthMathlib`. Its integrated [source](../mathlib-review/CriticalDepthMathlib.lean) imports public Mathlib modules and Lean audit APIs. No private project proof modules or prebuilt project artifacts are needed.
+The current full check compiles all 346 project modules and requires all 19 audit markers. The default Lake target covers only CriticalDepthMathlib; a default build does not check this entire scope. See the [current mathematical statements](math/CURRENT_MATHEMATICAL_STATEMENTS.md) and [three-layer correspondence](CURRENT_THREE_LAYER_CORRESPONDENCE.md).
 
-## Clean environment
+## Pinned environment
 
-Use [CLEAN_REPLAY.md](CLEAN_REPLAY.md) for a fresh toolchain installation, checkout and cache directory. It requires Linux x86_64, Git, curl, Python 3, Perl and standard GNU command-line tools. It does not change HOME or reuse a previous project's .lake directory. No `lake update` is run.
+Use Lean 4.35.0, compiler commit `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`, and Mathlib commit `56a005855ea17e0b0958f73ec801ae140b0a1679`. The remaining package revisions are fixed by [lake-manifest.json](../lake-manifest.json). Use Python 3.10 or later and Git. Do not update the dependency lock or reuse prebuilt project proof artifacts for a fresh replay.
 
-With the locked toolchain and public dependency outputs already installed in a checkout, the complete verification command is:
+The repository's [.gitattributes](../.gitattributes) disables line-ending normalization because the records bind exact file bytes. Use a fresh clone of this revision if an older checkout already converted those bytes. The verification commands preserve the checked-out sources.
 
-```sh
-sh scripts/verify_release.sh
-```
-
-For initial dependency setup, run `lake exe cache get` followed by `lake --no-cache build '@Cli/Cli:leanArts'`. Mathlib's cache omits the locked Cli library; this additional command builds its actual Lean artifacts from source. Keep the committed lock file unchanged. Lean must be 4.35.0, compiler commit `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`. Mathlib is pinned to `56a005855ea17e0b0958f73ec801ae140b0a1679`; eight other package commits are listed in [lake-manifest.json](../lake-manifest.json).
-
-## Combined entry for a fresh checkout
-
-Clone with byte-preserving settings when preparing the checkout with Windows Git, for example with git -c core.autocrlf=false clone. Run the verifier in Linux or WSL.
+Prepare the public dependencies from the repository root:
 
 ~~~sh
 lake exe cache get
-sh scripts/replay.sh
+lake --no-cache build '@Cli/Cli:leanArts'
 ~~~
 
-The wrapper runs the source audit and the separate caller below in sequence. It requires a fresh output tree so the caller can only use the main artifact produced by the current run. It records and rechecks the hashes of that artifact's generated parts. To rerun in the same checkout, move the previous .verification directory aside first.
+Mathlib's public cache does not supply the locked Cli library, so its source build is a separate step. The compiler, runtime and pinned public dependency cache remain trusted; this is not a source rebuild of the compiler and all of Mathlib.
 
-For a separate kernel pass after the build and caller, run the wrapper with CRITICAL_DEPTH_KERNEL_REPLAY=1. This uses the bundled leanchecker from the selected toolchain and checks the project modules against the pinned imports. The operating-system resource boundary is supplied by the caller. In the trusted-cache mode described below, the wrapper uses the same explicit compiler and public cache roots as the source verifier.
+## Full replay
 
-## Required checks
+~~~sh
+lake env python scripts/verify_full.py /absolute/path/to/new-output
+~~~
 
-The release wrapper checks package revisions and compiles the main source through [verify.sh](../scripts/verify.sh). That script allocates a new output directory, validates source/payload bindings and checks dependency artifacts before and after compilation. The embedded audit covers 1,268 theorem declarations and 1,749 own mathematical constants, including private, generated and unused declarations. There are 41 registered targets, 29 exact-three targets, 13 named proposition guards and 12 Mathlib-foundation origin checks. Own mathematical declarations may have no recursive axioms outside:
+Replace the Python command with python3 or an absolute interpreter path as needed. The output directory must be absolute and must not exist. All project outputs are written there. The runner reads the module order and expected markers from [verify-v3.sh](../mathlib-review/verify-v3.sh), checks that the module list covers every project Lean file, and invokes Lean with the same compilation arguments. It uses the host's path-list separator, so it also supports native Windows:
 
-```text
+~~~powershell
+lake env python scripts/verify_full.py 'C:\path\to\new-output'
+~~~
+
+Each module is compiled with one Lean thread, a 6,144 MiB Lean memory limit and maxHeartbeats=3000000. These settings do not impose an aggregate operating-system memory cap. The runner binds source and verifier bytes, checks locked dependency revisions and tracked-source cleanliness, and checks that inputs and dependency artifacts do not change during the run. It records module results, audit markers, log hashes and generated artifact hashes in REPLAY.json. A failed or interrupted run is not a pass.
+
+Success requires every module to finish with exit code zero, every expected marker to occur, no forbidden proof-placeholder/native-evaluation diagnostic, and all final binding checks to pass. Consult the actual receipt and compiler logs rather than inferring success from a started process or an existing output directory.
+
+On a POSIX host, the original complete entry remains available:
+
+~~~sh
+lake env sh mathlib-review/verify-v3.sh /absolute/path/to/new-output
+~~~
+
+Use a new directory for this command as well. Its logs and checks cover the same module manifest; the portable runner additionally produces the structured binding receipt.
+
+## Recursive axiom checks and semantic scope
+
+The module audits enumerate project declarations and collect their transitive axiom dependencies. They reject project axioms and permit only:
+
+~~~text
 propext
 Classical.choice
 Quot.sound
-```
+~~~
 
-The exact-three targets must use all three. The scan includes the audit namespace when rejecting own axioms. Target declared types and transparent weak-head types are printed without ellipses; this is not normalization beneath every binder.
+The audits cover the baseline, generation results, physical code constructions, recovery and metric interfaces, both fault-suppression saturations, fixed-circuit exponents and consumers. A recursive axiom report establishes the dependency scope of the accepted formal propositions. It does not establish manuscript fidelity, the independence of an author approval, literature priority, or correctness of every handwritten intermediate argument.
 
-The wrapper then compiles [SourceConsumer.lean](../mathlib-review/SourceConsumer.lean), using only the newly produced project module and the checked public dependency outputs. The three closed calls use explicit five-qubit and four-qubit codes. Together with the two imported main theorems, all five targets must have exactly the three permitted axioms. The main artifacts are checked before and after this caller. Both compilations and the exact expected audit markers must succeed before a release verification receipt reports PASS.
+The [current version record](../CURRENT_VERSION.json) binds the revised manuscript, statements, correspondence and actual replay receipt. [The version index](../VERIFICATION_STATUS.md) preserves the scope of earlier records. The current work does not relabel old approval or timestamp evidence.
 
-The two main interfaces are `CriticalDepth.ReviewV2.nativeTheoremOne_proved` and `CriticalDepth.ReviewV2.standardTheoremTwo_proved`. The original native theorem-two interface also remains proved and audited.
+To check that a downloaded publication still matches those document, source and evidence hashes, run:
 
-## Trust and semantic scope
+~~~sh
+python -B scripts/check_current_version.py
+~~~
 
-The workflow recompiles the project and consumer against freshly downloaded pinned dependency caches, with the locked Cli library built from source. Only a completed execution receipt establishes that those compilations succeeded. The Lean compiler, bundled runtime and pinned public dependency cache remain trusted. This is not a source rebuild of all Mathlib dependencies. Main and consumer compilation each use one Lean thread and a 6,144 MiB Lean memory limit; those flags are not an aggregate operating-system memory cap.
+This read-only check verifies the existing publication and its evidence archive. A fresh proof replay still requires the full command above.
 
-The [version index](../VERIFICATION_STATUS.md) identifies actual execution records. Local .verification files are diagnostic outputs and include local paths; publish only an explicitly selected portable evidence bundle. A guide or prepared script is not an execution receipt.
+## Historical baseline replay
 
-[Author semantic approval](../AUTHOR_SEMANTIC_APPROVAL.json) is separately bound to the approved manuscript, readable statements and Lean source. Named proposition guards are definitional checks, not an independent semantic specification. The [correspondence](LATEST_MANUSCRIPT_CORRESPONDENCE.md) and [proof-route ledger](../mathlib-review/CAD_VS_ALGEBRAIC_PROOF.md) explain the scope: the revised manuscript presents the existing algebraic route for the two main results. Its new End Matter cardinality estimates and counting discussion remain outside the formal interfaces.
-
-## Advanced modes and history
-
-The underlying main-only script also supports `CRITICAL_DEPTH_DEPENDENCY_MODE=trusted-cache` or `source-built` with explicit paths. For explicit roots, the directory basenames must be the nine package names (for example, mathlib and batteries), as enforced by verify_public_dependencies.pl. Source-built mode additionally needs its dependency-source receipt. These modes are separate from the clean release entry point.
-
-Earlier execution records and timestamps remain under [verification-runs](../verification-runs/) and the [archive](../archive/README.md), with their original scope. The previously stopped dependency-source rebuild is not a requirement for the present cache-based release.
+The scripts verify_release.sh, replay.sh and clean_replay.sh under scripts/ implement the earlier two-main-theorem workflow. They compile CriticalDepthMathlib and SourceConsumer; they do not substitute for the current 346-module replay. The optional bundled leanchecker pass in that historical workflow also has that limited project scope. See [CLEAN_REPLAY.md](CLEAN_REPLAY.md) for its original bootstrap procedure and historical receipts.

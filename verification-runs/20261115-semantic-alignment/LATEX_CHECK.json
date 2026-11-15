@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Compilation and PDF inspection of the current unmodified manuscript; separate from the Lean replay and semantic correspondence review.",
+  "date_utc": "2026-11-15",
+  "input": {
+    "path": "manuscript/Update_branch.tex",
+    "sha256": "08452c4636132e06dd9f4757d530c479ef5a17ce02bc070908e90b8c0e896343"
+  },
+  "output": {
+    "path": "manuscript/Update_branch.pdf",
+    "sha256": "59183f925f792b4132d12c1818c7954e0f886bff76c03f9a5a1025a630c0ae28",
+    "bytes": 285864,
+    "pages": 21
+  },
+  "engine": {
+    "name": "Tectonic",
+    "version": "0.17.0",
+    "target": "x86_64-pc-windows-msvc",
+    "release": "https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0",
+    "asset": "tectonic-0.17.0-x86_64-pc-windows-msvc.zip",
+    "asset_sha256": "f61ce51f0b0ade1015b7de7ef368541c5424e9756ecbd0d7af97d6d48030845f",
+    "asset_digest_verified_against_official_release_api": true,
+    "source_document_mode": "Native REVTeX 4.2 branch, with all original mathematical content and color definitions retained.",
+    "trust_boundary": "Official prebuilt Tectonic executable and its downloaded TeX bundle; neither engine nor bundle rebuilt from source."
+  },
+  "execution": {
+    "exit_code": 0,
+    "working_directory": "Session workspace outside the repository",
+    "actual_argv_relative_to_session_workspace": [
+      "work/latex-check/tectonic-msvc/tectonic.exe",
+      "--untrusted",
+      "--keep-logs",
+      "--keep-intermediates",
+      "--outdir",
+      "work/latex-check/build",
+      "work/latex-check/input/Update_branch.tex"
+    ],
+    "input_copy_matches_repository_source": true,
+    "repository_source_unchanged_after_compilation": true,
+    "cache_and_build_outputs": "Isolated under work/latex-check in the session workspace; no repository or Lean dependency files were changed."
+  },
+  "diagnostics": {
+    "final_tex_underfull_hbox_count": 12,
+    "final_tex_underfull_hbox_lines": [
+      "Underfull \\hbox (badness 1831) in paragraph at lines 101--116",
+      "Underfull \\hbox (badness 1270) in paragraph at lines 101--116",
+      "Underfull \\hbox (badness 3199) in paragraph at lines 354--364",
+      "Underfull \\hbox (badness 10000) in paragraph at lines 514--516",
+      "Underfull \\hbox (badness 2368) in paragraph at lines 592--593",
+      "Underfull \\hbox (badness 10000) in paragraph at lines 800--803",
+      "Underfull \\hbox (badness 1466) in paragraph at lines 800--803",
+      "Underfull \\hbox (badness 3977) in paragraph at lines 859--862",
+      "Underfull \\hbox (badness 4391) in paragraph at lines 864--869",
+      "Underfull \\hbox (badness 1117) in paragraph at lines 916--919",
+      "Underfull \\hbox (badness 1953) in paragraph at lines 916--919",
+      "Underfull \\hbox (badness 6792) in paragraph at lines 987--990"
+    ],
+    "final_tex_overfull_count": 0,
+    "final_tex_undefined_or_multiply_defined_or_missing_character_count": 0,
+    "bibtex_warning_count": 46,
+    "bibtex_missing_database_entry_count": 45,
+    "bibtex_style_warning": "Warning--jnrlst (dependency: not reversed) set 1",
+    "bibliography_explanation": "The manuscript provides 45 entries directly in thebibliography. REVTeX also causes a BibTeX run on its generated notes database, producing 45 missing-database-entry warnings and one style warning. The final TeX pass has no undefined citations or references, and the PDF contains the manually supplied bibliography.",
+    "manual_bibitem_count": 45,
+    "pdf_extracted_double_question_mark_count": 0,
+    "text_extraction_limit": "pypdf reported that optional fontTools was unavailable for some mathematical Type1 encodings. Text extraction was used only as a supplementary unresolved-marker check; rendering was inspected separately.",
+    "environment_messages": [
+      "Fontconfig error: Cannot load default config file: No such file: (null)",
+      "Fontconfig error: No writable cache directories"
+    ],
+    "environment_message_scope": "These Tectonic environment messages also occur on the baseline. They did not stop compilation or prevent bundled fonts from rendering."
+  },
+  "baseline_comparison": {
+    "commit": "dc1f6d7de3c9435be66c841095650f3bdb0ed72a",
+    "git_path": "manuscript/Update_branch.tex",
+    "source_sha256": "bbdbefefd9f5b0fc8db465dbe679e885a64f7d6b063b5537dc29888572564e22",
+    "exit_code": 0,
+    "mode": "Separate copied source and output directory; same engine and --only-cached bundle resources.",
+    "final_tex_warning_lines_identical": true,
+    "bibtex_warning_lines_identical": true,
+    "conclusion": "The retained TeX and BibTeX warnings already occur in the pre-revision manuscript under the same engine."
+  },
+  "visual_inspection": {
+    "renderer": "Poppler pdftoppm 26.07.0",
+    "resolution_dpi": 90,
+    "rendered_pages": 21,
+    "contact_sheet_pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "individual_page_renders_inspected": [
+      1,
+      5,
+      9,
+      10
+    ],
+    "result": "No visible clipping, overlapping content, or black glyph boxes on the inspected renders. The revised abstract, availability reference, and noise convention display normally.",
+    "scope": "Layout review and spot checks; not an independent verification of every mathematical glyph or handwritten proof."
+  },
+  "evidence": [
+    {
+      "path": "verification-runs/20261115-semantic-alignment/latex/compile-console.log",
+      "sha256": "d06afab968b24f3b4e96906d542722defa17b9f99ec868e400ae04116dc1ea25",
+      "bytes": 20936
+    },
+    {
+      "path": "verification-runs/20261115-semantic-alignment/latex/Update_branch.log",
+      "sha256": "e813d4d1310a3d43aa8f9f3f7aeb6da2bbda872c4da1da61b90b8652cb14f5ea",
+      "bytes": 32057
+    },
+    {
+      "path": "verification-runs/20261115-semantic-alignment/latex/Update_branch.blg",
+      "sha256": "c4797d5b53c583141dce0875f693dcbf8a88ffd008990e91302ca5fccd708215",
+      "bytes": 3458
+    },
+    {
+      "path": "verification-runs/20261115-semantic-alignment/latex/baseline-console.log",
+      "sha256": "02a620aa932e05473d03b831bcbd8845da9269964c8c8d136c68599634118fbb",
+      "bytes": 4660
+    },
+    {
+      "path": "verification-runs/20261115-semantic-alignment/latex/baseline.log",
+      "sha256": "6ed25f6089fc8c3c15049e45ba312fefada3eb4d29688d9d7fdff9039cb47c24",
+      "bytes": 32057
+    },
+    {
+      "path": "verification-runs/20261115-semantic-alignment/latex/baseline.blg",
+      "sha256": "c4797d5b53c583141dce0875f693dcbf8a88ffd008990e91302ca5fccd708215",
+      "bytes": 3458
+    },
+    {
+      "path": "verification-runs/20261115-semantic-alignment/latex/pdfinfo.txt",
+      "sha256": "9a2cff16db2c59923a339871ac36abcc4babaee55716f5087509164ab32b8237",
+      "bytes": 565
+    }
+  ],
+  "archive_policy": "Logs are copied without alteration. Download response headers and signed download URLs are excluded. The summary uses repository-relative paths and contains no local account path.",
+  "skills_used": [
+    "pdf:pdf for rendering and visual inspection",
+    "proj_005_skill_humanizer for the final prose pass"
+  ]
+}

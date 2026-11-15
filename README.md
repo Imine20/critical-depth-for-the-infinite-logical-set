@@ -1,26 +1,29 @@
 # Critical depth for the infinite logical set
 
-## Current manuscript and Lean proofs
+## Current manuscript, statements and proofs
 
-- [Update_branch.tex](manuscript/Update_branch.tex)
-- [Manuscript-to-Lean correspondence and replay instructions](verification-runs/update-branch/RELEASE.md)
-- [Full-source replay and recursive axiom audit](mathlib-review/CONTINUATION_VERIFICATION.json)
-- [RFC 3161 timestamps](timestamps/update-branch/README.md)
+- Manuscript: [TeX](manuscript/Update_branch.tex) · [PDF](manuscript/Update_branch.pdf)
+- [Complete mathematical statements](docs/math/CURRENT_MATHEMATICAL_STATEMENTS.md)
+- [Manuscript → statements → Lean correspondence](docs/CURRENT_THREE_LAYER_CORRESPONDENCE.md)
+- [Exact version and evidence binding](CURRENT_VERSION.json)
+- [Full verification report](verification-runs/20261115-semantic-alignment/REPORT.md)
 
-The manuscript cites the [immutable Lean proof snapshot e22fb61](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/e22fb613f4463e0da04c1b0d6c2ea20eacf80c61). The snapshot proves finiteness of the bounded-depth logical image, the two logical depth threshold results, both universal fault-suppression bounds and their Shor and CSS saturations. It also gives the first uncorrectable fault order and the three optimal error exponents of a fixed circuit. The full replay compiled 346 project modules and passed 19 audit checks. The audited declarations depend only on `propext`, `Classical.choice` and `Quot.sound`.
+The current statements cover the bounded-depth projective logical image, continuous onset, dense and exact generation, the three optimized fault-suppression exponents, both saturation constructions, and the synthesis and code examples. The distinction between one complete circuit's depth and the depth of each generator is explicit.
 
-## Reproduce the full project verification
+This revision clarifies the abstract's detectable-partition and global-phase conditions and specifies that noise occurs at nonempty-support gate locations. Nonempty-support identity gates remain noise locations. The mathematical conclusions and all Lean proof sources are unchanged from the [immutable proof snapshot e22fb61](https://github.com/Imine20/critical-depth-for-the-infinite-logical-set/tree/e22fb613f4463e0da04c1b0d6c2ea20eacf80c61).
 
-Use a fresh Linux or WSL checkout with the versions pinned in [lean-toolchain](lean-toolchain) and [lake-manifest.json](lake-manifest.json). From the repository root, run:
+## Reproduce the full verification
+
+Use the versions in [lean-toolchain](lean-toolchain) and [lake-manifest.json](lake-manifest.json), with Python 3.10 or later available. From the repository root:
 
 ~~~sh
 lake exe cache get
 lake --no-cache build '@Cli/Cli:leanArts'
-lake env sh mathlib-review/verify-v3.sh /absolute/path/to/new-output
+lake env python scripts/verify_full.py /absolute/path/to/new-output
 ~~~
 
-The [release record](verification-runs/update-branch/RELEASE.md) states the source, dependency and manuscript bindings, and gives the scope of the replay.
+Use `python3` if that is the interpreter name on your system. The output directory must not already exist. The runner compiles the complete 346-module manifest and checks all 19 recursive audit markers. It records actual results and input, dependency, log and artifact hashes. The permitted foundational axioms are `propext`, `Classical.choice` and `Quot.sound`. See [the verification guide](docs/VERIFICATION.md) for the trust boundary, native Windows invocation and the original POSIX entry point.
 
-## Previous versions
+## Version history
 
-See the [version index](VERIFICATION_STATUS.md) for the historical scope of earlier builds and author approvals. The [20261107v7 TeX](manuscript/20261107v7.tex), [PDF](manuscript/20261107v7.pdf), [review](verification-runs/20261107v7/REPORT.md) and [timestamps](timestamps/20261107v7/README.md) are preserved. The [20261114v0 TeX and timestamp](timestamps/20261114v0/README.md) and the [20261104v1 TeX and timestamp](timestamps/20261104v1/README.md) retain their original bindings. The [algebraic-proof revision](RELEASE_BINDING.json) and [archive](archive/README.md) document the earlier history.
+[VERIFICATION_STATUS.md](VERIFICATION_STATUS.md) separates the current run from earlier builds and approvals. [RELEASE_BINDING.json](RELEASE_BINDING.json), the root author-approval record, and the earlier [Update_branch release record](verification-runs/update-branch/RELEASE.md) retain their historical scope. The [existing RFC 3161 evidence](timestamps/update-branch/README.md) binds the earlier manuscript bytes; it is not a timestamp of this revised TeX. No historical approval or timestamp is reassigned to the new statements.
