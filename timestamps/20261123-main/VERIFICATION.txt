@@ -1,0 +1,40 @@
+OpenSSL: OpenSSL 3.2.4 11 Feb 2025 (Library: OpenSSL 3.2.4 11 Feb 2025)
+
+Trusted Windows root SHA-256: 552F7BDCF1A7AF9E6CE672017F4F12ABF77240C78E761AC203D1D9D20AC89988
+
+sha256 Fingerprint=CA:0B:15:54:EC:D9:01:EA:19:DC:AD:87:49:E9:F2:64:8C:8D:6D:FC:EA:1A:DD:9D:2C:21:09:41:5B:B8:2C:CD
+
+sha256 Fingerprint=2D:A0:9D:A7:F4:13:1F:9F:E7:2D:B6:C5:E6:E9:C9:65:67:55:AF:04:3F:1E:A7:42:CC:0D:21:20:E1:41:EB:FC
+
+X509v3 Extended Key Usage: critical
+    Time Stamping
+
+issuer=C=US, O=DigiCert, Inc., CN=DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1
+crlNumber=0x52
+lastUpdate=Nov 18 16:40:26 2026 GMT
+nextUpdate=Dec  9 16:40:26 2026 GMT
+
+issuer=C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Trusted Root G4
+crlNumber=0x030C
+lastUpdate=Nov 20 17:42:35 2026 GMT
+nextUpdate=Dec 11 17:42:35 2026 GMT
+
+MAIN.pdf at 2026-11-23T12:28:12Z
+Request and nonce: Verification: OK
+File and imprint: Verification: OK
+CMS signer: sha256 Fingerprint=2D:A0:9D:A7:F4:13:1F:9F:E7:2D:B6:C5:E6:E9:C9:65:67:55:AF:04:3F:1E:A7:42:CC:0D:21:20:E1:41:EB:FC
+CRL and chain: timestamps/20261123-main/signer.pem: OK
+Chain:
+depth=0: C=US, O=DigiCert, Inc., CN=DigiCert SHA256 RSA4096 Timestamp Responder 2026 1 (untrusted)
+depth=1: C=US, O=DigiCert, Inc., CN=DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1 (untrusted)
+depth=2: C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Trusted Root G4
+
+PAYLOAD.json at 2026-11-23T12:28:13Z
+Request and nonce: Verification: OK
+File and imprint: Verification: OK
+CMS signer: sha256 Fingerprint=2D:A0:9D:A7:F4:13:1F:9F:E7:2D:B6:C5:E6:E9:C9:65:67:55:AF:04:3F:1E:A7:42:CC:0D:21:20:E1:41:EB:FC
+CRL and chain: timestamps/20261123-main/signer.pem: OK
+Chain:
+depth=0: C=US, O=DigiCert, Inc., CN=DigiCert SHA256 RSA4096 Timestamp Responder 2026 1 (untrusted)
+depth=1: C=US, O=DigiCert, Inc., CN=DigiCert Trusted G4 TimeStamping RSA4096 SHA256 2025 CA1 (untrusted)
+depth=2: C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert Trusted Root G4

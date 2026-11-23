@@ -1,0 +1,22 @@
+{
+  "schema": "manuscript-release-payload/v1",
+  "repository": "Imine20/critical-depth-for-the-infinite-logical-set",
+  "source_commit": "a2187060a10e5d5664f7948dcb6df4552fe19213",
+  "files": [
+    {
+      "path": "manuscript/MAIN.pdf",
+      "bytes": 430651,
+      "sha256": "da4bc5aea08c40edf7595f9b357797d6896acf2eddd59073e8280736bbf36f5a"
+    },
+    {
+      "path": "manuscript/MAIN.tex",
+      "bytes": 136780,
+      "sha256": "c4c0c4f3f433783e2fe36be2c86a1c14e8bc89484cf084d8655098c092897aaf"
+    },
+    {
+      "path": "manuscript/depth.bib",
+      "bytes": 10913,
+      "sha256": "0a442490aa0cf86982f99aab058beae29dccbcac4ff9e3940a1dd55ce56d1fa5"
+    }
+  ]
+}

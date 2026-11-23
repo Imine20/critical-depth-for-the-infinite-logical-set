@@ -1,0 +1,41 @@
+{
+  "schema": "manuscript-rfc3161-receipt/v1",
+  "endpoint": "http://timestamp.digicert.com",
+  "hash_algorithm": "SHA-256",
+  "verifier": "OpenSSL 3.2.4 11 Feb 2025 (Library: OpenSSL 3.2.4 11 Feb 2025)",
+  "trusted_root_sha256": "552f7bdcf1a7af9e6ce672017f4f12abf77240c78e761ac203d1d9d20ac89988",
+  "trusted_root_provenance": "Windows LocalMachine Root store, checked against the official DigiCert fingerprint",
+  "signer_sha256": "2da09da7f4131f9fe72db6c5e6e9c9656755af043f1ea742cc0d2120e141ebfc",
+  "issuer_sha256": "ca0b1554ecd901ea19dcad8749e9f2648c8d6dfcea1add9d2c2109415bb82ccd",
+  "crl_bundle_sha256": "f5b7d288608bbe66e58832e93395c4945b297647e6d0dd242f8120642a05821d",
+  "tokens": [
+    {
+      "file": "manuscript/MAIN.pdf",
+      "sha256": "da4bc5aea08c40edf7595f9b357797d6896acf2eddd59073e8280736bbf36f5a",
+      "query_sha256": "2b45a15f9dd83b285578285d8d0d092390e060d8fc2be194c50deca8ba180a68",
+      "reply_sha256": "e308e1e8c7557fc548e881e726741f803fd2ca5950f23c07348e48a1dd0f600e",
+      "gen_time_utc": "2026-11-23T12:28:12Z",
+      "policy_oid": "2.16.840.1.114412.7.1",
+      "serial": "0x9374EB80E9C9A6E02D9516CAD6B4B9B4",
+      "nonce": "0x131BDC916B8EE1FF",
+      "verified_request": true,
+      "verified_file": true,
+      "verified_signer": true,
+      "verified_signed_crls_at_gen_time": true
+    },
+    {
+      "file": "timestamps/20261123-main/PAYLOAD.json",
+      "sha256": "ee8fe2a7a2e9a5496153d8b9793fcb23dfe5f9fee5d6b0c54e80e49bae8f99cc",
+      "query_sha256": "53731cf0b2c4de4fb4210d29810bd27c771408ef35960eba536f25a7a6688372",
+      "reply_sha256": "eb6be31b81fefb0743103e7da4269010d78811ded29f98401b73ea327498c2b3",
+      "gen_time_utc": "2026-11-23T12:28:13Z",
+      "policy_oid": "2.16.840.1.114412.7.1",
+      "serial": "0x237728D7CD8A2E86DA4634C45151DB08",
+      "nonce": "0xB8FBAFA4BE65AFBD",
+      "verified_request": true,
+      "verified_file": true,
+      "verified_signer": true,
+      "verified_signed_crls_at_gen_time": true
+    }
+  ]
+}
